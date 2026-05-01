@@ -1,22 +1,25 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-01T04:29:20.881Z
+- checked_at: 2026-05-01T09:41:48.332Z
 - source: https://www.esthe-ranking.jp/toyota/asian/
 - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
-- count_text: 198件
-- matched_store_count: 197
-- matched_link_count: 198
-- detail_page_count: 198
-- detailed_store_count: 194
+- count_text: 196件
+- matched_store_count: 195
+- matched_link_count: 196
+- detail_page_count: 196
+- detailed_store_count: 191
 
 ## Added
 - none
 
 ## Removed
-- none
+- LOVE小屋（らぶこや）
+- 女神ミユーズ
 
 ## Changed
-- none
+- 掲載件数表記: 198件 -> 196件
+- 店舗リンク数: 198 -> 196
+- 詳細取得件数: 194 -> 191
 
 ## Current Stores
 - ～豊田来来～おいでん
@@ -38,7 +41,6 @@
 - KissME（キスミー）
 - Lien（リアン）
 - Love Luxe（ラブラグゼ）
-- LOVE小屋（らぶこや）
 - Luck（ラック）
 - Luxe Spa（ラックススパ）
 - Mahal（マハル）
@@ -151,7 +153,6 @@
 - 雫（しずく）
 - 潤んだ瞳
 - 女神のエステ
-- 女神ミユーズ
 - 勝手にしやがれ
 - 心（こころ）
 - 森（もり）
