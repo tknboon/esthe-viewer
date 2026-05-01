@@ -1,0 +1,75 @@
+[2026-04-29T14:21:05.632Z] monitor failed
+TypeError: fetch failed
+    at Object.processResponse (node:internal/deps/undici/undici:12024:20)
+    at node:internal/deps/undici/undici:12405:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at node:internal/deps/undici/undici:16557:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:74:20)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:15:16)
+[2026-04-30T12:15:15.811Z] monitor failed
+TypeError: fetch failed
+[2026-05-01T00:09:11.306Z] monitor failed
+TypeError: fetch failed
+[2026-05-01T03:11:50.046Z] monitor failed
+Error: All fetch methods failed for https://www.esthe-ranking.jp/toyota/asian/
+
+fetchPageWithNodeFetch: TypeError: fetch failed
+    at Object.processResponse (node:internal/deps/undici/undici:12024:20)
+    at node:internal/deps/undici/undici:12405:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at node:internal/deps/undici/undici:16557:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async fetchPageWithNodeFetch (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:95:20)
+    at async fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:81:20)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)
+
+fetchPageWithPowerShell: Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:421:11)
+    at spawn (node:child_process:796:9)
+    at execFile (node:child_process:349:17)
+    at execFile (node:child_process:245:21)
+    at fetchPageWithPowerShell (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:117:24)
+    at fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:81:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)
+
+fetchPageWithCurl: Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:421:11)
+    at spawn (node:child_process:796:9)
+    at execFile (node:child_process:349:17)
+    at execFile (node:child_process:245:21)
+    at fetchPageWithCurl (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:131:24)
+    at fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:81:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)
+    at fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:91:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)
+[2026-05-01T03:11:50.433Z] monitor failed
+Error: All fetch methods failed for https://www.esthe-ranking.jp/toyota/asian/
+
+fetchPageWithNodeFetch: TypeError: fetch failed
+
+fetchPageWithPowerShell: Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:421:11)
+    at spawn (node:child_process:796:9)
+    at execFile (node:child_process:349:17)
+    at execFile (node:child_process:245:21)
+    at fetchPageWithPowerShell (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:117:24)
+    at fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:81:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)
+
+fetchPageWithCurl: Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:421:11)
+    at spawn (node:child_process:796:9)
+    at execFile (node:child_process:349:17)
+    at execFile (node:child_process:245:21)
+    at fetchPageWithCurl (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:131:24)
+    at fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:81:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)
+    at fetchPage (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:91:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (file:///C:/Users/tknbo/Documents/Codex/2026-04-28/new-chat/monitor_esthe_ranking.mjs:18:16)

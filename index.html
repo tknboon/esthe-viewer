@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>豊田エステ店舗ビューア</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet" />
+    <script>
+      window.GOOGLE_MAPS_API_KEY = "AIzaSyBB5mHKn227HN1TAKEshMkDLEDDrthdOTg";
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-copy-block">
+          <h1>豊田周辺エステ店舗一覧</h1>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="filters-panel">
+          <section class="panel-block">
+            <label class="input-label" for="searchInput">キーワード</label>
+            <div class="search-row">
+              <input
+                id="searchInput"
+                class="text-input"
+                type="search"
+                placeholder="店舗名、駅名、備考、電話番号"
+              />
+              <button id="searchButton" class="primary-button search-button" type="button">検索</button>
+            </div>
+          </section>
+
+          <section class="panel-block">
+            <div class="analytics-head">
+              <span class="input-label">レビュー集計</span>
+              <strong id="reviewTotalCount" class="analytics-total">0件</strong>
+            </div>
+            <div class="analytics-subhead">
+              <span class="mini-label">月ごとの料金合計</span>
+            </div>
+            <div id="monthlyRevenueChart" class="revenue-chart">
+              <div class="empty-state compact">レビューが入るとここに月別料金合計が表示されます。</div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="content-panel">
+          <section class="map-board">
+            <div class="map-grid">
+              <section class="map-stage">
+                <div class="embed-wrap">
+                  <div id="googleMapCanvas" class="google-map-canvas" aria-label="Googleマップ"></div>
+                </div>
+              </section>
+
+              <aside class="map-side">
+                <div class="selected-store">
+                  <p class="mini-label">選択中の店舗</p>
+                  <h3 id="selectedStoreName" class="selected-title">店舗を選択してください</h3>
+                  <p id="selectedStoreMeta" class="selected-meta">地図候補リストか一覧のボタンから切り替えられます。</p>
+                  <p id="selectedReviewSummary" class="selected-review-summary">レビューはまだありません。</p>
+                  <div class="selected-actions">
+                    <a id="selectedPhoneLink" class="action-link disabled-link" href="#">電話する</a>
+                    <a id="selectedPhoneSearchLink" class="action-link disabled-link" href="#" target="_blank" rel="noreferrer">電話番号を検索</a>
+                    <a id="selectedMapLink" class="action-link primary disabled-link" href="#" target="_blank" rel="noreferrer">Googleマップで開く</a>
+                    <a id="selectedListingLink" class="action-link disabled-link" href="#" target="_blank" rel="noreferrer">掲載ページ</a>
+                  </div>
+
+                  <div class="review-panel">
+                    <div class="review-form-head">
+                      <p class="mini-label">店舗レビュー</p>
+                      <span class="review-storage-note">このブラウザ内に保存</span>
+                    </div>
+
+                    <form id="reviewForm" class="review-form">
+                      <div class="review-form-grid">
+                        <label class="review-field">
+                          <span>訪問日</span>
+                          <input id="reviewVisitDateInput" class="text-input" type="date" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>エステシャン名</span>
+                          <input id="reviewAuthorInput" class="text-input" type="text" maxlength="24" placeholder="空欄なら不明" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>国</span>
+                          <input id="reviewNationalityInput" class="text-input" type="text" maxlength="32" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>時間（分）</span>
+                          <input id="reviewDurationInput" class="text-input" type="number" min="0" step="10" placeholder="60" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>料金（円）</span>
+                          <input id="reviewPriceInput" class="text-input" type="number" min="0" step="1000" placeholder="10000" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>SMS</span>
+                          <select id="reviewSmsInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="建物">建物</option>
+                            <option value="建物・部屋番号">建物・部屋番号</option>
+                            <option value="建物・駐車番号">建物・駐車番号</option>
+                            <option value="建物・部屋番号・駐車番号">建物・部屋番号・駐車番号</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>メニュー</span>
+                          <select id="reviewMenuInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="紙">紙</option>
+                            <option value="スマホ">スマホ</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>明示</span>
+                          <select id="reviewDisclosureInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="あり">あり</option>
+                            <option value="なし">なし</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>シャワー</span>
+                          <select id="reviewShowerInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="セルフ">セルフ</option>
+                            <option value="ふたり">ふたり</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>マッサージ</span>
+                          <select id="reviewMassageInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="先">先</option>
+                            <option value="後">後</option>
+                            <option value="なし">なし</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>案内のわかりやすさ</span>
+                          <select id="reviewGuideClarityInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="あり">あり</option>
+                            <option value="なし">なし</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>顔</span>
+                          <select id="reviewFaceRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>体</span>
+                          <select id="reviewBodyRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>性格</span>
+                          <select id="reviewPersonalityRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>サービス</span>
+                          <select id="reviewServiceRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>総合</span>
+                          <select id="reviewOverallRatingInput" class="select-input">
+                            <option value="5">5 / とても良い</option>
+                            <option value="4">4 / 良い</option>
+                            <option value="3">3 / ふつう</option>
+                            <option value="2">2 / 気になる点あり</option>
+                            <option value="1">1 / 合わなかった</option>
+                          </select>
+                        </label>
+                      </div>
+
+                      <label class="review-field">
+                        <span>備考</span>
+                        <textarea id="reviewCommentInput" class="text-area" rows="4" maxlength="400" placeholder="雰囲気、アクセス、接客など"></textarea>
+                      </label>
+
+                      <div class="review-form-actions">
+                        <button id="reviewSubmitButton" class="primary-button" type="submit">レビューを保存</button>
+                      </div>
+                    </form>
+
+                    <div id="reviewList" class="review-list">
+                      <div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="map-list-panel">
+                  <div class="map-list-head">
+                    <p class="mini-label">地図候補リスト</p>
+                    <span id="mapListCount" class="map-list-count">0件</span>
+                  </div>
+                  <div id="mapList" class="map-list"></div>
+                </div>
+              </aside>
+            </div>
+            <div class="map-footer">
+              <p id="statusText" class="status-text">読み込み中...</p>
+              <button id="toggleViewButton" class="icon-button" type="button">カード表示</button>
+            </div>
+          </section>
+
+          <div class="summary-grid">
+            <article class="summary-card">
+              <span class="summary-label">表示件数</span>
+              <strong id="visibleCount" class="summary-value">0</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-label">ユニーク店舗</span>
+              <strong id="uniqueCount" class="summary-value">0</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-label">地図候補</span>
+              <strong id="mapReadyCount" class="summary-value">0</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-label">24時間営業</span>
+              <strong id="allDayCount" class="summary-value">0</strong>
+            </article>
+          </div>
+
+          <div id="cardsView" class="cards-grid"></div>
+
+          <div id="tableView" class="table-wrap is-hidden">
+            <table>
+              <thead>
+                <tr>
+                  <th>店舗名</th>
+                  <th>最寄駅</th>
+                  <th>営業時間</th>
+                  <th>電話番号</th>
+                  <th>位置情報</th>
+                  <th>掲載URL</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB5mHKn227HN1TAKEshMkDLEDDrthdOTg&loading=async&callback=initGoogleMapApp&language=ja&region=JP"
+    ></script>
+  </body>
+</html>
