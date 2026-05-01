@@ -3,9 +3,26 @@ $ErrorActionPreference = "Stop"
 $workspace = "C:\Users\tknbo\Documents\Codex\2026-04-28\new-chat"
 $scriptPath = Join-Path $workspace "monitor_esthe_ranking.mjs"
 $runnerLogPath = Join-Path $workspace "esthe_ranking_runner.log"
+$publishStatusPath = Join-Path $workspace "esthe_publish_status.json"
 $htmlCachePath = Join-Path $workspace "esthe_ranking_source.html"
 $detailDirPath = Join-Path $workspace "esthe_ranking_detail_pages"
 $targetUrl = "https://www.esthe-ranking.jp/toyota/asian/"
+
+# Auto publish settings
+$autoPublishEnabled = $true
+$gitPathOverride = ""
+$gitRemoteName = "origin"
+$gitBranchName = "main"
+$gitPushTarget = "https://github.com/tknboon/esthe-viewer.git"
+$expectedRemoteUrl = "https://github.com/tknboon/esthe-viewer.git"
+$autoPublishFiles = @(
+  "data.js",
+  "toyota_esthe_map_points_ja.csv",
+  "toyota_esthe_legacy_rows.csv",
+  "esthe_ranking_snapshot.json",
+  "esthe_ranking_report.md",
+  "esthe_ranking_status.json"
+)
 
 Set-Location $workspace
 
@@ -31,12 +48,85 @@ function Resolve-NodePath {
   throw "node.exe was not found"
 }
 
+function Resolve-GitPath {
+  $candidates = @()
+
+  if ($gitPathOverride) {
+    $candidates += $gitPathOverride
+  }
+
+  if ($env:ESTHE_GIT_PATH) {
+    $candidates += $env:ESTHE_GIT_PATH
+  }
+
+  $candidates += @(
+    "C:\Program Files\Git\cmd\git.exe",
+    "C:\Program Files\Git\bin\git.exe",
+    "C:\Program Files (x86)\Git\cmd\git.exe",
+    "C:\Program Files (x86)\Git\bin\git.exe"
+  )
+
+  $command = Get-Command git -ErrorAction SilentlyContinue
+  if ($command -and $command.Source) {
+    $candidates += $command.Source
+  }
+
+  $desktopGitRoots = @(
+    (Join-Path $env:LOCALAPPDATA "GitHubDesktop"),
+    (Join-Path $env:LOCALAPPDATA "GitHub Desktop")
+  )
+
+  foreach ($root in $desktopGitRoots) {
+    try {
+      $matches = Get-ChildItem -Path $root -Directory -ErrorAction Stop |
+        Sort-Object Name -Descending |
+        ForEach-Object { Join-Path $_.FullName "resources\app\git\cmd\git.exe" }
+      $candidates += $matches
+    } catch {
+      continue
+    }
+  }
+
+  $candidates = $candidates | Where-Object { $_ } | Select-Object -Unique
+
+  foreach ($candidate in $candidates) {
+    if (Test-Path $candidate) {
+      return $candidate
+    }
+  }
+
+  throw "git.exe was not found"
+}
+
 function Write-RunnerLog {
   param([string]$Message)
 
   $timestamp = Get-Date -Format "yyyy-MM-ddTHH:mm:ssK"
   $line = "[$timestamp] $Message"
   [System.IO.File]::AppendAllText($runnerLogPath, $line + [Environment]::NewLine, [System.Text.Encoding]::UTF8)
+}
+
+function Write-PublishStatus {
+  param(
+    [bool]$Ok,
+    [string]$Stage,
+    [string]$Message,
+    [string]$PublishTarget = "",
+    [string]$RemoteUrl = ""
+  )
+
+  $payload = [ordered]@{
+    checkedAt = (Get-Date).ToString("o")
+    ok = $Ok
+    stage = $Stage
+    message = $Message
+    autoPublishEnabled = $autoPublishEnabled
+    publishTarget = $PublishTarget
+    localRemote = $RemoteUrl
+  }
+
+  $json = $payload | ConvertTo-Json -Depth 3
+  [System.IO.File]::WriteAllText($publishStatusPath, $json + [Environment]::NewLine, [System.Text.Encoding]::UTF8)
 }
 
 function Get-SourceHtml {
@@ -113,6 +203,73 @@ function Save-DetailPages {
   }
 }
 
+function Invoke-GitAutoPublish {
+  param(
+    [string]$GitPath,
+    [string]$RemoteName,
+    [string]$BranchName,
+    [string[]]$FilesToStage
+  )
+
+  $remoteUrl = ""
+  $pushTarget = ""
+
+  $remoteLookup = & $GitPath -C $workspace remote get-url $RemoteName 2>$null
+  if ($LASTEXITCODE -eq 0 -and $remoteLookup) {
+    $remoteUrl = ($remoteLookup | Select-Object -First 1).Trim()
+    Write-RunnerLog "local remote ($RemoteName): $remoteUrl"
+    if ($expectedRemoteUrl -and ($remoteUrl -ne $expectedRemoteUrl)) {
+      Write-RunnerLog "local remote differs from publish target"
+    }
+  } else {
+    Write-RunnerLog "local remote lookup skipped for: $RemoteName"
+  }
+
+  if ($gitPushTarget) {
+    $pushTarget = $gitPushTarget
+  } elseif ($remoteUrl) {
+    $pushTarget = $remoteUrl
+  } else {
+    Write-PublishStatus -Ok $false -Stage "publish" -Message "git push target was not found" -RemoteUrl $remoteUrl
+    throw "git push target was not found"
+  }
+
+  foreach ($relativePath in $FilesToStage) {
+    $absolutePath = Join-Path $workspace $relativePath
+    if (Test-Path $absolutePath) {
+      & $GitPath -C $workspace add -- $relativePath
+      if ($LASTEXITCODE -ne 0) {
+        Write-PublishStatus -Ok $false -Stage "publish" -Message "git add failed for $relativePath" -PublishTarget $pushTarget -RemoteUrl $remoteUrl
+        throw "git add failed for $relativePath"
+      }
+    }
+  }
+
+  & $GitPath -C $workspace diff --cached --quiet --exit-code
+  if ($LASTEXITCODE -eq 0) {
+    Write-RunnerLog "auto publish skipped: no staged changes"
+    Write-PublishStatus -Ok $true -Stage "publish" -Message "no staged changes" -PublishTarget $pushTarget -RemoteUrl $remoteUrl
+    return
+  }
+
+  $commitMessage = "Auto update esthe data ({0})" -f (Get-Date -Format "yyyy-MM-dd HH:mm")
+  & $GitPath -C $workspace commit -m $commitMessage
+  if ($LASTEXITCODE -ne 0) {
+    Write-PublishStatus -Ok $false -Stage "publish" -Message "git commit failed" -PublishTarget $pushTarget -RemoteUrl $remoteUrl
+    throw "git commit failed"
+  }
+
+  Write-RunnerLog "auto publish target: $pushTarget"
+  & $GitPath -C $workspace push $pushTarget "HEAD:$BranchName"
+  if ($LASTEXITCODE -ne 0) {
+    Write-PublishStatus -Ok $false -Stage "publish" -Message "git push failed" -PublishTarget $pushTarget -RemoteUrl $remoteUrl
+    throw "git push failed"
+  }
+
+  Write-RunnerLog "auto publish finished"
+  Write-PublishStatus -Ok $true -Stage "publish" -Message "auto publish finished" -PublishTarget $pushTarget -RemoteUrl $remoteUrl
+}
+
 $nodePath = Resolve-NodePath
 
 try {
@@ -134,9 +291,19 @@ try {
   Remove-Item Env:ESTHE_MONITOR_HTML_PATH -ErrorAction SilentlyContinue
   Remove-Item Env:ESTHE_MONITOR_DETAIL_DIR -ErrorAction SilentlyContinue
 
+  if ($autoPublishEnabled) {
+    $gitPath = Resolve-GitPath
+    Write-RunnerLog "using git: $gitPath"
+    Invoke-GitAutoPublish -GitPath $gitPath -RemoteName $gitRemoteName -BranchName $gitBranchName -FilesToStage $autoPublishFiles
+  } else {
+    Write-RunnerLog "auto publish disabled"
+    Write-PublishStatus -Ok $true -Stage "publish" -Message "auto publish disabled"
+  }
+
   Write-RunnerLog "scheduled run finished"
   exit 0
 } catch {
+  Write-PublishStatus -Ok $false -Stage "run" -Message $_.Exception.Message
   Write-RunnerLog "scheduled run failed: $($_.Exception.Message)"
   throw
 }
