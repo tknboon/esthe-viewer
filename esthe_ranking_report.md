@@ -1,25 +1,29 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-01T09:41:48.332Z
+- checked_at: 2026-05-02T02:22:48.937Z
 - source: https://www.esthe-ranking.jp/toyota/asian/
 - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
-- count_text: 196件
-- matched_store_count: 195
-- matched_link_count: 196
-- detail_page_count: 196
-- detailed_store_count: 191
+- count_text: 190件
+- matched_store_count: 189
+- matched_link_count: 190
+- detail_page_count: 190
+- detailed_store_count: 185
 
 ## Added
 - none
 
 ## Removed
-- LOVE小屋（らぶこや）
-- 女神ミユーズ
+- Mahal（マハル）
+- ぬるぬるパニック
+- やわらぎの手
+- 華子（はなこ）
+- 蝶恋花（ちょうれんか）
+- 秘密エステ
 
 ## Changed
-- 掲載件数表記: 198件 -> 196件
-- 店舗リンク数: 198 -> 196
-- 詳細取得件数: 194 -> 191
+- 掲載件数表記: 196件 -> 190件
+- 店舗リンク数: 196 -> 190
+- 詳細取得件数: 191 -> 185
 
 ## Current Stores
 - ～豊田来来～おいでん
@@ -43,7 +47,6 @@
 - Love Luxe（ラブラグゼ）
 - Luck（ラック）
 - Luxe Spa（ラックススパ）
-- Mahal（マハル）
 - Only one（オンリーワン）
 - Over
 - Pure Resort（ピュア リゾート）
@@ -89,7 +92,6 @@
 - ときめき
 - なごみ
 - にゃんにゃん
-- ぬるぬるパニック
 - はつね（初音）
 - ハッピータイム
 - ハッピー娘～Happy Girls～
@@ -108,7 +110,6 @@
 - ミシェランGirls
 - もぎゅっとKiss
 - もみココチ
-- やわらぎの手
 - ラッキー
 - ラッキーエンジェル
 - ラッキースマイル
@@ -128,7 +129,6 @@
 - 果樹園
 - 花屋敷
 - 花月～かげつ
-- 華子（はなこ）
 - 回転美人
 - 楽楽（らくらく）
 - 歓楽谷
@@ -165,14 +165,12 @@
 - 台湾ハニー
 - 蝶～バタフライ～
 - 蝶の楽園
-- 蝶恋花（ちょうれんか）
 - 天使の心
 - 桃の花
 - 猫チュウ
 - 猫パチン
 - 濃密Candy
 - 彼女の部屋
-- 秘密エステ
 - 秘密のガーデン
 - 秘密の夜（ひみつのよる）
 - 秘密の誘惑

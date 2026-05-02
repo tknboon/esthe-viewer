@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "checkedAt": "2026-05-01T09:41:48.332Z",
+  "checkedAt": "2026-05-02T02:22:48.937Z",
   "sourceUrl": "https://www.esthe-ranking.jp/toyota/asian/",
-  "matchedStoreCount": 195,
-  "matchedLinkCount": 196,
-  "detailPageCount": 196,
-  "detailedStoreCount": 191,
+  "matchedStoreCount": 189,
+  "matchedLinkCount": 190,
+  "detailPageCount": 190,
+  "detailedStoreCount": 185,
   "reportPath": "C:\\Users\\tknbo\\Documents\\Codex\\2026-04-28\\new-chat\\esthe_ranking_report.md",
   "snapshotPath": "C:\\Users\\tknbo\\Documents\\Codex\\2026-04-28\\new-chat\\esthe_ranking_snapshot.json",
   "failureLogPath": "C:\\Users\\tknbo\\Documents\\Codex\\2026-04-28\\new-chat\\esthe_ranking_failure.log"
