@@ -1,6 +1,6 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-02T02:22:48.937Z
+- checked_at: 2026-05-02T11:34:05.011Z
 - source: https://www.esthe-ranking.jp/toyota/asian/
 - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
 - count_text: 190件
@@ -13,17 +13,10 @@
 - none
 
 ## Removed
-- Mahal（マハル）
-- ぬるぬるパニック
-- やわらぎの手
-- 華子（はなこ）
-- 蝶恋花（ちょうれんか）
-- 秘密エステ
+- none
 
 ## Changed
-- 掲載件数表記: 196件 -> 190件
-- 店舗リンク数: 196 -> 190
-- 詳細取得件数: 191 -> 185
+- none
 
 ## Current Stores
 - ～豊田来来～おいでん

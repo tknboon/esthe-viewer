@@ -204,7 +204,7 @@ async function updateCsvAndData(snapshot) {
 
   await writeCsv(CSV_PATH, keptRows);
   await writeCsv(LEGACY_CSV_PATH, legacyRows);
-  await writeDataJs(DATA_JS_PATH, keptRows);
+  await writeDataJs(DATA_JS_PATH, keptRows, snapshot.fetchedAt);
 }
 
 function createRowFromStore(store) {
@@ -570,8 +570,12 @@ async function writeCsv(filePath, rows) {
   await fs.writeFile(filePath, lines.join("\r\n"), "utf8");
 }
 
-async function writeDataJs(filePath, rows) {
-  await fs.writeFile(filePath, `window.storeData = ${JSON.stringify(rows)};`, "utf8");
+async function writeDataJs(filePath, rows, fetchedAt) {
+  const content = [
+    `window.storeMeta = ${JSON.stringify({ lastUpdatedAt: fetchedAt })};`,
+    `window.storeData = ${JSON.stringify(rows)};`,
+  ].join("\n");
+  await fs.writeFile(filePath, content, "utf8");
 }
 
 function decodeEntities(value) {

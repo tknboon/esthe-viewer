@@ -129,6 +129,44 @@ function Write-PublishStatus {
   [System.IO.File]::WriteAllText($publishStatusPath, $json + [Environment]::NewLine, [System.Text.Encoding]::UTF8)
 }
 
+function Write-MonitorSummary {
+  param([string]$JsonText)
+
+  if (-not $JsonText) {
+    return
+  }
+
+  try {
+    $result = $JsonText | ConvertFrom-Json
+    Write-RunnerLog "monitor fetchedAt: $($result.fetchedAt)"
+    Write-RunnerLog "monitor matched stores: $($result.totalMatchedStores)"
+    if ($null -ne $result.detailPageCount) {
+      Write-RunnerLog "monitor detail pages: $($result.detailPageCount)"
+    }
+    if ($null -ne $result.detailedStoreCount) {
+      Write-RunnerLog "monitor detailed stores: $($result.detailedStoreCount)"
+    }
+
+    $addedCount = @($result.added).Count
+    $removedCount = @($result.removed).Count
+    $changedCount = @($result.changed).Count
+    Write-RunnerLog "monitor diff summary: added=$addedCount removed=$removedCount changed=$changedCount"
+
+    foreach ($name in @($result.added)) {
+      Write-RunnerLog "added: $name"
+    }
+    foreach ($name in @($result.removed)) {
+      Write-RunnerLog "removed: $name"
+    }
+    foreach ($item in @($result.changed)) {
+      Write-RunnerLog "changed: $item"
+    }
+  } catch {
+    Write-RunnerLog "monitor raw output:"
+    [System.IO.File]::AppendAllText($runnerLogPath, $JsonText + [Environment]::NewLine, [System.Text.Encoding]::UTF8)
+  }
+}
+
 function Get-SourceHtml {
   param(
     [string]$Url,
@@ -287,7 +325,8 @@ try {
 
   $env:ESTHE_MONITOR_HTML_PATH = $htmlCachePath
   $env:ESTHE_MONITOR_DETAIL_DIR = $detailDirPath
-  & $nodePath $scriptPath 2>&1 | Tee-Object -FilePath $runnerLogPath -Append
+  $monitorOutput = & $nodePath $scriptPath 2>&1 | Out-String
+  Write-MonitorSummary -JsonText $monitorOutput
   Remove-Item Env:ESTHE_MONITOR_HTML_PATH -ErrorAction SilentlyContinue
   Remove-Item Env:ESTHE_MONITOR_DETAIL_DIR -ErrorAction SilentlyContinue
 

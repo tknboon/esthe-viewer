@@ -17,6 +17,7 @@ const state = {
 
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
+const lastUpdatedText = document.querySelector("#lastUpdatedText");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
 const cardsView = document.querySelector("#cardsView");
@@ -68,6 +69,7 @@ function init() {
     }
     state.geocodeCache = readGeocodeCache();
     state.reviewsByStore = readReviews();
+    renderLastUpdated();
     setDefaultReviewValues();
     bindEvents();
     applyFilters();
@@ -77,6 +79,32 @@ function init() {
     cardsView.innerHTML = `<div class="empty-state">埋め込みデータの読み込みに失敗しました。</div>`;
     console.error(error);
   }
+}
+
+function renderLastUpdated() {
+  if (!lastUpdatedText) return;
+
+  const rawValue = window.storeMeta?.lastUpdatedAt;
+  if (!rawValue) {
+    lastUpdatedText.textContent = "最終更新: 不明";
+    return;
+  }
+
+  const date = new Date(rawValue);
+  if (Number.isNaN(date.getTime())) {
+    lastUpdatedText.textContent = `最終更新: ${rawValue}`;
+    return;
+  }
+
+  const formatted = new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+
+  lastUpdatedText.textContent = `最終更新: ${formatted}`;
 }
 
 function bindEvents() {

@@ -1,0 +1,9 @@
+﻿{
+    "checkedAt":  "2026-05-02T11:22:57.1182701+09:00",
+    "ok":  true,
+    "stage":  "publish",
+    "message":  "auto publish finished",
+    "autoPublishEnabled":  true,
+    "publishTarget":  "https://github.com/tknboon/esthe-viewer.git",
+    "localRemote":  "https://github.com/tknboon/esthe-viewer.git"
+}

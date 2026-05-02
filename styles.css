@@ -125,6 +125,13 @@ select {
   font-weight: 700;
 }
 
+.last-updated-text {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .text-input,
 .select-input {
   width: 100%;
