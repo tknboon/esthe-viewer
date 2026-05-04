@@ -1,6 +1,6 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-03T10:18:44.710Z
+- checked_at: 2026-05-04T10:29:51.468Z
 - source: https://www.esthe-ranking.jp/toyota/asian/
 - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
 - count_text: 190件
