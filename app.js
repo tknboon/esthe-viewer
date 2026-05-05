@@ -124,6 +124,22 @@ const REGION_MUNICIPALITIES = {
   toyohashi: ["豊橋市", "豊川市", "新城市", "蒲郡市", "田原市"],
 };
 
+const STATION_GROUP_REGIONS = new Set([
+  "nagoya",
+  "sakae",
+  "shinsakae",
+  "kanayama",
+  "kurokawa",
+  "hoshigaoka",
+  "moriyama",
+  "otai",
+  "tokaidori",
+  "kasadera",
+  "horita",
+  "tsurumai",
+  "showa",
+]);
+
 init();
 
 function init() {
@@ -475,6 +491,13 @@ function getMunicipalityFromRow(row, regionKey) {
     return row.municipality;
   }
 
+  if (STATION_GROUP_REGIONS.has(regionKey)) {
+    const stationLabel = normalizeStationGroupLabel(row?.station || "");
+    if (stationLabel) {
+      return stationLabel;
+    }
+  }
+
   const candidates = REGION_MUNICIPALITIES[regionKey] || [];
   const haystack = [row.location, row.notes].filter(Boolean).join(" ");
 
@@ -489,6 +512,22 @@ function getMunicipalityFromRow(row, regionKey) {
   }
 
   return "その他";
+}
+
+function normalizeStationGroupLabel(value) {
+  const text = String(value || "")
+    .replace(/[／/]/g, "・")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!text) return "";
+
+  return text
+    .replace(/徒歩.*$/u, "")
+    .replace(/車で.*$/u, "")
+    .replace(/から.*$/u, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function renderSummary() {
