@@ -409,6 +409,11 @@ select {
   line-height: 1.7;
 }
 
+.selected-profile-meta {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
 .selected-review-summary {
   margin: 12px 0 0;
   color: var(--accent-strong);
@@ -502,6 +507,10 @@ select {
   grid-column: 1 / -1;
 }
 
+.store-address-area {
+  min-height: 92px;
+}
+
 .review-field span {
   color: var(--muted);
   font-size: 13px;
@@ -521,6 +530,13 @@ select {
 
 .review-form-actions {
   margin-top: 10px;
+}
+
+.store-profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .review-list {

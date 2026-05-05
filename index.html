@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -77,6 +77,7 @@
                   <p class="mini-label">選択中の店舗</p>
                   <h3 id="selectedStoreName" class="selected-title">店舗を選択してください</h3>
                   <p id="selectedStoreMeta" class="selected-meta">地図候補リストか一覧のボタンから切り替えられます。</p>
+                  <p id="selectedStoreProfileMeta" class="selected-meta selected-profile-meta"></p>
                   <p id="selectedReviewSummary" class="selected-review-summary">レビューはまだありません。</p>
                   <div class="selected-actions">
                     <a id="selectedPhoneLink" class="action-link disabled-link" href="#">電話する</a>
@@ -92,7 +93,7 @@
                     <div class="store-profile-grid">
                       <label class="review-field is-wide">
                         <span>住所</span>
-                        <input id="storeAddressInput" class="text-input" type="text" maxlength="120" />
+                        <textarea id="storeAddressInput" class="text-area store-address-area" rows="3" maxlength="240"></textarea>
                       </label>
 
                       <label class="review-field">
@@ -123,6 +124,19 @@
                           <option value="なし">なし</option>
                         </select>
                       </label>
+
+                      <label class="review-field">
+                        <span>案内のわかりやすさ</span>
+                        <select id="storeGuideClarityInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="あり">あり</option>
+                          <option value="なし">なし</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="store-profile-actions">
+                      <button id="storeProfileSaveButton" class="primary-button" type="button">保存</button>
+                      <button id="storeProfileEditButton" class="action-link" type="button">編集</button>
                     </div>
                   </div>
 
@@ -174,15 +188,6 @@
                             <option value="">未選択</option>
                             <option value="先">先</option>
                             <option value="後">後</option>
-                            <option value="なし">なし</option>
-                          </select>
-                        </label>
-
-                        <label class="review-field">
-                          <span>案内のわかりやすさ</span>
-                          <select id="reviewGuideClarityInput" class="select-input">
-                            <option value="">未選択</option>
-                            <option value="あり">あり</option>
                             <option value="なし">なし</option>
                           </select>
                         </label>
@@ -323,3 +328,4 @@
     ></script>
   </body>
 </html>
+

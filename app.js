@@ -34,6 +34,7 @@ const statusText = document.querySelector("#statusText");
 const toggleViewButton = document.querySelector("#toggleViewButton");
 const selectedStoreName = document.querySelector("#selectedStoreName");
 const selectedStoreMeta = document.querySelector("#selectedStoreMeta");
+const selectedStoreProfileMeta = document.querySelector("#selectedStoreProfileMeta");
 const selectedReviewSummary = document.querySelector("#selectedReviewSummary");
 const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
@@ -43,6 +44,9 @@ const storeAddressInput = document.querySelector("#storeAddressInput");
 const storeSmsInput = document.querySelector("#storeSmsInput");
 const storeMenuInput = document.querySelector("#storeMenuInput");
 const storeDisclosureInput = document.querySelector("#storeDisclosureInput");
+const storeGuideClarityInput = document.querySelector("#storeGuideClarityInput");
+const storeProfileSaveButton = document.querySelector("#storeProfileSaveButton");
+const storeProfileEditButton = document.querySelector("#storeProfileEditButton");
 const mapList = document.querySelector("#mapList");
 const mapListCount = document.querySelector("#mapListCount");
 const reviewForm = document.querySelector("#reviewForm");
@@ -53,7 +57,6 @@ const reviewDurationInput = document.querySelector("#reviewDurationInput");
 const reviewPriceInput = document.querySelector("#reviewPriceInput");
 const reviewShowerInput = document.querySelector("#reviewShowerInput");
 const reviewMassageInput = document.querySelector("#reviewMassageInput");
-const reviewGuideClarityInput = document.querySelector("#reviewGuideClarityInput");
 const reviewFaceRatingInput = document.querySelector("#reviewFaceRatingInput");
 const reviewBodyRatingInput = document.querySelector("#reviewBodyRatingInput");
 const reviewPersonalityRatingInput = document.querySelector("#reviewPersonalityRatingInput");
@@ -197,10 +200,8 @@ function bindEvents() {
   mapList.addEventListener("click", handleListActionClick);
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
-  storeAddressInput?.addEventListener("input", handleStoreProfileChange);
-  storeSmsInput?.addEventListener("change", handleStoreProfileChange);
-  storeMenuInput?.addEventListener("change", handleStoreProfileChange);
-  storeDisclosureInput?.addEventListener("change", handleStoreProfileChange);
+  storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
+  storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   reviewForm.addEventListener("submit", handleReviewSubmit);
 }
 
@@ -372,16 +373,18 @@ function renderTable() {
 
 function renderSelectedStore() {
   if (!state.selectedRow) {
-    selectedStoreName.textContent = "店舗が選択されていません";
-    selectedStoreMeta.textContent = "地図候補リストか一覧のボタンから店舗を選んでください。";
-    selectedReviewSummary.textContent = "レビューはまだありません。";
+    selectedStoreName.textContent = "????????????";
+    selectedStoreMeta.textContent = "???????????????????????????";
+    if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
+    selectedReviewSummary.textContent = "?????????????";
     disableLink(selectedPhoneLink);
     disableLink(selectedPhoneSearchLink);
     disableLink(selectedMapLink);
     disableLink(selectedListingLink);
     clearStoreProfileInputs();
+    setStoreProfileEditing(false, false);
     reviewSubmitButton.disabled = true;
-    reviewList.innerHTML = `<div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>`;
+    reviewList.innerHTML = `<div class="empty-state compact">??????????????????</div>`;
     return;
   }
 
@@ -413,6 +416,7 @@ function renderSelectedStore() {
   }
 
   renderStoreProfileInputs(state.selectedRow);
+  renderStoreProfileSummary(state.selectedRow);
   renderReviewList();
 }
 
@@ -501,6 +505,8 @@ function renderStoreProfileInputs(row) {
   if (storeSmsInput) storeSmsInput.value = profile.sms || "";
   if (storeMenuInput) storeMenuInput.value = profile.menu || "";
   if (storeDisclosureInput) storeDisclosureInput.value = profile.disclosure || "";
+  if (storeGuideClarityInput) storeGuideClarityInput.value = profile.guideClarity || "";
+  setStoreProfileEditing(!hasStoreProfileContent(profile), true);
 }
 
 function clearStoreProfileInputs() {
@@ -508,23 +514,71 @@ function clearStoreProfileInputs() {
   if (storeSmsInput) storeSmsInput.value = "";
   if (storeMenuInput) storeMenuInput.value = "";
   if (storeDisclosureInput) storeDisclosureInput.value = "";
+  if (storeGuideClarityInput) storeGuideClarityInput.value = "";
 }
 
-function handleStoreProfileChange() {
+function renderStoreProfileSummary(row) {
+  if (!selectedStoreProfileMeta) return;
+  const profile = getStoreProfile(row) || {};
+  const parts = [
+    profile.address,
+    profile.sms ? `SMS: ${profile.sms}` : "",
+    profile.menu ? `????: ${profile.menu}` : "",
+    profile.disclosure ? `??: ${profile.disclosure}` : "",
+    profile.guideClarity ? `??: ${profile.guideClarity}` : "",
+  ].filter(Boolean);
+  selectedStoreProfileMeta.textContent = parts.join(" / ");
+}
+
+function hasStoreProfileContent(profile) {
+  return Boolean(profile && (profile.address || profile.sms || profile.menu || profile.disclosure || profile.guideClarity));
+}
+
+function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
+  [storeAddressInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
+    if (!element) return;
+    element.disabled = !hasRow || !isEditing;
+  });
+
+  if (storeProfileSaveButton) {
+    storeProfileSaveButton.disabled = !hasRow || !isEditing;
+  }
+
+  if (storeProfileEditButton) {
+    storeProfileEditButton.disabled = !hasRow || isEditing;
+  }
+}
+
+function handleStoreProfileSave() {
   if (!state.selectedRow) return;
 
-  state.storeProfilesByKey[state.selectedRow.reviewKey] = {
+  const profile = {
     address: storeAddressInput?.value.trim() || "",
     sms: storeSmsInput?.value || "",
     menu: storeMenuInput?.value || "",
     disclosure: storeDisclosureInput?.value || "",
+    guideClarity: storeGuideClarityInput?.value || "",
     storeName: state.selectedRow.name,
     storeStation: state.selectedRow.station,
     listingUrl: state.selectedRow.listingUrl,
     updatedAt: new Date().toISOString(),
   };
 
+  if (hasStoreProfileContent(profile)) {
+    state.storeProfilesByKey[state.selectedRow.reviewKey] = profile;
+  } else {
+    delete state.storeProfilesByKey[state.selectedRow.reviewKey];
+  }
+
   writeStoreProfiles();
+  renderStoreProfileSummary(state.selectedRow);
+  setStoreProfileEditing(false, true);
+}
+
+function handleStoreProfileEdit() {
+  if (!state.selectedRow) return;
+  setStoreProfileEditing(true, true);
+  storeAddressInput?.focus();
 }
 
 function getReviewsForRow(row) {
@@ -628,7 +682,6 @@ function renderReviewItem(review, reviewKey) {
         ${renderReviewDetail("料金", formatPrice(review.price))}
         ${renderReviewDetail("シャワー", review.shower)}
         ${renderReviewDetail("マッサージ", review.massage)}
-        ${renderReviewDetail("案内のわかりやすさ", review.guideClarity)}
         ${renderReviewDetail("顔", formatScore(review.faceRating))}
         ${renderReviewDetail("体", formatScore(review.bodyRating))}
         ${renderReviewDetail("性格", formatScore(review.personalityRating))}
@@ -652,7 +705,6 @@ function handleReviewSubmit(event) {
   const price = reviewPriceInput.value ? Number(reviewPriceInput.value) : null;
   const shower = reviewShowerInput.value;
   const massage = reviewMassageInput.value;
-  const guideClarity = reviewGuideClarityInput.value;
   const faceRating = Number(reviewFaceRatingInput.value || 5);
   const bodyRating = Number(reviewBodyRatingInput.value || 5);
   const personalityRating = Number(reviewPersonalityRatingInput.value || 5);
@@ -664,7 +716,6 @@ function handleReviewSubmit(event) {
     nationality ||
     duration ||
     price ||
-    guideClarity ||
     shower ||
     massage ||
     comment ||
@@ -691,7 +742,6 @@ function handleReviewSubmit(event) {
     nationality,
     duration,
     price,
-    guideClarity,
     shower,
     massage,
     faceRating,
