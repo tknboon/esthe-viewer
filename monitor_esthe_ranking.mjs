@@ -87,7 +87,7 @@ async function buildSnapshot(listingSources, fetchedAt) {
     return extractStoreCards(normalizedHtml);
   });
   const storesWithDetails = await enrichStoresWithDetailPages(stores);
-  const municipalityByListingUrl = await buildMunicipalityByListingUrl(listingSources);
+  const municipalityInfo = await buildMunicipalityByListingUrl(listingSources);
   const storeNames = [...new Set(storesWithDetails.map((store) => store.name).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, "ja")
   );
@@ -118,7 +118,8 @@ async function buildSnapshot(listingSources, fetchedAt) {
     storeNames,
     matchedShopLinks,
     extractedStores: storesWithDetails,
-    municipalityByListingUrl,
+    municipalityByListingUrl: municipalityInfo.primaryByListingUrl,
+    municipalityLabelsByListingUrl: municipalityInfo.labelsByListingUrl,
     detailPageCount: storesWithDetails.filter((store) => store.detailLoaded).length,
     detailedStoreCount,
     checksum: JSON.stringify({
@@ -690,6 +691,7 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
       lastUpdatedAt: snapshot.fetchedAt,
       updateHistory,
       municipalityByListingUrl: snapshot.municipalityByListingUrl || {},
+      municipalityLabelsByListingUrl: snapshot.municipalityLabelsByListingUrl || {},
     })};`,
     `window.storeData = ${JSON.stringify(rows)};`,
   ].join("\n");
@@ -697,7 +699,8 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
 }
 
 async function buildMunicipalityByListingUrl(listingSources) {
-  const municipalityByListingUrl = {};
+  const primaryByListingUrl = {};
+  const labelsByListingUrl = {};
 
   for (const source of listingSources) {
     const childLinks = extractMunicipalityLinks(source.url, decodeEntities(source.html));
@@ -718,11 +721,13 @@ async function buildMunicipalityByListingUrl(listingSources) {
     }
 
     for (const [listingUrl, labels] of grouped.entries()) {
-      municipalityByListingUrl[listingUrl] = labels.size > 1 ? "複数市" : [...labels][0];
+      const values = [...labels];
+      labelsByListingUrl[listingUrl] = values;
+      primaryByListingUrl[listingUrl] = values.length > 1 ? "複数市" : values[0];
     }
   }
 
-  return municipalityByListingUrl;
+  return { primaryByListingUrl, labelsByListingUrl };
 }
 
 function extractMunicipalityLinks(parentUrl, html) {

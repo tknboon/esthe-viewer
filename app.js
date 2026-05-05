@@ -7,6 +7,7 @@
   reviewsByStore: {},
   storeProfilesByKey: {},
   favoritesByStore: {},
+  excludedByStore: {},
   map: null,
   infoWindow: null,
   markers: new Map(),
@@ -54,6 +55,7 @@ const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
 const favoriteToggleButton = document.querySelector("#favoriteToggleButton");
+const excludeToggleButton = document.querySelector("#excludeToggleButton");
 const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
 const storeProfilePanel = document.querySelector("#storeProfilePanel");
 const storeAddressInput = document.querySelector("#storeAddressInput");
@@ -154,6 +156,7 @@ function init() {
     state.reviewsByStore = readReviews();
     state.storeProfilesByKey = readStoreProfiles();
     state.favoritesByStore = readFavorites();
+    state.excludedByStore = readExcluded();
     renderLastUpdated();
     renderUpdateHistory();
     setDefaultReviewValues();
@@ -306,6 +309,7 @@ function bindEvents() {
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
+  excludeToggleButton?.addEventListener("click", handleExcludeToggle);
   reviewToggleButton?.addEventListener("click", handleReviewToggle);
   reviewForm.addEventListener("submit", handleReviewSubmit);
   regionSummary?.addEventListener("click", handleRegionToggle);
@@ -455,11 +459,13 @@ function buildRegionStats(rows) {
     const bucket = regionBuckets.get(regionKey);
     bucket.stores.add(uniqueKey);
 
-    const municipality = getMunicipalityFromRow(row, regionKey);
-    if (!bucket.municipalities.has(municipality)) {
-      bucket.municipalities.set(municipality, new Set());
+    const municipalityLabels = getMunicipalityLabelsForSummary(row, regionKey);
+    for (const municipality of municipalityLabels) {
+      if (!bucket.municipalities.has(municipality)) {
+        bucket.municipalities.set(municipality, new Set());
+      }
+      bucket.municipalities.get(municipality).add(uniqueKey);
     }
-    bucket.municipalities.get(municipality).add(uniqueKey);
   }
 
   const children = [...regionBuckets.entries()]
@@ -477,6 +483,14 @@ function buildRegionStats(rows) {
     total: uniqueStoreKeys.size,
     children,
   };
+}
+
+function getMunicipalityLabelsForSummary(row, regionKey) {
+  if (Array.isArray(row?.municipalityLabels) && row.municipalityLabels.length) {
+    return [...new Set(row.municipalityLabels.filter(Boolean))];
+  }
+
+  return [getMunicipalityFromRow(row, regionKey)];
 }
 
 function getRegionKeyFromRow(row) {
@@ -656,6 +670,7 @@ function renderSelectedStore() {
     if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
     selectedReviewSummary.textContent = "レビューはまだありません。";
     renderFavoriteToggle(null);
+    renderExcludeToggle(null);
     setStreetViewState({
       mode: "empty",
       status: "店舗を選ぶと周辺ビューを表示できます。",
@@ -679,6 +694,7 @@ function renderSelectedStore() {
     .join(" / ");
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
   renderFavoriteToggle(state.selectedRow);
+  renderExcludeToggle(state.selectedRow);
   reviewSubmitButton.disabled = false;
   setReviewEditing(false, true);
 
@@ -718,6 +734,10 @@ function isFavoriteRow(row) {
   return Boolean(row?.reviewKey && state.favoritesByStore[row.reviewKey]);
 }
 
+function isExcludedRow(row) {
+  return Boolean(row?.reviewKey && state.excludedByStore[row.reviewKey]);
+}
+
 function renderFavoriteToggle(row) {
   if (!favoriteToggleButton) return;
   const active = isFavoriteRow(row);
@@ -750,6 +770,38 @@ function handleFavoriteToggle() {
   syncProfileMap();
 }
 
+function renderExcludeToggle(row) {
+  if (!excludeToggleButton) return;
+  const active = isExcludedRow(row);
+  excludeToggleButton.disabled = !row;
+  excludeToggleButton.textContent = active ? "♥" : "🖤";
+  excludeToggleButton.classList.toggle("is-excluded", active);
+  excludeToggleButton.setAttribute("aria-pressed", active ? "true" : "false");
+  excludeToggleButton.setAttribute("title", active ? "除外解除" : "除外");
+  excludeToggleButton.setAttribute("aria-label", active ? "除外解除" : "除外");
+}
+
+function handleExcludeToggle() {
+  if (!state.selectedRow?.reviewKey) return;
+  const key = state.selectedRow.reviewKey;
+
+  if (state.excludedByStore[key]) {
+    delete state.excludedByStore[key];
+  } else {
+    state.excludedByStore[key] = {
+      storeName: state.selectedRow.name,
+      storeStation: state.selectedRow.station,
+      listingUrl: state.selectedRow.listingUrl,
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
+  writeExcluded();
+  renderExcludeToggle(state.selectedRow);
+  syncMapWithFilters();
+  syncProfileMap();
+}
+
 function normalizeRow(row, index) {
   const name = row["店舗名"] || "";
   const station = row["最寄駅"] || "";
@@ -761,6 +813,7 @@ function normalizeRow(row, index) {
   const phone = row["電話番号"] || row["電話"] || "";
   const hours = row["営業時間"] || row["営業"] || "";
   const municipality = window.storeMeta?.municipalityByListingUrl?.[listingUrl] || "";
+  const municipalityLabels = window.storeMeta?.municipalityLabelsByListingUrl?.[listingUrl] || [];
   const hasCoordinates = Boolean(latitude && longitude);
   const latLng = hasCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
   const mapQuery = hasCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
@@ -778,6 +831,7 @@ function normalizeRow(row, index) {
     phone,
     hours,
     municipality,
+    municipalityLabels,
     hasCoordinates,
     latLng,
     locationQuery: mapQuery,
@@ -833,6 +887,23 @@ function writeFavorites() {
     localStorage.setItem("toyota-esthe-favorites", JSON.stringify(state.favoritesByStore));
   } catch (error) {
     console.warn("favorite save failed", error);
+  }
+}
+
+function readExcluded() {
+  try {
+    const raw = localStorage.getItem("toyota-esthe-excluded");
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeExcluded() {
+  try {
+    localStorage.setItem("toyota-esthe-excluded", JSON.stringify(state.excludedByStore));
+  } catch (error) {
+    console.warn("exclude save failed", error);
   }
 }
 
@@ -1554,7 +1625,7 @@ function addProfileMarkerForRow(row, bounds) {
     position: row.latLng,
     title: row.name,
     animation: google.maps.Animation.DROP,
-    icon: createHeartMarkerIcon("#ff5d96", "#ffe3ee"),
+    icon: buildProfileMarkerIcon(row),
   });
 
   marker.addListener("click", () => {
@@ -1572,7 +1643,10 @@ function buildMarkerIcon(row) {
   let fillColor = "#9b95a4";
   let strokeColor = "#efe8f6";
 
-  if (isFavoriteRow(row)) {
+  if (isExcludedRow(row)) {
+    fillColor = "#1d1d1f";
+    strokeColor = "#a7a7ad";
+  } else if (isFavoriteRow(row)) {
     fillColor = "#ff2f74";
     strokeColor = "#ffd4e3";
   } else if (latestReview?.guideClarity === "あり") {
@@ -1584,6 +1658,16 @@ function buildMarkerIcon(row) {
   }
 
   return createHeartMarkerIcon(fillColor, strokeColor);
+}
+
+function buildProfileMarkerIcon(row) {
+  if (isExcludedRow(row)) {
+    return createHeartMarkerIcon("#1d1d1f", "#a7a7ad");
+  }
+  if (isFavoriteRow(row)) {
+    return createHeartMarkerIcon("#ff2f74", "#ffd4e3");
+  }
+  return createHeartMarkerIcon("#ff5d96", "#ffe3ee");
 }
 
 function createHeartMarkerIcon(fillColor, strokeColor) {
