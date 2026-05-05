@@ -7,10 +7,24 @@ $publishStatusPath = Join-Path $workspace "esthe_publish_status.json"
 $htmlCacheDirPath = Join-Path $workspace "esthe_ranking_source_pages"
 $detailDirPath = Join-Path $workspace "esthe_ranking_detail_pages"
 $targetUrls = @(
+  "https://www.esthe-ranking.jp/nagoya/asian/",
+  "https://www.esthe-ranking.jp/sakae/asian/",
+  "https://www.esthe-ranking.jp/shinsakae/asian/",
+  "https://www.esthe-ranking.jp/kanayama/asian/",
+  "https://www.esthe-ranking.jp/kurokawa/asian/",
+  "https://www.esthe-ranking.jp/hoshigaoka/asian/",
+  "https://www.esthe-ranking.jp/moriyama/asian/",
+  "https://www.esthe-ranking.jp/otai/asian/",
+  "https://www.esthe-ranking.jp/tokaidori/asian/",
+  "https://www.esthe-ranking.jp/kasadera/asian/",
   "https://www.esthe-ranking.jp/toyota/asian/",
   "https://www.esthe-ranking.jp/horita/asian/",
+  "https://www.esthe-ranking.jp/tsurumai/asian/",
+  "https://www.esthe-ranking.jp/showa/asian/",
+  "https://www.esthe-ranking.jp/komaki/asian/",
+  "https://www.esthe-ranking.jp/owari/asian/",
   "https://www.esthe-ranking.jp/chita/asian/",
-  "https://www.esthe-ranking.jp/shinsakae/asian/"
+  "https://www.esthe-ranking.jp/toyohashi/asian/"
 )
 
 # Auto publish settings
