@@ -637,7 +637,7 @@ function renderStoreProfileInputs(row) {
   if (storeMenuInput) storeMenuInput.value = profile.menu || "";
   if (storeDisclosureInput) storeDisclosureInput.value = profile.disclosure || "";
   if (storeGuideClarityInput) storeGuideClarityInput.value = profile.guideClarity || "";
-  setStoreProfileEditing(!hasStoreProfileContent(profile), true);
+  setStoreProfileEditing(false, true);
 }
 
 function clearStoreProfileInputs() {
