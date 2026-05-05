@@ -666,7 +666,7 @@ function renderTable() {
 function renderSelectedStore() {
   if (!state.selectedRow) {
     selectedStoreName.textContent = "店舗を選択してください";
-    selectedStoreMeta.textContent = "地図上のピンから店舗を選んでください。";
+    selectedStoreMeta.textContent = "";
     if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
     selectedReviewSummary.textContent = "レビューはまだありません。";
     renderFavoriteToggle(null);
@@ -689,9 +689,7 @@ function renderSelectedStore() {
   }
 
   selectedStoreName.textContent = state.selectedRow.name;
-  selectedStoreMeta.textContent = [state.selectedRow.station, state.selectedRow.hours, state.selectedRow.phone, state.selectedRow.notes]
-    .filter(Boolean)
-    .join(" / ");
+  selectedStoreMeta.textContent = "";
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
   renderFavoriteToggle(state.selectedRow);
   renderExcludeToggle(state.selectedRow);
@@ -1730,12 +1728,14 @@ function renderMarkerInfoContent(row) {
   const phoneHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
+  const notesHtml = row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
       <div style="font-weight:700;font-size:14px;">${escapeHtml(row.name)}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}</div>
+      ${notesHtml}
     </div>
   `;
 }
