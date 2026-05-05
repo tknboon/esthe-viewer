@@ -1,15 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff6fb" />
+      <stop offset="100%" stop-color="#ffddea" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0.2" y1="0.1" x2="0.8" y2="0.95">
+      <stop offset="0%" stop-color="#ffb3d1" />
+      <stop offset="55%" stop-color="#ff7fb6" />
+      <stop offset="100%" stop-color="#f45b9c" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5a6f" />
+      <stop offset="100%" stop-color="#c91534" />
+    </linearGradient>
+    <filter id="heartShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="3.2" stdDeviation="2.4" flood-color="#cf4f88" flood-opacity="0.38" />
+    </filter>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#bgGradient)" />
+
   <path
-    d="M32 60C17 49 5 39 5 22C5 13 12 6 22 6C27.8 6 31.1 8.5 32 12C32.9 8.5 36.2 6 42 6C52 6 59 13 59 22C59 39 47 49 32 60Z"
-    fill="#ff8fba"
+    d="M32 56.5C19.5 48.5 10 40 10 25.5C10 18.5 15.2 13 22.3 13C27.1 13 30.5 15 32 18.5C33.5 15 36.9 13 41.7 13C48.8 13 54 18.5 54 25.5C54 40 44.5 48.5 32 56.5Z"
+    fill="url(#heartGradient)"
+    filter="url(#heartShadow)"
   />
+
   <text
     x="32"
-    y="40"
+    y="40.5"
     text-anchor="middle"
-    font-size="26"
-    font-family="'Yu Gothic', 'Hiragino Sans', 'Noto Sans JP', sans-serif"
+    font-size="27"
+    font-family="'Hiragino Maru Gothic ProN', 'Yu Gothic UI', 'Yu Gothic', 'Meiryo', 'Noto Sans JP', sans-serif"
     font-weight="700"
-    fill="#d4002a"
+    fill="url(#textGradient)"
   >ア</text>
 </svg>
