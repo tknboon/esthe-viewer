@@ -379,10 +379,10 @@ function renderTable() {
 
 function renderSelectedStore() {
   if (!state.selectedRow) {
-    selectedStoreName.textContent = "????????????";
-    selectedStoreMeta.textContent = "???????????????????????????";
+    selectedStoreName.textContent = "店舗が選択されていません";
+    selectedStoreMeta.textContent = "地図上のピンから店舗を選んでください。";
     if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
-    selectedReviewSummary.textContent = "?????????????";
+    selectedReviewSummary.textContent = "レビューはまだありません。";
     disableLink(selectedPhoneLink);
     disableLink(selectedPhoneSearchLink);
     disableLink(selectedMapLink);
@@ -390,7 +390,7 @@ function renderSelectedStore() {
     clearStoreProfileInputs();
     setStoreProfileEditing(false, false);
     reviewSubmitButton.disabled = true;
-    reviewList.innerHTML = `<div class="empty-state compact">??????????????????</div>`;
+    reviewList.innerHTML = `<div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>`;
     return;
   }
 
@@ -528,9 +528,9 @@ function renderStoreProfileSummary(row) {
   const parts = [
     profile.address,
     profile.sms ? `SMS: ${profile.sms}` : "",
-    profile.menu ? `????: ${profile.menu}` : "",
-    profile.disclosure ? `??: ${profile.disclosure}` : "",
-    profile.guideClarity ? `??: ${profile.guideClarity}` : "",
+    profile.menu ? `メニュー: ${profile.menu}` : "",
+    profile.disclosure ? `明示: ${profile.disclosure}` : "",
+    profile.guideClarity ? `真心: ${profile.guideClarity}` : "",
   ].filter(Boolean);
   selectedStoreProfileMeta.textContent = parts.join(" / ");
 }
@@ -1093,7 +1093,7 @@ function syncMapWithFilters() {
   }
 
   if (pendingCount > 0) {
-    statusText.textContent = `${state.filteredRows.length}????? / ${pendingCount}????????`;
+    statusText.textContent = `${state.filteredRows.length}件を表示中 / ${pendingCount}件の位置を補完中`;
   }
 
   focusMarker(state.selectedRow);
@@ -1108,11 +1108,11 @@ function syncProfileMap() {
 
   clearProfileMarkers();
   const profiledRows = getProfiledRows();
-  if (profileMapCount) profileMapCount.textContent = `${profiledRows.length}?`;
+  if (profileMapCount) profileMapCount.textContent = `${profiledRows.length}件`;
 
   if (!profiledRows.length) {
     if (profileMapStatusText) {
-      profileMapStatusText.textContent = "????????????????????";
+      profileMapStatusText.textContent = "店舗情報を保存するとここに表示されます。";
     }
     return;
   }
@@ -1144,8 +1144,8 @@ function syncProfileMap() {
 
   if (profileMapStatusText) {
     profileMapStatusText.textContent = pendingCount > 0
-      ? `${profiledRows.length}????? / ${pendingCount}????????`
-      : `${profiledRows.length}?????`;
+      ? `${profiledRows.length}件を表示中 / ${pendingCount}件の位置を補完中`
+      : `${profiledRows.length}件を表示中`;
   }
 }
 
