@@ -36,6 +36,7 @@ const MUNICIPALITY_DIR_PATH = process.env.ESTHE_MONITOR_MUNICIPALITY_DIR || "";
 const DETAIL_DIR_PATH = process.env.ESTHE_MONITOR_DETAIL_DIR || "";
 
 const CSV_HEADER = ["店舗名", "最寄駅", "住所または座標", "緯度", "経度", "掲載URL", "備考", "電話", "営業"];
+const HTML_DECODE_MARKERS = ["駅・市区町村で絞り込む", "アジアンエステ", "店舗情報を見る", "全国メンズエステランキング", "アクセス"];
 
 async function main() {
   const fetchedAt = new Date().toISOString();
@@ -163,7 +164,7 @@ async function loadDetailHtml(listingUrl, cache) {
   const detailFilePath = buildDetailFilePath(listingUrl);
   if (detailFilePath) {
     try {
-      html = await fs.readFile(detailFilePath, "utf8");
+      html = await readHtmlFile(detailFilePath);
     } catch (error) {
       if (!isNotFoundError(error)) throw error;
     }
@@ -566,19 +567,31 @@ async function loadListingSources() {
     const entries = await fs.readdir(HTML_INPUT_DIR);
     const htmlFiles = entries.filter((entry) => entry.toLowerCase().endsWith(".html")).sort((a, b) => a.localeCompare(b, "ja"));
     const fileSources = [];
-    for (let index = 0; index < htmlFiles.length; index += 1) {
-      const entry = htmlFiles[index];
+    for (const entry of htmlFiles) {
       const filePath = path.join(HTML_INPUT_DIR, entry);
+      const regionKey = path.basename(entry, ".html");
+      const matchedUrl = TARGET_URLS.find((url) => {
+        try {
+          const pathname = new URL(url).pathname.split("/").filter(Boolean);
+          return pathname[0] === regionKey;
+        } catch (error) {
+          return false;
+        }
+      });
       fileSources.push({
-        url: TARGET_URLS[index] || entry,
-        html: await fs.readFile(filePath, "utf8"),
+        url: matchedUrl || entry,
+        html: await readHtmlFile(filePath),
       });
     }
-    return fileSources;
+    return fileSources.sort((left, right) => {
+      const leftIndex = TARGET_URLS.indexOf(left.url);
+      const rightIndex = TARGET_URLS.indexOf(right.url);
+      return (leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex) - (rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex);
+    });
   }
 
   if (HTML_INPUT_PATH) {
-    return [{ url: TARGET_URLS[0], html: await fs.readFile(HTML_INPUT_PATH, "utf8") }];
+    return [{ url: TARGET_URLS[0], html: await readHtmlFile(HTML_INPUT_PATH) }];
   }
 
   return Promise.all(
@@ -602,6 +615,29 @@ async function fetchText(url) {
   }
 
   return response.text();
+}
+
+async function readHtmlFile(filePath) {
+  const buffer = await fs.readFile(filePath);
+  return decodeHtmlBuffer(buffer);
+}
+
+function decodeHtmlBuffer(buffer) {
+  const utf8 = buffer.toString("utf8");
+  const shiftJis = new TextDecoder("shift_jis").decode(buffer);
+  return scoreHtmlCandidate(shiftJis) > scoreHtmlCandidate(utf8) ? shiftJis : utf8;
+}
+
+function scoreHtmlCandidate(text) {
+  if (!text) return -1;
+
+  let score = 0;
+  for (const marker of HTML_DECODE_MARKERS) {
+    if (text.includes(marker)) score += 3;
+  }
+  if (text.includes("shop-detail/")) score += 1;
+  if (text.includes("�")) score -= 2;
+  return score;
 }
 
 async function handleFailure(error) {
@@ -737,7 +773,7 @@ async function loadMunicipalityHtml(url) {
 
   if (filePath) {
     try {
-      html = await fs.readFile(filePath, "utf8");
+      html = await readHtmlFile(filePath);
     } catch (error) {
       html = "";
     }
@@ -788,6 +824,9 @@ function extractMunicipalityLinks(parentUrl, html) {
     if ((targetParts[0] || "") !== parentRegionKey) continue;
     if (!target.pathname.endsWith("/asian/")) continue;
     if (target.href === parent.href) continue;
+    if (!target.pathname.includes(`/${parentRegionKey}/`)) continue;
+    if (["schedule", "video", "girlsranking", "therakeep"].includes(targetParts[0] || "")) continue;
+    if ((targetParts[1] || "").endsWith("-haken")) continue;
 
     const key = `${label}__${target.href}`;
     if (seen.has(key)) continue;

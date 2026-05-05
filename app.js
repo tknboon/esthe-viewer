@@ -748,24 +748,25 @@ function renderFavoriteToggle(row) {
 }
 
 function handleFavoriteToggle() {
-  if (!state.selectedRow?.reviewKey) return;
-  const key = state.selectedRow.reviewKey;
+  const row = state.selectedRow;
+  if (!row?.reviewKey) return;
+  const key = row.reviewKey;
 
   if (state.favoritesByStore[key]) {
     delete state.favoritesByStore[key];
   } else {
     state.favoritesByStore[key] = {
-      storeName: state.selectedRow.name,
-      storeStation: state.selectedRow.station,
-      listingUrl: state.selectedRow.listingUrl,
+      storeName: row.name,
+      storeStation: row.station,
+      listingUrl: row.listingUrl,
       updatedAt: new Date().toISOString(),
     };
   }
 
   writeFavorites();
-  renderFavoriteToggle(state.selectedRow);
-  syncMapWithFilters();
-  syncProfileMap();
+  renderFavoriteToggle(row);
+  refreshRowMarkerIcons(row);
+  refreshOpenInfoWindows(row);
 }
 
 function renderExcludeToggle(row) {
@@ -780,25 +781,25 @@ function renderExcludeToggle(row) {
 }
 
 function handleExcludeToggle() {
-  if (!state.selectedRow?.reviewKey) return;
-  const key = state.selectedRow.reviewKey;
+  const row = state.selectedRow;
+  if (!row?.reviewKey) return;
+  const key = row.reviewKey;
 
   if (state.excludedByStore[key]) {
     delete state.excludedByStore[key];
   } else {
     state.excludedByStore[key] = {
-      storeName: state.selectedRow.name,
-      storeStation: state.selectedRow.station,
-      listingUrl: state.selectedRow.listingUrl,
+      storeName: row.name,
+      storeStation: row.station,
+      listingUrl: row.listingUrl,
       updatedAt: new Date().toISOString(),
     };
   }
 
   writeExcluded();
-  renderExcludeToggle(state.selectedRow);
-  refreshRowMarkerIcons(state.selectedRow);
-  syncMapWithFilters();
-  syncProfileMap();
+  renderExcludeToggle(row);
+  refreshRowMarkerIcons(row);
+  refreshOpenInfoWindows(row);
 }
 
 function refreshRowMarkerIcons(row) {
@@ -812,6 +813,20 @@ function refreshRowMarkerIcons(row) {
   const profileMarker = state.profileMarkers.get(row.id);
   if (profileMarker) {
     profileMarker.setIcon(buildProfileMarkerIcon(row));
+  }
+}
+
+function refreshOpenInfoWindows(row) {
+  if (!row || !row.latLng) return;
+
+  const marker = state.markers.get(row.id);
+  if (marker && state.infoWindow) {
+    openMarkerInfoWindow(state.map, state.infoWindow, marker, row);
+  }
+
+  const profileMarker = state.profileMarkers.get(row.id);
+  if (profileMarker && state.profileInfoWindow) {
+    openMarkerInfoWindow(state.profileMap, state.profileInfoWindow, profileMarker, row);
   }
 }
 
@@ -1648,8 +1663,7 @@ function addProfileMarkerForRow(row, bounds) {
 
   marker.addListener("click", () => {
     focusRow(row);
-    state.profileInfoWindow.setContent(renderMarkerInfoContent(row));
-    state.profileInfoWindow.open({ map: state.profileMap, anchor: marker });
+    openMarkerInfoWindow(state.profileMap, state.profileInfoWindow, marker, row);
   });
 
   state.profileMarkers.set(row.id, marker);
@@ -1714,14 +1728,24 @@ function focusMarker(row) {
   if (marker) {
     state.map.panTo(marker.getPosition());
     state.map.setZoom(Math.max(state.map.getZoom(), 15));
-    state.infoWindow.setContent(renderMarkerInfoContent(row));
-    state.infoWindow.open({ map: state.map, anchor: marker });
+    openMarkerInfoWindow(state.map, state.infoWindow, marker, row);
     return;
   }
 
   if (row.locationQuery) {
     queueGeocode(row, true);
   }
+}
+
+function openMarkerInfoWindow(map, infoWindow, marker, row) {
+  if (!map || !infoWindow || !marker || !row) return;
+
+  infoWindow.setContent(renderMarkerInfoContent(row));
+  infoWindow.open({ map, anchor: marker });
+
+  google.maps.event.addListenerOnce(infoWindow, "domready", () => {
+    bindInfoWindowActions(row);
+  });
 }
 
 function renderMarkerInfoContent(row) {
@@ -1742,7 +1766,9 @@ function renderMarkerInfoContent(row) {
   const phoneActionHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">☎</a>`
     : "";
-  const actionsHtml = [phoneActionHtml, mapHtml, phoneSearchHtml, listingHtml].filter(Boolean).join("");
+  const favoriteButtonHtml = `<button type="button" data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${isFavoriteRow(row) ? "お気に入り解除" : "お気に入り"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(255, 120, 166, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(255, 93, 150, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#ff2f74" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
+  const excludeButtonHtml = `<button type="button" data-marker-action="exclude" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isExcludedRow(row) ? "true" : "false"}" title="${isExcludedRow(row) ? "除外解除" : "除外"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isExcludedRow(row) ? "rgba(170,170,178,0.5)" : "rgba(194,24,91,0.18)"};background:${isExcludedRow(row) ? "rgba(255,255,255,0.06)" : "#fff7fb"};color:${isExcludedRow(row) ? "#1d1d1f" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isExcludedRow(row) ? "♥" : "♡"}</button>`;
+  const actionsHtml = [favoriteButtonHtml, excludeButtonHtml, phoneActionHtml, mapHtml, phoneSearchHtml, listingHtml].filter(Boolean).join("");
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
@@ -1753,6 +1779,22 @@ function renderMarkerInfoContent(row) {
       ${actionsHtml ? `<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">${actionsHtml}</div>` : ""}
     </div>
   `;
+}
+
+function bindInfoWindowActions(row) {
+  const buttons = document.querySelectorAll("[data-marker-action]");
+  for (const button of buttons) {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      state.selectedRow = row;
+      if (button.dataset.markerAction === "favorite") {
+        handleFavoriteToggle();
+      } else if (button.dataset.markerAction === "exclude") {
+        handleExcludeToggle();
+      }
+    });
+  }
 }
 
 function renderStreetViewForRow(row) {
