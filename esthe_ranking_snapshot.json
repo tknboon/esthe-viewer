@@ -147,7 +147,7 @@
       "matchedLinkCount": 10
     }
   ],
-  "fetchedAt": "2026-05-05T07:33:43.324Z",
+  "fetchedAt": "2026-05-05T07:52:19.247Z",
   "pageTitle": "知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング / 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング / 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング / 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング / 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング / 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング / 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング / 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング",
   "countText": "https://www.esthe-ranking.jp/nagoya/asian/=86件 | https://www.esthe-ranking.jp/sakae/asian/=25件 | https://www.esthe-ranking.jp/shinsakae/asian/=28件 | https://www.esthe-ranking.jp/kanayama/asian/=32件 | https://www.esthe-ranking.jp/kurokawa/asian/=36件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=93件 | https://www.esthe-ranking.jp/moriyama/asian/=23件 | https://www.esthe-ranking.jp/otai/asian/=21件 | https://www.esthe-ranking.jp/tokaidori/asian/=41件 | https://www.esthe-ranking.jp/kasadera/asian/=10件 | https://www.esthe-ranking.jp/toyota/asian/=125件 | https://www.esthe-ranking.jp/horita/asian/=24件 | https://www.esthe-ranking.jp/tsurumai/asian/=36件 | https://www.esthe-ranking.jp/showa/asian/=24件 | https://www.esthe-ranking.jp/komaki/asian/=42件 | https://www.esthe-ranking.jp/owari/asian/=68件 | https://www.esthe-ranking.jp/chita/asian/=190件 | https://www.esthe-ranking.jp/toyohashi/asian/=10件",
   "storeNames": [
@@ -2035,18 +2035,6 @@
       "detailLoaded": true
     },
     {
-      "name": "バニラ〜vanilla〜",
-      "station": "共和駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "080-9001-7118",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/aed07205-ff17-4989-a706-632b55febafd/",
-      "address": "愛知県大府市東新町2丁目205番",
-      "latitude": "",
-      "longitude": "",
-      "note": "所在地：愛知県大府市東新町2丁目205番",
-      "detailLoaded": true
-    },
-    {
       "name": "あしたを愛してる",
       "station": "青山駅",
       "hours": "12:00～LAST",
@@ -2059,18 +2047,6 @@
       "detailLoaded": true
     },
     {
-      "name": "セレブ秘書",
-      "station": "名和駅",
-      "hours": "08:00～翌 03:00",
-      "phone": "070-8508-4457",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/d459a15d-fe88-4ebd-934b-f2bc988ec71f/",
-      "address": "愛知県東海市名和町１丁目",
-      "latitude": "35.0598300933293",
-      "longitude": "136.91247705644517",
-      "note": "「名和駅」及び「三井のリパーク名和駅前駐車場」でお電話してください",
-      "detailLoaded": true
-    },
-    {
       "name": "魅娘（みむすめ）",
       "station": "青山駅",
       "hours": "12:00～LAST",
@@ -2080,6 +2056,30 @@
       "latitude": "34.87458921644219",
       "longitude": "136.9184072334971",
       "note": "【セブン-イレブン 半田有楽町店】の近くに着いたらお電話ください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "バニラ〜vanilla〜",
+      "station": "共和駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "080-9001-7118",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/aed07205-ff17-4989-a706-632b55febafd/",
+      "address": "愛知県大府市東新町2丁目205番",
+      "latitude": "",
+      "longitude": "",
+      "note": "所在地：愛知県大府市東新町2丁目205番",
+      "detailLoaded": true
+    },
+    {
+      "name": "セレブ秘書",
+      "station": "名和駅",
+      "hours": "08:00～翌 03:00",
+      "phone": "070-8508-4457",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/d459a15d-fe88-4ebd-934b-f2bc988ec71f/",
+      "address": "愛知県東海市名和町１丁目",
+      "latitude": "35.0598300933293",
+      "longitude": "136.91247705644517",
+      "note": "「名和駅」及び「三井のリパーク名和駅前駐車場」でお電話してください",
       "detailLoaded": true
     },
     {
@@ -2155,18 +2155,6 @@
       "detailLoaded": true
     },
     {
-      "name": "X女学園",
-      "station": "青山駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "070-1665-6488",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/71d090f5-1880-467d-8ae3-72832f8257a7/",
-      "address": "愛知県半田市青山１丁目",
-      "latitude": "34.877953",
-      "longitude": "136.915876",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "ミルク",
       "station": "半田口駅",
       "hours": "12:00～LAST",
@@ -2176,6 +2164,18 @@
       "latitude": "34.908038",
       "longitude": "136.9247",
       "note": "駐車場 店舗前にあります。",
+      "detailLoaded": true
+    },
+    {
+      "name": "X女学園",
+      "station": "青山駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "070-1665-6488",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/71d090f5-1880-467d-8ae3-72832f8257a7/",
+      "address": "愛知県半田市青山１丁目",
+      "latitude": "34.877953",
+      "longitude": "136.915876",
+      "note": "アクセス欄に緯度経度と住所あり",
       "detailLoaded": true
     },
     {
@@ -2419,30 +2419,6 @@
       "detailLoaded": true
     },
     {
-      "name": "お待たせ",
-      "station": "八幡新田駅",
-      "hours": "13:00～翌 04:00",
-      "phone": "080-5709-0314",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/e99bbf5f-7cbe-4fd5-89e0-c64fc05f9669/",
-      "address": "愛知県東海市加木屋町陀々法師11-16",
-      "latitude": "34.974531",
-      "longitude": "136.911634",
-      "note": "駐車場：店舗前にあります",
-      "detailLoaded": true
-    },
-    {
-      "name": "ラクネイ",
-      "station": "尾張横須賀駅西口",
-      "hours": "14:00～翌 03:00",
-      "phone": "080-4531-8133",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/1cf2ec56-5a6a-4a8c-920e-88cf1df6e386/",
-      "address": "愛知県東海市横須賀町四ノ割20",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場あります",
-      "detailLoaded": true
-    },
-    {
       "name": "大好き×２",
       "station": "亀崎駅",
       "hours": "12:00～LAST",
@@ -2467,15 +2443,27 @@
       "detailLoaded": true
     },
     {
-      "name": "Pretty（プリティ）",
-      "station": "新舞子駅",
-      "hours": "24時間営業",
-      "phone": "090-8385-9168",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/7f8c3a7d-483c-431a-bba9-822dc85636af/",
-      "address": "愛知県知多市新舞子東町2-1-8",
+      "name": "お待たせ",
+      "station": "八幡新田駅",
+      "hours": "13:00～翌 04:00",
+      "phone": "080-5709-0314",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/e99bbf5f-7cbe-4fd5-89e0-c64fc05f9669/",
+      "address": "愛知県東海市加木屋町陀々法師11-16",
+      "latitude": "34.974531",
+      "longitude": "136.911634",
+      "note": "駐車場：店舗前にあります",
+      "detailLoaded": true
+    },
+    {
+      "name": "ラクネイ",
+      "station": "尾張横須賀駅西口",
+      "hours": "14:00～翌 03:00",
+      "phone": "080-4531-8133",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/1cf2ec56-5a6a-4a8c-920e-88cf1df6e386/",
+      "address": "愛知県東海市横須賀町四ノ割20",
       "latitude": "",
       "longitude": "",
-      "note": "駐車場 お店前に共有駐車場あります。",
+      "note": "駐車場あります",
       "detailLoaded": true
     },
     {
@@ -2491,6 +2479,18 @@
       "detailLoaded": true
     },
     {
+      "name": "Pretty（プリティ）",
+      "station": "新舞子駅",
+      "hours": "24時間営業",
+      "phone": "090-8385-9168",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/7f8c3a7d-483c-431a-bba9-822dc85636af/",
+      "address": "愛知県知多市新舞子東町2-1-8",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場 お店前に共有駐車場あります。",
+      "detailLoaded": true
+    },
+    {
       "name": "Aroma Charm（アロマチャーム）",
       "station": "青山駅",
       "hours": "11:00～翌 03:00",
@@ -2500,6 +2500,18 @@
       "latitude": "",
       "longitude": "",
       "note": "近くに着きましたら、お電話ください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "Rose満開",
+      "station": "尾張横須賀駅",
+      "hours": "10:30～翌 03:30",
+      "phone": "080-8574-9653",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/e3747816-52c9-4e25-b535-62b2bc346216/",
+      "address": "愛知県東海市養父町1丁目",
+      "latitude": "35.00931319885422",
+      "longitude": "136.8857852175262",
+      "note": "アクセス欄に緯度経度と住所あり",
       "detailLoaded": true
     },
     {
@@ -2539,18 +2551,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Rose満開",
-      "station": "尾張横須賀駅",
-      "hours": "10:30～翌 03:30",
-      "phone": "080-8574-9653",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/e3747816-52c9-4e25-b535-62b2bc346216/",
-      "address": "愛知県東海市養父町1丁目",
-      "latitude": "35.00931319885422",
-      "longitude": "136.8857852175262",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "ナイショガーデン",
       "station": "知多半田駅",
       "hours": "24時間営業",
@@ -2584,6 +2584,30 @@
       "latitude": "34.98350180242019",
       "longitude": "136.8698326588954",
       "note": "駐車場 近隣のコインパーキングをご利用ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "巨峰",
+      "station": "大府駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "080-7708-5264",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/8c9b1810-5acd-44a8-a088-58da2dd0a6fa/",
+      "address": "",
+      "latitude": "",
+      "longitude": "",
+      "note": "近くのコインパーキングをご利用ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "LaLa spa",
+      "station": "太田川駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "070-4067-3149",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/f91f6cac-5e1d-4081-9288-75059b67af2d/",
+      "address": "愛知県東海市高横須賀町４丁目１１４",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場 あり",
       "detailLoaded": true
     },
     {
@@ -2647,30 +2671,6 @@
       "detailLoaded": true
     },
     {
-      "name": "巨峰",
-      "station": "大府駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "080-7708-5264",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/8c9b1810-5acd-44a8-a088-58da2dd0a6fa/",
-      "address": "",
-      "latitude": "",
-      "longitude": "",
-      "note": "近くのコインパーキングをご利用ください",
-      "detailLoaded": true
-    },
-    {
-      "name": "LaLa spa",
-      "station": "太田川駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "070-4067-3149",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/f91f6cac-5e1d-4081-9288-75059b67af2d/",
-      "address": "愛知県東海市高横須賀町４丁目１１４",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場 あり",
-      "detailLoaded": true
-    },
-    {
       "name": "AROMA more",
       "station": "尾張森岡駅",
       "hours": "12:00～LAST",
@@ -2707,18 +2707,6 @@
       "detailLoaded": true
     },
     {
-      "name": "り・ら・ら",
-      "station": "大府駅",
-      "hours": "24時間営業",
-      "phone": "080-7710-5966",
-      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/ccb08afa-db41-4dd3-a592-2cdc45cff6f3/",
-      "address": "愛知県大府市大東町1丁目310",
-      "latitude": "35.009588",
-      "longitude": "136.970516",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "ぷりぷり",
       "station": "尾張横須賀駅",
       "hours": "24時間営業",
@@ -2727,6 +2715,18 @@
       "address": "愛知県東海市高横須賀町1丁目",
       "latitude": "35.00993690156498",
       "longitude": "136.88582765889547",
+      "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "り・ら・ら",
+      "station": "大府駅",
+      "hours": "24時間営業",
+      "phone": "080-7710-5966",
+      "listingUrl": "https://www.esthe-ranking.jp/chita/shop-detail/ccb08afa-db41-4dd3-a592-2cdc45cff6f3/",
+      "address": "愛知県大府市大東町1丁目310",
+      "latitude": "35.009588",
+      "longitude": "136.970516",
       "note": "アクセス欄に緯度経度と住所あり",
       "detailLoaded": true
     },
@@ -3019,18 +3019,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Anytime（エニータイム）",
-      "station": "野並駅",
-      "hours": "11:00～翌 02:30(最終受付：翌2:00)",
-      "phone": "080-5282-8884",
-      "listingUrl": "https://www.esthe-ranking.jp/horita/shop-detail/beca39bb-8ecd-473a-b1ae-bf3bef463954/",
-      "address": "",
-      "latitude": "35.09945",
-      "longitude": "136.953908",
-      "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
       "name": "うさぎの餅つき",
       "station": "鶴里駅",
       "hours": "10:00～翌 04:00",
@@ -3040,6 +3028,18 @@
       "latitude": "35.10533773321985",
       "longitude": "136.9465165871186",
       "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "Anytime（エニータイム）",
+      "station": "野並駅",
+      "hours": "11:00～翌 02:30(最終受付：翌2:00)",
+      "phone": "080-5282-8884",
+      "listingUrl": "https://www.esthe-ranking.jp/horita/shop-detail/beca39bb-8ecd-473a-b1ae-bf3bef463954/",
+      "address": "",
+      "latitude": "35.09945",
+      "longitude": "136.953908",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -3271,18 +3271,6 @@
       "detailLoaded": true
     },
     {
-      "name": "姉妹の癒し",
-      "station": "藤が丘駅",
-      "hours": "09:00～LAST",
-      "phone": "090-8195-7892",
-      "listingUrl": "https://www.esthe-ranking.jp/hoshigaoka/shop-detail/c0782f6f-8467-424c-851c-e8af65db0d78/",
-      "address": "",
-      "latitude": "35.18001517894929",
-      "longitude": "137.02361602728323",
-      "note": "藤が丘駅に着きましたら、ご連絡ください。",
-      "detailLoaded": true
-    },
-    {
       "name": "可愛い",
       "station": "一社駅",
       "hours": "24時間営業",
@@ -3292,6 +3280,18 @@
       "latitude": "",
       "longitude": "",
       "note": "スペース 高社第１駐車場に着きましたらお電話ください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "姉妹の癒し",
+      "station": "藤が丘駅",
+      "hours": "09:00～LAST",
+      "phone": "090-8195-7892",
+      "listingUrl": "https://www.esthe-ranking.jp/hoshigaoka/shop-detail/c0782f6f-8467-424c-851c-e8af65db0d78/",
+      "address": "",
+      "latitude": "35.18001517894929",
+      "longitude": "137.02361602728323",
+      "note": "藤が丘駅に着きましたら、ご連絡ください。",
       "detailLoaded": true
     },
     {
@@ -3523,18 +3523,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Secret Room",
-      "station": "藤が丘駅",
-      "hours": "24時間営業",
-      "phone": "070-8939-9179",
-      "listingUrl": "https://www.esthe-ranking.jp/hoshigaoka/shop-detail/e5eb2233-af14-461b-99d4-2db5da13ba5f/",
-      "address": "",
-      "latitude": "35.18246364416989",
-      "longitude": "137.02135335276108",
-      "note": "名古屋市藤ヶ丘駅2番出口近くに着きましたらお電話ください",
-      "detailLoaded": true
-    },
-    {
       "name": "パクパクチューチュー",
       "station": "一社駅",
       "hours": "11:00～LAST",
@@ -3544,6 +3532,18 @@
       "latitude": "",
       "longitude": "",
       "note": "ここに着きましたら、お電話ください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "Secret Room",
+      "station": "藤が丘駅",
+      "hours": "24時間営業",
+      "phone": "070-8939-9179",
+      "listingUrl": "https://www.esthe-ranking.jp/hoshigaoka/shop-detail/e5eb2233-af14-461b-99d4-2db5da13ba5f/",
+      "address": "",
+      "latitude": "35.18246364416989",
+      "longitude": "137.02135335276108",
+      "note": "名古屋市藤ヶ丘駅2番出口近くに着きましたらお電話ください",
       "detailLoaded": true
     },
     {
@@ -4027,6 +4027,18 @@
       "detailLoaded": true
     },
     {
+      "name": "仙桃（せんとう）",
+      "station": "笠寺駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "090-8469-5775",
+      "listingUrl": "https://www.esthe-ranking.jp/kasadera/shop-detail/059efea5-15af-47f9-ac44-2be79ed245d7/",
+      "address": "愛知県名古屋市南区弥次ヱ町１丁目１９",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "エグゼスパ",
       "station": "左京山駅",
       "hours": "11:00～翌 04:00",
@@ -4045,18 +4057,6 @@
       "phone": "052-829-0688",
       "listingUrl": "https://www.esthe-ranking.jp/kasadera/shop-detail/0a65b5e4-41e3-4f43-9b49-95e85821d784/",
       "address": "愛知県名古屋市南区北頭町3-11",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "仙桃（せんとう）",
-      "station": "笠寺駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "090-8469-5775",
-      "listingUrl": "https://www.esthe-ranking.jp/kasadera/shop-detail/059efea5-15af-47f9-ac44-2be79ed245d7/",
-      "address": "愛知県名古屋市南区弥次ヱ町１丁目１９",
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
@@ -4099,6 +4099,18 @@
       "detailLoaded": true
     },
     {
+      "name": "愛の魂（あいのたましい）",
+      "station": "笠寺駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "090-3977-2228",
+      "listingUrl": "https://www.esthe-ranking.jp/kasadera/shop-detail/cccefb52-7313-4e35-886c-034d54ca0156/",
+      "address": "愛知県名古屋市南区本地通１丁目５",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "き楽や",
       "station": "本笠寺駅",
       "hours": "11:00～翌 03:00",
@@ -4120,18 +4132,6 @@
       "latitude": "",
       "longitude": "",
       "note": "所在地：愛知県名古屋市緑区鳴海町下汐田152番地5",
-      "detailLoaded": true
-    },
-    {
-      "name": "愛の魂（あいのたましい）",
-      "station": "笠寺駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "090-3977-2228",
-      "listingUrl": "https://www.esthe-ranking.jp/kasadera/shop-detail/cccefb52-7313-4e35-886c-034d54ca0156/",
-      "address": "愛知県名古屋市南区本地通１丁目５",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
       "detailLoaded": true
     },
     {
@@ -4471,6 +4471,18 @@
       "detailLoaded": true
     },
     {
+      "name": "舒雅（しょが）",
+      "station": "犬山口駅",
+      "hours": "24時間営業",
+      "phone": "080-3081-5666",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/0bf77364-aa8d-4659-8ecd-ade64787c1eb/",
+      "address": "愛知県犬山市橋爪西浦8-1",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場：店舗敷地内２台分あり/夜間は【清水屋 犬山橋爪店】様の駐車場もご利用できます",
+      "detailLoaded": true
+    },
+    {
       "name": "美女ドキン",
       "station": "前後駅・高蔵寺駅",
       "hours": "12:00～翌 03:00",
@@ -4519,18 +4531,6 @@
       "detailLoaded": true
     },
     {
-      "name": "舒雅（しょが）",
-      "station": "犬山口駅",
-      "hours": "24時間営業",
-      "phone": "080-3081-5666",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/0bf77364-aa8d-4659-8ecd-ade64787c1eb/",
-      "address": "愛知県犬山市橋爪西浦8-1",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場：店舗敷地内２台分あり/夜間は【清水屋 犬山橋爪店】様の駐車場もご利用できます",
-      "detailLoaded": true
-    },
-    {
       "name": "スイートハウス",
       "station": "犬山駅",
       "hours": "12:00～翌 02:00",
@@ -4543,18 +4543,6 @@
       "detailLoaded": true
     },
     {
-      "name": "So Cute！",
-      "station": "小牧駅",
-      "hours": "11:00～翌 05:00",
-      "phone": "080-5298-2716",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/712891e9-feb8-4868-8733-e9dc61a30b66/",
-      "address": "愛知県小牧市中央5",
-      "latitude": "35.289034905324876",
-      "longitude": "136.92864197585413",
-      "note": "地図の目印付近でお電話ください",
-      "detailLoaded": true
-    },
-    {
       "name": "お兄ちゃん来てよ",
       "station": "山口駅",
       "hours": "10:00～翌 03:00",
@@ -4564,6 +4552,18 @@
       "latitude": "35.19951843893887",
       "longitude": "137.10231141039955",
       "note": "アクセス欄は緯度経度のみ",
+      "detailLoaded": true
+    },
+    {
+      "name": "So Cute！",
+      "station": "小牧駅",
+      "hours": "11:00～翌 05:00",
+      "phone": "080-5298-2716",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/712891e9-feb8-4868-8733-e9dc61a30b66/",
+      "address": "愛知県小牧市中央5",
+      "latitude": "35.289034905324876",
+      "longitude": "136.92864197585413",
+      "note": "地図の目印付近でお電話ください",
       "detailLoaded": true
     },
     {
@@ -4615,6 +4615,18 @@
       "detailLoaded": true
     },
     {
+      "name": "Only One（オンリーワン）",
+      "station": "高蔵寺駅南口",
+      "hours": "13:00～LAST",
+      "phone": "080-7880-6237",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/ea0932f1-d8a1-4da5-aacd-cf8b8776e494/",
+      "address": "愛知県春日井市高蔵寺町3-2-11",
+      "latitude": "35.26258107175687",
+      "longitude": "137.04268399999026",
+      "note": "店舗裏に共用駐車場（7台分）があります。",
+      "detailLoaded": true
+    },
+    {
       "name": "幸せの風船",
       "station": "小牧原駅",
       "hours": "11:00～翌 05:00",
@@ -4639,18 +4651,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Only One（オンリーワン）",
-      "station": "高蔵寺駅南口",
-      "hours": "13:00～LAST",
-      "phone": "080-7880-6237",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/ea0932f1-d8a1-4da5-aacd-cf8b8776e494/",
-      "address": "愛知県春日井市高蔵寺町3-2-11",
-      "latitude": "35.26258107175687",
-      "longitude": "137.04268399999026",
-      "note": "店舗裏に共用駐車場（7台分）があります。",
-      "detailLoaded": true
-    },
-    {
       "name": "秘密の愛言葉",
       "station": "春日井駅",
       "hours": "24時間営業",
@@ -4660,6 +4660,18 @@
       "latitude": "35.244236",
       "longitude": "136.984951",
       "note": "アクセス欄は緯度経度のみ",
+      "detailLoaded": true
+    },
+    {
+      "name": "LURE TOUCH（ルアータッチ）",
+      "station": "瀬戸市役所前駅・藤が丘駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "090-4062-4401",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/412dce96-4535-46ba-a0d5-d0e16f796a4d/",
+      "address": "愛知県長久手市岩作石田",
+      "latitude": "35.18349794735601",
+      "longitude": "137.0398950464357",
+      "note": "名鉄瀬戸線 瀬戸市役所前駅 徒歩2分",
       "detailLoaded": true
     },
     {
@@ -4708,18 +4720,6 @@
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "LURE TOUCH（ルアータッチ）",
-      "station": "瀬戸市役所前駅・藤が丘駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "090-4062-4401",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/412dce96-4535-46ba-a0d5-d0e16f796a4d/",
-      "address": "愛知県長久手市岩作石田",
-      "latitude": "35.18349794735601",
-      "longitude": "137.0398950464357",
-      "note": "名鉄瀬戸線 瀬戸市役所前駅 徒歩2分",
       "detailLoaded": true
     },
     {
@@ -4951,6 +4951,18 @@
       "detailLoaded": true
     },
     {
+      "name": "萌え娘",
+      "station": "神領駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "070-4437-2048",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/e39a874f-8e55-41ca-9a3a-794e78c8214f/",
+      "address": "愛知県春日井市大留町",
+      "latitude": "35.254834",
+      "longitude": "137.018423",
+      "note": "近くにつきましたら、お電話ください",
+      "detailLoaded": true
+    },
+    {
       "name": "春爛漫",
       "station": "小牧駅",
       "hours": "11:00～LAST",
@@ -4987,18 +4999,6 @@
       "detailLoaded": true
     },
     {
-      "name": "萌え娘",
-      "station": "神領駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "070-4437-2048",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/e39a874f-8e55-41ca-9a3a-794e78c8214f/",
-      "address": "愛知県春日井市大留町",
-      "latitude": "35.254834",
-      "longitude": "137.018423",
-      "note": "近くにつきましたら、お電話ください",
-      "detailLoaded": true
-    },
-    {
       "name": "もみ楽",
       "station": "山口駅",
       "hours": "12:00～LAST",
@@ -5020,6 +5020,18 @@
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "夢～ドリーム～",
+      "station": "犬山駅",
+      "hours": "11:00～LAST",
+      "phone": "090-7235-7922",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/41ec3f5d-9acc-4d5f-b889-30ece7d7d9a4/",
+      "address": "愛知県犬山市松本町4丁目",
+      "latitude": "35.379855986049456",
+      "longitude": "136.95076829362233",
+      "note": "近く【ファミリーマート（犬山松本町店）】につきましたら、お電話ください",
       "detailLoaded": true
     },
     {
@@ -5068,18 +5080,6 @@
       "latitude": "35.291702",
       "longitude": "136.929878",
       "note": "【セブン-イレブン 小牧駅北店】に着きましたらお電話して下さい",
-      "detailLoaded": true
-    },
-    {
-      "name": "夢～ドリーム～",
-      "station": "犬山駅",
-      "hours": "11:00～LAST",
-      "phone": "090-7235-7922",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/41ec3f5d-9acc-4d5f-b889-30ece7d7d9a4/",
-      "address": "愛知県犬山市松本町4丁目",
-      "latitude": "35.379855986049456",
-      "longitude": "136.95076829362233",
-      "note": "近く【ファミリーマート（犬山松本町店）】につきましたら、お電話ください",
       "detailLoaded": true
     },
     {
@@ -5179,6 +5179,18 @@
       "detailLoaded": true
     },
     {
+      "name": "癒しhouse",
+      "station": "瀬戸口駅",
+      "hours": "11:30～翌 03:00",
+      "phone": "080-9293-5283",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/33d9de35-e1f0-43f8-b180-7a714d8409f3/",
+      "address": "愛知県瀬戸市瀬戸口町",
+      "latitude": "35.205606411471315",
+      "longitude": "137.081226838339",
+      "note": "（お近くに着いたら、ご連絡ください）",
+      "detailLoaded": true
+    },
+    {
       "name": "レオ",
       "station": "前後駅",
       "hours": "12:00～翌 02:00",
@@ -5215,30 +5227,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Stream（ストリーム）",
-      "station": "日進駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "090-4763-2856",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/f2e8df54-0359-4f61-8492-ee7570a4544a/",
-      "address": "愛知県日進市栄１丁目１１１２",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "癒しhouse",
-      "station": "瀬戸口駅",
-      "hours": "11:30～翌 03:00",
-      "phone": "080-9293-5283",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/33d9de35-e1f0-43f8-b180-7a714d8409f3/",
-      "address": "愛知県瀬戸市瀬戸口町",
-      "latitude": "35.205606411471315",
-      "longitude": "137.081226838339",
-      "note": "（お近くに着いたら、ご連絡ください）",
-      "detailLoaded": true
-    },
-    {
       "name": "Star sea（スターシー）",
       "station": "豊明駅",
       "hours": "11:00～翌 03:00",
@@ -5248,6 +5236,18 @@
       "latitude": "",
       "longitude": "",
       "note": "近くの【らーめん屋（豊明市新田町門先11-10)】に着きましたら、お電話ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "Stream（ストリーム）",
+      "station": "日進駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "090-4763-2856",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/f2e8df54-0359-4f61-8492-ee7570a4544a/",
+      "address": "愛知県日進市栄１丁目１１１２",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
       "detailLoaded": true
     },
     {
@@ -5383,18 +5383,6 @@
       "detailLoaded": true
     },
     {
-      "name": "告白",
-      "station": "勝川駅",
-      "hours": "10:00～翌 03:00",
-      "phone": "070-4455-6388",
-      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/f8aa25d3-1bd4-4ab6-bbcd-9fe8b07dba7d/",
-      "address": "愛知県春日井市角崎町",
-      "latitude": "35.23078837733094",
-      "longitude": "136.95318863768205",
-      "note": "駐車場：お近くのコインパーキングをご利用下さい。",
-      "detailLoaded": true
-    },
-    {
       "name": "Silky Touch（シルキータッチ）",
       "station": "水野駅",
       "hours": "11:00～LAST",
@@ -5404,6 +5392,18 @@
       "latitude": "",
       "longitude": "",
       "note": "駐車場：店舗前有",
+      "detailLoaded": true
+    },
+    {
+      "name": "告白",
+      "station": "勝川駅",
+      "hours": "10:00～翌 03:00",
+      "phone": "070-4455-6388",
+      "listingUrl": "https://www.esthe-ranking.jp/komaki/shop-detail/f8aa25d3-1bd4-4ab6-bbcd-9fe8b07dba7d/",
+      "address": "愛知県春日井市角崎町",
+      "latitude": "35.23078837733094",
+      "longitude": "136.95318863768205",
+      "note": "駐車場：お近くのコインパーキングをご利用下さい。",
       "detailLoaded": true
     },
     {
@@ -6127,18 +6127,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Stardust（スターダスト）",
-      "station": "名古屋駅西口",
-      "hours": "12:00～LAST",
-      "phone": "070-1664-8666",
-      "listingUrl": "https://www.esthe-ranking.jp/nagoya/shop-detail/7674ffff-35cc-42fc-9618-374b774bed19/",
-      "address": "愛知県名古屋市中村区則武１丁目１３−９",
-      "latitude": "",
-      "longitude": "",
-      "note": "ビックカメラから徒歩4分圏内",
-      "detailLoaded": true
-    },
-    {
       "name": "Rose Healing（ローズヒーリング）",
       "station": "名古屋駅",
       "hours": "12:00～LAST(最終受付：翌4:00)",
@@ -6148,6 +6136,18 @@
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "Stardust（スターダスト）",
+      "station": "名古屋駅西口",
+      "hours": "12:00～LAST",
+      "phone": "070-1664-8666",
+      "listingUrl": "https://www.esthe-ranking.jp/nagoya/shop-detail/7674ffff-35cc-42fc-9618-374b774bed19/",
+      "address": "愛知県名古屋市中村区則武１丁目１３−９",
+      "latitude": "",
+      "longitude": "",
+      "note": "ビックカメラから徒歩4分圏内",
       "detailLoaded": true
     },
     {
@@ -6211,6 +6211,18 @@
       "detailLoaded": true
     },
     {
+      "name": "妖艶",
+      "station": "名古屋駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "052-990-6392",
+      "listingUrl": "https://www.esthe-ranking.jp/nagoya/shop-detail/a1e4c6fa-32c0-484c-a506-1df8e7fb9f3c/",
+      "address": "",
+      "latitude": "35.159131",
+      "longitude": "136.89147",
+      "note": "バーミヤン水主町店に着きましたらお電話ください。",
+      "detailLoaded": true
+    },
+    {
       "name": "乙女の扉",
       "station": "八田駅",
       "hours": "24時間営業",
@@ -6223,15 +6235,15 @@
       "detailLoaded": true
     },
     {
-      "name": "妖艶",
-      "station": "名古屋駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "052-990-6392",
-      "listingUrl": "https://www.esthe-ranking.jp/nagoya/shop-detail/a1e4c6fa-32c0-484c-a506-1df8e7fb9f3c/",
+      "name": "咲～saki～",
+      "station": "名古屋駅新幹線口",
+      "hours": "12:00～翌 04:00",
+      "phone": "090-9945-5618",
+      "listingUrl": "https://www.esthe-ranking.jp/nagoya/shop-detail/1d83649d-2dc1-442a-b09a-6241c2970df1/",
       "address": "",
-      "latitude": "35.159131",
-      "longitude": "136.89147",
-      "note": "バーミヤン水主町店に着きましたらお電話ください。",
+      "latitude": "35.172195",
+      "longitude": "136.87701",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -6268,18 +6280,6 @@
       "latitude": "",
       "longitude": "",
       "note": "",
-      "detailLoaded": true
-    },
-    {
-      "name": "咲～saki～",
-      "station": "名古屋駅新幹線口",
-      "hours": "12:00～翌 04:00",
-      "phone": "090-9945-5618",
-      "listingUrl": "https://www.esthe-ranking.jp/nagoya/shop-detail/1d83649d-2dc1-442a-b09a-6241c2970df1/",
-      "address": "",
-      "latitude": "35.172195",
-      "longitude": "136.87701",
-      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -6595,18 +6595,6 @@
       "detailLoaded": true
     },
     {
-      "name": "フェアリーランド",
-      "station": "味鋺駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "090-5779-6637",
-      "listingUrl": "https://www.esthe-ranking.jp/otai/shop-detail/61a6506d-7f6b-4bd8-b21e-64be7660cd09/",
-      "address": "愛知県春日井市二子町２丁目３−１５",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "姫の恋",
       "station": "上小田井駅",
       "hours": "12:00～LAST",
@@ -6619,15 +6607,15 @@
       "detailLoaded": true
     },
     {
-      "name": "ダイヤモンドガールズ",
-      "station": "浄心駅",
-      "hours": "12:00～LAST",
-      "phone": "080-3659-8666",
-      "listingUrl": "https://www.esthe-ranking.jp/otai/shop-detail/3601d984-fc45-4479-b5f3-e43e0b7e6a4b/",
-      "address": "",
-      "latitude": "35.19735",
-      "longitude": "136.893875",
-      "note": "アクセス欄は緯度経度のみ",
+      "name": "フェアリーランド",
+      "station": "味鋺駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "090-5779-6637",
+      "listingUrl": "https://www.esthe-ranking.jp/otai/shop-detail/61a6506d-7f6b-4bd8-b21e-64be7660cd09/",
+      "address": "愛知県春日井市二子町２丁目３−１５",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
       "detailLoaded": true
     },
     {
@@ -6640,6 +6628,18 @@
       "latitude": "",
       "longitude": "",
       "note": "（庄内通駅１番出口）",
+      "detailLoaded": true
+    },
+    {
+      "name": "ダイヤモンドガールズ",
+      "station": "浄心駅",
+      "hours": "12:00～LAST",
+      "phone": "080-3659-8666",
+      "listingUrl": "https://www.esthe-ranking.jp/otai/shop-detail/3601d984-fc45-4479-b5f3-e43e0b7e6a4b/",
+      "address": "",
+      "latitude": "35.19735",
+      "longitude": "136.893875",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -6751,6 +6751,18 @@
       "detailLoaded": true
     },
     {
+      "name": "会いたい",
+      "station": "木曽川堤駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-9113-5666",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/d2ab6ddb-18e3-40ae-a6a5-adcb88094744/",
+      "address": "愛知県一宮市北方町中島東郷1−１",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "濃密candy",
       "station": "西春駅",
       "hours": "11:00～LAST",
@@ -6763,6 +6775,18 @@
       "detailLoaded": true
     },
     {
+      "name": "桜",
+      "station": "藤浪駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-3678-8188",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/40486661-14c6-44a8-bd44-8ec47288dbf6/",
+      "address": "愛知県愛西市北河田町郷西401番地",
+      "latitude": "",
+      "longitude": "",
+      "note": "所在地：愛知県愛西市北河田町郷西401番地",
+      "detailLoaded": true
+    },
+    {
       "name": "あざと可愛い",
       "station": "三郷駅",
       "hours": "11:00～翌 03:00",
@@ -6772,6 +6796,30 @@
       "latitude": "",
       "longitude": "",
       "note": "近くの【パチンコ玉越・尾張旭店（尾張旭市瀬戸川町２丁目１８３）】に着きましたら、お電話ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "クリーム",
+      "station": "妙興寺駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "070-1617-3155",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/f36bba4b-c4d0-430d-bfa2-1cd54602b998/",
+      "address": "愛知県一宮市南印田2丁目",
+      "latitude": "35.296226",
+      "longitude": "136.815853",
+      "note": "【ローソン 一宮南印田店】の近くに着いたらお電話ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "ルナ",
+      "station": "近鉄蟹江駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "070-5332-0450",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/1076be66-37b9-4558-9a42-e886c7b45386/",
+      "address": "",
+      "latitude": "35.13730434887431",
+      "longitude": "136.7825274271176",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -6799,30 +6847,6 @@
       "detailLoaded": true
     },
     {
-      "name": "クリーム",
-      "station": "妙興寺駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "070-1617-3155",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/f36bba4b-c4d0-430d-bfa2-1cd54602b998/",
-      "address": "愛知県一宮市南印田2丁目",
-      "latitude": "35.296226",
-      "longitude": "136.815853",
-      "note": "【ローソン 一宮南印田店】の近くに着いたらお電話ください",
-      "detailLoaded": true
-    },
-    {
-      "name": "会いたい",
-      "station": "木曽川堤駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-9113-5666",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/d2ab6ddb-18e3-40ae-a6a5-adcb88094744/",
-      "address": "愛知県一宮市北方町中島東郷1−１",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "とろあまTime",
       "station": "江南駅",
       "hours": "11:00～翌 03:00",
@@ -6832,18 +6856,6 @@
       "latitude": "35.33694963317408",
       "longitude": "136.87283249518273",
       "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "ルナ",
-      "station": "近鉄蟹江駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "070-5332-0450",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/1076be66-37b9-4558-9a42-e886c7b45386/",
-      "address": "",
-      "latitude": "35.13730434887431",
-      "longitude": "136.7825274271176",
-      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -6859,15 +6871,15 @@
       "detailLoaded": true
     },
     {
-      "name": "桜",
-      "station": "藤浪駅",
+      "name": "silent night（サイレントナイト）",
+      "station": "岩倉駅",
       "hours": "12:00～翌 02:00",
-      "phone": "080-3678-8188",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/40486661-14c6-44a8-bd44-8ec47288dbf6/",
-      "address": "愛知県愛西市北河田町郷西401番地",
-      "latitude": "",
-      "longitude": "",
-      "note": "所在地：愛知県愛西市北河田町郷西401番地",
+      "phone": "080-3639-1618",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/c9c0f545-4c68-485f-9ce2-a4349dab4768/",
+      "address": "",
+      "latitude": "35.28231877549762",
+      "longitude": "136.8802320853889",
+      "note": "岩倉駅近く",
       "detailLoaded": true
     },
     {
@@ -6883,6 +6895,18 @@
       "detailLoaded": true
     },
     {
+      "name": "君のBaby",
+      "station": "岩倉駅",
+      "hours": "24時間営業",
+      "phone": "080-2502-3621",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/d3af15ff-0ee9-434b-a3c3-4bf732f8efc8/",
+      "address": "愛知県岩倉市大市場町郷廻",
+      "latitude": "35.275517880226495",
+      "longitude": "136.88126877701214",
+      "note": "スギドラッグ岩倉東店に着きましたらお電話して下さい",
+      "detailLoaded": true
+    },
+    {
       "name": "花蝶園",
       "station": "蟹江駅",
       "hours": "11:00～翌 02:00",
@@ -6892,18 +6916,6 @@
       "latitude": "35.140714806648084",
       "longitude": "136.79087065889544",
       "note": "【セブン-イレブン 蟹江今店】に着きましたらお電話してください",
-      "detailLoaded": true
-    },
-    {
-      "name": "silent night（サイレントナイト）",
-      "station": "岩倉駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-3639-1618",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/c9c0f545-4c68-485f-9ce2-a4349dab4768/",
-      "address": "",
-      "latitude": "35.28231877549762",
-      "longitude": "136.8802320853889",
-      "note": "岩倉駅近く",
       "detailLoaded": true
     },
     {
@@ -6931,18 +6943,6 @@
       "detailLoaded": true
     },
     {
-      "name": "熱い恋愛（あついれんあい）",
-      "station": "稲沢駅",
-      "hours": "11:00～LAST",
-      "phone": "080-9486-6437",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/88d865a7-8ce5-4284-981b-a352d7037373/",
-      "address": "愛知県稲沢市小池３丁目２５−１",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場 あり ※ご予約時に案内いたします",
-      "detailLoaded": true
-    },
-    {
       "name": "ラベンダー",
       "station": "石刀駅",
       "hours": "12:00～翌 02:00",
@@ -6952,18 +6952,6 @@
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "温柔の郷",
-      "station": "名鉄一宮駅",
-      "hours": "10:00～翌 01:00",
-      "phone": "090-1750-4430",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/13be5338-7b9c-4df3-bef5-2d96aa62a090/",
-      "address": "愛知県一宮市中島通5丁目35-2",
-      "latitude": "",
-      "longitude": "",
-      "note": "店前に2台、店の東60m先に1台（柴田亘税理士事務所の後ろあざみ駐車場1番）",
       "detailLoaded": true
     },
     {
@@ -6991,15 +6979,51 @@
       "detailLoaded": true
     },
     {
-      "name": "君のBaby",
+      "name": "熱い恋愛（あついれんあい）",
+      "station": "稲沢駅",
+      "hours": "11:00～LAST",
+      "phone": "080-9486-6437",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/88d865a7-8ce5-4284-981b-a352d7037373/",
+      "address": "愛知県稲沢市小池３丁目２５−１",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場 あり ※ご予約時に案内いたします",
+      "detailLoaded": true
+    },
+    {
+      "name": "白桜妖精",
       "station": "岩倉駅",
       "hours": "24時間営業",
-      "phone": "080-2502-3621",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/d3af15ff-0ee9-434b-a3c3-4bf732f8efc8/",
-      "address": "愛知県岩倉市大市場町郷廻",
-      "latitude": "35.275517880226495",
-      "longitude": "136.88126877701214",
-      "note": "スギドラッグ岩倉東店に着きましたらお電話して下さい",
+      "phone": "070-2648-7047",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/abffa694-c5e5-46a5-86db-2c58fa04e58e/",
+      "address": "愛知県岩倉市栄町1丁目",
+      "latitude": "35.27878571556213",
+      "longitude": "136.87257765889552",
+      "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "温柔の郷",
+      "station": "名鉄一宮駅",
+      "hours": "10:00～翌 01:00",
+      "phone": "090-1750-4430",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/13be5338-7b9c-4df3-bef5-2d96aa62a090/",
+      "address": "愛知県一宮市中島通5丁目35-2",
+      "latitude": "",
+      "longitude": "",
+      "note": "店前に2台、店の東60m先に1台（柴田亘税理士事務所の後ろあざみ駐車場1番）",
+      "detailLoaded": true
+    },
+    {
+      "name": "癒の郷（いやしのさと）",
+      "station": "三郷駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-6317-1804",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/a6664c43-ee28-42f6-aa66-0cff371039e8/",
+      "address": "",
+      "latitude": "35.21634",
+      "longitude": "137.051023",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -7039,30 +7063,6 @@
       "detailLoaded": true
     },
     {
-      "name": "癒の郷（いやしのさと）",
-      "station": "三郷駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-6317-1804",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/a6664c43-ee28-42f6-aa66-0cff371039e8/",
-      "address": "",
-      "latitude": "35.21634",
-      "longitude": "137.051023",
-      "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
-      "name": "白桜妖精",
-      "station": "岩倉駅",
-      "hours": "24時間営業",
-      "phone": "070-2648-7047",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/abffa694-c5e5-46a5-86db-2c58fa04e58e/",
-      "address": "愛知県岩倉市栄町1丁目",
-      "latitude": "35.27878571556213",
-      "longitude": "136.87257765889552",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "誘惑ルーム",
       "station": "木田駅",
       "hours": "11:00～翌 03:00",
@@ -7072,6 +7072,18 @@
       "latitude": "",
       "longitude": "",
       "note": "近くにつきましたら、お電話ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "魔性の宮",
+      "station": "今伊勢駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "080-8341-8107",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/0766dfb3-656d-4eae-b376-fc1ed960e356/",
+      "address": "愛知県一宮市佐千原南切野",
+      "latitude": "35.32447953758065",
+      "longitude": "136.8131834904257",
+      "note": "駐車場あります",
       "detailLoaded": true
     },
     {
@@ -7099,15 +7111,15 @@
       "detailLoaded": true
     },
     {
-      "name": "魔性の宮",
-      "station": "今伊勢駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "080-8341-8107",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/0766dfb3-656d-4eae-b376-fc1ed960e356/",
-      "address": "愛知県一宮市佐千原南切野",
-      "latitude": "35.32447953758065",
-      "longitude": "136.8131834904257",
-      "note": "駐車場あります",
+      "name": "ドキドキトラップ",
+      "station": "蟹江駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "090-7404-4073",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/c2c4e4fc-366b-4342-a13a-0b44daed4a6c/",
+      "address": "愛知県海部郡蟹江町今二之坪３９−３",
+      "latitude": "35.14058277124771",
+      "longitude": "136.7909582329851",
+      "note": "（セブン-イレブン 蟹江今店の近く）",
       "detailLoaded": true
     },
     {
@@ -7132,18 +7144,6 @@
       "latitude": "35.216372212862446",
       "longitude": "137.05332730028283",
       "note": "ことぶきの湯裏側の駐車場に着いたら電話してください",
-      "detailLoaded": true
-    },
-    {
-      "name": "ドキドキトラップ",
-      "station": "蟹江駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "090-7404-4073",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/c2c4e4fc-366b-4342-a13a-0b44daed4a6c/",
-      "address": "愛知県海部郡蟹江町今二之坪３９−３",
-      "latitude": "35.14058277124771",
-      "longitude": "136.7909582329851",
-      "note": "（セブン-イレブン 蟹江今店の近く）",
       "detailLoaded": true
     },
     {
@@ -7267,6 +7267,30 @@
       "detailLoaded": true
     },
     {
+      "name": "さくらんぼ",
+      "station": "稲沢駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "090-6575-5333",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/9188e194-4702-44ca-981f-3d24c349f44e/",
+      "address": "",
+      "latitude": "35.269029",
+      "longitude": "136.845387",
+      "note": "アクセス欄は緯度経度のみ",
+      "detailLoaded": true
+    },
+    {
+      "name": "ご褒美time",
+      "station": "津島駅",
+      "hours": "12:00～LAST",
+      "phone": "070-4460-9681",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/fb7ade7c-b468-4b1a-8c65-f6d71feede77/",
+      "address": "愛知県津島市藤里町1丁目",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "誘惑のパラダイス",
       "station": "西春駅",
       "hours": "12:00～LAST",
@@ -7303,6 +7327,18 @@
       "detailLoaded": true
     },
     {
+      "name": "マンゴー姫（まんごーひめ）",
+      "station": "佐古木駅",
+      "hours": "10:30～LAST",
+      "phone": "050-6868-6891",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/65fce10c-86f0-4356-beda-d83811142c75/",
+      "address": "",
+      "latitude": "",
+      "longitude": "",
+      "note": "ここに着きましたら、お電話ください。",
+      "detailLoaded": true
+    },
+    {
       "name": "癒しの間",
       "station": "蟹江駅",
       "hours": "10:00～LAST",
@@ -7327,18 +7363,6 @@
       "detailLoaded": true
     },
     {
-      "name": "さくらんぼ",
-      "station": "稲沢駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "090-6575-5333",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/9188e194-4702-44ca-981f-3d24c349f44e/",
-      "address": "",
-      "latitude": "35.269029",
-      "longitude": "136.845387",
-      "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
       "name": "隠れ家",
       "station": "蟹江駅",
       "hours": "12:00～翌 03:00",
@@ -7351,18 +7375,6 @@
       "detailLoaded": true
     },
     {
-      "name": "ご褒美time",
-      "station": "津島駅",
-      "hours": "12:00～LAST",
-      "phone": "070-4460-9681",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/fb7ade7c-b468-4b1a-8c65-f6d71feede77/",
-      "address": "愛知県津島市藤里町1丁目",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "アッぷるパイ〜味わったことのない濃厚体験〜",
       "station": "稲沢駅",
       "hours": "11:00～翌 03:00",
@@ -7372,18 +7384,6 @@
       "latitude": "35.25184390483125",
       "longitude": "136.81955368153825",
       "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "マンゴー姫（まんごーひめ）",
-      "station": "佐古木駅",
-      "hours": "10:30～LAST",
-      "phone": "050-6868-6891",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/65fce10c-86f0-4356-beda-d83811142c75/",
-      "address": "",
-      "latitude": "",
-      "longitude": "",
-      "note": "ここに着きましたら、お電話ください。",
       "detailLoaded": true
     },
     {
@@ -7447,18 +7447,6 @@
       "detailLoaded": true
     },
     {
-      "name": "極楽もも",
-      "station": "木曽川駅・奥町駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "070-3369-0629",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/f41d3134-7f58-450e-9c7e-ffe955f72138/",
-      "address": "愛知県一宮市木曽川町黒田山１−２",
-      "latitude": "35.31058761168509",
-      "longitude": "136.75743862450264",
-      "note": "フィットイージー 木曽川店付近着きましたら電話してください。",
-      "detailLoaded": true
-    },
-    {
       "name": "Mrs.Lemon（ミセスレモン）",
       "station": "木曽川駅",
       "hours": "24時間営業",
@@ -7468,6 +7456,18 @@
       "latitude": "",
       "longitude": "",
       "note": "所在地：愛知県一宮市木曽川町里小牧字清水４１番地４",
+      "detailLoaded": true
+    },
+    {
+      "name": "極楽もも",
+      "station": "木曽川駅・奥町駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "070-3369-0629",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/f41d3134-7f58-450e-9c7e-ffe955f72138/",
+      "address": "愛知県一宮市木曽川町黒田山１−２",
+      "latitude": "35.31058761168509",
+      "longitude": "136.75743862450264",
+      "note": "フィットイージー 木曽川店付近着きましたら電話してください。",
       "detailLoaded": true
     },
     {
@@ -7687,18 +7687,6 @@
       "detailLoaded": true
     },
     {
-      "name": "ねこりん",
-      "station": "甚目寺駅",
-      "hours": "11:00～LAST",
-      "phone": "050-6863-6416",
-      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/a20ab03c-03f8-460c-8f56-c778e83cdcc8/",
-      "address": "愛知県あま市甚目寺郷浦",
-      "latitude": "35.196146643111895",
-      "longitude": "136.82535995978185",
-      "note": "【名鉄協商パーキング 甚目寺駅前】に着きましたらお電話ください",
-      "detailLoaded": true
-    },
-    {
       "name": "最高のenjoy",
       "station": "岩倉駅",
       "hours": "13:00～LAST",
@@ -7708,6 +7696,18 @@
       "latitude": "35.280986",
       "longitude": "136.86858",
       "note": "駐車場：店舗前に2台あります。",
+      "detailLoaded": true
+    },
+    {
+      "name": "ねこりん",
+      "station": "甚目寺駅",
+      "hours": "11:00～LAST",
+      "phone": "050-6863-6416",
+      "listingUrl": "https://www.esthe-ranking.jp/owari/shop-detail/a20ab03c-03f8-460c-8f56-c778e83cdcc8/",
+      "address": "愛知県あま市甚目寺郷浦",
+      "latitude": "35.196146643111895",
+      "longitude": "136.82535995978185",
+      "note": "【名鉄協商パーキング 甚目寺駅前】に着きましたらお電話ください",
       "detailLoaded": true
     },
     {
@@ -8563,18 +8563,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Enjoy Room",
-      "station": "新栄町駅",
-      "hours": "12:00～LAST",
-      "phone": "080-9991-6038",
-      "listingUrl": "https://www.esthe-ranking.jp/shinsakae/shop-detail/4f33e775-ef89-47f0-bb62-c362cdebaa79/",
-      "address": "愛知県名古屋市中区新栄1丁目27−7",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
       "name": "フラワーガール",
       "station": "今池駅2番出口",
       "hours": "10:00～LAST",
@@ -8584,6 +8572,18 @@
       "latitude": "35.175219972873414",
       "longitude": "136.93925798500044",
       "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "Enjoy Room",
+      "station": "新栄町駅",
+      "hours": "12:00～LAST",
+      "phone": "080-9991-6038",
+      "listingUrl": "https://www.esthe-ranking.jp/shinsakae/shop-detail/4f33e775-ef89-47f0-bb62-c362cdebaa79/",
+      "address": "愛知県名古屋市中区新栄1丁目27−7",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
       "detailLoaded": true
     },
     {
@@ -8635,6 +8635,18 @@
       "detailLoaded": true
     },
     {
+      "name": "MoonLight（ムーンライト）",
+      "station": "池下駅1番出口",
+      "hours": "12:00～翌 05:00",
+      "phone": "052-753-9819",
+      "listingUrl": "https://www.esthe-ranking.jp/shinsakae/shop-detail/c54cf877-fe40-40e3-98d2-57df6762b990/",
+      "address": "愛知県名古屋市千種区春岡1-2-3",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "フェアリーランド",
       "station": "池下駅1番出口",
       "hours": "12:00～LAST",
@@ -8671,15 +8683,15 @@
       "detailLoaded": true
     },
     {
-      "name": "MoonLight（ムーンライト）",
-      "station": "池下駅1番出口",
-      "hours": "12:00～翌 05:00",
-      "phone": "052-753-9819",
-      "listingUrl": "https://www.esthe-ranking.jp/shinsakae/shop-detail/c54cf877-fe40-40e3-98d2-57df6762b990/",
-      "address": "愛知県名古屋市千種区春岡1-2-3",
+      "name": "星の女神",
+      "station": "池下駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "080-6706-7888",
+      "listingUrl": "https://www.esthe-ranking.jp/shinsakae/shop-detail/de904870-9a68-4d25-8aaf-f79f7727012c/",
+      "address": "愛知県名古屋市千種区池下２丁目２−１６",
       "latitude": "",
       "longitude": "",
-      "note": "アクセス欄に住所あり",
+      "note": "お近くのコインパーキングをご利用下さい。",
       "detailLoaded": true
     },
     {
@@ -8692,18 +8704,6 @@
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "星の女神",
-      "station": "池下駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "080-6706-7888",
-      "listingUrl": "https://www.esthe-ranking.jp/shinsakae/shop-detail/de904870-9a68-4d25-8aaf-f79f7727012c/",
-      "address": "愛知県名古屋市千種区池下２丁目２−１６",
-      "latitude": "",
-      "longitude": "",
-      "note": "お近くのコインパーキングをご利用下さい。",
       "detailLoaded": true
     },
     {
@@ -9259,18 +9259,6 @@
       "detailLoaded": true
     },
     {
-      "name": "ハグハグ",
-      "station": "築地口駅",
-      "hours": "11:00～LAST",
-      "phone": "070-6580-6789",
-      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/b7869f05-5e9e-4996-8423-4e431837a2f4/",
-      "address": "",
-      "latitude": "35.098817",
-      "longitude": "136.881626",
-      "note": "近くの【名鉄協商パーキング 築地口第6】に着きましたらお電話ください。",
-      "detailLoaded": true
-    },
-    {
       "name": "微妙な彼女",
       "station": "高畑駅",
       "hours": "24時間営業",
@@ -9280,6 +9268,18 @@
       "latitude": "35.13903190330136",
       "longitude": "136.85374600000003",
       "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "ハグハグ",
+      "station": "築地口駅",
+      "hours": "11:00～LAST",
+      "phone": "070-6580-6789",
+      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/b7869f05-5e9e-4996-8423-4e431837a2f4/",
+      "address": "",
+      "latitude": "35.098817",
+      "longitude": "136.881626",
+      "note": "近くの【名鉄協商パーキング 築地口第6】に着きましたらお電話ください。",
       "detailLoaded": true
     },
     {
@@ -9319,18 +9319,6 @@
       "detailLoaded": true
     },
     {
-      "name": "癒しのハウス",
-      "station": "港北駅",
-      "hours": "12:00～LAST",
-      "phone": "090-8557-0616",
-      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/0c76d653-85db-455c-8af5-2bdb0faa14ef/",
-      "address": "",
-      "latitude": "35.112743",
-      "longitude": "136.823727",
-      "note": "共用駐車場があります。",
-      "detailLoaded": true
-    },
-    {
       "name": "妹の部屋",
       "station": "東海通駅1番出口",
       "hours": "12:00～LAST(受付：11:00～)",
@@ -9340,6 +9328,18 @@
       "latitude": "35.1175571694086",
       "longitude": "136.88776125150562",
       "note": "近くの【スギ薬局 みなと七番町店）】につきましたら、お電話ください",
+      "detailLoaded": true
+    },
+    {
+      "name": "癒しのハウス",
+      "station": "港北駅",
+      "hours": "12:00～LAST",
+      "phone": "090-8557-0616",
+      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/0c76d653-85db-455c-8af5-2bdb0faa14ef/",
+      "address": "",
+      "latitude": "35.112743",
+      "longitude": "136.823727",
+      "note": "共用駐車場があります。",
       "detailLoaded": true
     },
     {
@@ -9379,6 +9379,18 @@
       "detailLoaded": true
     },
     {
+      "name": "煌（きら）",
+      "station": "高畑駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "080-6079-7047",
+      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/8cf1332f-48e7-4795-8895-2391235f861b/",
+      "address": "愛知県名古屋市中川区中島新町1丁目305",
+      "latitude": "35.130458",
+      "longitude": "136.853867",
+      "note": "高畑駅徒歩10分/荒子駅/中島駅",
+      "detailLoaded": true
+    },
+    {
       "name": "ラブラボ愛の研究室",
       "station": "戸田駅",
       "hours": "11:00～LAST",
@@ -9403,6 +9415,18 @@
       "detailLoaded": true
     },
     {
+      "name": "甘えん坊",
+      "station": "高畑駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "080-9493-3541",
+      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/914ac3ef-86fb-494a-af87-014eccf23153/",
+      "address": "愛知県名古屋市中川区高畑１丁目５８",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場：コインパーキングご利用ください",
+      "detailLoaded": true
+    },
+    {
       "name": "台湾girl",
       "station": "高畑駅",
       "hours": "24時間営業",
@@ -9424,30 +9448,6 @@
       "latitude": "35.11104751164784",
       "longitude": "136.85527137301395",
       "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
-      "name": "煌（きら）",
-      "station": "高畑駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "080-6079-7047",
-      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/8cf1332f-48e7-4795-8895-2391235f861b/",
-      "address": "愛知県名古屋市中川区中島新町1丁目305",
-      "latitude": "35.130458",
-      "longitude": "136.853867",
-      "note": "高畑駅徒歩10分/荒子駅/中島駅",
-      "detailLoaded": true
-    },
-    {
-      "name": "甘えん坊",
-      "station": "高畑駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "080-9493-3541",
-      "listingUrl": "https://www.esthe-ranking.jp/tokaidori/shop-detail/914ac3ef-86fb-494a-af87-014eccf23153/",
-      "address": "愛知県名古屋市中川区高畑１丁目５８",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場：コインパーキングご利用ください",
       "detailLoaded": true
     },
     {
@@ -9775,6 +9775,18 @@
       "detailLoaded": true
     },
     {
+      "name": "美楽美人",
+      "station": "船町駅・南栄駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-6240-6699",
+      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/fbc6c411-1f72-45c7-b99f-1e468d7cb970/",
+      "address": "愛知県豊橋市弥生町中原８３−１",
+      "latitude": "34.77122164133172",
+      "longitude": "137.37083965829862",
+      "note": "地図の位置に着きましたら、ご連絡ください。",
+      "detailLoaded": true
+    },
+    {
       "name": "お兄ちゃん来い",
       "station": "豊橋駅",
       "hours": "11:00～翌 03:00",
@@ -9796,18 +9808,6 @@
       "latitude": "",
       "longitude": "",
       "note": "JR東海道線「二川駅」北口を出て、北の方へ行って、二番目の交差点のところで右へ曲がったら、右手に7階建のマンションを見えます、当店はこの2階にあります。",
-      "detailLoaded": true
-    },
-    {
-      "name": "美楽美人",
-      "station": "船町駅・南栄駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-6240-6699",
-      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/fbc6c411-1f72-45c7-b99f-1e468d7cb970/",
-      "address": "愛知県豊橋市弥生町中原８３−１",
-      "latitude": "34.77122164133172",
-      "longitude": "137.37083965829862",
-      "note": "地図の位置に着きましたら、ご連絡ください。",
       "detailLoaded": true
     },
     {
@@ -10051,6 +10051,18 @@
       "detailLoaded": true
     },
     {
+      "name": "White Snow（ホワイトスノウ）",
+      "station": "船町駅",
+      "hours": "24時間営業",
+      "phone": "070-1541-5178",
+      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/5f68d072-dc50-49f2-b268-562f20de6864/",
+      "address": "",
+      "latitude": "34.77173901447222",
+      "longitude": "137.3713713741073",
+      "note": "アクセス欄は緯度経度のみ",
+      "detailLoaded": true
+    },
+    {
       "name": "ぴゅあらぶ",
       "station": "船町駅",
       "hours": "24時間営業",
@@ -10071,18 +10083,6 @@
       "address": "",
       "latitude": "34.8259",
       "longitude": "137.220972",
-      "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
-      "name": "White Snow（ホワイトスノウ）",
-      "station": "船町駅",
-      "hours": "24時間営業",
-      "phone": "070-1541-5178",
-      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/5f68d072-dc50-49f2-b268-562f20de6864/",
-      "address": "",
-      "latitude": "34.77173901447222",
-      "longitude": "137.3713713741073",
       "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
@@ -10195,18 +10195,6 @@
       "detailLoaded": true
     },
     {
-      "name": "美桜（みお）",
-      "station": "豊橋駅",
-      "hours": "12:00～LAST",
-      "phone": "080-3067-5702",
-      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/00471ed6-e94f-4692-9447-fcbdf48a6ccc/",
-      "address": "愛知県豊橋市飯村北3-23-9",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場：お店の前に2台あります。",
-      "detailLoaded": true
-    },
-    {
       "name": "いやし美人",
       "station": "船町駅・南栄駅",
       "hours": "11:00～翌 02:00",
@@ -10216,6 +10204,18 @@
       "latitude": "34.7719315530434",
       "longitude": "137.37009490273158",
       "note": "ココ不動産の近くに着いたらお電話ください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "美桜（みお）",
+      "station": "豊橋駅",
+      "hours": "12:00～LAST",
+      "phone": "080-3067-5702",
+      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/00471ed6-e94f-4692-9447-fcbdf48a6ccc/",
+      "address": "愛知県豊橋市飯村北3-23-9",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場：お店の前に2台あります。",
       "detailLoaded": true
     },
     {
@@ -10351,18 +10351,6 @@
       "detailLoaded": true
     },
     {
-      "name": "癒し屋",
-      "station": "二川駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "070-2227-4254",
-      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/761320f0-7662-4d58-9ea0-76e295cb3716/",
-      "address": "愛知県豊橋市大岩町字北元屋敷28-1",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場２０台",
-      "detailLoaded": true
-    },
-    {
       "name": "咲き",
       "station": "船町駅・南栄駅",
       "hours": "11:00～翌 02:00",
@@ -10372,6 +10360,18 @@
       "latitude": "34.771931901790786",
       "longitude": "137.37009169628405",
       "note": "ココ不動産の近くに着いたらお電話ください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "癒し屋",
+      "station": "二川駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "070-2227-4254",
+      "listingUrl": "https://www.esthe-ranking.jp/toyohashi/shop-detail/761320f0-7662-4d58-9ea0-76e295cb3716/",
+      "address": "愛知県豊橋市大岩町字北元屋敷28-1",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場２０台",
       "detailLoaded": true
     },
     {
@@ -10627,6 +10627,18 @@
       "detailLoaded": true
     },
     {
+      "name": "Hot Land（ホットランド）",
+      "station": "一ツ木駅",
+      "hours": "24時間営業",
+      "phone": "090-9182-9998",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/3e3dbc1e-51fe-4045-ab58-ea70e9c25561/",
+      "address": "愛知県刈谷市一ツ木町３丁目１０−４",
+      "latitude": "",
+      "longitude": "",
+      "note": "【ジョーシン一ツ木店】に着きましたらお電話ください。",
+      "detailLoaded": true
+    },
+    {
       "name": "Remember Me（リメンバーミー）",
       "station": "逢妻駅",
       "hours": "24時間営業",
@@ -10651,18 +10663,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Hot Land（ホットランド）",
-      "station": "一ツ木駅",
-      "hours": "24時間営業",
-      "phone": "090-9182-9998",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/3e3dbc1e-51fe-4045-ab58-ea70e9c25561/",
-      "address": "愛知県刈谷市一ツ木町３丁目１０−４",
-      "latitude": "",
-      "longitude": "",
-      "note": "【ジョーシン一ツ木店】に着きましたらお電話ください。",
-      "detailLoaded": true
-    },
-    {
       "name": "ラブリー",
       "station": "米野木駅",
       "hours": "12:00～LAST",
@@ -10672,6 +10672,18 @@
       "latitude": "",
       "longitude": "",
       "note": "所在地：愛知県みよし市東陣取山201番地",
+      "detailLoaded": true
+    },
+    {
+      "name": "あまねこ館",
+      "station": "三河安城駅北口",
+      "hours": "24時間営業",
+      "phone": "090-7957-7336",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/23cbcd47-fb33-4c6b-9790-0192eac17ffb/",
+      "address": "愛知県安城市三河安城町２丁目",
+      "latitude": "34.970565",
+      "longitude": "137.061643",
+      "note": "三河安城駅【北口】付近でお電話して下さい",
       "detailLoaded": true
     },
     {
@@ -10699,15 +10711,39 @@
       "detailLoaded": true
     },
     {
-      "name": "あまねこ館",
-      "station": "三河安城駅北口",
+      "name": "甘い蜜林檎",
+      "station": "知立駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "080-2860-6938",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/f20d204b-2464-4864-b51c-363dd820125b/",
+      "address": "愛知県知立市新富2丁目47",
+      "latitude": "35.00443388695071",
+      "longitude": "137.04259575419562",
+      "note": "駐車場あります",
+      "detailLoaded": true
+    },
+    {
+      "name": "幸運のPresent",
+      "station": "東岡崎駅",
       "hours": "24時間営業",
-      "phone": "090-7957-7336",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/23cbcd47-fb33-4c6b-9790-0192eac17ffb/",
-      "address": "愛知県安城市三河安城町２丁目",
-      "latitude": "34.970565",
-      "longitude": "137.061643",
-      "note": "三河安城駅【北口】付近でお電話して下さい",
+      "phone": "090-8246-8804",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/34f1184d-5e83-4b0b-a1b4-2b921a75c37c/",
+      "address": "愛知県岡崎市本町通2丁目12",
+      "latitude": "34.959884",
+      "longitude": "137.163665",
+      "note": "駐車場 あります",
+      "detailLoaded": true
+    },
+    {
+      "name": "Over",
+      "station": "大門駅",
+      "hours": "12:00～LAST",
+      "phone": "090-3370-7814",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/82993163-94b6-4372-bfba-a23cf2e7ebf3/",
+      "address": "",
+      "latitude": "34.987402",
+      "longitude": "137.164339",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -10720,18 +10756,6 @@
       "latitude": "34.86193782823768",
       "longitude": "137.06458059113433",
       "note": "西尾郵便局から徒歩１分",
-      "detailLoaded": true
-    },
-    {
-      "name": "甘い蜜林檎",
-      "station": "知立駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "080-2860-6938",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/f20d204b-2464-4864-b51c-363dd820125b/",
-      "address": "愛知県知立市新富2丁目47",
-      "latitude": "35.00443388695071",
-      "longitude": "137.04259575419562",
-      "note": "駐車場あります",
       "detailLoaded": true
     },
     {
@@ -10771,18 +10795,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Over",
-      "station": "大門駅",
-      "hours": "12:00～LAST",
-      "phone": "090-3370-7814",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/82993163-94b6-4372-bfba-a23cf2e7ebf3/",
-      "address": "",
-      "latitude": "34.987402",
-      "longitude": "137.164339",
-      "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
       "name": "キュンと",
       "station": "西尾駅",
       "hours": "24時間営業",
@@ -10804,6 +10816,18 @@
       "latitude": "",
       "longitude": "",
       "note": "駐車場あります。",
+      "detailLoaded": true
+    },
+    {
+      "name": "癒し魔女",
+      "station": "安城駅",
+      "hours": "24時間営業",
+      "phone": "080-9004-9622",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/38d3db02-039a-4c9b-ba4a-b431babe9cc2/",
+      "address": "",
+      "latitude": "34.96084",
+      "longitude": "137.081838",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -10855,15 +10879,15 @@
       "detailLoaded": true
     },
     {
-      "name": "癒し魔女",
-      "station": "安城駅",
-      "hours": "24時間営業",
-      "phone": "080-9004-9622",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/38d3db02-039a-4c9b-ba4a-b431babe9cc2/",
-      "address": "",
-      "latitude": "34.96084",
-      "longitude": "137.081838",
-      "note": "アクセス欄は緯度経度のみ",
+      "name": "果樹園",
+      "station": "刈谷駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "090-4266-9732",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/0450bc91-a7eb-4b04-ac3a-106a8b39fd34/",
+      "address": "愛知県刈谷市池田町2丁目209",
+      "latitude": "35.00597447992109",
+      "longitude": "137.00881389202925",
+      "note": "アクセス欄に緯度経度と住所あり",
       "detailLoaded": true
     },
     {
@@ -10879,15 +10903,15 @@
       "detailLoaded": true
     },
     {
-      "name": "果樹園",
+      "name": "チョメチョメハウス",
       "station": "刈谷駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "090-4266-9732",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/0450bc91-a7eb-4b04-ac3a-106a8b39fd34/",
-      "address": "愛知県刈谷市池田町2丁目209",
-      "latitude": "35.00597447992109",
-      "longitude": "137.00881389202925",
-      "note": "アクセス欄に緯度経度と住所あり",
+      "hours": "24時間営業",
+      "phone": "080-8222-1260",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/bc1c6d74-a3f1-481b-be3f-dd16b3d178ee/",
+      "address": "愛知県刈谷市神明町７丁目４０３",
+      "latitude": "",
+      "longitude": "",
+      "note": "（ファミリーマート 刈谷神明町店のお近くに着いたら、ご連絡ください）",
       "detailLoaded": true
     },
     {
@@ -10939,6 +10963,30 @@
       "detailLoaded": true
     },
     {
+      "name": "激安美少女",
+      "station": "刈谷駅",
+      "hours": "12:00～翌 05:00",
+      "phone": "080-7392-8575",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/5b23fc20-9e8e-4554-aa04-d296dfa3a95f/",
+      "address": "愛知県刈谷市高倉町５丁目１０２",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "天使の心",
+      "station": "大門駅",
+      "hours": "12:00～翌 05:00",
+      "phone": "080-5658-5154",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/a03249d0-1816-4e2e-8128-b85e48ddf978/",
+      "address": "愛知県岡崎市薮田1丁目2-11",
+      "latitude": "",
+      "longitude": "",
+      "note": "専用駐車場６台あり",
+      "detailLoaded": true
+    },
+    {
       "name": "恋花",
       "station": "三河安城駅北口",
       "hours": "24時間営業",
@@ -10975,6 +11023,18 @@
       "detailLoaded": true
     },
     {
+      "name": "君にメロメロ",
+      "station": "黒笹駅",
+      "hours": "11:00～LAST",
+      "phone": "080-8129-2791",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/75e50620-2b8b-4933-813b-bb4e0c08db03/",
+      "address": "愛知県みよし市黒笹いずみ１丁目１０−８",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "E感じ",
       "station": "岡崎駅",
       "hours": "12:00～翌 03:00",
@@ -10999,39 +11059,27 @@
       "detailLoaded": true
     },
     {
-      "name": "激安美少女",
-      "station": "刈谷駅",
-      "hours": "12:00～翌 05:00",
-      "phone": "080-7392-8575",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/5b23fc20-9e8e-4554-aa04-d296dfa3a95f/",
-      "address": "愛知県刈谷市高倉町５丁目１０２",
+      "name": "クルミ",
+      "station": "新安城駅",
+      "hours": "12:00～LAST",
+      "phone": "080-9511-6668",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/02238860-7044-496c-8bb3-0b6255a2e722/",
+      "address": "愛知県安城市今本町7丁目1-1",
       "latitude": "",
       "longitude": "",
-      "note": "アクセス欄に住所あり",
+      "note": "共用駐車場18台あります",
       "detailLoaded": true
     },
     {
-      "name": "天使の心",
-      "station": "大門駅",
-      "hours": "12:00～翌 05:00",
-      "phone": "080-5658-5154",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/a03249d0-1816-4e2e-8128-b85e48ddf978/",
-      "address": "愛知県岡崎市薮田1丁目2-11",
-      "latitude": "",
-      "longitude": "",
-      "note": "専用駐車場６台あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "君にメロメロ",
-      "station": "黒笹駅",
-      "hours": "11:00～LAST",
-      "phone": "080-8129-2791",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/75e50620-2b8b-4933-813b-bb4e0c08db03/",
-      "address": "愛知県みよし市黒笹いずみ１丁目１０−８",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
+      "name": "愛の予感",
+      "station": "桜井駅",
+      "hours": "24時間営業",
+      "phone": "090-6755-5858",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/d850460c-ac52-4c74-af6d-d5173b1dc397/",
+      "address": "愛知県安城市小川町三日三升",
+      "latitude": "34.90964787765045",
+      "longitude": "137.08780715953682",
+      "note": "コインランドリー【ボーテ 安城小川店】の駐車場に着きましたらお電話してください",
       "detailLoaded": true
     },
     {
@@ -11047,27 +11095,39 @@
       "detailLoaded": true
     },
     {
-      "name": "チョメチョメハウス",
-      "station": "刈谷駅",
-      "hours": "24時間営業",
-      "phone": "080-8222-1260",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/bc1c6d74-a3f1-481b-be3f-dd16b3d178ee/",
-      "address": "愛知県刈谷市神明町７丁目４０３",
-      "latitude": "",
-      "longitude": "",
-      "note": "（ファミリーマート 刈谷神明町店のお近くに着いたら、ご連絡ください）",
+      "name": "Royal.Room（ロイヤルルーム）",
+      "station": "知立駅",
+      "hours": "12:00～翌 01:00",
+      "phone": "090-1274-1914",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/5d9951bc-b2aa-4b93-802a-9d1c17e161e5/",
+      "address": "愛知県知立市新富2",
+      "latitude": "35.00458141260825",
+      "longitude": "137.04264154659296",
+      "note": "駐車場あります。",
       "detailLoaded": true
     },
     {
-      "name": "幸運のPresent",
-      "station": "東岡崎駅",
+      "name": "うたかた桜",
+      "station": "知立駅",
+      "hours": "11:00～翌 04:00",
+      "phone": "080-6040-0790",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/5ee167fd-382b-47de-8fab-bab1a567126f/",
+      "address": "愛知県知立市新地町西新地28-4",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場 2台あります",
+      "detailLoaded": true
+    },
+    {
+      "name": "台湾ハニー",
+      "station": "刈谷駅",
       "hours": "24時間営業",
-      "phone": "090-8246-8804",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/34f1184d-5e83-4b0b-a1b4-2b921a75c37c/",
-      "address": "愛知県岡崎市本町通2丁目12",
-      "latitude": "34.959884",
-      "longitude": "137.163665",
-      "note": "駐車場 あります",
+      "phone": "090-5129-3646",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/aec35f28-1830-4127-bf7c-a7e7a03b4528/",
+      "address": "",
+      "latitude": "34.995627",
+      "longitude": "137.005234",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -11095,18 +11155,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Royal.Room（ロイヤルルーム）",
-      "station": "知立駅",
-      "hours": "12:00～翌 01:00",
-      "phone": "090-1274-1914",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/5d9951bc-b2aa-4b93-802a-9d1c17e161e5/",
-      "address": "愛知県知立市新富2",
-      "latitude": "35.00458141260825",
-      "longitude": "137.04264154659296",
-      "note": "駐車場あります。",
-      "detailLoaded": true
-    },
-    {
       "name": "秘密の夜（ひみつのよる）",
       "station": "新安城駅",
       "hours": "24時間営業",
@@ -11116,18 +11164,6 @@
       "latitude": "",
       "longitude": "",
       "note": "駐車場：店舗前に2台あります。",
-      "detailLoaded": true
-    },
-    {
-      "name": "クルミ",
-      "station": "新安城駅",
-      "hours": "12:00～LAST",
-      "phone": "080-9511-6668",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/02238860-7044-496c-8bb3-0b6255a2e722/",
-      "address": "愛知県安城市今本町7丁目1-1",
-      "latitude": "",
-      "longitude": "",
-      "note": "共用駐車場18台あります",
       "detailLoaded": true
     },
     {
@@ -11167,27 +11203,15 @@
       "detailLoaded": true
     },
     {
-      "name": "うたかた桜",
-      "station": "知立駅",
-      "hours": "11:00～翌 04:00",
-      "phone": "080-6040-0790",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/5ee167fd-382b-47de-8fab-bab1a567126f/",
-      "address": "愛知県知立市新地町西新地28-4",
+      "name": "愛楽園",
+      "station": "安城駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "080-2236-6595",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/81240787-fca8-49f6-816f-f8830aa8d13f/",
+      "address": "愛知県安城市横山町大山田中１−１",
       "latitude": "",
       "longitude": "",
-      "note": "駐車場 2台あります",
-      "detailLoaded": true
-    },
-    {
-      "name": "台湾ハニー",
-      "station": "刈谷駅",
-      "hours": "24時間営業",
-      "phone": "090-5129-3646",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/aec35f28-1830-4127-bf7c-a7e7a03b4528/",
-      "address": "",
-      "latitude": "34.995627",
-      "longitude": "137.005234",
-      "note": "アクセス欄は緯度経度のみ",
+      "note": "ドラッグストア マツモトキヨシ 安城横山店着きましたら電話してください。",
       "detailLoaded": true
     },
     {
@@ -11200,18 +11224,6 @@
       "latitude": "34.94921744933818",
       "longitude": "137.09391765033953",
       "note": "駐車場 店舗前に3台ございます",
-      "detailLoaded": true
-    },
-    {
-      "name": "愛楽園",
-      "station": "安城駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "080-2236-6595",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/81240787-fca8-49f6-816f-f8830aa8d13f/",
-      "address": "愛知県安城市横山町大山田中１−１",
-      "latitude": "",
-      "longitude": "",
-      "note": "ドラッグストア マツモトキヨシ 安城横山店着きましたら電話してください。",
       "detailLoaded": true
     },
     {
@@ -11239,15 +11251,15 @@
       "detailLoaded": true
     },
     {
-      "name": "愛の予感",
-      "station": "桜井駅",
-      "hours": "24時間営業",
-      "phone": "090-6755-5858",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/d850460c-ac52-4c74-af6d-d5173b1dc397/",
-      "address": "愛知県安城市小川町三日三升",
-      "latitude": "34.90964787765045",
-      "longitude": "137.08780715953682",
-      "note": "コインランドリー【ボーテ 安城小川店】の駐車場に着きましたらお電話してください",
+      "name": "ハッピータイム",
+      "station": "東刈谷駅",
+      "hours": "12:00～翌 04:00",
+      "phone": "070-2826-3783",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/b9b1a29d-63be-4c79-a5f2-e2e139064d04/",
+      "address": "愛知県刈谷市東刈谷町1丁目17-13",
+      "latitude": "",
+      "longitude": "",
+      "note": "共用駐車場あります",
       "detailLoaded": true
     },
     {
@@ -11287,15 +11299,15 @@
       "detailLoaded": true
     },
     {
-      "name": "ハッピータイム",
-      "station": "東刈谷駅",
-      "hours": "12:00～翌 04:00",
-      "phone": "070-2826-3783",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/b9b1a29d-63be-4c79-a5f2-e2e139064d04/",
-      "address": "愛知県刈谷市東刈谷町1丁目17-13",
+      "name": "回転美人",
+      "station": "大門駅",
+      "hours": "10:00～翌 03:00",
+      "phone": "090-7961-6124",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/e54ea302-8b7d-47ca-af30-22fb3725e4db/",
+      "address": "愛知県岡崎市大樹寺3丁目7-15",
       "latitude": "",
       "longitude": "",
-      "note": "共用駐車場あります",
+      "note": "駐車場：共用駐車場20台あります（満車の場合、お店にお電話ください。ご案内致します。）",
       "detailLoaded": true
     },
     {
@@ -11347,18 +11359,6 @@
       "detailLoaded": true
     },
     {
-      "name": "回転美人",
-      "station": "大門駅",
-      "hours": "10:00～翌 03:00",
-      "phone": "090-7961-6124",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/e54ea302-8b7d-47ca-af30-22fb3725e4db/",
-      "address": "愛知県岡崎市大樹寺3丁目7-15",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場：共用駐車場20台あります（満車の場合、お店にお電話ください。ご案内致します。）",
-      "detailLoaded": true
-    },
-    {
       "name": "なごみ",
       "station": "岡崎駅",
       "hours": "12:00～LAST",
@@ -11371,6 +11371,18 @@
       "detailLoaded": true
     },
     {
+      "name": "癒しの恋",
+      "station": "北岡崎駅",
+      "hours": "12:00～LAST",
+      "phone": "080-9500-3651",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/18016a1a-5b7d-4f25-bba3-4d0e4beece38/",
+      "address": "",
+      "latitude": "34.970575",
+      "longitude": "137.15032",
+      "note": "(付近に着きましたらお電話ください)",
+      "detailLoaded": true
+    },
+    {
       "name": "ツバメ",
       "station": "安城駅",
       "hours": "12:00～翌 03:00",
@@ -11380,6 +11392,18 @@
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "癒し妖精",
+      "station": "大門駅",
+      "hours": "24時間営業",
+      "phone": "080-6338-6888",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/acde74f3-0e3e-4da0-a208-81f3fe0a349e/",
+      "address": "愛知県岡崎市百々西町13-5",
+      "latitude": "34.990413619320194",
+      "longitude": "137.1692249096832",
+      "note": "駐車場：あります。",
       "detailLoaded": true
     },
     {
@@ -11407,27 +11431,15 @@
       "detailLoaded": true
     },
     {
-      "name": "癒しの恋",
-      "station": "北岡崎駅",
-      "hours": "12:00～LAST",
-      "phone": "080-9500-3651",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/18016a1a-5b7d-4f25-bba3-4d0e4beece38/",
-      "address": "",
-      "latitude": "34.970575",
-      "longitude": "137.15032",
-      "note": "(付近に着きましたらお電話ください)",
-      "detailLoaded": true
-    },
-    {
-      "name": "癒し妖精",
-      "station": "大門駅",
-      "hours": "24時間営業",
-      "phone": "080-6338-6888",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/acde74f3-0e3e-4da0-a208-81f3fe0a349e/",
-      "address": "愛知県岡崎市百々西町13-5",
-      "latitude": "34.990413619320194",
-      "longitude": "137.1692249096832",
-      "note": "駐車場：あります。",
+      "name": "秘密の誘惑",
+      "station": "東刈谷駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "070-1654-8207",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/1b0f797c-4c05-439c-89a5-0d3123392274/",
+      "address": "愛知県刈谷市東刈谷町３丁目１２−３",
+      "latitude": "",
+      "longitude": "",
+      "note": "ファミリーマートに着きましたらお電話ください",
       "detailLoaded": true
     },
     {
@@ -11488,18 +11500,6 @@
       "latitude": "35.100412",
       "longitude": "137.16676",
       "note": "駐車場あります。",
-      "detailLoaded": true
-    },
-    {
-      "name": "秘密の誘惑",
-      "station": "東刈谷駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "070-1654-8207",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/1b0f797c-4c05-439c-89a5-0d3123392274/",
-      "address": "愛知県刈谷市東刈谷町３丁目１２−３",
-      "latitude": "",
-      "longitude": "",
-      "note": "ファミリーマートに着きましたらお電話ください",
       "detailLoaded": true
     },
     {
@@ -11587,6 +11587,30 @@
       "detailLoaded": true
     },
     {
+      "name": "幸せの夜",
+      "station": "知立駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "090-2811-6116",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/41984346-fe39-4de8-af01-bd6205521618/",
+      "address": "愛知県知立市西丘町西丘８２−１",
+      "latitude": "35.01811807213674",
+      "longitude": "137.03720689166138",
+      "note": "国道1号線近くお車でのお越しが便利です。",
+      "detailLoaded": true
+    },
+    {
+      "name": "Cure（キュア）",
+      "station": "相見駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "080-8479-4192",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/3fb433b5-d633-4991-8635-5212df5ce6d7/",
+      "address": "愛知県岡崎市中島町字井ノ上",
+      "latitude": "34.890341",
+      "longitude": "137.128599",
+      "note": "駐車場あります。",
+      "detailLoaded": true
+    },
+    {
       "name": "花屋敷",
       "station": "一ツ木駅",
       "hours": "24時間営業",
@@ -11635,18 +11659,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Cure（キュア）",
-      "station": "相見駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "080-8479-4192",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/3fb433b5-d633-4991-8635-5212df5ce6d7/",
-      "address": "愛知県岡崎市中島町字井ノ上",
-      "latitude": "34.890341",
-      "longitude": "137.128599",
-      "note": "駐車場あります。",
-      "detailLoaded": true
-    },
-    {
       "name": "癒しのアロマ",
       "station": "一ツ木駅",
       "hours": "11:00～翌 03:00",
@@ -11656,18 +11668,6 @@
       "latitude": "35.0056911006775",
       "longitude": "137.02006327133586",
       "note": "暁第二ビル２F※共用駐車場があります",
-      "detailLoaded": true
-    },
-    {
-      "name": "幸せの夜",
-      "station": "知立駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "090-2811-6116",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/41984346-fe39-4de8-af01-bd6205521618/",
-      "address": "愛知県知立市西丘町西丘８２−１",
-      "latitude": "35.01811807213674",
-      "longitude": "137.03720689166138",
-      "note": "国道1号線近くお車でのお越しが便利です。",
       "detailLoaded": true
     },
     {
@@ -11815,6 +11815,18 @@
       "detailLoaded": true
     },
     {
+      "name": "さくらんぼ",
+      "station": "富士松駅",
+      "hours": "12:00～LAST",
+      "phone": "090-1293-1168",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/25e5e878-b973-4eb3-b31c-35ccf9b5fcb5/",
+      "address": "愛知県刈谷市東境町昭山1-1",
+      "latitude": "35.035976",
+      "longitude": "137.038445",
+      "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
       "name": "リフレッシュ",
       "station": "三河豊田駅",
       "hours": "12:00～LAST",
@@ -11836,6 +11848,18 @@
       "latitude": "34.976629",
       "longitude": "137.160854",
       "note": "駐車場 店舗前に共同駐車場がございます。お店裏にゲームセンターがございます。そちらに停めても大丈夫です",
+      "detailLoaded": true
+    },
+    {
+      "name": "キュア",
+      "station": "岡崎駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "070-2344-0406",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/536547f3-f594-4adc-8148-aa34d374e1af/",
+      "address": "",
+      "latitude": "",
+      "longitude": "",
+      "note": "",
       "detailLoaded": true
     },
     {
@@ -11863,23 +11887,11 @@
       "detailLoaded": true
     },
     {
-      "name": "さくらんぼ",
-      "station": "富士松駅",
-      "hours": "12:00～LAST",
-      "phone": "090-1293-1168",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/25e5e878-b973-4eb3-b31c-35ccf9b5fcb5/",
-      "address": "愛知県刈谷市東境町昭山1-1",
-      "latitude": "35.035976",
-      "longitude": "137.038445",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "キュア",
+      "name": "Alice（アリス）",
       "station": "岡崎駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "070-2344-0406",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/536547f3-f594-4adc-8148-aa34d374e1af/",
+      "hours": "24時間営業",
+      "phone": "090-9335-7744",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/4045413a-28d0-4c38-ac54-3463e9e84da1/",
       "address": "",
       "latitude": "",
       "longitude": "",
@@ -11947,6 +11959,18 @@
       "detailLoaded": true
     },
     {
+      "name": "Luck（ラック）",
+      "station": "矢作橋駅",
+      "hours": "12:30～翌 02:00",
+      "phone": "080-1884-4475",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/fc96d25f-c045-40d4-b376-adf6ab8a018d/",
+      "address": "愛知県岡崎市橋目町阿知賀34番地",
+      "latitude": "34.97581436497053",
+      "longitude": "137.1361583720989",
+      "note": "駐車場 店舗前に複数あります。",
+      "detailLoaded": true
+    },
+    {
       "name": "もみココチ",
       "station": "新豊田駅",
       "hours": "11:00～LAST",
@@ -11971,18 +11995,6 @@
       "detailLoaded": true
     },
     {
-      "name": "Luck（ラック）",
-      "station": "矢作橋駅",
-      "hours": "12:30～翌 02:00",
-      "phone": "080-1884-4475",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/fc96d25f-c045-40d4-b376-adf6ab8a018d/",
-      "address": "愛知県岡崎市橋目町阿知賀34番地",
-      "latitude": "34.97581436497053",
-      "longitude": "137.1361583720989",
-      "note": "駐車場 店舗前に複数あります。",
-      "detailLoaded": true
-    },
-    {
       "name": "anan",
       "station": "豊田市駅",
       "hours": "24時間営業",
@@ -11995,24 +12007,24 @@
       "detailLoaded": true
     },
     {
-      "name": "Alice（アリス）",
-      "station": "岡崎駅",
-      "hours": "24時間営業",
-      "phone": "090-9335-7744",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/4045413a-28d0-4c38-ac54-3463e9e84da1/",
-      "address": "",
-      "latitude": "",
-      "longitude": "",
-      "note": "",
-      "detailLoaded": true
-    },
-    {
       "name": "リラクスパ",
       "station": "北岡崎駅",
       "hours": "13:00～翌 03:00",
       "phone": "080-6284-0762",
       "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/89358d28-4a26-4d3d-bebc-316be8338e42/",
       "address": "愛知県岡崎市伊賀町東郷中１２−１",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "セクシードール",
+      "station": "刈谷駅",
+      "hours": "24時間営業",
+      "phone": "080-2883-8404",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/029cb208-e540-4d1a-a81f-791a2a52343a/",
+      "address": "愛知県刈谷市神明町6-37",
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
@@ -12067,30 +12079,6 @@
       "detailLoaded": true
     },
     {
-      "name": "セクシードール",
-      "station": "刈谷駅",
-      "hours": "24時間営業",
-      "phone": "080-2883-8404",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/029cb208-e540-4d1a-a81f-791a2a52343a/",
-      "address": "愛知県刈谷市神明町6-37",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "detailLoaded": true
-    },
-    {
-      "name": "夜恋",
-      "station": "桜井駅",
-      "hours": "24時間営業",
-      "phone": "080-8039-1953",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/4376da3c-5e9e-46b1-ac6d-daa4fec9467b/",
-      "address": "愛知県安城市桜井町阿原7-1",
-      "latitude": "34.919615116538544",
-      "longitude": "137.09218180219793",
-      "note": "駐車場あります。手前に１台、JA駐車場20番",
-      "detailLoaded": true
-    },
-    {
       "name": "さくらの愛",
       "station": "三河安城駅",
       "hours": "11:00～翌 01:00",
@@ -12100,18 +12088,6 @@
       "latitude": "",
       "longitude": "",
       "note": "",
-      "detailLoaded": true
-    },
-    {
-      "name": "一目惚れ",
-      "station": "西尾駅",
-      "hours": "",
-      "phone": "090-1787-5188",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/24762b0a-f2d0-4a58-a630-fac51a437ad6/",
-      "address": "",
-      "latitude": "34.863221",
-      "longitude": "137.058213",
-      "note": "西尾駅東広場駐車場につきましたら、お電話ください",
       "detailLoaded": true
     },
     {
@@ -12127,39 +12103,27 @@
       "detailLoaded": true
     },
     {
-      "name": "いちごみるく",
+      "name": "夜恋",
       "station": "桜井駅",
-      "hours": "11:00～翌 01:00",
-      "phone": "070-9188-8813",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/2140230d-8524-4d14-bead-ae0a2de55ed0/",
-      "address": "",
-      "latitude": "34.912476",
-      "longitude": "137.092678",
-      "note": "アクセス欄は緯度経度のみ",
-      "detailLoaded": true
-    },
-    {
-      "name": "お姫様LABO",
-      "station": "安城駅",
       "hours": "24時間営業",
-      "phone": "080-8568-0620",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/c5e0941e-51bc-4d53-9d13-1688d275438a/",
-      "address": "愛知県安城市御幸本町",
-      "latitude": "34.959833",
-      "longitude": "137.082052",
-      "note": "アクセス欄に緯度経度と住所あり",
+      "phone": "080-8039-1953",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/4376da3c-5e9e-46b1-ac6d-daa4fec9467b/",
+      "address": "愛知県安城市桜井町阿原7-1",
+      "latitude": "34.919615116538544",
+      "longitude": "137.09218180219793",
+      "note": "駐車場あります。手前に１台、JA駐車場20番",
       "detailLoaded": true
     },
     {
-      "name": "Only one（オンリーワン）",
+      "name": "一目惚れ",
       "station": "西尾駅",
-      "hours": "11:00～翌 01:00",
-      "phone": "080-3678-6999",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/ae9ff84f-3fb9-4a4b-a13d-afd462341216/",
-      "address": "愛知県西尾市丁田町杢左62",
-      "latitude": "34.8605694250032",
-      "longitude": "137.06215588329275",
-      "note": "（ＤＣＭ西尾店の近くに着いたら、ご連絡ください）",
+      "hours": "",
+      "phone": "090-1787-5188",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/24762b0a-f2d0-4a58-a630-fac51a437ad6/",
+      "address": "",
+      "latitude": "34.863221",
+      "longitude": "137.058213",
+      "note": "西尾駅東広場駐車場につきましたら、お電話ください",
       "detailLoaded": true
     },
     {
@@ -12175,15 +12139,39 @@
       "detailLoaded": true
     },
     {
-      "name": "yura香",
-      "station": "逢妻駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-8852-6386",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/77e3f3e8-082f-484d-b925-83b7db63c305/",
-      "address": "愛知県刈谷市高津波町1丁目403",
-      "latitude": "34.999197",
-      "longitude": "136.9915",
-      "note": "駐車場：あります(裏駐車場もあり 12番をご利用ください。裏口もございます)",
+      "name": "Only one（オンリーワン）",
+      "station": "西尾駅",
+      "hours": "11:00～翌 01:00",
+      "phone": "080-3678-6999",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/ae9ff84f-3fb9-4a4b-a13d-afd462341216/",
+      "address": "愛知県西尾市丁田町杢左62",
+      "latitude": "34.8605694250032",
+      "longitude": "137.06215588329275",
+      "note": "（ＤＣＭ西尾店の近くに着いたら、ご連絡ください）",
+      "detailLoaded": true
+    },
+    {
+      "name": "お姫様LABO",
+      "station": "安城駅",
+      "hours": "24時間営業",
+      "phone": "080-8568-0620",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/c5e0941e-51bc-4d53-9d13-1688d275438a/",
+      "address": "愛知県安城市御幸本町",
+      "latitude": "34.959833",
+      "longitude": "137.082052",
+      "note": "アクセス欄に緯度経度と住所あり",
+      "detailLoaded": true
+    },
+    {
+      "name": "いちごみるく",
+      "station": "桜井駅",
+      "hours": "11:00～翌 01:00",
+      "phone": "070-9188-8813",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/2140230d-8524-4d14-bead-ae0a2de55ed0/",
+      "address": "",
+      "latitude": "34.912476",
+      "longitude": "137.092678",
+      "note": "アクセス欄は緯度経度のみ",
       "detailLoaded": true
     },
     {
@@ -12208,6 +12196,18 @@
       "latitude": "",
       "longitude": "",
       "note": "駐車場 あります",
+      "detailLoaded": true
+    },
+    {
+      "name": "yura香",
+      "station": "逢妻駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-8852-6386",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/77e3f3e8-082f-484d-b925-83b7db63c305/",
+      "address": "愛知県刈谷市高津波町1丁目403",
+      "latitude": "34.999197",
+      "longitude": "136.9915",
+      "note": "駐車場：あります(裏駐車場もあり 12番をご利用ください。裏口もございます)",
       "detailLoaded": true
     },
     {
@@ -12319,18 +12319,6 @@
       "detailLoaded": true
     },
     {
-      "name": "楽楽（らくらく）",
-      "station": "安城駅",
-      "hours": "11:00～LAST",
-      "phone": "090-7450-5833",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/90d35431-0858-411e-be4f-e33bd7682c3a/",
-      "address": "愛知県安城市御幸本町１０−８ １０番８ 8",
-      "latitude": "",
-      "longitude": "",
-      "note": "所在地：愛知県安城市御幸本町１０−８ １０番８ 8",
-      "detailLoaded": true
-    },
-    {
       "name": "甘熟いちご",
       "station": "三河豊田駅",
       "hours": "11:00～翌 02:00",
@@ -12340,6 +12328,18 @@
       "latitude": "35.04953226917382",
       "longitude": "137.15357209629087",
       "note": "駐車場 あります",
+      "detailLoaded": true
+    },
+    {
+      "name": "楽楽（らくらく）",
+      "station": "安城駅",
+      "hours": "11:00～LAST",
+      "phone": "090-7450-5833",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/90d35431-0858-411e-be4f-e33bd7682c3a/",
+      "address": "愛知県安城市御幸本町１０−８ １０番８ 8",
+      "latitude": "",
+      "longitude": "",
+      "note": "所在地：愛知県安城市御幸本町１０−８ １０番８ 8",
       "detailLoaded": true
     },
     {
@@ -12415,18 +12415,6 @@
       "detailLoaded": true
     },
     {
-      "name": "King",
-      "station": "三河安城駅",
-      "hours": "11:00～翌 01:00",
-      "phone": "050-6871-9573",
-      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/77ce4c08-b0ce-454d-8bdc-41f191d70d89/",
-      "address": "愛知県安城市三河安城町２丁目３−１",
-      "latitude": "",
-      "longitude": "",
-      "note": "駐車場：あり",
-      "detailLoaded": true
-    },
-    {
       "name": "桜桃（さくらんぼ）",
       "station": "三河豊田駅",
       "hours": "09:00～翌 04:00",
@@ -12436,6 +12424,18 @@
       "latitude": "35.059052902226675",
       "longitude": "137.14776098792822",
       "note": "CENTURY21 駐車場の43番に停めてください。ファミリーマートには駐車しないでください。",
+      "detailLoaded": true
+    },
+    {
+      "name": "King",
+      "station": "三河安城駅",
+      "hours": "11:00～翌 01:00",
+      "phone": "050-6871-9573",
+      "listingUrl": "https://www.esthe-ranking.jp/toyota/shop-detail/77ce4c08-b0ce-454d-8bdc-41f191d70d89/",
+      "address": "愛知県安城市三河安城町２丁目３−１",
+      "latitude": "",
+      "longitude": "",
+      "note": "駐車場：あり",
       "detailLoaded": true
     },
     {
