@@ -17,11 +17,13 @@ const state = {
   geocodeRunning: false,
   geocodeCache: {},
   mapReady: false,
+  regionExpanded: false,
 };
 
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
 const lastUpdatedText = document.querySelector("#lastUpdatedText");
+const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
 const dailyUpdateHistory = document.querySelector("#dailyUpdateHistory");
@@ -73,6 +75,27 @@ const reviewCommentInput = document.querySelector("#reviewCommentInput");
 const reviewSubmitButton = document.querySelector("#reviewSubmitButton");
 const reviewList = document.querySelector("#reviewList");
 const reviewToggleButton = document.querySelector("#reviewToggleButton");
+
+const REGION_LABELS = {
+  nagoya: "名古屋・名駅・納屋橋",
+  sakae: "栄",
+  shinsakae: "新栄",
+  kanayama: "金山",
+  kurokawa: "黒川",
+  hoshigaoka: "星ヶ丘",
+  moriyama: "守山",
+  otai: "小田井",
+  tokaidori: "東海通",
+  kasadera: "笠寺",
+  toyota: "西三河・豊田・岡崎",
+  horita: "堀田",
+  tsurumai: "鶴舞",
+  showa: "昭和",
+  komaki: "小牧",
+  owari: "尾張",
+  chita: "知多",
+  toyohashi: "東三河・豊橋・豊川",
+};
 
 init();
 
@@ -211,6 +234,7 @@ function bindEvents() {
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   reviewToggleButton?.addEventListener("click", handleReviewToggle);
   reviewForm.addEventListener("submit", handleReviewSubmit);
+  regionSummary?.addEventListener("click", handleRegionToggle);
 }
 
 function handleListActionClick(event) {
@@ -260,11 +284,95 @@ function applyFilters() {
   }
 
   renderSummary();
+  renderRegionSummary();
   renderCards();
   renderTable();
   renderSelectedStore();
   syncMapWithFilters();
   syncProfileMap();
+}
+
+function handleRegionToggle(event) {
+  const toggle = event.target.closest("[data-region-toggle]");
+  if (!toggle) return;
+  state.regionExpanded = !state.regionExpanded;
+  renderRegionSummary();
+}
+
+function renderRegionSummary() {
+  if (!regionSummary) return;
+
+  const stats = buildRegionStats(state.filteredRows);
+  const rootLabel = `愛知県(${stats.total})`;
+
+  regionSummary.innerHTML = `
+    <button class="region-toggle" type="button" data-region-toggle="aichi" aria-expanded="${state.regionExpanded ? "true" : "false"}">
+      <span class="region-toggle-label">${escapeHtml(rootLabel)}</span>
+      <span class="region-toggle-icon">${state.regionExpanded ? "▲" : "▼"}</span>
+    </button>
+    ${
+      state.regionExpanded
+        ? `
+          <div class="region-children">
+            ${stats.children
+              .map(
+                (item) => `
+                  <div class="region-child">
+                    <span class="region-child-name">${escapeHtml(item.label)}</span>
+                    <span class="region-child-count">(${item.count})</span>
+                  </div>
+                `
+              )
+              .join("")}
+          </div>
+        `
+        : ""
+    }
+  `;
+}
+
+function buildRegionStats(rows) {
+  const regionBuckets = new Map();
+  const uniqueStoreKeys = new Set();
+
+  for (const row of rows) {
+    const uniqueKey = row.listingUrl || row.reviewKey || row.name;
+    if (uniqueKey) {
+      uniqueStoreKeys.add(uniqueKey);
+    }
+
+    const regionKey = getRegionKeyFromRow(row);
+    if (!regionKey) continue;
+
+    if (!regionBuckets.has(regionKey)) {
+      regionBuckets.set(regionKey, new Set());
+    }
+    regionBuckets.get(regionKey).add(uniqueKey);
+  }
+
+  const children = [...regionBuckets.entries()]
+    .map(([regionKey, items]) => ({
+      key: regionKey,
+      label: REGION_LABELS[regionKey] || regionKey,
+      count: items.size,
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, "ja"));
+
+  return {
+    total: uniqueStoreKeys.size,
+    children,
+  };
+}
+
+function getRegionKeyFromRow(row) {
+  if (!row?.listingUrl) return "";
+  try {
+    const url = new URL(row.listingUrl);
+    const parts = url.pathname.split("/").filter(Boolean);
+    return parts[0] || "";
+  } catch (error) {
+    return "";
+  }
 }
 
 function renderSummary() {

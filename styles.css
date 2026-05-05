@@ -149,6 +149,66 @@ select {
   align-items: center;
 }
 
+.region-summary {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.region-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 248, 251, 0.05);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.region-toggle:hover {
+  border-color: rgba(255, 184, 212, 0.32);
+  transform: translateY(-1px);
+}
+
+.region-toggle-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.region-toggle-icon {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.region-children {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.region-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-left: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.region-child-name {
+  line-height: 1.5;
+}
+
+.region-child-count {
+  color: var(--text);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .search-button {
   min-width: 84px;
   white-space: nowrap;
