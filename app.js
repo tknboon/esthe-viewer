@@ -1510,6 +1510,7 @@ window.initGoogleMapApp = function initGoogleMapApp() {
   state.profileInfoWindow = new google.maps.InfoWindow();
   state.geocoder = new google.maps.Geocoder();
   state.streetViewService = new google.maps.StreetViewService();
+  ensureStreetViewPanorama();
   state.mapReady = true;
   syncMapWithFilters();
   syncProfileMap();
@@ -1737,6 +1738,8 @@ function renderMarkerInfoContent(row) {
 
 function renderStreetViewForRow(row) {
   if (!streetViewStatusText || !streetViewEmptyState || !streetViewCanvas) return;
+
+  ensureStreetViewPanorama();
 
   if (!row) {
     setStreetViewState({
