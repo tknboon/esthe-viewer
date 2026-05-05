@@ -36,7 +36,6 @@ const allDayCount = document.querySelector("#allDayCount");
 const statusText = document.querySelector("#statusText");
 const profileMapCount = document.querySelector("#profileMapCount");
 const profileMapStatusText = document.querySelector("#profileMapStatusText");
-const toggleViewButton = document.querySelector("#toggleViewButton");
 const selectedStoreName = document.querySelector("#selectedStoreName");
 const selectedStoreMeta = document.querySelector("#selectedStoreMeta");
 const selectedStoreProfileMeta = document.querySelector("#selectedStoreProfileMeta");
@@ -198,10 +197,9 @@ function bindEvents() {
     }
   });
   searchButton.addEventListener("click", applyKeywordSearch);
-  toggleViewButton.addEventListener("click", toggleView);
 
-  cardsView.addEventListener("click", handleListActionClick);
-  tableBody.addEventListener("click", handleListActionClick);
+  cardsView?.addEventListener("click", handleListActionClick);
+  tableBody?.addEventListener("click", handleListActionClick);
   mapList?.addEventListener("click", handleListActionClick);
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
@@ -219,11 +217,11 @@ function handleListActionClick(event) {
 }
 
 function toggleView() {
+  if (!cardsView || !tableView) return;
   state.view = state.view === "cards" ? "table" : "cards";
   const cardsMode = state.view === "cards";
   cardsView.classList.toggle("is-hidden", !cardsMode);
   tableView.classList.toggle("is-hidden", cardsMode);
-  toggleViewButton.textContent = cardsMode ? "カード表示" : "表表示";
 }
 
 function applyKeywordSearch() {
@@ -298,6 +296,7 @@ function renderMapList() {
 }
 
 function renderCards() {
+  if (!cardsView) return;
   if (!state.filteredRows.length) {
     cardsView.innerHTML = `<div class="empty-state">条件に合う店舗がありません。</div>`;
     return;
@@ -353,6 +352,7 @@ function renderCards() {
 }
 
 function renderTable() {
+  if (!tableBody) return;
   if (!state.filteredRows.length) {
     tableBody.innerHTML = `<tr><td colspan="6">条件に合う店舗がありません。</td></tr>`;
     return;
@@ -395,7 +395,7 @@ function renderSelectedStore() {
   }
 
   selectedStoreName.textContent = state.selectedRow.name;
-  selectedStoreMeta.textContent = [state.selectedRow.station, state.selectedRow.hours, state.selectedRow.phone]
+  selectedStoreMeta.textContent = [state.selectedRow.station, state.selectedRow.hours, state.selectedRow.phone, state.selectedRow.notes]
     .filter(Boolean)
     .join(" / ");
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);

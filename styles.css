@@ -386,7 +386,7 @@ select {
 
 .map-stage {
   display: grid;
-  gap: 14px;
+  gap: 6px;
 }
 
 .profile-map-panel {
