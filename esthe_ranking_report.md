@@ -1,22 +1,60 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-04T10:29:51.468Z
-- source: https://www.esthe-ranking.jp/toyota/asian/
-- title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
-- count_text: 190件
-- matched_store_count: 189
-- matched_link_count: 190
-- detail_page_count: 190
-- detailed_store_count: 185
+- checked_at: 2026-05-05T00:37:24.688Z
+- sources: https://www.esthe-ranking.jp/toyota/asian/, https://www.esthe-ranking.jp/horita/asian/
+- title: 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
+- count_text: https://www.esthe-ranking.jp/toyota/asian/=25件 | https://www.esthe-ranking.jp/horita/asian/=190件
+- matched_store_count: 212
+- matched_link_count: 215
+- detail_page_count: 215
+- detailed_store_count: 209
+
+## Source Summaries
+- url: https://www.esthe-ranking.jp/toyota/asian/
+  - title: 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 25件
+  - matched_store_count: 25
+  - matched_link_count: 25
+- url: https://www.esthe-ranking.jp/horita/asian/
+  - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 190件
+  - matched_store_count: 189
+  - matched_link_count: 190
 
 ## Added
-- none
+- Angel天使
+- Anytime（エニータイム）
+- Bliss
+- Mydarling
+- YUAN_癒
+- うさぎの餅つき
+- エトワール
+- オトナ空間
+- タイヨウ
+- ハニー
+- ハローレディー
+- ブラジル美女（ブラジルびじょ）
+- ポイズン（poison）
+- ラクーナ
+- 極楽バナナ
+- 極楽艶（ごくらくえん）
+- 桜花（さくら）
+- 台湾乙女
+- 姫花
+- 満開華吹雪
+- 満点girl
+- 蜜みつ
+- 誘惑
 
 ## Removed
 - none
 
 ## Changed
-- none
+- 掲載件数表記: 190件 -> https://www.esthe-ranking.jp/toyota/asian/=25件 | https://www.esthe-ranking.jp/horita/asian/=190件
+- ページタイトル: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング -> 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
+- 巡回対象: なし -> https://www.esthe-ranking.jp/toyota/asian/, https://www.esthe-ranking.jp/horita/asian/
+- 店舗リンク数: 190 -> 215
+- 詳細取得件数: 185 -> 209
 
 ## Current Stores
 - ～豊田来来～おいでん
@@ -24,7 +62,10 @@
 - Alice（アリス）
 - anan
 - Angel Spa
+- Angel天使
+- Anytime（エニータイム）
 - Aroma Baby（アロマベイビー）
+- Bliss
 - Cure（キュア）
 - DIVA（ディーバ）
 - Eden（エデン）
@@ -40,6 +81,7 @@
 - Love Luxe（ラブラグゼ）
 - Luck（ラック）
 - Luxe Spa（ラックススパ）
+- Mydarling
 - Only one（オンリーワン）
 - Over
 - Pure Resort（ピュア リゾート）
@@ -52,6 +94,7 @@
 - TiAmo〜ハニー〜
 - Venus（ヴィーナス）
 - Your女僕（ユアメイド）
+- YUAN_癒
 - yura香
 - アールグレイ＋
 - あいたい
@@ -62,7 +105,10 @@
 - イタズラ パラダイス
 - いちごみるく
 - いちご娘
+- うさぎの餅つき
 - うたかた桜
+- エトワール
+- オトナ空間
 - お兄ちゃん~High Five！
 - お姫様LABO
 - かわいい美人
@@ -79,6 +125,7 @@
 - シルク
 - セクシードール
 - ソレイユ
+- タイヨウ
 - たんぽぽ
 - チョメチョメハウス
 - ツバメ
@@ -89,13 +136,17 @@
 - ハッピータイム
 - ハッピー娘～Happy Girls～
 - はなもも
+- ハニー
 - バレンタイン
+- ハローレディー
 - ひといき
 - ピンクフラワー
 - ピンクラブ
 - プチエンジェル
+- ブラジル美女（ブラジルびじょ）
 - ペア
 - ベストスパ
+- ポイズン（poison）
 - ほほえみ
 - まどろみ
 - マリア
@@ -103,6 +154,7 @@
 - ミシェランGirls
 - もぎゅっとKiss
 - もみココチ
+- ラクーナ
 - ラッキー
 - ラッキーエンジェル
 - ラッキースマイル
@@ -129,6 +181,8 @@
 - 甘い恋人
 - 甘熟いちご
 - 極楽Heaven
+- 極楽バナナ
+- 極楽艶（ごくらくえん）
 - 君にメロメロ
 - 君に恋してる
 - 君の彼女
@@ -140,6 +194,7 @@
 - 幸せの夜
 - 幸運のPresent
 - 香～kaori～
+- 桜花（さくら）
 - 桜桃（さくらんぼ）
 - 皐月（さつき）
 - 紫陽花（アジサイ）
@@ -156,6 +211,7 @@
 - 千喜
 - 千林タイム
 - 台湾ハニー
+- 台湾乙女
 - 蝶～バタフライ～
 - 蝶の楽園
 - 天使の心
@@ -172,6 +228,7 @@
 - 美樂（みらく）
 - 姫の王子
 - 姫の王子（ひめのおうじ）
+- 姫花
 - 姫恋無双（ひめこいむそう）
 - 萌え（もえ）
 - 萌え萌えキュン
@@ -179,9 +236,12 @@
 - 蓬莱
 - 豊田プラチナム
 - 豊田ラグタイム
+- 満開華吹雪
 - 満足99
+- 満点girl
 - 魅力工房（みりょくこうぼう）
 - 蜜の香り
+- 蜜みつ
 - 夢愛
 - 夜恋
 - 癒しのアロマ
@@ -197,6 +257,7 @@
 - 優姫
 - 悠馨（ゆうしん）
 - 誘艶（ゆうえん）
+- 誘惑
 - 妖艶ガール
 - 来い遊ぼ（コイアソボ）
 - 恋タイム
