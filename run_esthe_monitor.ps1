@@ -4,9 +4,12 @@ $workspace = "C:\Users\tknbo\Documents\Codex\2026-04-28\new-chat"
 $scriptPath = Join-Path $workspace "monitor_esthe_ranking.mjs"
 $runnerLogPath = Join-Path $workspace "esthe_ranking_runner.log"
 $publishStatusPath = Join-Path $workspace "esthe_publish_status.json"
-$htmlCachePath = Join-Path $workspace "esthe_ranking_source.html"
+$htmlCacheDirPath = Join-Path $workspace "esthe_ranking_source_pages"
 $detailDirPath = Join-Path $workspace "esthe_ranking_detail_pages"
-$targetUrl = "https://www.esthe-ranking.jp/toyota/asian/"
+$targetUrls = @(
+  "https://www.esthe-ranking.jp/toyota/asian/",
+  "https://www.esthe-ranking.jp/horita/asian/"
+)
 
 # Auto publish settings
 $autoPublishEnabled = $true
@@ -194,14 +197,26 @@ function Get-SourceHtml {
 }
 
 function Get-DetailUrls {
-  param([string]$HtmlPath)
+  param([string[]]$HtmlPaths)
 
-  $raw = Get-Content -Path $HtmlPath -Raw -Encoding UTF8
-  $matches = [regex]::Matches($raw, 'href="(?<href>/toyota/shop-detail/[a-z0-9-]+/)"', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
-  $urls = foreach ($match in $matches) {
-    "https://www.esthe-ranking.jp" + $match.Groups["href"].Value
+  $urls = foreach ($htmlPath in $HtmlPaths) {
+    $raw = Get-Content -Path $htmlPath -Raw -Encoding UTF8
+    $matches = [regex]::Matches($raw, 'href="(?<href>/[^/]+/shop-detail/[a-z0-9-]+/)"', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    foreach ($match in $matches) {
+      "https://www.esthe-ranking.jp" + $match.Groups["href"].Value
+    }
   }
   return $urls | Select-Object -Unique
+}
+
+function Get-ListingCacheName {
+  param([string]$Url)
+
+  if ($Url -match 'https://www\.esthe-ranking\.jp/(?<slug>[^/]+)/asian/?$') {
+    return $Matches["slug"] + ".html"
+  }
+
+  return [System.Guid]::NewGuid().ToString() + ".html"
 }
 
 function Save-DetailPages {
@@ -314,20 +329,29 @@ try {
   Write-RunnerLog "using node: $nodePath"
   Write-RunnerLog "scheduled run started"
 
-  $fetchMethod = Get-SourceHtml -Url $targetUrl -OutputPath $htmlCachePath
-  Write-RunnerLog "fetched listing via: $fetchMethod"
+  if (-not (Test-Path $htmlCacheDirPath)) {
+    New-Item -ItemType Directory -Path $htmlCacheDirPath | Out-Null
+  }
 
-  $detailUrls = Get-DetailUrls -HtmlPath $htmlCachePath
+  $htmlCachePaths = @()
+  foreach ($targetUrl in $targetUrls) {
+    $htmlCachePath = Join-Path $htmlCacheDirPath (Get-ListingCacheName -Url $targetUrl)
+    $fetchMethod = Get-SourceHtml -Url $targetUrl -OutputPath $htmlCachePath
+    Write-RunnerLog "fetched listing via ${fetchMethod}: $targetUrl"
+    $htmlCachePaths += $htmlCachePath
+  }
+
+  $detailUrls = Get-DetailUrls -HtmlPaths $htmlCachePaths
   Write-RunnerLog "found detail urls: $($detailUrls.Count)"
 
   $detailResult = Save-DetailPages -Urls $detailUrls -OutputDir $detailDirPath
   Write-RunnerLog "detail fetch summary: success=$($detailResult.Success) failure=$($detailResult.Failure)"
 
-  $env:ESTHE_MONITOR_HTML_PATH = $htmlCachePath
+  $env:ESTHE_MONITOR_HTML_DIR = $htmlCacheDirPath
   $env:ESTHE_MONITOR_DETAIL_DIR = $detailDirPath
   $monitorOutput = & $nodePath $scriptPath 2>&1 | Out-String
   Write-MonitorSummary -JsonText $monitorOutput
-  Remove-Item Env:ESTHE_MONITOR_HTML_PATH -ErrorAction SilentlyContinue
+  Remove-Item Env:ESTHE_MONITOR_HTML_DIR -ErrorAction SilentlyContinue
   Remove-Item Env:ESTHE_MONITOR_DETAIL_DIR -ErrorAction SilentlyContinue
 
   if ($autoPublishEnabled) {

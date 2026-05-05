@@ -1,6 +1,8 @@
 # 自動巡回メモ
 
-- 対象ページ: `https://www.esthe-ranking.jp/toyota/asian/`
+- 対象ページ:
+  - `https://www.esthe-ranking.jp/toyota/asian/`
+  - `https://www.esthe-ranking.jp/horita/asian/`
 - 対象範囲: `西三河・豊田・岡崎エリア` のアジアンエステ一覧
 - 実行スクリプト: `monitor_esthe_ranking.mjs`
 - 更新対象:

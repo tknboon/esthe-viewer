@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const TARGET_URL = "https://www.esthe-ranking.jp/toyota/asian/";
+const TARGET_URLS = ["https://www.esthe-ranking.jp/toyota/asian/", "https://www.esthe-ranking.jp/horita/asian/"];
 const ROOT = process.cwd();
 const SNAPSHOT_PATH = path.join(ROOT, "esthe_ranking_snapshot.json");
 const REPORT_PATH = path.join(ROOT, "esthe_ranking_report.md");
@@ -12,14 +12,15 @@ const STATUS_PATH = path.join(ROOT, "esthe_ranking_status.json");
 const FAILURE_LOG_PATH = path.join(ROOT, "esthe_ranking_failure.log");
 const HISTORY_PATH = path.join(ROOT, "esthe_update_history.json");
 const HTML_INPUT_PATH = process.env.ESTHE_MONITOR_HTML_PATH || "";
+const HTML_INPUT_DIR = process.env.ESTHE_MONITOR_HTML_DIR || "";
 const DETAIL_DIR_PATH = process.env.ESTHE_MONITOR_DETAIL_DIR || "";
 
 const CSV_HEADER = ["店舗名", "最寄駅", "住所または座標", "緯度", "経度", "掲載URL", "備考", "電話", "営業"];
 
 async function main() {
   const fetchedAt = new Date().toISOString();
-  const listingHtml = await loadSourceHtml(TARGET_URL);
-  const current = await buildSnapshot(listingHtml, fetchedAt);
+  const listingSources = await loadListingSources();
+  const current = await buildSnapshot(listingSources, fetchedAt);
   const previous = await readJson(SNAPSHOT_PATH);
   const diff = compareSnapshots(previous, current);
   const updateHistory = await updateDailyHistory(fetchedAt, diff);
@@ -31,7 +32,7 @@ async function main() {
   await writeStatus({
     ok: true,
     checkedAt: fetchedAt,
-    sourceUrl: TARGET_URL,
+    sourceUrls: TARGET_URLS,
     matchedStoreCount: current.storeNames.length,
     matchedLinkCount: current.matchedShopLinks.length,
     detailPageCount: current.detailPageCount,
@@ -46,6 +47,7 @@ async function main() {
       {
         fetchedAt,
         totalMatchedStores: current.storeNames.length,
+        sourceCount: current.sourceSummaries.length,
         detailPageCount: current.detailPageCount,
         detailedStoreCount: current.detailedStoreCount,
         added: diff.added,
@@ -60,9 +62,11 @@ async function main() {
   );
 }
 
-async function buildSnapshot(listingHtml, fetchedAt) {
-  const normalizedHtml = decodeEntities(listingHtml);
-  const stores = extractStoreCards(normalizedHtml);
+async function buildSnapshot(listingSources, fetchedAt) {
+  const stores = listingSources.flatMap((source) => {
+    const normalizedHtml = decodeEntities(source.html);
+    return extractStoreCards(normalizedHtml);
+  });
   const storesWithDetails = await enrichStoresWithDetailPages(stores);
   const storeNames = [...new Set(storesWithDetails.map((store) => store.name).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, "ja")
@@ -70,12 +74,24 @@ async function buildSnapshot(listingHtml, fetchedAt) {
   const matchedShopLinks = [...new Set(storesWithDetails.map((store) => store.listingUrl).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, "ja")
   );
-  const pageTitle = extractTagText(normalizedHtml, "title");
-  const countText = extractCountText(normalizedHtml);
+  const sourceSummaries = listingSources.map((source) => {
+    const normalizedHtml = decodeEntities(source.html);
+    const extracted = extractStoreCards(normalizedHtml);
+    return {
+      url: source.url,
+      title: extractTagText(normalizedHtml, "title"),
+      countText: extractCountText(normalizedHtml),
+      matchedStoreCount: [...new Set(extracted.map((store) => store.name).filter(Boolean))].length,
+      matchedLinkCount: [...new Set(extracted.map((store) => store.listingUrl).filter(Boolean))].length,
+    };
+  });
+  const pageTitle = sourceSummaries.map((source) => source.title).filter(Boolean).join(" / ");
+  const countText = sourceSummaries.map((source) => `${source.url}=${source.countText || "なし"}`).join(" | ");
   const detailedStoreCount = storesWithDetails.filter((store) => store.address || (store.latitude && store.longitude)).length;
 
   return {
-    sourceUrl: TARGET_URL,
+    sourceUrls: TARGET_URLS,
+    sourceSummaries,
     fetchedAt,
     pageTitle,
     countText,
@@ -89,6 +105,7 @@ async function buildSnapshot(listingHtml, fetchedAt) {
       storeNames,
       matchedShopLinks,
       detailedStoreCount,
+      sourceSummaries,
     }),
   };
 }
@@ -377,7 +394,7 @@ function extractTagText(html, tagName) {
 
 function extractCountText(html) {
   const activeTabMatch = html.match(
-    /<li class="active">\s*<a[^>]*href="\/toyota\/asian\/"[\s\S]*?<span class="badge[^"]*">(\d+)<\/span>/i
+    /<li class="active">\s*<a[^>]*href="\/[^/]+\/asian\/"[\s\S]*?<span class="badge[^"]*">(\d+)<\/span>/i
   );
   if (activeTabMatch) return `${activeTabMatch[1]}件`;
 
@@ -407,6 +424,9 @@ function compareSnapshots(previous, current) {
   if ((previous.pageTitle || "") !== (current.pageTitle || "")) {
     changed.push(`ページタイトル: ${previous.pageTitle || "なし"} -> ${current.pageTitle || "なし"}`);
   }
+  if (JSON.stringify(previous.sourceUrls || []) !== JSON.stringify(current.sourceUrls || [])) {
+    changed.push(`巡回対象: ${(previous.sourceUrls || []).join(", ") || "なし"} -> ${(current.sourceUrls || []).join(", ") || "なし"}`);
+  }
   if ((previous.matchedShopLinks || []).length !== (current.matchedShopLinks || []).length) {
     changed.push(`店舗リンク数: ${(previous.matchedShopLinks || []).length} -> ${(current.matchedShopLinks || []).length}`);
   }
@@ -422,13 +442,16 @@ function renderReport(current, diff) {
     "# esthe-ranking toyota monitor",
     "",
     `- checked_at: ${current.fetchedAt}`,
-    `- source: ${current.sourceUrl}`,
+    `- sources: ${(current.sourceUrls || []).join(", ")}`,
     `- title: ${current.pageTitle || "なし"}`,
     `- count_text: ${current.countText || "なし"}`,
     `- matched_store_count: ${current.storeNames.length}`,
     `- matched_link_count: ${current.matchedShopLinks.length}`,
     `- detail_page_count: ${current.detailPageCount}`,
     `- detailed_store_count: ${current.detailedStoreCount}`,
+    "",
+    "## Source Summaries",
+    ...formatSourceSummaries(current.sourceSummaries || []),
     "",
     "## Added",
     ...formatList(diff.added),
@@ -450,7 +473,7 @@ function renderFailureReport(failedAt, detail) {
     "# esthe-ranking toyota monitor",
     "",
     `- checked_at: ${failedAt}`,
-    `- source: ${TARGET_URL}`,
+    `- sources: ${TARGET_URLS.join(", ")}`,
     "- status: failed",
     "",
     "## Error",
@@ -469,11 +492,43 @@ function formatList(items) {
   return items.map((item) => `- ${item}`);
 }
 
-async function loadSourceHtml(url) {
-  if (HTML_INPUT_PATH) {
-    return fs.readFile(HTML_INPUT_PATH, "utf8");
+function formatSourceSummaries(items) {
+  if (!items.length) return ["- none"];
+  return items.flatMap((item) => [
+    `- url: ${item.url}`,
+    `  - title: ${item.title || "なし"}`,
+    `  - count_text: ${item.countText || "なし"}`,
+    `  - matched_store_count: ${item.matchedStoreCount || 0}`,
+    `  - matched_link_count: ${item.matchedLinkCount || 0}`,
+  ]);
+}
+
+async function loadListingSources() {
+  if (HTML_INPUT_DIR) {
+    const entries = await fs.readdir(HTML_INPUT_DIR);
+    const htmlFiles = entries.filter((entry) => entry.toLowerCase().endsWith(".html")).sort((a, b) => a.localeCompare(b, "ja"));
+    const fileSources = [];
+    for (let index = 0; index < htmlFiles.length; index += 1) {
+      const entry = htmlFiles[index];
+      const filePath = path.join(HTML_INPUT_DIR, entry);
+      fileSources.push({
+        url: TARGET_URLS[index] || entry,
+        html: await fs.readFile(filePath, "utf8"),
+      });
+    }
+    return fileSources;
   }
-  return fetchText(url);
+
+  if (HTML_INPUT_PATH) {
+    return [{ url: TARGET_URLS[0], html: await fs.readFile(HTML_INPUT_PATH, "utf8") }];
+  }
+
+  return Promise.all(
+    TARGET_URLS.map(async (url) => ({
+      url,
+      html: await fetchText(url),
+    }))
+  );
 }
 
 async function fetchText(url) {
@@ -498,7 +553,7 @@ async function handleFailure(error) {
   await writeStatus({
     ok: false,
     checkedAt: failedAt,
-    sourceUrl: TARGET_URL,
+    sourceUrls: TARGET_URLS,
     error: detail,
     failureLogPath: FAILURE_LOG_PATH,
     reportPath: REPORT_PATH,
