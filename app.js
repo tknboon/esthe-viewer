@@ -1461,13 +1461,7 @@ function addProfileMarkerForRow(row, bounds) {
 
   marker.addListener("click", () => {
     focusRow(row);
-    state.profileInfoWindow.setContent(`
-      <div style="color:#28121c;min-width:180px">
-        <strong>${escapeHtml(row.name)}</strong><br />
-        ${escapeHtml(row.station || "-")}<br />
-        ${escapeHtml(getStoreProfile(row)?.address || row.location || "-")}
-      </div>
-    `);
+    state.profileInfoWindow.setContent(renderMarkerInfoContent(row));
     state.profileInfoWindow.open({ map: state.profileMap, anchor: marker });
   });
 
@@ -1517,13 +1511,7 @@ function focusMarker(row) {
   if (marker) {
     state.map.panTo(marker.getPosition());
     state.map.setZoom(Math.max(state.map.getZoom(), 15));
-    state.infoWindow.setContent(`
-      <div style="color:#28121c;min-width:180px">
-        <strong>${escapeHtml(row.name)}</strong><br />
-        ${escapeHtml(row.station || "-")}<br />
-        ${escapeHtml(row.hours || "-")}
-      </div>
-    `);
+    state.infoWindow.setContent(renderMarkerInfoContent(row));
     state.infoWindow.open({ map: state.map, anchor: marker });
     return;
   }
@@ -1531,6 +1519,20 @@ function focusMarker(row) {
   if (row.locationQuery) {
     queueGeocode(row, true);
   }
+}
+
+function renderMarkerInfoContent(row) {
+  const phoneHtml = row.phone
+    ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
+    : "—";
+
+  return `
+    <div style="color:#28121c;min-width:190px;line-height:1.55;">
+      <div style="font-weight:700;font-size:14px;">${escapeHtml(row.name)}</div>
+      <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
+      <div style="margin-top:2px;">電話: ${phoneHtml}</div>
+    </div>
+  `;
 }
 
 function renderStreetViewForRow(row) {
