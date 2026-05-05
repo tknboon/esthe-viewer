@@ -497,6 +497,10 @@ select {
   border-top: 1px solid var(--line);
 }
 
+.store-profile-toolbar {
+  margin-top: 12px;
+}
+
 .review-panel {
   margin-top: 14px;
   padding-top: 12px;

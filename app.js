@@ -44,6 +44,7 @@ const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
+const storeProfilePanel = document.querySelector("#storeProfilePanel");
 const storeAddressInput = document.querySelector("#storeAddressInput");
 const storeSmsInput = document.querySelector("#storeSmsInput");
 const storeMenuInput = document.querySelector("#storeMenuInput");
@@ -528,10 +529,10 @@ function renderStoreProfileSummary(row) {
   const parts = [
     profile.address ? `<span>${escapeHtml(profile.address)}</span>` : "",
     profile.sms ? `<span>SMS: ${escapeHtml(profile.sms)}</span>` : "",
-    profile.menu ? `<span>メニュー: ${escapeHtml(profile.menu)}</span>` : "",
-    profile.disclosure ? `<span>明示: ${escapeHtml(profile.disclosure)}</span>` : "",
+    profile.menu ? `<span>????: ${escapeHtml(profile.menu)}</span>` : "",
+    profile.disclosure ? `<span>??: ${escapeHtml(profile.disclosure)}</span>` : "",
     profile.guideClarity
-      ? `<span class="${profile.guideClarity === "あり" ? "profile-positive" : ""}">真心: ${escapeHtml(profile.guideClarity)}</span>`
+      ? `<span class="${profile.guideClarity === "??" ? "profile-positive" : ""}">??: ${escapeHtml(profile.guideClarity)}</span>`
       : "",
   ].filter(Boolean);
   selectedStoreProfileMeta.innerHTML = parts.join(" / ");
@@ -542,6 +543,8 @@ function hasStoreProfileContent(profile) {
 }
 
 function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
+  storeProfilePanel?.classList.toggle("is-hidden", !hasRow || !isEditing);
+
   [storeAddressInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
     if (!element) return;
     element.disabled = !hasRow || !isEditing;
