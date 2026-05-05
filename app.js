@@ -141,8 +141,12 @@ function init() {
     applyFilters();
     renderReviewAnalytics();
   } catch (error) {
-    statusText.textContent = "データを読み込めませんでした。";
-    cardsView.innerHTML = `<div class="empty-state">埋め込みデータの読み込みに失敗しました。</div>`;
+    if (statusText) {
+      statusText.textContent = "???????????????";
+    }
+    if (cardsView) {
+      cardsView.innerHTML = `<div class="empty-state">????????????????</div>`;
+    }
     console.error(error);
   }
 }
@@ -468,11 +472,11 @@ function renderSummary() {
   const allDayStores = state.filteredRows.filter((row) => row.hours.includes("24時間")).length;
   const mappableStores = state.filteredRows.filter((row) => Boolean(row.latLng || row.locationQuery)).length;
 
-  visibleCount.textContent = String(state.filteredRows.length);
-  uniqueCount.textContent = String(uniqueStoreNames.size);
-  mapReadyCount.textContent = String(mappableStores);
-  allDayCount.textContent = String(allDayStores);
-  statusText.textContent = `${state.filteredRows.length}件を表示中`;
+  if (visibleCount) visibleCount.textContent = String(state.filteredRows.length);
+  if (uniqueCount) uniqueCount.textContent = String(uniqueStoreNames.size);
+  if (mapReadyCount) mapReadyCount.textContent = String(mappableStores);
+  if (allDayCount) allDayCount.textContent = String(allDayStores);
+  if (statusText) statusText.textContent = `${state.filteredRows.length}件を表示中`;
 }
 
 function renderMapList() {
@@ -1332,8 +1336,8 @@ function syncMapWithFilters() {
     }
   }
 
-  if (pendingCount > 0) {
-    statusText.textContent = `${state.filteredRows.length}件を表示中 / ${pendingCount}件の位置を補完中`;
+  if (pendingCount > 0 && statusText) {
+    statusText.textContent = `${state.filteredRows.length}????? / ${pendingCount}????????`;
   }
 
   focusMarker(state.selectedRow);
