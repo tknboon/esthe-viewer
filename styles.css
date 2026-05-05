@@ -189,6 +189,11 @@ select {
   margin-top: 10px;
 }
 
+.region-group {
+  display: grid;
+  gap: 6px;
+}
+
 .region-child {
   display: flex;
   align-items: center;
@@ -205,6 +210,31 @@ select {
 
 .region-child-count {
   color: var(--text);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.municipality-list {
+  display: grid;
+  gap: 4px;
+  padding-left: 18px;
+}
+
+.municipality-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(248, 231, 238, 0.72);
+  font-size: 12px;
+}
+
+.municipality-name {
+  line-height: 1.45;
+}
+
+.municipality-count {
+  color: var(--muted);
   font-weight: 700;
   white-space: nowrap;
 }

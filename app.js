@@ -82,24 +82,45 @@ const reviewList = document.querySelector("#reviewList");
 const reviewToggleButton = document.querySelector("#reviewToggleButton");
 
 const REGION_LABELS = {
-  nagoya: "名古屋・名駅 納屋橋",
+  nagoya: "名古屋・名駅・納屋橋",
   sakae: "栄",
   shinsakae: "新栄町・千種・今池",
-  kanayama: "金山 熱田",
-  kurokawa: "黒川 大曽根",
-  hoshigaoka: "星ヶ丘 藤が丘",
-  moriyama: "守山 小幡",
-  otai: "小田井 比良",
-  tokaidori: "東海通 高畑",
-  kasadera: "笠寺 柴田",
-  toyota: "西三河 豊田・岡崎",
-  horita: "堀田 新瑞橋",
-  tsurumai: "大須 鶴舞",
-  showa: "名古屋 昭和区 天白区",
-  komaki: "小牧 春日井",
+  kanayama: "金山・熱田",
+  kurokawa: "黒川・大曽根",
+  hoshigaoka: "星ヶ丘・藤が丘",
+  moriyama: "守山・小幡",
+  otai: "小田井・比良",
+  tokaidori: "東海通・高畑",
+  kasadera: "笠寺・柴田",
+  toyota: "西三河・豊田・岡崎",
+  horita: "堀田・新瑞橋",
+  tsurumai: "大須・鶴舞",
+  showa: "名古屋・昭和区・天白区",
+  komaki: "小牧・春日井",
   owari: "尾張・一宮",
-  chita: "知多 大府・半田",
-  toyohashi: "東三河 豊橋・豊川",
+  chita: "知多・大府・半田",
+  toyohashi: "東三河・豊橋・豊川",
+};
+
+const REGION_MUNICIPALITIES = {
+  nagoya: ["名古屋市中村区", "名古屋市西区", "名古屋市中区"],
+  sakae: ["名古屋市中区"],
+  shinsakae: ["名古屋市千種区", "名古屋市東区"],
+  kanayama: ["名古屋市中区", "名古屋市熱田区", "名古屋市中川区", "名古屋市港区"],
+  kurokawa: ["名古屋市北区", "名古屋市東区", "名古屋市守山区"],
+  hoshigaoka: ["名古屋市千種区", "名古屋市名東区", "名古屋市守山区"],
+  moriyama: ["名古屋市守山区", "尾張旭市"],
+  otai: ["名古屋市西区", "名古屋市北区", "春日井市"],
+  tokaidori: ["名古屋市港区", "名古屋市中川区"],
+  kasadera: ["名古屋市南区", "名古屋市緑区"],
+  horita: ["名古屋市瑞穂区", "名古屋市南区", "名古屋市緑区", "名古屋市天白区"],
+  tsurumai: ["名古屋市中区", "名古屋市昭和区"],
+  showa: ["名古屋市昭和区", "名古屋市天白区"],
+  komaki: ["小牧市", "春日井市", "瀬戸市", "豊明市", "日進市", "犬山市", "長久手市"],
+  owari: ["一宮市", "稲沢市", "江南市", "北名古屋市", "清須市", "岩倉市", "愛西市", "尾張旭市", "弥富市", "津島市", "あま市", "蟹江町", "大治町", "扶桑町"],
+  chita: ["知多市", "大府市", "半田市", "東海市", "常滑市", "武豊町", "阿久比町", "東浦町"],
+  toyota: ["豊田市", "岡崎市", "刈谷市", "知立市", "安城市", "高浜市", "碧南市", "みよし市", "西尾市", "幸田町"],
+  toyohashi: ["豊橋市", "豊川市", "新城市", "蒲郡市", "田原市"],
 };
 
 init();
@@ -322,9 +343,29 @@ function renderRegionSummary() {
             ${stats.children
               .map(
                 (item) => `
-                  <div class="region-child">
-                    <span class="region-child-name">${escapeHtml(item.label)}</span>
-                    <span class="region-child-count">(${item.count})</span>
+                  <div class="region-group">
+                    <div class="region-child">
+                      <span class="region-child-name">${escapeHtml(item.label)}</span>
+                      <span class="region-child-count">(${item.count})</span>
+                    </div>
+                    ${
+                      item.municipalities.length
+                        ? `
+                          <div class="municipality-list">
+                            ${item.municipalities
+                              .map(
+                                (municipality) => `
+                                  <div class="municipality-item">
+                                    <span class="municipality-name">${escapeHtml(municipality.label)}</span>
+                                    <span class="municipality-count">(${municipality.count})</span>
+                                  </div>
+                                `
+                              )
+                              .join("")}
+                          </div>
+                        `
+                        : ""
+                    }
                   </div>
                 `
               )
@@ -350,17 +391,41 @@ function buildRegionStats(rows) {
     if (!regionKey) continue;
 
     if (!regionBuckets.has(regionKey)) {
-      regionBuckets.set(regionKey, new Set());
+      regionBuckets.set(regionKey, {
+        stores: new Set(),
+        municipalities: new Map(),
+      });
     }
-    regionBuckets.get(regionKey).add(uniqueKey);
+    const bucket = regionBuckets.get(regionKey);
+    bucket.stores.add(uniqueKey);
+
+    const municipality = getMunicipalityFromRow(row, regionKey);
+    if (!bucket.municipalities.has(municipality)) {
+      bucket.municipalities.set(municipality, new Set());
+    }
+    bucket.municipalities.get(municipality).add(uniqueKey);
   }
 
   const children = [...regionBuckets.entries()]
-    .map(([regionKey, items]) => ({
-      key: regionKey,
-      label: REGION_LABELS[regionKey] || regionKey,
-      count: items.size,
-    }))
+    .map(([regionKey, bucket]) => {
+      const municipalities = [...bucket.municipalities.entries()]
+        .map(([label, items]) => ({
+          label,
+          count: items.size,
+        }))
+        .sort((a, b) => {
+          if (a.label === "その他") return 1;
+          if (b.label === "その他") return -1;
+          return a.label.localeCompare(b.label, "ja");
+        });
+
+      return {
+        key: regionKey,
+        label: REGION_LABELS[regionKey] || regionKey,
+        count: bucket.stores.size,
+        municipalities,
+      };
+    })
     .sort((a, b) => a.label.localeCompare(b.label, "ja"));
 
   return {
@@ -378,6 +443,24 @@ function getRegionKeyFromRow(row) {
   } catch (error) {
     return "";
   }
+}
+
+function getMunicipalityFromRow(row, regionKey) {
+  const haystack = [row.location, row.notes, row.station, row.name].filter(Boolean).join(" ");
+  const candidates = REGION_MUNICIPALITIES[regionKey] || [];
+
+  for (const candidate of candidates) {
+    if (haystack.includes(candidate)) {
+      return candidate;
+    }
+  }
+
+  const broadMatch = haystack.match(/(名古屋市[^\s/]+区|[^\\s/]+市|[^\\s/]+町|[^\\s/]+村)/);
+  if (broadMatch?.[1]) {
+    return broadMatch[1];
+  }
+
+  return "その他";
 }
 
 function renderSummary() {
