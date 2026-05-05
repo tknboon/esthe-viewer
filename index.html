@@ -85,6 +85,47 @@
                     <a id="selectedListingLink" class="action-link disabled-link" href="#" target="_blank" rel="noreferrer">掲載ページ</a>
                   </div>
 
+                  <div class="store-profile-panel">
+                    <div class="review-form-head">
+                      <p class="mini-label">店舗情報</p>
+                    </div>
+                    <div class="store-profile-grid">
+                      <label class="review-field is-wide">
+                        <span>住所</span>
+                        <input id="storeAddressInput" class="text-input" type="text" maxlength="120" />
+                      </label>
+
+                      <label class="review-field">
+                        <span>SMS</span>
+                        <select id="storeSmsInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="建物">建物</option>
+                          <option value="建物・部屋番号">建物・部屋番号</option>
+                          <option value="建物・駐車番号">建物・駐車番号</option>
+                          <option value="建物・部屋番号・駐車番号">建物・部屋番号・駐車番号</option>
+                        </select>
+                      </label>
+
+                      <label class="review-field">
+                        <span>メニュー</span>
+                        <select id="storeMenuInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="紙">紙</option>
+                          <option value="スマホ">スマホ</option>
+                        </select>
+                      </label>
+
+                      <label class="review-field">
+                        <span>明示</span>
+                        <select id="storeDisclosureInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="あり">あり</option>
+                          <option value="なし">なし</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+
                   <div class="review-panel">
                     <div class="review-form-head">
                       <p class="mini-label">店舗レビュー</p>
@@ -93,11 +134,6 @@
 
                     <form id="reviewForm" class="review-form">
                       <div class="review-form-grid">
-                        <label class="review-field">
-                          <span>住所</span>
-                          <input id="reviewAddressInput" class="text-input" type="text" maxlength="80" />
-                        </label>
-
                         <label class="review-field">
                           <span>訪問日</span>
                           <input id="reviewVisitDateInput" class="text-input" type="date" />
@@ -121,35 +157,6 @@
                         <label class="review-field">
                           <span>料金（円）</span>
                           <input id="reviewPriceInput" class="text-input" type="number" min="0" step="1000" placeholder="10000" />
-                        </label>
-
-                        <label class="review-field">
-                          <span>SMS</span>
-                          <select id="reviewSmsInput" class="select-input">
-                            <option value="">未選択</option>
-                            <option value="建物">建物</option>
-                            <option value="建物・部屋番号">建物・部屋番号</option>
-                            <option value="建物・駐車番号">建物・駐車番号</option>
-                            <option value="建物・部屋番号・駐車番号">建物・部屋番号・駐車番号</option>
-                          </select>
-                        </label>
-
-                        <label class="review-field">
-                          <span>メニュー</span>
-                          <select id="reviewMenuInput" class="select-input">
-                            <option value="">未選択</option>
-                            <option value="紙">紙</option>
-                            <option value="スマホ">スマホ</option>
-                          </select>
-                        </label>
-
-                        <label class="review-field">
-                          <span>明示</span>
-                          <select id="reviewDisclosureInput" class="select-input">
-                            <option value="">未選択</option>
-                            <option value="あり">あり</option>
-                            <option value="なし">なし</option>
-                          </select>
                         </label>
 
                         <label class="review-field">

@@ -5,6 +5,7 @@ const state = {
   appliedKeyword: "",
   selectedRow: null,
   reviewsByStore: {},
+  storeProfilesByKey: {},
   map: null,
   infoWindow: null,
   markers: new Map(),
@@ -38,18 +39,18 @@ const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
+const storeAddressInput = document.querySelector("#storeAddressInput");
+const storeSmsInput = document.querySelector("#storeSmsInput");
+const storeMenuInput = document.querySelector("#storeMenuInput");
+const storeDisclosureInput = document.querySelector("#storeDisclosureInput");
 const mapList = document.querySelector("#mapList");
 const mapListCount = document.querySelector("#mapListCount");
 const reviewForm = document.querySelector("#reviewForm");
-const reviewAddressInput = document.querySelector("#reviewAddressInput");
 const reviewVisitDateInput = document.querySelector("#reviewVisitDateInput");
 const reviewAuthorInput = document.querySelector("#reviewAuthorInput");
 const reviewNationalityInput = document.querySelector("#reviewNationalityInput");
 const reviewDurationInput = document.querySelector("#reviewDurationInput");
 const reviewPriceInput = document.querySelector("#reviewPriceInput");
-const reviewSmsInput = document.querySelector("#reviewSmsInput");
-const reviewMenuInput = document.querySelector("#reviewMenuInput");
-const reviewDisclosureInput = document.querySelector("#reviewDisclosureInput");
 const reviewShowerInput = document.querySelector("#reviewShowerInput");
 const reviewMassageInput = document.querySelector("#reviewMassageInput");
 const reviewGuideClarityInput = document.querySelector("#reviewGuideClarityInput");
@@ -72,6 +73,7 @@ function init() {
     }
     state.geocodeCache = readGeocodeCache();
     state.reviewsByStore = readReviews();
+    state.storeProfilesByKey = readStoreProfiles();
     renderLastUpdated();
     renderUpdateHistory();
     setDefaultReviewValues();
@@ -195,6 +197,10 @@ function bindEvents() {
   mapList.addEventListener("click", handleListActionClick);
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
+  storeAddressInput?.addEventListener("input", handleStoreProfileChange);
+  storeSmsInput?.addEventListener("change", handleStoreProfileChange);
+  storeMenuInput?.addEventListener("change", handleStoreProfileChange);
+  storeDisclosureInput?.addEventListener("change", handleStoreProfileChange);
   reviewForm.addEventListener("submit", handleReviewSubmit);
 }
 
@@ -373,6 +379,7 @@ function renderSelectedStore() {
     disableLink(selectedPhoneSearchLink);
     disableLink(selectedMapLink);
     disableLink(selectedListingLink);
+    clearStoreProfileInputs();
     reviewSubmitButton.disabled = true;
     reviewList.innerHTML = `<div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>`;
     return;
@@ -405,6 +412,7 @@ function renderSelectedStore() {
     disableLink(selectedListingLink);
   }
 
+  renderStoreProfileInputs(state.selectedRow);
   renderReviewList();
 }
 
@@ -463,6 +471,60 @@ function writeReviews() {
   } catch (error) {
     console.warn("review save failed", error);
   }
+}
+
+function readStoreProfiles() {
+  try {
+    const raw = localStorage.getItem("toyota-esthe-store-profiles");
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeStoreProfiles() {
+  try {
+    localStorage.setItem("toyota-esthe-store-profiles", JSON.stringify(state.storeProfilesByKey));
+  } catch (error) {
+    console.warn("store profile save failed", error);
+  }
+}
+
+function getStoreProfile(row) {
+  if (!row) return null;
+  return state.storeProfilesByKey[row.reviewKey] || null;
+}
+
+function renderStoreProfileInputs(row) {
+  const profile = getStoreProfile(row) || {};
+  if (storeAddressInput) storeAddressInput.value = profile.address || "";
+  if (storeSmsInput) storeSmsInput.value = profile.sms || "";
+  if (storeMenuInput) storeMenuInput.value = profile.menu || "";
+  if (storeDisclosureInput) storeDisclosureInput.value = profile.disclosure || "";
+}
+
+function clearStoreProfileInputs() {
+  if (storeAddressInput) storeAddressInput.value = "";
+  if (storeSmsInput) storeSmsInput.value = "";
+  if (storeMenuInput) storeMenuInput.value = "";
+  if (storeDisclosureInput) storeDisclosureInput.value = "";
+}
+
+function handleStoreProfileChange() {
+  if (!state.selectedRow) return;
+
+  state.storeProfilesByKey[state.selectedRow.reviewKey] = {
+    address: storeAddressInput?.value.trim() || "",
+    sms: storeSmsInput?.value || "",
+    menu: storeMenuInput?.value || "",
+    disclosure: storeDisclosureInput?.value || "",
+    storeName: state.selectedRow.name,
+    storeStation: state.selectedRow.station,
+    listingUrl: state.selectedRow.listingUrl,
+    updatedAt: new Date().toISOString(),
+  };
+
+  writeStoreProfiles();
 }
 
 function getReviewsForRow(row) {
@@ -560,14 +622,10 @@ function renderReviewItem(review, reviewKey) {
         <button class="review-delete-button" type="button" data-review-id="${review.id}" data-review-key="${escapeHtml(reviewKey)}">削除</button>
       </div>
       <div class="review-detail-grid">
-        ${renderReviewDetail("住所", review.address)}
         ${renderReviewDetail("訪問日", formatVisitDate(review.visitDate))}
         ${renderReviewDetail("国", formatNationality(review.nationality))}
         ${renderReviewDetail("時間", formatDuration(review.duration))}
         ${renderReviewDetail("料金", formatPrice(review.price))}
-        ${renderReviewDetail("SMS", review.sms)}
-        ${renderReviewDetail("メニュー", review.menu)}
-        ${renderReviewDetail("明示", review.disclosure)}
         ${renderReviewDetail("シャワー", review.shower)}
         ${renderReviewDetail("マッサージ", review.massage)}
         ${renderReviewDetail("案内のわかりやすさ", review.guideClarity)}
@@ -588,14 +646,10 @@ function handleReviewSubmit(event) {
 
   const author = reviewAuthorInput.value.trim();
   const comment = reviewCommentInput.value.trim();
-  const address = reviewAddressInput.value.trim();
   const visitDate = reviewVisitDateInput.value || "";
   const nationality = reviewNationalityInput.value.trim();
   const duration = reviewDurationInput.value ? Number(reviewDurationInput.value) : null;
   const price = reviewPriceInput.value ? Number(reviewPriceInput.value) : null;
-  const sms = reviewSmsInput.value;
-  const menu = reviewMenuInput.value;
-  const disclosure = reviewDisclosureInput.value;
   const shower = reviewShowerInput.value;
   const massage = reviewMassageInput.value;
   const guideClarity = reviewGuideClarityInput.value;
@@ -606,15 +660,11 @@ function handleReviewSubmit(event) {
   const overallRating = Number(reviewOverallRatingInput.value || 5);
 
   const hasReviewContent =
-    address ||
     author ||
     nationality ||
     duration ||
     price ||
-    sms ||
     guideClarity ||
-    menu ||
-    disclosure ||
     shower ||
     massage ||
     comment ||
@@ -636,16 +686,12 @@ function handleReviewSubmit(event) {
     storeStation: state.selectedRow.station,
     storeLocation: state.selectedRow.location,
     listingUrl: state.selectedRow.listingUrl,
-    address,
     visitDate,
     author,
     nationality,
     duration,
     price,
-    sms,
     guideClarity,
-    menu,
-    disclosure,
     shower,
     massage,
     faceRating,
