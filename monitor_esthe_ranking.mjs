@@ -10,6 +10,7 @@ const DATA_JS_PATH = path.join(ROOT, "data.js");
 const LEGACY_CSV_PATH = path.join(ROOT, "toyota_esthe_legacy_rows.csv");
 const STATUS_PATH = path.join(ROOT, "esthe_ranking_status.json");
 const FAILURE_LOG_PATH = path.join(ROOT, "esthe_ranking_failure.log");
+const HISTORY_PATH = path.join(ROOT, "esthe_update_history.json");
 const HTML_INPUT_PATH = process.env.ESTHE_MONITOR_HTML_PATH || "";
 const DETAIL_DIR_PATH = process.env.ESTHE_MONITOR_DETAIL_DIR || "";
 
@@ -21,10 +22,12 @@ async function main() {
   const current = await buildSnapshot(listingHtml, fetchedAt);
   const previous = await readJson(SNAPSHOT_PATH);
   const diff = compareSnapshots(previous, current);
+  const updateHistory = await updateDailyHistory(fetchedAt, diff);
 
-  await updateCsvAndData(current);
+  const keptRows = await updateCsvAndData(current);
   await fs.writeFile(SNAPSHOT_PATH, JSON.stringify(current, null, 2), "utf8");
   await fs.writeFile(REPORT_PATH, renderReport(current, diff), "utf8");
+  await writeDataJs(DATA_JS_PATH, current, updateHistory, keptRows);
   await writeStatus({
     ok: true,
     checkedAt: fetchedAt,
@@ -204,7 +207,7 @@ async function updateCsvAndData(snapshot) {
 
   await writeCsv(CSV_PATH, keptRows);
   await writeCsv(LEGACY_CSV_PATH, legacyRows);
-  await writeDataJs(DATA_JS_PATH, keptRows, snapshot.fetchedAt);
+  return keptRows;
 }
 
 function createRowFromStore(store) {
@@ -570,12 +573,42 @@ async function writeCsv(filePath, rows) {
   await fs.writeFile(filePath, lines.join("\r\n"), "utf8");
 }
 
-async function writeDataJs(filePath, rows, fetchedAt) {
+async function writeDataJs(filePath, snapshot, updateHistory, rows) {
   const content = [
-    `window.storeMeta = ${JSON.stringify({ lastUpdatedAt: fetchedAt })};`,
+    `window.storeMeta = ${JSON.stringify({
+      lastUpdatedAt: snapshot.fetchedAt,
+      updateHistory,
+    })};`,
     `window.storeData = ${JSON.stringify(rows)};`,
   ].join("\n");
   await fs.writeFile(filePath, content, "utf8");
+}
+
+async function updateDailyHistory(fetchedAt, diff) {
+  const history = (await readJson(HISTORY_PATH)) || [];
+  const dayKey = formatTokyoDayKey(fetchedAt);
+  const entry = {
+    dayKey,
+    fetchedAt,
+    added: diff.added,
+    removed: diff.removed,
+  };
+
+  const nextHistory = history.filter((item) => item.dayKey !== dayKey);
+  nextHistory.unshift(entry);
+  const trimmedHistory = nextHistory.slice(0, 31);
+  await fs.writeFile(HISTORY_PATH, JSON.stringify(trimmedHistory, null, 2), "utf8");
+  return trimmedHistory;
+}
+
+function formatTokyoDayKey(value) {
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  return formatter.format(new Date(value));
 }
 
 function decodeEntities(value) {

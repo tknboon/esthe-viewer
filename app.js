@@ -20,6 +20,7 @@ const searchButton = document.querySelector("#searchButton");
 const lastUpdatedText = document.querySelector("#lastUpdatedText");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
+const dailyUpdateHistory = document.querySelector("#dailyUpdateHistory");
 const cardsView = document.querySelector("#cardsView");
 const tableView = document.querySelector("#tableView");
 const tableBody = document.querySelector("#tableBody");
@@ -70,6 +71,7 @@ function init() {
     state.geocodeCache = readGeocodeCache();
     state.reviewsByStore = readReviews();
     renderLastUpdated();
+    renderUpdateHistory();
     setDefaultReviewValues();
     bindEvents();
     applyFilters();
@@ -105,6 +107,71 @@ function renderLastUpdated() {
   }).format(date);
 
   lastUpdatedText.textContent = `最終更新: ${formatted}`;
+}
+
+function renderUpdateHistory() {
+  if (!dailyUpdateHistory) return;
+
+  const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
+  if (!history.length) {
+    dailyUpdateHistory.innerHTML = `<div class="empty-state compact">更新履歴はまだありません。</div>`;
+    return;
+  }
+
+  dailyUpdateHistory.innerHTML = history
+    .slice(0, 14)
+    .map((entry) => {
+      const added = Array.isArray(entry.added) ? entry.added : [];
+      const removed = Array.isArray(entry.removed) ? entry.removed : [];
+      const hasChanges = added.length || removed.length;
+
+      return `
+        <article class="update-history-item">
+          <div class="update-history-head">
+            <span class="update-history-date">${escapeHtml(formatHistoryDate(entry.dayKey || entry.fetchedAt))}</span>
+            <span class="update-history-summary">増えた ${added.length}件 / なくなった ${removed.length}件</span>
+          </div>
+          ${
+            hasChanges
+              ? `
+                ${renderHistoryGroup("増えた店舗", added, "added")}
+                ${renderHistoryGroup("なくなった店舗", removed, "removed")}
+              `
+              : `<div class="update-history-empty">変化なし</div>`
+          }
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function renderHistoryGroup(label, items, modifier) {
+  if (!items.length) return "";
+  return `
+    <section class="update-history-group">
+      <div class="update-history-label ${modifier === "removed" ? "is-removed" : "is-added"}">${escapeHtml(label)}</div>
+      <div class="update-history-tags">
+        ${items.map((item) => `<span class="update-history-tag">${escapeHtml(item)}</span>`).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function formatHistoryDate(value) {
+  if (!value) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(String(value))) {
+    const [year, month, day] = String(value).split("-");
+    return `${Number(year)}/${String(Number(month)).padStart(2, "0")}/${String(Number(day)).padStart(2, "0")}`;
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+
+  return new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
 }
 
 function bindEvents() {

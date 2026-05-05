@@ -225,6 +225,91 @@ select {
   margin-top: 14px;
 }
 
+.history-subhead {
+  margin-top: 18px;
+}
+
+.daily-update-history {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.update-history-item {
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.update-history-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.update-history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.update-history-date,
+.update-history-summary {
+  font-size: 12px;
+}
+
+.update-history-date {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.update-history-summary {
+  color: var(--muted);
+}
+
+.update-history-group {
+  margin-top: 8px;
+}
+
+.update-history-label {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.update-history-label.is-added {
+  color: #ffb9d1;
+}
+
+.update-history-label.is-removed {
+  color: #ffd47e;
+}
+
+.update-history-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.update-history-tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 248, 251, 0.06);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.update-history-empty {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .revenue-row {
   display: grid;
   gap: 8px;
