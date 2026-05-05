@@ -1729,6 +1729,20 @@ function renderMarkerInfoContent(row) {
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
   const notesHtml = row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
+  const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
+  const listingHtml = row.listingUrl
+    ? `<a href="${escapeHtml(row.listingUrl)}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">↗</a>`
+    : "";
+  const phoneSearchHtml = row.phone
+    ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">⌕</a>`
+    : "";
+  const mapHtml = row.mapUrl
+    ? `<a href="${escapeHtml(row.mapUrl)}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">⌖</a>`
+    : "";
+  const phoneActionHtml = row.phone
+    ? `<a href="tel:${escapeHtml(row.phone)}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">☎</a>`
+    : "";
+  const actionsHtml = [phoneActionHtml, mapHtml, phoneSearchHtml, listingHtml].filter(Boolean).join("");
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
@@ -1736,6 +1750,7 @@ function renderMarkerInfoContent(row) {
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}</div>
       ${notesHtml}
+      ${actionsHtml ? `<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">${actionsHtml}</div>` : ""}
     </div>
   `;
 }
