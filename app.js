@@ -1506,8 +1506,12 @@ window.initGoogleMapApp = function initGoogleMapApp() {
     streetViewControl: false,
     fullscreenControl: true,
   });
-  state.infoWindow = new google.maps.InfoWindow();
-  state.profileInfoWindow = new google.maps.InfoWindow();
+  state.infoWindow = new google.maps.InfoWindow({
+    headerDisabled: true,
+  });
+  state.profileInfoWindow = new google.maps.InfoWindow({
+    headerDisabled: true,
+  });
   state.geocoder = new google.maps.Geocoder();
   state.streetViewService = new google.maps.StreetViewService();
   ensureStreetViewPanorama();
