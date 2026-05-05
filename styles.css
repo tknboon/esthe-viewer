@@ -518,6 +518,38 @@ select {
   margin-top: 12px;
 }
 
+.archived-review-list {
+  display: grid;
+  gap: 12px;
+}
+
+.archived-review-group {
+  display: grid;
+  gap: 10px;
+}
+
+.archived-review-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.archived-review-title {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.archived-review-meta {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.archived-review-items {
+  margin-top: 0;
+}
+
 .review-item {
   padding: 12px;
   border: 1px solid var(--line);

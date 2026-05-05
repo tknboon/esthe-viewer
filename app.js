@@ -21,6 +21,7 @@ const lastUpdatedText = document.querySelector("#lastUpdatedText");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
 const dailyUpdateHistory = document.querySelector("#dailyUpdateHistory");
+const archivedReviewList = document.querySelector("#archivedReviewList");
 const cardsView = document.querySelector("#cardsView");
 const tableView = document.querySelector("#tableView");
 const tableBody = document.querySelector("#tableBody");
@@ -112,7 +113,11 @@ function renderLastUpdated() {
 function renderUpdateHistory() {
   if (!dailyUpdateHistory) return;
 
-  const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
+  const history = (Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : []).filter((entry) => {
+    const added = Array.isArray(entry?.added) ? entry.added : [];
+    const removed = Array.isArray(entry?.removed) ? entry.removed : [];
+    return added.length || removed.length;
+  });
   if (!history.length) {
     dailyUpdateHistory.innerHTML = `<div class="empty-state compact">更新履歴はまだありません。</div>`;
     return;
@@ -129,13 +134,13 @@ function renderUpdateHistory() {
         <article class="update-history-item">
           <div class="update-history-head">
             <span class="update-history-date">${escapeHtml(formatHistoryDate(entry.dayKey || entry.fetchedAt))}</span>
-            <span class="update-history-summary">増えた ${added.length}件 / なくなった ${removed.length}件</span>
+            <span class="update-history-summary">開店 ${added.length}件 / 閉店 ${removed.length}件</span>
           </div>
           ${
             hasChanges
               ? `
-                ${renderHistoryGroup("増えた店舗", added, "added")}
-                ${renderHistoryGroup("なくなった店舗", removed, "removed")}
+                ${renderHistoryGroup("開店", added, "added")}
+                ${renderHistoryGroup("閉店", removed, "removed")}
               `
               : `<div class="update-history-empty">変化なし</div>`
           }
@@ -188,6 +193,7 @@ function bindEvents() {
   tableBody.addEventListener("click", handleListActionClick);
   mapList.addEventListener("click", handleListActionClick);
   reviewList.addEventListener("click", handleReviewDelete);
+  archivedReviewList?.addEventListener("click", handleReviewDelete);
   reviewForm.addEventListener("submit", handleReviewSubmit);
 }
 
@@ -463,6 +469,11 @@ function getReviewsForRow(row) {
   return [...(state.reviewsByStore[row.reviewKey] || [])].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 
+function getReviewsForKey(reviewKey) {
+  if (!reviewKey) return [];
+  return [...(state.reviewsByStore[reviewKey] || [])].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+}
+
 function hasReviews(row) {
   return getReviewsForRow(row).length > 0;
 }
@@ -494,39 +505,79 @@ function renderReviewList() {
     return;
   }
 
-  reviewList.innerHTML = reviews
+  reviewList.innerHTML = reviews.map((review) => renderReviewItem(review, row.reviewKey)).join("");
+}
+
+function renderArchivedReviews() {
+  if (!archivedReviewList) return;
+
+  const activeKeys = new Set(state.rows.map((row) => row.reviewKey));
+  const groups = Object.entries(state.reviewsByStore)
+    .filter(([reviewKey, reviews]) => !activeKeys.has(reviewKey) && Array.isArray(reviews) && reviews.length)
+    .map(([reviewKey, reviews]) => {
+      const sorted = [...reviews].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+      const latest = sorted[0];
+      return {
+        reviewKey,
+        reviews: sorted,
+        latest,
+        label: getArchivedStoreLabel(reviewKey, latest),
+      };
+    })
+    .sort((a, b) => (b.latest?.createdAt || "").localeCompare(a.latest?.createdAt || ""));
+
+  if (!groups.length) {
+    archivedReviewList.innerHTML = `<div class="empty-state compact">掲載終了したレビューはまだありません。</div>`;
+    return;
+  }
+
+  archivedReviewList.innerHTML = groups
     .map(
-      (review) => `
-        <article class="review-item">
-          <div class="review-item-head">
-            <div>
-              <strong class="review-author">${escapeHtml(getReviewAuthorLabel(review))}</strong>
-              <div class="review-meta">${renderStars(review.overallRating || 0)} / ${escapeHtml(formatReviewDate(review.createdAt))}</div>
-            </div>
-            <button class="review-delete-button" type="button" data-review-id="${review.id}">削除</button>
+      (group) => `
+        <section class="archived-review-group">
+          <div class="archived-review-head">
+            <strong class="archived-review-title">${escapeHtml(group.label)}</strong>
+            <span class="archived-review-meta">掲載終了 / ${group.reviews.length}件</span>
           </div>
-          <div class="review-detail-grid">
-            ${renderReviewDetail("訪問日", formatVisitDate(review.visitDate))}
-            ${renderReviewDetail("国", formatNationality(review.nationality))}
-            ${renderReviewDetail("時間", formatDuration(review.duration))}
-            ${renderReviewDetail("料金", formatPrice(review.price))}
-            ${renderReviewDetail("SMS", review.sms)}
-            ${renderReviewDetail("メニュー", review.menu)}
-            ${renderReviewDetail("明示", review.disclosure)}
-            ${renderReviewDetail("シャワー", review.shower)}
-            ${renderReviewDetail("マッサージ", review.massage)}
-            ${renderReviewDetail("案内のわかりやすさ", review.guideClarity)}
-            ${renderReviewDetail("顔", formatScore(review.faceRating))}
-            ${renderReviewDetail("体", formatScore(review.bodyRating))}
-            ${renderReviewDetail("性格", formatScore(review.personalityRating))}
-            ${renderReviewDetail("サービス", formatScore(review.serviceRating))}
-            ${renderReviewDetail("総合", formatScore(review.overallRating))}
+          <div class="review-list archived-review-items">
+            ${group.reviews.map((review) => renderReviewItem(review, group.reviewKey)).join("")}
           </div>
-          ${review.comment ? `<p class="review-comment">${escapeHtml(review.comment)}</p>` : ""}
-        </article>
+        </section>
       `
     )
     .join("");
+}
+
+function renderReviewItem(review, reviewKey) {
+  return `
+    <article class="review-item">
+      <div class="review-item-head">
+        <div>
+          <strong class="review-author">${escapeHtml(getReviewAuthorLabel(review))}</strong>
+          <div class="review-meta">${renderStars(review.overallRating || 0)} / ${escapeHtml(formatReviewDate(review.createdAt))}</div>
+        </div>
+        <button class="review-delete-button" type="button" data-review-id="${review.id}" data-review-key="${escapeHtml(reviewKey)}">削除</button>
+      </div>
+      <div class="review-detail-grid">
+        ${renderReviewDetail("訪問日", formatVisitDate(review.visitDate))}
+        ${renderReviewDetail("国", formatNationality(review.nationality))}
+        ${renderReviewDetail("時間", formatDuration(review.duration))}
+        ${renderReviewDetail("料金", formatPrice(review.price))}
+        ${renderReviewDetail("SMS", review.sms)}
+        ${renderReviewDetail("メニュー", review.menu)}
+        ${renderReviewDetail("明示", review.disclosure)}
+        ${renderReviewDetail("シャワー", review.shower)}
+        ${renderReviewDetail("マッサージ", review.massage)}
+        ${renderReviewDetail("案内のわかりやすさ", review.guideClarity)}
+        ${renderReviewDetail("顔", formatScore(review.faceRating))}
+        ${renderReviewDetail("体", formatScore(review.bodyRating))}
+        ${renderReviewDetail("性格", formatScore(review.personalityRating))}
+        ${renderReviewDetail("サービス", formatScore(review.serviceRating))}
+        ${renderReviewDetail("総合", formatScore(review.overallRating))}
+      </div>
+      ${review.comment ? `<p class="review-comment">${escapeHtml(review.comment)}</p>` : ""}
+    </article>
+  `;
 }
 
 function handleReviewSubmit(event) {
@@ -576,6 +627,11 @@ function handleReviewSubmit(event) {
 
   const review = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    reviewKey: state.selectedRow.reviewKey,
+    storeName: state.selectedRow.name,
+    storeStation: state.selectedRow.station,
+    storeLocation: state.selectedRow.location,
+    listingUrl: state.selectedRow.listingUrl,
     visitDate,
     author,
     nationality,
@@ -612,12 +668,15 @@ function handleReviewSubmit(event) {
 
 function handleReviewDelete(event) {
   const button = event.target.closest("[data-review-id]");
-  if (!button || !state.selectedRow) return;
+  if (!button) return;
 
-  const current = state.reviewsByStore[state.selectedRow.reviewKey] || [];
-  state.reviewsByStore[state.selectedRow.reviewKey] = current.filter((review) => review.id !== button.dataset.reviewId);
-  if (!state.reviewsByStore[state.selectedRow.reviewKey].length) {
-    delete state.reviewsByStore[state.selectedRow.reviewKey];
+  const reviewKey = button.dataset.reviewKey || state.selectedRow?.reviewKey;
+  if (!reviewKey) return;
+
+  const current = getReviewsForKey(reviewKey);
+  state.reviewsByStore[reviewKey] = current.filter((review) => review.id !== button.dataset.reviewId);
+  if (!state.reviewsByStore[reviewKey].length) {
+    delete state.reviewsByStore[reviewKey];
   }
   writeReviews();
   renderReviewAnalytics();
@@ -761,6 +820,7 @@ function getTodayString() {
 function renderReviewAnalytics() {
   const reviews = Object.values(state.reviewsByStore).flat();
   reviewTotalCount.textContent = `${reviews.length}件`;
+  renderArchivedReviews();
 
   if (!reviews.length) {
     monthlyRevenueChart.innerHTML = `<div class="empty-state compact">レビューが入るとここに月別料金合計が表示されます。</div>`;
@@ -822,6 +882,19 @@ function getMonthKey(value) {
 function formatMonthLabel(monthKey) {
   const [year, month] = monthKey.split("-");
   return `${Number(year)}年${Number(month)}月`;
+}
+
+function getArchivedStoreLabel(reviewKey, latestReview) {
+  if (latestReview?.storeName) {
+    return latestReview.storeStation ? `${latestReview.storeName} / ${latestReview.storeStation}` : latestReview.storeName;
+  }
+
+  if (reviewKey && !reviewKey.startsWith("http") && reviewKey.includes("__")) {
+    const [name, place] = reviewKey.split("__");
+    return place ? `${name} / ${place}` : name;
+  }
+
+  return "掲載終了した店舗";
 }
 
 function buildLocationQuery(name, station, location, notes) {
