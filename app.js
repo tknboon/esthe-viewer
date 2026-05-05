@@ -1,4 +1,4 @@
-const state = {
+﻿const state = {
   rows: [],
   filteredRows: [],
   view: "cards",
@@ -83,45 +83,45 @@ const reviewList = document.querySelector("#reviewList");
 const reviewToggleButton = document.querySelector("#reviewToggleButton");
 
 const REGION_LABELS = {
-  nagoya: "??????????",
-  sakae: "?",
-  shinsakae: "?????????",
-  kanayama: "?????",
-  kurokawa: "??????",
-  hoshigaoka: "???????",
-  moriyama: "?????",
-  otai: "??????",
-  tokaidori: "??????",
-  kasadera: "?????",
-  horita: "??????",
-  tsurumai: "?????",
-  showa: "???????????",
-  komaki: "??????",
-  owari: "?????",
-  chita: "????????",
-  toyota: "?????????",
-  toyohashi: "?????????",
+  nagoya: "名古屋・名駅・納屋橋",
+  sakae: "栄",
+  shinsakae: "新栄町・千種・今池",
+  kanayama: "金山・熱田",
+  kurokawa: "黒川・大曽根",
+  hoshigaoka: "星ヶ丘・藤が丘",
+  moriyama: "守山・小幡",
+  otai: "小田井・比良",
+  tokaidori: "東海通・高畑",
+  kasadera: "笠寺・柴田",
+  horita: "堀田・新瑞橋",
+  tsurumai: "大須・鶴舞",
+  showa: "名古屋・昭和区・天白区",
+  komaki: "小牧・春日井",
+  owari: "尾張・一宮",
+  chita: "知多・大府・半田",
+  toyota: "西三河・豊田・岡崎",
+  toyohashi: "東三河・豊橋・豊川",
 };
 
 const REGION_MUNICIPALITIES = {
-  nagoya: ["????"],
-  sakae: ["????"],
-  shinsakae: ["????"],
-  kanayama: ["????"],
-  kurokawa: ["????"],
-  hoshigaoka: ["????"],
-  moriyama: ["????"],
-  otai: ["????"],
-  tokaidori: ["????"],
-  kasadera: ["????"],
-  horita: ["????"],
-  tsurumai: ["????"],
-  showa: ["????"],
-  komaki: ["???", "????", "???", "???", "???", "???", "????"],
-  owari: ["???", "???", "???", "?????", "???", "???", "???", "????", "???", "???", "???", "???", "???", "???"],
-  chita: ["???", "???", "???", "???", "???", "???", "????", "???"],
-  toyota: ["???", "???", "???", "???", "???", "???", "???", "????", "???", "???"],
-  toyohashi: ["???", "???", "???", "???", "???"],
+  nagoya: ["名古屋市"],
+  sakae: ["名古屋市"],
+  shinsakae: ["名古屋市"],
+  kanayama: ["名古屋市"],
+  kurokawa: ["名古屋市"],
+  hoshigaoka: ["名古屋市"],
+  moriyama: ["名古屋市"],
+  otai: ["名古屋市"],
+  tokaidori: ["名古屋市"],
+  kasadera: ["名古屋市"],
+  horita: ["名古屋市"],
+  tsurumai: ["名古屋市"],
+  showa: ["名古屋市"],
+  komaki: ["小牧市", "春日井市", "瀬戸市", "豊明市", "日進市", "犬山市", "長久手市"],
+  owari: ["一宮市", "稲沢市", "江南市", "北名古屋市", "清須市", "岩倉市", "愛西市", "尾張旭市", "弥富市", "津島市", "あま市", "蟹江町", "大治町", "扶桑町"],
+  chita: ["知多市", "大府市", "半田市", "東海市", "常滑市", "武豊町", "阿久比町", "東浦町"],
+  toyota: ["豊田市", "岡崎市", "刈谷市", "知立市", "安城市", "高浜市", "碧南市", "みよし市", "西尾市", "幸田町"],
+  toyohashi: ["豊橋市", "豊川市", "新城市", "蒲郡市", "田原市"],
 };
 
 init();
@@ -143,10 +143,10 @@ function init() {
     renderReviewAnalytics();
   } catch (error) {
     if (statusText) {
-      statusText.textContent = "???????????????";
+      statusText.textContent = "データの読み込みに失敗しました。";
     }
     if (cardsView) {
-      cardsView.innerHTML = `<div class="empty-state">????????????????</div>`;
+      cardsView.innerHTML = `<div class="empty-state">表示できる店舗データがありません。</div>`;
     }
     console.error(error);
   }
@@ -186,6 +186,8 @@ function renderUpdateHistory() {
     const removed = Array.isArray(entry?.removed) ? entry.removed : [];
     return added.length || removed.length;
   });
+  const stationLookup = buildHistoryStationLookup();
+
   if (!history.length) {
     dailyUpdateHistory.innerHTML = `<div class="empty-state compact">更新履歴はまだありません。</div>`;
     return;
@@ -196,7 +198,6 @@ function renderUpdateHistory() {
     .map((entry) => {
       const added = Array.isArray(entry.added) ? entry.added : [];
       const removed = Array.isArray(entry.removed) ? entry.removed : [];
-      const hasChanges = added.length || removed.length;
 
       return `
         <article class="update-history-item">
@@ -204,32 +205,54 @@ function renderUpdateHistory() {
             <span class="update-history-date">${escapeHtml(formatHistoryDate(entry.dayKey || entry.fetchedAt))}</span>
             <span class="update-history-summary">開店 ${added.length}件 / 閉店 ${removed.length}件</span>
           </div>
-          ${
-            hasChanges
-              ? `
-                ${renderHistoryGroup("開店", added, "added")}
-                ${renderHistoryGroup("閉店", removed, "removed")}
-              `
-              : `<div class="update-history-empty">変化なし</div>`
-          }
+          ${renderHistoryGroup("開店", added, "added", stationLookup)}
+          ${renderHistoryGroup("閉店", removed, "removed", stationLookup)}
         </article>
       `;
     })
     .join("");
 }
 
-function renderHistoryGroup(label, items, modifier) {
+function buildHistoryStationLookup() {
+  const lookup = new Map();
+
+  for (const row of state.rows) {
+    if (!row?.name || !row?.station) continue;
+    if (!lookup.has(row.name)) {
+      lookup.set(row.name, new Set());
+    }
+    lookup.get(row.name).add(row.station);
+  }
+
+  return lookup;
+}
+
+function formatHistoryStoreLabel(item, stationLookup) {
+  const label = String(item || "").trim();
+  if (!label) return "";
+  if (label.includes("/")) return label;
+
+  const stations = stationLookup.get(label);
+  if (!stations || !stations.size) return label;
+
+  return `${label}/${[...stations][0]}`;
+}
+
+function renderHistoryGroup(label, items, modifier, stationLookup) {
   if (!items.length) return "";
   return `
     <section class="update-history-group">
       <div class="update-history-label ${modifier === "removed" ? "is-removed" : "is-added"}">${escapeHtml(label)}</div>
       <div class="update-history-tags">
-        ${items.map((item) => `<span class="update-history-tag">${escapeHtml(item)}</span>`).join("")}
+        ${items
+          .map((item) => formatHistoryStoreLabel(item, stationLookup))
+          .filter(Boolean)
+          .map((item) => `<span class="update-history-tag">${escapeHtml(item)}</span>`)
+          .join("")}
       </div>
     </section>
   `;
 }
-
 function formatHistoryDate(value) {
   if (!value) return "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(String(value))) {
@@ -342,12 +365,12 @@ function renderRegionSummary() {
   if (!regionSummary) return;
 
   const stats = buildRegionStats(state.filteredRows);
-  const rootLabel = `???(${stats.total})`;
+  const rootLabel = `愛知県(${stats.total})`;
 
   regionSummary.innerHTML = `
     <button class="region-toggle" type="button" data-region-toggle="aichi" aria-expanded="${state.regionExpanded ? "true" : "false"}">
       <span class="region-toggle-label">${escapeHtml(rootLabel)}</span>
-      <span class="region-toggle-icon">${state.regionExpanded ? "?" : "?"}</span>
+      <span class="region-toggle-icon">${state.regionExpanded ? "−" : "+"}</span>
     </button>
     ${
       state.regionExpanded
@@ -360,7 +383,7 @@ function renderRegionSummary() {
                   <div class="region-group">
                     <button class="region-child region-child-button" type="button" data-region-key="${item.key}" aria-expanded="${isExpanded ? "true" : "false"}">
                       <span class="region-child-name">${escapeHtml(item.label)}</span>
-                      <span class="region-child-count">(${item.count}) ${isExpanded ? "?" : "?"}</span>
+                      <span class="region-child-count">(${item.count}) ${isExpanded ? "−" : "+"}</span>
                     </button>
                     ${
                       isExpanded && item.municipalities.length
@@ -461,7 +484,7 @@ function getMunicipalityFromRow(row, regionKey) {
     return candidates[0];
   }
 
-  return "???";
+  return "その他";
 }
 
 function renderSummary() {
@@ -581,7 +604,7 @@ function renderTable() {
 
 function renderSelectedStore() {
   if (!state.selectedRow) {
-    selectedStoreName.textContent = "店舗が選択されていません";
+    selectedStoreName.textContent = "店舗を選択してください";
     selectedStoreMeta.textContent = "地図上のピンから店舗を選んでください。";
     if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
     selectedReviewSummary.textContent = "レビューはまだありません。";
@@ -738,10 +761,9 @@ function renderStoreProfileSummary(row) {
   const parts = [
     profile.address ? `<span>${escapeHtml(profile.address)}</span>` : "",
     profile.sms ? `<span>SMS: ${escapeHtml(profile.sms)}</span>` : "",
-    profile.menu ? `<span>????: ${escapeHtml(profile.menu)}</span>` : "",
-    profile.disclosure ? `<span>??: ${escapeHtml(profile.disclosure)}</span>` : "",
-    profile.guideClarity
-      ? `<span class="${profile.guideClarity === "??" ? "profile-positive" : ""}">??: ${escapeHtml(profile.guideClarity)}</span>`
+    profile.menu ? `<span>メニュー: ${escapeHtml(profile.menu)}</span>` : "",
+    profile.disclosure ? `<span>明示: ${escapeHtml(profile.disclosure)}</span>` : "",
+    profile.guideClarity ? `<span class="${profile.guideClarity === "あり" ? "profile-positive" : ""}">真心: ${escapeHtml(profile.guideClarity)}</span>`
       : "",
   ].filter(Boolean);
   selectedStoreProfileMeta.innerHTML = parts.join(" / ");
@@ -1334,7 +1356,7 @@ function syncMapWithFilters() {
   }
 
   if (pendingCount > 0 && statusText) {
-    statusText.textContent = `${state.filteredRows.length}????? / ${pendingCount}????????`;
+    statusText.textContent = `${state.filteredRows.length}件を表示中`;
   }
 
   focusMarker(state.selectedRow);
@@ -1520,8 +1542,8 @@ function renderStreetViewForRow(row) {
   if (!state.mapReady || !state.streetViewPanorama || !state.streetViewService) {
     setStreetViewState({
       mode: "empty",
-      status: "周辺ビューを準備しています。",
-      emptyMessage: "周辺ビューを準備しています。",
+      status: "周辺ビューの準備中です。",
+      emptyMessage: "周辺ビューの準備中です。",
     });
     return;
   }
@@ -1529,44 +1551,42 @@ function renderStreetViewForRow(row) {
   if (!row.latLng) {
     setStreetViewState({
       mode: "empty",
-      status: "位置を確認中です。",
-      emptyMessage: "位置を確認できると周辺ビューを表示します。",
+      status: "位置の確定を待っています。",
+      emptyMessage: "位置がわかると周辺ビューを表示できます。",
     });
     return;
   }
 
   setStreetViewState({
-    mode: "loading",
-    status: "周辺ビューを読み込み中です。",
-    emptyMessage: "周辺ビューを読み込み中です。",
+    mode: "empty",
+    status: "周辺ビューを確認中です。",
+    emptyMessage: "周辺ビューを読み込んでいます。",
   });
 
   state.streetViewService.getPanorama(
     {
       location: row.latLng,
-      radius: 120,
+      preference: google.maps.StreetViewPreference.NEAREST,
+      radius: 80,
+      source: google.maps.StreetViewSource.OUTDOOR,
     },
     (data, status) => {
-      if (row.id !== state.selectedRow?.id) return;
+      if (state.selectedRow?.id !== row.id) return;
 
-      if (status === google.maps.StreetViewStatus.OK && data?.location?.latLng) {
-        setStreetViewState({
-          mode: "ready",
-          status: "店舗周辺のビューを表示しています。",
-        });
-        ensureStreetViewPanorama();
-        state.streetViewPanorama.setPano(data.location.pano);
+      if (status === "OK" && data?.location?.latLng) {
         state.streetViewPanorama.setPosition(data.location.latLng);
         state.streetViewPanorama.setPov({ heading: 0, pitch: 0 });
-        state.streetViewPanorama.setVisible(true);
-        google.maps.event.trigger(state.streetViewPanorama, "resize");
+        setStreetViewState({
+          mode: "ready",
+          status: "店舗周辺ビューを表示中です。",
+        });
         return;
       }
 
       setStreetViewState({
         mode: "empty",
-        status: "この周辺ではストリートビューが見つかりませんでした。",
-        emptyMessage: "この周辺ではストリートビューが見つかりませんでした。",
+        status: "この場所では周辺ビューを表示できません。",
+        emptyMessage: "この場所では周辺ビューを表示できません。",
       });
     }
   );
@@ -1645,3 +1665,4 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+

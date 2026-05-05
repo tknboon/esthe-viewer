@@ -1,4 +1,4 @@
-import fs from "node:fs/promises";
+﻿import fs from "node:fs/promises";
 import path from "node:path";
 
 const TARGET_URLS = [
@@ -423,18 +423,29 @@ function extractCountText(html) {
 }
 
 function compareSnapshots(previous, current) {
+  const currentDisplayMap = buildStoreDisplayMap(current.extractedStores || []);
+
   if (!previous) {
     return {
-      added: current.storeNames,
+      added: current.storeNames.map((name) => formatStoreHistoryLabel(name, currentDisplayMap)),
       removed: [],
       changed: ["初回スナップショット取得"],
+      sourceAddedUrls: current.sourceUrls || [],
+      sourceRemovedUrls: [],
     };
   }
 
   const previousNames = new Set(previous.storeNames || []);
   const currentNames = new Set(current.storeNames || []);
-  const added = [...currentNames].filter((name) => !previousNames.has(name)).sort((a, b) => a.localeCompare(b, "ja"));
-  const removed = [...previousNames].filter((name) => !currentNames.has(name)).sort((a, b) => a.localeCompare(b, "ja"));
+  const previousDisplayMap = buildStoreDisplayMap(previous.extractedStores || []);
+  const added = [...currentNames]
+    .filter((name) => !previousNames.has(name))
+    .sort((a, b) => a.localeCompare(b, "ja"))
+    .map((name) => formatStoreHistoryLabel(name, currentDisplayMap));
+  const removed = [...previousNames]
+    .filter((name) => !currentNames.has(name))
+    .sort((a, b) => a.localeCompare(b, "ja"))
+    .map((name) => formatStoreHistoryLabel(name, previousDisplayMap));
   const changed = [];
   const previousSourceUrls = previous.sourceUrls || [];
   const currentSourceUrls = current.sourceUrls || [];
@@ -442,7 +453,7 @@ function compareSnapshots(previous, current) {
   const sourceRemovedUrls = previousSourceUrls.filter((url) => !currentSourceUrls.includes(url));
 
   if ((previous.countText || "") !== (current.countText || "")) {
-    changed.push(`掲載件数表記: ${previous.countText || "なし"} -> ${current.countText || "なし"}`);
+    changed.push(`掲載件数表示: ${previous.countText || "なし"} -> ${current.countText || "なし"}`);
   }
   if ((previous.pageTitle || "") !== (current.pageTitle || "")) {
     changed.push(`ページタイトル: ${previous.pageTitle || "なし"} -> ${current.pageTitle || "なし"}`);
@@ -458,6 +469,26 @@ function compareSnapshots(previous, current) {
   }
 
   return { added, removed, changed, sourceAddedUrls, sourceRemovedUrls };
+}
+
+function buildStoreDisplayMap(stores) {
+  const displayMap = new Map();
+
+  for (const store of stores) {
+    if (!store?.name) continue;
+    const station = cleanHistoryStation(store.station || "");
+    displayMap.set(store.name, station ? `${store.name}/${station}` : store.name);
+  }
+
+  return displayMap;
+}
+
+function formatStoreHistoryLabel(name, displayMap) {
+  return displayMap.get(name) || name;
+}
+
+function cleanHistoryStation(value) {
+  return compactText(value).replace(/\s+/g, "").replace(/徒歩.*$/, "");
 }
 
 function renderReport(current, diff) {
@@ -776,3 +807,4 @@ main().catch(async (error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
