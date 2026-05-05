@@ -9,6 +9,9 @@ const state = {
   map: null,
   infoWindow: null,
   markers: new Map(),
+  profileMap: null,
+  profileInfoWindow: null,
+  profileMarkers: new Map(),
   geocoder: null,
   geocodeQueue: [],
   geocodeRunning: false,
@@ -31,6 +34,8 @@ const uniqueCount = document.querySelector("#uniqueCount");
 const mapReadyCount = document.querySelector("#mapReadyCount");
 const allDayCount = document.querySelector("#allDayCount");
 const statusText = document.querySelector("#statusText");
+const profileMapCount = document.querySelector("#profileMapCount");
+const profileMapStatusText = document.querySelector("#profileMapStatusText");
 const toggleViewButton = document.querySelector("#toggleViewButton");
 const selectedStoreName = document.querySelector("#selectedStoreName");
 const selectedStoreMeta = document.querySelector("#selectedStoreMeta");
@@ -257,6 +262,7 @@ function applyFilters() {
   renderTable();
   renderSelectedStore();
   syncMapWithFilters();
+  syncProfileMap();
 }
 
 function renderSummary() {
@@ -573,6 +579,7 @@ function handleStoreProfileSave() {
   writeStoreProfiles();
   renderStoreProfileSummary(state.selectedRow);
   setStoreProfileEditing(false, true);
+  syncProfileMap();
 }
 
 function handleStoreProfileEdit() {
@@ -1030,6 +1037,10 @@ function ensureMapReady() {
   return state.mapReady && state.map && state.geocoder;
 }
 
+function ensureProfileMapReady() {
+  return state.mapReady && state.profileMap && state.geocoder;
+}
+
 window.initGoogleMapApp = function initGoogleMapApp() {
   state.map = new google.maps.Map(document.getElementById("googleMapCanvas"), {
     center: { lat: 35.083, lng: 137.156 },
@@ -1038,10 +1049,19 @@ window.initGoogleMapApp = function initGoogleMapApp() {
     streetViewControl: false,
     fullscreenControl: true,
   });
+  state.profileMap = new google.maps.Map(document.getElementById("profileGoogleMapCanvas"), {
+    center: { lat: 35.083, lng: 137.156 },
+    zoom: 11,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: true,
+  });
   state.infoWindow = new google.maps.InfoWindow();
+  state.profileInfoWindow = new google.maps.InfoWindow();
   state.geocoder = new google.maps.Geocoder();
   state.mapReady = true;
   syncMapWithFilters();
+  syncProfileMap();
 };
 
 function syncMapWithFilters() {
@@ -1074,10 +1094,60 @@ function syncMapWithFilters() {
   }
 
   if (pendingCount > 0) {
-    statusText.textContent = `${state.filteredRows.length}件を表示中 / ${pendingCount}件の位置を補完中`;
+    statusText.textContent = `${state.filteredRows.length}????? / ${pendingCount}????????`;
   }
 
   focusMarker(state.selectedRow);
+}
+
+function getProfiledRows() {
+  return state.rows.filter((row) => hasStoreProfileContent(getStoreProfile(row)));
+}
+
+function syncProfileMap() {
+  if (!ensureProfileMapReady()) return;
+
+  clearProfileMarkers();
+  const profiledRows = getProfiledRows();
+  if (profileMapCount) profileMapCount.textContent = `${profiledRows.length}?`;
+
+  if (!profiledRows.length) {
+    if (profileMapStatusText) {
+      profileMapStatusText.textContent = "????????????????????";
+    }
+    return;
+  }
+
+  const bounds = new google.maps.LatLngBounds();
+  let placedCount = 0;
+  let pendingCount = 0;
+
+  for (const row of profiledRows) {
+    const cached = row.latLng || state.geocodeCache[row.locationQuery];
+    if (cached) {
+      row.latLng = cached;
+      addProfileMarkerForRow(row, bounds);
+      placedCount += 1;
+    } else if (row.locationQuery) {
+      queueGeocode(row);
+      pendingCount += 1;
+    }
+  }
+
+  if (placedCount > 0) {
+    if (placedCount === 1 && profiledRows[0].latLng) {
+      state.profileMap.setCenter(profiledRows[0].latLng);
+      state.profileMap.setZoom(15);
+    } else {
+      state.profileMap.fitBounds(bounds, 80);
+    }
+  }
+
+  if (profileMapStatusText) {
+    profileMapStatusText.textContent = pendingCount > 0
+      ? `${profiledRows.length}????? / ${pendingCount}????????`
+      : `${profiledRows.length}?????`;
+  }
 }
 
 function clearMarkers() {
@@ -1085,6 +1155,13 @@ function clearMarkers() {
     marker.setMap(null);
   }
   state.markers.clear();
+}
+
+function clearProfileMarkers() {
+  for (const marker of state.profileMarkers.values()) {
+    marker.setMap(null);
+  }
+  state.profileMarkers.clear();
 }
 
 function addMarkerForRow(row, bounds) {
@@ -1100,6 +1177,33 @@ function addMarkerForRow(row, bounds) {
 
   marker.addListener("click", () => focusRow(row));
   state.markers.set(row.id, marker);
+  bounds.extend(row.latLng);
+}
+
+function addProfileMarkerForRow(row, bounds) {
+  if (!row.latLng || state.profileMarkers.has(row.id)) return;
+
+  const marker = new google.maps.Marker({
+    map: state.profileMap,
+    position: row.latLng,
+    title: row.name,
+    animation: google.maps.Animation.DROP,
+    icon: createHeartMarkerIcon("#ff5d96", "#ffe3ee"),
+  });
+
+  marker.addListener("click", () => {
+    focusRow(row);
+    state.profileInfoWindow.setContent(`
+      <div style="color:#28121c;min-width:180px">
+        <strong>${escapeHtml(row.name)}</strong><br />
+        ${escapeHtml(row.station || "-")}<br />
+        ${escapeHtml(getStoreProfile(row)?.address || row.location || "-")}
+      </div>
+    `);
+    state.profileInfoWindow.open({ map: state.profileMap, anchor: marker });
+  });
+
+  state.profileMarkers.set(row.id, marker);
   bounds.extend(row.latLng);
 }
 
@@ -1186,6 +1290,7 @@ function runGeocodeQueue() {
       state.geocodeCache[next.row.locationQuery] = next.row.latLng;
       writeGeocodeCache();
       syncMapWithFilters();
+      syncProfileMap();
       if (next.shouldFocus) {
         focusMarker(next.row);
       }

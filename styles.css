@@ -97,6 +97,10 @@ select {
   box-shadow: var(--shadow);
 }
 
+.profile-map-board {
+  margin-top: 18px;
+}
+
 .panel-block,
 .map-board,
 .summary-card,
@@ -450,6 +454,26 @@ select {
   justify-content: flex-end;
   align-items: center;
   gap: 12px;
+  margin-top: 12px;
+}
+
+.profile-map-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.profile-map-title {
+  font-size: 18px;
+}
+
+.profile-google-map-canvas {
+  min-height: 420px;
+}
+
+.profile-map-status {
   margin-top: 12px;
 }
 
