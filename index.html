@@ -99,6 +99,16 @@
                     <a id="selectedMapLink" class="action-link primary disabled-link" href="#" target="_blank" rel="noreferrer">Googleマップで開く</a>
                     <a id="selectedListingLink" class="action-link disabled-link" href="#" target="_blank" rel="noreferrer">掲載ページ</a>
                   </div>
+                  <div class="street-view-panel">
+                    <div class="review-form-head">
+                      <p class="mini-label">店舗周辺ビュー</p>
+                    </div>
+                    <div class="street-view-wrap">
+                      <div id="streetViewCanvas" class="street-view-canvas is-hidden" aria-label="店舗周辺のストリートビュー"></div>
+                      <div id="streetViewEmptyState" class="empty-state compact">店舗を選ぶと周辺ビューを表示できます。</div>
+                    </div>
+                    <p id="streetViewStatusText" class="status-text street-view-status">準備中...</p>
+                  </div>
                   <div id="storeProfileToolbar" class="store-profile-toolbar">
                     <button id="storeProfileEditButton" class="action-link" type="button">店舗情報を編集</button>
                   </div>

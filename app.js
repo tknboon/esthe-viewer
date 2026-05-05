@@ -18,6 +18,8 @@ const state = {
   geocodeCache: {},
   mapReady: false,
   regionExpanded: false,
+  streetViewPanorama: null,
+  streetViewService: null,
 };
 
 const searchInput = document.querySelector("#searchInput");
@@ -42,6 +44,9 @@ const selectedStoreName = document.querySelector("#selectedStoreName");
 const selectedStoreMeta = document.querySelector("#selectedStoreMeta");
 const selectedStoreProfileMeta = document.querySelector("#selectedStoreProfileMeta");
 const selectedReviewSummary = document.querySelector("#selectedReviewSummary");
+const streetViewCanvas = document.querySelector("#streetViewCanvas");
+const streetViewEmptyState = document.querySelector("#streetViewEmptyState");
+const streetViewStatusText = document.querySelector("#streetViewStatusText");
 const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
@@ -496,6 +501,11 @@ function renderSelectedStore() {
     selectedStoreMeta.textContent = "地図上のピンから店舗を選んでください。";
     if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
     selectedReviewSummary.textContent = "レビューはまだありません。";
+    setStreetViewState({
+      mode: "empty",
+      status: "店舗を選ぶと周辺ビューを表示できます。",
+      emptyMessage: "店舗を選ぶと周辺ビューを表示できます。",
+    });
     disableLink(selectedPhoneLink);
     disableLink(selectedPhoneSearchLink);
     disableLink(selectedMapLink);
@@ -539,6 +549,7 @@ function renderSelectedStore() {
   renderStoreProfileInputs(state.selectedRow);
   renderStoreProfileSummary(state.selectedRow);
   renderReviewList();
+  renderStreetViewForRow(state.selectedRow);
 }
 
 function focusRow(row) {
@@ -1202,9 +1213,19 @@ window.initGoogleMapApp = function initGoogleMapApp() {
   state.infoWindow = new google.maps.InfoWindow();
   state.profileInfoWindow = new google.maps.InfoWindow();
   state.geocoder = new google.maps.Geocoder();
+  state.streetViewPanorama = new google.maps.StreetViewPanorama(document.getElementById("streetViewCanvas"), {
+    addressControl: false,
+    fullscreenControl: false,
+    linksControl: true,
+    panControl: true,
+    enableCloseButton: false,
+    motionTracking: false,
+  });
+  state.streetViewService = new google.maps.StreetViewService();
   state.mapReady = true;
   syncMapWithFilters();
   syncProfileMap();
+  renderStreetViewForRow(state.selectedRow);
 };
 
 function syncMapWithFilters() {
@@ -1408,6 +1429,86 @@ function focusMarker(row) {
   }
 }
 
+function renderStreetViewForRow(row) {
+  if (!streetViewStatusText || !streetViewEmptyState || !streetViewCanvas) return;
+
+  if (!row) {
+    setStreetViewState({
+      mode: "empty",
+      status: "店舗を選ぶと周辺ビューを表示できます。",
+      emptyMessage: "店舗を選ぶと周辺ビューを表示できます。",
+    });
+    return;
+  }
+
+  if (!state.mapReady || !state.streetViewPanorama || !state.streetViewService) {
+    setStreetViewState({
+      mode: "empty",
+      status: "周辺ビューを準備しています。",
+      emptyMessage: "周辺ビューを準備しています。",
+    });
+    return;
+  }
+
+  if (!row.latLng) {
+    setStreetViewState({
+      mode: "empty",
+      status: "位置を確認中です。",
+      emptyMessage: "位置を確認できると周辺ビューを表示します。",
+    });
+    return;
+  }
+
+  setStreetViewState({
+    mode: "loading",
+    status: "周辺ビューを読み込み中です。",
+    emptyMessage: "周辺ビューを読み込み中です。",
+  });
+
+  state.streetViewService.getPanorama(
+    {
+      location: row.latLng,
+      radius: 120,
+      source: google.maps.StreetViewSource.OUTDOOR,
+      preference: google.maps.StreetViewPreference.NEAREST,
+    },
+    (data, status) => {
+      if (row.id !== state.selectedRow?.id) return;
+
+      if (status === google.maps.StreetViewStatus.OK && data?.location?.latLng) {
+        state.streetViewPanorama.setPano(data.location.pano);
+        state.streetViewPanorama.setPov({ heading: 0, pitch: 0 });
+        state.streetViewPanorama.setVisible(true);
+        setStreetViewState({
+          mode: "ready",
+          status: "店舗周辺のビューを表示しています。",
+        });
+        return;
+      }
+
+      setStreetViewState({
+        mode: "empty",
+        status: "この周辺ではストリートビューが見つかりませんでした。",
+        emptyMessage: "この周辺ではストリートビューが見つかりませんでした。",
+      });
+    }
+  );
+}
+
+function setStreetViewState({ mode, status, emptyMessage = "" }) {
+  if (!streetViewStatusText || !streetViewEmptyState || !streetViewCanvas) return;
+
+  streetViewStatusText.textContent = status || "";
+  streetViewCanvas.classList.toggle("is-hidden", mode !== "ready");
+  streetViewEmptyState.classList.toggle("is-hidden", mode === "ready");
+  if (mode !== "ready") {
+    streetViewEmptyState.textContent = emptyMessage || "";
+  }
+  if (state.streetViewPanorama) {
+    state.streetViewPanorama.setVisible(mode === "ready");
+  }
+}
+
 function queueGeocode(row, shouldFocus = false) {
   if (!row.locationQuery) return;
   const exists = state.geocodeQueue.some((item) => item.row.id === row.id);
@@ -1434,6 +1535,9 @@ function runGeocodeQueue() {
       writeGeocodeCache();
       syncMapWithFilters();
       syncProfileMap();
+      if (state.selectedRow?.id === next.row.id) {
+        renderStreetViewForRow(next.row);
+      }
       if (next.shouldFocus) {
         focusMarker(next.row);
       }

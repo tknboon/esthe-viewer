@@ -551,6 +551,30 @@ select {
   margin-top: 16px;
 }
 
+.street-view-panel {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.street-view-wrap {
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(8, 2, 5, 0.72);
+  min-height: 220px;
+}
+
+.street-view-canvas {
+  width: 100%;
+  min-height: 220px;
+}
+
+.street-view-status {
+  margin-top: 10px;
+}
+
 .store-profile-panel {
   margin-top: 14px;
   padding-top: 12px;
