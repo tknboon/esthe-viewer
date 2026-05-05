@@ -358,7 +358,7 @@ function applyFilters() {
   });
 
   if (!state.filteredRows.some((row) => row.id === state.selectedRow?.id)) {
-    state.selectedRow = state.filteredRows[0] || null;
+    state.selectedRow = null;
   }
 
   renderSummary();
