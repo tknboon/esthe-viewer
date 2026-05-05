@@ -449,7 +449,7 @@ function buildRegionStats(rows) {
       count: bucket.stores.size,
       municipalities: [...bucket.municipalities.entries()]
         .map(([label, items]) => ({ label, count: items.size }))
-        .sort((a, b) => a.label.localeCompare(b.label, "ja")),
+        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "ja")),
     }))
     .sort((a, b) => a.label.localeCompare(b.label, "ja"));
 
@@ -471,6 +471,10 @@ function getRegionKeyFromRow(row) {
 }
 
 function getMunicipalityFromRow(row, regionKey) {
+  if (row?.municipality) {
+    return row.municipality;
+  }
+
   const candidates = REGION_MUNICIPALITIES[regionKey] || [];
   const haystack = [row.location, row.notes].filter(Boolean).join(" ");
 
@@ -675,6 +679,7 @@ function normalizeRow(row, index) {
   const notes = row["備考"] || "";
   const phone = row["電話番号"] || row["電話"] || "";
   const hours = row["営業時間"] || row["営業"] || "";
+  const municipality = window.storeMeta?.municipalityByListingUrl?.[listingUrl] || "";
   const hasCoordinates = Boolean(latitude && longitude);
   const latLng = hasCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
   const mapQuery = hasCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
@@ -691,6 +696,7 @@ function normalizeRow(row, index) {
     notes,
     phone,
     hours,
+    municipality,
     hasCoordinates,
     latLng,
     locationQuery: mapQuery,

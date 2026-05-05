@@ -87,6 +87,7 @@ async function buildSnapshot(listingSources, fetchedAt) {
     return extractStoreCards(normalizedHtml);
   });
   const storesWithDetails = await enrichStoresWithDetailPages(stores);
+  const municipalityByListingUrl = await buildMunicipalityByListingUrl(listingSources);
   const storeNames = [...new Set(storesWithDetails.map((store) => store.name).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, "ja")
   );
@@ -117,6 +118,7 @@ async function buildSnapshot(listingSources, fetchedAt) {
     storeNames,
     matchedShopLinks,
     extractedStores: storesWithDetails,
+    municipalityByListingUrl,
     detailPageCount: storesWithDetails.filter((store) => store.detailLoaded).length,
     detailedStoreCount,
     checksum: JSON.stringify({
@@ -687,10 +689,78 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
     `window.storeMeta = ${JSON.stringify({
       lastUpdatedAt: snapshot.fetchedAt,
       updateHistory,
+      municipalityByListingUrl: snapshot.municipalityByListingUrl || {},
     })};`,
     `window.storeData = ${JSON.stringify(rows)};`,
   ].join("\n");
   await fs.writeFile(filePath, content, "utf8");
+}
+
+async function buildMunicipalityByListingUrl(listingSources) {
+  const municipalityByListingUrl = {};
+
+  for (const source of listingSources) {
+    const childLinks = extractMunicipalityLinks(source.url, decodeEntities(source.html));
+    if (!childLinks.length) continue;
+
+    const grouped = new Map();
+
+    for (const entry of childLinks) {
+      const html = await fetchText(entry.url);
+      const stores = extractStoreCards(decodeEntities(html));
+      for (const store of stores) {
+        if (!store.listingUrl) continue;
+        if (!grouped.has(store.listingUrl)) {
+          grouped.set(store.listingUrl, new Set());
+        }
+        grouped.get(store.listingUrl).add(entry.label);
+      }
+    }
+
+    for (const [listingUrl, labels] of grouped.entries()) {
+      municipalityByListingUrl[listingUrl] = labels.size > 1 ? "複数市" : [...labels][0];
+    }
+  }
+
+  return municipalityByListingUrl;
+}
+
+function extractMunicipalityLinks(parentUrl, html) {
+  const sectionMatch = html.match(/駅・市区町村で絞り込む([\s\S]*?)(?:近くのエリア|###|<h3|<h2)/i);
+  if (!sectionMatch) return [];
+
+  const parent = new URL(parentUrl);
+  const parentParts = parent.pathname.split("/").filter(Boolean);
+  const parentRegionKey = parentParts[0] || "";
+  const links = [];
+  const seen = new Set();
+  const linkRegex = /<a[^>]*href="([^"]+)"[^>]*>\s*([^<]+?)\s*<\/a>/gi;
+  let match;
+
+  while ((match = linkRegex.exec(sectionMatch[1])) !== null) {
+    const url = toAbsoluteUrl(match[1]);
+    const label = compactText(stripTags(match[2] || ""));
+    if (!url || !label || label === "全て") continue;
+
+    let target;
+    try {
+      target = new URL(url);
+    } catch (error) {
+      continue;
+    }
+
+    const targetParts = target.pathname.split("/").filter(Boolean);
+    if ((targetParts[0] || "") !== parentRegionKey) continue;
+    if (!target.pathname.endsWith("/asian/")) continue;
+    if (target.href === parent.href) continue;
+
+    const key = `${label}__${target.href}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    links.push({ label, url: target.href });
+  }
+
+  return links;
 }
 
 async function updateDailyHistory(fetchedAt, diff, previous) {
