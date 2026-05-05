@@ -1213,14 +1213,6 @@ window.initGoogleMapApp = function initGoogleMapApp() {
   state.infoWindow = new google.maps.InfoWindow();
   state.profileInfoWindow = new google.maps.InfoWindow();
   state.geocoder = new google.maps.Geocoder();
-  state.streetViewPanorama = new google.maps.StreetViewPanorama(document.getElementById("streetViewCanvas"), {
-    addressControl: false,
-    fullscreenControl: false,
-    linksControl: true,
-    panControl: true,
-    enableCloseButton: false,
-    motionTracking: false,
-  });
   state.streetViewService = new google.maps.StreetViewService();
   state.mapReady = true;
   syncMapWithFilters();
@@ -1469,20 +1461,21 @@ function renderStreetViewForRow(row) {
     {
       location: row.latLng,
       radius: 120,
-      source: google.maps.StreetViewSource.OUTDOOR,
-      preference: google.maps.StreetViewPreference.NEAREST,
     },
     (data, status) => {
       if (row.id !== state.selectedRow?.id) return;
 
       if (status === google.maps.StreetViewStatus.OK && data?.location?.latLng) {
-        state.streetViewPanorama.setPano(data.location.pano);
-        state.streetViewPanorama.setPov({ heading: 0, pitch: 0 });
-        state.streetViewPanorama.setVisible(true);
         setStreetViewState({
           mode: "ready",
           status: "店舗周辺のビューを表示しています。",
         });
+        ensureStreetViewPanorama();
+        state.streetViewPanorama.setPano(data.location.pano);
+        state.streetViewPanorama.setPosition(data.location.latLng);
+        state.streetViewPanorama.setPov({ heading: 0, pitch: 0 });
+        state.streetViewPanorama.setVisible(true);
+        google.maps.event.trigger(state.streetViewPanorama, "resize");
         return;
       }
 
@@ -1507,6 +1500,19 @@ function setStreetViewState({ mode, status, emptyMessage = "" }) {
   if (state.streetViewPanorama) {
     state.streetViewPanorama.setVisible(mode === "ready");
   }
+}
+
+function ensureStreetViewPanorama() {
+  if (!streetViewCanvas || state.streetViewPanorama) return;
+
+  state.streetViewPanorama = new google.maps.StreetViewPanorama(streetViewCanvas, {
+    addressControl: false,
+    fullscreenControl: false,
+    linksControl: true,
+    panControl: true,
+    enableCloseButton: false,
+    motionTracking: false,
+  });
 }
 
 function queueGeocode(row, shouldFocus = false) {
