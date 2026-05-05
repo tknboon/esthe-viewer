@@ -6,6 +6,7 @@
   selectedRow: null,
   reviewsByStore: {},
   storeProfilesByKey: {},
+  favoritesByStore: {},
   map: null,
   infoWindow: null,
   markers: new Map(),
@@ -52,6 +53,7 @@ const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
+const favoriteToggleButton = document.querySelector("#favoriteToggleButton");
 const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
 const storeProfilePanel = document.querySelector("#storeProfilePanel");
 const storeAddressInput = document.querySelector("#storeAddressInput");
@@ -151,6 +153,7 @@ function init() {
     state.geocodeCache = readGeocodeCache();
     state.reviewsByStore = readReviews();
     state.storeProfilesByKey = readStoreProfiles();
+    state.favoritesByStore = readFavorites();
     renderLastUpdated();
     renderUpdateHistory();
     setDefaultReviewValues();
@@ -302,6 +305,7 @@ function bindEvents() {
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
+  favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
   reviewToggleButton?.addEventListener("click", handleReviewToggle);
   reviewForm.addEventListener("submit", handleReviewSubmit);
   regionSummary?.addEventListener("click", handleRegionToggle);
@@ -651,6 +655,7 @@ function renderSelectedStore() {
     selectedStoreMeta.textContent = "地図上のピンから店舗を選んでください。";
     if (selectedStoreProfileMeta) selectedStoreProfileMeta.textContent = "";
     selectedReviewSummary.textContent = "レビューはまだありません。";
+    renderFavoriteToggle(null);
     setStreetViewState({
       mode: "empty",
       status: "店舗を選ぶと周辺ビューを表示できます。",
@@ -673,6 +678,7 @@ function renderSelectedStore() {
     .filter(Boolean)
     .join(" / ");
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
+  renderFavoriteToggle(state.selectedRow);
   reviewSubmitButton.disabled = false;
   setReviewEditing(false, true);
 
@@ -706,6 +712,42 @@ function focusRow(row) {
   state.selectedRow = row;
   renderSelectedStore();
   focusMarker(row);
+}
+
+function isFavoriteRow(row) {
+  return Boolean(row?.reviewKey && state.favoritesByStore[row.reviewKey]);
+}
+
+function renderFavoriteToggle(row) {
+  if (!favoriteToggleButton) return;
+  const active = isFavoriteRow(row);
+  favoriteToggleButton.disabled = !row;
+  favoriteToggleButton.textContent = active ? "♥" : "♡";
+  favoriteToggleButton.classList.toggle("is-active", active);
+  favoriteToggleButton.setAttribute("aria-pressed", active ? "true" : "false");
+  favoriteToggleButton.setAttribute("title", active ? "お気に入り解除" : "お気に入り");
+  favoriteToggleButton.setAttribute("aria-label", active ? "お気に入り解除" : "お気に入り");
+}
+
+function handleFavoriteToggle() {
+  if (!state.selectedRow?.reviewKey) return;
+  const key = state.selectedRow.reviewKey;
+
+  if (state.favoritesByStore[key]) {
+    delete state.favoritesByStore[key];
+  } else {
+    state.favoritesByStore[key] = {
+      storeName: state.selectedRow.name,
+      storeStation: state.selectedRow.station,
+      listingUrl: state.selectedRow.listingUrl,
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
+  writeFavorites();
+  renderFavoriteToggle(state.selectedRow);
+  syncMapWithFilters();
+  syncProfileMap();
 }
 
 function normalizeRow(row, index) {
@@ -774,6 +816,23 @@ function writeStoreProfiles() {
     localStorage.setItem("toyota-esthe-store-profiles", JSON.stringify(state.storeProfilesByKey));
   } catch (error) {
     console.warn("store profile save failed", error);
+  }
+}
+
+function readFavorites() {
+  try {
+    const raw = localStorage.getItem("toyota-esthe-favorites");
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeFavorites() {
+  try {
+    localStorage.setItem("toyota-esthe-favorites", JSON.stringify(state.favoritesByStore));
+  } catch (error) {
+    console.warn("favorite save failed", error);
   }
 }
 
@@ -1513,7 +1572,10 @@ function buildMarkerIcon(row) {
   let fillColor = "#9b95a4";
   let strokeColor = "#efe8f6";
 
-  if (latestReview?.guideClarity === "あり") {
+  if (isFavoriteRow(row)) {
+    fillColor = "#ff2f74";
+    strokeColor = "#ffd4e3";
+  } else if (latestReview?.guideClarity === "あり") {
     fillColor = "#ff5d96";
     strokeColor = "#ffe3ee";
   } else if (latestReview?.guideClarity === "なし") {

@@ -611,6 +611,13 @@ select {
   line-height: 1;
 }
 
+.icon-action.is-active {
+  color: #ff2f74;
+  border-color: rgba(255, 120, 166, 0.55);
+  background: rgba(255, 93, 150, 0.14);
+  box-shadow: 0 0 0 1px rgba(255, 93, 150, 0.12) inset;
+}
+
 .street-view-panel {
   margin-top: 14px;
   padding-top: 12px;
