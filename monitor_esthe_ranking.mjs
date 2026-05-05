@@ -35,7 +35,7 @@ const HTML_INPUT_DIR = process.env.ESTHE_MONITOR_HTML_DIR || "";
 const MUNICIPALITY_DIR_PATH = process.env.ESTHE_MONITOR_MUNICIPALITY_DIR || "";
 const DETAIL_DIR_PATH = process.env.ESTHE_MONITOR_DETAIL_DIR || "";
 
-const CSV_HEADER = ["店舗名", "最寄駅", "住所または座標", "緯度", "経度", "掲載URL", "備考", "電話", "営業"];
+const CSV_HEADER = ["店舗名", "最寄駅", "住所または座標", "緯度", "経度", "掲載URL", "オフィシャルHP", "備考", "電話", "営業"];
 const HTML_DECODE_MARKERS = ["駅・市区町村で絞り込む", "アジアンエステ", "店舗情報を見る", "全国メンズエステランキング", "アクセス"];
 
 async function main() {
@@ -220,6 +220,7 @@ async function updateCsvAndData(snapshot) {
         row["店舗名"] = row["店舗名"] || store.name;
         row["最寄駅"] = row["最寄駅"] || store.station;
         row["掲載URL"] = store.listingUrl || row["掲載URL"];
+        if (store.officialUrl) row["オフィシャルHP"] = store.officialUrl;
         if (store.phone) row["電話"] = store.phone;
         if (store.hours) row["営業"] = store.hours;
       }
@@ -259,6 +260,7 @@ function createRowFromStore(store) {
     "緯度": "",
     "経度": "",
     "掲載URL": store.listingUrl,
+    "オフィシャルHP": store.officialUrl || "",
     "備考": "自動巡回で新規追加。位置情報は未補完",
     "電話": store.phone,
     "営業": store.hours,
@@ -327,8 +329,23 @@ function extractDetailData(html) {
     address,
     latitude: coordinates.latitude,
     longitude: coordinates.longitude,
+    officialUrl: extractOfficialUrl(normalizedHtml),
     note,
   };
+}
+
+function extractOfficialUrl(html) {
+  const officialMatch = html.match(/<td>\s*<a href="(https?:\/\/[^"]+)"[^>]*>\s*オフィシャルHP\s*<\/a>\s*<\/td>/i);
+  if (officialMatch?.[1]) {
+    return officialMatch[1];
+  }
+
+  const visualMatch = html.match(/<div class="sub_visual">\s*<a[^>]*href="(https?:\/\/[^"]+)"/i);
+  if (visualMatch?.[1]) {
+    return visualMatch[1];
+  }
+
+  return "";
 }
 
 function extractAccessSection(html) {
@@ -723,12 +740,18 @@ async function writeCsv(filePath, rows) {
 }
 
 async function writeDataJs(filePath, snapshot, updateHistory, rows) {
+  const officialUrlByListingUrl = Object.fromEntries(
+    (snapshot.extractedStores || [])
+      .filter((store) => store?.listingUrl && store?.officialUrl)
+      .map((store) => [store.listingUrl, store.officialUrl])
+  );
   const content = [
     `window.storeMeta = ${JSON.stringify({
       lastUpdatedAt: snapshot.fetchedAt,
       updateHistory,
       municipalityByListingUrl: snapshot.municipalityByListingUrl || {},
       municipalityLabelsByListingUrl: snapshot.municipalityLabelsByListingUrl || {},
+      officialUrlByListingUrl,
     })};`,
     `window.storeData = ${JSON.stringify(rows)};`,
   ].join("\n");

@@ -548,6 +548,11 @@ function normalizeStationGroupLabel(value) {
     .trim();
 }
 
+function getPreferredExternalUrl(row) {
+  if (!row) return "";
+  return row.officialUrl || row.listingUrl || "";
+}
+
 function renderSummary() {
   const uniqueStoreNames = new Set(state.filteredRows.map((row) => row.name));
   const allDayStores = state.filteredRows.filter((row) => row.hours.includes("24時間")).length;
@@ -629,7 +634,7 @@ function renderCards() {
           <div class="store-actions">
             <button class="focus-button" type="button" data-focus-id="${row.id}">地図で見る</button>
             <a class="action-link primary" href="${row.mapUrl}" target="_blank" rel="noreferrer">Googleマップで開く</a>
-            ${row.listingUrl ? `<a class="action-link" href="${row.listingUrl}" target="_blank" rel="noreferrer">掲載ページ</a>` : ""}
+            ${getPreferredExternalUrl(row) ? `<a class="action-link" href="${getPreferredExternalUrl(row)}" target="_blank" rel="noreferrer">オフィシャルHP</a>` : ""}
           </div>
         </article>
       `
@@ -656,7 +661,7 @@ function renderTable() {
           <td>${escapeHtml(row.hours || "-")}</td>
           <td>${row.phone ? `<a href="tel:${row.phone}">${escapeHtml(row.phone)}</a>` : "-"}</td>
           <td><a href="${row.mapUrl}" target="_blank" rel="noreferrer">${escapeHtml(row.location || "地図で開く")}</a></td>
-          <td>${row.listingUrl ? `<a href="${row.listingUrl}" target="_blank" rel="noreferrer">掲載ページ</a>` : "-"}</td>
+          <td>${getPreferredExternalUrl(row) ? `<a href="${getPreferredExternalUrl(row)}" target="_blank" rel="noreferrer">オフィシャルHP</a>` : "-"}</td>
         </tr>
       `
     )
@@ -709,8 +714,9 @@ function renderSelectedStore() {
   selectedMapLink.href = state.selectedRow.mapUrl;
   selectedMapLink.classList.remove("disabled-link");
 
-  if (state.selectedRow.listingUrl) {
-    selectedListingLink.href = state.selectedRow.listingUrl;
+  const preferredExternalUrl = getPreferredExternalUrl(state.selectedRow);
+  if (preferredExternalUrl) {
+    selectedListingLink.href = preferredExternalUrl;
     selectedListingLink.classList.remove("disabled-link");
   } else {
     disableLink(selectedListingLink);
@@ -837,6 +843,7 @@ function normalizeRow(row, index) {
   const latitude = row["緯度"] || "";
   const longitude = row["経度"] || "";
   const listingUrl = row["掲載URL"] || "";
+  const officialUrl = row["オフィシャルHP"] || row["公式HP"] || window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
   const notes = row["備考"] || "";
   const phone = row["電話番号"] || row["電話"] || "";
   const hours = row["営業時間"] || row["営業"] || "";
@@ -855,6 +862,7 @@ function normalizeRow(row, index) {
     latitude,
     longitude,
     listingUrl,
+    officialUrl,
     notes,
     phone,
     hours,
@@ -1754,8 +1762,9 @@ function renderMarkerInfoContent(row) {
     : "—";
   const notesHtml = row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
-  const listingHtml = row.listingUrl
-    ? `<a href="${escapeHtml(row.listingUrl)}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">↗</a>`
+  const preferredExternalUrl = getPreferredExternalUrl(row);
+  const officialHtml = preferredExternalUrl
+    ? `<a href="${escapeHtml(preferredExternalUrl)}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">↗</a>`
     : "";
   const phoneSearchHtml = row.phone
     ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(194,24,91,0.18);background:#fff7fb;color:#c2185b;text-decoration:none;font-weight:700;">⌕</a>`
@@ -1768,7 +1777,7 @@ function renderMarkerInfoContent(row) {
     : "";
   const favoriteButtonHtml = `<button type="button" data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${isFavoriteRow(row) ? "お気に入り解除" : "お気に入り"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(255, 120, 166, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(255, 93, 150, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#ff2f74" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
   const excludeButtonHtml = `<button type="button" data-marker-action="exclude" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isExcludedRow(row) ? "true" : "false"}" title="${isExcludedRow(row) ? "除外解除" : "除外"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isExcludedRow(row) ? "rgba(170,170,178,0.5)" : "rgba(194,24,91,0.18)"};background:${isExcludedRow(row) ? "rgba(255,255,255,0.06)" : "#fff7fb"};color:${isExcludedRow(row) ? "#1d1d1f" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isExcludedRow(row) ? "♥" : "♡"}</button>`;
-  const actionsHtml = [favoriteButtonHtml, excludeButtonHtml, phoneActionHtml, mapHtml, phoneSearchHtml, listingHtml].filter(Boolean).join("");
+  const actionsHtml = [favoriteButtonHtml, excludeButtonHtml, phoneActionHtml, mapHtml, phoneSearchHtml, officialHtml].filter(Boolean).join("");
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
