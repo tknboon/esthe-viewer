@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <path
-    d="M32 56C19 47 8 38 8 24C8 16 14 10 22 10C27 10 30.5 12.5 32 16C33.5 12.5 37 10 42 10C50 10 56 16 56 24C56 38 45 47 32 56Z"
+    d="M32 60C17 49 5 39 5 22C5 13 12 6 22 6C27.8 6 31.1 8.5 32 12C32.9 8.5 36.2 6 42 6C52 6 59 13 59 22C59 39 47 49 32 60Z"
     fill="#ff8fba"
   />
   <text
     x="32"
-    y="36"
+    y="40"
     text-anchor="middle"
-    font-size="22"
+    font-size="26"
     font-family="'Yu Gothic', 'Hiragino Sans', 'Noto Sans JP', sans-serif"
     font-weight="700"
     fill="#d4002a"
