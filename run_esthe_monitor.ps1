@@ -4,6 +4,7 @@ $workspace = "C:\Users\tknbo\Documents\Codex\2026-04-28\new-chat"
 $scriptPath = Join-Path $workspace "monitor_esthe_ranking.mjs"
 $runnerLogPath = Join-Path $workspace "esthe_ranking_runner.log"
 $publishStatusPath = Join-Path $workspace "esthe_publish_status.json"
+$lockFilePath = Join-Path $workspace "esthe_ranking_run.lock"
 $htmlCacheDirPath = Join-Path $workspace "esthe_ranking_source_pages"
 $detailDirPath = Join-Path $workspace "esthe_ranking_detail_pages"
 $targetUrls = @(
@@ -123,6 +124,29 @@ function Write-RunnerLog {
   $timestamp = Get-Date -Format "yyyy-MM-ddTHH:mm:ssK"
   $line = "[$timestamp] $Message"
   [System.IO.File]::AppendAllText($runnerLogPath, $line + [Environment]::NewLine, [System.Text.Encoding]::UTF8)
+}
+
+function Enter-RunLock {
+  if (Test-Path $lockFilePath) {
+    $raw = Get-Content -Path $lockFilePath -Raw -ErrorAction SilentlyContinue
+    $message = "another run is already active"
+    if ($raw) {
+      $message += " ($raw)"
+    }
+    Write-RunnerLog $message
+    Write-PublishStatus -Ok $false -Stage "run" -Message $message
+    return $false
+  }
+
+  $payload = "startedAt=$((Get-Date).ToString("o")); pid=$PID"
+  [System.IO.File]::WriteAllText($lockFilePath, $payload + [Environment]::NewLine, [System.Text.Encoding]::UTF8)
+  return $true
+}
+
+function Exit-RunLock {
+  if (Test-Path $lockFilePath) {
+    Remove-Item -LiteralPath $lockFilePath -Force -ErrorAction SilentlyContinue
+  }
 }
 
 function Write-PublishStatus {
@@ -340,8 +364,15 @@ function Invoke-GitAutoPublish {
 }
 
 $nodePath = Resolve-NodePath
+$startedAt = Get-Date
+$lockEntered = $false
 
 try {
+  $lockEntered = Enter-RunLock
+  if (-not $lockEntered) {
+    exit 0
+  }
+
   Write-RunnerLog "using node: $nodePath"
   Write-RunnerLog "scheduled run started"
 
@@ -379,10 +410,15 @@ try {
     Write-PublishStatus -Ok $true -Stage "publish" -Message "auto publish disabled"
   }
 
-  Write-RunnerLog "scheduled run finished"
+  $elapsed = (Get-Date) - $startedAt
+  Write-RunnerLog ("scheduled run finished ({0:mm}m {0:ss}s)" -f $elapsed)
   exit 0
 } catch {
   Write-PublishStatus -Ok $false -Stage "run" -Message $_.Exception.Message
   Write-RunnerLog "scheduled run failed: $($_.Exception.Message)"
   throw
+} finally {
+  if ($lockEntered) {
+    Exit-RunLock
+  }
 }
