@@ -202,7 +202,7 @@ function bindEvents() {
 
   cardsView.addEventListener("click", handleListActionClick);
   tableBody.addEventListener("click", handleListActionClick);
-  mapList.addEventListener("click", handleListActionClick);
+  mapList?.addEventListener("click", handleListActionClick);
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
@@ -257,7 +257,6 @@ function applyFilters() {
   }
 
   renderSummary();
-  renderMapList();
   renderCards();
   renderTable();
   renderSelectedStore();
@@ -278,6 +277,7 @@ function renderSummary() {
 }
 
 function renderMapList() {
+  if (!mapList || !mapListCount) return;
   mapListCount.textContent = `${state.filteredRows.length}件`;
 
   if (!state.filteredRows.length) {
@@ -428,7 +428,6 @@ function renderSelectedStore() {
 
 function focusRow(row) {
   state.selectedRow = row;
-  renderMapList();
   renderSelectedStore();
   focusMarker(row);
 }
