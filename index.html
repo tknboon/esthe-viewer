@@ -70,6 +70,19 @@
                 <div class="embed-wrap">
                   <div id="googleMapCanvas" class="google-map-canvas" aria-label="Googleマップ"></div>
                 </div>
+                <section class="profile-map-panel">
+                  <div class="profile-map-head">
+                    <div>
+                      <p class="mini-label">店舗情報を入力した店舗</p>
+                      <h3 class="selected-title profile-map-title">保存済み店舗マップ</h3>
+                    </div>
+                    <span id="profileMapCount" class="map-list-count">0件</span>
+                  </div>
+                  <div class="embed-wrap">
+                    <div id="profileGoogleMapCanvas" class="google-map-canvas profile-google-map-canvas" aria-label="保存済み店舗のGoogleマップ"></div>
+                  </div>
+                  <p id="profileMapStatusText" class="status-text profile-map-status">店舗情報を保存するとここに表示されます。</p>
+                </section>
               </section>
 
               <aside class="map-side">
@@ -270,20 +283,6 @@
               <p id="statusText" class="status-text">読み込み中...</p>
               <button id="toggleViewButton" class="icon-button" type="button">カード表示</button>
             </div>
-          </section>
-
-          <section class="map-board profile-map-board">
-            <div class="profile-map-head">
-              <div>
-                <p class="mini-label">店舗情報を入力した店舗</p>
-                <h3 class="selected-title profile-map-title">保存済み店舗マップ</h3>
-              </div>
-              <span id="profileMapCount" class="map-list-count">0件</span>
-            </div>
-            <div class="embed-wrap">
-              <div id="profileGoogleMapCanvas" class="google-map-canvas profile-google-map-canvas" aria-label="保存済み店舗のGoogleマップ"></div>
-            </div>
-            <p id="profileMapStatusText" class="status-text profile-map-status">店舗情報を保存するとここに表示されます。</p>
           </section>
 
           <div class="summary-grid">

@@ -97,10 +97,6 @@ select {
   box-shadow: var(--shadow);
 }
 
-.profile-map-board {
-  margin-top: 10px;
-}
-
 .panel-block,
 .map-board,
 .summary-card,
@@ -391,6 +387,11 @@ select {
 .map-stage {
   display: grid;
   gap: 14px;
+}
+
+.profile-map-panel {
+  display: grid;
+  gap: 0;
 }
 
 .selected-store,
