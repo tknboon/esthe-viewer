@@ -774,7 +774,7 @@ function renderExcludeToggle(row) {
   if (!excludeToggleButton) return;
   const active = isExcludedRow(row);
   excludeToggleButton.disabled = !row;
-  excludeToggleButton.textContent = active ? "♥" : "🖤";
+  excludeToggleButton.textContent = active ? "♥" : "♡";
   excludeToggleButton.classList.toggle("is-excluded", active);
   excludeToggleButton.setAttribute("aria-pressed", active ? "true" : "false");
   excludeToggleButton.setAttribute("title", active ? "除外解除" : "除外");
@@ -798,8 +798,23 @@ function handleExcludeToggle() {
 
   writeExcluded();
   renderExcludeToggle(state.selectedRow);
+  refreshRowMarkerIcons(state.selectedRow);
   syncMapWithFilters();
   syncProfileMap();
+}
+
+function refreshRowMarkerIcons(row) {
+  if (!row) return;
+
+  const marker = state.markers.get(row.id);
+  if (marker) {
+    marker.setIcon(buildMarkerIcon(row));
+  }
+
+  const profileMarker = state.profileMarkers.get(row.id);
+  if (profileMarker) {
+    profileMarker.setIcon(buildProfileMarkerIcon(row));
+  }
 }
 
 function normalizeRow(row, index) {

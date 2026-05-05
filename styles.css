@@ -619,10 +619,10 @@ select {
 }
 
 .icon-action.is-excluded {
-  color: #f2f2f4;
+  color: #1d1d1f;
   border-color: rgba(170, 170, 178, 0.5);
-  background: rgba(30, 30, 34, 0.88);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 
 .street-view-panel {
