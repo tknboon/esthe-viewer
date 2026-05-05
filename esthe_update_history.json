@@ -2,7 +2,9 @@
   {
     "dayKey": "2026-05-05",
     "fetchedAt": "2026-05-05T05:24:10.363Z",
-    "added": [
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [
       "1番女子",
       "20代baby",
       "20代楽園",
@@ -649,7 +651,25 @@
       "茉莉姫（まりひめ）",
       "鑫鑫（しんしん）"
     ],
-    "removed": []
+    "suppressedSourceUrls": [
+      "https://www.esthe-ranking.jp/nagoya/asian/",
+      "https://www.esthe-ranking.jp/sakae/asian/",
+      "https://www.esthe-ranking.jp/shinsakae/asian/",
+      "https://www.esthe-ranking.jp/kanayama/asian/",
+      "https://www.esthe-ranking.jp/kurokawa/asian/",
+      "https://www.esthe-ranking.jp/hoshigaoka/asian/",
+      "https://www.esthe-ranking.jp/moriyama/asian/",
+      "https://www.esthe-ranking.jp/otai/asian/",
+      "https://www.esthe-ranking.jp/tokaidori/asian/",
+      "https://www.esthe-ranking.jp/kasadera/asian/",
+      "https://www.esthe-ranking.jp/horita/asian/",
+      "https://www.esthe-ranking.jp/tsurumai/asian/",
+      "https://www.esthe-ranking.jp/showa/asian/",
+      "https://www.esthe-ranking.jp/komaki/asian/",
+      "https://www.esthe-ranking.jp/owari/asian/",
+      "https://www.esthe-ranking.jp/chita/asian/",
+      "https://www.esthe-ranking.jp/toyohashi/asian/"
+    ]
   },
   {
     "dayKey": "2026-05-04",

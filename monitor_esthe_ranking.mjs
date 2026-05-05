@@ -42,7 +42,7 @@ async function main() {
   const current = await buildSnapshot(listingSources, fetchedAt);
   const previous = await readJson(SNAPSHOT_PATH);
   const diff = compareSnapshots(previous, current);
-  const updateHistory = await updateDailyHistory(fetchedAt, diff);
+  const updateHistory = await updateDailyHistory(fetchedAt, diff, previous);
 
   const keptRows = await updateCsvAndData(current);
   await fs.writeFile(SNAPSHOT_PATH, JSON.stringify(current, null, 2), "utf8");
@@ -436,6 +436,10 @@ function compareSnapshots(previous, current) {
   const added = [...currentNames].filter((name) => !previousNames.has(name)).sort((a, b) => a.localeCompare(b, "ja"));
   const removed = [...previousNames].filter((name) => !currentNames.has(name)).sort((a, b) => a.localeCompare(b, "ja"));
   const changed = [];
+  const previousSourceUrls = previous.sourceUrls || [];
+  const currentSourceUrls = current.sourceUrls || [];
+  const sourceAddedUrls = currentSourceUrls.filter((url) => !previousSourceUrls.includes(url));
+  const sourceRemovedUrls = previousSourceUrls.filter((url) => !currentSourceUrls.includes(url));
 
   if ((previous.countText || "") !== (current.countText || "")) {
     changed.push(`掲載件数表記: ${previous.countText || "なし"} -> ${current.countText || "なし"}`);
@@ -453,7 +457,7 @@ function compareSnapshots(previous, current) {
     changed.push(`詳細取得件数: ${previous.detailedStoreCount || 0} -> ${current.detailedStoreCount || 0}`);
   }
 
-  return { added, removed, changed };
+  return { added, removed, changed, sourceAddedUrls, sourceRemovedUrls };
 }
 
 function renderReport(current, diff) {
@@ -658,14 +662,17 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
   await fs.writeFile(filePath, content, "utf8");
 }
 
-async function updateDailyHistory(fetchedAt, diff) {
+async function updateDailyHistory(fetchedAt, diff, previous) {
   const history = (await readJson(HISTORY_PATH)) || [];
   const dayKey = formatTokyoDayKey(fetchedAt);
+  const shouldSuppressInitialAdded = Boolean(diff.added.length && ((diff.sourceAddedUrls || []).length || !previous));
   const entry = {
     dayKey,
     fetchedAt,
-    added: diff.added,
+    added: shouldSuppressInitialAdded ? [] : diff.added,
     removed: diff.removed,
+    suppressedAdded: shouldSuppressInitialAdded ? diff.added : [],
+    suppressedSourceUrls: shouldSuppressInitialAdded ? diff.sourceAddedUrls || [] : [],
   };
 
   const nextHistory = history.filter((item) => item.dayKey !== dayKey);
