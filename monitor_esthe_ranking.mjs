@@ -32,6 +32,7 @@ const FAILURE_LOG_PATH = path.join(ROOT, "esthe_ranking_failure.log");
 const HISTORY_PATH = path.join(ROOT, "esthe_update_history.json");
 const HTML_INPUT_PATH = process.env.ESTHE_MONITOR_HTML_PATH || "";
 const HTML_INPUT_DIR = process.env.ESTHE_MONITOR_HTML_DIR || "";
+const MUNICIPALITY_DIR_PATH = process.env.ESTHE_MONITOR_MUNICIPALITY_DIR || "";
 const DETAIL_DIR_PATH = process.env.ESTHE_MONITOR_DETAIL_DIR || "";
 
 const CSV_HEADER = ["店舗名", "最寄駅", "住所または座標", "緯度", "経度", "掲載URL", "備考", "電話", "営業"];
@@ -709,7 +710,7 @@ async function buildMunicipalityByListingUrl(listingSources) {
     const grouped = new Map();
 
     for (const entry of childLinks) {
-      const html = await fetchText(entry.url);
+      const html = await loadMunicipalityHtml(entry.url);
       const stores = extractStoreCards(decodeEntities(html));
       for (const store of stores) {
         if (!store.listingUrl) continue;
@@ -728,6 +729,35 @@ async function buildMunicipalityByListingUrl(listingSources) {
   }
 
   return { primaryByListingUrl, labelsByListingUrl };
+}
+
+async function loadMunicipalityHtml(url) {
+  let html = "";
+  const filePath = buildMunicipalityFilePath(url);
+
+  if (filePath) {
+    try {
+      html = await fs.readFile(filePath, "utf8");
+    } catch (error) {
+      html = "";
+    }
+  }
+
+  if (!html) {
+    html = await fetchText(url);
+  }
+
+  return html;
+}
+
+function buildMunicipalityFilePath(url) {
+  if (!MUNICIPALITY_DIR_PATH) return "";
+
+  const match = url.match(/^https:\/\/www\.esthe-ranking\.jp\/([^/]+)\/([^/]+)\/asian\/?$/i);
+  if (!match) return "";
+
+  const [, region, slug] = match;
+  return path.join(MUNICIPALITY_DIR_PATH, `${region}__${slug}.html`);
 }
 
 function extractMunicipalityLinks(parentUrl, html) {

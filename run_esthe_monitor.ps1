@@ -6,6 +6,7 @@ $runnerLogPath = Join-Path $workspace "esthe_ranking_runner.log"
 $publishStatusPath = Join-Path $workspace "esthe_publish_status.json"
 $lockFilePath = Join-Path $workspace "esthe_ranking_run.lock"
 $htmlCacheDirPath = Join-Path $workspace "esthe_ranking_source_pages"
+$municipalityDirPath = Join-Path $workspace "esthe_ranking_municipality_pages"
 $detailDirPath = Join-Path $workspace "esthe_ranking_detail_pages"
 $targetUrls = @(
   "https://www.esthe-ranking.jp/nagoya/asian/",
@@ -249,11 +250,38 @@ function Get-DetailUrls {
   return $urls | Select-Object -Unique
 }
 
+function Get-MunicipalityUrls {
+  param([string[]]$HtmlPaths)
+
+  $urls = foreach ($htmlPath in $HtmlPaths) {
+    $raw = Get-Content -Path $htmlPath -Raw -Encoding UTF8
+    $matches = [regex]::Matches($raw, 'href="(?<href>/[^/]+/[^/]+/asian/)"', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    foreach ($match in $matches) {
+      $href = $match.Groups["href"].Value
+      if ($href -match '/reservation/') {
+        continue
+      }
+      "https://www.esthe-ranking.jp" + $href
+    }
+  }
+  return $urls | Select-Object -Unique
+}
+
 function Get-ListingCacheName {
   param([string]$Url)
 
   if ($Url -match 'https://www\.esthe-ranking\.jp/(?<slug>[^/]+)/asian/?$') {
     return $Matches["slug"] + ".html"
+  }
+
+  return [System.Guid]::NewGuid().ToString() + ".html"
+}
+
+function Get-MunicipalityCacheName {
+  param([string]$Url)
+
+  if ($Url -match 'https://www\.esthe-ranking\.jp/(?<region>[^/]+)/(?<slug>[^/]+)/asian/?$') {
+    return ($Matches["region"] + "__" + $Matches["slug"] + ".html")
   }
 
   return [System.Guid]::NewGuid().ToString() + ".html"
@@ -286,6 +314,38 @@ function Save-DetailPages {
       $successCount += 1
     } catch {
       Write-RunnerLog "detail fetch failed ($detailId): $($_.Exception.Message)"
+      $failureCount += 1
+    }
+  }
+
+  return @{
+    Success = $successCount
+    Failure = $failureCount
+  }
+}
+
+function Save-MunicipalityPages {
+  param(
+    [string[]]$Urls,
+    [string]$OutputDir
+  )
+
+  if (-not (Test-Path $OutputDir)) {
+    New-Item -ItemType Directory -Path $OutputDir | Out-Null
+  }
+
+  $successCount = 0
+  $failureCount = 0
+
+  foreach ($url in $Urls) {
+    $outputPath = Join-Path $OutputDir (Get-MunicipalityCacheName -Url $url)
+
+    try {
+      $method = Get-SourceHtml -Url $url -OutputPath $outputPath
+      Write-RunnerLog "fetched municipality via ${method}: $url"
+      $successCount += 1
+    } catch {
+      Write-RunnerLog "municipality fetch failed: $url / $($_.Exception.Message)"
       $failureCount += 1
     }
   }
@@ -391,14 +451,22 @@ try {
   $detailUrls = Get-DetailUrls -HtmlPaths $htmlCachePaths
   Write-RunnerLog "found detail urls: $($detailUrls.Count)"
 
+  $municipalityUrls = Get-MunicipalityUrls -HtmlPaths $htmlCachePaths
+  Write-RunnerLog "found municipality urls: $($municipalityUrls.Count)"
+
+  $municipalityResult = Save-MunicipalityPages -Urls $municipalityUrls -OutputDir $municipalityDirPath
+  Write-RunnerLog "municipality fetch summary: success=$($municipalityResult.Success) failure=$($municipalityResult.Failure)"
+
   $detailResult = Save-DetailPages -Urls $detailUrls -OutputDir $detailDirPath
   Write-RunnerLog "detail fetch summary: success=$($detailResult.Success) failure=$($detailResult.Failure)"
 
   $env:ESTHE_MONITOR_HTML_DIR = $htmlCacheDirPath
+  $env:ESTHE_MONITOR_MUNICIPALITY_DIR = $municipalityDirPath
   $env:ESTHE_MONITOR_DETAIL_DIR = $detailDirPath
   $monitorOutput = & $nodePath $scriptPath 2>&1 | Out-String
   Write-MonitorSummary -JsonText $monitorOutput
   Remove-Item Env:ESTHE_MONITOR_HTML_DIR -ErrorAction SilentlyContinue
+  Remove-Item Env:ESTHE_MONITOR_MUNICIPALITY_DIR -ErrorAction SilentlyContinue
   Remove-Item Env:ESTHE_MONITOR_DETAIL_DIR -ErrorAction SilentlyContinue
 
   if ($autoPublishEnabled) {
