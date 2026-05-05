@@ -3,7 +3,9 @@
 - 対象ページ:
   - `https://www.esthe-ranking.jp/toyota/asian/`
   - `https://www.esthe-ranking.jp/horita/asian/`
-- 対象範囲: `西三河・豊田・岡崎エリア` のアジアンエステ一覧
+  - `https://www.esthe-ranking.jp/chita/asian/`
+  - `https://www.esthe-ranking.jp/shinsakae/asian/`
+- 対象範囲: `西三河・豊田・岡崎エリア` `堀田エリア` `知多エリア` `新栄エリア` のアジアンエステ一覧
 - 実行スクリプト: `monitor_esthe_ranking.mjs`
 - 更新対象:
   - `toyota_esthe_map_points_ja.csv`

@@ -8,7 +8,9 @@ $htmlCacheDirPath = Join-Path $workspace "esthe_ranking_source_pages"
 $detailDirPath = Join-Path $workspace "esthe_ranking_detail_pages"
 $targetUrls = @(
   "https://www.esthe-ranking.jp/toyota/asian/",
-  "https://www.esthe-ranking.jp/horita/asian/"
+  "https://www.esthe-ranking.jp/horita/asian/",
+  "https://www.esthe-ranking.jp/chita/asian/",
+  "https://www.esthe-ranking.jp/shinsakae/asian/"
 )
 
 # Auto publish settings

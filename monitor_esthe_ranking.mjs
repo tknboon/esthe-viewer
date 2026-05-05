@@ -1,7 +1,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const TARGET_URLS = ["https://www.esthe-ranking.jp/toyota/asian/", "https://www.esthe-ranking.jp/horita/asian/"];
+const TARGET_URLS = [
+  "https://www.esthe-ranking.jp/toyota/asian/",
+  "https://www.esthe-ranking.jp/horita/asian/",
+  "https://www.esthe-ranking.jp/chita/asian/",
+  "https://www.esthe-ranking.jp/shinsakae/asian/",
+];
 const ROOT = process.cwd();
 const SNAPSHOT_PATH = path.join(ROOT, "esthe_ranking_snapshot.json");
 const REPORT_PATH = path.join(ROOT, "esthe_ranking_report.md");
