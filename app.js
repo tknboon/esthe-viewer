@@ -553,6 +553,37 @@ function getPreferredExternalUrl(row) {
   return row.officialUrl || row.listingUrl || "";
 }
 
+function getDomainGroupFromUrl(url) {
+  if (!url) return "";
+
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    const parts = host.split(".");
+    if (parts.length <= 2) return host;
+
+    const tail2 = parts.slice(-2).join(".");
+    const jpSecondLevelSet = new Set([
+      "co.jp",
+      "ne.jp",
+      "or.jp",
+      "ac.jp",
+      "ad.jp",
+      "ed.jp",
+      "go.jp",
+      "gr.jp",
+      "lg.jp",
+    ]);
+
+    if (jpSecondLevelSet.has(tail2) && parts.length >= 3) {
+      return parts.slice(-3).join(".");
+    }
+
+    return tail2;
+  } catch (error) {
+    return "";
+  }
+}
+
 function renderSummary() {
   const uniqueStoreNames = new Set(state.filteredRows.map((row) => row.name));
   const allDayStores = state.filteredRows.filter((row) => row.hours.includes("24時間")).length;
@@ -694,7 +725,8 @@ function renderSelectedStore() {
   }
 
   selectedStoreName.textContent = state.selectedRow.name;
-  selectedStoreMeta.textContent = "";
+  const selectedDomainGroup = getDomainGroupFromUrl(state.selectedRow.officialUrl);
+  selectedStoreMeta.textContent = selectedDomainGroup ? `ドメイン系統: ${selectedDomainGroup}` : "";
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
   renderFavoriteToggle(state.selectedRow);
   renderExcludeToggle(state.selectedRow);
