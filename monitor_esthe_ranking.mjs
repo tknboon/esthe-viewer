@@ -734,7 +734,7 @@ function extractMunicipalityLinks(parentUrl, html) {
   const parentRegionKey = parentParts[0] || "";
   const links = [];
   const seen = new Set();
-  const linkRegex = /<a[^>]*href="([^"]+)"[^>]*>\s*([^<]+?)\s*<\/a>/gi;
+  const linkRegex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
   let match;
 
   while ((match = linkRegex.exec(sectionMatch[1])) !== null) {
