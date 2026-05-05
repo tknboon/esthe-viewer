@@ -204,6 +204,19 @@ select {
   font-size: 13px;
 }
 
+.region-child-button {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255, 248, 251, 0.04);
+  cursor: pointer;
+  text-align: left;
+}
+
+.region-child-button:hover {
+  background: rgba(255, 248, 251, 0.08);
+}
+
 .region-child-name {
   line-height: 1.5;
 }
