@@ -526,13 +526,15 @@ function renderStoreProfileSummary(row) {
   if (!selectedStoreProfileMeta) return;
   const profile = getStoreProfile(row) || {};
   const parts = [
-    profile.address,
-    profile.sms ? `SMS: ${profile.sms}` : "",
-    profile.menu ? `メニュー: ${profile.menu}` : "",
-    profile.disclosure ? `明示: ${profile.disclosure}` : "",
-    profile.guideClarity ? `真心: ${profile.guideClarity}` : "",
+    profile.address ? `<span>${escapeHtml(profile.address)}</span>` : "",
+    profile.sms ? `<span>SMS: ${escapeHtml(profile.sms)}</span>` : "",
+    profile.menu ? `<span>メニュー: ${escapeHtml(profile.menu)}</span>` : "",
+    profile.disclosure ? `<span>明示: ${escapeHtml(profile.disclosure)}</span>` : "",
+    profile.guideClarity
+      ? `<span class="${profile.guideClarity === "あり" ? "profile-positive" : ""}">真心: ${escapeHtml(profile.guideClarity)}</span>`
+      : "",
   ].filter(Boolean);
-  selectedStoreProfileMeta.textContent = parts.join(" / ");
+  selectedStoreProfileMeta.innerHTML = parts.join(" / ");
 }
 
 function hasStoreProfileContent(profile) {
@@ -558,7 +560,7 @@ function handleStoreProfileSave() {
   if (!state.selectedRow) return;
 
   const profile = {
-    address: storeAddressInput?.value.trim() || "",
+    address: normalizeAddressValue(storeAddressInput?.value || ""),
     sms: storeSmsInput?.value || "",
     menu: storeMenuInput?.value || "",
     disclosure: storeDisclosureInput?.value || "",
@@ -585,6 +587,13 @@ function handleStoreProfileEdit() {
   if (!state.selectedRow) return;
   setStoreProfileEditing(true, true);
   storeAddressInput?.focus();
+}
+
+function normalizeAddressValue(value) {
+  return String(value)
+    .trim()
+    .replace(/[０-９]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0xfee0))
+    .replace(/[ー－―‐]/g, "-");
 }
 
 function getReviewsForRow(row) {

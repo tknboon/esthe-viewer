@@ -419,6 +419,11 @@ select {
   font-size: 13px;
 }
 
+.profile-positive {
+  color: #ff6b8f;
+  font-weight: 700;
+}
+
 .selected-review-summary {
   margin: 12px 0 0;
   color: var(--accent-strong);
