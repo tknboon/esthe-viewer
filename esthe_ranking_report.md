@@ -1,9 +1,9 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-05T11:44:16.447Z
+- checked_at: 2026-05-05T12:01:48.022Z
 - sources: https://www.esthe-ranking.jp/nagoya/asian/, https://www.esthe-ranking.jp/sakae/asian/, https://www.esthe-ranking.jp/shinsakae/asian/, https://www.esthe-ranking.jp/kanayama/asian/, https://www.esthe-ranking.jp/kurokawa/asian/, https://www.esthe-ranking.jp/hoshigaoka/asian/, https://www.esthe-ranking.jp/moriyama/asian/, https://www.esthe-ranking.jp/otai/asian/, https://www.esthe-ranking.jp/tokaidori/asian/, https://www.esthe-ranking.jp/kasadera/asian/, https://www.esthe-ranking.jp/toyota/asian/, https://www.esthe-ranking.jp/horita/asian/, https://www.esthe-ranking.jp/tsurumai/asian/, https://www.esthe-ranking.jp/showa/asian/, https://www.esthe-ranking.jp/komaki/asian/, https://www.esthe-ranking.jp/owari/asian/, https://www.esthe-ranking.jp/chita/asian/, https://www.esthe-ranking.jp/toyohashi/asian/
-- title: 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング / 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング / 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング / 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング / 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング / 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング / 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング / 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング
-- count_text: https://www.esthe-ranking.jp/nagoya/asian/=86件 | https://www.esthe-ranking.jp/sakae/asian/=25件 | https://www.esthe-ranking.jp/shinsakae/asian/=28件 | https://www.esthe-ranking.jp/kanayama/asian/=32件 | https://www.esthe-ranking.jp/kurokawa/asian/=36件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=93件 | https://www.esthe-ranking.jp/moriyama/asian/=23件 | https://www.esthe-ranking.jp/otai/asian/=21件 | https://www.esthe-ranking.jp/tokaidori/asian/=41件 | https://www.esthe-ranking.jp/kasadera/asian/=10件 | https://www.esthe-ranking.jp/toyota/asian/=125件 | https://www.esthe-ranking.jp/horita/asian/=24件 | https://www.esthe-ranking.jp/tsurumai/asian/=36件 | https://www.esthe-ranking.jp/showa/asian/=24件 | https://www.esthe-ranking.jp/komaki/asian/=42件 | https://www.esthe-ranking.jp/owari/asian/=68件 | https://www.esthe-ranking.jp/chita/asian/=190件 | https://www.esthe-ranking.jp/toyohashi/asian/=10件
+- title: 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング / 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング / 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング / 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング / 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング / 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング / 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング / 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング / 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング
+- count_text: https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=32件 | https://www.esthe-ranking.jp/kurokawa/asian/=23件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=28件 | https://www.esthe-ranking.jp/moriyama/asian/=21件 | https://www.esthe-ranking.jp/otai/asian/=10件 | https://www.esthe-ranking.jp/tokaidori/asian/=42件 | https://www.esthe-ranking.jp/kasadera/asian/=36件 | https://www.esthe-ranking.jp/toyota/asian/=190件 | https://www.esthe-ranking.jp/horita/asian/=25件 | https://www.esthe-ranking.jp/tsurumai/asian/=10件 | https://www.esthe-ranking.jp/showa/asian/=24件 | https://www.esthe-ranking.jp/komaki/asian/=93件 | https://www.esthe-ranking.jp/owari/asian/=125件 | https://www.esthe-ranking.jp/chita/asian/=86件 | https://www.esthe-ranking.jp/toyohashi/asian/=68件
 - matched_store_count: 857
 - matched_link_count: 914
 - detail_page_count: 914
@@ -11,95 +11,95 @@
 
 ## Source Summaries
 - url: https://www.esthe-ranking.jp/nagoya/asian/
-  - title: 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 86件
-  - matched_store_count: 85
-  - matched_link_count: 86
+  - title: 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 41件
+  - matched_store_count: 41
+  - matched_link_count: 41
 - url: https://www.esthe-ranking.jp/sakae/asian/
-  - title: 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 25件
-  - matched_store_count: 25
-  - matched_link_count: 25
+  - title: 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 24件
+  - matched_store_count: 24
+  - matched_link_count: 24
 - url: https://www.esthe-ranking.jp/shinsakae/asian/
-  - title: 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 28件
-  - matched_store_count: 28
-  - matched_link_count: 28
+  - title: 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 36件
+  - matched_store_count: 36
+  - matched_link_count: 36
 - url: https://www.esthe-ranking.jp/kanayama/asian/
   - title: 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 32件
   - matched_store_count: 32
   - matched_link_count: 32
 - url: https://www.esthe-ranking.jp/kurokawa/asian/
-  - title: 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 36件
-  - matched_store_count: 36
-  - matched_link_count: 36
-- url: https://www.esthe-ranking.jp/hoshigaoka/asian/
-  - title: 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 93件
-  - matched_store_count: 93
-  - matched_link_count: 93
-- url: https://www.esthe-ranking.jp/moriyama/asian/
   - title: 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 23件
   - matched_store_count: 23
   - matched_link_count: 23
-- url: https://www.esthe-ranking.jp/otai/asian/
+- url: https://www.esthe-ranking.jp/hoshigaoka/asian/
+  - title: 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 28件
+  - matched_store_count: 28
+  - matched_link_count: 28
+- url: https://www.esthe-ranking.jp/moriyama/asian/
   - title: 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 21件
   - matched_store_count: 21
   - matched_link_count: 21
-- url: https://www.esthe-ranking.jp/tokaidori/asian/
-  - title: 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 41件
-  - matched_store_count: 41
-  - matched_link_count: 41
-- url: https://www.esthe-ranking.jp/kasadera/asian/
+- url: https://www.esthe-ranking.jp/otai/asian/
   - title: 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 10件
   - matched_store_count: 10
   - matched_link_count: 10
-- url: https://www.esthe-ranking.jp/toyota/asian/
-  - title: 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 125件
-  - matched_store_count: 124
-  - matched_link_count: 125
-- url: https://www.esthe-ranking.jp/horita/asian/
-  - title: 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 24件
-  - matched_store_count: 24
-  - matched_link_count: 24
-- url: https://www.esthe-ranking.jp/tsurumai/asian/
-  - title: 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング
+- url: https://www.esthe-ranking.jp/tokaidori/asian/
+  - title: 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 42件
+  - matched_store_count: 42
+  - matched_link_count: 42
+- url: https://www.esthe-ranking.jp/kasadera/asian/
+  - title: 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 36件
   - matched_store_count: 36
   - matched_link_count: 36
+- url: https://www.esthe-ranking.jp/toyota/asian/
+  - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 190件
+  - matched_store_count: 189
+  - matched_link_count: 190
+- url: https://www.esthe-ranking.jp/horita/asian/
+  - title: 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 25件
+  - matched_store_count: 25
+  - matched_link_count: 25
+- url: https://www.esthe-ranking.jp/tsurumai/asian/
+  - title: 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 10件
+  - matched_store_count: 10
+  - matched_link_count: 10
 - url: https://www.esthe-ranking.jp/showa/asian/
   - title: 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 24件
   - matched_store_count: 24
   - matched_link_count: 24
 - url: https://www.esthe-ranking.jp/komaki/asian/
-  - title: 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 42件
-  - matched_store_count: 42
-  - matched_link_count: 42
+  - title: 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 93件
+  - matched_store_count: 93
+  - matched_link_count: 93
 - url: https://www.esthe-ranking.jp/owari/asian/
+  - title: 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 125件
+  - matched_store_count: 124
+  - matched_link_count: 125
+- url: https://www.esthe-ranking.jp/chita/asian/
+  - title: 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング
+  - count_text: 86件
+  - matched_store_count: 85
+  - matched_link_count: 86
+- url: https://www.esthe-ranking.jp/toyohashi/asian/
   - title: 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 68件
   - matched_store_count: 68
   - matched_link_count: 68
-- url: https://www.esthe-ranking.jp/chita/asian/
-  - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 190件
-  - matched_store_count: 189
-  - matched_link_count: 190
-- url: https://www.esthe-ranking.jp/toyohashi/asian/
-  - title: 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 10件
-  - matched_store_count: 10
-  - matched_link_count: 10
 
 ## Added
 - none
@@ -108,7 +108,8 @@
 - none
 
 ## Changed
-- none
+- 掲載件数表示: https://www.esthe-ranking.jp/nagoya/asian/=86件 | https://www.esthe-ranking.jp/sakae/asian/=25件 | https://www.esthe-ranking.jp/shinsakae/asian/=28件 | https://www.esthe-ranking.jp/kanayama/asian/=32件 | https://www.esthe-ranking.jp/kurokawa/asian/=36件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=93件 | https://www.esthe-ranking.jp/moriyama/asian/=23件 | https://www.esthe-ranking.jp/otai/asian/=21件 | https://www.esthe-ranking.jp/tokaidori/asian/=41件 | https://www.esthe-ranking.jp/kasadera/asian/=10件 | https://www.esthe-ranking.jp/toyota/asian/=125件 | https://www.esthe-ranking.jp/horita/asian/=24件 | https://www.esthe-ranking.jp/tsurumai/asian/=36件 | https://www.esthe-ranking.jp/showa/asian/=24件 | https://www.esthe-ranking.jp/komaki/asian/=42件 | https://www.esthe-ranking.jp/owari/asian/=68件 | https://www.esthe-ranking.jp/chita/asian/=190件 | https://www.esthe-ranking.jp/toyohashi/asian/=10件 -> https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=32件 | https://www.esthe-ranking.jp/kurokawa/asian/=23件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=28件 | https://www.esthe-ranking.jp/moriyama/asian/=21件 | https://www.esthe-ranking.jp/otai/asian/=10件 | https://www.esthe-ranking.jp/tokaidori/asian/=42件 | https://www.esthe-ranking.jp/kasadera/asian/=36件 | https://www.esthe-ranking.jp/toyota/asian/=190件 | https://www.esthe-ranking.jp/horita/asian/=25件 | https://www.esthe-ranking.jp/tsurumai/asian/=10件 | https://www.esthe-ranking.jp/showa/asian/=24件 | https://www.esthe-ranking.jp/komaki/asian/=93件 | https://www.esthe-ranking.jp/owari/asian/=125件 | https://www.esthe-ranking.jp/chita/asian/=86件 | https://www.esthe-ranking.jp/toyohashi/asian/=68件
+- ページタイトル: 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング / 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング / 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング / 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング / 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング / 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング / 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング / 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング -> 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング / 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング / 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング / 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング / 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング / 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング / 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング / 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング / 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング
 
 ## Current Stores
 - ～豊田来来～おいでん
@@ -310,8 +311,8 @@
 - イタズラ パラダイス
 - イタズラなKISS
 - いちご
-- イチゴミルク
 - いちごみるく
+- イチゴミルク
 - いちご娘
 - イチャラブ
 - いやし美人
