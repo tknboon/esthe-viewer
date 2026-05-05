@@ -41,6 +41,7 @@ const selectedListingLink = document.querySelector("#selectedListingLink");
 const mapList = document.querySelector("#mapList");
 const mapListCount = document.querySelector("#mapListCount");
 const reviewForm = document.querySelector("#reviewForm");
+const reviewAddressInput = document.querySelector("#reviewAddressInput");
 const reviewVisitDateInput = document.querySelector("#reviewVisitDateInput");
 const reviewAuthorInput = document.querySelector("#reviewAuthorInput");
 const reviewNationalityInput = document.querySelector("#reviewNationalityInput");
@@ -559,6 +560,7 @@ function renderReviewItem(review, reviewKey) {
         <button class="review-delete-button" type="button" data-review-id="${review.id}" data-review-key="${escapeHtml(reviewKey)}">削除</button>
       </div>
       <div class="review-detail-grid">
+        ${renderReviewDetail("住所", review.address)}
         ${renderReviewDetail("訪問日", formatVisitDate(review.visitDate))}
         ${renderReviewDetail("国", formatNationality(review.nationality))}
         ${renderReviewDetail("時間", formatDuration(review.duration))}
@@ -586,6 +588,7 @@ function handleReviewSubmit(event) {
 
   const author = reviewAuthorInput.value.trim();
   const comment = reviewCommentInput.value.trim();
+  const address = reviewAddressInput.value.trim();
   const visitDate = reviewVisitDateInput.value || "";
   const nationality = reviewNationalityInput.value.trim();
   const duration = reviewDurationInput.value ? Number(reviewDurationInput.value) : null;
@@ -603,6 +606,7 @@ function handleReviewSubmit(event) {
   const overallRating = Number(reviewOverallRatingInput.value || 5);
 
   const hasReviewContent =
+    address ||
     author ||
     nationality ||
     duration ||
@@ -632,6 +636,7 @@ function handleReviewSubmit(event) {
     storeStation: state.selectedRow.station,
     storeLocation: state.selectedRow.location,
     listingUrl: state.selectedRow.listingUrl,
+    address,
     visitDate,
     author,
     nationality,
