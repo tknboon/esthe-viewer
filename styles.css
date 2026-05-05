@@ -507,6 +507,10 @@ select {
   border-top: 1px solid var(--line);
 }
 
+.review-toolbar {
+  margin-top: 12px;
+}
+
 .review-form-head {
   display: flex;
   justify-content: space-between;

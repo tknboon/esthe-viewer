@@ -44,12 +44,14 @@ const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
+const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
 const storeProfilePanel = document.querySelector("#storeProfilePanel");
 const storeAddressInput = document.querySelector("#storeAddressInput");
 const storeSmsInput = document.querySelector("#storeSmsInput");
 const storeMenuInput = document.querySelector("#storeMenuInput");
 const storeDisclosureInput = document.querySelector("#storeDisclosureInput");
 const storeGuideClarityInput = document.querySelector("#storeGuideClarityInput");
+const storeProfileActions = document.querySelector("#storeProfileActions");
 const storeProfileSaveButton = document.querySelector("#storeProfileSaveButton");
 const storeProfileEditButton = document.querySelector("#storeProfileEditButton");
 const mapList = document.querySelector("#mapList");
@@ -70,6 +72,7 @@ const reviewOverallRatingInput = document.querySelector("#reviewOverallRatingInp
 const reviewCommentInput = document.querySelector("#reviewCommentInput");
 const reviewSubmitButton = document.querySelector("#reviewSubmitButton");
 const reviewList = document.querySelector("#reviewList");
+const reviewToggleButton = document.querySelector("#reviewToggleButton");
 
 init();
 
@@ -206,6 +209,7 @@ function bindEvents() {
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
+  reviewToggleButton?.addEventListener("click", handleReviewToggle);
   reviewForm.addEventListener("submit", handleReviewSubmit);
 }
 
@@ -390,6 +394,7 @@ function renderSelectedStore() {
     disableLink(selectedListingLink);
     clearStoreProfileInputs();
     setStoreProfileEditing(false, false);
+    setReviewEditing(false, false);
     reviewSubmitButton.disabled = true;
     reviewList.innerHTML = `<div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>`;
     return;
@@ -401,6 +406,7 @@ function renderSelectedStore() {
     .join(" / ");
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
   reviewSubmitButton.disabled = false;
+  setReviewEditing(false, true);
 
   if (state.selectedRow.phone) {
     selectedPhoneLink.href = `tel:${state.selectedRow.phone}`;
@@ -543,7 +549,9 @@ function hasStoreProfileContent(profile) {
 }
 
 function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
+  storeProfileToolbar?.classList.toggle("is-hidden", !hasRow);
   storeProfilePanel?.classList.toggle("is-hidden", !hasRow || !isEditing);
+  storeProfileActions?.classList.toggle("is-hidden", !hasRow || !isEditing);
 
   [storeAddressInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
     if (!element) return;
@@ -555,7 +563,9 @@ function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) 
   }
 
   if (storeProfileEditButton) {
-    storeProfileEditButton.disabled = !hasRow || isEditing;
+    storeProfileEditButton.disabled = !hasRow;
+    storeProfileEditButton.textContent = isEditing ? "編集中" : "店舗情報を編集";
+    storeProfileEditButton.setAttribute("aria-expanded", hasRow && isEditing ? "true" : "false");
   }
 }
 
@@ -590,6 +600,19 @@ function handleStoreProfileEdit() {
   if (!state.selectedRow) return;
   setStoreProfileEditing(true, true);
   storeAddressInput?.focus();
+}
+
+function setReviewEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
+  reviewForm?.classList.toggle("is-hidden", !hasRow || !isEditing);
+  if (reviewToggleButton) {
+    reviewToggleButton.disabled = !hasRow;
+  }
+}
+
+function handleReviewToggle() {
+  if (!state.selectedRow) return;
+  setReviewEditing(true, true);
+  reviewVisitDateInput?.focus();
 }
 
 function normalizeAddressValue(value) {
@@ -779,6 +802,7 @@ function handleReviewSubmit(event) {
 
   reviewForm.reset();
   setDefaultReviewValues();
+  setReviewEditing(false, true);
   renderReviewAnalytics();
   renderCards();
   renderSelectedStore();

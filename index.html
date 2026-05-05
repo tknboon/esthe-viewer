@@ -98,7 +98,7 @@
                     <a id="selectedMapLink" class="action-link primary disabled-link" href="#" target="_blank" rel="noreferrer">Googleマップで開く</a>
                     <a id="selectedListingLink" class="action-link disabled-link" href="#" target="_blank" rel="noreferrer">掲載ページ</a>
                   </div>
-                  <div class="store-profile-toolbar">
+                  <div id="storeProfileToolbar" class="store-profile-toolbar">
                     <button id="storeProfileEditButton" class="action-link" type="button">店舗情報を編集</button>
                   </div>
 
@@ -150,7 +150,7 @@
                         </select>
                       </label>
                     </div>
-                    <div class="store-profile-actions">
+                    <div id="storeProfileActions" class="store-profile-actions">
                       <button id="storeProfileSaveButton" class="primary-button" type="button">保存</button>
                     </div>
                   </div>
@@ -160,8 +160,11 @@
                       <p class="mini-label">店舗レビュー</p>
                       <span class="review-storage-note">このブラウザ内に保存</span>
                     </div>
+                    <div class="review-toolbar">
+                      <button id="reviewToggleButton" class="action-link" type="button">レビューを書く</button>
+                    </div>
 
-                    <form id="reviewForm" class="review-form">
+                    <form id="reviewForm" class="review-form is-hidden">
                       <div class="review-form-grid">
                         <label class="review-field">
                           <span>訪問日</span>
