@@ -1922,7 +1922,9 @@ function renderMarkerInfoContent(row) {
   const phoneHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
-  const popupNote = String(profile?.note || "").trim() || row.notes || "";
+  const popupNote = hasStoreProfileContent(profile)
+    ? String(profile?.note || "").trim()
+    : (row.notes || "");
   const notesHtml = popupNote ? `<div style="margin-top:4px;">備考: ${escapeHtml(popupNote)}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
   const preferredExternalUrl = getPreferredExternalUrl(row);
