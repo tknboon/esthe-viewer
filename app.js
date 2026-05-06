@@ -1905,14 +1905,14 @@ function renderMarkerInfoContent(row) {
   const notesHtml = row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
   const preferredExternalUrl = getPreferredExternalUrl(row);
+  const mapLinkHtml = row.mapUrl
+    ? `<a href="${escapeHtml(row.mapUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">MAP</a>`
+    : "";
   const officialHtml = preferredExternalUrl
     ? `<a href="${escapeHtml(preferredExternalUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">HP</a>`
     : "";
   const phoneSearchHtml = row.phone
     ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">番号検索</a>`
-    : "";
-  const mapHtml = row.mapUrl
-    ? `<div style="margin-top:6px;"><a href="${escapeHtml(row.mapUrl)}" target="_blank" rel="noreferrer" style="color:#c2185b;text-decoration:none;font-weight:700;">MAP</a></div>`
     : "";
   const favoriteButtonHtml = `<button type="button" data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${isFavoriteRow(row) ? "お気に入り解除" : "お気に入り"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(255, 120, 166, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(255, 93, 150, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#ff2f74" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
   const excludeButtonHtml = `<button type="button" data-marker-action="exclude" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isExcludedRow(row) ? "true" : "false"}" title="${isExcludedRow(row) ? "除外解除" : "除外"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isExcludedRow(row) ? "rgba(170,170,178,0.5)" : "rgba(194,24,91,0.18)"};background:${isExcludedRow(row) ? "rgba(255,255,255,0.06)" : "#fff7fb"};color:${isExcludedRow(row) ? "#1d1d1f" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isExcludedRow(row) ? "♥" : "♡"}</button>`;
@@ -1920,11 +1920,10 @@ function renderMarkerInfoContent(row) {
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
-      <div style="font-weight:700;font-size:14px;">${escapeHtml(row.name)}${officialHtml}</div>
+      <div style="font-weight:700;font-size:14px;">${escapeHtml(row.name)}${officialHtml}${mapLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}${phoneSearchHtml}</div>
       ${notesHtml}
-      ${mapHtml}
       ${actionsHtml ? `<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">${actionsHtml}</div>` : ""}
     </div>
   `;
