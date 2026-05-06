@@ -1948,7 +1948,7 @@ function renderMarkerInfoContent(row) {
 function bindInfoWindowActions(row) {
   const buttons = document.querySelectorAll("[data-marker-action]");
   for (const button of buttons) {
-    button.addEventListener("click", (event) => {
+    button.onclick = (event) => {
       event.preventDefault();
       event.stopPropagation();
       state.selectedRow = row;
@@ -1957,7 +1957,7 @@ function bindInfoWindowActions(row) {
       } else if (button.dataset.markerAction === "exclude") {
         handleExcludeToggle();
       }
-    });
+    };
   }
 }
 
