@@ -860,8 +860,8 @@ function renderFavoriteToggle(row) {
   favoriteToggleButton.textContent = active ? "♥" : "♡";
   favoriteToggleButton.classList.toggle("is-active", active);
   favoriteToggleButton.setAttribute("aria-pressed", active ? "true" : "false");
-  favoriteToggleButton.setAttribute("title", active ? "お気に入り解除" : "お気に入り");
-  favoriteToggleButton.setAttribute("aria-label", active ? "お気に入り解除" : "お気に入り");
+  favoriteToggleButton.setAttribute("title", active ? "確認済み解除" : "確認済み");
+  favoriteToggleButton.setAttribute("aria-label", active ? "確認済み解除" : "確認済み");
 }
 
 function handleFavoriteToggle() {
@@ -1822,6 +1822,7 @@ function addProfileMarkerForRow(row, bounds) {
 
 function buildMarkerIcon(row) {
   const latestReview = getLatestReview(row);
+  const profile = getStoreProfile(row);
   let fillColor = "#9b95a4";
   let strokeColor = "#efe8f6";
 
@@ -1829,8 +1830,14 @@ function buildMarkerIcon(row) {
     fillColor = "#1d1d1f";
     strokeColor = "#a7a7ad";
   } else if (isFavoriteRow(row)) {
-    fillColor = "#ff2f74";
-    strokeColor = "#ffd4e3";
+    fillColor = "#4ecbff";
+    strokeColor = "#d7f4ff";
+  } else if (profile?.guideClarity === "あり") {
+    fillColor = "#ff5d96";
+    strokeColor = "#ffe3ee";
+  } else if (profile?.guideClarity === "なし") {
+    fillColor = "#ffb000";
+    strokeColor = "#fff1c7";
   } else if (latestReview?.guideClarity === "あり") {
     fillColor = "#ff5d96";
     strokeColor = "#ffe3ee";
@@ -1843,11 +1850,18 @@ function buildMarkerIcon(row) {
 }
 
 function buildProfileMarkerIcon(row) {
+  const profile = getStoreProfile(row);
   if (isExcludedRow(row)) {
     return createHeartMarkerIcon("#1d1d1f", "#a7a7ad");
   }
   if (isFavoriteRow(row)) {
-    return createHeartMarkerIcon("#ff2f74", "#ffd4e3");
+    return createHeartMarkerIcon("#4ecbff", "#d7f4ff");
+  }
+  if (profile?.guideClarity === "あり") {
+    return createHeartMarkerIcon("#ff5d96", "#ffe3ee");
+  }
+  if (profile?.guideClarity === "なし") {
+    return createHeartMarkerIcon("#ffb000", "#fff1c7");
   }
   return createHeartMarkerIcon("#ff5d96", "#ffe3ee");
 }
@@ -1916,7 +1930,7 @@ function renderMarkerInfoContent(row) {
   const phoneSearchHtml = row.phone
     ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">番号検索</a>`
     : "";
-  const favoriteButtonHtml = `<button type="button" data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${isFavoriteRow(row) ? "お気に入り解除" : "お気に入り"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(255, 120, 166, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(255, 93, 150, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#ff2f74" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
+  const favoriteButtonHtml = `<button type="button" data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${isFavoriteRow(row) ? "確認済み解除" : "確認済み"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(78, 203, 255, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(78, 203, 255, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#26aee8" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
   const excludeButtonHtml = `<button type="button" data-marker-action="exclude" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isExcludedRow(row) ? "true" : "false"}" title="${isExcludedRow(row) ? "除外解除" : "除外"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isExcludedRow(row) ? "rgba(170,170,178,0.5)" : "rgba(194,24,91,0.18)"};background:${isExcludedRow(row) ? "rgba(255,255,255,0.06)" : "#fff7fb"};color:${isExcludedRow(row) ? "#1d1d1f" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isExcludedRow(row) ? "♥" : "♡"}</button>`;
   const actionsHtml = [favoriteButtonHtml, excludeButtonHtml].filter(Boolean).join("");
 
