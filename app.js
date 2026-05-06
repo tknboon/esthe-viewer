@@ -155,6 +155,7 @@ function init() {
     state.geocodeCache = readGeocodeCache();
     state.reviewsByStore = readReviews();
     state.storeProfilesByKey = readStoreProfiles();
+    state.rows.forEach(applyProfileLocationToRow);
     state.favoritesByStore = readFavorites();
     state.excludedByStore = readExcluded();
     renderLastUpdated();
@@ -960,10 +961,10 @@ function normalizeRow(row, index) {
   const municipality = window.storeMeta?.municipalityByListingUrl?.[listingUrl] || "";
   const municipalityLabels = window.storeMeta?.municipalityLabelsByListingUrl?.[listingUrl] || [];
   const hasCoordinates = Boolean(latitude && longitude);
-  const latLng = hasCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
-  const mapQuery = hasCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
+  const baseLatLng = hasCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
+  const baseLocationQuery = hasCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
 
-  return {
+  const normalizedRow = {
     id: `${name}-${station}-${index}`,
     reviewKey: listingUrl || `${name}__${station || location || index}`,
     name,
@@ -979,10 +980,15 @@ function normalizeRow(row, index) {
     municipality,
     municipalityLabels,
     hasCoordinates,
-    latLng,
-    locationQuery: mapQuery,
-    mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`,
+    baseLatLng,
+    latLng: baseLatLng,
+    baseLocationQuery,
+    locationQuery: baseLocationQuery,
+    mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(baseLocationQuery)}`,
   };
+
+  applyProfileLocationToRow(normalizedRow);
+  return normalizedRow;
 }
 
 function readReviews() {
@@ -1056,6 +1062,25 @@ function writeExcluded() {
 function getStoreProfile(row) {
   if (!row) return null;
   return state.storeProfilesByKey[row.reviewKey] || null;
+}
+
+function applyProfileLocationToRow(row) {
+  if (!row) return;
+
+  const profile = getStoreProfile(row);
+  const profileAddress = normalizeAddressValue(profile?.address || "");
+
+  if (profileAddress) {
+    const profileQuery = buildLocationQuery(row.name, row.station, profileAddress, row.notes);
+    row.locationQuery = profileQuery;
+    row.mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profileQuery)}`;
+    row.latLng = state.geocodeCache[profileQuery] || null;
+    return;
+  }
+
+  row.locationQuery = row.baseLocationQuery;
+  row.mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(row.baseLocationQuery)}`;
+  row.latLng = row.baseLatLng || state.geocodeCache[row.baseLocationQuery] || null;
 }
 
 function renderStoreProfileInputs(row) {
@@ -1137,9 +1162,16 @@ function handleStoreProfileSave() {
   }
 
   writeStoreProfiles();
+  applyProfileLocationToRow(state.selectedRow);
   renderStoreProfileSummary(state.selectedRow);
+  renderSelectedStore();
   setStoreProfileEditing(false, true);
+  syncMapWithFilters();
   syncProfileMap();
+
+  if (state.selectedRow?.locationQuery && !state.selectedRow.latLng) {
+    queueGeocode(state.selectedRow, true);
+  }
 }
 
 function handleStoreProfileEdit() {
