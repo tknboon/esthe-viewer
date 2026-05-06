@@ -398,6 +398,14 @@ function applyFilters() {
 }
 
 function handleRegionToggle(event) {
+  const municipalityTrigger = event.target.closest("[data-municipality-label]");
+  if (municipalityTrigger) {
+    const regionKey = municipalityTrigger.dataset.regionKey || "";
+    const municipalityLabel = municipalityTrigger.dataset.municipalityLabel || "";
+    focusMunicipality(regionKey, municipalityLabel);
+    return;
+  }
+
   const regionTrigger = event.target.closest("[data-region-key]");
   if (regionTrigger) {
     const regionKey = regionTrigger.dataset.regionKey;
@@ -443,10 +451,15 @@ function renderRegionSummary() {
                             ${item.municipalities
                               .map(
                                 (municipality) => `
-                                  <div class="municipality-item">
+                                  <button
+                                    type="button"
+                                    class="municipality-item municipality-button"
+                                    data-region-key="${item.key}"
+                                    data-municipality-label="${escapeHtml(municipality.label)}"
+                                  >
                                     <span class="municipality-name">${escapeHtml(municipality.label)}</span>
                                     <span class="municipality-count">(${municipality.count})</span>
-                                  </div>
+                                  </button>
                                 `
                               )
                               .join("")}
@@ -518,6 +531,44 @@ function getMunicipalityLabelsForSummary(row, regionKey) {
   }
 
   return [getMunicipalityFromRow(row, regionKey)];
+}
+
+function focusMunicipality(regionKey, municipalityLabel) {
+  const matches = state.filteredRows.filter((row) => {
+    if (getRegionKeyFromRow(row) !== regionKey) return false;
+    const labels = getMunicipalityLabelsForSummary(row, regionKey);
+    return labels.includes(municipalityLabel);
+  });
+
+  if (!matches.length) return;
+
+  if (!ensureMapReady()) {
+    focusRow(matches[0]);
+    return;
+  }
+
+  const bounds = new google.maps.LatLngBounds();
+  let placedCount = 0;
+
+  for (const row of matches) {
+    const cached = row.latLng || state.geocodeCache[row.locationQuery];
+    if (cached) {
+      row.latLng = cached;
+      bounds.extend(cached);
+      placedCount += 1;
+    } else if (row.locationQuery) {
+      queueGeocode(row);
+    }
+  }
+
+  if (placedCount > 1) {
+    state.map.fitBounds(bounds, 80);
+  } else if (placedCount === 1) {
+    state.map.setCenter(bounds.getCenter());
+    state.map.setZoom(Math.max(state.map.getZoom(), 14));
+  }
+
+  focusRow(matches[0]);
 }
 
 function getRegionKeyFromRow(row) {
