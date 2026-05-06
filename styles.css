@@ -407,6 +407,11 @@ select {
   line-height: 1.35;
 }
 
+.update-history-tag.is-link {
+  color: inherit;
+  cursor: pointer;
+}
+
 .update-history-empty {
   margin-top: 8px;
   color: var(--muted);

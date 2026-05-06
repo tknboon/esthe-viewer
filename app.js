@@ -269,11 +269,37 @@ function renderHistoryGroup(label, items, modifier, stationLookup) {
         ${items
           .map((item) => formatHistoryStoreLabel(item, stationLookup))
           .filter(Boolean)
-          .map((item) => `<span class="update-history-tag">${escapeHtml(item)}</span>`)
+          .map((item) => {
+            const row = findRowByHistoryLabel(item);
+            if (row) {
+              return `<button type="button" class="update-history-tag is-link" data-history-store="${escapeHtml(item)}">${escapeHtml(item)}</button>`;
+            }
+            return `<span class="update-history-tag">${escapeHtml(item)}</span>`;
+          })
           .join("")}
       </div>
     </section>
   `;
+}
+
+function findRowByHistoryLabel(label) {
+  const text = String(label || "").trim();
+  if (!text) return null;
+
+  const storeName = text.split("/")[0]?.trim() || text;
+  if (!storeName) return null;
+
+  return state.rows.find((row) => row.name === storeName) || null;
+}
+
+function handleHistoryClick(event) {
+  const trigger = event.target.closest("[data-history-store]");
+  if (!trigger) return;
+
+  const row = findRowByHistoryLabel(trigger.dataset.historyStore);
+  if (!row) return;
+
+  focusRow(row);
 }
 function formatHistoryDate(value) {
   if (!value) return "";
@@ -306,6 +332,7 @@ function bindEvents() {
   mapList?.addEventListener("click", handleListActionClick);
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
+  dailyUpdateHistory?.addEventListener("click", handleHistoryClick);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
