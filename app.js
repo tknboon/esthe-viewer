@@ -1899,10 +1899,12 @@ function openMarkerInfoWindow(map, infoWindow, marker, row) {
 }
 
 function renderMarkerInfoContent(row) {
+  const profile = getStoreProfile(row);
   const phoneHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
-  const notesHtml = row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
+  const shouldShowNotes = !hasStoreProfileContent(profile);
+  const notesHtml = shouldShowNotes && row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
   const preferredExternalUrl = getPreferredExternalUrl(row);
   const mapLinkHtml = row.mapUrl
