@@ -59,6 +59,7 @@ const excludeToggleButton = document.querySelector("#excludeToggleButton");
 const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
 const storeProfilePanel = document.querySelector("#storeProfilePanel");
 const storeAddressInput = document.querySelector("#storeAddressInput");
+const storeNoteInput = document.querySelector("#storeNoteInput");
 const storeSmsInput = document.querySelector("#storeSmsInput");
 const storeMenuInput = document.querySelector("#storeMenuInput");
 const storeDisclosureInput = document.querySelector("#storeDisclosureInput");
@@ -1086,6 +1087,7 @@ function applyProfileLocationToRow(row) {
 function renderStoreProfileInputs(row) {
   const profile = getStoreProfile(row) || {};
   if (storeAddressInput) storeAddressInput.value = profile.address || "";
+  if (storeNoteInput) storeNoteInput.value = profile.note || "";
   if (storeSmsInput) storeSmsInput.value = profile.sms || "";
   if (storeMenuInput) storeMenuInput.value = profile.menu || "";
   if (storeDisclosureInput) storeDisclosureInput.value = profile.disclosure || "";
@@ -1095,6 +1097,7 @@ function renderStoreProfileInputs(row) {
 
 function clearStoreProfileInputs() {
   if (storeAddressInput) storeAddressInput.value = "";
+  if (storeNoteInput) storeNoteInput.value = "";
   if (storeSmsInput) storeSmsInput.value = "";
   if (storeMenuInput) storeMenuInput.value = "";
   if (storeDisclosureInput) storeDisclosureInput.value = "";
@@ -1106,6 +1109,7 @@ function renderStoreProfileSummary(row) {
   const profile = getStoreProfile(row) || {};
   const parts = [
     profile.address ? `<span>${escapeHtml(profile.address)}</span>` : "",
+    profile.note ? `<span>備考: ${escapeHtml(profile.note)}</span>` : "",
     profile.sms ? `<span>SMS: ${escapeHtml(profile.sms)}</span>` : "",
     profile.menu ? `<span>メニュー: ${escapeHtml(profile.menu)}</span>` : "",
     profile.disclosure ? `<span>明示: ${escapeHtml(profile.disclosure)}</span>` : "",
@@ -1116,7 +1120,7 @@ function renderStoreProfileSummary(row) {
 }
 
 function hasStoreProfileContent(profile) {
-  return Boolean(profile && (profile.address || profile.sms || profile.menu || profile.disclosure || profile.guideClarity));
+  return Boolean(profile && (profile.address || profile.note || profile.sms || profile.menu || profile.disclosure || profile.guideClarity));
 }
 
 function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
@@ -1124,7 +1128,7 @@ function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) 
   storeProfilePanel?.classList.toggle("is-hidden", !hasRow || !isEditing);
   storeProfileActions?.classList.toggle("is-hidden", !hasRow || !isEditing);
 
-  [storeAddressInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
+  [storeAddressInput, storeNoteInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
     if (!element) return;
     element.disabled = !hasRow || !isEditing;
   });
@@ -1145,6 +1149,7 @@ function handleStoreProfileSave() {
 
   const profile = {
     address: normalizeAddressValue(storeAddressInput?.value || ""),
+    note: String(storeNoteInput?.value || "").trim(),
     sms: storeSmsInput?.value || "",
     menu: storeMenuInput?.value || "",
     disclosure: storeDisclosureInput?.value || "",
@@ -1917,8 +1922,8 @@ function renderMarkerInfoContent(row) {
   const phoneHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
-  const shouldShowNotes = !hasStoreProfileContent(profile);
-  const notesHtml = shouldShowNotes && row.notes ? `<div style="margin-top:4px;">備考: ${escapeHtml(row.notes)}</div>` : "";
+  const popupNote = String(profile?.note || "").trim() || row.notes || "";
+  const notesHtml = popupNote ? `<div style="margin-top:4px;">備考: ${escapeHtml(popupNote)}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
   const preferredExternalUrl = getPreferredExternalUrl(row);
   const mapLinkHtml = row.mapUrl
