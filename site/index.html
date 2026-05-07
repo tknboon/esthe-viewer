@@ -96,15 +96,17 @@
               <aside class="map-side">
                 <div class="selected-store">
                   <div class="selected-store-head">
-                    <h3 id="selectedStoreName" class="selected-title">店舗を選択してください</h3>
+                    <div class="selected-store-primary">
+                      <h3 id="selectedStoreName" class="selected-title">店舗を選択してください</h3>
+                      <p id="selectedStoreMeta" class="selected-meta">地図候補リストか一覧のボタンから切り替えられます。</p>
+                      <p id="selectedStoreProfileMeta" class="selected-meta selected-profile-meta"></p>
+                      <p id="editAccessText" class="selected-meta edit-access-text"></p>
+                      <p id="selectedReviewSummary" class="selected-review-summary">レビューはまだありません。</p>
+                    </div>
                     <div id="storeProfileToolbar" class="store-profile-toolbar">
                       <button id="storeProfileEditButton" class="action-link" type="button">店舗情報を編集</button>
                     </div>
                   </div>
-                  <p id="selectedStoreMeta" class="selected-meta">地図候補リストか一覧のボタンから切り替えられます。</p>
-                  <p id="selectedStoreProfileMeta" class="selected-meta selected-profile-meta"></p>
-                  <p id="editAccessText" class="selected-meta edit-access-text"></p>
-                  <p id="selectedReviewSummary" class="selected-review-summary">レビューはまだありません。</p>
                   <div class="selected-actions selected-actions-compact is-hidden">
                     <button id="favoriteToggleButton" class="action-link icon-action" type="button" aria-label="確認済み" title="確認済み">♡</button>
                     <button id="excludeToggleButton" class="action-link icon-action" type="button" aria-label="除外" title="除外">♡</button>

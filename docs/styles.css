@@ -654,9 +654,9 @@ select {
 }
 
 .selected-meta {
-  margin: 2px 0 0;
+  margin: 0;
   color: var(--muted);
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .selected-meta:empty {
@@ -672,7 +672,7 @@ select {
 }
 
 .selected-profile-meta {
-  margin-top: 2px;
+  margin-top: 0;
   font-size: 13px;
 }
 
@@ -704,6 +704,13 @@ select {
   gap: 10px;
 }
 
+.selected-store-primary {
+  display: grid;
+  gap: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .selected-store-head .selected-title {
   flex: 1 1 auto;
   min-width: 0;
@@ -712,6 +719,11 @@ select {
 .selected-store > .selected-title + .selected-meta,
 .selected-store > .selected-title + .selected-review-summary {
   margin-top: 0;
+}
+
+.selected-store-primary .selected-meta,
+.selected-store-primary .selected-review-summary {
+  max-width: 100%;
 }
 
 .embed-wrap {
