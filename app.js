@@ -352,11 +352,6 @@ function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
     isRoomVariant: true,
   };
 
-  const shouldUsePrimaryLocation = hasPreciseRoomLocation(row) && stationToken === primaryStationToken;
-  if (shouldUsePrimaryLocation) {
-    return variant;
-  }
-
   const roomLocationQuery = buildRoomLocationQuery(row, stationToken);
   const cachedRoomLatLng = state.geocodeCache[roomLocationQuery] || null;
   variant.location = stationToken;
@@ -426,6 +421,9 @@ function formatClosedPrefix(dayKey) {
 
 function getDisplayStoreName(row) {
   if (!row) return "";
+  if (row.isRoomVariant) {
+    return row.station ? `${row.name} / ${row.station}` : row.name;
+  }
   if (row.isArchivedStore) {
     return `${formatClosedPrefix(row.closedDayKey)}${row.name}`;
   }
