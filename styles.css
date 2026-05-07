@@ -140,6 +140,19 @@ select {
   margin: 0 0 12px;
 }
 
+.sync-meta-text {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.sync-tools-row {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 12px;
+}
+
 .text-input,
 .select-input {
   width: 100%;
@@ -537,6 +550,14 @@ select {
   margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.edit-access-text {
+  color: #f0cfe0;
+}
+
+.edit-access-text.is-readonly {
+  color: #ffd27f;
 }
 
 .selected-profile-meta {

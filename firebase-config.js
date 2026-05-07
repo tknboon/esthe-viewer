@@ -9,4 +9,11 @@ window.firebaseAppConfig = {
   storageBucket: "esthe-viewer.firebasestorage.app",
   messagingSenderId: "972599031473",
   appId: "1:972599031473:web:d8fb490359f6af36025490",
+
+  // 空のままなら、ログインした人は全員編集できます。
+  // ここにメールアドレスを入れると、その人だけ編集できます。
+  editorEmails: [],
+
+  // UID で絞りたいときはここも使えます。
+  editorUids: [],
 };

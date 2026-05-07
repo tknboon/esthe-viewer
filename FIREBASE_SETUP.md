@@ -98,6 +98,35 @@ window.firebaseAppConfig = {
 - ログインすると `〇〇 と共有中` に変わる
 - 保存したレビューや店舗情報が他端末でも見える
 
+## 8. 一般公開で閲覧だけにしたいとき
+
+今の設定では、ログインした人は編集できます。
+
+編集できる人を絞りたいときは、このファイルを開きます。
+
+`C:\Users\tknbo\Documents\Codex\2026-04-28\new-chat\firebase-config.js`
+
+この2つのどちらかに、許可したい人を入れます。
+
+```js
+editorEmails: ["yourname@gmail.com"],
+editorUids: [],
+```
+
+こうすると
+
+- ログインしていない人: 閲覧だけ
+- ログインしていても許可外の人: 閲覧だけ
+- 許可された人: 編集可
+
+になります。
+
+さらに、本当に一般公開して「指定した人だけ書き込み可」にしたいときは、
+
+`C:\Users\tknbo\Documents\Codex\2026-04-28\new-chat\firebase-firestore-rules-editors-example.txt`
+
+のメールアドレスを書き換えて、Firestore のルールに入れます。
+
 ## 共有対象
 
 - レビュー

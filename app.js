@@ -33,6 +33,8 @@
     unsubscribers: [],
     statusMode: "local",
     errorMessage: "",
+    documentsMeta: {},
+    lastBackupAt: "",
   },
 };
 
@@ -41,6 +43,8 @@ const searchButton = document.querySelector("#searchButton");
 const lastUpdatedText = document.querySelector("#lastUpdatedText");
 const syncStatusText = document.querySelector("#syncStatusText");
 const syncAuthButton = document.querySelector("#syncAuthButton");
+const syncMetaText = document.querySelector("#syncMetaText");
+const syncBackupButton = document.querySelector("#syncBackupButton");
 const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
@@ -59,6 +63,7 @@ const profileMapStatusText = document.querySelector("#profileMapStatusText");
 const selectedStoreName = document.querySelector("#selectedStoreName");
 const selectedStoreMeta = document.querySelector("#selectedStoreMeta");
 const selectedStoreProfileMeta = document.querySelector("#selectedStoreProfileMeta");
+const editAccessText = document.querySelector("#editAccessText");
 const selectedReviewSummary = document.querySelector("#selectedReviewSummary");
 const streetViewCanvas = document.querySelector("#streetViewCanvas");
 const streetViewEmptyState = document.querySelector("#streetViewEmptyState");
@@ -99,6 +104,7 @@ const reviewCommentInput = document.querySelector("#reviewCommentInput");
 const reviewSubmitButton = document.querySelector("#reviewSubmitButton");
 const reviewList = document.querySelector("#reviewList");
 const reviewToggleButton = document.querySelector("#reviewToggleButton");
+const reviewStorageNote = document.querySelector("#reviewStorageNote");
 
 const REGION_LABELS = {
   nagoya: "名古屋・名駅・納屋橋",
@@ -172,6 +178,7 @@ function init() {
     state.rows.forEach(applyProfileLocationToRow);
     state.favoritesByStore = readFavorites();
     state.excludedByStore = readExcluded();
+    state.sharedSync.lastBackupAt = readBackupMeta().savedAt || "";
     renderLastUpdated();
     renderUpdateHistory();
     setDefaultReviewValues();
@@ -350,6 +357,7 @@ function bindEvents() {
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   dailyUpdateHistory?.addEventListener("click", handleHistoryClick);
   syncAuthButton?.addEventListener("click", handleSyncAuthClick);
+  syncBackupButton?.addEventListener("click", handleBackupExport);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
@@ -814,6 +822,7 @@ function renderSelectedStore() {
     clearStoreProfileInputs();
     setStoreProfileEditing(false, false);
     setReviewEditing(false, false);
+    renderEditingAccess();
     reviewSubmitButton.disabled = true;
     reviewList.innerHTML = `<div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>`;
     return;
@@ -853,6 +862,7 @@ function renderSelectedStore() {
   renderStoreProfileSummary(state.selectedRow);
   renderReviewList();
   renderStreetViewForRow(state.selectedRow);
+  renderEditingAccess();
 }
 
 function focusRow(row) {
@@ -872,7 +882,7 @@ function isExcludedRow(row) {
 function renderFavoriteToggle(row) {
   if (!favoriteToggleButton) return;
   const active = isFavoriteRow(row);
-  favoriteToggleButton.disabled = !row;
+  favoriteToggleButton.disabled = !row || !canCurrentUserEdit();
   favoriteToggleButton.textContent = active ? "♥" : "♡";
   favoriteToggleButton.classList.toggle("is-active", active);
   favoriteToggleButton.setAttribute("aria-pressed", active ? "true" : "false");
@@ -881,6 +891,7 @@ function renderFavoriteToggle(row) {
 }
 
 function handleFavoriteToggle() {
+  if (!canCurrentUserEdit()) return;
   const row = state.selectedRow;
   if (!row?.reviewKey) return;
   const key = row.reviewKey;
@@ -905,7 +916,7 @@ function handleFavoriteToggle() {
 function renderExcludeToggle(row) {
   if (!excludeToggleButton) return;
   const active = isExcludedRow(row);
-  excludeToggleButton.disabled = !row;
+  excludeToggleButton.disabled = !row || !canCurrentUserEdit();
   excludeToggleButton.textContent = active ? "♥" : "♡";
   excludeToggleButton.classList.toggle("is-excluded", active);
   excludeToggleButton.setAttribute("aria-pressed", active ? "true" : "false");
@@ -914,6 +925,7 @@ function renderExcludeToggle(row) {
 }
 
 function handleExcludeToggle() {
+  if (!canCurrentUserEdit()) return;
   const row = state.selectedRow;
   if (!row?.reviewKey) return;
   const key = row.reviewKey;
@@ -1024,6 +1036,157 @@ function writeLocalObject(key, value) {
   }
 }
 
+function readBackupMeta() {
+  return readLocalObject("toyota-esthe-backup-meta");
+}
+
+function getSyncUserLabel(user = state.sharedSync.user) {
+  if (!user) return "";
+  return user.displayName || user.email || "Google";
+}
+
+function getConfiguredEditorEmails() {
+  const values = Array.isArray(window.firebaseAppConfig?.editorEmails) ? window.firebaseAppConfig.editorEmails : [];
+  return values.map((value) => String(value || "").trim().toLowerCase()).filter(Boolean);
+}
+
+function getConfiguredEditorUids() {
+  const values = Array.isArray(window.firebaseAppConfig?.editorUids) ? window.firebaseAppConfig.editorUids : [];
+  return values.map((value) => String(value || "").trim()).filter(Boolean);
+}
+
+function canCurrentUserEdit() {
+  if (!state.sharedSync.enabled) return true;
+  if (!state.sharedSync.user) return false;
+
+  const emailRules = getConfiguredEditorEmails();
+  const uidRules = getConfiguredEditorUids();
+  if (!emailRules.length && !uidRules.length) return true;
+
+  const email = String(state.sharedSync.user.email || "").trim().toLowerCase();
+  const uid = String(state.sharedSync.user.uid || "").trim();
+  return emailRules.includes(email) || uidRules.includes(uid);
+}
+
+function formatSharedTimestamp(value) {
+  let date = null;
+  if (!value) return "";
+  if (typeof value?.toDate === "function") {
+    date = value.toDate();
+  } else {
+    date = new Date(value);
+  }
+  if (!date || Number.isNaN(date.getTime())) return "";
+  return new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+}
+
+function getLatestSharedMeta() {
+  const metas = Object.values(state.sharedSync.documentsMeta || {}).filter(Boolean);
+  if (!metas.length) return null;
+
+  return metas.reduce((latest, current) => {
+    const latestTime = latest?.updatedAt && typeof latest.updatedAt?.toDate === "function"
+      ? latest.updatedAt.toDate().getTime()
+      : new Date(latest?.updatedAt || 0).getTime();
+    const currentTime = current?.updatedAt && typeof current.updatedAt?.toDate === "function"
+      ? current.updatedAt.toDate().getTime()
+      : new Date(current?.updatedAt || 0).getTime();
+    return currentTime > latestTime ? current : latest;
+  }, null);
+}
+
+function renderSyncMeta() {
+  if (!syncMetaText) return;
+
+  const latest = getLatestSharedMeta();
+  const sharedText = latest
+    ? `最後の共有更新: ${latest.updatedByName || latest.updatedByEmail || "不明"} / ${formatSharedTimestamp(latest.updatedAt) || "時刻不明"}`
+    : (state.sharedSync.enabled ? "まだ共有更新はありません。" : "共有設定後に、更新した人と時刻をここに表示します。");
+
+  const backupText = state.sharedSync.lastBackupAt
+    ? `バックアップ: ${formatSharedTimestamp(state.sharedSync.lastBackupAt)}`
+    : "バックアップ: まだありません";
+
+  syncMetaText.textContent = `${sharedText} / ${backupText}`;
+}
+
+function renderEditingAccess() {
+  const canEdit = canCurrentUserEdit();
+  const sharedEnabled = state.sharedSync.enabled;
+  const loggedIn = Boolean(state.sharedSync.user);
+
+  if (reviewStorageNote) {
+    if (!sharedEnabled) {
+      reviewStorageNote.textContent = "このブラウザ内に保存";
+    } else if (!loggedIn) {
+      reviewStorageNote.textContent = "ログインすると共有・編集できます";
+    } else if (canEdit) {
+      reviewStorageNote.textContent = "Google共有で保存";
+    } else {
+      reviewStorageNote.textContent = "共有中 / 閲覧のみ";
+    }
+  }
+
+  if (editAccessText) {
+    let text = "";
+    if (!sharedEnabled) {
+      text = "この端末で編集できます";
+    } else if (!loggedIn) {
+      text = "閲覧のみ / Googleログインで編集できます";
+    } else if (canEdit) {
+      text = "編集できます";
+    } else {
+      text = "閲覧のみ";
+    }
+    editAccessText.textContent = text;
+    editAccessText.classList.toggle("is-readonly", sharedEnabled && !canEdit);
+  }
+}
+
+function buildBackupSnapshot() {
+  return {
+    savedAt: new Date().toISOString(),
+    savedBy: getSyncUserLabel() || "local",
+    rowsUpdatedAt: window.storeMeta?.lastUpdatedAt || "",
+    reviewsByStore: clonePlainObject(state.reviewsByStore),
+    storeProfilesByKey: clonePlainObject(state.storeProfilesByKey),
+    favoritesByStore: clonePlainObject(state.favoritesByStore),
+    excludedByStore: clonePlainObject(state.excludedByStore),
+  };
+}
+
+function persistSafetyBackup(reason = "auto") {
+  const snapshot = buildBackupSnapshot();
+  writeLocalObject("toyota-esthe-safety-backup", snapshot);
+  writeLocalObject("toyota-esthe-backup-meta", {
+    savedAt: snapshot.savedAt,
+    savedBy: snapshot.savedBy,
+    reason,
+  });
+  state.sharedSync.lastBackupAt = snapshot.savedAt;
+  renderSyncMeta();
+  return snapshot;
+}
+
+function handleBackupExport() {
+  const snapshot = persistSafetyBackup("manual");
+  const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `esthe-backup-${snapshot.savedAt.replace(/[:.]/g, "-")}.json`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
 function clonePlainObject(value) {
   return JSON.parse(JSON.stringify(value || {}));
 }
@@ -1063,6 +1226,8 @@ function initSharedSync() {
       state.sharedSync.user = user || null;
       resetSharedListeners();
       renderSyncStatus();
+      renderEditingAccess();
+      renderSelectedStore();
       if (user) {
         startSharedListeners();
       }
@@ -1074,6 +1239,8 @@ function initSharedSync() {
   }
 
   renderSyncStatus();
+  renderEditingAccess();
+  renderSyncMeta();
 }
 
 function renderSyncStatus() {
@@ -1103,14 +1270,16 @@ function renderSyncStatus() {
   if (state.sharedSync.user) {
     const label = state.sharedSync.user.displayName || state.sharedSync.user.email || "Google";
     syncStatusText.textContent = `${label} と共有中`;
-    syncAuthButton.textContent = "共有を切る";
+    syncAuthButton.textContent = "ログアウト";
     syncAuthButton.disabled = false;
+    renderSyncMeta();
     return;
   }
 
   syncStatusText.textContent = "Googleで共有できます";
-  syncAuthButton.textContent = state.sharedSync.signingIn ? "接続中..." : "Googleで共有";
+  syncAuthButton.textContent = state.sharedSync.signingIn ? "接続中..." : "Googleでログイン";
   syncAuthButton.disabled = state.sharedSync.signingIn;
+  renderSyncMeta();
 }
 
 async function handleSyncAuthClick() {
@@ -1192,13 +1361,23 @@ function attachSharedDocument(docId, localData, applyRemote) {
           payload: seed,
           updatedAt: window.firebase.firestore.FieldValue.serverTimestamp(),
           updatedBy: state.sharedSync.user?.uid || "",
+          updatedByName: getSyncUserLabel(),
+          updatedByEmail: state.sharedSync.user?.email || "",
         });
       }
       return;
     }
 
-    const payload = snapshot.data()?.payload;
+    const snapshotData = snapshot.data() || {};
+    state.sharedSync.documentsMeta[docId] = {
+      updatedAt: snapshotData.updatedAt || null,
+      updatedByName: snapshotData.updatedByName || "",
+      updatedByEmail: snapshotData.updatedByEmail || "",
+    };
+    renderSyncMeta();
+    const payload = snapshotData.payload;
     applyRemote(payload && typeof payload === "object" ? payload : {});
+    persistSafetyBackup("shared-sync");
   });
 
   state.sharedSync.unsubscribers.push(unsubscribe);
@@ -1211,6 +1390,8 @@ function saveSharedDocument(docId, data) {
     payload: clonePlainObject(data),
     updatedAt: window.firebase.firestore.FieldValue.serverTimestamp(),
     updatedBy: state.sharedSync.user.uid,
+    updatedByName: getSyncUserLabel(),
+    updatedByEmail: state.sharedSync.user.email || "",
   });
 }
 
@@ -1221,6 +1402,7 @@ function readReviews() {
 function writeReviews() {
   writeLocalObject("toyota-esthe-reviews", state.reviewsByStore);
   saveSharedDocument("reviews", state.reviewsByStore);
+  persistSafetyBackup("reviews");
 }
 
 function readStoreProfiles() {
@@ -1230,6 +1412,7 @@ function readStoreProfiles() {
 function writeStoreProfiles() {
   writeLocalObject("toyota-esthe-store-profiles", state.storeProfilesByKey);
   saveSharedDocument("storeProfiles", state.storeProfilesByKey);
+  persistSafetyBackup("storeProfiles");
 }
 
 function readFavorites() {
@@ -1239,6 +1422,7 @@ function readFavorites() {
 function writeFavorites() {
   writeLocalObject("toyota-esthe-favorites", state.favoritesByStore);
   saveSharedDocument("favorites", state.favoritesByStore);
+  persistSafetyBackup("favorites");
 }
 
 function readExcluded() {
@@ -1248,6 +1432,7 @@ function readExcluded() {
 function writeExcluded() {
   writeLocalObject("toyota-esthe-excluded", state.excludedByStore);
   saveSharedDocument("excluded", state.excludedByStore);
+  persistSafetyBackup("excluded");
 }
 
 function getStoreProfile(row) {
@@ -1314,28 +1499,29 @@ function hasStoreProfileContent(profile) {
 }
 
 function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
+  const canEdit = canCurrentUserEdit();
   storeProfileToolbar?.classList.toggle("is-hidden", !hasRow);
-  storeProfilePanel?.classList.toggle("is-hidden", !hasRow || !isEditing);
-  storeProfileActions?.classList.toggle("is-hidden", !hasRow || !isEditing);
+  storeProfilePanel?.classList.toggle("is-hidden", !hasRow || !isEditing || !canEdit);
+  storeProfileActions?.classList.toggle("is-hidden", !hasRow || !isEditing || !canEdit);
 
   [storeAddressInput, storeNoteInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
     if (!element) return;
-    element.disabled = !hasRow || !isEditing;
+    element.disabled = !hasRow || !isEditing || !canEdit;
   });
 
   if (storeProfileSaveButton) {
-    storeProfileSaveButton.disabled = !hasRow || !isEditing;
+    storeProfileSaveButton.disabled = !hasRow || !isEditing || !canEdit;
   }
 
   if (storeProfileEditButton) {
-    storeProfileEditButton.disabled = !hasRow;
-    storeProfileEditButton.textContent = isEditing ? "編集中" : "店舗情報を編集";
+    storeProfileEditButton.disabled = !hasRow || !canEdit;
+    storeProfileEditButton.textContent = !canEdit ? "閲覧専用" : (isEditing ? "編集中" : "店舗情報を編集");
     storeProfileEditButton.setAttribute("aria-expanded", hasRow && isEditing ? "true" : "false");
   }
 }
 
 function handleStoreProfileSave() {
-  if (!state.selectedRow) return;
+  if (!state.selectedRow || !canCurrentUserEdit()) return;
 
   const profile = {
     address: normalizeAddressValue(storeAddressInput?.value || ""),
@@ -1370,20 +1556,22 @@ function handleStoreProfileSave() {
 }
 
 function handleStoreProfileEdit() {
-  if (!state.selectedRow) return;
+  if (!state.selectedRow || !canCurrentUserEdit()) return;
   setStoreProfileEditing(true, true);
   storeAddressInput?.focus();
 }
 
 function setReviewEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
-  reviewForm?.classList.toggle("is-hidden", !hasRow || !isEditing);
+  const canEdit = canCurrentUserEdit();
+  reviewForm?.classList.toggle("is-hidden", !hasRow || !isEditing || !canEdit);
   if (reviewToggleButton) {
-    reviewToggleButton.disabled = !hasRow;
+    reviewToggleButton.disabled = !hasRow || !canEdit;
+    reviewToggleButton.textContent = !canEdit ? "閲覧専用" : "レビューを書く";
   }
 }
 
 function handleReviewToggle() {
-  if (!state.selectedRow) return;
+  if (!state.selectedRow || !canCurrentUserEdit()) return;
   setReviewEditing(true, true);
   reviewVisitDateInput?.focus();
 }
@@ -1509,7 +1697,7 @@ function renderReviewItem(review, reviewKey) {
 
 function handleReviewSubmit(event) {
   event.preventDefault();
-  if (!state.selectedRow) return;
+  if (!state.selectedRow || !canCurrentUserEdit()) return;
 
   const author = reviewAuthorInput.value.trim();
   const comment = reviewCommentInput.value.trim();
@@ -1583,6 +1771,7 @@ function handleReviewSubmit(event) {
 }
 
 function handleReviewDelete(event) {
+  if (!canCurrentUserEdit()) return;
   const button = event.target.closest("[data-review-id]");
   if (!button) return;
 
@@ -2109,6 +2298,7 @@ function openMarkerInfoWindow(map, infoWindow, marker, row) {
 
 function renderMarkerInfoContent(row) {
   const profile = getStoreProfile(row);
+  const canEdit = canCurrentUserEdit();
   const phoneHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
@@ -2127,8 +2317,11 @@ function renderMarkerInfoContent(row) {
   const phoneSearchHtml = row.phone
     ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">番号検索</a>`
     : "";
-  const favoriteButtonHtml = `<button type="button" data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${isFavoriteRow(row) ? "確認済み解除" : "確認済み"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(78, 203, 255, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(78, 203, 255, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#26aee8" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
-  const excludeButtonHtml = `<button type="button" data-marker-action="exclude" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isExcludedRow(row) ? "true" : "false"}" title="${isExcludedRow(row) ? "除外解除" : "除外"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isExcludedRow(row) ? "rgba(170,170,178,0.5)" : "rgba(194,24,91,0.18)"};background:${isExcludedRow(row) ? "rgba(255,255,255,0.06)" : "#fff7fb"};color:${isExcludedRow(row) ? "#1d1d1f" : "#c2185b"};text-decoration:none;font-weight:700;cursor:pointer;">${isExcludedRow(row) ? "♥" : "♡"}</button>`;
+  const sharedButtonState = canEdit ? "" : "disabled";
+  const sharedCursor = canEdit ? "pointer" : "default";
+  const sharedOpacity = canEdit ? "1" : "0.5";
+  const favoriteButtonHtml = `<button type="button" ${sharedButtonState} data-marker-action="favorite" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isFavoriteRow(row) ? "true" : "false"}" title="${canEdit ? (isFavoriteRow(row) ? "確認済み解除" : "確認済み") : "閲覧専用"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isFavoriteRow(row) ? "rgba(78, 203, 255, 0.55)" : "rgba(194,24,91,0.18)"};background:${isFavoriteRow(row) ? "rgba(78, 203, 255, 0.14)" : "#fff7fb"};color:${isFavoriteRow(row) ? "#26aee8" : "#c2185b"};text-decoration:none;font-weight:700;cursor:${sharedCursor};opacity:${sharedOpacity};">${isFavoriteRow(row) ? "♥" : "♡"}</button>`;
+  const excludeButtonHtml = `<button type="button" ${sharedButtonState} data-marker-action="exclude" data-review-key="${escapeHtml(row.reviewKey || "")}" aria-pressed="${isExcludedRow(row) ? "true" : "false"}" title="${canEdit ? (isExcludedRow(row) ? "除外解除" : "除外") : "閲覧専用"}" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid ${isExcludedRow(row) ? "rgba(170,170,178,0.5)" : "rgba(194,24,91,0.18)"};background:${isExcludedRow(row) ? "rgba(255,255,255,0.06)" : "#fff7fb"};color:${isExcludedRow(row) ? "#1d1d1f" : "#c2185b"};text-decoration:none;font-weight:700;cursor:${sharedCursor};opacity:${sharedOpacity};">${isExcludedRow(row) ? "♥" : "♡"}</button>`;
   const actionsHtml = [favoriteButtonHtml, excludeButtonHtml].filter(Boolean).join("");
 
   return `
