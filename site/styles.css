@@ -682,10 +682,14 @@ select {
 }
 
 .selected-review-summary {
-  margin: 4px 0 0;
+  margin: 1px 0 0;
   color: var(--accent-strong);
   font-size: 14px;
   line-height: 1.6;
+}
+
+.selected-review-summary:empty {
+  display: none;
 }
 
 .selected-store {

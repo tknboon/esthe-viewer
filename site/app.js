@@ -2170,7 +2170,7 @@ function getLatestReview(row) {
 function renderReviewSummaryText(row) {
   const reviews = getReviewsForRow(row);
   if (!reviews.length) {
-    return "レビューはまだありません。";
+    return "";
   }
 
   const average = reviews.reduce((sum, review) => sum + (review.overallRating || 0), 0) / reviews.length;
