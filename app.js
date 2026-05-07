@@ -670,12 +670,16 @@ function findStoredProfileByHistoryLabel(label) {
   const [rawName, rawStation = ""] = text.split("/");
   const normalizedName = normalizeHistoryComparableText(rawName);
   const normalizedStation = normalizeHistoryComparableText(rawStation);
+  let nameOnlyMatch = null;
 
   for (const [reviewKey, profile] of Object.entries(state.storeProfilesByKey || {})) {
     if (!hasStoreProfileContent(profile)) continue;
     const profileName = normalizeHistoryComparableText(profile.storeName || "");
     const profileStation = normalizeHistoryComparableText(profile.storeStation || "");
     if (!profileName || profileName !== normalizedName) continue;
+    if (!nameOnlyMatch) {
+      nameOnlyMatch = { reviewKey, profile };
+    }
     if (
       !normalizedStation ||
       !profileStation ||
@@ -687,7 +691,7 @@ function findStoredProfileByHistoryLabel(label) {
     }
   }
 
-  return null;
+  return nameOnlyMatch;
 }
 
 function getHistoryTagAccentClass(label, modifier) {
