@@ -1856,8 +1856,20 @@ function writeExcluded() {
 function getStoreProfile(row) {
   if (!row) return null;
   const profileKey = getStoreProfileStorageKey(row);
+  if (row.isRoomVariant) {
+    return state.storeProfilesByKey[profileKey] || null;
+  }
   const baseKey = getBaseStoreProfileKey(row);
   return state.storeProfilesByKey[profileKey] || state.storeProfilesByKey[baseKey] || null;
+}
+
+function getInheritedStoreProfile(row) {
+  if (!row) return null;
+  const directProfile = getStoreProfile(row);
+  if (directProfile) return directProfile;
+  if (!row.isRoomVariant) return null;
+  const baseKey = getBaseStoreProfileKey(row);
+  return state.storeProfilesByKey[baseKey] || null;
 }
 
 function getActiveRowByReviewKey(reviewKey) {
@@ -2015,7 +2027,7 @@ function applyProfileLocationToRow(row) {
 }
 
 function renderStoreProfileInputs(row) {
-  const profile = getStoreProfile(row) || {};
+  const profile = getInheritedStoreProfile(row) || {};
   if (storeAddressInput) storeAddressInput.value = profile.address || "";
   if (storeNoteInput) storeNoteInput.value = profile.note || "";
   if (storeSmsInput) storeSmsInput.value = profile.sms || "";
