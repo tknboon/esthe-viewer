@@ -1440,6 +1440,47 @@ function getStoreProfile(row) {
   return state.storeProfilesByKey[row.reviewKey] || null;
 }
 
+function getActiveRowByReviewKey(reviewKey) {
+  return state.rows.find((row) => row.reviewKey === reviewKey) || null;
+}
+
+function buildArchivedProfileRow(reviewKey, profile) {
+  const latestReview = getReviewsForKey(reviewKey)[0] || null;
+  const listingUrl = profile.listingUrl || latestReview?.listingUrl || "";
+  const officialUrl = window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
+  const name = profile.storeName || latestReview?.storeName || "掲載終了した店舗";
+  const station = profile.storeStation || latestReview?.storeStation || "";
+  const fallbackLocation = latestReview?.storeLocation || station || name;
+  const baseLocationQuery = buildLocationQuery(name, station, profile.address || fallbackLocation, profile.note || "");
+
+  const row = {
+    id: `archived-profile-${reviewKey}`,
+    reviewKey,
+    name,
+    station,
+    location: profile.address || fallbackLocation,
+    latitude: "",
+    longitude: "",
+    listingUrl,
+    officialUrl,
+    notes: "",
+    phone: "",
+    hours: "",
+    municipality: "",
+    municipalityLabels: [],
+    hasCoordinates: false,
+    baseLatLng: null,
+    latLng: null,
+    baseLocationQuery,
+    locationQuery: baseLocationQuery,
+    mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(baseLocationQuery)}`,
+    isArchivedStore: true,
+  };
+
+  applyProfileLocationToRow(row);
+  return row;
+}
+
 function applyProfileLocationToRow(row) {
   if (!row) return;
 
@@ -2105,7 +2146,12 @@ function syncMapWithFilters() {
 }
 
 function getProfiledRows() {
-  return state.rows.filter((row) => hasStoreProfileContent(getStoreProfile(row)));
+  const activeRows = state.rows.filter((row) => hasStoreProfileContent(getStoreProfile(row)));
+  const archivedRows = Object.entries(state.storeProfilesByKey)
+    .filter(([reviewKey, profile]) => hasStoreProfileContent(profile) && !getActiveRowByReviewKey(reviewKey))
+    .map(([reviewKey, profile]) => buildArchivedProfileRow(reviewKey, profile));
+
+  return [...activeRows, ...archivedRows];
 }
 
 function syncProfileMap() {
