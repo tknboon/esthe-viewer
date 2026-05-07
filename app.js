@@ -1250,8 +1250,7 @@ function renderSelectedStore() {
   }
 
   selectedStoreName.innerHTML = renderDisplayStoreNameHtml(state.selectedRow);
-  const selectedDomainGroup = getDomainGroupFromUrl(state.selectedRow.officialUrl);
-  selectedStoreMeta.textContent = selectedDomainGroup ? `ドメイン系統: ${selectedDomainGroup}` : "";
+  selectedStoreMeta.textContent = "";
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
   renderFavoriteToggle(state.selectedRow);
   renderExcludeToggle(state.selectedRow);
@@ -1555,18 +1554,8 @@ function renderEditingAccess() {
   }
 
   if (editAccessText) {
-    let text = "";
-    if (!sharedEnabled) {
-      text = "この端末で編集できます";
-    } else if (!loggedIn) {
-      text = "閲覧のみ / Googleログインで編集できます";
-    } else if (canEdit) {
-      text = "編集できます";
-    } else {
-      text = "閲覧のみ";
-    }
-    editAccessText.textContent = text;
-    editAccessText.classList.toggle("is-readonly", sharedEnabled && !canEdit);
+    editAccessText.textContent = "";
+    editAccessText.classList.remove("is-readonly");
   }
 }
 
