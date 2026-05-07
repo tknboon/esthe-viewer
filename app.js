@@ -31,6 +31,8 @@
     db: null,
     auth: null,
     unsubscribers: [],
+    statusMode: "local",
+    errorMessage: "",
   },
 };
 
@@ -1032,6 +1034,10 @@ function initSharedSync() {
   const hasRequiredConfig = Boolean(config.enabled && config.apiKey && config.authDomain && config.projectId && config.appId);
 
   if (!hasRequiredConfig || !firebaseAvailable) {
+    state.sharedSync.statusMode = config.enabled ? "unavailable" : "local";
+    state.sharedSync.errorMessage = !config.enabled
+      ? ""
+      : (!firebaseAvailable ? "Firebaseの読み込み待ちです" : "Firebase設定が不足しています");
     renderSyncStatus();
     return;
   }
@@ -1050,6 +1056,8 @@ function initSharedSync() {
     state.sharedSync.auth = app.auth();
     state.sharedSync.db = app.firestore();
     state.sharedSync.authReady = true;
+    state.sharedSync.statusMode = "ready";
+    state.sharedSync.errorMessage = "";
 
     state.sharedSync.auth.onAuthStateChanged((user) => {
       state.sharedSync.user = user || null;
@@ -1061,6 +1069,8 @@ function initSharedSync() {
     });
   } catch (error) {
     console.error(error);
+    state.sharedSync.statusMode = "error";
+    state.sharedSync.errorMessage = error?.message || "Firebase初期化に失敗しました";
   }
 
   renderSyncStatus();
@@ -1070,6 +1080,20 @@ function renderSyncStatus() {
   if (!syncStatusText || !syncAuthButton) return;
 
   if (!state.sharedSync.enabled) {
+    if (state.sharedSync.statusMode === "unavailable") {
+      syncStatusText.textContent = state.sharedSync.errorMessage || "Firebaseの準備待ちです";
+      syncAuthButton.textContent = "再読み込み後に共有";
+      syncAuthButton.disabled = true;
+      return;
+    }
+
+    if (state.sharedSync.statusMode === "error") {
+      syncStatusText.textContent = "共有の準備で止まっています";
+      syncAuthButton.textContent = "設定を確認";
+      syncAuthButton.disabled = true;
+      return;
+    }
+
     syncStatusText.textContent = "この端末内に保存";
     syncAuthButton.textContent = "共有を設定";
     syncAuthButton.disabled = true;

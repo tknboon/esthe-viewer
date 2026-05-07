@@ -1,8 +1,8 @@
 window.firebaseAppConfig = {
-  // Firebase を使い始めるときは true に変えます。
-  enabled: false,
+  // Firebase 共有を有効にする
+  enabled: true,
 
-  // Firebase コンソールで Web アプリを登録すると表示される値を入れます。
+  // Firebase コンソールで表示された Web アプリの設定値
   apiKey: "AIzaSyCbmczCLf6I5QGnitzdWGCmPh1ksyCJwWw",
   authDomain: "esthe-viewer.firebaseapp.com",
   projectId: "esthe-viewer",
