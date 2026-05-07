@@ -430,6 +430,18 @@ function getDisplayStoreName(row) {
   return row.name;
 }
 
+function renderDisplayStoreNameHtml(row) {
+  const displayName = getDisplayStoreName(row);
+  if (!displayName) return "";
+  if (row?.isArchivedStore) {
+    const match = displayName.match(/^(【閉店[^】]*】)(.*)$/);
+    if (match) {
+      return `${escapeHtml(match[1])}<br>${escapeHtml(match[2])}`;
+    }
+  }
+  return escapeHtml(displayName);
+}
+
 function findStoredProfileByHistoryLabel(label) {
   const text = String(label || "").trim();
   if (!text) return null;
@@ -1012,7 +1024,7 @@ function renderSelectedStore() {
     return;
   }
 
-  selectedStoreName.textContent = getDisplayStoreName(state.selectedRow);
+  selectedStoreName.innerHTML = renderDisplayStoreNameHtml(state.selectedRow);
   const selectedDomainGroup = getDomainGroupFromUrl(state.selectedRow.officialUrl);
   selectedStoreMeta.textContent = selectedDomainGroup ? `ドメイン系統: ${selectedDomainGroup}` : "";
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
@@ -2596,7 +2608,7 @@ function renderMarkerInfoContent(row) {
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
-      <div style="font-weight:700;font-size:14px;">${escapeHtml(getDisplayStoreName(row))}${officialHtml}${mapLinkHtml}</div>
+      <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}${phoneSearchHtml}</div>
       ${notesHtml}
