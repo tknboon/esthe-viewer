@@ -168,6 +168,34 @@ const STATION_GROUP_REGIONS = new Set([
   "showa",
 ]);
 
+const RECOVERED_REMOVED_HISTORY = {
+  "2026-05-07": [
+    "セクシ一誘惑/東海通駅",
+    "ながれぼし/下地駅",
+    "マロージュ/東刈谷駅",
+    "ゆだねて/中京競馬場前駅",
+    "ゆりかご/味美駅",
+    "ラブリボン/奥町駅",
+    "甘い恋人/北安城駅・大門駅・上挙母駅・富士松駅",
+    "気楽/志賀本通駅",
+    "極楽ベビー/名古屋駅",
+    "幸せサロン/稲荷口駅・下地駅・三河大塚駅",
+    "港香 （ホンカ）/小牧駅",
+    "今夜の香り/太閤通駅",
+    "柔らかな月/一社駅",
+    "女神の部屋/西一宮駅・永和駅",
+    "小魔女/佐古木駅・木曽川駅",
+    "天使の薔薇/船町駅・牛久保駅・三河大塚駅",
+    "冬の恋人/豊橋駅・豊川稲荷駅",
+    "猫猫love/国府駅・下地駅",
+    "熱い恋愛/羽黒駅",
+    "萌え（もえ）/三好ヶ丘駅・竹村駅",
+    "魔女の手/甚目寺駅",
+    "夢心地（ゆめごこち）/小坂井駅",
+    "妖艶ガール/上挙母駅・黑笹駅・安城駅",
+  ],
+};
+
 init();
 
 function init() {
@@ -231,11 +259,14 @@ function renderLastUpdated() {
 function renderUpdateHistory() {
   if (!dailyUpdateHistory) return;
 
-  const history = (Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : []).filter((entry) => {
-    const added = Array.isArray(entry?.added) ? entry.added : [];
-    const removed = Array.isArray(entry?.removed) ? entry.removed : [];
-    return added.length || removed.length;
-  });
+  const history = (Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [])
+    .map(normalizeHistoryEntry)
+    .filter((entry) => {
+      const added = Array.isArray(entry?.added) ? entry.added : [];
+      const removed = Array.isArray(entry?.removed) ? entry.removed : [];
+      return added.length || removed.length;
+    });
+
   const stationLookup = buildHistoryStationLookup();
 
   if (!history.length) {
@@ -261,6 +292,37 @@ function renderUpdateHistory() {
       `;
     })
     .join("");
+}
+
+function normalizeHistoryEntry(entry) {
+  const dayKey = entry?.dayKey || "";
+  const fallbackRemoved = RECOVERED_REMOVED_HISTORY[dayKey] || [];
+  const added = uniqueStrings(Array.isArray(entry?.added) ? entry.added : []);
+  let removed = uniqueStrings(Array.isArray(entry?.removed) ? entry.removed : []);
+
+  if (fallbackRemoved.length) {
+    removed = uniqueStrings([...removed, ...fallbackRemoved]);
+  }
+
+  return {
+    ...entry,
+    added,
+    removed,
+  };
+}
+
+function uniqueStrings(values) {
+  const seen = new Set();
+  const results = [];
+
+  for (const value of values || []) {
+    const text = String(value || "").trim();
+    if (!text || seen.has(text)) continue;
+    seen.add(text);
+    results.push(text);
+  }
+
+  return results;
 }
 
 function buildHistoryStationLookup() {
@@ -328,7 +390,41 @@ function hasPreciseRoomLocation(row) {
 function getExplicitRoomLocations(row) {
   if (!row?.listingUrl) return [];
   const locations = window.storeMeta?.roomLocationsByListingUrl?.[row.listingUrl];
-  return Array.isArray(locations) ? locations : [];
+  if (!Array.isArray(locations)) return [];
+  return normalizeExplicitRoomLocations(row, locations);
+}
+
+function normalizeExplicitRoomLocations(row, locations) {
+  const stationTokens = splitStationTokens(row?.station || "");
+  if (locations.length <= 1 || stationTokens.length <= 1) {
+    return locations;
+  }
+
+  const remainingTokens = [...stationTokens];
+  return locations.map((location) => {
+    const haystack = normalizeHistoryComparableText(
+      [location?.label, location?.address, location?.note].filter(Boolean).join(" ")
+    );
+    let matchedIndex = remainingTokens.findIndex((token) => {
+      const normalizedToken = normalizeRoomToken(token);
+      return normalizedToken && haystack.includes(normalizedToken);
+    });
+
+    if (matchedIndex < 0) {
+      const normalizedLabel = normalizeRoomToken(location?.label || "");
+      matchedIndex = remainingTokens.findIndex((token) => normalizeRoomToken(token) === normalizedLabel);
+    }
+
+    if (matchedIndex < 0) {
+      matchedIndex = 0;
+    }
+
+    const resolvedLabel = remainingTokens.splice(matchedIndex, 1)[0] || location?.label || row?.station || "";
+    return {
+      ...location,
+      label: resolvedLabel,
+    };
+  });
 }
 
 function normalizeRoomToken(value) {

@@ -461,11 +461,13 @@ function extractRoomLocations(html, store) {
 
   const stationTokens = splitStationLabelTokens(store?.station || "");
   const remainingTokens = [...stationTokens];
-  const chunks = normalizedHtml.split('<div class="borderbox map-area">').slice(1);
+  const chunks = [...normalizedHtml.matchAll(
+    /<div class="borderbox map-area">[\s\S]*?(?=<div class="borderbox map-area">|<div class="margin-bottom-10 pc-header-spacer clear-none" id="tky"|<div class="second">|<!--\s*東京マップ|$)/g
+  )].map((match) => match[0]);
   const rooms = [];
 
   for (const chunk of chunks) {
-    const block = `<div class="borderbox map-area">${chunk}`;
+    const block = chunk;
     const text = htmlToText(block);
     const lines = text.split("\n").map((line) => compactText(line)).filter(Boolean);
     const coordinates = extractCoordinates(block || text);
@@ -973,13 +975,26 @@ async function updateDailyHistory(fetchedAt, diff, previous) {
   const history = (await readJson(HISTORY_PATH)) || [];
   const dayKey = formatTokyoDayKey(fetchedAt);
   const shouldSuppressInitialAdded = Boolean(diff.added.length && ((diff.sourceAddedUrls || []).length || !previous));
+  const existing = history.find((item) => item.dayKey === dayKey) || null;
   const entry = {
     dayKey,
     fetchedAt,
-    added: shouldSuppressInitialAdded ? [] : diff.added,
-    removed: diff.removed,
-    suppressedAdded: shouldSuppressInitialAdded ? diff.added : [],
-    suppressedSourceUrls: shouldSuppressInitialAdded ? diff.sourceAddedUrls || [] : [],
+    added: uniqueStrings([
+      ...(existing?.added || []),
+      ...(shouldSuppressInitialAdded ? [] : diff.added),
+    ]),
+    removed: uniqueStrings([
+      ...(existing?.removed || []),
+      ...(diff.removed || []),
+    ]),
+    suppressedAdded: uniqueStrings([
+      ...(existing?.suppressedAdded || []),
+      ...(shouldSuppressInitialAdded ? diff.added : []),
+    ]),
+    suppressedSourceUrls: uniqueStrings([
+      ...(existing?.suppressedSourceUrls || []),
+      ...(shouldSuppressInitialAdded ? (diff.sourceAddedUrls || []) : []),
+    ]),
   };
 
   const nextHistory = history.filter((item) => item.dayKey !== dayKey);
@@ -987,6 +1002,10 @@ async function updateDailyHistory(fetchedAt, diff, previous) {
   const trimmedHistory = nextHistory.slice(0, 31);
   await fs.writeFile(HISTORY_PATH, JSON.stringify(trimmedHistory, null, 2), "utf8");
   return trimmedHistory;
+}
+
+function uniqueStrings(values) {
+  return [...new Set((values || []).filter(Boolean))];
 }
 
 function formatTokyoDayKey(value) {
