@@ -310,6 +310,84 @@ function stationTokensOverlap(left, right) {
   );
 }
 
+function hasPreciseRoomLocation(row) {
+  if (!row) return false;
+  if (row.hasCoordinates) return true;
+  const location = String(row.location || "").trim();
+  if (!location) return false;
+  const normalizedLocation = normalizeHistoryComparableText(location);
+  const normalizedStation = normalizeHistoryComparableText(row.station || "");
+  if (!normalizedLocation) return false;
+  if (!normalizedStation) return true;
+  return !stationTokensOverlap(location, row.station || "") && normalizedLocation !== normalizedStation;
+}
+
+function choosePrimaryStationToken(row, tokens) {
+  if (!Array.isArray(tokens) || !tokens.length) return "";
+  if (!row) return tokens[0] || "";
+  const haystack = normalizeHistoryComparableText([row.location, row.notes].filter(Boolean).join(" "));
+  if (!haystack) return tokens[0] || "";
+
+  const matched = tokens.find((token) => {
+    const normalizedToken = normalizeHistoryComparableText(token);
+    if (!normalizedToken) return false;
+    return haystack.includes(normalizedToken);
+  });
+
+  return matched || tokens[0] || "";
+}
+
+function buildRoomLocationQuery(row, stationToken) {
+  return buildLocationQuery(row.name, stationToken, stationToken, row.notes);
+}
+
+function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
+  const baseId = `${row.id}__room-${index}`;
+  const variant = {
+    ...row,
+    id: baseId,
+    station: stationToken,
+    roomStation: stationToken,
+    roomIndex: index,
+    isRoomVariant: true,
+  };
+
+  const shouldUsePrimaryLocation = hasPreciseRoomLocation(row) && stationToken === primaryStationToken;
+  if (shouldUsePrimaryLocation) {
+    return variant;
+  }
+
+  const roomLocationQuery = buildRoomLocationQuery(row, stationToken);
+  const cachedRoomLatLng = state.geocodeCache[roomLocationQuery] || null;
+  variant.location = stationToken;
+  variant.latitude = "";
+  variant.longitude = "";
+  variant.hasCoordinates = false;
+  variant.baseLatLng = cachedRoomLatLng;
+  variant.latLng = cachedRoomLatLng;
+  variant.baseLocationQuery = roomLocationQuery;
+  variant.locationQuery = roomLocationQuery;
+  variant.mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(roomLocationQuery)}`;
+  return variant;
+}
+
+function expandRowsForMap(rows) {
+  const expanded = [];
+  for (const row of rows || []) {
+    const stationTokens = splitStationTokens(row?.station || "");
+    if (stationTokens.length <= 1) {
+      expanded.push(row);
+      continue;
+    }
+
+    const primaryStationToken = choosePrimaryStationToken(row, stationTokens);
+    stationTokens.forEach((token, index) => {
+      expanded.push(createRoomVariantRow(row, token, index, primaryStationToken));
+    });
+  }
+  return expanded;
+}
+
 function findClosedDayKey(storeName, station) {
   const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
   const normalizedName = normalizeHistoryComparableText(storeName);
@@ -2235,8 +2313,9 @@ function runSyncMapWithFilters() {
   const bounds = new google.maps.LatLngBounds();
   let placedCount = 0;
   let pendingCount = 0;
+  const mapRows = expandRowsForMap(state.filteredRows);
 
-  for (const row of state.filteredRows) {
+  for (const row of mapRows) {
     const cached = row.latLng || state.geocodeCache[row.locationQuery];
     if (cached) {
       row.latLng = cached;
@@ -2258,7 +2337,7 @@ function runSyncMapWithFilters() {
   }
 
   if (pendingCount > 0 && statusText) {
-    statusText.textContent = `${state.filteredRows.length}件を表示中`;
+    statusText.textContent = `${mapRows.length}件を表示中`;
   }
 
   focusMarker(state.selectedRow);
@@ -2287,9 +2366,10 @@ function runSyncProfileMap() {
 
   clearProfileMarkers();
   const profiledRows = getProfiledRows();
-  if (profileMapCount) profileMapCount.textContent = `${profiledRows.length}件`;
+  const profileMapRows = expandRowsForMap(profiledRows);
+  if (profileMapCount) profileMapCount.textContent = `${profileMapRows.length}件`;
 
-  if (!profiledRows.length) {
+  if (!profileMapRows.length) {
     if (profileMapStatusText) {
       profileMapStatusText.textContent = "店舗情報を保存するとここに表示されます。";
     }
@@ -2300,7 +2380,7 @@ function runSyncProfileMap() {
   let placedCount = 0;
   let pendingCount = 0;
 
-  for (const row of profiledRows) {
+  for (const row of profileMapRows) {
     const cached = row.latLng || state.geocodeCache[row.locationQuery];
     if (cached) {
       row.latLng = cached;
@@ -2313,8 +2393,8 @@ function runSyncProfileMap() {
   }
 
   if (placedCount > 0) {
-    if (placedCount === 1 && profiledRows[0].latLng) {
-      state.profileMap.setCenter(profiledRows[0].latLng);
+    if (placedCount === 1 && profileMapRows[0].latLng) {
+      state.profileMap.setCenter(profileMapRows[0].latLng);
       state.profileMap.setZoom(15);
     } else {
       state.profileMap.fitBounds(bounds, 80);
@@ -2323,8 +2403,8 @@ function runSyncProfileMap() {
 
   if (profileMapStatusText) {
     profileMapStatusText.textContent = pendingCount > 0
-      ? `${profiledRows.length}件を表示中 / ${pendingCount}件の位置を補完中`
-      : `${profiledRows.length}件を表示中`;
+      ? `${profileMapRows.length}件を表示中 / ${pendingCount}件の位置を補完中`
+      : `${profileMapRows.length}件を表示中`;
   }
 }
 
