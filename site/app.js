@@ -217,6 +217,15 @@ const MANUAL_ROOM_LOCATION_OVERRIDES = {
       note: "マクドナルド一宮尾西店付近着きましたら電話してください。",
     },
   ],
+  "https://www.esthe-ranking.jp/toyota/shop-detail/36151484-fd68-4f6f-941f-360ff124a937/": [
+    {
+      label: "安城駅",
+      address: "35.027788136971594, 137.09918316798218",
+      latitude: "35.027788136971594",
+      longitude: "137.09918316798218",
+      note: "ドミスーパー着きましたら電話してください。",
+    },
+  ],
 };
 
 init();
@@ -2913,6 +2922,7 @@ function sanitizePopupNote(note) {
     /全国メンズエステランキング/i,
     /のアクセス/i,
     /エリアのアジアンエステ/i,
+    /^六本木・麻布十番$/,
   ];
 
   if (meaninglessPatterns.some((pattern) => pattern.test(text))) {
