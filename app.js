@@ -196,6 +196,25 @@ const RECOVERED_REMOVED_HISTORY = {
   ],
 };
 
+const MANUAL_ROOM_LOCATION_OVERRIDES = {
+  "https://www.esthe-ranking.jp/owari/shop-detail/f41d3134-7f58-450e-9c7e-ffe955f72138/": [
+    {
+      label: "木曽川駅",
+      address: "愛知県一宮市木曽川町黒田山1-2",
+      latitude: "",
+      longitude: "",
+      note: "フィットイージー 木曽川店付近着きましたらお電話してください。",
+    },
+    {
+      label: "奥町駅",
+      address: "35.31058761168509, 136.75743862450264",
+      latitude: "35.31058761168509",
+      longitude: "136.75743862450264",
+      note: "",
+    },
+  ],
+};
+
 init();
 
 function init() {
@@ -390,6 +409,10 @@ function hasPreciseRoomLocation(row) {
 
 function getExplicitRoomLocations(row) {
   if (!row?.listingUrl) return [];
+  const manualOverride = MANUAL_ROOM_LOCATION_OVERRIDES[row.listingUrl];
+  if (Array.isArray(manualOverride) && manualOverride.length) {
+    return manualOverride;
+  }
   const locations = window.storeMeta?.roomLocationsByListingUrl?.[row.listingUrl];
   if (!Array.isArray(locations)) return [];
   return normalizeExplicitRoomLocations(row, locations);
