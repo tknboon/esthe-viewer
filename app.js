@@ -292,6 +292,24 @@ function normalizeHistoryComparableText(value) {
     .trim();
 }
 
+function splitStationTokens(value) {
+  return String(value || "")
+    .split(/[・/／,，]/)
+    .map((part) => normalizeHistoryComparableText(part))
+    .filter(Boolean);
+}
+
+function stationTokensOverlap(left, right) {
+  const leftTokens = splitStationTokens(left);
+  const rightTokens = splitStationTokens(right);
+
+  if (!leftTokens.length || !rightTokens.length) return false;
+
+  return leftTokens.some((leftToken) =>
+    rightTokens.some((rightToken) => leftToken === rightToken || leftToken.includes(rightToken) || rightToken.includes(leftToken))
+  );
+}
+
 function findClosedDayKey(storeName, station) {
   const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
   const normalizedName = normalizeHistoryComparableText(storeName);
@@ -309,7 +327,12 @@ function findClosedDayKey(storeName, station) {
         nameOnlyFallback = entry.dayKey || "";
       }
       if (!normalizedStation) return entry.dayKey || "";
-      if (!itemStation || itemStation.includes(normalizedStation) || normalizedStation.includes(itemStation)) {
+      if (
+        !itemStation ||
+        itemStation.includes(normalizedStation) ||
+        normalizedStation.includes(itemStation) ||
+        stationTokensOverlap(itemStation, normalizedStation)
+      ) {
         return entry.dayKey || "";
       }
     }
@@ -344,7 +367,13 @@ function findStoredProfileByHistoryLabel(label) {
     const profileName = normalizeHistoryComparableText(profile.storeName || "");
     const profileStation = normalizeHistoryComparableText(profile.storeStation || "");
     if (!profileName || profileName !== normalizedName) continue;
-    if (!normalizedStation || !profileStation || profileStation.includes(normalizedStation) || normalizedStation.includes(profileStation)) {
+    if (
+      !normalizedStation ||
+      !profileStation ||
+      profileStation.includes(normalizedStation) ||
+      normalizedStation.includes(profileStation) ||
+      stationTokensOverlap(profile.storeStation || "", rawStation)
+    ) {
       return { reviewKey, profile };
     }
   }
