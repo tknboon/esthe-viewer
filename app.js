@@ -455,6 +455,27 @@ function normalizeRoomToken(value) {
   return normalizeHistoryComparableText(String(value || "").replace(/駅|ルーム/g, ""));
 }
 
+function buildRoomProfileKey(row, stationLabel) {
+  const baseKey = row?.reviewKey || row?.listingUrl || row?.name || "";
+  const roomLabel = String(stationLabel || row?.roomStation || row?.station || "").trim();
+  if (!baseKey || !roomLabel) return baseKey;
+  return `${baseKey}__room__${roomLabel}`;
+}
+
+function getStoreProfileStorageKey(row) {
+  if (!row) return "";
+  if (row.profileKey) return row.profileKey;
+  if (row.isRoomVariant) {
+    return buildRoomProfileKey(row, row.roomStation || row.station || "");
+  }
+  return row.reviewKey || row.listingUrl || "";
+}
+
+function getBaseStoreProfileKey(row) {
+  if (!row) return "";
+  return row.reviewKey || row.listingUrl || "";
+}
+
 function looksBrokenText(value) {
   const text = String(value || "").trim();
   if (!text) return false;
@@ -485,6 +506,7 @@ function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
   const variant = {
     ...row,
     id: baseId,
+    profileKey: buildRoomProfileKey(row, stationToken),
     station: stationToken,
     roomStation: stationToken,
     roomIndex: index,
@@ -533,6 +555,7 @@ function createExplicitRoomVariantRow(row, room, index) {
   return {
     ...row,
     id: `${row.id}__explicit-room-${index}`,
+    profileKey: buildRoomProfileKey(row, label),
     station: label,
     roomStation: label,
     roomIndex: index,
@@ -1832,11 +1855,18 @@ function writeExcluded() {
 
 function getStoreProfile(row) {
   if (!row) return null;
-  return state.storeProfilesByKey[row.reviewKey] || null;
+  const profileKey = getStoreProfileStorageKey(row);
+  const baseKey = getBaseStoreProfileKey(row);
+  return state.storeProfilesByKey[profileKey] || state.storeProfilesByKey[baseKey] || null;
 }
 
 function getActiveRowByReviewKey(reviewKey) {
   return state.rows.find((row) => row.reviewKey === reviewKey) || null;
+}
+
+function getActiveRowByProfileKey(profileKey) {
+  if (!profileKey) return null;
+  return expandRowsForMap(state.rows).find((row) => getStoreProfileStorageKey(row) === profileKey) || null;
 }
 
 function buildLocalDetailHtmlPath(listingUrl) {
@@ -1924,7 +1954,8 @@ function primeArchivedProfileDetails() {
 }
 
 function buildArchivedProfileRow(reviewKey, profile) {
-  const latestReview = getReviewsForKey(reviewKey)[0] || null;
+  const baseReviewKey = profile.baseReviewKey || profile.listingUrl || reviewKey;
+  const latestReview = getReviewsForKey(baseReviewKey)[0] || null;
   const listingUrl = profile.listingUrl || latestReview?.listingUrl || "";
   const cachedDetail = state.archivedDetailCache[reviewKey] || null;
   const officialUrl = profile.officialUrl || cachedDetail?.officialUrl || window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
@@ -1936,7 +1967,8 @@ function buildArchivedProfileRow(reviewKey, profile) {
 
   const row = {
     id: `archived-profile-${reviewKey}`,
-    reviewKey,
+    reviewKey: baseReviewKey,
+    profileKey: reviewKey,
     name,
     station,
     location: profile.address || fallbackLocation,
@@ -2046,6 +2078,8 @@ function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) 
 function handleStoreProfileSave() {
   if (!state.selectedRow || !canCurrentUserEdit()) return;
 
+  const profileKey = getStoreProfileStorageKey(state.selectedRow);
+
   const profile = {
     address: normalizeAddressValue(storeAddressInput?.value || ""),
     note: String(storeNoteInput?.value || "").trim(),
@@ -2056,6 +2090,7 @@ function handleStoreProfileSave() {
     storeName: state.selectedRow.name,
     storeStation: state.selectedRow.station,
     listingUrl: state.selectedRow.listingUrl,
+    baseReviewKey: getBaseStoreProfileKey(state.selectedRow),
     phone: state.selectedRow.phone || "",
     hours: state.selectedRow.hours || "",
     officialUrl: state.selectedRow.officialUrl || "",
@@ -2063,9 +2098,9 @@ function handleStoreProfileSave() {
   };
 
   if (hasStoreProfileContent(profile)) {
-    state.storeProfilesByKey[state.selectedRow.reviewKey] = profile;
+    state.storeProfilesByKey[profileKey] = profile;
   } else {
-    delete state.storeProfilesByKey[state.selectedRow.reviewKey];
+    delete state.storeProfilesByKey[profileKey];
   }
 
   writeStoreProfiles();
@@ -2641,9 +2676,9 @@ function runSyncMapWithFilters() {
 }
 
 function getProfiledRows() {
-  const activeRows = state.rows.filter((row) => hasStoreProfileContent(getStoreProfile(row)));
+  const activeRows = expandRowsForMap(state.rows).filter((row) => hasStoreProfileContent(getStoreProfile(row)));
   const archivedRows = Object.entries(state.storeProfilesByKey)
-    .filter(([reviewKey, profile]) => hasStoreProfileContent(profile) && !getActiveRowByReviewKey(reviewKey))
+    .filter(([profileKey, profile]) => hasStoreProfileContent(profile) && !getActiveRowByProfileKey(profileKey))
     .map(([reviewKey, profile]) => buildArchivedProfileRow(reviewKey, profile));
 
   return [...activeRows, ...archivedRows];
