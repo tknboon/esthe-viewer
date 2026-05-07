@@ -301,7 +301,8 @@ function normalizeHistoryEntry(entry) {
   let removed = uniqueStrings(Array.isArray(entry?.removed) ? entry.removed : []);
 
   if (fallbackRemoved.length) {
-    removed = uniqueStrings([...removed, ...fallbackRemoved]);
+    const looksBroken = removed.some((item) => /[?？]{2,}/.test(String(item || "")));
+    removed = looksBroken ? fallbackRemoved : uniqueStrings([...removed, ...fallbackRemoved]);
   }
 
   return {
@@ -489,9 +490,10 @@ function createExplicitRoomVariantRow(row, room, index) {
   const locationQuery = hasCoordinates
     ? `${latitude},${longitude}`
     : buildLocationQuery(row.name, label, location, room?.note || row.notes);
+  const stationFallbackQuery = buildRoomLocationQuery(row, label);
   const cachedLatLng = hasCoordinates
     ? { lat: Number(latitude), lng: Number(longitude) }
-    : state.geocodeCache[locationQuery] || null;
+    : state.geocodeCache[locationQuery] || state.geocodeCache[stationFallbackQuery] || null;
 
   return {
     ...row,
@@ -536,6 +538,12 @@ function expandRowsForMap(rows) {
     });
   }
   return expanded;
+}
+
+function getRoomVariantByStation(row, stationLabel) {
+  const target = normalizeRoomToken(stationLabel || "");
+  if (!target) return null;
+  return expandRowsForMap([row]).find((candidate) => normalizeRoomToken(candidate?.station || "") === target) || null;
 }
 
 function findClosedDayKey(storeName, station) {
