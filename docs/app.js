@@ -152,6 +152,10 @@ const REGION_MUNICIPALITIES = {
   toyohashi: ["豊橋市", "豊川市", "新城市", "蒲郡市", "田原市"],
 };
 
+const MANUAL_STATION_OVERRIDES = {
+  "https://www.esthe-ranking.jp/sakae/shop-detail/f2e48aef-65d9-4065-8b47-e367232c1384/": "丸の内駅・伏見駅",
+};
+
 const STATION_GROUP_REGIONS = new Set([
   "nagoya",
   "sakae",
@@ -584,16 +588,7 @@ function expandRowsForMap(rows) {
       continue;
     }
 
-    const stationTokens = splitStationTokens(row?.station || "");
-    if (stationTokens.length <= 1) {
-      expanded.push(row);
-      continue;
-    }
-
-    const primaryStationToken = choosePrimaryStationToken(row, stationTokens);
-    stationTokens.forEach((token, index) => {
-      expanded.push(createRoomVariantRow(row, token, index, primaryStationToken));
-    });
+    expanded.push(row);
   }
   return expanded;
 }
@@ -1397,11 +1392,11 @@ function refreshOpenInfoWindows(row) {
 
 function normalizeRow(row, index) {
   const name = row["店舗名"] || "";
-  const station = row["最寄駅"] || "";
+  const listingUrl = row["掲載URL"] || "";
+  const station = MANUAL_STATION_OVERRIDES[listingUrl] || row["最寄駅"] || "";
   const location = row["住所または座標"] || "";
   const latitude = row["緯度"] || "";
   const longitude = row["経度"] || "";
-  const listingUrl = row["掲載URL"] || "";
   const officialUrl = row["オフィシャルHP"] || row["公式HP"] || window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
   const notes = row["備考"] || "";
   const phone = row["電話番号"] || row["電話"] || "";
