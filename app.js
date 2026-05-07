@@ -2086,7 +2086,7 @@ function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) 
 
   if (storeProfileEditButton) {
     storeProfileEditButton.disabled = !hasRow || !canEdit;
-    storeProfileEditButton.textContent = !canEdit ? "閲覧専用" : (isEditing ? "編集中" : "店舗情報を編集");
+    storeProfileEditButton.textContent = !canEdit ? "閲覧専用" : (isEditing ? "閉じる" : "店舗情報を編集");
     storeProfileEditButton.setAttribute("aria-expanded", hasRow && isEditing ? "true" : "false");
   }
 }
@@ -2134,6 +2134,11 @@ function handleStoreProfileSave() {
 
 function handleStoreProfileEdit() {
   if (!state.selectedRow || !canCurrentUserEdit()) return;
+  const isCurrentlyEditing = !storeProfilePanel?.classList.contains("is-hidden");
+  if (isCurrentlyEditing) {
+    setStoreProfileEditing(false, true);
+    return;
+  }
   setStoreProfileEditing(true, true);
   storeAddressInput?.focus();
 }
