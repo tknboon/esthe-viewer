@@ -325,6 +325,36 @@ function getDisplayStoreName(row) {
   return row.name;
 }
 
+function findStoredProfileByHistoryLabel(label) {
+  const text = String(label || "").trim();
+  if (!text) return null;
+
+  const [rawName, rawStation = ""] = text.split("/");
+  const normalizedName = normalizeHistoryComparableText(rawName);
+  const normalizedStation = normalizeHistoryComparableText(rawStation);
+
+  for (const [reviewKey, profile] of Object.entries(state.storeProfilesByKey || {})) {
+    if (!hasStoreProfileContent(profile)) continue;
+    const profileName = normalizeHistoryComparableText(profile.storeName || "");
+    const profileStation = normalizeHistoryComparableText(profile.storeStation || "");
+    if (!profileName || profileName !== normalizedName) continue;
+    if (!normalizedStation || !profileStation || profileStation.includes(normalizedStation) || normalizedStation.includes(profileStation)) {
+      return { reviewKey, profile };
+    }
+  }
+
+  return null;
+}
+
+function getHistoryTagAccentClass(label, modifier) {
+  if (modifier !== "removed") return "";
+  const profileMatch = findStoredProfileByHistoryLabel(label);
+  const guideClarity = profileMatch?.profile?.guideClarity || "";
+  if (guideClarity === "あり") return "is-profile-pink";
+  if (guideClarity === "なし") return "is-profile-yellow";
+  return "";
+}
+
 function renderHistoryGroup(label, items, modifier, stationLookup) {
   if (!items.length) return "";
   return `
@@ -336,10 +366,11 @@ function renderHistoryGroup(label, items, modifier, stationLookup) {
           .filter(Boolean)
           .map((item) => {
             const row = findRowByHistoryLabel(item);
+            const accentClass = getHistoryTagAccentClass(item, modifier);
             if (row) {
-              return `<button type="button" class="update-history-tag is-link" data-history-store="${escapeHtml(item)}">${escapeHtml(item)}</button>`;
+              return `<button type="button" class="update-history-tag is-link ${accentClass}" data-history-store="${escapeHtml(item)}">${escapeHtml(item)}</button>`;
             }
-            return `<span class="update-history-tag">${escapeHtml(item)}</span>`;
+            return `<span class="update-history-tag ${accentClass}">${escapeHtml(item)}</span>`;
           })
           .join("")}
       </div>
@@ -2299,25 +2330,26 @@ function buildMarkerIcon(row) {
   const profile = getStoreProfile(row);
   let fillColor = "#9b95a4";
   let strokeColor = "#efe8f6";
+  const isArchived = Boolean(row?.isArchivedStore);
 
   if (isExcludedRow(row)) {
-    fillColor = "#1d1d1f";
-    strokeColor = "#a7a7ad";
+    fillColor = isArchived ? "#6c6c72" : "#1d1d1f";
+    strokeColor = isArchived ? "#c8c8ce" : "#a7a7ad";
   } else if (isFavoriteRow(row)) {
-    fillColor = "#4ecbff";
-    strokeColor = "#d7f4ff";
+    fillColor = isArchived ? "#8fdefa" : "#4ecbff";
+    strokeColor = isArchived ? "#eefbff" : "#d7f4ff";
   } else if (profile?.guideClarity === "あり") {
-    fillColor = "#ff5d96";
-    strokeColor = "#ffe3ee";
+    fillColor = isArchived ? "#ff9bbc" : "#ff5d96";
+    strokeColor = isArchived ? "#fff0f5" : "#ffe3ee";
   } else if (profile?.guideClarity === "なし") {
-    fillColor = "#ffb000";
-    strokeColor = "#fff1c7";
+    fillColor = isArchived ? "#ffd26a" : "#ffb000";
+    strokeColor = isArchived ? "#fff7dc" : "#fff1c7";
   } else if (latestReview?.guideClarity === "あり") {
-    fillColor = "#ff5d96";
-    strokeColor = "#ffe3ee";
+    fillColor = isArchived ? "#ff9bbc" : "#ff5d96";
+    strokeColor = isArchived ? "#fff0f5" : "#ffe3ee";
   } else if (latestReview?.guideClarity === "なし") {
-    fillColor = "#ffb000";
-    strokeColor = "#fff1c7";
+    fillColor = isArchived ? "#ffd26a" : "#ffb000";
+    strokeColor = isArchived ? "#fff7dc" : "#fff1c7";
   }
 
   return createHeartMarkerIcon(fillColor, strokeColor);
@@ -2325,19 +2357,20 @@ function buildMarkerIcon(row) {
 
 function buildProfileMarkerIcon(row) {
   const profile = getStoreProfile(row);
+  const isArchived = Boolean(row?.isArchivedStore);
   if (isExcludedRow(row)) {
-    return createHeartMarkerIcon("#1d1d1f", "#a7a7ad");
+    return createHeartMarkerIcon(isArchived ? "#6c6c72" : "#1d1d1f", isArchived ? "#c8c8ce" : "#a7a7ad");
   }
   if (isFavoriteRow(row)) {
-    return createHeartMarkerIcon("#4ecbff", "#d7f4ff");
+    return createHeartMarkerIcon(isArchived ? "#8fdefa" : "#4ecbff", isArchived ? "#eefbff" : "#d7f4ff");
   }
   if (profile?.guideClarity === "あり") {
-    return createHeartMarkerIcon("#ff5d96", "#ffe3ee");
+    return createHeartMarkerIcon(isArchived ? "#ff9bbc" : "#ff5d96", isArchived ? "#fff0f5" : "#ffe3ee");
   }
   if (profile?.guideClarity === "なし") {
-    return createHeartMarkerIcon("#ffb000", "#fff1c7");
+    return createHeartMarkerIcon(isArchived ? "#ffd26a" : "#ffb000", isArchived ? "#fff7dc" : "#fff1c7");
   }
-  return createHeartMarkerIcon("#ff5d96", "#ffe3ee");
+  return createHeartMarkerIcon(isArchived ? "#ff9bbc" : "#ff5d96", isArchived ? "#fff0f5" : "#ffe3ee");
 }
 
 function createHeartMarkerIcon(fillColor, strokeColor) {

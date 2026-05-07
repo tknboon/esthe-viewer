@@ -442,6 +442,18 @@ select {
   cursor: pointer;
 }
 
+.update-history-tag.is-profile-pink {
+  border-color: rgba(255, 93, 150, 0.72);
+  background: rgba(255, 93, 150, 0.18);
+  color: #ffe7f0;
+}
+
+.update-history-tag.is-profile-yellow {
+  border-color: rgba(255, 188, 66, 0.72);
+  background: rgba(255, 188, 66, 0.2);
+  color: #fff1bf;
+}
+
 .update-history-empty {
   margin-top: 8px;
   color: var(--muted);
