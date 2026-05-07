@@ -650,7 +650,7 @@ select {
 .selected-title {
   margin: 0;
   font-size: 25px;
-  line-height: 1.24;
+  line-height: 1.14;
 }
 
 .selected-meta {
@@ -682,7 +682,7 @@ select {
 }
 
 .selected-review-summary {
-  margin: 12px 0 0;
+  margin: 4px 0 0;
   color: var(--accent-strong);
   font-size: 14px;
   line-height: 1.6;
@@ -690,7 +690,7 @@ select {
 
 .selected-store {
   display: grid;
-  gap: 2px;
+  gap: 0;
 }
 
 .embed-wrap {
@@ -904,7 +904,7 @@ select {
 
 .store-profile-panel .store-address-area,
 .store-profile-panel #storeNoteInput {
-  min-height: 68px;
+  min-height: 34px;
 }
 
 .review-form-actions {
