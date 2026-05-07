@@ -210,7 +210,7 @@ const MANUAL_ROOM_LOCATION_OVERRIDES = {
       address: "35.31058761168509, 136.75743862450264",
       latitude: "35.31058761168509",
       longitude: "136.75743862450264",
-      note: "",
+      note: "マクドナルド一宮尾西店付近着きましたら電話してください。",
     },
   ],
 };
@@ -516,7 +516,10 @@ function createExplicitRoomVariantRow(row, room, index) {
   const longitude = room?.longitude || "";
   const hasCoordinates = Boolean(latitude && longitude);
   const roomAddress = looksBrokenText(room?.address) ? "" : String(room?.address || "").trim();
-  const effectiveNote = looksBrokenText(room?.note) ? row.notes : (room?.note || row.notes);
+  const roomHasOwnNote = room && Object.prototype.hasOwnProperty.call(room, "note");
+  const effectiveNote = roomHasOwnNote
+    ? (looksBrokenText(room?.note) ? row.notes : String(room?.note || "").trim())
+    : row.notes;
   const location = roomAddress || label || row.location;
   const locationQuery = hasCoordinates
     ? `${latitude},${longitude}`
