@@ -136,16 +136,18 @@ async function buildSnapshot(listingSources, fetchedAt) {
 
 async function enrichStoresWithDetailPages(stores) {
   const detailCache = new Map();
+  const accessCache = new Map();
   const enriched = [];
 
   for (const store of stores) {
     const detailHtml = await loadDetailHtml(store.listingUrl, detailCache);
+    const accessHtml = await loadAccessHtml(store.listingUrl, accessCache);
     if (!detailHtml) {
       enriched.push({ ...store, detailLoaded: false });
       continue;
     }
 
-    const detail = extractDetailData(detailHtml);
+    const detail = extractDetailData(detailHtml, accessHtml, store);
     enriched.push({
       ...store,
       ...detail,
@@ -178,11 +180,44 @@ async function loadDetailHtml(listingUrl, cache) {
   return html;
 }
 
+async function loadAccessHtml(listingUrl, cache) {
+  if (!listingUrl) return "";
+  if (cache.has(listingUrl)) return cache.get(listingUrl);
+
+  let html = "";
+  const accessFilePath = buildAccessFilePath(listingUrl);
+  if (accessFilePath) {
+    try {
+      html = await readHtmlFile(accessFilePath);
+    } catch (error) {
+      if (!isNotFoundError(error)) throw error;
+    }
+  }
+
+  if (!html && !HTML_INPUT_PATH) {
+    html = await fetchText(buildAccessUrl(listingUrl));
+  }
+
+  cache.set(listingUrl, html);
+  return html;
+}
+
 function buildDetailFilePath(listingUrl) {
   if (!DETAIL_DIR_PATH) return "";
   const detailId = extractDetailId(listingUrl);
   if (!detailId) return "";
   return path.join(DETAIL_DIR_PATH, `${detailId}.html`);
+}
+
+function buildAccessFilePath(listingUrl) {
+  if (!DETAIL_DIR_PATH) return "";
+  const detailId = extractDetailId(listingUrl);
+  if (!detailId) return "";
+  return path.join(DETAIL_DIR_PATH, `${detailId}__access.html`);
+}
+
+function buildAccessUrl(listingUrl) {
+  return `${String(listingUrl || "").replace(/\/+$/, "")}/access/`;
 }
 
 function extractDetailId(listingUrl) {
@@ -312,18 +347,21 @@ function extractStoreCards(html) {
   return stores;
 }
 
-function extractDetailData(html) {
+function extractDetailData(html, accessHtml, store = null) {
   const normalizedHtml = decodeEntities(html);
-  const accessHtml = extractAccessSection(normalizedHtml);
-  const text = htmlToText(accessHtml || normalizedHtml);
+  const normalizedAccessHtml = decodeEntities(accessHtml || "");
+  const inlineAccessHtml = extractAccessSection(normalizedHtml);
+  const accessSourceHtml = normalizedAccessHtml || inlineAccessHtml || normalizedHtml;
+  const text = htmlToText(accessSourceHtml);
   const lines = text
     .split("\n")
     .map((line) => compactText(line))
     .filter(Boolean);
 
-  const coordinates = extractCoordinates(accessHtml || text);
+  const coordinates = extractCoordinates(accessSourceHtml || text);
   const address = extractAddress(lines);
   const note = extractAccessNote(lines, address, coordinates);
+  const roomLocations = extractRoomLocations(accessSourceHtml, store);
 
   return {
     address,
@@ -331,6 +369,7 @@ function extractDetailData(html) {
     longitude: coordinates.longitude,
     officialUrl: extractOfficialUrl(normalizedHtml),
     note,
+    roomLocations,
   };
 }
 
@@ -414,6 +453,70 @@ function extractAccessNote(lines, address, coordinates) {
   }
 
   return "";
+}
+
+function extractRoomLocations(html, store) {
+  const normalizedHtml = decodeEntities(html || "");
+  if (!normalizedHtml.includes('borderbox map-area')) return [];
+
+  const stationTokens = splitStationLabelTokens(store?.station || "");
+  const remainingTokens = [...stationTokens];
+  const chunks = normalizedHtml.split('<div class="borderbox map-area">').slice(1);
+  const rooms = [];
+
+  for (const chunk of chunks) {
+    const block = `<div class="borderbox map-area">${chunk}`;
+    const text = htmlToText(block);
+    const lines = text.split("\n").map((line) => compactText(line)).filter(Boolean);
+    const coordinates = extractCoordinates(block || text);
+    const address = extractAddress(lines);
+    const note = extractAccessNote(lines, address, coordinates);
+    const label = pickRoomLabelFromBlock(`${text}\n${address}\n${note}`, stationTokens);
+
+    rooms.push({
+      label,
+      address,
+      latitude: coordinates.latitude,
+      longitude: coordinates.longitude,
+      note,
+    });
+  }
+
+  for (const room of rooms) {
+    if (room.label) {
+      const index = remainingTokens.findIndex((token) => normalizeRoomToken(token) === normalizeRoomToken(room.label));
+      if (index >= 0) remainingTokens.splice(index, 1);
+    }
+  }
+
+  for (const room of rooms) {
+    if (!room.label && remainingTokens.length) {
+      room.label = remainingTokens.shift();
+    }
+  }
+
+  return rooms.filter((room) => room.label || room.address || room.latitude || room.longitude);
+}
+
+function splitStationLabelTokens(value) {
+  return String(value || "")
+    .split(/[・/／,，]/)
+    .map((part) => compactText(part))
+    .filter(Boolean);
+}
+
+function normalizeRoomToken(value) {
+  return compactText(String(value || "").replace(/駅|ルーム/g, ""));
+}
+
+function pickRoomLabelFromBlock(text, stationTokens) {
+  const haystack = compactText(text);
+  if (!haystack || !stationTokens.length) return "";
+  const match = stationTokens.find((token) => {
+    const normalized = normalizeRoomToken(token);
+    return normalized && haystack.includes(normalized);
+  });
+  return match || "";
 }
 
 function extractInfoText(block, iconName) {
@@ -745,6 +848,11 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
       .filter((store) => store?.listingUrl && store?.officialUrl)
       .map((store) => [store.listingUrl, store.officialUrl])
   );
+  const roomLocationsByListingUrl = Object.fromEntries(
+    (snapshot.extractedStores || [])
+      .filter((store) => store?.listingUrl && Array.isArray(store?.roomLocations) && store.roomLocations.length)
+      .map((store) => [store.listingUrl, store.roomLocations])
+  );
   const content = [
     `window.storeMeta = ${JSON.stringify({
       lastUpdatedAt: snapshot.fetchedAt,
@@ -752,6 +860,7 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
       municipalityByListingUrl: snapshot.municipalityByListingUrl || {},
       municipalityLabelsByListingUrl: snapshot.municipalityLabelsByListingUrl || {},
       officialUrlByListingUrl,
+      roomLocationsByListingUrl,
     })};`,
     `window.storeData = ${JSON.stringify(rows)};`,
   ].join("\n");

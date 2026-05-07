@@ -322,6 +322,16 @@ function hasPreciseRoomLocation(row) {
   return !stationTokensOverlap(location, row.station || "") && normalizedLocation !== normalizedStation;
 }
 
+function getExplicitRoomLocations(row) {
+  if (!row?.listingUrl) return [];
+  const locations = window.storeMeta?.roomLocationsByListingUrl?.[row.listingUrl];
+  return Array.isArray(locations) ? locations : [];
+}
+
+function normalizeRoomToken(value) {
+  return normalizeHistoryComparableText(String(value || "").replace(/駅|ルーム/g, ""));
+}
+
 function choosePrimaryStationToken(row, tokens) {
   if (!Array.isArray(tokens) || !tokens.length) return "";
   if (!row) return tokens[0] || "";
@@ -329,7 +339,7 @@ function choosePrimaryStationToken(row, tokens) {
   if (!haystack) return tokens[0] || "";
 
   const matched = tokens.find((token) => {
-    const normalizedToken = normalizeHistoryComparableText(token);
+    const normalizedToken = normalizeRoomToken(token);
     if (!normalizedToken) return false;
     return haystack.includes(normalizedToken);
   });
@@ -352,6 +362,11 @@ function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
     isRoomVariant: true,
   };
 
+  const shouldUsePrimaryLocation = hasPreciseRoomLocation(row) && stationToken === primaryStationToken;
+  if (shouldUsePrimaryLocation) {
+    return variant;
+  }
+
   const roomLocationQuery = buildRoomLocationQuery(row, stationToken);
   const cachedRoomLatLng = state.geocodeCache[roomLocationQuery] || null;
   variant.location = stationToken;
@@ -366,9 +381,50 @@ function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
   return variant;
 }
 
+function createExplicitRoomVariantRow(row, room, index) {
+  const label = room?.label || row.station || "";
+  const latitude = room?.latitude || "";
+  const longitude = room?.longitude || "";
+  const hasCoordinates = Boolean(latitude && longitude);
+  const location = room?.address || label || row.location;
+  const locationQuery = hasCoordinates
+    ? `${latitude},${longitude}`
+    : buildLocationQuery(row.name, label, location, room?.note || row.notes);
+  const cachedLatLng = hasCoordinates
+    ? { lat: Number(latitude), lng: Number(longitude) }
+    : state.geocodeCache[locationQuery] || null;
+
+  return {
+    ...row,
+    id: `${row.id}__explicit-room-${index}`,
+    station: label,
+    roomStation: label,
+    roomIndex: index,
+    isRoomVariant: true,
+    location,
+    latitude,
+    longitude,
+    hasCoordinates,
+    baseLatLng: cachedLatLng,
+    latLng: cachedLatLng,
+    baseLocationQuery: locationQuery,
+    locationQuery,
+    mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationQuery)}`,
+    notes: room?.note || row.notes,
+  };
+}
+
 function expandRowsForMap(rows) {
   const expanded = [];
   for (const row of rows || []) {
+    const explicitRoomLocations = getExplicitRoomLocations(row);
+    if (explicitRoomLocations.length > 1) {
+      explicitRoomLocations.forEach((room, index) => {
+        expanded.push(createExplicitRoomVariantRow(row, room, index));
+      });
+      continue;
+    }
+
     const stationTokens = splitStationTokens(row?.station || "");
     if (stationTokens.length <= 1) {
       expanded.push(row);

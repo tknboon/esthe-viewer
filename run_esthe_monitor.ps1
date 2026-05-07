@@ -312,6 +312,15 @@ function Save-DetailPages {
       $method = Get-SourceHtml -Url $url -OutputPath $outputPath
       Write-RunnerLog "fetched detail via ${method}: $detailId"
       $successCount += 1
+
+      $accessUrl = $url.TrimEnd('/') + "/access/"
+      $accessOutputPath = Join-Path $OutputDir ($detailId + "__access.html")
+      try {
+        $accessMethod = Get-SourceHtml -Url $accessUrl -OutputPath $accessOutputPath
+        Write-RunnerLog "fetched detail access via ${accessMethod}: $detailId"
+      } catch {
+        Write-RunnerLog "detail access fetch failed ($detailId): $($_.Exception.Message)"
+      }
     } catch {
       Write-RunnerLog "detail fetch failed ($detailId): $($_.Exception.Message)"
       $failureCount += 1
