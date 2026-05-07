@@ -6,7 +6,7 @@ service cloud.firestore {
       allow write: if request.auth != null
         && request.auth.token.email != null
         && request.auth.token.email in [
-          "yourname@gmail.com"
+          "tknboon@gmail.com"
         ];
     }
   }

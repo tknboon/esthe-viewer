@@ -12,7 +12,7 @@ window.firebaseAppConfig = {
 
   // 空のままなら、ログインした人は全員編集できます。
   // ここにメールアドレスを入れると、その人だけ編集できます。
-  editorEmails: [],
+  editorEmails: ["tknboon@gmail.com"],
 
   // UID で絞りたいときはここも使えます。
   editorUids: [],
