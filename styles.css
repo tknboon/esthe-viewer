@@ -75,6 +75,8 @@ select {
 
 .hero-copy-block {
   max-width: 760px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1,
@@ -83,11 +85,40 @@ select {
   font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
+.hero-kicker {
+  margin: 0 0 8px;
+  color: #f3c86f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
 .hero h1 {
   margin: 0;
   font-size: clamp(30px, 3.8vw, 44px);
   line-height: 1.04;
   font-weight: 700;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  color: #f6d6e1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .layout {
@@ -103,6 +134,10 @@ select {
   align-self: start;
   display: grid;
   gap: 14px;
+}
+
+.content-panel {
+  min-width: 0;
 }
 
 .panel-block,
@@ -157,6 +192,11 @@ select {
   font-weight: 700;
 }
 
+.mini-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .last-updated-text {
   margin: 0 0 10px;
   color: var(--muted);
@@ -170,6 +210,17 @@ select {
   justify-content: space-between;
   gap: 10px;
   margin: 0 0 12px;
+}
+
+#syncStatusText {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(117, 216, 208, 0.12);
+  color: #b9f2ec;
+  border: 1px solid rgba(117, 216, 208, 0.18);
 }
 
 .sync-meta-text {
@@ -384,6 +435,7 @@ select {
 .analytics-total {
   font-size: 24px;
   line-height: 1;
+  color: #fff4c8;
 }
 
 .revenue-chart {
@@ -474,6 +526,7 @@ select {
   background: rgba(255, 248, 251, 0.06);
   font-size: 11px;
   line-height: 1.35;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .update-history-tag.is-link {
@@ -631,6 +684,11 @@ select {
   line-height: 1.6;
 }
 
+.selected-store {
+  display: grid;
+  gap: 2px;
+}
+
 .embed-wrap {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -709,6 +767,7 @@ select {
   border-radius: 999px;
   font-size: 18px;
   line-height: 1;
+  backdrop-filter: blur(10px);
 }
 
 .icon-action.is-active {
@@ -762,6 +821,13 @@ select {
   margin-top: 12px;
 }
 
+.store-profile-toolbar .action-link,
+.review-toolbar .action-link {
+  width: 100%;
+  justify-content: center;
+  font-weight: 700;
+}
+
 .review-panel {
   margin-top: 14px;
   padding: 14px;
@@ -779,6 +845,8 @@ select {
   justify-content: space-between;
   gap: 12px;
   align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .review-storage-note,
@@ -894,6 +962,10 @@ select {
 }
 
 .review-author {
+  color: #fff3bf;
+}
+
+.review-author {
   display: block;
   font-size: 14px;
 }
@@ -988,6 +1060,7 @@ select {
 
 .map-list-title {
   font-weight: 700;
+  color: #fff2c0;
 }
 
 .map-list-meta {
@@ -1043,6 +1116,7 @@ select {
   color: var(--accent-strong);
   font-size: 12px;
   font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .badge.subtle {
@@ -1060,7 +1134,7 @@ select {
 .field {
   padding: 12px;
   border-radius: 8px;
-  background: rgba(255, 248, 251, 0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
 }
 
 .field-label {
@@ -1134,6 +1208,7 @@ th {
 .map-list-count {
   color: #fff3bf;
   font-weight: 700;
+  font-size: 13px;
 }
 
 .empty-state.compact {
