@@ -497,7 +497,7 @@ function createExplicitRoomVariantRow(row, room, index) {
   const location = roomAddress || label || row.location;
   const locationQuery = hasCoordinates
     ? `${latitude},${longitude}`
-    : buildLocationQuery(row.name, label, location, effectiveNote);
+    : (roomAddress || buildLocationQuery(row.name, label, location, effectiveNote));
   const stationFallbackQuery = buildRoomLocationQuery(row, label);
   const shouldUseStationFallback = !hasCoordinates && (!roomAddress || normalizeRoomToken(roomAddress) === normalizeRoomToken(label));
   const cachedLatLng = hasCoordinates
