@@ -296,6 +296,7 @@ function findClosedDayKey(storeName, station) {
   const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
   const normalizedName = normalizeHistoryComparableText(storeName);
   const normalizedStation = normalizeHistoryComparableText(station);
+  let nameOnlyFallback = "";
 
   for (const entry of history) {
     const removed = Array.isArray(entry?.removed) ? entry.removed : [];
@@ -304,6 +305,9 @@ function findClosedDayKey(storeName, station) {
       const itemName = normalizeHistoryComparableText(rawName);
       const itemStation = normalizeHistoryComparableText(rawStation);
       if (!itemName || itemName !== normalizedName) continue;
+      if (!nameOnlyFallback) {
+        nameOnlyFallback = entry.dayKey || "";
+      }
       if (!normalizedStation) return entry.dayKey || "";
       if (!itemStation || itemStation.includes(normalizedStation) || normalizedStation.includes(itemStation)) {
         return entry.dayKey || "";
@@ -311,7 +315,7 @@ function findClosedDayKey(storeName, station) {
     }
   }
 
-  return "";
+  return nameOnlyFallback;
 }
 
 function formatClosedPrefix(dayKey) {
@@ -2411,7 +2415,25 @@ function createHeartMarkerIcon(fillColor, strokeColor) {
 }
 
 function focusMarker(row) {
-  if (!ensureMapReady() || !row) return;
+  if (!row) return;
+
+  if (row.isArchivedStore) {
+    if (!ensureProfileMapReady()) return;
+    const archivedMarker = state.profileMarkers.get(row.id);
+    if (archivedMarker) {
+      state.profileMap.panTo(archivedMarker.getPosition());
+      state.profileMap.setZoom(Math.max(state.profileMap.getZoom(), 15));
+      openMarkerInfoWindow(state.profileMap, state.profileInfoWindow, archivedMarker, row);
+      return;
+    }
+
+    if (row.locationQuery) {
+      queueGeocode(row, false);
+    }
+    return;
+  }
+
+  if (!ensureMapReady()) return;
 
   const marker = state.markers.get(row.id);
   if (marker) {
