@@ -132,6 +132,14 @@ select {
   line-height: 1.5;
 }
 
+.sync-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
 .text-input,
 .select-input {
   width: 100%;

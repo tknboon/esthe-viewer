@@ -23,11 +23,22 @@
   expandedRegions: {},
   streetViewPanorama: null,
   streetViewService: null,
+  sharedSync: {
+    enabled: false,
+    authReady: false,
+    signingIn: false,
+    user: null,
+    db: null,
+    auth: null,
+    unsubscribers: [],
+  },
 };
 
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
 const lastUpdatedText = document.querySelector("#lastUpdatedText");
+const syncStatusText = document.querySelector("#syncStatusText");
+const syncAuthButton = document.querySelector("#syncAuthButton");
 const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
@@ -165,6 +176,7 @@ function init() {
     bindEvents();
     applyFilters();
     renderReviewAnalytics();
+    initSharedSync();
   } catch (error) {
     if (statusText) {
       statusText.textContent = "データの読み込みに失敗しました。";
@@ -335,6 +347,7 @@ function bindEvents() {
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   dailyUpdateHistory?.addEventListener("click", handleHistoryClick);
+  syncAuthButton?.addEventListener("click", handleSyncAuthClick);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
@@ -992,72 +1005,225 @@ function normalizeRow(row, index) {
   return normalizedRow;
 }
 
-function readReviews() {
+function readLocalObject(key) {
   try {
-    const raw = localStorage.getItem("toyota-esthe-reviews");
+    const raw = localStorage.getItem(key);
     return raw ? JSON.parse(raw) : {};
   } catch (error) {
     return {};
   }
+}
+
+function writeLocalObject(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.warn(`save failed: ${key}`, error);
+  }
+}
+
+function clonePlainObject(value) {
+  return JSON.parse(JSON.stringify(value || {}));
+}
+
+function initSharedSync() {
+  const config = window.firebaseAppConfig || {};
+  const firebaseAvailable = typeof window.firebase !== "undefined";
+  const hasRequiredConfig = Boolean(config.enabled && config.apiKey && config.authDomain && config.projectId && config.appId);
+
+  if (!hasRequiredConfig || !firebaseAvailable) {
+    renderSyncStatus();
+    return;
+  }
+
+  try {
+    const app = window.firebase.apps.length ? window.firebase.app() : window.firebase.initializeApp({
+      apiKey: config.apiKey,
+      authDomain: config.authDomain,
+      projectId: config.projectId,
+      storageBucket: config.storageBucket,
+      messagingSenderId: config.messagingSenderId,
+      appId: config.appId,
+    });
+
+    state.sharedSync.enabled = true;
+    state.sharedSync.auth = app.auth();
+    state.sharedSync.db = app.firestore();
+    state.sharedSync.authReady = true;
+
+    state.sharedSync.auth.onAuthStateChanged((user) => {
+      state.sharedSync.user = user || null;
+      resetSharedListeners();
+      renderSyncStatus();
+      if (user) {
+        startSharedListeners();
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
+
+  renderSyncStatus();
+}
+
+function renderSyncStatus() {
+  if (!syncStatusText || !syncAuthButton) return;
+
+  if (!state.sharedSync.enabled) {
+    syncStatusText.textContent = "この端末内に保存";
+    syncAuthButton.textContent = "共有を設定";
+    syncAuthButton.disabled = true;
+    return;
+  }
+
+  if (state.sharedSync.user) {
+    const label = state.sharedSync.user.displayName || state.sharedSync.user.email || "Google";
+    syncStatusText.textContent = `${label} と共有中`;
+    syncAuthButton.textContent = "共有を切る";
+    syncAuthButton.disabled = false;
+    return;
+  }
+
+  syncStatusText.textContent = "Googleで共有できます";
+  syncAuthButton.textContent = state.sharedSync.signingIn ? "接続中..." : "Googleで共有";
+  syncAuthButton.disabled = state.sharedSync.signingIn;
+}
+
+async function handleSyncAuthClick() {
+  if (!state.sharedSync.enabled || !state.sharedSync.auth) return;
+
+  if (state.sharedSync.user) {
+    await state.sharedSync.auth.signOut();
+    return;
+  }
+
+  state.sharedSync.signingIn = true;
+  renderSyncStatus();
+
+  try {
+    const provider = new window.firebase.auth.GoogleAuthProvider();
+    await state.sharedSync.auth.signInWithPopup(provider);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    state.sharedSync.signingIn = false;
+    renderSyncStatus();
+  }
+}
+
+function resetSharedListeners() {
+  for (const unsubscribe of state.sharedSync.unsubscribers) {
+    try {
+      unsubscribe();
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+  state.sharedSync.unsubscribers = [];
+}
+
+function startSharedListeners() {
+  if (!state.sharedSync.db) return;
+
+  attachSharedDocument("reviews", state.reviewsByStore, (payload) => {
+    state.reviewsByStore = payload;
+    writeLocalObject("toyota-esthe-reviews", state.reviewsByStore);
+    renderSelectedStore();
+    renderReviewAnalytics();
+  });
+
+  attachSharedDocument("storeProfiles", state.storeProfilesByKey, (payload) => {
+    state.storeProfilesByKey = payload;
+    writeLocalObject("toyota-esthe-store-profiles", state.storeProfilesByKey);
+    state.rows.forEach(applyProfileLocationToRow);
+    renderSelectedStore();
+    syncMapWithFilters();
+    syncProfileMap();
+  });
+
+  attachSharedDocument("favorites", state.favoritesByStore, (payload) => {
+    state.favoritesByStore = payload;
+    writeLocalObject("toyota-esthe-favorites", state.favoritesByStore);
+    renderSelectedStore();
+    syncMapWithFilters();
+    syncProfileMap();
+  });
+
+  attachSharedDocument("excluded", state.excludedByStore, (payload) => {
+    state.excludedByStore = payload;
+    writeLocalObject("toyota-esthe-excluded", state.excludedByStore);
+    renderSelectedStore();
+    syncMapWithFilters();
+    syncProfileMap();
+  });
+}
+
+function attachSharedDocument(docId, localData, applyRemote) {
+  const docRef = state.sharedSync.db.collection("sharedState").doc(docId);
+  const unsubscribe = docRef.onSnapshot(async (snapshot) => {
+    if (!snapshot.exists) {
+      const seed = clonePlainObject(localData);
+      if (Object.keys(seed).length) {
+        await docRef.set({
+          payload: seed,
+          updatedAt: window.firebase.firestore.FieldValue.serverTimestamp(),
+          updatedBy: state.sharedSync.user?.uid || "",
+        });
+      }
+      return;
+    }
+
+    const payload = snapshot.data()?.payload;
+    applyRemote(payload && typeof payload === "object" ? payload : {});
+  });
+
+  state.sharedSync.unsubscribers.push(unsubscribe);
+}
+
+function saveSharedDocument(docId, data) {
+  if (!state.sharedSync.enabled || !state.sharedSync.user || !state.sharedSync.db) return;
+
+  state.sharedSync.db.collection("sharedState").doc(docId).set({
+    payload: clonePlainObject(data),
+    updatedAt: window.firebase.firestore.FieldValue.serverTimestamp(),
+    updatedBy: state.sharedSync.user.uid,
+  });
+}
+
+function readReviews() {
+  return readLocalObject("toyota-esthe-reviews");
 }
 
 function writeReviews() {
-  try {
-    localStorage.setItem("toyota-esthe-reviews", JSON.stringify(state.reviewsByStore));
-  } catch (error) {
-    console.warn("review save failed", error);
-  }
+  writeLocalObject("toyota-esthe-reviews", state.reviewsByStore);
+  saveSharedDocument("reviews", state.reviewsByStore);
 }
 
 function readStoreProfiles() {
-  try {
-    const raw = localStorage.getItem("toyota-esthe-store-profiles");
-    return raw ? JSON.parse(raw) : {};
-  } catch (error) {
-    return {};
-  }
+  return readLocalObject("toyota-esthe-store-profiles");
 }
 
 function writeStoreProfiles() {
-  try {
-    localStorage.setItem("toyota-esthe-store-profiles", JSON.stringify(state.storeProfilesByKey));
-  } catch (error) {
-    console.warn("store profile save failed", error);
-  }
+  writeLocalObject("toyota-esthe-store-profiles", state.storeProfilesByKey);
+  saveSharedDocument("storeProfiles", state.storeProfilesByKey);
 }
 
 function readFavorites() {
-  try {
-    const raw = localStorage.getItem("toyota-esthe-favorites");
-    return raw ? JSON.parse(raw) : {};
-  } catch (error) {
-    return {};
-  }
+  return readLocalObject("toyota-esthe-favorites");
 }
 
 function writeFavorites() {
-  try {
-    localStorage.setItem("toyota-esthe-favorites", JSON.stringify(state.favoritesByStore));
-  } catch (error) {
-    console.warn("favorite save failed", error);
-  }
+  writeLocalObject("toyota-esthe-favorites", state.favoritesByStore);
+  saveSharedDocument("favorites", state.favoritesByStore);
 }
 
 function readExcluded() {
-  try {
-    const raw = localStorage.getItem("toyota-esthe-excluded");
-    return raw ? JSON.parse(raw) : {};
-  } catch (error) {
-    return {};
-  }
+  return readLocalObject("toyota-esthe-excluded");
 }
 
 function writeExcluded() {
-  try {
-    localStorage.setItem("toyota-esthe-excluded", JSON.stringify(state.excludedByStore));
-  } catch (error) {
-    console.warn("exclude save failed", error);
-  }
+  writeLocalObject("toyota-esthe-excluded", state.excludedByStore);
+  saveSharedDocument("excluded", state.excludedByStore);
 }
 
 function getStoreProfile(row) {
