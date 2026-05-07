@@ -650,13 +650,13 @@ select {
 .selected-title {
   margin: 0;
   font-size: 25px;
-  line-height: 1.14;
+  line-height: 1.02;
 }
 
 .selected-meta {
-  margin: 8px 0 0;
+  margin: 2px 0 0;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.45;
 }
 
 .selected-meta:empty {
@@ -672,7 +672,7 @@ select {
 }
 
 .selected-profile-meta {
-  margin-top: 6px;
+  margin-top: 2px;
   font-size: 13px;
 }
 
@@ -682,10 +682,10 @@ select {
 }
 
 .selected-review-summary {
-  margin: 1px 0 0;
+  margin: 0;
   color: var(--accent-strong);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .selected-review-summary:empty {
@@ -695,6 +695,11 @@ select {
 .selected-store {
   display: grid;
   gap: 0;
+}
+
+.selected-store > .selected-title + .selected-meta,
+.selected-store > .selected-title + .selected-review-summary {
+  margin-top: 0;
 }
 
 .embed-wrap {
