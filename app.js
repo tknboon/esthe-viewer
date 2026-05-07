@@ -19,6 +19,8 @@
   geocodeRunning: false,
   geocodeCache: {},
   mapReady: false,
+  mapSyncQueued: false,
+  profileMapSyncQueued: false,
   regionExpanded: false,
   expandedRegions: {},
   streetViewPanorama: null,
@@ -2185,6 +2187,15 @@ window.initGoogleMapApp = function initGoogleMapApp() {
 };
 
 function syncMapWithFilters() {
+  if (state.mapSyncQueued) return;
+  state.mapSyncQueued = true;
+  requestAnimationFrame(() => {
+    state.mapSyncQueued = false;
+    runSyncMapWithFilters();
+  });
+}
+
+function runSyncMapWithFilters() {
   if (!ensureMapReady()) return;
 
   clearMarkers();
@@ -2230,6 +2241,15 @@ function getProfiledRows() {
 }
 
 function syncProfileMap() {
+  if (state.profileMapSyncQueued) return;
+  state.profileMapSyncQueued = true;
+  requestAnimationFrame(() => {
+    state.profileMapSyncQueued = false;
+    runSyncProfileMap();
+  });
+}
+
+function runSyncProfileMap() {
   if (!ensureProfileMapReady()) return;
 
   clearProfileMarkers();
@@ -2296,7 +2316,6 @@ function addMarkerForRow(row, bounds) {
     map: state.map,
     position: row.latLng,
     title: row.name,
-    animation: google.maps.Animation.DROP,
     icon: buildMarkerIcon(row),
   });
 
@@ -2312,7 +2331,6 @@ function addProfileMarkerForRow(row, bounds) {
     map: state.profileMap,
     position: row.latLng,
     title: row.name,
-    animation: google.maps.Animation.DROP,
     icon: buildProfileMarkerIcon(row),
   });
 
