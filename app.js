@@ -283,6 +283,48 @@ function formatHistoryStoreLabel(item, stationLookup) {
   return `${label}/${[...stations][0]}`;
 }
 
+function normalizeHistoryComparableText(value) {
+  return String(value || "")
+    .replace(/\s+/g, "")
+    .replace(/[()（）]/g, "")
+    .trim();
+}
+
+function findClosedDayKey(storeName, station) {
+  const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
+  const normalizedName = normalizeHistoryComparableText(storeName);
+  const normalizedStation = normalizeHistoryComparableText(station);
+
+  for (const entry of history) {
+    const removed = Array.isArray(entry?.removed) ? entry.removed : [];
+    for (const item of removed) {
+      const [rawName, rawStation = ""] = String(item || "").split("/");
+      const itemName = normalizeHistoryComparableText(rawName);
+      const itemStation = normalizeHistoryComparableText(rawStation);
+      if (!itemName || itemName !== normalizedName) continue;
+      if (!normalizedStation) return entry.dayKey || "";
+      if (!itemStation || itemStation.includes(normalizedStation) || normalizedStation.includes(itemStation)) {
+        return entry.dayKey || "";
+      }
+    }
+  }
+
+  return "";
+}
+
+function formatClosedPrefix(dayKey) {
+  if (!dayKey) return "【閉店】";
+  return `【閉店${formatHistoryDate(dayKey)}】`;
+}
+
+function getDisplayStoreName(row) {
+  if (!row) return "";
+  if (row.isArchivedStore) {
+    return `${formatClosedPrefix(row.closedDayKey)}${row.name}`;
+  }
+  return row.name;
+}
+
 function renderHistoryGroup(label, items, modifier, stationLookup) {
   if (!items.length) return "";
   return `
@@ -828,7 +870,7 @@ function renderSelectedStore() {
     return;
   }
 
-  selectedStoreName.textContent = state.selectedRow.name;
+  selectedStoreName.textContent = getDisplayStoreName(state.selectedRow);
   const selectedDomainGroup = getDomainGroupFromUrl(state.selectedRow.officialUrl);
   selectedStoreMeta.textContent = selectedDomainGroup ? `ドメイン系統: ${selectedDomainGroup}` : "";
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
@@ -1450,6 +1492,7 @@ function buildArchivedProfileRow(reviewKey, profile) {
   const officialUrl = window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
   const name = profile.storeName || latestReview?.storeName || "掲載終了した店舗";
   const station = profile.storeStation || latestReview?.storeStation || "";
+  const closedDayKey = profile.closedDayKey || findClosedDayKey(name, station);
   const fallbackLocation = latestReview?.storeLocation || station || name;
   const baseLocationQuery = buildLocationQuery(name, station, profile.address || fallbackLocation, profile.note || "");
 
@@ -1475,6 +1518,7 @@ function buildArchivedProfileRow(reviewKey, profile) {
     locationQuery: baseLocationQuery,
     mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(baseLocationQuery)}`,
     isArchivedStore: true,
+    closedDayKey,
   };
 
   applyProfileLocationToRow(row);
@@ -2372,7 +2416,7 @@ function renderMarkerInfoContent(row) {
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
-      <div style="font-weight:700;font-size:14px;">${escapeHtml(row.name)}${officialHtml}${mapLinkHtml}</div>
+      <div style="font-weight:700;font-size:14px;">${escapeHtml(getDisplayStoreName(row))}${officialHtml}${mapLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}${phoneSearchHtml}</div>
       ${notesHtml}
