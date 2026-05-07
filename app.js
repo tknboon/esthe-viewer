@@ -432,6 +432,12 @@ function normalizeRoomToken(value) {
   return normalizeHistoryComparableText(String(value || "").replace(/駅|ルーム/g, ""));
 }
 
+function looksBrokenText(value) {
+  const text = String(value || "").trim();
+  if (!text) return false;
+  return /[?？]{2,}|�/.test(text);
+}
+
 function choosePrimaryStationToken(row, tokens) {
   if (!Array.isArray(tokens) || !tokens.length) return "";
   if (!row) return tokens[0] || "";
@@ -482,18 +488,21 @@ function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
 }
 
 function createExplicitRoomVariantRow(row, room, index) {
-  const label = room?.label || row.station || "";
+  const label = looksBrokenText(room?.label) ? (row.station || "") : (room?.label || row.station || "");
   const latitude = room?.latitude || "";
   const longitude = room?.longitude || "";
   const hasCoordinates = Boolean(latitude && longitude);
-  const location = room?.address || label || row.location;
+  const roomAddress = looksBrokenText(room?.address) ? "" : String(room?.address || "").trim();
+  const effectiveNote = looksBrokenText(room?.note) ? row.notes : (room?.note || row.notes);
+  const location = roomAddress || label || row.location;
   const locationQuery = hasCoordinates
     ? `${latitude},${longitude}`
-    : buildLocationQuery(row.name, label, location, room?.note || row.notes);
+    : buildLocationQuery(row.name, label, location, effectiveNote);
   const stationFallbackQuery = buildRoomLocationQuery(row, label);
+  const shouldUseStationFallback = !hasCoordinates && (!roomAddress || normalizeRoomToken(roomAddress) === normalizeRoomToken(label));
   const cachedLatLng = hasCoordinates
     ? { lat: Number(latitude), lng: Number(longitude) }
-    : state.geocodeCache[locationQuery] || state.geocodeCache[stationFallbackQuery] || null;
+    : state.geocodeCache[locationQuery] || (shouldUseStationFallback ? state.geocodeCache[stationFallbackQuery] || null : null);
 
   return {
     ...row,
@@ -511,7 +520,7 @@ function createExplicitRoomVariantRow(row, room, index) {
     baseLocationQuery: locationQuery,
     locationQuery,
     mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationQuery)}`,
-    notes: room?.note || row.notes,
+    notes: effectiveNote,
   };
 }
 
