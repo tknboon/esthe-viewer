@@ -2910,15 +2910,34 @@ function openMarkerInfoWindow(map, infoWindow, marker, row) {
   });
 }
 
+function sanitizePopupNote(note) {
+  const text = String(note || "").trim();
+  if (!text) return "";
+
+  const meaninglessPatterns = [
+    /全国メンズエステランキング/i,
+    /のアクセス/i,
+    /エリアのアジアンエステ/i,
+  ];
+
+  if (meaninglessPatterns.some((pattern) => pattern.test(text))) {
+    return "";
+  }
+
+  return text;
+}
+
 function renderMarkerInfoContent(row) {
   const profile = getStoreProfile(row);
   const canEdit = canCurrentUserEdit();
   const phoneHtml = row.phone
     ? `<a href="tel:${escapeHtml(row.phone)}" style="color:#c2185b;text-decoration:none;font-weight:700;">${escapeHtml(row.phone)}</a>`
     : "—";
-  const popupNote = hasStoreProfileContent(profile)
-    ? String(profile?.note || "").trim()
-    : (row.notes || "");
+  const popupNote = sanitizePopupNote(
+    hasStoreProfileContent(profile)
+      ? String(profile?.note || "").trim()
+      : (row.notes || "")
+  );
   const notesHtml = popupNote ? `<div style="margin-top:4px;">備考: ${escapeHtml(popupNote)}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
   const preferredExternalUrl = getPreferredExternalUrl(row);
