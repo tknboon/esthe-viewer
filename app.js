@@ -25,6 +25,8 @@
   expandedRegions: {},
   streetViewPanorama: null,
   streetViewService: null,
+  archivedDetailCache: {},
+  archivedDetailLoading: {},
   sharedSync: {
     enabled: false,
     authReady: false,
@@ -178,6 +180,7 @@ function init() {
     state.reviewsByStore = readReviews();
     state.storeProfilesByKey = readStoreProfiles();
     state.rows.forEach(applyProfileLocationToRow);
+    primeArchivedProfileDetails();
     state.favoritesByStore = readFavorites();
     state.excludedByStore = readExcluded();
     state.sharedSync.lastBackupAt = readBackupMeta().savedAt || "";
@@ -1581,6 +1584,7 @@ function startSharedListeners() {
     state.storeProfilesByKey = payload;
     writeLocalObject("toyota-esthe-store-profiles", state.storeProfilesByKey);
     state.rows.forEach(applyProfileLocationToRow);
+    primeArchivedProfileDetails();
     renderSelectedStore();
     syncMapWithFilters();
     syncProfileMap();
@@ -1696,10 +1700,95 @@ function getActiveRowByReviewKey(reviewKey) {
   return state.rows.find((row) => row.reviewKey === reviewKey) || null;
 }
 
+function buildLocalDetailHtmlPath(listingUrl) {
+  if (!listingUrl) return "";
+  const match = String(listingUrl).match(/shop-detail\/([^/]+)\//);
+  if (!match) return "";
+  return `./esthe_ranking_detail_pages/${match[1]}.html`;
+}
+
+function extractArchivedDetailSnapshot(htmlText) {
+  if (!htmlText) return null;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlText, "text/html");
+  const phoneText = (
+    doc.querySelector(".coupon_phone")?.textContent ||
+    doc.querySelector(".phone-detail-side")?.textContent ||
+    doc.querySelector(".phone-detail")?.textContent ||
+    ""
+  ).trim();
+  const hoursText = Array.from(doc.querySelectorAll("table td"))
+    .find((cell) => (cell.textContent || "").trim() === "営業時間")
+    ?.nextElementSibling?.textContent?.trim() || "";
+  const officialUrl = doc.querySelector('a[href][rel*="nofollow"][target="_blank"]')?.getAttribute("href") || "";
+
+  return {
+    phone: phoneText,
+    hours: hoursText,
+    officialUrl,
+  };
+}
+
+async function ensureArchivedProfileDetails(reviewKey, profile) {
+  if (!reviewKey || !profile?.listingUrl) return;
+  if (state.archivedDetailCache[reviewKey] || state.archivedDetailLoading[reviewKey]) return;
+  if (getActiveRowByReviewKey(reviewKey)) return;
+
+  const detailPath = buildLocalDetailHtmlPath(profile.listingUrl);
+  if (!detailPath) return;
+
+  state.archivedDetailLoading[reviewKey] = true;
+  try {
+    const response = await fetch(detailPath, { cache: "no-store" });
+    if (!response.ok) return;
+    const htmlText = await response.text();
+    const snapshot = extractArchivedDetailSnapshot(htmlText);
+    if (!snapshot) return;
+
+    state.archivedDetailCache[reviewKey] = snapshot;
+    const existingProfile = state.storeProfilesByKey[reviewKey];
+    if (!existingProfile) return;
+
+    const nextProfile = {
+      ...existingProfile,
+      phone: existingProfile.phone || snapshot.phone || "",
+      hours: existingProfile.hours || snapshot.hours || "",
+      officialUrl: existingProfile.officialUrl || snapshot.officialUrl || "",
+    };
+
+    if (
+      nextProfile.phone !== existingProfile.phone ||
+      nextProfile.hours !== existingProfile.hours ||
+      nextProfile.officialUrl !== existingProfile.officialUrl
+    ) {
+      state.storeProfilesByKey[reviewKey] = nextProfile;
+      writeStoreProfiles();
+    }
+
+    if (state.selectedRow?.reviewKey === reviewKey) {
+      renderSelectedStore();
+    }
+    syncMapWithFilters();
+    syncProfileMap();
+  } catch (error) {
+    console.warn(error);
+  } finally {
+    delete state.archivedDetailLoading[reviewKey];
+  }
+}
+
+function primeArchivedProfileDetails() {
+  for (const [reviewKey, profile] of Object.entries(state.storeProfilesByKey || {})) {
+    ensureArchivedProfileDetails(reviewKey, profile);
+  }
+}
+
 function buildArchivedProfileRow(reviewKey, profile) {
   const latestReview = getReviewsForKey(reviewKey)[0] || null;
   const listingUrl = profile.listingUrl || latestReview?.listingUrl || "";
-  const officialUrl = window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
+  const cachedDetail = state.archivedDetailCache[reviewKey] || null;
+  const officialUrl = profile.officialUrl || cachedDetail?.officialUrl || window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
   const name = profile.storeName || latestReview?.storeName || "掲載終了した店舗";
   const station = profile.storeStation || latestReview?.storeStation || "";
   const closedDayKey = profile.closedDayKey || findClosedDayKey(name, station);
@@ -1717,8 +1806,8 @@ function buildArchivedProfileRow(reviewKey, profile) {
     listingUrl,
     officialUrl,
     notes: "",
-    phone: "",
-    hours: "",
+    phone: profile.phone || cachedDetail?.phone || "",
+    hours: profile.hours || cachedDetail?.hours || "",
     municipality: "",
     municipalityLabels: [],
     hasCoordinates: false,
@@ -1828,6 +1917,9 @@ function handleStoreProfileSave() {
     storeName: state.selectedRow.name,
     storeStation: state.selectedRow.station,
     listingUrl: state.selectedRow.listingUrl,
+    phone: state.selectedRow.phone || "",
+    hours: state.selectedRow.hours || "",
+    officialUrl: state.selectedRow.officialUrl || "",
     updatedAt: new Date().toISOString(),
   };
 
