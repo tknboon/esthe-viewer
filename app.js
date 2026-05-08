@@ -857,7 +857,7 @@ function focusInitialStoreFromUrl() {
 
   const decodedId = decodeURIComponent(requestedId).trim();
   const row = state.filteredRows.find((item) => {
-    const ids = [getStorePageId(item), item.reviewKey, item.listingUrl, item.id].filter(Boolean);
+    const ids = [getStorePageId(item), getStorePageSlug(item), item.reviewKey, item.listingUrl, item.id].filter(Boolean);
     return ids.includes(decodedId);
   });
   if (row) {
@@ -1104,8 +1104,82 @@ function getStorePageId(row) {
   return match?.[1] || encodeURIComponent(row?.reviewKey || row?.id || "");
 }
 
+const STORE_PAGE_STATION_SLUGS = {
+  "名古屋駅": "nagoya",
+  "名駅": "meieki",
+  "栄駅": "sakae",
+  "丸の内駅": "marunouchi",
+  "伏見駅": "fushimi",
+  "金山駅": "kanayama",
+  "豊田市駅": "toyota",
+  "新豊田駅": "shin-toyota",
+  "豊橋駅": "toyohashi",
+  "一宮駅": "ichinomiya",
+  "尾張一宮駅": "owari-ichinomiya",
+  "木曽川駅": "kisogawa",
+  "奥町駅": "okucho",
+  "安城駅": "anjo",
+  "岡崎駅": "okazaki",
+  "刈谷駅": "kariya",
+  "小牧駅": "komaki",
+  "春日井駅": "kasugai",
+  "黒川駅": "kurokawa",
+  "今池駅": "imaike",
+  "千種駅": "chikusa",
+  "大須観音駅": "osukannon",
+  "鶴舞駅": "tsurumai",
+  "藤が丘駅": "fujigaoka",
+  "星ヶ丘駅": "hoshigaoka",
+};
+
+function romanizeStorePageText(value) {
+  const kanaMap = {
+    ア: "a", イ: "i", ウ: "u", エ: "e", オ: "o",
+    カ: "ka", キ: "ki", ク: "ku", ケ: "ke", コ: "ko",
+    サ: "sa", シ: "shi", ス: "su", セ: "se", ソ: "so",
+    タ: "ta", チ: "chi", ツ: "tsu", テ: "te", ト: "to",
+    ナ: "na", ニ: "ni", ヌ: "nu", ネ: "ne", ノ: "no",
+    ハ: "ha", ヒ: "hi", フ: "fu", ヘ: "he", ホ: "ho",
+    マ: "ma", ミ: "mi", ム: "mu", メ: "me", モ: "mo",
+    ヤ: "ya", ユ: "yu", ヨ: "yo",
+    ラ: "ra", リ: "ri", ル: "ru", レ: "re", ロ: "ro",
+    ワ: "wa", ヲ: "wo", ン: "n",
+    ガ: "ga", ギ: "gi", グ: "gu", ゲ: "ge", ゴ: "go",
+    ザ: "za", ジ: "ji", ズ: "zu", ゼ: "ze", ゾ: "zo",
+    ダ: "da", ヂ: "ji", ヅ: "zu", デ: "de", ド: "do",
+    バ: "ba", ビ: "bi", ブ: "bu", ベ: "be", ボ: "bo",
+    パ: "pa", ピ: "pi", プ: "pu", ペ: "pe", ポ: "po",
+    ァ: "a", ィ: "i", ゥ: "u", ェ: "e", ォ: "o",
+    ャ: "ya", ュ: "yu", ョ: "yo", ッ: "", ー: "-",
+  };
+  const katakana = String(value || "").replace(/[\u3041-\u3096]/g, (char) => String.fromCharCode(char.charCodeAt(0) + 0x60));
+  return Array.from(katakana).map((char) => kanaMap[char] || char).join("");
+}
+
+function slugStorePagePart(value) {
+  return romanizeStorePageText(value)
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, " and ")
+    .replace(/['’]/g, "")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-")
+    .toLowerCase();
+}
+
+function getStorePageSlug(row) {
+  const stableId = getStorePageId(row);
+  const shortId = stableId.replace(/-/g, "").slice(0, 8);
+  const primaryStation = String(row?.station || "").split(/[・/／,、\s]+/).find(Boolean) || "";
+  const stationSlug = STORE_PAGE_STATION_SLUGS[primaryStation] || slugStorePagePart(primaryStation.replace(/駅|ルーム/g, ""));
+  const nameSlug = slugStorePagePart(row?.name || "");
+  const readable = [stationSlug, nameSlug].filter((part) => part && part.length >= 2).join("-").slice(0, 72).replace(/-+$/g, "");
+  return `${readable || "store"}-${shortId}`;
+}
+
 function getStorePageUrl(row) {
-  return `./stores/${encodeURIComponent(getStorePageId(row))}.html`;
+  return `./stores/${encodeURIComponent(getStorePageSlug(row))}.html`;
 }
 
 function getDomainGroupFromUrl(url) {

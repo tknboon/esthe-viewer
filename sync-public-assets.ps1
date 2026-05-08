@@ -11,7 +11,8 @@ $files = @(
   "data.js",
   "firebase-config.js",
   "favicon.svg",
-  "sitemap.xml"
+  "sitemap.xml",
+  "robots.txt"
 )
 
 node "$root\generate-store-pages.mjs"
