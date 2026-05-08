@@ -10,11 +10,36 @@ const workspace = process.platform === "win32" && root.startsWith("/")
 const dataPath = path.join(workspace, "data.js");
 const rootStoresDir = path.join(workspace, "stores");
 const docsStoresDir = path.join(workspace, "docs", "stores");
+const rootAreasDir = path.join(workspace, "areas");
+const docsAreasDir = path.join(workspace, "docs", "areas");
+const rootStationsDir = path.join(workspace, "stations");
+const docsStationsDir = path.join(workspace, "docs", "stations");
 const rootSitemapPath = path.join(workspace, "sitemap.xml");
 const docsSitemapPath = path.join(workspace, "docs", "sitemap.xml");
 const rootRobotsPath = path.join(workspace, "robots.txt");
 const docsRobotsPath = path.join(workspace, "docs", "robots.txt");
 const SITE_ORIGIN = "https://www.aichi-esthe.com";
+
+const regionLabels = new Map(Object.entries({
+  nagoya: "名古屋・名駅・納屋橋",
+  sakae: "栄",
+  shinsakae: "新栄町・千種・今池",
+  kanayama: "金山・熱田",
+  kurokawa: "黒川・大曽根",
+  hoshigaoka: "星ヶ丘・藤が丘",
+  moriyama: "守山・小幡",
+  otai: "小田井・比良",
+  tokaidori: "東海通・高畑",
+  kasadera: "笠寺・柴田",
+  horita: "堀田・新瑞橋",
+  tsurumai: "大須・鶴舞",
+  showa: "名古屋・昭和区・天白区",
+  komaki: "小牧・春日井",
+  owari: "尾張・一宮",
+  chita: "知多・大府・半田",
+  toyota: "西三河・豊田・岡崎",
+  toyohashi: "東三河・豊橋・豊川",
+}));
 
 const dataCode = fs.readFileSync(dataPath, "utf8");
 const sandbox = { window: {} };
@@ -133,6 +158,21 @@ function stationSlug(station) {
   if (stationRomanOverrides.has(primary)) return stationRomanOverrides.get(primary);
   const withoutSuffix = primary.replace(/駅|ルーム/g, "");
   return slugPart(withoutSuffix);
+}
+
+function primaryStationLabel(station) {
+  return normalizeText(station).split(/[・/／,、\s]+/).find(Boolean) || "";
+}
+
+function getRegionSlug(row) {
+  const listingUrl = getRowValue(row, "掲載URL");
+  const match = String(listingUrl).match(/esthe-ranking\.jp\/([^/]+)\//);
+  return match?.[1] || "aichi";
+}
+
+function getRegionLabel(row) {
+  const regionSlug = getRegionSlug(row);
+  return regionLabels.get(regionSlug) || "愛知県";
 }
 
 function getStorePageSlug(row, index) {
@@ -330,13 +370,136 @@ ${initialFields || `              <div class="empty-state">表示できる店舗
 `;
 }
 
+function renderStoreLinkList(records) {
+  return records.map((record) => `              <a class="nearby-store-item" href="../stores/${escapeHtml(record.slug)}.html">
+                <span>${escapeHtml(record.name)}</span>
+                <small>${escapeHtml([record.station, record.areaLabel].filter(Boolean).join(" / "))}</small>
+              </a>`).join("\n");
+}
+
+function renderStationLinkList(records) {
+  const seen = new Map();
+  for (const record of records) {
+    if (!record.stationSlug || !record.stationLabel) continue;
+    if (!seen.has(record.stationSlug)) seen.set(record.stationSlug, { label: record.stationLabel, count: 0 });
+    seen.get(record.stationSlug).count += 1;
+  }
+  return [...seen.entries()]
+    .sort((a, b) => b[1].count - a[1].count || a[1].label.localeCompare(b[1].label, "ja"))
+    .map(([slug, item]) => `              <a class="nearby-store-item" href="../stations/${escapeHtml(slug)}.html">
+                <span>${escapeHtml(item.label)}</span>
+                <small>${item.count}件</small>
+              </a>`)
+    .join("\n");
+}
+
+function renderCollectionPage({ type, slug, label, records, relatedRecords = [] }) {
+  const isArea = type === "area";
+  const dirName = isArea ? "areas" : "stations";
+  const pageTitle = `${label}のアジアンエステ | 愛知県のアジアンエステ`;
+  const description = `${label}周辺のアジアンエステ店舗一覧。営業時間、電話番号、場所、公式サイト、レビュー情報を確認できます。`;
+  const canonicalUrl = `${SITE_ORIGIN}/${dirName}/${encodeURIComponent(slug)}.html`;
+  const storeLinks = renderStoreLinkList(records);
+  const stationLinks = isArea ? renderStationLinkList(records) : "";
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: pageTitle,
+    description,
+    url: canonicalUrl,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: records.length,
+      itemListElement: records.slice(0, 100).map((record, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: record.name,
+        url: `${SITE_ORIGIN}/stores/${encodeURIComponent(record.slug)}.html`,
+      })),
+    },
+  };
+
+  return `<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${escapeHtml(pageTitle)}</title>
+    <meta name="description" content="${escapeHtml(description)}" />
+    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="${escapeHtml(pageTitle)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:site_name" content="愛知県のアジアンエステ" />
+    <script type="application/ld+json">${JSON.stringify(itemList, null, 2).replace(/</g, "\\u003c")}</script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="app-shell store-page-shell">
+      <header class="hero store-page-hero">
+        <div class="hero-copy-block">
+          <p class="hero-kicker">${isArea ? "地区ページ" : "駅ページ"}</p>
+          <h1>${escapeHtml(label)}</h1>
+        </div>
+      </header>
+
+      <main class="store-page-layout">
+        <section class="store-page-main">
+          <section class="panel-block store-page-section">
+            <div class="analytics-head">
+              <span class="input-label">${escapeHtml(label)}の店舗</span>
+              <strong class="analytics-total">${records.length}件</strong>
+            </div>
+            <div class="nearby-store-list">
+${storeLinks || `              <div class="empty-state compact">店舗はありません。</div>`}
+            </div>
+          </section>
+        </section>
+
+        <aside class="store-page-side">
+          <section class="panel-block">
+            <p class="mini-label">ナビゲーション</p>
+            <div class="store-side-actions">
+              <a class="action-link primary" href="../index.html">地図に戻る</a>
+              <a class="action-link" href="../sitemap.xml">サイトマップ</a>
+            </div>
+          </section>
+          ${stationLinks ? `<section class="panel-block">
+            <p class="mini-label">駅から探す</p>
+            <div class="nearby-store-list">
+${stationLinks}
+            </div>
+          </section>` : ""}
+          ${relatedRecords.length ? `<section class="panel-block">
+            <p class="mini-label">関連店舗</p>
+            <div class="nearby-store-list">
+${renderStoreLinkList(relatedRecords.slice(0, 10))}
+            </div>
+          </section>` : ""}
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
+`;
+}
+
 ensureCleanDir(rootStoresDir);
 ensureCleanDir(docsStoresDir);
+ensureCleanDir(rootAreasDir);
+ensureCleanDir(docsAreasDir);
+ensureCleanDir(rootStationsDir);
+ensureCleanDir(docsStationsDir);
 
 const seenIds = new Set();
 const seenSlugs = new Set();
+const storeRecords = [];
 let generated = 0;
 let redirects = 0;
+let areaPages = 0;
+let stationPages = 0;
 const sitemapUrls = [
   `${SITE_ORIGIN}/`,
   `${SITE_ORIGIN}/store.html`,
@@ -363,8 +526,54 @@ rows.forEach((row, index) => {
   }
 
   sitemapUrls.push(`${SITE_ORIGIN}/stores/${encodeURIComponent(slug)}.html`);
+  storeRecords.push({
+    row,
+    index,
+    stableId,
+    slug,
+    name: getRowValue(row, "店舗名") || "店舗情報",
+    station: getRowValue(row, "最寄駅"),
+    stationLabel: primaryStationLabel(getRowValue(row, "最寄駅")),
+    stationSlug: stationSlug(getRowValue(row, "最寄駅")),
+    areaSlug: getRegionSlug(row),
+    areaLabel: getRegionLabel(row),
+  });
   generated += 1;
 });
+
+const areaGroups = new Map();
+const stationGroups = new Map();
+
+for (const record of storeRecords) {
+  if (!areaGroups.has(record.areaSlug)) areaGroups.set(record.areaSlug, []);
+  areaGroups.get(record.areaSlug).push(record);
+
+  if (record.stationSlug && /[a-z]/.test(record.stationSlug) && record.stationLabel) {
+    if (!stationGroups.has(record.stationSlug)) stationGroups.set(record.stationSlug, []);
+    stationGroups.get(record.stationSlug).push(record);
+  }
+}
+
+for (const [areaSlug, records] of areaGroups.entries()) {
+  records.sort((a, b) => a.station.localeCompare(b.station, "ja") || a.name.localeCompare(b.name, "ja"));
+  const label = records[0]?.areaLabel || areaSlug;
+  const html = renderCollectionPage({ type: "area", slug: areaSlug, label, records });
+  fs.writeFileSync(path.join(rootAreasDir, `${areaSlug}.html`), html, "utf8");
+  fs.writeFileSync(path.join(docsAreasDir, `${areaSlug}.html`), html, "utf8");
+  sitemapUrls.push(`${SITE_ORIGIN}/areas/${encodeURIComponent(areaSlug)}.html`);
+  areaPages += 1;
+}
+
+for (const [stationPageSlug, records] of stationGroups.entries()) {
+  records.sort((a, b) => a.areaLabel.localeCompare(b.areaLabel, "ja") || a.name.localeCompare(b.name, "ja"));
+  const label = records[0]?.stationLabel || stationPageSlug;
+  const relatedRecords = storeRecords.filter((record) => record.areaSlug === records[0]?.areaSlug && record.stationSlug !== stationPageSlug);
+  const html = renderCollectionPage({ type: "station", slug: stationPageSlug, label, records, relatedRecords });
+  fs.writeFileSync(path.join(rootStationsDir, `${stationPageSlug}.html`), html, "utf8");
+  fs.writeFileSync(path.join(docsStationsDir, `${stationPageSlug}.html`), html, "utf8");
+  sitemapUrls.push(`${SITE_ORIGIN}/stations/${encodeURIComponent(stationPageSlug)}.html`);
+  stationPages += 1;
+}
 
 const lastmod = String(meta.lastUpdatedAt || new Date().toISOString()).slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -387,4 +596,4 @@ fs.writeFileSync(docsSitemapPath, sitemap, "utf8");
 fs.writeFileSync(rootRobotsPath, robots, "utf8");
 fs.writeFileSync(docsRobotsPath, robots, "utf8");
 
-console.log(`Generated ${generated} store pages and ${redirects} redirects.`);
+console.log(`Generated ${generated} store pages, ${redirects} redirects, ${areaPages} area pages, and ${stationPages} station pages.`);

@@ -9,4 +9,4 @@ if [ $status -ne 0 ]; then
 fi
 
 git add docs/index.html docs/store.html docs/app.js docs/store-page.js docs/styles.css docs/data.js docs/firebase-config.js docs/favicon.svg docs/sitemap.xml docs/robots.txt docs/CNAME
-git add docs/stores
+git add docs/stores docs/areas docs/stations
