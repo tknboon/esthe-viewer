@@ -8,5 +8,4 @@ if [ $status -ne 0 ]; then
   exit $status
 fi
 
-git add docs/index.html docs/app.js docs/styles.css docs/data.js docs/firebase-config.js docs/favicon.svg docs/CNAME
-git add site/index.html site/app.js site/styles.css site/data.js site/firebase-config.js site/favicon.svg site/CNAME
+git add docs/index.html docs/store.html docs/app.js docs/store-page.js docs/styles.css docs/data.js docs/firebase-config.js docs/favicon.svg docs/CNAME

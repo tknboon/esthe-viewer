@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
-$targets = @("docs", "site")
+$targets = @("docs")
 $files = @(
   "index.html",
   "store.html",
