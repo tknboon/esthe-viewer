@@ -76,6 +76,8 @@ const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
+const selectedStoreDetailLink = document.querySelector("#selectedStoreDetailLink");
+const selectedStoreDetailToolbarLink = document.querySelector("#selectedStoreDetailToolbarLink");
 const favoriteToggleButton = document.querySelector("#favoriteToggleButton");
 const excludeToggleButton = document.querySelector("#excludeToggleButton");
 const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
@@ -249,6 +251,7 @@ function init() {
     setDefaultReviewValues();
     bindEvents();
     applyFilters();
+    focusInitialStoreFromUrl();
     renderReviewAnalytics();
     initSharedSync();
   } catch (error) {
@@ -847,6 +850,21 @@ function applyFilters() {
   syncProfileMap();
 }
 
+function focusInitialStoreFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const requestedId = params.get("store") || params.get("id") || "";
+  if (!requestedId) return;
+
+  const decodedId = decodeURIComponent(requestedId).trim();
+  const row = state.filteredRows.find((item) => {
+    const ids = [getStorePageId(item), item.reviewKey, item.listingUrl, item.id].filter(Boolean);
+    return ids.includes(decodedId);
+  });
+  if (row) {
+    focusRow(row);
+  }
+}
+
 function handleRegionToggle(event) {
   const municipalityTrigger = event.target.closest("[data-municipality-label]");
   if (municipalityTrigger) {
@@ -1081,6 +1099,15 @@ function getPreferredExternalUrl(row) {
   return row.officialUrl || row.listingUrl || "";
 }
 
+function getStorePageId(row) {
+  const match = String(row?.listingUrl || "").match(/shop-detail\/([^/]+)\//);
+  return match?.[1] || encodeURIComponent(row?.reviewKey || row?.id || "");
+}
+
+function getStorePageUrl(row) {
+  return `./store.html?id=${encodeURIComponent(getStorePageId(row))}`;
+}
+
 function getDomainGroupFromUrl(url) {
   if (!url) return "";
 
@@ -1192,6 +1219,7 @@ function renderCards() {
 
           <div class="store-actions">
             <button class="focus-button" type="button" data-focus-id="${row.id}">地図で見る</button>
+            <a class="action-link" href="${getStorePageUrl(row)}">個別ページ</a>
             <a class="action-link primary" href="${row.mapUrl}" target="_blank" rel="noreferrer">Googleマップで開く</a>
             ${getPreferredExternalUrl(row) ? `<a class="action-link" href="${getPreferredExternalUrl(row)}" target="_blank" rel="noreferrer">オフィシャルHP</a>` : ""}
           </div>
@@ -1244,6 +1272,8 @@ function renderSelectedStore() {
     disableLink(selectedPhoneSearchLink);
     disableLink(selectedMapLink);
     disableLink(selectedListingLink);
+    disableLink(selectedStoreDetailLink);
+    disableLink(selectedStoreDetailToolbarLink);
     clearStoreProfileInputs();
     setStoreProfileEditing(false, false);
     setReviewEditing(false, false);
@@ -1280,6 +1310,15 @@ function renderSelectedStore() {
     selectedListingLink.classList.remove("disabled-link");
   } else {
     disableLink(selectedListingLink);
+  }
+
+  if (selectedStoreDetailLink) {
+    selectedStoreDetailLink.href = getStorePageUrl(state.selectedRow);
+    selectedStoreDetailLink.classList.remove("disabled-link");
+  }
+  if (selectedStoreDetailToolbarLink) {
+    selectedStoreDetailToolbarLink.href = getStorePageUrl(state.selectedRow);
+    selectedStoreDetailToolbarLink.classList.remove("disabled-link");
   }
 
   renderStoreProfileInputs(state.selectedRow);
@@ -2952,6 +2991,7 @@ function renderMarkerInfoContent(row) {
   const officialHtml = preferredExternalUrl
     ? `<a href="${escapeHtml(preferredExternalUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">HP</a>`
     : "";
+  const detailLinkHtml = `<a href="${escapeHtml(getStorePageUrl(row))}" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">個別</a>`;
   const phoneSearchHtml = row.phone
     ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">番号検索</a>`
     : "";
@@ -2964,7 +3004,7 @@ function renderMarkerInfoContent(row) {
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
-      <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}</div>
+      <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}${detailLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}${phoneSearchHtml}</div>
       ${notesHtml}

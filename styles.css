@@ -1133,6 +1133,71 @@ select {
     linear-gradient(180deg, rgba(63, 18, 40, 0.9), rgba(29, 10, 21, 0.88));
 }
 
+.store-page-shell {
+  width: min(1180px, calc(100% - 32px));
+}
+
+.store-page-hero {
+  min-height: 118px;
+  align-items: end;
+}
+
+.store-page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.store-page-main,
+.store-page-side {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.store-detail-card {
+  padding: 22px;
+}
+
+.store-detail-actions,
+.store-side-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.store-page-section {
+  margin-top: 0;
+}
+
+.store-page-review-list {
+  margin-top: 14px;
+}
+
+.nearby-store-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.nearby-store-item {
+  display: grid;
+  gap: 4px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 248, 251, 0.06);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nearby-store-item small {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
 .store-head {
   display: flex;
   justify-content: space-between;
@@ -1265,6 +1330,10 @@ th {
 
 @media (max-width: 1180px) {
   .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .store-page-layout {
     grid-template-columns: 1fr;
   }
 

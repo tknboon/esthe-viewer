@@ -4,7 +4,9 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $targets = @("docs", "site")
 $files = @(
   "index.html",
+  "store.html",
   "app.js",
+  "store-page.js",
   "styles.css",
   "data.js",
   "firebase-config.js",
