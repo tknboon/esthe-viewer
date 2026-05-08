@@ -49,6 +49,7 @@ const syncStatusText = document.querySelector("#syncStatusText");
 const syncAuthButton = document.querySelector("#syncAuthButton");
 const syncMetaText = document.querySelector("#syncMetaText");
 const syncBackupButton = document.querySelector("#syncBackupButton");
+const heroSyncShortcut = document.querySelector("#heroSyncShortcut");
 const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
@@ -785,6 +786,7 @@ function bindEvents() {
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   dailyUpdateHistory?.addEventListener("click", handleHistoryClick);
   syncAuthButton?.addEventListener("click", handleSyncAuthClick);
+  heroSyncShortcut?.addEventListener("click", handleSyncAuthClick);
   syncBackupButton?.addEventListener("click", handleBackupExport);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);

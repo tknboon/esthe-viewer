@@ -32,4 +32,13 @@ foreach ($target in $targets) {
     $destinationPath = Join-Path $targetPath $file
     Copy-Item $sourcePath $destinationPath -Force
   }
+
+  $assetsSourcePath = Join-Path $root "assets"
+  if (Test-Path $assetsSourcePath) {
+    $assetsDestinationPath = Join-Path $targetPath "assets"
+    if (-not (Test-Path $assetsDestinationPath)) {
+      New-Item -ItemType Directory -Path $assetsDestinationPath | Out-Null
+    }
+    Copy-Item (Join-Path $assetsSourcePath "*") $assetsDestinationPath -Recurse -Force
+  }
 }
