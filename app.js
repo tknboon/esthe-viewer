@@ -1105,7 +1105,7 @@ function getStorePageId(row) {
 }
 
 function getStorePageUrl(row) {
-  return `./store.html?id=${encodeURIComponent(getStorePageId(row))}`;
+  return `./stores/${encodeURIComponent(getStorePageId(row))}.html`;
 }
 
 function getDomainGroupFromUrl(url) {

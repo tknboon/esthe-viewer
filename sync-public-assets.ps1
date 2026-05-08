@@ -10,8 +10,11 @@ $files = @(
   "styles.css",
   "data.js",
   "firebase-config.js",
-  "favicon.svg"
+  "favicon.svg",
+  "sitemap.xml"
 )
+
+node "$root\generate-store-pages.mjs"
 
 foreach ($target in $targets) {
   $targetPath = Join-Path $root $target

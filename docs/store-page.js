@@ -44,7 +44,7 @@ function bindEvents() {
 
 function findRequestedRow() {
   const params = new URLSearchParams(window.location.search);
-  const requestedId = params.get("id") || params.get("store") || "";
+  const requestedId = document.body?.dataset.storeId || params.get("id") || params.get("store") || "";
   if (!requestedId) return null;
   const normalizedRequestedId = decodeURIComponent(requestedId).trim();
 
@@ -194,7 +194,7 @@ function renderActions(row) {
     row.mapUrl ? `<a class="action-link primary" href="${escapeAttribute(row.mapUrl)}" target="_blank" rel="noreferrer">Googleマップ</a>` : "",
     row.officialUrl ? `<a class="action-link" href="${escapeAttribute(row.officialUrl)}" target="_blank" rel="noreferrer">オフィシャルHP</a>` : "",
     row.listingUrl ? `<a class="action-link" href="${escapeAttribute(row.listingUrl)}" target="_blank" rel="noreferrer">掲載ページ</a>` : "",
-    `<a class="action-link" href="./index.html?store=${encodeURIComponent(getStorePageId(row))}">地図で見る</a>`,
+    `<a class="action-link" href="${escapeAttribute(getRootPath())}/index.html?store=${encodeURIComponent(getStorePageId(row))}">地図で見る</a>`,
   ].filter(Boolean);
   storeActions.innerHTML = links.join("");
 }
@@ -327,7 +327,11 @@ function getStorePageId(row) {
 }
 
 function getStorePageUrl(row) {
-  return `./store.html?id=${encodeURIComponent(getStorePageId(row))}`;
+  return `${getRootPath()}/stores/${encodeURIComponent(getStorePageId(row))}.html`;
+}
+
+function getRootPath() {
+  return document.body?.dataset.rootPath || ".";
 }
 
 function readLocalObject(key) {
