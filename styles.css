@@ -1305,6 +1305,50 @@ select {
   margin-top: 0;
 }
 
+.collection-intro {
+  display: grid;
+  gap: 12px;
+}
+
+.collection-intro h2 {
+  margin: 0;
+  color: #5e2d45;
+  font-size: 22px;
+}
+
+.collection-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.collection-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.collection-stat {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.74), rgba(246, 235, 240, 0.62));
+}
+
+.collection-stat span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.collection-stat strong {
+  color: var(--accent-strong);
+  font-size: 18px;
+}
+
 .store-page-review-list {
   margin-top: 14px;
 }
@@ -1329,6 +1373,12 @@ select {
 .nearby-store-item small {
   color: var(--muted);
   line-height: 1.4;
+}
+
+.nearby-store-item.featured {
+  background:
+    linear-gradient(90deg, rgba(198, 141, 75, 0.13), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,0.78), rgba(246, 235, 240, 0.68));
 }
 
 .store-head {
@@ -1517,6 +1567,7 @@ th {
   .summary-grid,
   .cards-grid,
   .store-grid,
+  .collection-stat-grid,
   .review-form-grid,
   .review-detail-grid {
     grid-template-columns: 1fr;

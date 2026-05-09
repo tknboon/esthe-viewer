@@ -41,6 +41,27 @@ const regionLabels = new Map(Object.entries({
   toyohashi: "東三河・豊橋・豊川",
 }));
 
+const areaDescriptions = new Map(Object.entries({
+  nagoya: "名古屋駅、名駅、納屋橋周辺で探せる店舗をまとめています。出張や買い物のついでに確認しやすい中心部エリアです。",
+  sakae: "栄周辺の店舗をまとめています。繁華街に近い店舗を地図、駅、公式サイトから確認できます。",
+  shinsakae: "新栄町、千種、今池周辺の店舗をまとめています。駅ごとの候補を見比べながら探せます。",
+  kanayama: "金山、熱田周辺の店舗をまとめています。名古屋市南側の主要駅から探したいときに便利です。",
+  kurokawa: "黒川、大曽根周辺の店舗をまとめています。北区、東区方面の候補を駅別に確認できます。",
+  hoshigaoka: "星ヶ丘、藤が丘周辺の店舗をまとめています。名東区、長久手方面から探す入口として使えます。",
+  moriyama: "守山、小幡周辺の店舗をまとめています。名古屋市北東部の候補を確認できます。",
+  otai: "小田井、比良周辺の店舗をまとめています。西区、北名古屋方面から探しやすいエリアです。",
+  tokaidori: "東海通、高畑周辺の店舗をまとめています。港区、中川区方面の候補を整理しています。",
+  kasadera: "笠寺、柴田周辺の店舗をまとめています。名古屋市南部で探すときの入口です。",
+  horita: "堀田、新瑞橋周辺の店舗をまとめています。瑞穂区、南区方面の候補を確認できます。",
+  tsurumai: "大須、鶴舞周辺の店舗をまとめています。中心部から少し外した候補も探しやすいエリアです。",
+  showa: "昭和区、天白区周辺の店舗をまとめています。住宅地寄りの店舗を探す入口として使えます。",
+  komaki: "小牧、春日井周辺の店舗をまとめています。尾張北部で探したいときに便利です。",
+  owari: "尾張、一宮周辺の店舗をまとめています。一宮駅、木曽川、奥町方面の候補を確認できます。",
+  chita: "知多、大府、半田周辺の店舗をまとめています。知多半島方面から探す入口です。",
+  toyota: "西三河、豊田、岡崎周辺の店舗をまとめています。豊田市駅、新豊田駅、岡崎方面の候補を確認できます。",
+  toyohashi: "東三河、豊橋、豊川周辺の店舗をまとめています。豊橋駅、豊川方面で探したいときに便利です。",
+}));
+
 const dataCode = fs.readFileSync(dataPath, "utf8");
 const sandbox = { window: {} };
 vm.createContext(sandbox);
@@ -393,14 +414,48 @@ function renderStationLinkList(records) {
     .join("\n");
 }
 
+function buildCollectionStats(records) {
+  const stationSet = new Set(records.filter((record) => record.stationLabel).map((record) => record.stationLabel));
+  const officialCount = records.filter((record) => getRowValue(record.row, "オフィシャルHP", "公式HP")).length;
+  const phoneCount = records.filter((record) => getRowValue(record.row, "電話番号", "電話")).length;
+  return [
+    { label: "掲載店舗", value: `${records.length}件` },
+    { label: "駅・目印", value: `${stationSet.size}件` },
+    { label: "公式サイトあり", value: `${officialCount}件` },
+    { label: "電話番号あり", value: `${phoneCount}件` },
+  ];
+}
+
+function renderCollectionStats(records) {
+  return buildCollectionStats(records).map((item) => `              <div class="collection-stat">
+                <span>${escapeHtml(item.label)}</span>
+                <strong>${escapeHtml(item.value)}</strong>
+              </div>`).join("\n");
+}
+
+function renderFeaturedStoreLinks(records) {
+  return records
+    .filter((record) => getRowValue(record.row, "オフィシャルHP", "公式HP") || getRowValue(record.row, "電話番号", "電話"))
+    .slice(0, 8)
+    .map((record) => `              <a class="nearby-store-item featured" href="../stores/${escapeHtml(record.slug)}.html">
+                <span>${escapeHtml(record.name)}</span>
+                <small>${escapeHtml([record.station, getRowValue(record.row, "営業時間", "営業")].filter(Boolean).join(" / "))}</small>
+              </a>`)
+    .join("\n");
+}
+
 function renderCollectionPage({ type, slug, label, records, relatedRecords = [] }) {
   const isArea = type === "area";
   const dirName = isArea ? "areas" : "stations";
   const pageTitle = `${label}のアジアンエステ | 愛知県のアジアンエステ`;
-  const description = `${label}周辺のアジアンエステ店舗一覧。営業時間、電話番号、場所、公式サイト、レビュー情報を確認できます。`;
+  const intro = isArea
+    ? (areaDescriptions.get(slug) || `${label}周辺の店舗をまとめています。`)
+    : `${label}周辺の店舗をまとめています。近くの店舗や関連エリアもあわせて確認できます。`;
+  const description = `${label}周辺のアジアンエステ店舗一覧。${records.length}件の店舗を駅、営業時間、電話番号、場所、公式サイト、レビュー情報から確認できます。`;
   const canonicalUrl = `${SITE_ORIGIN}/${dirName}/${encodeURIComponent(slug)}.html`;
   const storeLinks = renderStoreLinkList(records);
   const stationLinks = isArea ? renderStationLinkList(records) : "";
+  const featuredStoreLinks = renderFeaturedStoreLinks(records);
   const itemList = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -447,6 +502,23 @@ function renderCollectionPage({ type, slug, label, records, relatedRecords = [] 
 
       <main class="store-page-layout">
         <section class="store-page-main">
+          <section class="panel-block store-page-section collection-intro">
+            <p class="mini-label">${isArea ? "地区から探す" : "駅から探す"}</p>
+            <h2>${escapeHtml(label)}周辺の店舗情報</h2>
+            <p>${escapeHtml(intro)}</p>
+            <div class="collection-stat-grid">
+${renderCollectionStats(records)}
+            </div>
+          </section>
+          ${featuredStoreLinks ? `<section class="panel-block store-page-section">
+            <div class="analytics-head">
+              <span class="input-label">確認しやすい店舗</span>
+              <strong class="analytics-total">${Math.min(records.length, 8)}件</strong>
+            </div>
+            <div class="nearby-store-list featured-store-list">
+${featuredStoreLinks}
+            </div>
+          </section>` : ""}
           <section class="panel-block store-page-section">
             <div class="analytics-head">
               <span class="input-label">${escapeHtml(label)}の店舗</span>
