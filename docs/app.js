@@ -50,6 +50,9 @@ const syncAuthButton = document.querySelector("#syncAuthButton");
 const syncMetaText = document.querySelector("#syncMetaText");
 const syncBackupButton = document.querySelector("#syncBackupButton");
 const heroSyncShortcut = document.querySelector("#heroSyncShortcut");
+const nativeShareButton = document.querySelector("#nativeShareButton");
+const copySiteUrlButton = document.querySelector("#copySiteUrlButton");
+const siteShareStatusText = document.querySelector("#siteShareStatusText");
 const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
@@ -788,6 +791,8 @@ function bindEvents() {
   syncAuthButton?.addEventListener("click", handleSyncAuthClick);
   heroSyncShortcut?.addEventListener("click", handleSyncAuthClick);
   syncBackupButton?.addEventListener("click", handleBackupExport);
+  nativeShareButton?.addEventListener("click", handleNativeSiteShare);
+  copySiteUrlButton?.addEventListener("click", handleCopySiteUrl);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
@@ -795,6 +800,37 @@ function bindEvents() {
   reviewToggleButton?.addEventListener("click", handleReviewToggle);
   reviewForm.addEventListener("submit", handleReviewSubmit);
   regionSummary?.addEventListener("click", handleRegionToggle);
+}
+
+async function handleNativeSiteShare() {
+  const shareData = {
+    title: "愛知県のアジアンエステ",
+    text: "愛知県のアジアンエステ店舗を地図、地区、駅、レビューから探せます。",
+    url: "https://www.aichi-esthe.com/",
+  };
+
+  if (!navigator.share) {
+    await handleCopySiteUrl();
+    return;
+  }
+
+  try {
+    await navigator.share(shareData);
+    if (siteShareStatusText) siteShareStatusText.textContent = "共有を開きました。";
+  } catch (error) {
+    if (error?.name !== "AbortError" && siteShareStatusText) {
+      siteShareStatusText.textContent = "共有を開けませんでした。";
+    }
+  }
+}
+
+async function handleCopySiteUrl() {
+  try {
+    await navigator.clipboard.writeText("https://www.aichi-esthe.com/");
+    if (siteShareStatusText) siteShareStatusText.textContent = "URLをコピーしました。";
+  } catch (error) {
+    if (siteShareStatusText) siteShareStatusText.textContent = "コピーできませんでした。";
+  }
 }
 
 function handleListActionClick(event) {
