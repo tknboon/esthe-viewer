@@ -27,68 +27,6 @@
         pointer-events: none;
         cursor: default;
     }
-    .data-frame{
-      padding:0;
-      border-radius:0px;
-      border-color:#e9e9e9;
-    }
-    .data-frame .inner-badge-position{
-      bottom:0px;
-      right:0px;
-      padding:2px 2px;
-      background:rgba(255, 255, 255, 0.55);
-    }
-    .video-badge-icon::after {
-      content: '\f144';
-      font-family: FontAwesome;
-      display:inline-block;
-      color:#f63;
-      font-size:20px;
-      line-height:0;
-      vertical-align:middle;
-      padding:0 1px;
-      margin:0 5px;
-    }
-
-    .swiper-card [class*="video-badge-icon"] {
-      background-color: #fff;
-      padding:5px;
-      border-radius:50%;
-      position: relative;
-      top: 2px;
-      margin-right: 3px;
-    }
-    .swiper-card [class*="video-badge-icon"]::after {
-      padding: 0;
-      margin: 0;
-      position: relative;
-      top: -1px;
-    }
-    .swiper-card [class*="sns-badge-icon"] {
-      background-color: #fff;
-      padding:5px;
-      border-radius:50%;
-      position: relative;
-      top: 2px;
-      margin-right: 3px;
-    }
-    .swiper-card [class*="sns-badge-icon"]::after {
-      margin:0;
-      position: relative;
-      top: -1px;
-    }
-
-    .ver-nav-mbns > [class^="ver-nav-mbns"] {
-      display:flex;
-      flex:1;
-      gap:3px;
-    }
-    .ver-nav-mbns > [class^="ver-nav-mbns"] > * {
-      flex:1;
-      gap:3px;
-    }
-    .sp-h1-under-under-text {font-size:14px;line-height:1.5;margin:0 0 10px 0;color:#000;word-break: break-all;text-align: left;}
-    .fs10{font-size:10px;}
   </style>
   <script src="/assets/plugins/jquery/jquery.min.js?v=4.6.5"></script>
 
@@ -1516,9 +1454,7 @@
     <!-- トップページ: 右サイドバー -->
 	<div class="col-md-3">
 		<div class="margin-bottom-20 margin-top-10">
-			<div class="keep-in-shop-detail">
-				<button class="therakeep" type="button" data-keep-type="shop" data-keep-id="f308128b-b20d-47e6-8955-32fb36161c7f"><span class="keep-adding">追加中</span><i class="fa fa-star-o"></i><span>この店舗をキープ</span></button>
-			</div>
+			<div class="keep-in-shop-detail"><button class="therakeep" type="button" data-keep-type="shop" data-keep-id="f308128b-b20d-47e6-8955-32fb36161c7f"><span class="keep-adding">追加中</span><i class="fa fa-star-o"></i><span>この店舗をキープ</span></button></div>
 			<div class="borderbox sidebox">
 				<div class="sub_visual"><a href="https://otonakuukan.eei.jp/" ping="https://www.esthe-ranking.jp/cc/f308128b-b20d-47e6-8955-32fb36161c7f/16/" target="_blank" rel="noopener nofollow" class="trimbox"><picture><source srcset="/uploads/webp/shop_hp-000000d419-64e83cf05c804.webp" type="image/webp"><img class="trim_img" src="/uploads/shop_hp-000000d419-64e83cf05c804.jpg" alt="オトナ空間 オフィシャルサイト"></picture></a></div>				<table><tbody>
 					<tr>
@@ -1643,11 +1579,12 @@
             </ul>
             <ul class="list-inline terms-menu footer-link-text">
               <li><a href="/page/contact/">お問い合わせ</a></li>
+              <li><a href="/signup/">掲載申込</a></li>
               <li><a href="/page/adinfo/">掲載について</a></li>
               <li><a href="/page/link/">相互リンク</a></li>
               <li><a href="/page/terms/">利用規約</a></li>
               <li><a href="/page/privacy/">プライバシーポリシー</a></li>
-                              <li class="disp_sp"><a href="/login/">店舗ログイン</a></li>
+                              <li><a href="/login/">店舗ログイン</a></li>
                           </ul>
           </div>
         </div>
@@ -1793,34 +1730,38 @@
   });
   </script>
 
-<script src="/assets/js/jQueryAutoHeight.js?v=4.6.5"></script><script src="/assets/js/script_schedule.js?v=4.6.5"></script><script src="/assets/js/shop_detail.min.js?v=4.6.5"></script>
-  <script type="text/javascript">
-    $('.schedule-filter').on('click', function() {
-      var n = $(this).next('.schedule-navi');
-      $(this).children('a').removeClass('navi-active');
-      if (!n.is(':visible')) {
-        $(this).children('a').addClass('navi-active');
+<script src="/assets/js/jQueryAutoHeight.js?v=4.6.5"></script><script src="/assets/js/script_schedule.js?v=4.6.5"></script><script src="/assets/js/shop_detail.min.js?v=4.6.5"></script>    <script type="text/javascript">
+      $('.schedule-filter').on('click', function() {
+        var n = $(this).next('.schedule-navi');
+        $(this).children('a').removeClass('navi-active');
+        if (!n.is(':visible')) {
+          $(this).children('a').addClass('navi-active');
+        }
+        n.slideToggle('fast');
+      });
+      $("#girl-filter-in-schedle input").on('change', function(){
+        var Name = $(this).attr('name');
+        var Vul = $(this).attr('value');
+        if(Vul == 0){
+          $("[name='" + Name + "']").not("input[value=0]").prop('checked', false);
+        } else {
+          $("[name='" + Name + "'][value=0]").prop('checked', false);
+        }
+      });
+      $('.schedule-navi li a').on('click', function() {
+        var h = $(this).attr('href');
+        if (/#time\d\d$/.test(h) === true) {
+          $(this).parents('ul').find('li').removeClass('current-selected');
+          $(this).parent('li').addClass('current-selected');
+          $('#schedule-filter-time-selected').text($(this).text());
+        }
+      });
+                </script>
+    <script type="text/javascript">
+      if (location.pathname !== '/member/login/' && location.pathname !== '/member/signup/' && location.pathname !== '/member/' && location.pathname !== '/member/complete/') {
+        localStorage.setItem('reserve_member_redirect','');
       }
-      n.slideToggle('fast');
-    });
-    $("#girl-filter-in-schedle input").on('change', function(){
-      var Name = $(this).attr('name');
-      var Vul = $(this).attr('value');
-      if(Vul == 0){
-        $("[name='" + Name + "']").not("input[value=0]").prop('checked', false);
-      } else {
-        $("[name='" + Name + "'][value=0]").prop('checked', false);
-      }
-    });
-    $('.schedule-navi li a').on('click', function() {
-      var h = $(this).attr('href');
-      if (/#time\d\d$/.test(h) === true) {
-        $(this).parents('ul').find('li').removeClass('current-selected');
-        $(this).parent('li').addClass('current-selected');
-        $('#schedule-filter-time-selected').text($(this).text());
-      }
-    });
-          </script>
+    </script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73739198-1"></script>

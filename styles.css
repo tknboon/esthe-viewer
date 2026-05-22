@@ -336,6 +336,18 @@ select {
   margin: 0 0 12px;
 }
 
+.public-share-box {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .text-input,
 .select-input {
   width: 100%;

@@ -17,6 +17,9 @@ const reviewSummary = document.querySelector("#reviewSummary");
 const reviewList = document.querySelector("#reviewList");
 const nearbyStoreList = document.querySelector("#nearbyStoreList");
 const copyPageUrlButton = document.querySelector("#copyPageUrlButton");
+const nativePageShareButton = document.querySelector("#nativePageShareButton");
+const lineShareButton = document.querySelector("#lineShareButton");
+const xShareButton = document.querySelector("#xShareButton");
 const copyStatusText = document.querySelector("#copyStatusText");
 
 const MANUAL_STATION_OVERRIDES = {
@@ -40,6 +43,7 @@ function initStorePage() {
 
 function bindEvents() {
   copyPageUrlButton?.addEventListener("click", handleCopyPageUrl);
+  nativePageShareButton?.addEventListener("click", handleNativePageShare);
 }
 
 function findRequestedRow() {
@@ -117,6 +121,9 @@ function renderPage() {
   setMeta("og:title", title, "property");
   setMeta("og:description", description, "property");
   setMeta("og:url", window.location.href, "property");
+  setMeta("twitter:title", title);
+  setMeta("twitter:description", description);
+  updateShareLinks(title, window.location.href);
 
   if (storePageTitle) storePageTitle.textContent = row.name || "店舗情報";
   if (storeName) storeName.textContent = row.name || "店舗情報";
@@ -302,6 +309,36 @@ async function handleCopyPageUrl() {
     if (copyStatusText) copyStatusText.textContent = "URLをコピーしました。";
   } catch (error) {
     if (copyStatusText) copyStatusText.textContent = "コピーできませんでした。";
+  }
+}
+
+async function handleNativePageShare() {
+  const title = state.row?.name ? `${state.row.name} | 愛知県のアジアンエステ` : document.title;
+  const text = state.row ? buildDescription(state.row, getStoreProfile(state.row) || {}, getReviewsForRow(state.row)) : "愛知県のアジアンエステ店舗情報";
+
+  if (!navigator.share) {
+    await handleCopyPageUrl();
+    return;
+  }
+
+  try {
+    await navigator.share({ title, text, url: window.location.href });
+    if (copyStatusText) copyStatusText.textContent = "共有を開きました。";
+  } catch (error) {
+    if (error?.name !== "AbortError" && copyStatusText) {
+      copyStatusText.textContent = "共有を開けませんでした。";
+    }
+  }
+}
+
+function updateShareLinks(title, url) {
+  const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(title);
+  if (lineShareButton) {
+    lineShareButton.href = `https://social-plugins.line.me/lineit/share?url=${encodedUrl}`;
+  }
+  if (xShareButton) {
+    xShareButton.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
   }
 }
 

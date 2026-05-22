@@ -19,6 +19,7 @@ const docsSitemapPath = path.join(workspace, "docs", "sitemap.xml");
 const rootRobotsPath = path.join(workspace, "robots.txt");
 const docsRobotsPath = path.join(workspace, "docs", "robots.txt");
 const SITE_ORIGIN = "https://www.aichi-esthe.com";
+const OGP_IMAGE_URL = `${SITE_ORIGIN}/assets/ogp-common.png`;
 
 const regionLabels = new Map(Object.entries({
   nagoya: "名古屋・名駅・納屋橋",
@@ -314,7 +315,13 @@ function renderStorePage(row, index, slug) {
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
     <meta property="og:site_name" content="愛知県のアジアンエステ" />
+    <meta property="og:image" content="${escapeHtml(OGP_IMAGE_URL)}" />
+    <meta property="og:image:alt" content="${escapeHtml(`${name} 店舗情報`)}" />
     <meta property="article:modified_time" content="${escapeHtml(lastUpdatedAt)}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta name="twitter:image" content="${escapeHtml(OGP_IMAGE_URL)}" />
     <script type="application/ld+json">${buildJsonLd(row, index, canonicalUrl)}</script>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="stylesheet" href="../styles.css" />
@@ -366,7 +373,10 @@ ${initialFields || `              <div class="empty-state">表示できる店舗
             <p class="mini-label">共有</p>
             <div class="store-side-actions">
               <a class="action-link primary" href="../index.html">地図に戻る</a>
-              <button id="copyPageUrlButton" class="action-link" type="button">URLをコピー</button>
+              <a id="lineShareButton" class="action-link primary" href="${escapeHtml(buildLineShareUrl(canonicalUrl))}" target="_blank" rel="noreferrer">LINE</a>
+              <a id="xShareButton" class="action-link" href="${escapeHtml(buildXShareUrl(canonicalUrl, title))}" target="_blank" rel="noreferrer">X</a>
+              <button id="nativePageShareButton" class="action-link" type="button">共有</button>
+              <button id="copyPageUrlButton" class="action-link" type="button">コピー</button>
             </div>
             <p id="copyStatusText" class="sync-meta-text"></p>
           </section>
@@ -412,6 +422,14 @@ function renderStationLinkList(records) {
                 <small>${item.count}件</small>
               </a>`)
     .join("\n");
+}
+
+function buildLineShareUrl(url) {
+  return `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(url)}`;
+}
+
+function buildXShareUrl(url, title) {
+  return `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
 }
 
 function buildCollectionStats(records) {
@@ -487,6 +505,12 @@ function renderCollectionPage({ type, slug, label, records, relatedRecords = [] 
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
     <meta property="og:site_name" content="愛知県のアジアンエステ" />
+    <meta property="og:image" content="${escapeHtml(OGP_IMAGE_URL)}" />
+    <meta property="og:image:alt" content="${escapeHtml(`${label}のアジアンエステ店舗一覧`)}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(pageTitle)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta name="twitter:image" content="${escapeHtml(OGP_IMAGE_URL)}" />
     <script type="application/ld+json">${JSON.stringify(itemList, null, 2).replace(/</g, "\\u003c")}</script>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="stylesheet" href="../styles.css" />
@@ -536,6 +560,13 @@ ${storeLinks || `              <div class="empty-state compact">店舗はあり�
             <div class="store-side-actions">
               <a class="action-link primary" href="../index.html">地図に戻る</a>
               <a class="action-link" href="../sitemap.xml">サイトマップ</a>
+            </div>
+          </section>
+          <section class="panel-block">
+            <p class="mini-label">SNSで共有</p>
+            <div class="store-side-actions">
+              <a class="action-link primary" href="${escapeHtml(buildLineShareUrl(canonicalUrl))}" target="_blank" rel="noreferrer">LINE</a>
+              <a class="action-link" href="${escapeHtml(buildXShareUrl(canonicalUrl, pageTitle))}" target="_blank" rel="noreferrer">X</a>
             </div>
           </section>
           ${stationLinks ? `<section class="panel-block">
