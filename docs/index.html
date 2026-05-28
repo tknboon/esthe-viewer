@@ -4,19 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>愛知県のアジアンエステ</title>
-    <meta name="description" content="愛知県のアジアンエステ店舗を地図、地区、駅、レビューから探せる情報サイトです。" />
-    <link rel="canonical" href="https://www.aichi-esthe.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="愛知県のアジアンエステ" />
-    <meta property="og:description" content="愛知県のアジアンエステ店舗を地図、地区、駅、レビューから探せる情報サイトです。" />
-    <meta property="og:url" content="https://www.aichi-esthe.com/" />
-    <meta property="og:site_name" content="愛知県のアジアンエステ" />
-    <meta property="og:image" content="https://www.aichi-esthe.com/assets/ogp-common.png" />
-    <meta property="og:image:alt" content="愛知県のアジアンエステ 地図とレビューサイト" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="愛知県のアジアンエステ" />
-    <meta name="twitter:description" content="愛知県のアジアンエステ店舗を地図、地区、駅、レビューから探せる情報サイトです。" />
-    <meta name="twitter:image" content="https://www.aichi-esthe.com/assets/ogp-common.png" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,29 +16,9 @@
   <body>
     <div class="app-shell">
       <header class="hero">
-        <img class="hero-main-visual" src="./assets/hero-female-main.png" alt="" loading="eager" decoding="async">
         <div class="hero-copy-block">
           <h1>愛知県のアジアンエステ</h1>
-          <p class="hero-subtitle">地図から探せる口コミ＆レビューサイト</p>
         </div>
-        <nav class="hero-shortcuts" aria-label="主要メニュー">
-          <a href="#searchInput">
-            <span>⌕</span>
-            <small>検索</small>
-          </a>
-          <a href="./areas/toyota.html">
-            <span>⌖</span>
-            <small>地区</small>
-          </a>
-          <a href="./sitemap.xml">
-            <span>□</span>
-            <small>一覧</small>
-          </a>
-          <button type="button" id="heroSyncShortcut">
-            <span>♡</span>
-            <small>共有</small>
-          </button>
-        </nav>
       </header>
 
       <main class="layout">
@@ -66,16 +33,6 @@
             <div class="sync-tools-row">
               <button id="syncBackupButton" class="action-link" type="button">バックアップ保存</button>
             </div>
-            <div class="public-share-box">
-              <span class="input-label">SNSで共有</span>
-              <div class="share-actions">
-                <a class="action-link primary" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fwww.aichi-esthe.com%2F" target="_blank" rel="noreferrer">LINE</a>
-                <a class="action-link" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.aichi-esthe.com%2F&text=%E6%84%9B%E7%9F%A5%E7%9C%8C%E3%81%AE%E3%82%A2%E3%82%B8%E3%82%A2%E3%83%B3%E3%82%A8%E3%82%B9%E3%83%86" target="_blank" rel="noreferrer">X</a>
-                <button id="nativeShareButton" class="action-link" type="button">共有</button>
-                <button id="copySiteUrlButton" class="action-link" type="button">コピー</button>
-              </div>
-              <p id="siteShareStatusText" class="sync-meta-text"></p>
-            </div>
             <div class="search-row">
               <input
                 id="searchInput"
@@ -85,23 +42,6 @@
               />
               <button id="searchButton" class="primary-button search-button" type="button">検索</button>
             </div>
-            <nav class="area-link-section" aria-label="地区から探す">
-              <span class="input-label">地区から探す</span>
-              <div class="area-link-grid">
-                <a href="./areas/nagoya.html">名古屋・名駅</a>
-                <a href="./areas/sakae.html">栄</a>
-                <a href="./areas/shinsakae.html">新栄町・千種・今池</a>
-                <a href="./areas/kanayama.html">金山・熱田</a>
-                <a href="./areas/kurokawa.html">黒川・大曽根</a>
-                <a href="./areas/hoshigaoka.html">星ヶ丘・藤が丘</a>
-                <a href="./areas/komaki.html">小牧・春日井</a>
-                <a href="./areas/owari.html">尾張・一宮</a>
-                <a href="./areas/chita.html">知多・大府・半田</a>
-                <a href="./areas/toyota.html">西三河・豊田・岡崎</a>
-                <a href="./areas/toyohashi.html">東三河・豊橋・豊川</a>
-                <a href="./areas/tokaidori.html">東海通・高畑</a>
-              </div>
-            </nav>
             <div id="regionSummary" class="region-summary"></div>
           </section>
 
@@ -164,7 +104,6 @@
                       <p id="selectedReviewSummary" class="selected-review-summary">レビューはまだありません。</p>
                     </div>
                     <div id="storeProfileToolbar" class="store-profile-toolbar">
-                      <a id="selectedStoreDetailToolbarLink" class="action-link" href="#">個別ページ</a>
                       <button id="storeProfileEditButton" class="action-link" type="button">店舗情報を編集</button>
                     </div>
                   </div>
@@ -175,7 +114,6 @@
                     <a id="selectedMapLink" class="action-link primary icon-action disabled-link is-hidden" href="#" target="_blank" rel="noreferrer" aria-label="マップで開く" title="マップで開く">⌖</a>
                     <a id="selectedPhoneSearchLink" class="action-link icon-action disabled-link is-hidden" href="#" target="_blank" rel="noreferrer" aria-label="電話番号を検索" title="電話番号を検索">⌕</a>
                     <a id="selectedListingLink" class="action-link icon-action disabled-link is-hidden" href="#" target="_blank" rel="noreferrer" aria-label="掲載ページ" title="掲載ページ">↗</a>
-                    <a id="selectedStoreDetailLink" class="action-link icon-action disabled-link is-hidden" href="#" aria-label="個別ページ" title="個別ページ">□</a>
                   </div>
                   <div id="storeProfilePanel" class="store-profile-panel is-hidden">
                     <div class="store-profile-grid">

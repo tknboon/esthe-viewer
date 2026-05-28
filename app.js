@@ -49,10 +49,6 @@ const syncStatusText = document.querySelector("#syncStatusText");
 const syncAuthButton = document.querySelector("#syncAuthButton");
 const syncMetaText = document.querySelector("#syncMetaText");
 const syncBackupButton = document.querySelector("#syncBackupButton");
-const heroSyncShortcut = document.querySelector("#heroSyncShortcut");
-const nativeShareButton = document.querySelector("#nativeShareButton");
-const copySiteUrlButton = document.querySelector("#copySiteUrlButton");
-const siteShareStatusText = document.querySelector("#siteShareStatusText");
 const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
@@ -80,8 +76,6 @@ const selectedPhoneLink = document.querySelector("#selectedPhoneLink");
 const selectedPhoneSearchLink = document.querySelector("#selectedPhoneSearchLink");
 const selectedMapLink = document.querySelector("#selectedMapLink");
 const selectedListingLink = document.querySelector("#selectedListingLink");
-const selectedStoreDetailLink = document.querySelector("#selectedStoreDetailLink");
-const selectedStoreDetailToolbarLink = document.querySelector("#selectedStoreDetailToolbarLink");
 const favoriteToggleButton = document.querySelector("#favoriteToggleButton");
 const excludeToggleButton = document.querySelector("#excludeToggleButton");
 const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
@@ -255,7 +249,6 @@ function init() {
     setDefaultReviewValues();
     bindEvents();
     applyFilters();
-    focusInitialStoreFromUrl();
     renderReviewAnalytics();
     initSharedSync();
   } catch (error) {
@@ -789,10 +782,7 @@ function bindEvents() {
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   dailyUpdateHistory?.addEventListener("click", handleHistoryClick);
   syncAuthButton?.addEventListener("click", handleSyncAuthClick);
-  heroSyncShortcut?.addEventListener("click", handleSyncAuthClick);
   syncBackupButton?.addEventListener("click", handleBackupExport);
-  nativeShareButton?.addEventListener("click", handleNativeSiteShare);
-  copySiteUrlButton?.addEventListener("click", handleCopySiteUrl);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
@@ -800,37 +790,6 @@ function bindEvents() {
   reviewToggleButton?.addEventListener("click", handleReviewToggle);
   reviewForm.addEventListener("submit", handleReviewSubmit);
   regionSummary?.addEventListener("click", handleRegionToggle);
-}
-
-async function handleNativeSiteShare() {
-  const shareData = {
-    title: "愛知県のアジアンエステ",
-    text: "愛知県のアジアンエステ店舗を地図、地区、駅、レビューから探せます。",
-    url: "https://www.aichi-esthe.com/",
-  };
-
-  if (!navigator.share) {
-    await handleCopySiteUrl();
-    return;
-  }
-
-  try {
-    await navigator.share(shareData);
-    if (siteShareStatusText) siteShareStatusText.textContent = "共有を開きました。";
-  } catch (error) {
-    if (error?.name !== "AbortError" && siteShareStatusText) {
-      siteShareStatusText.textContent = "共有を開けませんでした。";
-    }
-  }
-}
-
-async function handleCopySiteUrl() {
-  try {
-    await navigator.clipboard.writeText("https://www.aichi-esthe.com/");
-    if (siteShareStatusText) siteShareStatusText.textContent = "URLをコピーしました。";
-  } catch (error) {
-    if (siteShareStatusText) siteShareStatusText.textContent = "コピーできませんでした。";
-  }
 }
 
 function handleListActionClick(event) {
@@ -886,21 +845,6 @@ function applyFilters() {
   renderSelectedStore();
   syncMapWithFilters();
   syncProfileMap();
-}
-
-function focusInitialStoreFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-  const requestedId = params.get("store") || params.get("id") || "";
-  if (!requestedId) return;
-
-  const decodedId = decodeURIComponent(requestedId).trim();
-  const row = state.filteredRows.find((item) => {
-    const ids = [getStorePageId(item), getStorePageSlug(item), item.reviewKey, item.listingUrl, item.id].filter(Boolean);
-    return ids.includes(decodedId);
-  });
-  if (row) {
-    focusRow(row);
-  }
 }
 
 function handleRegionToggle(event) {
@@ -1137,89 +1081,6 @@ function getPreferredExternalUrl(row) {
   return row.officialUrl || row.listingUrl || "";
 }
 
-function getStorePageId(row) {
-  const match = String(row?.listingUrl || "").match(/shop-detail\/([^/]+)\//);
-  return match?.[1] || encodeURIComponent(row?.reviewKey || row?.id || "");
-}
-
-const STORE_PAGE_STATION_SLUGS = {
-  "名古屋駅": "nagoya",
-  "名駅": "meieki",
-  "栄駅": "sakae",
-  "丸の内駅": "marunouchi",
-  "伏見駅": "fushimi",
-  "金山駅": "kanayama",
-  "豊田市駅": "toyota",
-  "新豊田駅": "shin-toyota",
-  "豊橋駅": "toyohashi",
-  "一宮駅": "ichinomiya",
-  "尾張一宮駅": "owari-ichinomiya",
-  "木曽川駅": "kisogawa",
-  "奥町駅": "okucho",
-  "安城駅": "anjo",
-  "岡崎駅": "okazaki",
-  "刈谷駅": "kariya",
-  "小牧駅": "komaki",
-  "春日井駅": "kasugai",
-  "黒川駅": "kurokawa",
-  "今池駅": "imaike",
-  "千種駅": "chikusa",
-  "大須観音駅": "osukannon",
-  "鶴舞駅": "tsurumai",
-  "藤が丘駅": "fujigaoka",
-  "星ヶ丘駅": "hoshigaoka",
-};
-
-function romanizeStorePageText(value) {
-  const kanaMap = {
-    ア: "a", イ: "i", ウ: "u", エ: "e", オ: "o",
-    カ: "ka", キ: "ki", ク: "ku", ケ: "ke", コ: "ko",
-    サ: "sa", シ: "shi", ス: "su", セ: "se", ソ: "so",
-    タ: "ta", チ: "chi", ツ: "tsu", テ: "te", ト: "to",
-    ナ: "na", ニ: "ni", ヌ: "nu", ネ: "ne", ノ: "no",
-    ハ: "ha", ヒ: "hi", フ: "fu", ヘ: "he", ホ: "ho",
-    マ: "ma", ミ: "mi", ム: "mu", メ: "me", モ: "mo",
-    ヤ: "ya", ユ: "yu", ヨ: "yo",
-    ラ: "ra", リ: "ri", ル: "ru", レ: "re", ロ: "ro",
-    ワ: "wa", ヲ: "wo", ン: "n",
-    ガ: "ga", ギ: "gi", グ: "gu", ゲ: "ge", ゴ: "go",
-    ザ: "za", ジ: "ji", ズ: "zu", ゼ: "ze", ゾ: "zo",
-    ダ: "da", ヂ: "ji", ヅ: "zu", デ: "de", ド: "do",
-    バ: "ba", ビ: "bi", ブ: "bu", ベ: "be", ボ: "bo",
-    パ: "pa", ピ: "pi", プ: "pu", ペ: "pe", ポ: "po",
-    ァ: "a", ィ: "i", ゥ: "u", ェ: "e", ォ: "o",
-    ャ: "ya", ュ: "yu", ョ: "yo", ッ: "", ー: "-",
-  };
-  const katakana = String(value || "").replace(/[\u3041-\u3096]/g, (char) => String.fromCharCode(char.charCodeAt(0) + 0x60));
-  return Array.from(katakana).map((char) => kanaMap[char] || char).join("");
-}
-
-function slugStorePagePart(value) {
-  return romanizeStorePageText(value)
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/&/g, " and ")
-    .replace(/['’]/g, "")
-    .replace(/[^a-zA-Z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .replace(/-{2,}/g, "-")
-    .toLowerCase();
-}
-
-function getStorePageSlug(row) {
-  const stableId = getStorePageId(row);
-  const shortId = stableId.replace(/-/g, "").slice(0, 8);
-  const primaryStation = String(row?.station || "").split(/[・/／,、\s]+/).find(Boolean) || "";
-  const stationSlug = STORE_PAGE_STATION_SLUGS[primaryStation] || slugStorePagePart(primaryStation.replace(/駅|ルーム/g, ""));
-  const nameSlug = slugStorePagePart(row?.name || "");
-  const readable = [stationSlug, nameSlug].filter((part) => part && part.length >= 2).join("-").slice(0, 72).replace(/-+$/g, "");
-  return `${readable || "store"}-${shortId}`;
-}
-
-function getStorePageUrl(row) {
-  return `./stores/${encodeURIComponent(getStorePageSlug(row))}.html`;
-}
-
 function getDomainGroupFromUrl(url) {
   if (!url) return "";
 
@@ -1331,7 +1192,6 @@ function renderCards() {
 
           <div class="store-actions">
             <button class="focus-button" type="button" data-focus-id="${row.id}">地図で見る</button>
-            <a class="action-link" href="${getStorePageUrl(row)}">個別ページ</a>
             <a class="action-link primary" href="${row.mapUrl}" target="_blank" rel="noreferrer">Googleマップで開く</a>
             ${getPreferredExternalUrl(row) ? `<a class="action-link" href="${getPreferredExternalUrl(row)}" target="_blank" rel="noreferrer">オフィシャルHP</a>` : ""}
           </div>
@@ -1384,8 +1244,6 @@ function renderSelectedStore() {
     disableLink(selectedPhoneSearchLink);
     disableLink(selectedMapLink);
     disableLink(selectedListingLink);
-    disableLink(selectedStoreDetailLink);
-    disableLink(selectedStoreDetailToolbarLink);
     clearStoreProfileInputs();
     setStoreProfileEditing(false, false);
     setReviewEditing(false, false);
@@ -1422,15 +1280,6 @@ function renderSelectedStore() {
     selectedListingLink.classList.remove("disabled-link");
   } else {
     disableLink(selectedListingLink);
-  }
-
-  if (selectedStoreDetailLink) {
-    selectedStoreDetailLink.href = getStorePageUrl(state.selectedRow);
-    selectedStoreDetailLink.classList.remove("disabled-link");
-  }
-  if (selectedStoreDetailToolbarLink) {
-    selectedStoreDetailToolbarLink.href = getStorePageUrl(state.selectedRow);
-    selectedStoreDetailToolbarLink.classList.remove("disabled-link");
   }
 
   renderStoreProfileInputs(state.selectedRow);
@@ -3103,7 +2952,6 @@ function renderMarkerInfoContent(row) {
   const officialHtml = preferredExternalUrl
     ? `<a href="${escapeHtml(preferredExternalUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">HP</a>`
     : "";
-  const detailLinkHtml = `<a href="${escapeHtml(getStorePageUrl(row))}" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">個別</a>`;
   const phoneSearchHtml = row.phone
     ? `<a href="${escapeHtml(phoneSearchUrl)}" target="_blank" rel="noreferrer" style="margin-left:8px;color:#c2185b;text-decoration:none;font-weight:700;">番号検索</a>`
     : "";
@@ -3116,7 +2964,7 @@ function renderMarkerInfoContent(row) {
 
   return `
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
-      <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}${detailLinkHtml}</div>
+      <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       <div style="margin-top:2px;">電話: ${phoneHtml}${phoneSearchHtml}</div>
       ${notesHtml}

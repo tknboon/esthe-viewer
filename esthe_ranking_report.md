@@ -1,55 +1,55 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-05-11T12:28:48.536Z
+- checked_at: 2026-05-28T02:04:35.336Z
 - sources: https://www.esthe-ranking.jp/nagoya/asian/, https://www.esthe-ranking.jp/sakae/asian/, https://www.esthe-ranking.jp/shinsakae/asian/, https://www.esthe-ranking.jp/kanayama/asian/, https://www.esthe-ranking.jp/kurokawa/asian/, https://www.esthe-ranking.jp/hoshigaoka/asian/, https://www.esthe-ranking.jp/moriyama/asian/, https://www.esthe-ranking.jp/otai/asian/, https://www.esthe-ranking.jp/tokaidori/asian/, https://www.esthe-ranking.jp/kasadera/asian/, https://www.esthe-ranking.jp/toyota/asian/, https://www.esthe-ranking.jp/horita/asian/, https://www.esthe-ranking.jp/tsurumai/asian/, https://www.esthe-ranking.jp/showa/asian/, https://www.esthe-ranking.jp/komaki/asian/, https://www.esthe-ranking.jp/owari/asian/, https://www.esthe-ranking.jp/chita/asian/, https://www.esthe-ranking.jp/toyohashi/asian/
 - title: 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング / 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング / 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング / 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング / 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング / 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング / 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング / 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング / 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング / 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング / 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング / 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング / 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング
-- count_text: https://www.esthe-ranking.jp/nagoya/asian/=40件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=33件 | https://www.esthe-ranking.jp/kurokawa/asian/=23件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=28件 | https://www.esthe-ranking.jp/moriyama/asian/=20件 | https://www.esthe-ranking.jp/otai/asian/=10件 | https://www.esthe-ranking.jp/tokaidori/asian/=39件 | https://www.esthe-ranking.jp/kasadera/asian/=35件 | https://www.esthe-ranking.jp/toyota/asian/=184件 | https://www.esthe-ranking.jp/horita/asian/=26件 | https://www.esthe-ranking.jp/tsurumai/asian/=10件 | https://www.esthe-ranking.jp/showa/asian/=26件 | https://www.esthe-ranking.jp/komaki/asian/=93件 | https://www.esthe-ranking.jp/owari/asian/=121件 | https://www.esthe-ranking.jp/chita/asian/=86件 | https://www.esthe-ranking.jp/toyohashi/asian/=63件
-- matched_store_count: 839
-- matched_link_count: 897
-- detail_page_count: 897
-- detailed_store_count: 897
+- count_text: https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=26件 | https://www.esthe-ranking.jp/shinsakae/asian/=37件 | https://www.esthe-ranking.jp/kanayama/asian/=32件 | https://www.esthe-ranking.jp/kurokawa/asian/=22件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=31件 | https://www.esthe-ranking.jp/moriyama/asian/=21件 | https://www.esthe-ranking.jp/otai/asian/=12件 | https://www.esthe-ranking.jp/tokaidori/asian/=39件 | https://www.esthe-ranking.jp/kasadera/asian/=39件 | https://www.esthe-ranking.jp/toyota/asian/=190件 | https://www.esthe-ranking.jp/horita/asian/=27件 | https://www.esthe-ranking.jp/tsurumai/asian/=12件 | https://www.esthe-ranking.jp/showa/asian/=23件 | https://www.esthe-ranking.jp/komaki/asian/=93件 | https://www.esthe-ranking.jp/owari/asian/=123件 | https://www.esthe-ranking.jp/chita/asian/=88件 | https://www.esthe-ranking.jp/toyohashi/asian/=61件
+- matched_store_count: 855
+- matched_link_count: 917
+- detail_page_count: 917
+- detailed_store_count: 917
 
 ## Source Summaries
 - url: https://www.esthe-ranking.jp/nagoya/asian/
   - title: 名古屋・名駅・納屋橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 40件
-  - matched_store_count: 40
-  - matched_link_count: 40
+  - count_text: 41件
+  - matched_store_count: 41
+  - matched_link_count: 41
 - url: https://www.esthe-ranking.jp/sakae/asian/
   - title: 栄エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 24件
-  - matched_store_count: 24
-  - matched_link_count: 24
+  - count_text: 26件
+  - matched_store_count: 26
+  - matched_link_count: 26
 - url: https://www.esthe-ranking.jp/shinsakae/asian/
   - title: 新栄町・千種・今池エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 36件
-  - matched_store_count: 36
-  - matched_link_count: 36
+  - count_text: 37件
+  - matched_store_count: 37
+  - matched_link_count: 37
 - url: https://www.esthe-ranking.jp/kanayama/asian/
   - title: 金山・熱田エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 33件
-  - matched_store_count: 33
-  - matched_link_count: 33
+  - count_text: 32件
+  - matched_store_count: 32
+  - matched_link_count: 32
 - url: https://www.esthe-ranking.jp/kurokawa/asian/
   - title: 黒川・大曽根エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 23件
-  - matched_store_count: 23
-  - matched_link_count: 23
+  - count_text: 22件
+  - matched_store_count: 22
+  - matched_link_count: 22
 - url: https://www.esthe-ranking.jp/hoshigaoka/asian/
   - title: 星ヶ丘・藤が丘エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 28件
-  - matched_store_count: 28
-  - matched_link_count: 28
+  - count_text: 31件
+  - matched_store_count: 31
+  - matched_link_count: 31
 - url: https://www.esthe-ranking.jp/moriyama/asian/
   - title: 守山・小幡エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 20件
-  - matched_store_count: 20
-  - matched_link_count: 20
+  - count_text: 21件
+  - matched_store_count: 21
+  - matched_link_count: 21
 - url: https://www.esthe-ranking.jp/otai/asian/
   - title: 小田井・比良エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 10件
-  - matched_store_count: 10
-  - matched_link_count: 10
+  - count_text: 12件
+  - matched_store_count: 12
+  - matched_link_count: 12
 - url: https://www.esthe-ranking.jp/tokaidori/asian/
   - title: 東海通・高畑エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 39件
@@ -57,29 +57,29 @@
   - matched_link_count: 39
 - url: https://www.esthe-ranking.jp/kasadera/asian/
   - title: 笠寺・柴田エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 35件
-  - matched_store_count: 35
-  - matched_link_count: 35
+  - count_text: 39件
+  - matched_store_count: 39
+  - matched_link_count: 39
 - url: https://www.esthe-ranking.jp/toyota/asian/
   - title: 西三河・豊田・岡崎エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 184件
-  - matched_store_count: 183
-  - matched_link_count: 184
+  - count_text: 190件
+  - matched_store_count: 189
+  - matched_link_count: 190
 - url: https://www.esthe-ranking.jp/horita/asian/
   - title: 堀田・新瑞橋エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 26件
-  - matched_store_count: 26
-  - matched_link_count: 26
+  - count_text: 27件
+  - matched_store_count: 27
+  - matched_link_count: 27
 - url: https://www.esthe-ranking.jp/tsurumai/asian/
   - title: 大須・鶴舞エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 10件
-  - matched_store_count: 10
-  - matched_link_count: 10
+  - count_text: 12件
+  - matched_store_count: 12
+  - matched_link_count: 12
 - url: https://www.esthe-ranking.jp/showa/asian/
   - title: 名古屋・昭和区・天白区エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 26件
-  - matched_store_count: 26
-  - matched_link_count: 26
+  - count_text: 23件
+  - matched_store_count: 23
+  - matched_link_count: 23
 - url: https://www.esthe-ranking.jp/komaki/asian/
   - title: 小牧・春日井エリア アジアンエステ店ランキング - 全国メンズエステランキング
   - count_text: 93件
@@ -87,19 +87,19 @@
   - matched_link_count: 93
 - url: https://www.esthe-ranking.jp/owari/asian/
   - title: 尾張・一宮エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 121件
-  - matched_store_count: 120
-  - matched_link_count: 121
+  - count_text: 123件
+  - matched_store_count: 122
+  - matched_link_count: 123
 - url: https://www.esthe-ranking.jp/chita/asian/
   - title: 知多・大府・半田エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 86件
-  - matched_store_count: 85
-  - matched_link_count: 86
+  - count_text: 88件
+  - matched_store_count: 87
+  - matched_link_count: 88
 - url: https://www.esthe-ranking.jp/toyohashi/asian/
   - title: 東三河・豊橋・豊川エリア アジアンエステ店ランキング - 全国メンズエステランキング
-  - count_text: 63件
-  - matched_store_count: 63
-  - matched_link_count: 63
+  - count_text: 61件
+  - matched_store_count: 61
+  - matched_link_count: 61
 
 ## Added
 - none
@@ -124,6 +124,7 @@
 - Amor（アモール）
 - anan
 - AnAn
+- anan（アンアン）
 - Angel Spa
 - ANGEL SPA
 - Angel（エンジェル）
@@ -135,16 +136,15 @@
 - Aroma Baby（アロマベイビー）
 - Aroma Charm（アロマチャーム）
 - AROMA more
+- Aroma Space
 - Astyle
-- Beauty Girl（ビューティーガール）
 - Belle（ベル）
-- BLESS RICH（ブレスリッチ）
 - Bliss
-- Bonheur（ボヌール）
 - Boundless～バウンドレス
 - Candy Heart（キャンディーハート）
 - Candy（キャンディー）
 - cat＆girl（キャットアンドガール）
+- Charm Kiss
 - cherry
 - clover（クローバー）
 - COCO（ここ）
@@ -156,14 +156,12 @@
 - Dream Lumos（ドリ一ムル一モス）
 - Eden（エデン）
 - Emmi（エミ）
-- ENIOY
 - Enjoy Room
 - Enjoy Spa （アカスリ.泡泡洗体專門店）
 - E感じ
 - Fall in Love～フォーリンラブ
 - Feeling（フィーリング）
 - First Love（ファーストラブ）
-- flower（ふらわー）
 - Flower（フラワー）
 - For you
 - Fortunekiss（フォーチュンキス）
@@ -182,8 +180,10 @@
 - Hot Land（ホットランド）
 - Hug me（ハグミー）
 - IRIS（アイリス）
+- Jasmine
 - JOJO
 - King
+- kiss
 - Kiss
 - Kiss パラダイス
 - KissMe（キスミー）
@@ -194,7 +194,9 @@
 - LILLY Mocha（リリーモカ）
 - LOVE
 - Love body
+- Love Queen
 - Love Wish（ラブウィッシュ）
+- Love you
 - Love（ラブ）
 - Lovely girl
 - Luana（ルアナ）
@@ -205,6 +207,7 @@
 - LURE TOUCH（ルアータッチ）
 - Luxe Spa（ラックススパ）
 - marron（マロン）
+- Mellia（メリア）
 - Mercury（マーキュリー）
 - Miss You Tonight
 - Miss you（ミスユー）
@@ -219,7 +222,7 @@
 - Nice Feelings（ナイスフィーリングス）
 - Nightbeauty
 - NO定義（ノーテイギ）
-- Oh!Mybaby
+- Oh！姉さん
 - Only love（オンリーラブ）
 - Only one（オンリーワン）
 - Only One（オンリーワン）
@@ -238,17 +241,16 @@
 - Retreat（リトリート）
 - ROME HOLIDAY（ローマホリデー）
 - ROOM
-- Rose Garden（ローズガーデン）
 - Rose Healing（ローズヒーリング）
 - Rose Star （ローズスター）
-- Rose満開
 - Royal.Room（ロイヤルルーム）
 - Ruby（ルビー）
 - Second House（セカンドハウス）
 - Secret Room
+- Secret（シークレット）
+- Secret香気
 - Seven（セブン）
 - Sexy Baby
-- SEXY極楽癒し
 - silent night（サイレントナイト）
 - Silky Touch（シルキータッチ）
 - SKY
@@ -265,6 +267,7 @@
 - Sugar spot（シュガースポット）
 - Summer Land（サマーランド）
 - Sun Flower
+- Sunny（サニー）
 - SUPER HATENA
 - Sweet Baby（スウィートベイビー）
 - Sweet girl（スイートガール）
@@ -296,7 +299,6 @@
 - あざと可愛い
 - あじさい
 - あしたを愛してる
-- アッぷるパイ〜味わったことのない濃厚体験〜
 - あなたの隠れ家
 - あまねこ館
 - アリス
@@ -312,11 +314,10 @@
 - いちご娘
 - イチャラブ
 - いやし美人
-- いろか
 - うさぎの餅つき
 - うたかた桜
-- うみ～umi～
 - うらら
+- エ～MISSYOU
 - エグゼスパ
 - エトワール
 - エフル
@@ -328,18 +329,16 @@
 - オリーブ～Olive～
 - おりびあ
 - おれのバニーちゃん
-- お願いDear
 - お兄さん食べる私作る
 - お兄ちゃん~High Five！
 - お兄ちゃん食べる私作ろ
 - お兄ちゃん来い
-- お兄ちゃん来てよ
 - お待たせ
 - お姫様LABO
 - カミノテ
 - カラメル
-- カルミア
 - かわいい美人
+- キスの楽園
 - キスの癒し
 - キュア
 - ギューと
@@ -351,6 +350,7 @@
 - きらめくDream
 - きらり
 - き楽や
+- くま愛
 - ぐらどるスパ
 - クリーム
 - クリスタリア
@@ -358,11 +358,11 @@
 - クレオパトラ
 - ゴールデンベル
 - ココア
+- ゴシップガール
 - こねこ
 - ごほうび
 - ご褒美time
 - さくら
-- さくらの愛
 - さくらんぼ
 - サファイア
 - さわやか
@@ -393,7 +393,6 @@
 - たんぽぽ
 - だんぼぼ
 - チャペル
-- チューハウス
 - チューリップ
 - ちょうちょう
 - チョメチョメハウス
@@ -411,6 +410,7 @@
 - とにかくキュンキュン
 - トパーズ
 - とろあまTime
+- とろけるhoney
 - ナイショガーデン
 - ナイショガール
 - なごみ
@@ -418,10 +418,12 @@
 - にゃん
 - にゃんにゃん
 - にゃんにゃんタイム
+- ねぇウチくる!?
 - ネコミミッコ
 - ねこも～みん
 - ねこりん
 - ハート
+- バーバラ
 - ハグハグ
 - パクパクチューチュー
 - ハチミツ
@@ -433,12 +435,10 @@
 - はな夢
 - ハニー
 - ハニータイム
-- ハニーミルク
 - バニラ
 - バニラ〜vanilla〜
 - バニラキッス
 - ハピネス
-- ハピハピハッピー
 - バラ
 - バラの物語
 - バレンタイン
@@ -449,7 +449,6 @@
 - ヒーリングエンジェルズ
 - ひといき
 - ひまわり
-- ぴゅあらぶ
 - ビューティーガール
 - ピンクゾーン
 - ぴんくのぴいち
@@ -458,6 +457,7 @@
 - ピンクフラワー
 - ピンクラブ
 - ピンクルーム
+- フィリピンラブ
 - フィリピンラプ
 - フェアリーランド
 - フォレスト
@@ -467,7 +467,6 @@
 - ブラジル美女（ブラジルびじょ）
 - ふらり
 - フラワーガール
-- プリティラブ
 - ぷりぷり
 - フルーツ俱樂部
 - ブルーローズ
@@ -499,20 +498,21 @@
 - ミルク
 - メイド楽園
 - めぐり愛
-- メロメロメロン
+- メロン
 - メンズの極楽基地
 - もえきゅんスパ
 - モネ
 - もみココチ
 - もみじ
 - もみっ娘
+- もみもみ
 - もみもみ館
 - もみ楽
 - ももいろ
 - もも花
 - ゆうわく
 - ゆっくりら
-- ゆゆ
+- ゆめごこち
 - ゆるここ
 - よいづき～宵月～
 - ラクーナ
@@ -548,6 +548,7 @@
 - ロマンス
 - 愛
 - 愛Angel（アイ・エンジェル）
+- 愛Angel（アイエンジェル）
 - 愛のそら
 - 愛のロマンス
 - 愛の魂（あいのたましい）
@@ -564,7 +565,6 @@
 - 縁
 - 縁結び
 - 王様の休日
-- 乙花
 - 乙女の扉
 - 温柔の郷
 - 佳華健康館
@@ -573,10 +573,11 @@
 - 可愛い猫
 - 夏
 - 果樹園
+- 火遊び
 - 花の香
 - 花屋敷
+- 花音（半田）
 - 花火
-- 花火～
 - 花花
 - 花魁
 - 花月～かげつ
@@ -590,19 +591,24 @@
 - 会いたい
 - 回転美人
 - 快楽
+- 快楽園
 - 快感パニック
+- 海の癒
 - 海棠花～ベゴニア～
 - 楽（らく）
 - 楽のや
 - 楽縁（らくえん）
 - 楽楽
 - 楽美
+- 楽美らくみ
 - 歓楽谷
+- 漢唐道療館（かんとうどうりょうかん）
 - 甘い気持ち
 - 甘い蜜林檎
 - 甘い誘惑
 - 甘えん坊
 - 甘熟いちご
+- 韓国美少女マッサージ
 - 韓国美姫
 - 願い星
 - 奇跡の薔薇
@@ -653,13 +659,11 @@
 - 康楽（こうらく）
 - 紅の夢
 - 紅花
-- 香（かおり）
 - 香～kaori～
 - 香港
 - 鴻福（こうふく）
 - 告白
 - 黒バラ
-- 黒桃A~スペードエース
 - 黒猫の恋
 - 最高のenjoy
 - 彩葉
@@ -675,10 +679,8 @@
 - 皐月（さつき）
 - 四つ葉～よつば～
 - 四季館（しきかん）
-- 姉妹の癒し
 - 姉妹の誘惑
 - 私のごほうび
-- 糸
 - 糸（いと）
 - 紫のバラ
 - 紫陽花（アジサイ）
@@ -706,9 +708,11 @@
 - 小楽園
 - 小野猫（ショウイェマオ）
 - 情熱のガール
+- 色っぽい
 - 心（こころ）
 - 心の癒し～Feel Calm～
 - 心の恋
+- 心ゆくままで
 - 心美（シンメイ）
 - 心葉
 - 新世界
@@ -725,7 +729,6 @@
 - 世々楽
 - 星の女神
 - 星空（ほしぞら）
-- 青い空
 - 青い薔薇
 - 絶叫治療院
 - 仙桃（せんとう）
@@ -734,11 +737,9 @@
 - 千林タイム
 - 素敵な時間
 - 素敵な夜
-- 台湾girl
 - 台湾Honey（ハニー）
 - 台湾かぐや
 - 台湾の娘
-- 台湾ハニー
 - 台湾乙女
 - 台湾美人癒心
 - 台湾美姬
@@ -764,7 +765,7 @@
 - 奈奈（ナナ）
 - 馴れ初め
 - 南区・悠楽庵
-- 二人の部屋
+- 二人の世界
 - 濡れ濡れ
 - 濡れ濡れガール
 - 猫
@@ -773,7 +774,6 @@
 - 猫パチン
 - 猫もみ
 - 猫系彼女
-- 熱い恋愛（あついれんあい）
 - 濃密candy
 - 濃密Candy
 - 白い恋人
@@ -783,11 +783,14 @@
 - 溌剌Lady
 - 彼女の秘密
 - 彼女の部屋
+- 秘書の薫り
 - 秘心～ひしん～
 - 秘密Lover
+- 秘密な気持ち
 - 秘密のオアシス
 - 秘密のガーデン
 - 秘密の愛言葉
+- 秘密の楽園
 - 秘密の小屋
 - 秘密の彼女
 - 秘密の夜（ひみつのよる）
@@ -802,13 +805,14 @@
 - 美楽美人
 - 美月
 - 美健（みけん）
-- 美咲
 - 美桜
 - 美女ドキン
 - 美女世界
 - 美少女にゃんにゃん
 - 美心（びしん）
+- 美人
 - 美人SPA
+- 美人のキス
 - 美人の癒しアロマ
 - 美人の誘惑
 - 美人楽園
@@ -832,7 +836,10 @@
 - 部屋のラブラブ
 - 部屋の秘密
 - 楓（かえで）
+- 泡のやすらぎ
+- 泡リフレ極SPA
 - 泡姫
+- 泡泡夢
 - 萌（もえ）
 - 萌え萌えキュン
 - 萌え娘
@@ -841,6 +848,7 @@
 - 豊田プラチナム
 - 豊田ラグタイム
 - 魔女
+- 魔女の吻
 - 魔性の宮
 - 魔法の乙女
 - 妹の部屋
@@ -854,25 +862,32 @@
 - 魅惑のユートピア
 - 蜜の香り
 - 蜜みつ
+- 蜜みつリラクゼーション
 - 蜜柑（みかん）
+- 夢
 - 夢～Dream〜
 - 夢～ドリーム～
+- 夢～ゆめ
 - 夢の家
 - 夢の月
 - 夢の夜
+- 夢の媚薬
 - 夢愛
 - 夢恋（ゆめこい）
 - 名古屋メンズエステ アリア
 - 明るい少女
+- 夜の香り
 - 夜の色（ヨルノイロ）
 - 夜の秘密
 - 夜の娘
 - 夜の癒し女神
+- 夜の恋人
 - 夜桜（よざくら）
 - 夜遊び~姫（ひめ）
 - 夜恋
 - 癒しhouse
 - 癒しタイム
+- 癒しにゃんこ
 - 癒しのアロマ
 - 癒しのハウス
 - 癒しのマダム
@@ -885,6 +900,7 @@
 - 癒しの猫
 - 癒しの恋
 - 癒し屋
+- 癒し処 鈴蘭（すずらん）
 - 癒し姫
 - 癒し魔女
 - 癒し娘の物語
@@ -914,12 +930,14 @@
 - 養生館
 - 来い遊ぼ（コイアソボ）
 - 蘭庭（ランティング）sqa
+- 流れ星
 - 力必加・舒心屋
 - 伶美（れいみ）
 - 麗らか気分
 - 恋（こい）
 - 恋さんぽ
 - 恋しい
+- 恋するリラク
 - 恋する乙女
 - 恋タイム
 - 恋のstart（コイのスタート）
@@ -945,8 +963,6 @@
 - 櫻花（さくら）
 - 煌（きら）
 - 艾麗莎SPA（アリサスパ）
-- 苺の姫
-- 茉莉姫（まりひめ）
 - 蔷薇の園
 - 鑫（シン）
 - 鑫鑫（しんしん）
