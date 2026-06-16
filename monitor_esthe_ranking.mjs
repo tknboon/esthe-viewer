@@ -173,7 +173,7 @@ async function loadDetailHtml(listingUrl, cache) {
   }
 
   if (!html && !HTML_INPUT_PATH) {
-    html = await fetchText(listingUrl);
+    html = await fetchOptionalText(listingUrl);
   }
 
   cache.set(listingUrl, html);
@@ -195,7 +195,7 @@ async function loadAccessHtml(listingUrl, cache) {
   }
 
   if (!html && !HTML_INPUT_PATH) {
-    html = await fetchText(buildAccessUrl(listingUrl));
+    html = await fetchOptionalText(buildAccessUrl(listingUrl));
   }
 
   cache.set(listingUrl, html);
@@ -737,6 +737,15 @@ async function fetchText(url) {
   }
 
   return response.text();
+}
+
+async function fetchOptionalText(url) {
+  try {
+    return await fetchText(url);
+  } catch (error) {
+    if (String(error?.message || "").includes(": 404")) return "";
+    throw error;
+  }
 }
 
 async function readHtmlFile(filePath) {
