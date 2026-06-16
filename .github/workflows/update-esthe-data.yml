@@ -1,0 +1,57 @@
+name: Update esthe data
+
+on:
+  schedule:
+    # 20:00 JST every Monday.
+    - cron: "0 11 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-esthe-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Update store data
+        shell: pwsh
+        env:
+          ESTHE_MONITOR_DETAIL_DIR: esthe_ranking_detail_pages
+          ESTHE_MONITOR_MUNICIPALITY_DIR: esthe_ranking_municipality_pages
+        run: |
+          node .\monitor_esthe_ranking.mjs
+          powershell -ExecutionPolicy Bypass -File .\sync-public-assets.ps1
+
+      - name: Verify updated data
+        shell: pwsh
+        run: |
+          node --check .\app.js
+          node --check .\monitor_esthe_ranking.mjs
+          node -e "const fs=require('fs'); const vm=require('vm'); for (const f of ['data.js','docs/data.js']) { const sandbox={window:{}}; vm.createContext(sandbox); vm.runInContext(fs.readFileSync(f,'utf8'), sandbox); console.log(`${f}: ${sandbox.window.storeMeta?.lastUpdatedAt || 'none'} / ${sandbox.window.storeData?.length || 0} stores`); }"
+
+      - name: Commit and push changes
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.js docs/data.js toyota_esthe_map_points_ja.csv toyota_esthe_legacy_rows.csv esthe_ranking_snapshot.json esthe_ranking_report.md esthe_ranking_status.json esthe_update_history.json
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "No data changes to commit."
+            exit 0
+          }
+          git commit -m "Auto update esthe data ($(Get-Date -Format 'yyyy-MM-dd HH:mm'))"
+          git push
