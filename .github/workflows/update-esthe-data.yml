@@ -40,7 +40,16 @@ jobs:
         run: |
           node --check .\app.js
           node --check .\monitor_esthe_ranking.mjs
-          node -e "const fs=require('fs'); const vm=require('vm'); for (const f of ['data.js','docs/data.js']) { const sandbox={window:{}}; vm.createContext(sandbox); vm.runInContext(fs.readFileSync(f,'utf8'), sandbox); console.log(`${f}: ${sandbox.window.storeMeta?.lastUpdatedAt || 'none'} / ${sandbox.window.storeData?.length || 0} stores`); }"
+          @'
+          const fs = require("fs");
+          const vm = require("vm");
+          for (const f of ["data.js", "docs/data.js"]) {
+            const sandbox = { window: {} };
+            vm.createContext(sandbox);
+            vm.runInContext(fs.readFileSync(f, "utf8"), sandbox);
+            console.log(`${f}: ${sandbox.window.storeMeta?.lastUpdatedAt || "none"} / ${sandbox.window.storeData?.length || 0} stores`);
+          }
+          '@ | node -
 
       - name: Commit and push changes
         shell: pwsh
