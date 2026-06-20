@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-06-21",
+    "fetchedAt": "2026-06-20T16:12:41.696Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-06-20",
     "fetchedAt": "2026-06-19T17:12:42.403Z",
     "added": [
