@@ -2911,13 +2911,14 @@ function buildProfileMarkerIcon(row) {
 
 function createHeartMarkerIcon(fillColor, strokeColor, options = {}) {
   const hasNewGlow = Boolean(options.isNew);
-  const width = hasNewGlow ? 44 : 34;
-  const height = hasNewGlow ? 40 : 30;
-  const viewBox = hasNewGlow ? "-5 -5 44 40" : "0 0 34 30";
+  const width = hasNewGlow ? 52 : 34;
+  const height = hasNewGlow ? 48 : 30;
+  const viewBox = hasNewGlow ? "-9 -9 52 48" : "0 0 34 30";
   const glowHtml = hasNewGlow
     ? `
-      <ellipse cx="17" cy="15" rx="20" ry="17" fill="#ffcd5c" opacity="0.28" />
-      <ellipse cx="17" cy="15" rx="15.5" ry="13.5" fill="#ffcd5c" opacity="0.22" />
+      <ellipse cx="17" cy="15" rx="25" ry="21" fill="#ffb000" opacity="0.42" />
+      <ellipse cx="17" cy="15" rx="18" ry="15.5" fill="#ffe08a" opacity="0.55" />
+      <ellipse cx="17" cy="15" rx="12" ry="10.5" fill="#fff2bd" opacity="0.36" />
     `
     : "";
   const svg = `
@@ -2935,7 +2936,7 @@ function createHeartMarkerIcon(fillColor, strokeColor, options = {}) {
   return {
     url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
     scaledSize: new google.maps.Size(width, height),
-    anchor: hasNewGlow ? new google.maps.Point(22, 32) : new google.maps.Point(17, 27),
+    anchor: hasNewGlow ? new google.maps.Point(26, 36) : new google.maps.Point(17, 27),
   };
 }
 
