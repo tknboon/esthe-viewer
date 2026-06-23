@@ -2953,7 +2953,7 @@ function openMarkerInfoWindow(map, infoWindow, marker, row) {
   infoWindow.open({ map, anchor: marker });
 
   google.maps.event.addListenerOnce(infoWindow, "domready", () => {
-    bindInfoWindowActions(row);
+    bindInfoWindowActions(row, infoWindow);
   });
 }
 
@@ -3008,7 +3008,8 @@ function renderMarkerInfoContent(row) {
   const actionsHtml = [favoriteButtonHtml, excludeButtonHtml].filter(Boolean).join("");
 
   return `
-    <div style="color:#28121c;min-width:190px;line-height:1.55;">
+    <div style="position:relative;color:#28121c;min-width:190px;line-height:1.55;padding-right:26px;">
+      <button type="button" data-marker-action="close" aria-label="吹き出しを閉じる" title="閉じる" style="position:absolute;top:-2px;right:-2px;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:0;border-radius:999px;background:rgba(255,247,251,0.94);color:#8d5268;font-size:18px;line-height:1;font-weight:700;cursor:pointer;">×</button>
       <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
       ${addedDateHtml}
@@ -3019,12 +3020,16 @@ function renderMarkerInfoContent(row) {
   `;
 }
 
-function bindInfoWindowActions(row) {
+function bindInfoWindowActions(row, infoWindow) {
   const buttons = document.querySelectorAll("[data-marker-action]");
   for (const button of buttons) {
     button.onclick = (event) => {
       event.preventDefault();
       event.stopPropagation();
+      if (button.dataset.markerAction === "close") {
+        infoWindow?.close();
+        return;
+      }
       state.selectedRow = row;
       if (button.dataset.markerAction === "favorite") {
         handleFavoriteToggle();
