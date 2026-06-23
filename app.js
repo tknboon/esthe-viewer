@@ -425,6 +425,21 @@ function findAddedDayKey(row) {
   return bestMatch || nameOnlyFallback;
 }
 
+function isRecentlyAddedRow(row) {
+  const dayKey = findAddedDayKey(row);
+  if (!dayKey) return false;
+
+  const addedDate = new Date(`${dayKey}T00:00:00`);
+  if (Number.isNaN(addedDate.getTime())) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const weekAgo = new Date(today);
+  weekAgo.setDate(today.getDate() - 7);
+
+  return addedDate >= weekAgo && addedDate <= today;
+}
+
 function normalizeHistoryComparableText(value) {
   return String(value || "")
     .replace(/\s+/g, "")
@@ -2872,30 +2887,42 @@ function buildMarkerIcon(row) {
     strokeColor = isArchived ? "#fff7dc" : "#fff1c7";
   }
 
-  return createHeartMarkerIcon(fillColor, strokeColor);
+  return createHeartMarkerIcon(fillColor, strokeColor, { isNew: isRecentlyAddedRow(row) });
 }
 
 function buildProfileMarkerIcon(row) {
   const profile = getStoreProfile(row);
   const isArchived = Boolean(row?.isArchivedStore);
+  const markerOptions = { isNew: isRecentlyAddedRow(row) };
   if (isExcludedRow(row)) {
-    return createHeartMarkerIcon(isArchived ? "#6c6c72" : "#1d1d1f", isArchived ? "#c8c8ce" : "#a7a7ad");
+    return createHeartMarkerIcon(isArchived ? "#6c6c72" : "#1d1d1f", isArchived ? "#c8c8ce" : "#a7a7ad", markerOptions);
   }
   if (isFavoriteRow(row)) {
-    return createHeartMarkerIcon(isArchived ? "#8fdefa" : "#4ecbff", isArchived ? "#eefbff" : "#d7f4ff");
+    return createHeartMarkerIcon(isArchived ? "#8fdefa" : "#4ecbff", isArchived ? "#eefbff" : "#d7f4ff", markerOptions);
   }
   if (profile?.guideClarity === "あり") {
-    return createHeartMarkerIcon(isArchived ? "#ff9bbc" : "#ff5d96", isArchived ? "#fff0f5" : "#ffe3ee");
+    return createHeartMarkerIcon(isArchived ? "#ff9bbc" : "#ff5d96", isArchived ? "#fff0f5" : "#ffe3ee", markerOptions);
   }
   if (profile?.guideClarity === "なし") {
-    return createHeartMarkerIcon(isArchived ? "#ffd26a" : "#ffb000", isArchived ? "#fff7dc" : "#fff1c7");
+    return createHeartMarkerIcon(isArchived ? "#ffd26a" : "#ffb000", isArchived ? "#fff7dc" : "#fff1c7", markerOptions);
   }
-  return createHeartMarkerIcon(isArchived ? "#ff9bbc" : "#ff5d96", isArchived ? "#fff0f5" : "#ffe3ee");
+  return createHeartMarkerIcon(isArchived ? "#ff9bbc" : "#ff5d96", isArchived ? "#fff0f5" : "#ffe3ee", markerOptions);
 }
 
-function createHeartMarkerIcon(fillColor, strokeColor) {
+function createHeartMarkerIcon(fillColor, strokeColor, options = {}) {
+  const hasNewGlow = Boolean(options.isNew);
+  const width = hasNewGlow ? 44 : 34;
+  const height = hasNewGlow ? 40 : 30;
+  const viewBox = hasNewGlow ? "-5 -5 44 40" : "0 0 34 30";
+  const glowHtml = hasNewGlow
+    ? `
+      <ellipse cx="17" cy="15" rx="20" ry="17" fill="#ffcd5c" opacity="0.28" />
+      <ellipse cx="17" cy="15" rx="15.5" ry="13.5" fill="#ffcd5c" opacity="0.22" />
+    `
+    : "";
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="30" viewBox="0 0 34 30">
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="${viewBox}">
+      ${glowHtml}
       <path
         d="M17 28C15.9 28 14.9 27.62 14.02 26.86C10.2 23.57 7.32 20.95 5.38 19C3.44 17.05 2.04 15.43 1.18 14.14C0.39 12.98 0 11.72 0 10.36C0 7.61 0.94 5.3 2.82 3.43C4.71 1.55 7.01 0.61 9.74 0.61C11.31 0.61 12.8 0.95 14.21 1.64C15.62 2.33 16.55 3.02 17 3.71C17.45 3.02 18.38 2.33 19.79 1.64C21.2 0.95 22.69 0.61 24.26 0.61C26.99 0.61 29.29 1.55 31.18 3.43C33.06 5.3 34 7.61 34 10.36C34 11.72 33.61 12.98 32.82 14.14C31.96 15.43 30.56 17.05 28.62 19C26.68 20.95 23.8 23.57 19.98 26.86C19.1 27.62 18.1 28 17 28Z"
         fill="${fillColor}"
@@ -2907,8 +2934,8 @@ function createHeartMarkerIcon(fillColor, strokeColor) {
 
   return {
     url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`,
-    scaledSize: new google.maps.Size(34, 30),
-    anchor: new google.maps.Point(17, 27),
+    scaledSize: new google.maps.Size(width, height),
+    anchor: hasNewGlow ? new google.maps.Point(22, 32) : new google.maps.Point(17, 27),
   };
 }
 
