@@ -383,6 +383,48 @@ function formatHistoryStoreLabel(item, stationLookup) {
   return `${label}/${[...stations][0]}`;
 }
 
+function findAddedDayKey(row) {
+  if (!row?.name) return "";
+
+  const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
+  const normalizedName = normalizeHistoryComparableText(row.name);
+  const normalizedStation = normalizeHistoryComparableText(row.station || "");
+  let bestMatch = "";
+  let nameOnlyFallback = "";
+
+  for (const entry of history) {
+    const added = Array.isArray(entry?.added) ? entry.added : [];
+    const dayKey = entry?.dayKey || String(entry?.fetchedAt || "").slice(0, 10);
+    if (!dayKey) continue;
+
+    for (const item of added) {
+      const [rawName, ...stationParts] = String(item || "").split("/");
+      const rawStation = stationParts.join("/");
+      const itemName = normalizeHistoryComparableText(rawName);
+      const itemStation = normalizeHistoryComparableText(rawStation);
+      if (!itemName || itemName !== normalizedName) continue;
+
+      if (!nameOnlyFallback || dayKey < nameOnlyFallback) {
+        nameOnlyFallback = dayKey;
+      }
+
+      if (
+        !normalizedStation ||
+        !itemStation ||
+        itemStation.includes(normalizedStation) ||
+        normalizedStation.includes(itemStation) ||
+        stationTokensOverlap(rawStation, row.station || "")
+      ) {
+        if (!bestMatch || dayKey < bestMatch) {
+          bestMatch = dayKey;
+        }
+      }
+    }
+  }
+
+  return bestMatch || nameOnlyFallback;
+}
+
 function normalizeHistoryComparableText(value) {
   return String(value || "")
     .replace(/\s+/g, "")
@@ -1254,7 +1296,8 @@ function renderSelectedStore() {
   }
 
   selectedStoreName.innerHTML = renderDisplayStoreNameHtml(state.selectedRow);
-  selectedStoreMeta.textContent = "";
+  const addedDayKey = findAddedDayKey(state.selectedRow);
+  selectedStoreMeta.innerHTML = addedDayKey ? `追加日: ${escapeHtml(formatHistoryDate(addedDayKey))}` : "";
   selectedReviewSummary.textContent = renderReviewSummaryText(state.selectedRow);
   renderFavoriteToggle(state.selectedRow);
   renderExcludeToggle(state.selectedRow);
@@ -2944,6 +2987,8 @@ function renderMarkerInfoContent(row) {
       : (row.notes || "")
   );
   const notesHtml = popupNote ? `<div style="margin-top:4px;">備考: ${escapeHtml(popupNote)}</div>` : "";
+  const addedDayKey = findAddedDayKey(row);
+  const addedDateHtml = addedDayKey ? `<div style="margin-top:2px;color:#8d5268;">追加日: ${escapeHtml(formatHistoryDate(addedDayKey))}</div>` : "";
   const phoneSearchUrl = row.phone ? `https://www.google.com/search?q=${encodeURIComponent(row.phone)}` : "";
   const preferredExternalUrl = getPreferredExternalUrl(row);
   const mapLinkHtml = row.mapUrl
@@ -2966,6 +3011,7 @@ function renderMarkerInfoContent(row) {
     <div style="color:#28121c;min-width:190px;line-height:1.55;">
       <div style="font-weight:700;font-size:14px;">${renderDisplayStoreNameHtml(row)}${officialHtml}${mapLinkHtml}</div>
       <div style="margin-top:4px;">営業時間: ${escapeHtml(row.hours || "—")}</div>
+      ${addedDateHtml}
       <div style="margin-top:2px;">電話: ${phoneHtml}${phoneSearchHtml}</div>
       ${notesHtml}
       ${actionsHtml ? `<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">${actionsHtml}</div>` : ""}
