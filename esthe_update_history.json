@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-06-25",
+    "fetchedAt": "2026-06-24T17:01:23.703Z",
+    "added": [
+      "Cotton Spa/末野原駅",
+      "Lush~ラッシュ/安城駅",
+      "ねこ娘/藤が丘駅",
+      "君ノ猫/丸の内駅",
+      "小惡魔/開明駅"
+    ],
+    "removed": [
+      "Lien（リアン）/安城駅",
+      "櫻花（さくら）/桜町前駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-06-24",
     "fetchedAt": "2026-06-23T17:11:53.159Z",
     "added": [
