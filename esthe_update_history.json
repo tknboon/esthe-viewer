@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-06-26",
+    "fetchedAt": "2026-06-25T17:05:13.159Z",
+    "added": [
+      "吉楽/伏見駅",
+      "聚盈堂（しゅうえいどう）/石刀駅"
+    ],
+    "removed": [
+      "夢～ゆめ/伏見駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-06-25",
     "fetchedAt": "2026-06-24T17:01:23.703Z",
     "added": [
