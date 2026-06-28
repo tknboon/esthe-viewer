@@ -383,10 +383,24 @@ function formatHistoryStoreLabel(item, stationLookup) {
   return `${label}/${[...stations][0]}`;
 }
 
+const NEW_STORE_HIGHLIGHT_DAYS = 7;
+const addedDayKeyCache = new Map();
+let addedDayKeyCacheSource = null;
+
 function findAddedDayKey(row) {
   if (!row?.name) return "";
 
   const history = Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [];
+  if (addedDayKeyCacheSource !== history) {
+    addedDayKeyCache.clear();
+    addedDayKeyCacheSource = history;
+  }
+
+  const cacheKey = row.id || `${row.name}|${row.station || ""}`;
+  if (addedDayKeyCache.has(cacheKey)) {
+    return addedDayKeyCache.get(cacheKey);
+  }
+
   const normalizedName = normalizeHistoryComparableText(row.name);
   const normalizedStation = normalizeHistoryComparableText(row.station || "");
   let bestMatch = "";
@@ -422,7 +436,9 @@ function findAddedDayKey(row) {
     }
   }
 
-  return bestMatch || nameOnlyFallback;
+  const result = bestMatch || nameOnlyFallback;
+  addedDayKeyCache.set(cacheKey, result);
+  return result;
 }
 
 function isRecentlyAddedRow(row) {
@@ -434,10 +450,10 @@ function isRecentlyAddedRow(row) {
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const weekAgo = new Date(today);
-  weekAgo.setDate(today.getDate() - 7);
+  const earliest = new Date(today);
+  earliest.setDate(today.getDate() - (NEW_STORE_HIGHLIGHT_DAYS - 1));
 
-  return addedDate >= weekAgo && addedDate <= today;
+  return addedDate >= earliest && addedDate <= today;
 }
 
 function normalizeHistoryComparableText(value) {
@@ -2977,11 +2993,13 @@ function focusMarker(row) {
 function openMarkerInfoWindow(map, infoWindow, marker, row) {
   if (!map || !infoWindow || !marker || !row) return;
 
-  infoWindow.setContent(renderMarkerInfoContent(row));
+  const content = document.createElement("div");
+  content.innerHTML = renderMarkerInfoContent(row);
+  infoWindow.setContent(content);
   infoWindow.open({ map, anchor: marker });
 
   google.maps.event.addListenerOnce(infoWindow, "domready", () => {
-    bindInfoWindowActions(row, infoWindow);
+    bindInfoWindowActions(content, row, infoWindow);
   });
 }
 
@@ -3048,8 +3066,9 @@ function renderMarkerInfoContent(row) {
   `;
 }
 
-function bindInfoWindowActions(row, infoWindow) {
-  const buttons = document.querySelectorAll("[data-marker-action]");
+function bindInfoWindowActions(container, row, infoWindow) {
+  const root = container || document;
+  const buttons = root.querySelectorAll("[data-marker-action]");
   for (const button of buttons) {
     button.onclick = (event) => {
       event.preventDefault();
