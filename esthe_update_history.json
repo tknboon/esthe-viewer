@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-06-30",
+    "fetchedAt": "2026-06-29T17:29:32.842Z",
+    "added": [
+      "愛らしい/名和駅",
+      "台湾ハニー/小牧駅",
+      "蜜のアトリエ/共和駅"
+    ],
+    "removed": [
+      "Sweet Heart～スイートハート～/蒲郡駅",
+      "従姉妹のイタズラ/石刀駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-06-29",
     "fetchedAt": "2026-06-28T16:03:46.218Z",
     "added": [],
