@@ -8,6 +8,8 @@ $files = @(
   "styles.css",
   "data.js",
   "firebase-config.js",
+  "analytics-config.js",
+  "analytics.js",
   "favicon.svg"
 )
 
