@@ -23,6 +23,8 @@
   profileMapSyncQueued: false,
   regionExpanded: false,
   expandedRegions: {},
+  expandedUpdateHistory: {},
+  updateHistoryInitialized: false,
   streetViewPanorama: null,
   streetViewService: null,
   archivedDetailCache: {},
@@ -306,24 +308,38 @@ function renderUpdateHistory() {
     return;
   }
 
-  dailyUpdateHistory.innerHTML = history
-    .slice(0, 14)
-    .map((entry) => {
+  const visibleHistory = history.slice(0, 14);
+  if (!state.updateHistoryInitialized && visibleHistory.length) {
+    state.expandedUpdateHistory[getHistoryEntryKey(visibleHistory[0], 0)] = true;
+    state.updateHistoryInitialized = true;
+  }
+
+  dailyUpdateHistory.innerHTML = visibleHistory
+    .map((entry, index) => {
       const added = Array.isArray(entry.added) ? entry.added : [];
       const removed = Array.isArray(entry.removed) ? entry.removed : [];
+      const historyKey = getHistoryEntryKey(entry, index);
+      const isExpanded = Boolean(state.expandedUpdateHistory[historyKey]);
 
       return `
-        <article class="update-history-item">
-          <div class="update-history-head">
+        <article class="update-history-item${isExpanded ? " is-expanded" : ""}">
+          <button class="update-history-head" type="button" data-history-toggle="${escapeHtml(historyKey)}" aria-expanded="${isExpanded ? "true" : "false"}">
+            <span class="update-history-caret" aria-hidden="true">${isExpanded ? "▼" : "▶"}</span>
             <span class="update-history-date">${escapeHtml(formatHistoryDate(entry.dayKey || entry.fetchedAt))}</span>
             <span class="update-history-summary">開店 ${added.length}件 / 閉店 ${removed.length}件</span>
+          </button>
+          <div class="update-history-body" ${isExpanded ? "" : "hidden"}>
+            ${renderHistoryGroup("開店", added, "added", stationLookup)}
+            ${renderHistoryGroup("閉店", removed, "removed", stationLookup)}
           </div>
-          ${renderHistoryGroup("開店", added, "added", stationLookup)}
-          ${renderHistoryGroup("閉店", removed, "removed", stationLookup)}
         </article>
       `;
     })
     .join("");
+}
+
+function getHistoryEntryKey(entry, index) {
+  return String(entry?.dayKey || entry?.fetchedAt || `history-${index}`);
 }
 
 function normalizeHistoryEntry(entry) {
@@ -814,6 +830,15 @@ function findRowByHistoryLabel(label) {
 }
 
 function handleHistoryClick(event) {
+  const toggle = event.target.closest("[data-history-toggle]");
+  if (toggle) {
+    const historyKey = toggle.dataset.historyToggle;
+    if (!historyKey) return;
+    state.expandedUpdateHistory[historyKey] = !state.expandedUpdateHistory[historyKey];
+    renderUpdateHistory();
+    return;
+  }
+
   const trigger = event.target.closest("[data-history-store]");
   if (!trigger) return;
 

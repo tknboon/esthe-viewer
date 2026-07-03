@@ -459,22 +459,47 @@ select {
 }
 
 .update-history-item {
-  padding: 12px 12px 10px;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+  overflow: hidden;
 }
 
 .update-history-item:first-child {
-  padding-top: 12px;
+  padding-top: 0;
 }
 
 .update-history-head {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.update-history-head:hover {
+  background: rgba(255, 248, 251, 0.045);
+}
+
+.update-history-caret {
+  color: #ffd47e;
+  font-size: 10px;
+  line-height: 1;
+  width: 12px;
+  flex: 0 0 12px;
+}
+
+.update-history-body {
+  padding: 0 12px 12px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .update-history-date,
@@ -485,10 +510,13 @@ select {
 .update-history-date {
   color: var(--text);
   font-weight: 700;
+  flex: 1 1 auto;
 }
 
 .update-history-summary {
   color: var(--muted);
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .update-history-group {
