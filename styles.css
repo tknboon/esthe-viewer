@@ -448,6 +448,95 @@ select {
   margin-top: 14px;
 }
 
+.store-stats-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.store-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.store-stat-card {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  background: rgba(255, 248, 251, 0.045);
+}
+
+.store-stat-card.is-wide {
+  grid-column: 1 / -1;
+}
+
+.store-stat-label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.store-stat-value {
+  display: block;
+  margin-top: 5px;
+  color: #fff4c8;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.store-trend-bars {
+  display: grid;
+  gap: 7px;
+}
+
+.store-trend-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 36px;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+}
+
+.store-trend-date {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.store-trend-track {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.store-trend-bar {
+  display: block;
+  height: 5px;
+  border-radius: 999px;
+}
+
+.store-trend-bar.is-added {
+  background: linear-gradient(90deg, rgba(255, 93, 150, 0.45), rgba(255, 185, 209, 0.92));
+}
+
+.store-trend-bar.is-removed {
+  background: linear-gradient(90deg, rgba(255, 180, 64, 0.35), rgba(255, 212, 126, 0.82));
+}
+
+.store-trend-net {
+  text-align: right;
+  font-weight: 800;
+}
+
+.store-trend-net.is-plus {
+  color: #ffb9d1;
+}
+
+.store-trend-net.is-minus {
+  color: #ffd47e;
+}
+
 .history-subhead {
   margin-top: 18px;
 }

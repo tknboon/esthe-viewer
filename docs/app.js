@@ -55,6 +55,11 @@ const regionSummary = document.querySelector("#regionSummary");
 const reviewTotalCount = document.querySelector("#reviewTotalCount");
 const monthlyRevenueChart = document.querySelector("#monthlyRevenueChart");
 const dailyUpdateHistory = document.querySelector("#dailyUpdateHistory");
+const storeTotalCount = document.querySelector("#storeTotalCount");
+const storeNet7Text = document.querySelector("#storeNet7Text");
+const storeNet30Text = document.querySelector("#storeNet30Text");
+const storeLatestChangeText = document.querySelector("#storeLatestChangeText");
+const storeTrendBars = document.querySelector("#storeTrendBars");
 const archivedReviewList = document.querySelector("#archivedReviewList");
 const cardsView = document.querySelector("#cardsView");
 const tableView = document.querySelector("#tableView");
@@ -247,6 +252,7 @@ function init() {
     state.excludedByStore = readExcluded();
     state.sharedSync.lastBackupAt = readBackupMeta().savedAt || "";
     renderLastUpdated();
+    renderStoreStats();
     renderUpdateHistory();
     setDefaultReviewValues();
     bindEvents();
@@ -290,16 +296,114 @@ function renderLastUpdated() {
   lastUpdatedText.textContent = `最終更新: ${formatted}`;
 }
 
-function renderUpdateHistory() {
-  if (!dailyUpdateHistory) return;
-
-  const history = (Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [])
+function getNormalizedUpdateHistoryEntries() {
+  return (Array.isArray(window.storeMeta?.updateHistory) ? window.storeMeta.updateHistory : [])
     .map(normalizeHistoryEntry)
     .filter((entry) => {
       const added = Array.isArray(entry?.added) ? entry.added : [];
       const removed = Array.isArray(entry?.removed) ? entry.removed : [];
       return added.length || removed.length;
     });
+}
+
+function renderStoreStats() {
+  if (!storeTotalCount && !storeTrendBars) return;
+
+  const history = getNormalizedUpdateHistoryEntries();
+  const currentCount = state.rows.length;
+  const latestEntry = history[0] || null;
+  const net7 = calculateHistoryNetChange(history, 7);
+  const net30 = calculateHistoryNetChange(history, 30);
+
+  if (storeTotalCount) storeTotalCount.textContent = `${currentCount}件`;
+  if (storeNet7Text) storeNet7Text.textContent = formatSignedCount(net7);
+  if (storeNet30Text) storeNet30Text.textContent = formatSignedCount(net30);
+  if (storeLatestChangeText) {
+    const added = Array.isArray(latestEntry?.added) ? latestEntry.added.length : 0;
+    const removed = Array.isArray(latestEntry?.removed) ? latestEntry.removed.length : 0;
+    storeLatestChangeText.textContent = `開店 ${added} / 閉店 ${removed}`;
+  }
+
+  renderStoreTrendBars(history.slice(0, 14));
+}
+
+function calculateHistoryNetChange(history, days) {
+  const latestDayKey = getLatestHistoryDayKey(history);
+  if (!latestDayKey) return 0;
+
+  const latestDate = parseDayKeyDate(latestDayKey);
+  if (!latestDate) return 0;
+
+  const earliest = new Date(latestDate);
+  earliest.setDate(latestDate.getDate() - (days - 1));
+
+  return history.reduce((total, entry) => {
+    const dayKey = getHistoryEntryDayKey(entry);
+    const date = parseDayKeyDate(dayKey);
+    if (!date || date < earliest || date > latestDate) return total;
+    const added = Array.isArray(entry.added) ? entry.added.length : 0;
+    const removed = Array.isArray(entry.removed) ? entry.removed.length : 0;
+    return total + added - removed;
+  }, 0);
+}
+
+function renderStoreTrendBars(entries) {
+  if (!storeTrendBars) return;
+  if (!entries.length) {
+    storeTrendBars.innerHTML = `<div class="empty-state compact">更新履歴が入るとここに表示されます。</div>`;
+    return;
+  }
+
+  const values = entries.map((entry) => {
+    const added = Array.isArray(entry.added) ? entry.added.length : 0;
+    const removed = Array.isArray(entry.removed) ? entry.removed.length : 0;
+    return { entry, added, removed, net: added - removed };
+  });
+  const maxValue = Math.max(...values.map((item) => Math.max(item.added, item.removed, Math.abs(item.net))), 1);
+
+  storeTrendBars.innerHTML = values
+    .map(({ entry, added, removed, net }) => {
+      const addedWidth = added ? Math.max(8, Math.round((added / maxValue) * 100)) : 0;
+      const removedWidth = removed ? Math.max(8, Math.round((removed / maxValue) * 100)) : 0;
+      return `
+        <div class="store-trend-row">
+          <span class="store-trend-date">${escapeHtml(formatHistoryDate(getHistoryEntryDayKey(entry)))}</span>
+          <div class="store-trend-track" aria-label="開店 ${added}件 閉店 ${removed}件">
+            <span class="store-trend-bar is-added" style="width:${addedWidth}%"></span>
+            <span class="store-trend-bar is-removed" style="width:${removedWidth}%"></span>
+          </div>
+          <span class="store-trend-net ${net >= 0 ? "is-plus" : "is-minus"}">${escapeHtml(formatSignedCount(net))}</span>
+        </div>
+      `;
+    })
+    .join("");
+}
+
+function getLatestHistoryDayKey(history) {
+  return getHistoryEntryDayKey(history[0] || null);
+}
+
+function getHistoryEntryDayKey(entry) {
+  return String(entry?.dayKey || entry?.fetchedAt || "").slice(0, 10);
+}
+
+function parseDayKeyDate(dayKey) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(dayKey || ""))) return null;
+  const date = new Date(`${dayKey}T00:00:00`);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function formatSignedCount(value) {
+  const number = Number(value) || 0;
+  if (number > 0) return `+${number}`;
+  if (number < 0) return String(number);
+  return "±0";
+}
+
+function renderUpdateHistory() {
+  if (!dailyUpdateHistory) return;
+
+  const history = getNormalizedUpdateHistoryEntries();
 
   const stationLookup = buildHistoryStationLookup();
 
