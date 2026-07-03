@@ -25,6 +25,7 @@
   expandedRegions: {},
   expandedUpdateHistory: {},
   updateHistoryInitialized: false,
+  activeSidebarTab: "search",
   streetViewPanorama: null,
   streetViewService: null,
   archivedDetailCache: {},
@@ -46,6 +47,8 @@
 
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
+const sidebarTabs = document.querySelectorAll("[data-sidebar-tab]");
+const sidebarPanels = document.querySelectorAll("[data-sidebar-panel]");
 const lastUpdatedText = document.querySelector("#lastUpdatedText");
 const syncStatusText = document.querySelector("#syncStatusText");
 const syncAuthButton = document.querySelector("#syncAuthButton");
@@ -251,6 +254,7 @@ function init() {
     state.favoritesByStore = readFavorites();
     state.excludedByStore = readExcluded();
     state.sharedSync.lastBackupAt = readBackupMeta().savedAt || "";
+    renderSidebarTabs();
     renderLastUpdated();
     renderStoreStats();
     renderUpdateHistory();
@@ -951,6 +955,30 @@ function handleHistoryClick(event) {
 
   focusRow(row);
 }
+
+function handleSidebarTabClick(event) {
+  const button = event.currentTarget;
+  const tab = button?.dataset?.sidebarTab || "search";
+  state.activeSidebarTab = tab;
+  renderSidebarTabs();
+}
+
+function renderSidebarTabs() {
+  if (!sidebarTabs.length || !sidebarPanels.length) return;
+
+  sidebarTabs.forEach((button) => {
+    const isActive = button.dataset.sidebarTab === state.activeSidebarTab;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-selected", isActive ? "true" : "false");
+  });
+
+  sidebarPanels.forEach((panel) => {
+    const isActive = panel.dataset.sidebarPanel === state.activeSidebarTab;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+}
+
 function formatHistoryDate(value) {
   if (!value) return "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(String(value))) {
@@ -980,6 +1008,7 @@ function bindEvents() {
   cardsView?.addEventListener("click", handleListActionClick);
   tableBody?.addEventListener("click", handleListActionClick);
   mapList?.addEventListener("click", handleListActionClick);
+  sidebarTabs.forEach((button) => button.addEventListener("click", handleSidebarTabClick));
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
   dailyUpdateHistory?.addEventListener("click", handleHistoryClick);
