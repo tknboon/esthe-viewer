@@ -513,10 +513,7 @@ function formatHistoryLabelStation(label) {
   if (!rawName || !station) return label;
 
   const stationGroup = normalizeStationGroupLabel(station);
-  const stationAccess = getStationAccessLabel(station);
-  const displayStation = stationGroup && stationAccess && stationGroup !== station
-    ? `${stationGroup}（${stationAccess}）`
-    : (stationGroup || station);
+  const displayStation = stationGroup || station;
 
   return `${rawName}/${displayStation}`;
 }
@@ -1386,10 +1383,7 @@ function getPreferredExternalUrl(row) {
 
 function formatStationDisplay(row) {
   if (!row) return "";
-  if (row.stationGroup && row.stationAccess && row.stationGroup !== row.station) {
-    return `${row.stationGroup}（${row.stationAccess}）`;
-  }
-  return row.station || row.stationGroup || "";
+  return row.stationGroup || row.station || "";
 }
 
 function getDomainGroupFromUrl(url) {
