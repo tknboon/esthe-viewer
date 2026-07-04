@@ -25,7 +25,7 @@
   expandedRegions: {},
   expandedUpdateHistory: {},
   updateHistoryInitialized: false,
-  activeSidebarTab: "search",
+  activeSidebarTab: "history",
   streetViewPanorama: null,
   streetViewService: null,
   archivedDetailCache: {},

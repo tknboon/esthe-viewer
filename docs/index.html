@@ -24,12 +24,12 @@
       <main class="layout">
         <aside class="filters-panel">
           <nav class="sidebar-tabs" aria-label="サイドメニュー">
-            <button class="sidebar-tab is-active" type="button" data-sidebar-tab="search" aria-selected="true">検索</button>
+            <button class="sidebar-tab" type="button" data-sidebar-tab="search" aria-selected="false">検索</button>
             <button class="sidebar-tab" type="button" data-sidebar-tab="stats" aria-selected="false">統計</button>
-            <button class="sidebar-tab" type="button" data-sidebar-tab="history" aria-selected="false">履歴</button>
+            <button class="sidebar-tab is-active" type="button" data-sidebar-tab="history" aria-selected="true">履歴</button>
           </nav>
 
-          <section class="panel-block sidebar-tab-panel is-active" data-sidebar-panel="search">
+          <section class="panel-block sidebar-tab-panel" data-sidebar-panel="search" hidden>
             <p id="lastUpdatedText" class="last-updated-text">最終更新: 確認中...</p>
             <div class="sync-row">
               <span id="syncStatusText" class="mini-label">この端末内に保存</span>
@@ -78,7 +78,7 @@
             </div>
           </section>
 
-          <section class="panel-block sidebar-tab-panel" data-sidebar-panel="history" hidden>
+          <section class="panel-block sidebar-tab-panel is-active" data-sidebar-panel="history">
             <div class="analytics-head">
               <span class="input-label">レビュー集計</span>
               <strong id="reviewTotalCount" class="analytics-total">0件</strong>
