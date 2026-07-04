@@ -141,6 +141,27 @@ const REGION_LABELS = {
   toyohashi: "東三河・豊橋・豊川",
 };
 
+const REGION_DISPLAY_ORDER = [
+  "nagoya",
+  "sakae",
+  "shinsakae",
+  "kanayama",
+  "tsurumai",
+  "kurokawa",
+  "hoshigaoka",
+  "showa",
+  "moriyama",
+  "otai",
+  "tokaidori",
+  "horita",
+  "kasadera",
+  "komaki",
+  "owari",
+  "chita",
+  "toyota",
+  "toyohashi",
+];
+
 const REGION_MUNICIPALITIES = {
   nagoya: ["名古屋市"],
   sakae: ["名古屋市"],
@@ -1219,12 +1240,20 @@ function buildRegionStats(rows) {
         .map(([label, items]) => ({ label, count: items.size }))
         .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "ja")),
     }))
-    .sort((a, b) => a.label.localeCompare(b.label, "ja"));
+    .sort(compareRegionChildren);
 
   return {
     total: uniqueStoreKeys.size,
     children,
   };
+}
+
+function compareRegionChildren(a, b) {
+  const leftIndex = REGION_DISPLAY_ORDER.indexOf(a.key);
+  const rightIndex = REGION_DISPLAY_ORDER.indexOf(b.key);
+  const leftOrder = leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex;
+  const rightOrder = rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex;
+  return leftOrder - rightOrder || a.label.localeCompare(b.label, "ja");
 }
 
 function getMunicipalityLabelsForSummary(row, regionKey) {
