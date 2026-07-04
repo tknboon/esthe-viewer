@@ -692,6 +692,18 @@ select {
   cursor: pointer;
 }
 
+.update-history-tag.is-state-favorite {
+  border-color: rgba(78, 203, 255, 0.72);
+  background: rgba(78, 203, 255, 0.18);
+  color: #dff7ff;
+}
+
+.update-history-tag.is-state-excluded {
+  border-color: rgba(210, 210, 218, 0.46);
+  background: rgba(8, 8, 12, 0.72);
+  color: #f2f2f5;
+}
+
 .update-history-tag.is-profile-pink {
   border-color: rgba(255, 93, 150, 0.72);
   background: rgba(255, 93, 150, 0.18);

@@ -931,8 +931,18 @@ function findStoredProfileByHistoryLabel(label) {
   return nameOnlyMatch;
 }
 
-function getHistoryTagAccentClass(label, modifier) {
-  if (modifier !== "removed") return "";
+function getHistoryTagAccentClass(label, row) {
+  if (row) {
+    if (isExcludedRow(row)) return "is-state-excluded";
+    if (isFavoriteRow(row)) return "is-state-favorite";
+
+    const profile = getStoreProfile(row);
+    const latestReview = getLatestReview(row);
+    const guideClarity = profile?.guideClarity || latestReview?.guideClarity || "";
+    if (guideClarity === "あり") return "is-profile-pink";
+    if (guideClarity === "なし") return "is-profile-yellow";
+  }
+
   const profileMatch = findStoredProfileByHistoryLabel(label);
   const guideClarity = profileMatch?.profile?.guideClarity || "";
   if (guideClarity === "あり") return "is-profile-pink";
@@ -958,7 +968,7 @@ function renderHistoryGroup(label, items, modifier, stationLookup) {
       <div class="update-history-tags">
         ${historyItems
           .map(({ rawLabel, displayLabel, row }) => {
-            const accentClass = getHistoryTagAccentClass(rawLabel, modifier);
+            const accentClass = getHistoryTagAccentClass(rawLabel, row);
             if (row) {
               return `<button type="button" class="update-history-tag is-link ${accentClass}" data-history-store="${escapeHtml(rawLabel)}">${escapeHtml(displayLabel)}</button>`;
             }
