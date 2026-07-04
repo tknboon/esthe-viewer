@@ -942,19 +942,22 @@ function getHistoryTagAccentClass(label, modifier) {
 
 function renderHistoryGroup(label, items, modifier, stationLookup) {
   if (!items.length) return "";
+  const historyItems = items
+    .map((item) => {
+      const rawLabel = String(item || "").trim();
+      const displayLabel = formatHistoryStoreLabel(rawLabel, stationLookup);
+      const row = findRowByHistoryLabel(rawLabel) || findRowByHistoryLabel(displayLabel);
+      return { rawLabel, displayLabel, row };
+    })
+    .filter((item) => item.displayLabel)
+    .sort(compareHistoryItems);
+
   return `
     <section class="update-history-group">
       <div class="update-history-label ${modifier === "removed" ? "is-removed" : "is-added"}">${escapeHtml(label)}</div>
       <div class="update-history-tags">
-        ${items
-          .map((item) => {
-            const rawLabel = String(item || "").trim();
-            const displayLabel = formatHistoryStoreLabel(rawLabel, stationLookup);
-            return { rawLabel, displayLabel };
-          })
-          .filter((item) => item.displayLabel)
-          .map(({ rawLabel, displayLabel }) => {
-            const row = findRowByHistoryLabel(rawLabel) || findRowByHistoryLabel(displayLabel);
+        ${historyItems
+          .map(({ rawLabel, displayLabel, row }) => {
             const accentClass = getHistoryTagAccentClass(rawLabel, modifier);
             if (row) {
               return `<button type="button" class="update-history-tag is-link ${accentClass}" data-history-store="${escapeHtml(rawLabel)}">${escapeHtml(displayLabel)}</button>`;
@@ -967,14 +970,57 @@ function renderHistoryGroup(label, items, modifier, stationLookup) {
   `;
 }
 
+function compareHistoryItems(a, b) {
+  const leftRegion = getRegionOrderForRow(a.row);
+  const rightRegion = getRegionOrderForRow(b.row);
+  if (leftRegion !== rightRegion) return leftRegion - rightRegion;
+
+  const leftStation = getHistorySortStation(a);
+  const rightStation = getHistorySortStation(b);
+  const stationCompare = leftStation.localeCompare(rightStation, "ja");
+  if (stationCompare) return stationCompare;
+
+  return a.displayLabel.localeCompare(b.displayLabel, "ja");
+}
+
+function getRegionOrderForRow(row) {
+  const regionKey = getRegionKeyFromRow(row);
+  const index = REGION_DISPLAY_ORDER.indexOf(regionKey);
+  return index === -1 ? Number.MAX_SAFE_INTEGER : index;
+}
+
+function getHistorySortStation(item) {
+  return item.row?.stationGroup || parseHistoryLabelStation(item.displayLabel) || item.displayLabel;
+}
+
+function parseHistoryLabelStation(label) {
+  const parts = String(label || "").split("/");
+  return parts.length > 1 ? parts.slice(1).join("/").trim() : "";
+}
+
 function findRowByHistoryLabel(label) {
   const text = String(label || "").trim();
   if (!text) return null;
 
-  const storeName = text.split("/")[0]?.trim() || text;
+  const [rawName, ...stationParts] = text.split("/");
+  const storeName = rawName?.trim() || text;
+  const station = stationParts.join("/").trim();
   if (!storeName) return null;
 
-  return state.rows.find((row) => row.name === storeName) || null;
+  const candidates = state.rows.filter((row) => row.name === storeName);
+  if (!station || candidates.length <= 1) return candidates[0] || null;
+
+  const normalizedStation = normalizeHistoryComparableText(station);
+  return candidates.find((row) => {
+    const rowStation = row.station || "";
+    const rowStationGroup = row.stationGroup || "";
+    return (
+      normalizeHistoryComparableText(rowStation) === normalizedStation ||
+      normalizeHistoryComparableText(rowStationGroup) === normalizedStation ||
+      stationTokensOverlap(rowStation, station) ||
+      stationTokensOverlap(rowStationGroup, station)
+    );
+  }) || candidates[0] || null;
 }
 
 function handleHistoryClick(event) {
