@@ -1748,6 +1748,7 @@ function handleFavoriteToggle() {
   renderFavoriteToggle(row);
   refreshRowMarkerIcons(row);
   refreshOpenInfoWindows(row);
+  renderUpdateHistory();
 }
 
 function renderExcludeToggle(row) {
@@ -1782,6 +1783,7 @@ function handleExcludeToggle() {
   renderExcludeToggle(row);
   refreshRowMarkerIcons(row);
   refreshOpenInfoWindows(row);
+  renderUpdateHistory();
 }
 
 function refreshRowMarkerIcons(row) {
@@ -2162,6 +2164,7 @@ function startSharedListeners() {
     state.rows.forEach(applyProfileLocationToRow);
     primeArchivedProfileDetails();
     renderSelectedStore();
+    renderUpdateHistory();
     syncMapWithFilters();
     syncProfileMap();
   });
@@ -2170,6 +2173,7 @@ function startSharedListeners() {
     state.favoritesByStore = payload;
     writeLocalObject("toyota-esthe-favorites", state.favoritesByStore);
     renderSelectedStore();
+    renderUpdateHistory();
     syncMapWithFilters();
     syncProfileMap();
   });
@@ -2178,6 +2182,7 @@ function startSharedListeners() {
     state.excludedByStore = payload;
     writeLocalObject("toyota-esthe-excluded", state.excludedByStore);
     renderSelectedStore();
+    renderUpdateHistory();
     syncMapWithFilters();
     syncProfileMap();
   });
@@ -2538,6 +2543,7 @@ function handleStoreProfileSave() {
   renderStoreProfileSummary(state.selectedRow);
   renderSelectedStore();
   setStoreProfileEditing(false, true);
+  renderUpdateHistory();
   syncMapWithFilters();
   syncProfileMap();
 
