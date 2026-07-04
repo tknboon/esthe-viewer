@@ -490,7 +490,7 @@ function buildHistoryStationLookup() {
     if (!lookup.has(row.name)) {
       lookup.set(row.name, new Set());
     }
-    lookup.get(row.name).add(row.station);
+    lookup.get(row.name).add(formatStationDisplay(row) || row.station);
   }
 
   return lookup;
@@ -499,12 +499,26 @@ function buildHistoryStationLookup() {
 function formatHistoryStoreLabel(item, stationLookup) {
   const label = String(item || "").trim();
   if (!label) return "";
-  if (label.includes("/")) return label;
+  if (label.includes("/")) return formatHistoryLabelStation(label);
 
   const stations = stationLookup.get(label);
   if (!stations || !stations.size) return label;
 
   return `${label}/${[...stations][0]}`;
+}
+
+function formatHistoryLabelStation(label) {
+  const [rawName, ...stationParts] = String(label || "").split("/");
+  const station = stationParts.join("/");
+  if (!rawName || !station) return label;
+
+  const stationGroup = normalizeStationGroupLabel(station);
+  const stationAccess = getStationAccessLabel(station);
+  const displayStation = stationGroup && stationAccess && stationGroup !== station
+    ? `${stationGroup}（${stationAccess}）`
+    : (stationGroup || station);
+
+  return `${rawName}/${displayStation}`;
 }
 
 const NEW_STORE_HIGHLIGHT_DAYS = 7;
@@ -915,15 +929,19 @@ function renderHistoryGroup(label, items, modifier, stationLookup) {
       <div class="update-history-label ${modifier === "removed" ? "is-removed" : "is-added"}">${escapeHtml(label)}</div>
       <div class="update-history-tags">
         ${items
-          .map((item) => formatHistoryStoreLabel(item, stationLookup))
-          .filter(Boolean)
           .map((item) => {
-            const row = findRowByHistoryLabel(item);
-            const accentClass = getHistoryTagAccentClass(item, modifier);
+            const rawLabel = String(item || "").trim();
+            const displayLabel = formatHistoryStoreLabel(rawLabel, stationLookup);
+            return { rawLabel, displayLabel };
+          })
+          .filter((item) => item.displayLabel)
+          .map(({ rawLabel, displayLabel }) => {
+            const row = findRowByHistoryLabel(rawLabel) || findRowByHistoryLabel(displayLabel);
+            const accentClass = getHistoryTagAccentClass(rawLabel, modifier);
             if (row) {
-              return `<button type="button" class="update-history-tag is-link ${accentClass}" data-history-store="${escapeHtml(item)}">${escapeHtml(item)}</button>`;
+              return `<button type="button" class="update-history-tag is-link ${accentClass}" data-history-store="${escapeHtml(rawLabel)}">${escapeHtml(displayLabel)}</button>`;
             }
-            return `<span class="update-history-tag ${accentClass}">${escapeHtml(item)}</span>`;
+            return `<span class="update-history-tag ${accentClass}">${escapeHtml(displayLabel)}</span>`;
           })
           .join("")}
       </div>
