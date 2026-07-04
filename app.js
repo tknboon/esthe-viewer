@@ -1361,7 +1361,7 @@ function isStationAccessSuffix(value) {
   const suffix = String(value || "").trim();
   if (!suffix) return false;
 
-  return /^(\d+[A-Za-z]?番?(?:出口|口)|[A-Za-z]\d*(?:出口|口)|[東西南北](?:出口|口))$/u.test(suffix);
+  return /^(\d+[A-Za-z]?番?(?:出口|口)|[A-Za-z]\d*(?:出口|口)|[東西南北]\d*[A-Za-z]?番?(?:出口|口))$/u.test(suffix);
 }
 
 function getStationAccessLabel(value) {
