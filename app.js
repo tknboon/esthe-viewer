@@ -1676,6 +1676,28 @@ function focusRow(row) {
   focusMarker(row);
 }
 
+function clearSelectedRow() {
+  state.selectedRow = null;
+  state.infoWindow?.close();
+  state.profileInfoWindow?.close();
+  renderSelectedStore();
+  renderMapList();
+}
+
+function toggleMarkerSelection(row, map, infoWindow, marker) {
+  if (!row) return;
+
+  if (state.selectedRow?.id === row.id) {
+    clearSelectedRow();
+    return;
+  }
+
+  focusRow(row);
+  if (map && infoWindow && marker) {
+    openMarkerInfoWindow(map, infoWindow, marker, row);
+  }
+}
+
 function isFavoriteRow(row) {
   return Boolean(row?.reviewKey && state.favoritesByStore[row.reviewKey]);
 }
@@ -3167,7 +3189,7 @@ function addMarkerForRow(row, bounds) {
     icon: buildMarkerIcon(row),
   });
 
-  marker.addListener("click", () => focusRow(row));
+  marker.addListener("click", () => toggleMarkerSelection(row));
   state.markers.set(row.id, marker);
   bounds.extend(row.latLng);
 }
@@ -3182,10 +3204,7 @@ function addProfileMarkerForRow(row, bounds) {
     icon: buildProfileMarkerIcon(row),
   });
 
-  marker.addListener("click", () => {
-    focusRow(row);
-    openMarkerInfoWindow(state.profileMap, state.profileInfoWindow, marker, row);
-  });
+  marker.addListener("click", () => toggleMarkerSelection(row, state.profileMap, state.profileInfoWindow, marker));
 
   state.profileMarkers.set(row.id, marker);
   bounds.extend(row.latLng);
