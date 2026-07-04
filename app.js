@@ -718,6 +718,8 @@ function createRoomVariantRow(row, stationToken, index, primaryStationToken) {
     id: baseId,
     profileKey: buildRoomProfileKey(row, stationToken),
     station: stationToken,
+    stationGroup: normalizeStationGroupLabel(stationToken),
+    stationAccess: getStationAccessLabel(stationToken),
     roomStation: stationToken,
     roomIndex: index,
     isRoomVariant: true,
@@ -767,6 +769,8 @@ function createExplicitRoomVariantRow(row, room, index) {
     id: `${row.id}__explicit-room-${index}`,
     profileKey: buildRoomProfileKey(row, label),
     station: label,
+    stationGroup: normalizeStationGroupLabel(label),
+    stationAccess: getStationAccessLabel(label),
     roomStation: label,
     roomIndex: index,
     isRoomVariant: true,
@@ -1053,6 +1057,8 @@ function applyFilters() {
     const haystack = [
       row.name,
       row.station,
+      row.stationGroup,
+      row.stationAccess,
       row.location,
       row.notes,
       row.phone,
@@ -1208,7 +1214,11 @@ function buildRegionStats(rows) {
 
 function getMunicipalityLabelsForSummary(row, regionKey) {
   if (Array.isArray(row?.municipalityLabels) && row.municipalityLabels.length) {
-    return [...new Set(row.municipalityLabels.filter(Boolean))];
+    const labels = row.municipalityLabels.filter(Boolean);
+    if (STATION_GROUP_REGIONS.has(regionKey)) {
+      return [...new Set(labels.map((label) => normalizeStationGroupLabel(label)).filter(Boolean))];
+    }
+    return [...new Set(labels)];
   }
 
   return [getMunicipalityFromRow(row, regionKey)];
@@ -1269,7 +1279,7 @@ function getMunicipalityFromRow(row, regionKey) {
   }
 
   if (STATION_GROUP_REGIONS.has(regionKey)) {
-    const stationLabel = normalizeStationGroupLabel(row?.station || "");
+    const stationLabel = row?.stationGroup || normalizeStationGroupLabel(row?.station || "");
     if (stationLabel) {
       return stationLabel;
     }
@@ -1303,13 +1313,65 @@ function normalizeStationGroupLabel(value) {
     .replace(/徒歩.*$/u, "")
     .replace(/車で.*$/u, "")
     .replace(/から.*$/u, "")
+    .split("・")
+    .map((part) => normalizeSingleStationGroupLabel(part))
+    .filter(Boolean)
+    .join("・")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeSingleStationGroupLabel(value) {
+  const text = String(value || "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!text) return "";
+
+  const match = text.match(/^(.+?駅)(.+)$/u);
+  if (!match) return text;
+
+  const suffix = match[2].trim();
+  if (isStationAccessSuffix(suffix)) {
+    return match[1];
+  }
+
+  return text;
+}
+
+function isStationAccessSuffix(value) {
+  const suffix = String(value || "").trim();
+  if (!suffix) return false;
+
+  return /^(\d+[A-Za-z]?番?(?:出口|口)|[A-Za-z]\d*(?:出口|口)|[東西南北](?:出口|口))$/u.test(suffix);
+}
+
+function getStationAccessLabel(value) {
+  const text = String(value || "")
+    .replace(/[／/]/g, "・")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!text || text.includes("・")) return "";
+
+  const match = text.match(/^(.+?駅)(.+)$/u);
+  if (!match) return "";
+
+  const suffix = match[2].trim();
+  return isStationAccessSuffix(suffix) ? suffix : "";
 }
 
 function getPreferredExternalUrl(row) {
   if (!row) return "";
   return row.officialUrl || row.listingUrl || "";
+}
+
+function formatStationDisplay(row) {
+  if (!row) return "";
+  if (row.stationGroup && row.stationAccess && row.stationGroup !== row.station) {
+    return `${row.stationGroup}（${row.stationAccess}）`;
+  }
+  return row.station || row.stationGroup || "";
 }
 
 function getDomainGroupFromUrl(url) {
@@ -1369,7 +1431,7 @@ function renderMapList() {
       (row) => `
         <button class="map-list-item${state.selectedRow?.id === row.id ? " is-active" : ""}" type="button" data-focus-id="${row.id}">
           <span class="map-list-title">${escapeHtml(row.name)}</span>
-          <span class="map-list-meta">${escapeHtml(row.station || row.location || "-")}</span>
+          <span class="map-list-meta">${escapeHtml(formatStationDisplay(row) || row.location || "-")}</span>
         </button>
       `
     )
@@ -1390,7 +1452,7 @@ function renderCards() {
           <div class="store-head">
             <div>
               <h2 class="store-title">${escapeHtml(row.name)}</h2>
-              <p class="store-station">${escapeHtml(row.station)}</p>
+              <p class="store-station">${escapeHtml(formatStationDisplay(row))}</p>
             </div>
             <div class="store-badges">
               ${row.hasCoordinates ? `<span class="badge">座標あり</span>` : `<span class="badge subtle">駅名/住所検索</span>`}
@@ -1447,7 +1509,7 @@ function renderTable() {
             <div>${escapeHtml(row.name)}</div>
             <button class="focus-button" type="button" data-focus-id="${row.id}">地図で見る</button>
           </td>
-          <td>${escapeHtml(row.station)}</td>
+          <td>${escapeHtml(formatStationDisplay(row))}</td>
           <td>${escapeHtml(row.hours || "-")}</td>
           <td>${row.phone ? `<a href="tel:${row.phone}">${escapeHtml(row.phone)}</a>` : "-"}</td>
           <td><a href="${row.mapUrl}" target="_blank" rel="noreferrer">${escapeHtml(row.location || "地図で開く")}</a></td>
@@ -1635,6 +1697,8 @@ function normalizeRow(row, index) {
   const name = row["店舗名"] || "";
   const listingUrl = row["掲載URL"] || "";
   const station = MANUAL_STATION_OVERRIDES[listingUrl] || row["最寄駅"] || "";
+  const stationGroup = normalizeStationGroupLabel(station);
+  const stationAccess = getStationAccessLabel(station);
   const location = row["住所または座標"] || "";
   const latitude = row["緯度"] || "";
   const longitude = row["経度"] || "";
@@ -1653,6 +1717,8 @@ function normalizeRow(row, index) {
     reviewKey: listingUrl || `${name}__${station || location || index}`,
     name,
     station,
+    stationGroup,
+    stationAccess,
     location,
     latitude,
     longitude,
@@ -2202,6 +2268,8 @@ function buildArchivedProfileRow(reviewKey, profile) {
   const officialUrl = profile.officialUrl || cachedDetail?.officialUrl || window.storeMeta?.officialUrlByListingUrl?.[listingUrl] || "";
   const name = profile.storeName || latestReview?.storeName || "掲載終了した店舗";
   const station = profile.storeStation || latestReview?.storeStation || "";
+  const stationGroup = normalizeStationGroupLabel(station);
+  const stationAccess = getStationAccessLabel(station);
   const closedDayKey = profile.closedDayKey || findClosedDayKey(name, station);
   const fallbackLocation = latestReview?.storeLocation || station || name;
   const baseLocationQuery = buildLocationQuery(name, station, profile.address || fallbackLocation, profile.note || "");
@@ -2212,6 +2280,8 @@ function buildArchivedProfileRow(reviewKey, profile) {
     profileKey: reviewKey,
     name,
     station,
+    stationGroup,
+    stationAccess,
     location: profile.address || fallbackLocation,
     latitude: "",
     longitude: "",
