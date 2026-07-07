@@ -2,8 +2,8 @@ name: Update esthe data
 
 on:
   schedule:
-    # 00:00 JST every day.
-    - cron: "0 15 * * *"
+    # 18:00 JST every day.
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 permissions:
