@@ -336,28 +336,31 @@ function renderStoreStats() {
 
   const history = getNormalizedUpdateHistoryEntries();
   const currentCount = state.rows.length;
-  const latestEntry = history[0] || null;
   const net7 = calculateHistoryNetChange(history, 7);
-  const net30 = calculateHistoryNetChange(history, 30);
+  const net28 = calculateHistoryNetChange(history, 28);
+  const recent7 = calculateHistoryChangeCounts(history, 7);
 
   if (storeTotalCount) storeTotalCount.textContent = `${currentCount}件`;
   if (storeNet7Text) storeNet7Text.textContent = formatSignedCount(net7);
-  if (storeNet30Text) storeNet30Text.textContent = formatSignedCount(net30);
+  if (storeNet30Text) storeNet30Text.textContent = formatSignedCount(net28);
   if (storeLatestChangeText) {
-    const added = Array.isArray(latestEntry?.added) ? latestEntry.added.length : 0;
-    const removed = Array.isArray(latestEntry?.removed) ? latestEntry.removed.length : 0;
-    storeLatestChangeText.textContent = `開店 ${added} / 閉店 ${removed}`;
+    storeLatestChangeText.textContent = `開店 ${recent7.added} / 閉店 ${recent7.removed}`;
   }
 
-  renderStoreTrendBars(history.slice(0, 14));
+  renderStoreTrendBars(buildDailyHistoryEntries(history, 28));
 }
 
 function calculateHistoryNetChange(history, days) {
+  const counts = calculateHistoryChangeCounts(history, days);
+  return counts.added - counts.removed;
+}
+
+function calculateHistoryChangeCounts(history, days) {
   const latestDayKey = getLatestHistoryDayKey(history);
-  if (!latestDayKey) return 0;
+  if (!latestDayKey) return { added: 0, removed: 0 };
 
   const latestDate = parseDayKeyDate(latestDayKey);
-  if (!latestDate) return 0;
+  if (!latestDate) return { added: 0, removed: 0 };
 
   const earliest = new Date(latestDate);
   earliest.setDate(latestDate.getDate() - (days - 1));
@@ -366,10 +369,38 @@ function calculateHistoryNetChange(history, days) {
     const dayKey = getHistoryEntryDayKey(entry);
     const date = parseDayKeyDate(dayKey);
     if (!date || date < earliest || date > latestDate) return total;
-    const added = Array.isArray(entry.added) ? entry.added.length : 0;
-    const removed = Array.isArray(entry.removed) ? entry.removed.length : 0;
-    return total + added - removed;
-  }, 0);
+    total.added += Array.isArray(entry.added) ? entry.added.length : 0;
+    total.removed += Array.isArray(entry.removed) ? entry.removed.length : 0;
+    return total;
+  }, { added: 0, removed: 0 });
+}
+
+function buildDailyHistoryEntries(history, days) {
+  const latestDayKey = getLatestHistoryDayKey(history);
+  const latestDate = parseDayKeyDate(latestDayKey);
+  if (!latestDate) return history.slice(0, days);
+
+  const byDay = new Map();
+  for (const entry of history) {
+    const dayKey = getHistoryEntryDayKey(entry);
+    if (dayKey && !byDay.has(dayKey)) {
+      byDay.set(dayKey, entry);
+    }
+  }
+
+  return Array.from({ length: days }, (_, index) => {
+    const date = new Date(latestDate);
+    date.setDate(latestDate.getDate() - index);
+    const dayKey = formatDayKey(date);
+    return byDay.get(dayKey) || {
+      dayKey,
+      fetchedAt: `${dayKey}T00:00:00`,
+      added: [],
+      removed: [],
+      suppressedAdded: [],
+      suppressedSourceUrls: [],
+    };
+  });
 }
 
 function renderStoreTrendBars(entries) {
@@ -392,7 +423,7 @@ function renderStoreTrendBars(entries) {
       const removedWidth = removed ? Math.max(8, Math.round((removed / maxValue) * 100)) : 0;
       return `
         <div class="store-trend-row">
-          <span class="store-trend-date">${escapeHtml(formatHistoryDate(getHistoryEntryDayKey(entry)))}</span>
+          <span class="store-trend-date">${escapeHtml(formatHistoryDateWithWeekday(getHistoryEntryDayKey(entry)))}</span>
           <div class="store-trend-track" aria-label="開店 ${added}件 閉店 ${removed}件">
             <span class="store-trend-bar is-added" style="width:${addedWidth}%"></span>
             <span class="store-trend-bar is-removed" style="width:${removedWidth}%"></span>
@@ -454,7 +485,7 @@ function renderUpdateHistory() {
         <article class="update-history-item${isExpanded ? " is-expanded" : ""}">
           <button class="update-history-head" type="button" data-history-toggle="${escapeHtml(historyKey)}" aria-expanded="${isExpanded ? "true" : "false"}">
             <span class="update-history-caret" aria-hidden="true">${isExpanded ? "▼" : "▶"}</span>
-            <span class="update-history-date">${escapeHtml(formatHistoryDate(entry.dayKey || entry.fetchedAt))}</span>
+            <span class="update-history-date">${escapeHtml(formatHistoryDateWithWeekday(entry.dayKey || entry.fetchedAt))}</span>
             <span class="update-history-summary">開店 ${added.length}件 / 閉店 ${removed.length}件</span>
           </button>
           <div class="update-history-body" ${isExpanded ? "" : "hidden"}>
@@ -1090,6 +1121,25 @@ function formatHistoryDate(value) {
     month: "2-digit",
     day: "2-digit",
   }).format(date);
+}
+
+function formatHistoryDateWithWeekday(value) {
+  if (!value) return "";
+
+  const raw = String(value);
+  const dayKey = /^\d{4}-\d{2}-\d{2}$/.test(raw) ? raw : raw.slice(0, 10);
+  const date = parseDayKeyDate(dayKey);
+  if (!date) return formatHistoryDate(value);
+
+  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+  return `${formatHistoryDate(dayKey)}(${weekdays[date.getDay()]})`;
+}
+
+function formatDayKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 function bindEvents() {

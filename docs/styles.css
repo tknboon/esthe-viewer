@@ -534,7 +534,7 @@ select {
 
 .store-trend-row {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 36px;
+  grid-template-columns: 94px minmax(0, 1fr) 36px;
   gap: 8px;
   align-items: center;
   font-size: 11px;
