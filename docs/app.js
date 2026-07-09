@@ -2205,18 +2205,12 @@ function startSharedListeners() {
 }
 
 function attachSharedDocument(docId, localData, applyRemote) {
-  const docRef = state.sharedSync.db.collection("sharedState").doc(docId);
+  const docRef = getSharedDocumentRef(docId);
   const unsubscribe = docRef.onSnapshot(async (snapshot) => {
     if (!snapshot.exists) {
       const seed = clonePlainObject(localData);
       if (Object.keys(seed).length) {
-        await docRef.set({
-          payload: seed,
-          updatedAt: window.firebase.firestore.FieldValue.serverTimestamp(),
-          updatedBy: state.sharedSync.user?.uid || "",
-          updatedByName: getSyncUserLabel(),
-          updatedByEmail: state.sharedSync.user?.email || "",
-        });
+        await writeSharedDocumentRefs(docId, seed);
       }
       return;
     }
@@ -2238,14 +2232,35 @@ function attachSharedDocument(docId, localData, applyRemote) {
 
 function saveSharedDocument(docId, data) {
   if (!state.sharedSync.enabled || !state.sharedSync.user || !state.sharedSync.db) return;
+  writeSharedDocumentRefs(docId, data).catch((error) => {
+    console.error("shared document save failed", docId, error);
+  });
+}
 
-  state.sharedSync.db.collection("sharedState").doc(docId).set({
+function getSharedDocumentRef(docId) {
+  return state.sharedSync.db.collection("sharedState").doc(docId);
+}
+
+function getRegionalSharedDocumentRef(docId) {
+  return state.sharedSync.db.collection("regions").doc(CURRENT_REGION_ID).collection("sharedState").doc(docId);
+}
+
+async function writeSharedDocumentRefs(docId, data) {
+  const payload = {
     payload: clonePlainObject(data),
     updatedAt: window.firebase.firestore.FieldValue.serverTimestamp(),
-    updatedBy: state.sharedSync.user.uid,
+    updatedBy: state.sharedSync.user?.uid || "",
     updatedByName: getSyncUserLabel(),
-    updatedByEmail: state.sharedSync.user.email || "",
-  });
+    updatedByEmail: state.sharedSync.user?.email || "",
+  };
+
+  await getSharedDocumentRef(docId).set(payload);
+
+  try {
+    await getRegionalSharedDocumentRef(docId).set(payload);
+  } catch (error) {
+    console.warn("regional shared document save failed", docId, error);
+  }
 }
 
 function readReviews() {
