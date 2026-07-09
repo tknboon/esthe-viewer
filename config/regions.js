@@ -4,6 +4,7 @@ window.REGIONS = {
     title: "愛知県のアジアンエステ",
     h1Label: "愛知県のアジアンエステ",
     rootLabel: "愛知県",
+    legacyStoragePrefix: "toyota-esthe",
     mapCenter: { lat: 35.083, lng: 137.156 },
     mapZoom: 12,
     profileMapZoom: 11,

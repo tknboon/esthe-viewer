@@ -64,6 +64,18 @@ node .\scripts\migrate-firestore-to-regional.mjs `
 
 新パスに既にドキュメントがある場合はスキップする。上書きしたい場合だけ `--overwrite` を付ける。
 
+## 新旧payload比較
+
+二重書き込み期間中や読み込み切り替え前に、旧パスと新パスの `payload` を比較する。
+
+```powershell
+node .\scripts\migrate-firestore-to-regional.mjs `
+  --service-account "C:\Users\tknbo\Documents\Secrets\esthe-viewer-service-account.json" `
+  --verify
+```
+
+`updatedAt` は旧パスと新パスで差が出るため、比較対象は `payload` のみ。
+
 ## 次の実装ステップ
 
 1. app.js に旧パス + 新パスの二重書き込みを入れる

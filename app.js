@@ -42,6 +42,9 @@
     errorMessage: "",
     documentsMeta: {},
     lastBackupAt: "",
+    regionalWriteFailedAt: "",
+    regionalWriteFailedDocId: "",
+    regionalWriteErrorMessage: "",
   },
 };
 
@@ -133,7 +136,7 @@ const REGION_PROFILE_MAP_ZOOM = CURRENT_REGION.profileMapZoom || 11;
 const REGION_GEOCODE_SUFFIX = CURRENT_REGION.geocodeSuffix || "";
 const REGION_GEOCODE_SCOPE_PATTERN = CURRENT_REGION.geocodeScopePattern ? new RegExp(CURRENT_REGION.geocodeScopePattern) : /^$/;
 const LOCAL_STORAGE_PREFIX = `${CURRENT_REGION_ID}-esthe`;
-const LEGACY_LOCAL_STORAGE_PREFIX = "toyota-esthe";
+const LEGACY_LOCAL_STORAGE_PREFIX = CURRENT_REGION.legacyStoragePrefix || "";
 const LOCAL_STORAGE_SUFFIXES = {
   reviews: "reviews",
   storeProfiles: "store-profiles",
@@ -1874,6 +1877,7 @@ function getLocalStorageKey(name) {
 }
 
 function getLegacyLocalStorageKey(name) {
+  if (!LEGACY_LOCAL_STORAGE_PREFIX) return "";
   return LEGACY_LOCAL_STORAGE_KEYS[name] || `${LEGACY_LOCAL_STORAGE_PREFIX}-${name}`;
 }
 
@@ -1884,7 +1888,10 @@ function readRegionalLocalObject(name) {
     return value;
   }
 
-  const legacyValue = readLocalObject(getLegacyLocalStorageKey(name));
+  const legacyKey = getLegacyLocalStorageKey(name);
+  if (!legacyKey) return {};
+
+  const legacyValue = readLocalObject(legacyKey);
   if (legacyValue && typeof legacyValue === "object" && Object.keys(legacyValue).length) {
     writeLocalObject(key, legacyValue);
   }
@@ -1971,8 +1978,11 @@ function renderSyncMeta() {
   const backupText = state.sharedSync.lastBackupAt
     ? `バックアップ: ${formatSharedTimestamp(state.sharedSync.lastBackupAt)}`
     : "バックアップ: まだありません";
+  const regionalWarningText = state.sharedSync.regionalWriteFailedAt
+    ? `地域保存警告: ${state.sharedSync.regionalWriteFailedDocId || "不明"} / ${formatSharedTimestamp(state.sharedSync.regionalWriteFailedAt)}`
+    : "";
 
-  syncMetaText.textContent = `${sharedText} / ${backupText}`;
+  syncMetaText.textContent = [sharedText, backupText, regionalWarningText].filter(Boolean).join(" / ");
 }
 
 function renderEditingAccess() {
@@ -2210,7 +2220,11 @@ function attachSharedDocument(docId, localData, applyRemote) {
     if (!snapshot.exists) {
       const seed = clonePlainObject(localData);
       if (Object.keys(seed).length) {
-        await writeSharedDocumentRefs(docId, seed);
+        try {
+          await writeSharedDocumentRefs(docId, seed);
+        } catch (error) {
+          console.error("shared document seed failed", docId, error);
+        }
       }
       return;
     }
@@ -2258,9 +2272,26 @@ async function writeSharedDocumentRefs(docId, data) {
 
   try {
     await getRegionalSharedDocumentRef(docId).set(payload);
+    clearRegionalWriteFailure();
   } catch (error) {
+    markRegionalWriteFailure(docId, error);
     console.warn("regional shared document save failed", docId, error);
   }
+}
+
+function markRegionalWriteFailure(docId, error) {
+  state.sharedSync.regionalWriteFailedAt = new Date().toISOString();
+  state.sharedSync.regionalWriteFailedDocId = docId;
+  state.sharedSync.regionalWriteErrorMessage = error?.message || String(error || "");
+  renderSyncMeta();
+}
+
+function clearRegionalWriteFailure() {
+  if (!state.sharedSync.regionalWriteFailedAt) return;
+  state.sharedSync.regionalWriteFailedAt = "";
+  state.sharedSync.regionalWriteFailedDocId = "";
+  state.sharedSync.regionalWriteErrorMessage = "";
+  renderSyncMeta();
 }
 
 function readReviews() {
