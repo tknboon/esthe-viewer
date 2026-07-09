@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-07-09",
+    "fetchedAt": "2026-07-09T11:55:05.288Z",
+    "added": [
+      "逢いに来て/新安城駅",
+      "静香（しずか）/栄駅"
+    ],
+    "removed": [
+      "キュララ/犬山駅",
+      "飛鳥（あすか）/栄駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-08",
     "fetchedAt": "2026-07-08T11:02:33.311Z",
     "added": [
@@ -726,12 +740,6 @@
   {
     "dayKey": "2026-05-04",
     "fetchedAt": "2026-05-04T10:29:51.468Z",
-    "added": [],
-    "removed": []
-  },
-  {
-    "dayKey": "2026-05-03",
-    "fetchedAt": "2026-05-03T10:18:44.710Z",
     "added": [],
     "removed": []
   }
