@@ -13,6 +13,10 @@ $files = @(
   "favicon.svg"
 )
 
+$directories = @(
+  "config"
+)
+
 foreach ($target in $targets) {
   $targetPath = Join-Path $root $target
   if (-not (Test-Path $targetPath)) {
@@ -27,5 +31,19 @@ foreach ($target in $targets) {
 
     $destinationPath = Join-Path $targetPath $file
     Copy-Item $sourcePath $destinationPath -Force
+  }
+
+  foreach ($directory in $directories) {
+    $sourcePath = Join-Path $root $directory
+    if (-not (Test-Path $sourcePath)) {
+      throw "Missing source directory: $sourcePath"
+    }
+
+    $destinationPath = Join-Path $targetPath $directory
+    if (-not (Test-Path $destinationPath)) {
+      New-Item -ItemType Directory -Path $destinationPath | Out-Null
+    }
+
+    Copy-Item (Join-Path $sourcePath "*") $destinationPath -Recurse -Force
   }
 }

@@ -119,89 +119,45 @@ const reviewSubmitButton = document.querySelector("#reviewSubmitButton");
 const reviewList = document.querySelector("#reviewList");
 const reviewToggleButton = document.querySelector("#reviewToggleButton");
 const reviewStorageNote = document.querySelector("#reviewStorageNote");
-
-const REGION_LABELS = {
-  nagoya: "名古屋・名駅・納屋橋",
-  sakae: "栄",
-  shinsakae: "新栄町・千種・今池",
-  kanayama: "金山・熱田",
-  kurokawa: "黒川・大曽根",
-  hoshigaoka: "星ヶ丘・藤が丘",
-  moriyama: "守山・小幡",
-  otai: "小田井・比良",
-  tokaidori: "東海通・高畑",
-  kasadera: "笠寺・柴田",
-  horita: "堀田・新瑞橋",
-  tsurumai: "大須・鶴舞",
-  showa: "名古屋・昭和区・天白区",
-  komaki: "小牧・春日井",
-  owari: "尾張・一宮",
-  chita: "知多・大府・半田",
-  toyota: "西三河・豊田・岡崎",
-  toyohashi: "東三河・豊橋・豊川",
+const heroTitle = document.querySelector(".hero h1");
+const REGIONS = window.REGIONS || {};
+const CURRENT_REGION_ID = window.CURRENT_REGION_ID || "aichi";
+const CURRENT_REGION = REGIONS[CURRENT_REGION_ID] || REGIONS.aichi || {};
+const REGION_LABELS = CURRENT_REGION.areaLabels || {};
+const REGION_DISPLAY_ORDER = CURRENT_REGION.areaOrder || Object.keys(REGION_LABELS);
+const REGION_MUNICIPALITIES = CURRENT_REGION.municipalityMap || {};
+const REGION_ROOT_LABEL = CURRENT_REGION.rootLabel || "地域";
+const REGION_MAP_CENTER = CURRENT_REGION.mapCenter || { lat: 35, lng: 135 };
+const REGION_MAP_ZOOM = CURRENT_REGION.mapZoom || 12;
+const REGION_PROFILE_MAP_ZOOM = CURRENT_REGION.profileMapZoom || 11;
+const REGION_GEOCODE_SUFFIX = CURRENT_REGION.geocodeSuffix || "";
+const REGION_GEOCODE_SCOPE_PATTERN = CURRENT_REGION.geocodeScopePattern ? new RegExp(CURRENT_REGION.geocodeScopePattern) : /^$/;
+const LOCAL_STORAGE_PREFIX = `${CURRENT_REGION_ID}-esthe`;
+const LEGACY_LOCAL_STORAGE_PREFIX = "toyota-esthe";
+const LOCAL_STORAGE_SUFFIXES = {
+  reviews: "reviews",
+  storeProfiles: "store-profiles",
+  favorites: "favorites",
+  excluded: "excluded",
+  geocodeCache: "geocode-cache",
+  safetyBackup: "safety-backup",
+  backupMeta: "backup-meta",
 };
-
-const REGION_DISPLAY_ORDER = [
-  "nagoya",
-  "sakae",
-  "shinsakae",
-  "kanayama",
-  "tsurumai",
-  "kurokawa",
-  "hoshigaoka",
-  "showa",
-  "moriyama",
-  "otai",
-  "tokaidori",
-  "horita",
-  "kasadera",
-  "komaki",
-  "owari",
-  "chita",
-  "toyota",
-  "toyohashi",
-];
-
-const REGION_MUNICIPALITIES = {
-  nagoya: ["名古屋市"],
-  sakae: ["名古屋市"],
-  shinsakae: ["名古屋市"],
-  kanayama: ["名古屋市"],
-  kurokawa: ["名古屋市"],
-  hoshigaoka: ["名古屋市"],
-  moriyama: ["名古屋市"],
-  otai: ["名古屋市"],
-  tokaidori: ["名古屋市"],
-  kasadera: ["名古屋市"],
-  horita: ["名古屋市"],
-  tsurumai: ["名古屋市"],
-  showa: ["名古屋市"],
-  komaki: ["小牧市", "春日井市", "瀬戸市", "豊明市", "日進市", "犬山市", "長久手市"],
-  owari: ["一宮市", "稲沢市", "江南市", "北名古屋市", "清須市", "岩倉市", "愛西市", "尾張旭市", "弥富市", "津島市", "あま市", "蟹江町", "大治町", "扶桑町"],
-  chita: ["知多市", "大府市", "半田市", "東海市", "常滑市", "武豊町", "阿久比町", "東浦町"],
-  toyota: ["豊田市", "岡崎市", "刈谷市", "知立市", "安城市", "高浜市", "碧南市", "みよし市", "西尾市", "幸田町"],
-  toyohashi: ["豊橋市", "豊川市", "新城市", "蒲郡市", "田原市"],
+const LEGACY_LOCAL_STORAGE_KEYS = {
+  reviews: `${LEGACY_LOCAL_STORAGE_PREFIX}-reviews`,
+  storeProfiles: `${LEGACY_LOCAL_STORAGE_PREFIX}-store-profiles`,
+  favorites: `${LEGACY_LOCAL_STORAGE_PREFIX}-favorites`,
+  excluded: `${LEGACY_LOCAL_STORAGE_PREFIX}-excluded`,
+  geocodeCache: `${LEGACY_LOCAL_STORAGE_PREFIX}-geocode-cache`,
+  safetyBackup: `${LEGACY_LOCAL_STORAGE_PREFIX}-safety-backup`,
+  backupMeta: `${LEGACY_LOCAL_STORAGE_PREFIX}-backup-meta`,
 };
 
 const MANUAL_STATION_OVERRIDES = {
   "https://www.esthe-ranking.jp/sakae/shop-detail/f2e48aef-65d9-4065-8b47-e367232c1384/": "丸の内駅・伏見駅",
 };
 
-const STATION_GROUP_REGIONS = new Set([
-  "nagoya",
-  "sakae",
-  "shinsakae",
-  "kanayama",
-  "kurokawa",
-  "hoshigaoka",
-  "moriyama",
-  "otai",
-  "tokaidori",
-  "kasadera",
-  "horita",
-  "tsurumai",
-  "showa",
-]);
+const STATION_GROUP_REGIONS = new Set(CURRENT_REGION.stationGroupRegions || []);
 
 const RECOVERED_REMOVED_HISTORY = {
   "2026-05-07": [
@@ -231,38 +187,13 @@ const RECOVERED_REMOVED_HISTORY = {
   ],
 };
 
-const MANUAL_ROOM_LOCATION_OVERRIDES = {
-  "https://www.esthe-ranking.jp/owari/shop-detail/f41d3134-7f58-450e-9c7e-ffe955f72138/": [
-    {
-      label: "木曽川駅",
-      address: "愛知県一宮市木曽川町黒田山1-2",
-      latitude: "",
-      longitude: "",
-      note: "フィットイージー 木曽川店付近着きましたらお電話してください。",
-    },
-    {
-      label: "奥町駅",
-      address: "35.31058761168509, 136.75743862450264",
-      latitude: "35.31058761168509",
-      longitude: "136.75743862450264",
-      note: "マクドナルド一宮尾西店付近着きましたら電話してください。",
-    },
-  ],
-  "https://www.esthe-ranking.jp/toyota/shop-detail/36151484-fd68-4f6f-941f-360ff124a937/": [
-    {
-      label: "安城駅",
-      address: "35.027788136971594, 137.09918316798218",
-      latitude: "35.027788136971594",
-      longitude: "137.09918316798218",
-      note: "ドミスーパー着きましたら電話してください。",
-    },
-  ],
-};
+const MANUAL_ROOM_LOCATION_OVERRIDES = CURRENT_REGION.roomLocationOverrides || {};
 
 init();
 
 function init() {
   try {
+    applyRegionPageMeta();
     state.rows = (window.storeData || []).map(normalizeRow);
     if (!state.rows.length) {
       throw new Error("No embedded data");
@@ -292,6 +223,15 @@ function init() {
       cardsView.innerHTML = `<div class="empty-state">表示できる店舗データがありません。</div>`;
     }
     console.error(error);
+  }
+}
+
+function applyRegionPageMeta() {
+  if (CURRENT_REGION.title) {
+    document.title = CURRENT_REGION.title;
+  }
+  if (heroTitle && CURRENT_REGION.h1Label) {
+    heroTitle.textContent = CURRENT_REGION.h1Label;
   }
 }
 
@@ -1253,10 +1193,10 @@ function renderRegionSummary() {
   if (!regionSummary) return;
 
   const stats = buildRegionStats(state.filteredRows);
-  const rootLabel = `愛知県(${stats.total})`;
+  const rootLabel = `${REGION_ROOT_LABEL}(${stats.total})`;
 
   regionSummary.innerHTML = `
-    <button class="region-toggle" type="button" data-region-toggle="aichi" aria-expanded="${state.regionExpanded ? "true" : "false"}">
+    <button class="region-toggle" type="button" data-region-toggle="${escapeHtml(CURRENT_REGION_ID)}" aria-expanded="${state.regionExpanded ? "true" : "false"}">
       <span class="region-toggle-label">${escapeHtml(rootLabel)}</span>
       <span class="region-toggle-icon">${state.regionExpanded ? "−" : "+"}</span>
     </button>
@@ -1929,8 +1869,34 @@ function writeLocalObject(key, value) {
   }
 }
 
+function getLocalStorageKey(name) {
+  return `${LOCAL_STORAGE_PREFIX}-${LOCAL_STORAGE_SUFFIXES[name] || name}`;
+}
+
+function getLegacyLocalStorageKey(name) {
+  return LEGACY_LOCAL_STORAGE_KEYS[name] || `${LEGACY_LOCAL_STORAGE_PREFIX}-${name}`;
+}
+
+function readRegionalLocalObject(name) {
+  const key = getLocalStorageKey(name);
+  const value = readLocalObject(key);
+  if (value && typeof value === "object" && Object.keys(value).length) {
+    return value;
+  }
+
+  const legacyValue = readLocalObject(getLegacyLocalStorageKey(name));
+  if (legacyValue && typeof legacyValue === "object" && Object.keys(legacyValue).length) {
+    writeLocalObject(key, legacyValue);
+  }
+  return legacyValue;
+}
+
+function writeRegionalLocalObject(name, value) {
+  writeLocalObject(getLocalStorageKey(name), value);
+}
+
 function readBackupMeta() {
-  return readLocalObject("toyota-esthe-backup-meta");
+  return readRegionalLocalObject("backupMeta");
 }
 
 function getSyncUserLabel(user = state.sharedSync.user) {
@@ -2046,8 +2012,8 @@ function buildBackupSnapshot() {
 
 function persistSafetyBackup(reason = "auto") {
   const snapshot = buildBackupSnapshot();
-  writeLocalObject("toyota-esthe-safety-backup", snapshot);
-  writeLocalObject("toyota-esthe-backup-meta", {
+  writeRegionalLocalObject("safetyBackup", snapshot);
+  writeRegionalLocalObject("backupMeta", {
     savedAt: snapshot.savedAt,
     savedBy: snapshot.savedBy,
     reason,
@@ -2203,14 +2169,14 @@ function startSharedListeners() {
 
   attachSharedDocument("reviews", state.reviewsByStore, (payload) => {
     state.reviewsByStore = payload;
-    writeLocalObject("toyota-esthe-reviews", state.reviewsByStore);
+    writeRegionalLocalObject("reviews", state.reviewsByStore);
     renderSelectedStore();
     renderReviewAnalytics();
   });
 
   attachSharedDocument("storeProfiles", state.storeProfilesByKey, (payload) => {
     state.storeProfilesByKey = payload;
-    writeLocalObject("toyota-esthe-store-profiles", state.storeProfilesByKey);
+    writeRegionalLocalObject("storeProfiles", state.storeProfilesByKey);
     state.rows.forEach(applyProfileLocationToRow);
     primeArchivedProfileDetails();
     renderSelectedStore();
@@ -2221,7 +2187,7 @@ function startSharedListeners() {
 
   attachSharedDocument("favorites", state.favoritesByStore, (payload) => {
     state.favoritesByStore = payload;
-    writeLocalObject("toyota-esthe-favorites", state.favoritesByStore);
+    writeRegionalLocalObject("favorites", state.favoritesByStore);
     renderSelectedStore();
     renderUpdateHistory();
     syncMapWithFilters();
@@ -2230,7 +2196,7 @@ function startSharedListeners() {
 
   attachSharedDocument("excluded", state.excludedByStore, (payload) => {
     state.excludedByStore = payload;
-    writeLocalObject("toyota-esthe-excluded", state.excludedByStore);
+    writeRegionalLocalObject("excluded", state.excludedByStore);
     renderSelectedStore();
     renderUpdateHistory();
     syncMapWithFilters();
@@ -2283,41 +2249,41 @@ function saveSharedDocument(docId, data) {
 }
 
 function readReviews() {
-  return readLocalObject("toyota-esthe-reviews");
+  return readRegionalLocalObject("reviews");
 }
 
 function writeReviews() {
-  writeLocalObject("toyota-esthe-reviews", state.reviewsByStore);
+  writeRegionalLocalObject("reviews", state.reviewsByStore);
   saveSharedDocument("reviews", state.reviewsByStore);
   persistSafetyBackup("reviews");
 }
 
 function readStoreProfiles() {
-  return readLocalObject("toyota-esthe-store-profiles");
+  return readRegionalLocalObject("storeProfiles");
 }
 
 function writeStoreProfiles() {
-  writeLocalObject("toyota-esthe-store-profiles", state.storeProfilesByKey);
+  writeRegionalLocalObject("storeProfiles", state.storeProfilesByKey);
   saveSharedDocument("storeProfiles", state.storeProfilesByKey);
   persistSafetyBackup("storeProfiles");
 }
 
 function readFavorites() {
-  return readLocalObject("toyota-esthe-favorites");
+  return readRegionalLocalObject("favorites");
 }
 
 function writeFavorites() {
-  writeLocalObject("toyota-esthe-favorites", state.favoritesByStore);
+  writeRegionalLocalObject("favorites", state.favoritesByStore);
   saveSharedDocument("favorites", state.favoritesByStore);
   persistSafetyBackup("favorites");
 }
 
 function readExcluded() {
-  return readLocalObject("toyota-esthe-excluded");
+  return readRegionalLocalObject("excluded");
 }
 
 function writeExcluded() {
-  writeLocalObject("toyota-esthe-excluded", state.excludedByStore);
+  writeRegionalLocalObject("excluded", state.excludedByStore);
   saveSharedDocument("excluded", state.excludedByStore);
   persistSafetyBackup("excluded");
 }
@@ -3056,7 +3022,7 @@ function getArchivedStoreLabel(reviewKey, latestReview) {
 
 function buildLocationQuery(name, station, location, notes) {
   const source = location || station || name;
-  const scoped = /愛知県|豊田市|岡崎市|安城市|刈谷市|西尾市/.test(`${source} ${notes}`) ? source : `${source} 愛知県`;
+  const scoped = REGION_GEOCODE_SUFFIX && !REGION_GEOCODE_SCOPE_PATTERN.test(`${source} ${notes}`) ? `${source} ${REGION_GEOCODE_SUFFIX}` : source;
   return scoped.trim();
 }
 
@@ -3066,17 +3032,12 @@ function disableLink(link) {
 }
 
 function readGeocodeCache() {
-  try {
-    const raw = localStorage.getItem("toyota-esthe-geocode-cache");
-    return raw ? JSON.parse(raw) : {};
-  } catch (error) {
-    return {};
-  }
+  return readRegionalLocalObject("geocodeCache");
 }
 
 function writeGeocodeCache() {
   try {
-    localStorage.setItem("toyota-esthe-geocode-cache", JSON.stringify(state.geocodeCache));
+    writeRegionalLocalObject("geocodeCache", state.geocodeCache);
   } catch (error) {
     console.warn("geocode cache save failed", error);
   }
@@ -3092,15 +3053,15 @@ function ensureProfileMapReady() {
 
 window.initGoogleMapApp = function initGoogleMapApp() {
   state.map = new google.maps.Map(document.getElementById("googleMapCanvas"), {
-    center: { lat: 35.083, lng: 137.156 },
-    zoom: 12,
+    center: REGION_MAP_CENTER,
+    zoom: REGION_MAP_ZOOM,
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: true,
   });
   state.profileMap = new google.maps.Map(document.getElementById("profileGoogleMapCanvas"), {
-    center: { lat: 35.083, lng: 137.156 },
-    zoom: 11,
+    center: REGION_MAP_CENTER,
+    zoom: REGION_PROFILE_MAP_ZOOM,
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: true,
