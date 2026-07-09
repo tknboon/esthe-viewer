@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildcard YAML Builder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NovelAI / NAI Smart Studio</p>
+          <h1>Wildcard YAML Builder</h1>
+        </div>
+        <div class="top-actions">
+          <button id="chooseYamlFolderButton" type="button">保存先フォルダを選ぶ</button>
+          <span id="yamlFolderStatus" class="folder-status">保存先: ダウンロード</span>
+          <button id="newProjectButton" type="button">新規作成</button>
+          <button id="copyYamlButton" type="button">YAMLコピー</button>
+          <button id="downloadYamlButton" type="button">YAML保存</button>
+          <button id="downloadPromptButton" type="button">Prompt保存</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel controls">
+          <div class="panel-head">
+            <h2>編集</h2>
+          </div>
+
+          <label class="field">
+            <span>テンプレート</span>
+            <select id="templateSelect">
+              <option value="">選択してください</option>
+              <option value="character">キャラクター特徴</option>
+              <option value="outfitScene">服装 x 背景</option>
+              <option value="colorMatch">色合わせ変数</option>
+              <option value="hairCycle">髪型順番テスト</option>
+            </select>
+          </label>
+
+          <div class="button-row">
+            <button id="loadTemplateButton" type="button">テンプレート読込</button>
+            <button id="importYamlButton" type="button">YAML読込</button>
+            <input id="fileInput" type="file" accept=".yaml,.yml,.txt" hidden />
+          </div>
+
+          <div class="key-list" id="keyList"></div>
+
+          <div class="editor-block">
+            <div class="key-name-row">
+              <label id="keyNameField" class="field key-name-field">
+                <span class="field-title">Wildcard名 <span id="selectedKeyDepthBadge" class="selected-key-depth">root</span></span>
+                <input id="keyNameInput" type="text" placeholder="例: delivery_cast_hair_color" />
+                <div id="keyNameSuggestions" class="key-name-suggestions" hidden></div>
+              </label>
+              <div class="key-name-actions">
+                <button id="addKeyButton" type="button">キー追加</button>
+                <button id="saveKeyButton" type="button">反映</button>
+              </div>
+            </div>
+
+            <label class="field key-label-field">
+              <span>表示ラベル（任意）</span>
+              <input id="keyLabelInput" type="text" placeholder="例: 髪色 / 服装シーン / 背景" />
+            </label>
+            <label id="candidateDropZone" class="field candidate-drop-zone">
+              <span>候補 1行1件（左キーをここへドラッグで `__key__` を追加）</span>
+              <textarea id="itemTextarea" spellcheck="false" placeholder="brown hair&#10;black hair&#10;blonde hair"></textarea>
+            </label>
+            <div id="candidatePreview" class="candidate-preview"></div>
+          </div>
+
+          <div class="library-block">
+            <div class="library-head">
+              <div>
+                <h3>キー部品棚（再利用キー）</h3>
+                <p>よく使うキーを保存して、別のYAMLへ追加できます。</p>
+              </div>
+              <button id="saveSelectedLibraryButton" type="button">選択キーを保存</button>
+            </div>
+            <div class="library-guide">
+              <div>
+                <strong>普段の保存先</strong>
+                <span>このブラウザ内に自動保存されます。ページを閉じても残ります。</span>
+              </div>
+              <div>
+                <strong>外へ持ち出す時</strong>
+                <span>「部品棚JSON保存」で <code>wildcard-key-library.json</code> をダウンロードします。</span>
+              </div>
+              <div>
+                <strong>読込で選ぶもの</strong>
+                <span>保存した <code>wildcard-key-library.json</code> を選びます。通常のYAMLではありません。</span>
+              </div>
+            </div>
+            <div class="button-row library-actions">
+              <button id="importLibraryButton" type="button" title="部品棚JSONを読み込みます。通常のYAML読込とは別です。">部品棚JSON読込</button>
+              <button id="downloadLibraryButton" type="button" title="ブラウザのダウンロード先に wildcard-key-library.json を保存します。">部品棚JSON保存</button>
+              <input id="libraryFileInput" type="file" accept=".json,.txt" hidden />
+            </div>
+            <div id="keyLibraryList" class="key-library-list"></div>
+          </div>
+        </section>
+
+        <section class="panel preview">
+          <div class="panel-head">
+            <div>
+              <h2>生成結果</h2>
+              <span id="statusText" class="status">未保存</span>
+            </div>
+            <div class="preview-actions">
+              <button id="undoButton" type="button" disabled>元に戻す</button>
+              <button id="redoButton" type="button" disabled>やり直す</button>
+              <button id="copyPromptTopButton" type="button">Promptコピー</button>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <button class="tab is-active" type="button" data-tab="yaml">YAML</button>
+            <button class="tab" type="button" data-tab="prompt">Prompt</button>
+            <button class="tab" type="button" data-tab="check">Check</button>
+            <button class="tab" type="button" data-tab="graph">Graph</button>
+          </div>
+
+          <section class="tab-panel is-active" data-panel="yaml">
+            <div class="hint">定義キーと参照を同じ色で表示します。例: `swimsuit_beach:` と `__swimsuit_beach__`</div>
+            <pre id="coloredYamlOutput" class="code-preview"></pre>
+            <textarea id="yamlOutput" class="raw-output" spellcheck="false"></textarea>
+          </section>
+
+          <section class="tab-panel" data-panel="prompt">
+            <div class="hint">
+              参照されていない親キーを自動で `__name__` として並べます。順番生成したい場合は、YAML表示内の `__name__` をクリックしてキー単位でSEQ化します。
+            </div>
+            <pre id="coloredPromptOutput" class="code-preview compact"></pre>
+            <textarea id="promptOutput" class="raw-output" spellcheck="false"></textarea>
+            <div class="button-row">
+              <button id="copyPromptButton" type="button">Promptコピー</button>
+            </div>
+          </section>
+
+          <section class="tab-panel" data-panel="check">
+            <div id="checkOutput" class="check-list"></div>
+          </section>
+
+          <section class="tab-panel" data-panel="graph">
+            <div class="hint">rootキーから子キーへの参照関係を表示します。停止中キーは生成結果から除外されます。</div>
+            <div id="graphOutput" class="dependency-graph"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
