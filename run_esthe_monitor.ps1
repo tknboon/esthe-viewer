@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$workspace = "C:\Users\tknbo\Documents\Codex\2026-04-28\new-chat"
+$workspace = "C:\Users\tknbo\Documents\Projects\aichi-esthe-viewer"
 $scriptPath = Join-Path $workspace "monitor_esthe_ranking.mjs"
 $runnerLogPath = Join-Path $workspace "esthe_ranking_runner.log"
 $publishStatusPath = Join-Path $workspace "esthe_publish_status.json"

@@ -4,3 +4,5 @@ firebase-adminsdk*.json
 secrets/
 .env
 .env.*
+# Local monitor runtime lock. It is created while a manual monitor run is active.
+esthe_ranking_run.lock
