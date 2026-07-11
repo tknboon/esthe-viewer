@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-07-11",
+    "fetchedAt": "2026-07-11T10:12:42.834Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-10",
     "fetchedAt": "2026-07-10T11:49:25.683Z",
     "added": [
@@ -741,14 +749,6 @@
     "removed": [
       "楽楽（らくらく）/安城駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-05-05",
-    "fetchedAt": "2026-05-05T12:42:50.304Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
