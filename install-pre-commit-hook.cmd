@@ -5,15 +5,15 @@ set "ROOT=%~dp0"
 set "HOOKS_DIR=%ROOT%.git\hooks"
 
 if not exist "%HOOKS_DIR%" (
-  echo .git\hooks が見つかりませんでした。
+  echo Git hooks directory was not found.
   exit /b 1
 )
 
 copy /Y "%ROOT%.githooks\pre-commit" "%HOOKS_DIR%\pre-commit" >nul
 if errorlevel 1 (
-  echo pre-commit のコピーに失敗しました。
+  echo Failed to install the pre-commit hook.
   exit /b 1
 )
 
-echo pre-commit hook を設定しました。
+echo Pre-commit hook installed.
 exit /b 0

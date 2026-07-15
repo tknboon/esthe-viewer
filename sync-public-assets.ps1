@@ -1,6 +1,11 @@
 $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
+node (Join-Path $root "scripts\build-region-pages.mjs")
+if ($LASTEXITCODE -ne 0) {
+  throw "Region page build failed"
+}
+
 $targets = @("docs")
 $files = @(
   "index.html",
@@ -14,7 +19,8 @@ $files = @(
 )
 
 $directories = @(
-  "config"
+  "config",
+  "tokyo"
 )
 
 foreach ($target in $targets) {

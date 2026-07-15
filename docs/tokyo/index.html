@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>エステ情報を読み込み中</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet" />
+    <script>
+      window.GOOGLE_MAPS_API_KEY = "AIzaSyBB5mHKn227HN1TAKEshMkDLEDDrthdOTg";
+    </script>
+    <script>window.CURRENT_REGION_ID = "tokyo";</script>
+    <script src="../config/regions.js"></script>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-copy-block">
+          <h1>エステ情報を読み込み中</h1>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="filters-panel">
+          <nav class="sidebar-tabs" aria-label="サイドメニュー">
+            <button class="sidebar-tab" type="button" data-sidebar-tab="search" aria-selected="false">検索</button>
+            <button class="sidebar-tab" type="button" data-sidebar-tab="stats" aria-selected="false">統計</button>
+            <button class="sidebar-tab is-active" type="button" data-sidebar-tab="history" aria-selected="true">履歴</button>
+          </nav>
+
+          <section class="panel-block sidebar-tab-panel" data-sidebar-panel="search" hidden>
+            <p id="lastUpdatedText" class="last-updated-text">最終更新: 確認中...</p>
+            <div class="sync-row">
+              <span id="syncStatusText" class="mini-label">この端末内に保存</span>
+              <button id="syncAuthButton" class="action-link" type="button">共有を設定</button>
+            </div>
+            <p id="syncMetaText" class="sync-meta-text">共有設定後に、更新した人と時刻をここに表示します。</p>
+            <div class="sync-tools-row">
+              <button id="syncBackupButton" class="action-link" type="button">バックアップ保存</button>
+            </div>
+            <div class="search-row">
+              <input
+                id="searchInput"
+                class="text-input"
+                type="search"
+                placeholder="店舗名、駅名、備考、電話番号"
+              />
+              <button id="searchButton" class="primary-button search-button" type="button">検索</button>
+            </div>
+            <div id="regionSummary" class="region-summary"></div>
+          </section>
+
+          <section class="panel-block store-stats-panel sidebar-tab-panel" data-sidebar-panel="stats" hidden>
+            <div class="analytics-head">
+              <span class="input-label">店舗統計</span>
+              <strong id="storeTotalCount" class="analytics-total">0件</strong>
+            </div>
+            <div class="store-stat-grid">
+              <div class="store-stat-card">
+                <span class="store-stat-label">過去7日</span>
+                <strong id="storeNet7Text" class="store-stat-value">±0</strong>
+              </div>
+              <div class="store-stat-card">
+                <span class="store-stat-label">過去28日</span>
+                <strong id="storeNet30Text" class="store-stat-value">±0</strong>
+              </div>
+              <div class="store-stat-card is-wide">
+                <span class="store-stat-label">過去7日更新</span>
+                <strong id="storeLatestChangeText" class="store-stat-value">開店 0 / 閉店 0</strong>
+              </div>
+            </div>
+            <div class="analytics-subhead">
+              <span class="mini-label">28日間の増減</span>
+            </div>
+            <div id="storeTrendBars" class="store-trend-bars">
+              <div class="empty-state compact">更新履歴が入るとここに表示されます。</div>
+            </div>
+          </section>
+
+          <section class="panel-block sidebar-tab-panel is-active" data-sidebar-panel="history">
+            <div class="analytics-head">
+              <span class="input-label">レビュー集計</span>
+              <strong id="reviewTotalCount" class="analytics-total">0件</strong>
+            </div>
+            <div class="analytics-subhead">
+              <span class="mini-label">月ごとの料金合計</span>
+            </div>
+            <div id="monthlyRevenueChart" class="revenue-chart">
+              <div class="empty-state compact">レビューが入るとここに月別料金合計が表示されます。</div>
+            </div>
+            <div class="analytics-subhead history-subhead">
+              <span class="mini-label">更新履歴</span>
+            </div>
+            <div id="dailyUpdateHistory" class="daily-update-history">
+              <div class="empty-state compact">更新履歴が入るとここに表示されます。</div>
+            </div>
+            <div class="analytics-subhead history-subhead">
+              <span class="mini-label">掲載終了したレビュー</span>
+            </div>
+            <div id="archivedReviewList" class="archived-review-list">
+              <div class="empty-state compact">掲載終了したレビューはまだありません。</div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="content-panel">
+          <section class="map-board">
+            <div class="map-grid">
+              <section class="map-stage">
+                <div class="embed-wrap">
+                  <div id="googleMapCanvas" class="google-map-canvas" aria-label="Googleマップ"></div>
+                </div>
+                <section class="profile-map-panel">
+                  <div class="profile-map-head">
+                    <div>
+                      <p class="mini-label">店舗情報を入力した店舗</p>
+                      <h3 class="selected-title profile-map-title">保存済み店舗マップ</h3>
+                    </div>
+                    <span id="profileMapCount" class="map-list-count">0件</span>
+                  </div>
+                  <div class="embed-wrap">
+                    <div id="profileGoogleMapCanvas" class="google-map-canvas profile-google-map-canvas" aria-label="保存済み店舗のGoogleマップ"></div>
+                  </div>
+                  <p id="profileMapStatusText" class="status-text profile-map-status">店舗情報を保存するとここに表示されます。</p>
+                </section>
+              </section>
+
+              <aside class="map-side">
+                <div class="selected-store">
+                  <div class="selected-store-head">
+                    <div class="selected-store-primary">
+                      <h3 id="selectedStoreName" class="selected-title">店舗を選択してください</h3>
+                      <p id="selectedStoreMeta" class="selected-meta">地図候補リストか一覧のボタンから切り替えられます。</p>
+                      <p id="selectedStoreProfileMeta" class="selected-meta selected-profile-meta"></p>
+                      <p id="editAccessText" class="selected-meta edit-access-text"></p>
+                      <p id="selectedReviewSummary" class="selected-review-summary">レビューはまだありません。</p>
+                    </div>
+                    <div id="storeProfileToolbar" class="store-profile-toolbar">
+                      <button id="storeProfileEditButton" class="action-link" type="button">店舗情報を編集</button>
+                    </div>
+                  </div>
+                  <div class="selected-actions selected-actions-compact is-hidden">
+                    <button id="favoriteToggleButton" class="action-link icon-action" type="button" aria-label="確認済み" title="確認済み">♡</button>
+                    <button id="excludeToggleButton" class="action-link icon-action" type="button" aria-label="除外" title="除外">♡</button>
+                    <a id="selectedPhoneLink" class="action-link icon-action disabled-link is-hidden" href="#" aria-label="電話する" title="電話する">☎</a>
+                    <a id="selectedMapLink" class="action-link primary icon-action disabled-link is-hidden" href="#" target="_blank" rel="noreferrer" aria-label="マップで開く" title="マップで開く">⌖</a>
+                    <a id="selectedPhoneSearchLink" class="action-link icon-action disabled-link is-hidden" href="#" target="_blank" rel="noreferrer" aria-label="電話番号を検索" title="電話番号を検索">⌕</a>
+                    <a id="selectedListingLink" class="action-link icon-action disabled-link is-hidden" href="#" target="_blank" rel="noreferrer" aria-label="掲載ページ" title="掲載ページ">↗</a>
+                  </div>
+                  <div id="storeProfilePanel" class="store-profile-panel is-hidden">
+                    <div class="store-profile-grid">
+                      <label class="review-field is-wide">
+                        <span>住所</span>
+                        <textarea id="storeAddressInput" class="text-area store-address-area" rows="2" maxlength="240"></textarea>
+                      </label>
+
+                      <label class="review-field is-wide">
+                        <span>備考</span>
+                        <textarea id="storeNoteInput" class="text-area" rows="2" maxlength="240"></textarea>
+                      </label>
+
+                      <label class="review-field">
+                        <span>SMS</span>
+                        <select id="storeSmsInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="建物">建物</option>
+                          <option value="建物・部屋番号">建物・部屋番号</option>
+                          <option value="建物・駐車番号">建物・駐車番号</option>
+                          <option value="建物・部屋番号・駐車番号">建物・部屋番号・駐車番号</option>
+                        </select>
+                      </label>
+
+                      <label class="review-field">
+                        <span>メニュー</span>
+                        <select id="storeMenuInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="紙">紙</option>
+                          <option value="スマホ">スマホ</option>
+                        </select>
+                      </label>
+
+                      <label class="review-field">
+                        <span>明示</span>
+                        <select id="storeDisclosureInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="あり">あり</option>
+                          <option value="なし">なし</option>
+                        </select>
+                      </label>
+
+                      <label class="review-field">
+                        <span>真心</span>
+                        <select id="storeGuideClarityInput" class="select-input">
+                          <option value="">未選択</option>
+                          <option value="あり">あり</option>
+                          <option value="なし">なし</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div id="storeProfileActions" class="store-profile-actions">
+                      <button id="storeProfileSaveButton" class="primary-button" type="button">保存</button>
+                    </div>
+                  </div>
+                  <div class="street-view-panel">
+                    <div class="street-view-wrap">
+                      <div id="streetViewCanvas" class="street-view-canvas is-hidden" aria-label="店舗周辺のストリートビュー"></div>
+                      <div id="streetViewEmptyState" class="empty-state compact">店舗を選ぶと周辺ビューを表示できます。</div>
+                    </div>
+                    <p id="streetViewStatusText" class="status-text street-view-status">準備中...</p>
+                  </div>
+
+                  <div class="review-panel">
+                    <div class="review-form-head">
+                      <p class="mini-label">店舗レビュー</p>
+                      <span id="reviewStorageNote" class="review-storage-note">このブラウザ内に保存</span>
+                    </div>
+                    <div class="review-toolbar">
+                      <button id="reviewToggleButton" class="action-link" type="button">レビューを書く</button>
+                    </div>
+
+                    <form id="reviewForm" class="review-form is-hidden">
+                      <div class="review-form-grid">
+                        <label class="review-field">
+                          <span>訪問日</span>
+                          <input id="reviewVisitDateInput" class="text-input" type="date" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>エステシャン名</span>
+                          <input id="reviewAuthorInput" class="text-input" type="text" maxlength="24" placeholder="空欄なら不明" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>国</span>
+                          <input id="reviewNationalityInput" class="text-input" type="text" maxlength="32" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>時間（分）</span>
+                          <input id="reviewDurationInput" class="text-input" type="number" min="0" step="10" placeholder="60" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>料金（円）</span>
+                          <input id="reviewPriceInput" class="text-input" type="number" min="0" step="1000" placeholder="10000" />
+                        </label>
+
+                        <label class="review-field">
+                          <span>シャワー</span>
+                          <select id="reviewShowerInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="セルフ">セルフ</option>
+                            <option value="ふたり">ふたり</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>マッサージ</span>
+                          <select id="reviewMassageInput" class="select-input">
+                            <option value="">未選択</option>
+                            <option value="先">先</option>
+                            <option value="後">後</option>
+                            <option value="なし">なし</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>顔</span>
+                          <select id="reviewFaceRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>体</span>
+                          <select id="reviewBodyRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>性格</span>
+                          <select id="reviewPersonalityRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>サービス</span>
+                          <select id="reviewServiceRatingInput" class="select-input">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                          </select>
+                        </label>
+
+                        <label class="review-field">
+                          <span>総合</span>
+                          <select id="reviewOverallRatingInput" class="select-input">
+                            <option value="5">5 / とても良い</option>
+                            <option value="4">4 / 良い</option>
+                            <option value="3">3 / ふつう</option>
+                            <option value="2">2 / 気になる点あり</option>
+                            <option value="1">1 / 合わなかった</option>
+                          </select>
+                        </label>
+                      </div>
+
+                      <label class="review-field">
+                        <span>備考</span>
+                        <textarea id="reviewCommentInput" class="text-area" rows="4" maxlength="400" placeholder="雰囲気、アクセス、接客など"></textarea>
+                      </label>
+
+                      <div class="review-form-actions">
+                        <button id="reviewSubmitButton" class="primary-button" type="submit">レビューを保存</button>
+                      </div>
+                    </form>
+
+                    <div id="reviewList" class="review-list">
+                      <div class="empty-state compact">店舗を選ぶとレビューを表示できます。</div>
+                    </div>
+                  </div>
+                </div>
+
+              </aside>
+            </div>
+            <div class="map-footer">
+              <p id="statusText" class="status-text">読み込み中...</p>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="../firebase-config.js"></script>
+    <script src="../analytics-config.js"></script>
+    <script src="../analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore-compat.js"></script>
+    <script src="../app.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB5mHKn227HN1TAKEshMkDLEDDrthdOTg&loading=async&callback=initGoogleMapApp&language=ja&region=JP"
+    ></script>
+  </body>
+</html>
