@@ -1,9 +1,14 @@
 [
   {
     "dayKey": "2026-07-15",
-    "fetchedAt": "2026-07-15T00:07:54.769Z",
-    "added": [],
-    "removed": [],
+    "fetchedAt": "2026-07-15T04:30:13.343Z",
+    "added": [
+      "いちごみるく/桜井駅",
+      "熱い恋愛/春日井駅"
+    ],
+    "removed": [
+      "ラビットプリンセス/大高駅"
+    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   },

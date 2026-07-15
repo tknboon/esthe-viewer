@@ -15,6 +15,7 @@ const LEGACY_CSV_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.legacyCsv);
 const STATUS_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.status);
 const FAILURE_LOG_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.failureLog);
 const HISTORY_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.history);
+const OUTPUT_PATHS = [SNAPSHOT_PATH, REPORT_PATH, CSV_PATH, DATA_JS_PATH, LEGACY_CSV_PATH, STATUS_PATH, FAILURE_LOG_PATH, HISTORY_PATH];
 const HTML_INPUT_PATH = process.env.ESTHE_MONITOR_HTML_PATH || "";
 const HTML_INPUT_DIR = process.env.ESTHE_MONITOR_HTML_DIR || "";
 const MUNICIPALITY_DIR_PATH = process.env.ESTHE_MONITOR_MUNICIPALITY_DIR || "";
@@ -22,8 +23,15 @@ const DETAIL_DIR_PATH = process.env.ESTHE_MONITOR_DETAIL_DIR || "";
 
 const CSV_HEADER = ["店舗名", "最寄駅", "住所または座標", "緯度", "経度", "掲載URL", "オフィシャルHP", "備考", "電話", "営業"];
 const HTML_DECODE_MARKERS = ["駅・市区町村で絞り込む", "アジアンエステ", "店舗情報を見る", "全国メンズエステランキング", "アクセス"];
+const INVALID_ACCESS_NOTES = new Set([
+  "六本木・麻布十番",
+  "東京エリア簡単検索",
+  "お探しのエリアをクリック",
+  "東京エリア簡単検索 お探しのエリアをクリック",
+]);
 
 async function main() {
+  await ensureOutputDirectories();
   const fetchedAt = new Date().toISOString();
   const listingSources = await loadListingSources();
   const current = await buildSnapshot(listingSources, fetchedAt);
@@ -214,6 +222,7 @@ async function updateCsvAndData(snapshot) {
   const rows = await readCsv(CSV_PATH);
 
   for (const row of rows) {
+    row["備考"] = cleanStoredAccessNote(row["備考"]);
     if (row["緯度"] && row["経度"]) {
       row["住所または座標"] = `${row["緯度"]}, ${row["経度"]}`;
     }
@@ -233,7 +242,7 @@ async function updateCsvAndData(snapshot) {
   }
 
   for (const store of snapshot.extractedStores) {
-    const matchingRows = (store.listingUrl && rowsByUrl.get(store.listingUrl)) || rowsByName.get(store.name) || [];
+    const matchingRows = findMatchingRows(store, rowsByName, rowsByUrl);
 
     if (matchingRows.length) {
       for (const row of matchingRows) {
@@ -270,6 +279,21 @@ async function updateCsvAndData(snapshot) {
   await writeCsv(CSV_PATH, keptRows);
   await writeCsv(LEGACY_CSV_PATH, legacyRows);
   return keptRows;
+}
+
+function findMatchingRows(store, rowsByName, rowsByUrl) {
+  const urlMatches = store.listingUrl ? rowsByUrl.get(store.listingUrl) : null;
+  if (urlMatches?.length) return urlMatches;
+
+  return (rowsByName.get(store.name) || []).filter((row) => {
+    const rowUrl = String(row["掲載URL"] || "").trim();
+    return !rowUrl || rowUrl === store.listingUrl;
+  });
+}
+
+function cleanStoredAccessNote(value) {
+  const note = String(value || "").trim();
+  return INVALID_ACCESS_NOTES.has(note) ? "" : note;
 }
 
 function createRowFromStore(store) {
@@ -435,12 +459,14 @@ function normalizeAddressCandidate(value) {
 }
 
 function extractAccessNote(lines, address, coordinates) {
-  const noteKeywords = ["付近", "目印", "駐車場", "となり", "近く", "入口", "徒歩", "着きましたら", "裏側", "番", "沿い"];
+  const noteKeywords = ["付近", "目印", "駐車場", "となり", "近く", "入口", "徒歩", "着きましたら", "裏側", "沿い"];
   for (const line of lines) {
     if (line === "アクセス" || line === "地図アプリで開く") continue;
+    if (!cleanStoredAccessNote(line)) continue;
     if (address && line === address) continue;
     if (coordinates.latitude && line.includes(coordinates.latitude)) continue;
-    if (noteKeywords.some((keyword) => line.includes(keyword))) {
+    const hasNumberedExit = /\d+\s*番(?:出口|口)/.test(line);
+    if (hasNumberedExit || noteKeywords.some((keyword) => line.includes(keyword))) {
       return line.replace(/^※\s*/, "");
     }
   }
@@ -775,6 +801,7 @@ function scoreHtmlCandidate(text) {
 }
 
 async function handleFailure(error) {
+  await ensureOutputDirectories();
   const failedAt = new Date().toISOString();
   const detail = formatError(error);
   await fs.appendFile(FAILURE_LOG_PATH, `[${failedAt}] monitor failed\n${detail}\n\n`, "utf8");
@@ -804,7 +831,13 @@ async function readJson(filePath) {
 }
 
 async function readCsv(filePath) {
-  const raw = await fs.readFile(filePath, "utf8");
+  let raw;
+  try {
+    raw = await fs.readFile(filePath, "utf8");
+  } catch (error) {
+    if (isNotFoundError(error)) return [];
+    throw error;
+  }
   const rows = [];
   let current = "";
   let row = [];
@@ -849,6 +882,11 @@ async function readCsv(filePath) {
 
   const [header, ...body] = rows;
   return body.map((values) => Object.fromEntries(header.map((key, idx) => [key, values[idx] ?? ""])));
+}
+
+async function ensureOutputDirectories() {
+  const directories = [...new Set(OUTPUT_PATHS.map((filePath) => path.dirname(filePath)))];
+  await Promise.all(directories.map((directory) => fs.mkdir(directory, { recursive: true })));
 }
 
 async function writeCsv(filePath, rows) {
@@ -1117,5 +1155,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   });
 }
 
-export { applyDetailLocationToRow, extractDetailData, extractMapLocationQuery };
+export { applyDetailLocationToRow, cleanStoredAccessNote, extractDetailData, extractMapLocationQuery, findMatchingRows };
 

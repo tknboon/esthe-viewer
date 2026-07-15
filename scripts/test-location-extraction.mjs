@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { applyDetailLocationToRow, extractDetailData } from "../monitor_esthe_ranking.mjs";
+import { applyDetailLocationToRow, cleanStoredAccessNote, extractDetailData, findMatchingRows } from "../monitor_esthe_ranking.mjs";
 
 const uedaAccessHtml = `
   <div class="borderbox map-area">
@@ -12,6 +12,15 @@ const ueda = extractDetailData("", uedaAccessHtml);
 assert.equal(ueda.address, "植田駅");
 assert.equal(ueda.latitude, "");
 assert.equal(ueda.longitude, "");
+assert.doesNotMatch(ueda.note, /六本木・麻布十番|東京エリア簡単検索/);
+assert.equal(cleanStoredAccessNote("六本木・麻布十番"), "");
+assert.equal(cleanStoredAccessNote("駅に着きましたら電話してください。"), "駅に着きましたら電話してください。");
+assert.equal(cleanStoredAccessNote("六本木・麻布十番エリアへ出張可"), "六本木・麻布十番エリアへ出張可");
+
+const sameNameRows = new Map([["同名店", [{ "店舗名": "同名店", "掲載URL": "https://example.com/store-a/" }]]]);
+const rowsByUrl = new Map([["https://example.com/store-a/", sameNameRows.get("同名店")]]);
+assert.deepEqual(findMatchingRows({ name: "同名店", listingUrl: "https://example.com/store-b/" }, sameNameRows, rowsByUrl), []);
+assert.equal(findMatchingRows({ name: "同名店", listingUrl: "https://example.com/store-a/" }, sameNameRows, rowsByUrl).length, 1);
 
 const kamimaezuAccessHtml = `
   <div class="borderbox map-area">

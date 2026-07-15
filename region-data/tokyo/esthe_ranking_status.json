@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "checkedAt": "2026-07-15T04:27:20.040Z",
+  "sourceUrls": [
+    "https://www.esthe-ranking.jp/shinjuku/asian/",
+    "https://www.esthe-ranking.jp/ikebukuro/asian/",
+    "https://www.esthe-ranking.jp/ueno/asian/",
+    "https://www.esthe-ranking.jp/kinshicho/asian/",
+    "https://www.esthe-ranking.jp/shibuya/asian/",
+    "https://www.esthe-ranking.jp/akihabara/asian/",
+    "https://www.esthe-ranking.jp/kamata/asian/",
+    "https://www.esthe-ranking.jp/tachikawa/asian/"
+  ],
+  "matchedStoreCount": 251,
+  "matchedLinkCount": 255,
+  "detailPageCount": 255,
+  "detailedStoreCount": 255,
+  "reportPath": "C:\\Users\\tknbo\\Documents\\Projects\\aichi-esthe-viewer\\region-data\\tokyo\\esthe_ranking_report.md",
+  "snapshotPath": "C:\\Users\\tknbo\\Documents\\Projects\\aichi-esthe-viewer\\region-data\\tokyo\\esthe_ranking_snapshot.json",
+  "failureLogPath": "C:\\Users\\tknbo\\Documents\\Projects\\aichi-esthe-viewer\\region-data\\tokyo\\esthe_ranking_failure.log"
+}

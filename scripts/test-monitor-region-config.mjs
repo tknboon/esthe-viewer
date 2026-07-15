@@ -11,7 +11,15 @@ assert.equal(aichi.outputFiles.snapshot, "esthe_ranking_snapshot.json");
 assert.equal(aichi.outputFiles.csv, "toyota_esthe_map_points_ja.csv");
 assert.match("愛知県名古屋市中区", aichi.addressScopePattern);
 assert.match("愛知県全域", aichi.invalidAddressPattern);
-assert.throws(() => getMonitorRegion("tokyo"), /Unknown monitor region: tokyo/);
+
+const tokyo = getMonitorRegion("tokyo");
+assert.equal(tokyo.targetUrls.length, 8);
+assert.equal(tokyo.outputFiles.data, "region-data/tokyo/data.js");
+assert.ok(tokyo.targetUrls.every((url) => url.startsWith("https://www.esthe-ranking.jp/")));
+assert.ok(Object.values(tokyo.outputFiles).every((filePath) => filePath.startsWith("region-data/tokyo/")));
+assert.notEqual(tokyo.outputFiles.data, aichi.outputFiles.data);
+
+assert.throws(() => getMonitorRegion("osaka"), /Unknown monitor region: osaka/);
 
 MONITOR_REGIONS.invalidTest = { regionId: "invalidTest", targetUrls: [], outputFiles: {} };
 assert.throws(() => getMonitorRegion("invalidTest"), /Invalid monitor region config: invalidTest/);

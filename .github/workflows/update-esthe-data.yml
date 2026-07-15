@@ -42,6 +42,7 @@ jobs:
       - name: Verify updated data
         shell: pwsh
         run: |
+          node .\scripts\validate-generated-region-data.mjs aichi
           node --check .\app.js
           node --check .\monitor_esthe_ranking.mjs
           @'

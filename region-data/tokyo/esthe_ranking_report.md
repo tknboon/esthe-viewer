@@ -1,0 +1,314 @@
+# esthe-ranking tokyo monitor
+
+- checked_at: 2026-07-15T04:27:20.040Z
+- sources: https://www.esthe-ranking.jp/shinjuku/asian/, https://www.esthe-ranking.jp/ikebukuro/asian/, https://www.esthe-ranking.jp/ueno/asian/, https://www.esthe-ranking.jp/kinshicho/asian/, https://www.esthe-ranking.jp/shibuya/asian/, https://www.esthe-ranking.jp/akihabara/asian/, https://www.esthe-ranking.jp/kamata/asian/, https://www.esthe-ranking.jp/tachikawa/asian/
+- title: 【2026年7月最新】新宿エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】池袋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】上野・浅草・御徒町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】錦糸町・押上・両国エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】渋谷・代々木・原宿エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】秋葉原エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】蒲田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】立川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+- count_text: https://www.esthe-ranking.jp/shinjuku/asian/=27件 | https://www.esthe-ranking.jp/ikebukuro/asian/=32件 | https://www.esthe-ranking.jp/ueno/asian/=65件 | https://www.esthe-ranking.jp/kinshicho/asian/=23件 | https://www.esthe-ranking.jp/shibuya/asian/=6件 | https://www.esthe-ranking.jp/akihabara/asian/=18件 | https://www.esthe-ranking.jp/kamata/asian/=67件 | https://www.esthe-ranking.jp/tachikawa/asian/=17件
+- matched_store_count: 251
+- matched_link_count: 255
+- detail_page_count: 255
+- detailed_store_count: 255
+
+## Source Summaries
+- url: https://www.esthe-ranking.jp/shinjuku/asian/
+  - title: 【2026年7月最新】新宿エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 27件
+  - matched_store_count: 27
+  - matched_link_count: 27
+- url: https://www.esthe-ranking.jp/ikebukuro/asian/
+  - title: 【2026年7月最新】池袋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 32件
+  - matched_store_count: 32
+  - matched_link_count: 32
+- url: https://www.esthe-ranking.jp/ueno/asian/
+  - title: 【2026年7月最新】上野・浅草・御徒町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 65件
+  - matched_store_count: 65
+  - matched_link_count: 65
+- url: https://www.esthe-ranking.jp/kinshicho/asian/
+  - title: 【2026年7月最新】錦糸町・押上・両国エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 23件
+  - matched_store_count: 23
+  - matched_link_count: 23
+- url: https://www.esthe-ranking.jp/shibuya/asian/
+  - title: 【2026年7月最新】渋谷・代々木・原宿エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 6件
+  - matched_store_count: 6
+  - matched_link_count: 6
+- url: https://www.esthe-ranking.jp/akihabara/asian/
+  - title: 【2026年7月最新】秋葉原エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 18件
+  - matched_store_count: 18
+  - matched_link_count: 18
+- url: https://www.esthe-ranking.jp/kamata/asian/
+  - title: 【2026年7月最新】蒲田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 67件
+  - matched_store_count: 67
+  - matched_link_count: 67
+- url: https://www.esthe-ranking.jp/tachikawa/asian/
+  - title: 【2026年7月最新】立川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
+  - count_text: 17件
+  - matched_store_count: 17
+  - matched_link_count: 17
+
+## Added
+- none
+
+## Removed
+- none
+
+## Changed
+- none
+
+## Current Stores
+- 10ct.（テンカラット）
+- 20代のbaby
+- AKB
+- Angel
+- Ariel（アリエル）
+- Aries（エリース）
+- Aroma Angel（アロマエンジェル）
+- Aroma Forest（アロマフォレスト）
+- AROMA SPA
+- Aromana（アロマーナ）
+- BABY SPA
+- Beautiful Girl（ビューティフルガール）
+- Blue妖姫
+- Candle（キャンドル）
+- Chérie（シェリー）
+- COCO-GARDEN
+- COCOA（ココア）
+- Come onお兄ちゃん
+- cream spa（クリームスパ）
+- CREST
+- Cupid～キューピット～
+- DEAR
+- Dear（ディア）
+- Dior
+- Dream（ドリーム）
+- Eclat
+- ELISE（エリーゼ）
+- Emi
+- EVE（イブ）
+- Fantasy（ファンタジー）
+- FLOWER
+- for you（フォーユー）
+- Foreign SPA（フォーリンスパ）
+- Fresh Salon（フレッシュ・サロン）
+- GRAND SPA（グランドスパ）
+- Gカップの美人牧場
+- HAPPY Beauty＆Spa
+- Honey Angel
+- Infinity
+- Julian-ジュリアン-
+- KARA
+- kiss me
+- Kissの楽園
+- Lani（ラニ）
+- Lila Spa
+- LILIAN
+- LINO（りの）
+- LOVE
+- Lovely girl（ラブリーガール）
+- Lucky girl
+- Melty Lab（メルティラボ）
+- MiNa
+- MIYABI
+- monika
+- New Face
+- OLALA（オララ）
+- Princess
+- RAVE（レイヴ）
+- Renew（リニュー）
+- Rose Garden
+- Rosemary（ローズマリー）
+- Sakura Hime Spa（サクラヒメスパ）
+- Sakura（さくら）
+- Secret（シークレット）
+- SENAL（シュナイ）
+- SHE
+- Sherry（シェリー）
+- Smile（スマイル）
+- Sofia（ソフィア）
+- Stewardess（スチュワーデス）
+- Sugar
+- SUNFLOWER（サンフラワー）
+- Suzu蘭
+- Sweet Time（スイーツタイム）
+- Sweet（スウィート）
+- Thaniya Relax（タニヤリラックス）
+- Tiara
+- Venus（ヴィーナス）
+- VIVI
+- アイラック
+- アジアンフィーリング
+- アリア
+- アリス治療院
+- アロマブランリリー
+- アワ国党
+- いちご
+- エステ・リッツ
+- エンジェル
+- エンジョイ
+- カトレア
+- キャンディーミルキー
+- きららメンズスパ
+- ココシア
+- こもれび
+- サイバーエステ2077
+- さくら
+- シャーロット姫
+- シャレンドGirl
+- スイートハート
+- スイカ
+- スキップビート
+- すずらん
+- スターダスト
+- セクシー娘
+- タイランドミリンマッサージ
+- チェンマイ
+- チューリップ
+- ディープリンパクト
+- ナーラック
+- ナンバーワン
+- ニューリラックスタイム
+- ねこGirl
+- ノックユーン
+- パッタナースパ
+- ハッピー～Happy～
+- ハニー
+- ハピネス
+- ヒーリングマジカル
+- ひまわり
+- ピュアリゾート
+- ピンクガール
+- フェアリーランド
+- ふわふわ
+- ベトナムLOVE
+- ベトナムの女神
+- ベトナム子GirlSVN専門店
+- ベトナム子高級VIPコース18+
+- ベトナム人NEWSPA 上野駅と秋葉原駅店
+- ベトナム美癒し館
+- ホワイトエンジェル
+- マーキュリー
+- マカロン
+- ミルキーハグ
+- ミン ロッブリー
+- メンズスパ桜
+- もちもち娘
+- ヤージャイ
+- やすらぎ
+- ユキ
+- ユユ
+- ゆらり
+- ゆるり
+- らくらく
+- ラッキー
+- ラッキー～lucky～
+- ラックン
+- ラブガーデン
+- ラブラブ
+- リジア
+- ルージュ
+- ルナックス
+- ルビー
+- ローズ
+- ロリポップ
+- わが家
+- 愛
+- 愛の海
+- 愛の憩
+- 安らぎリラクゼーション
+- 安心堂
+- 一目惚れ（ひとめぼれ）
+- 栄華
+- 縁〜エン〜
+- 俺の秘密基地
+- 佳人（かじん）
+- 可愛い恋人
+- 歌舞伎蝶
+- 火焔（かえん）
+- 花水木
+- 楽しい
+- 楽園
+- 楽天国
+- 韓国美姫
+- 韓美々
+- 喜手～kishu～
+- 究極ラヴァーズ
+- 極楽スペース
+- 錦糸町ハニー
+- 錦糸町南口AKIRA
+- 金の月
+- 憩
+- 激アツのコイ
+- 月の癒し
+- 月兎（ゲット）
+- 健康の家
+- 宏華（こうか）
+- 幸せの時間
+- 紅葉MOMIJI
+- 香夜（カヤ）
+- 時の扉
+- 秋葉美療
+- 渋谷ベトナム式マッサージハノイちゃん
+- 春の恋
+- 初雪
+- 女手
+- 女神（めがみ）
+- 小町
+- 少女の秘密
+- 上女・癒しGarden
+- 上野ベトナム式マッサージ ハノイちゃん
+- 新宿極上メンズエステ
+- 新宿南口メンズエステ
+- 森
+- 森の家
+- 森の泉
+- 洗体アカスリとオイルリンパSPA
+- 爽・さわやか
+- 爽やか
+- 台湾さくら
+- 台湾幸運リラクゼーション
+- 池袋ベトナム式マッサージ ハノイちゃん
+- 蝶々
+- 蝶々（ちょうちょう）
+- 通絡堂（つうらくどう）
+- 虹華～IROHA～
+- 美楽みらく
+- 美人茶屋
+- 美姫
+- 美娘（みこ）
+- 姫龍宮
+- 百合整体マッサージ
+- 氷の雪
+- 泡泡学園
+- 魔女の家
+- 魅惑の女
+- 魅惑の姫
+- 蜜姫
+- 夢の家
+- 夢の華
+- 夢心地
+- 夢心地（ゆめごこち）
+- 夜の恋人
+- 夜桜
+- 癒しの縁
+- 癒しの苑
+- 癒しの泉（いやしのいずみ）
+- 癒しの部屋
+- 癒し空間
+- 癒やし空間
+- 癒愛
+- 癒手屋（いやしてや）
+- 優楽館
+- 優整体
+- 蘭エステティック
+- 立川アカスリリラクゼーション 春
+- 恋（こい）
+- 恋人（こいびと）
+- 恋人空間
+- 和（なごみ）
+- 絆（キズナ）
+- 蕾～つぼみ
