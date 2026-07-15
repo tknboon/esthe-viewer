@@ -11,6 +11,7 @@
   map: null,
   infoWindow: null,
   markers: new Map(),
+  markerClusterer: null,
   profileMap: null,
   profileInfoWindow: null,
   profileMarkers: new Map(),
@@ -163,6 +164,7 @@ const MANUAL_STATION_OVERRIDES = CURRENT_REGION.manualStationOverrides || {};
 const MANUAL_LOCATION_OVERRIDES = CURRENT_REGION.manualLocationOverrides || {};
 
 const STATION_GROUP_REGIONS = new Set(CURRENT_REGION.stationGroupRegions || []);
+const MAIN_MAP_CLUSTERING_ENABLED = CURRENT_REGION_ID === "tokyo";
 
 const RECOVERED_REMOVED_HISTORY = CURRENT_REGION.recoveredRemovedHistory || {};
 
@@ -3177,6 +3179,8 @@ function runSyncMapWithFilters() {
     }
   }
 
+  createMainMapClusterer();
+
   if (placedCount > 0) {
     if (placedCount === 1 && state.selectedRow?.latLng) {
       state.map.setCenter(state.selectedRow.latLng);
@@ -3259,6 +3263,11 @@ function runSyncProfileMap() {
 }
 
 function clearMarkers() {
+  if (state.markerClusterer) {
+    state.markerClusterer.clearMarkers();
+    state.markerClusterer.setMap(null);
+    state.markerClusterer = null;
+  }
   for (const marker of state.markers.values()) {
     marker.setMap(null);
   }
@@ -3276,7 +3285,7 @@ function addMarkerForRow(row, bounds) {
   if (!row.latLng || state.markers.has(row.id)) return;
 
   const marker = new google.maps.Marker({
-    map: state.map,
+    map: shouldClusterMainMap() ? null : state.map,
     position: row.latLng,
     title: row.name,
     icon: buildMarkerIcon(row),
@@ -3285,6 +3294,50 @@ function addMarkerForRow(row, bounds) {
   marker.addListener("click", () => toggleMarkerSelection(row));
   state.markers.set(row.id, marker);
   bounds.extend(row.latLng);
+}
+
+function shouldClusterMainMap() {
+  return MAIN_MAP_CLUSTERING_ENABLED && Boolean(window.markerClusterer?.MarkerClusterer);
+}
+
+function createMainMapClusterer() {
+  if (!shouldClusterMainMap() || !state.markers.size) return;
+
+  const options = {
+    map: state.map,
+    markers: [...state.markers.values()],
+    renderer: {
+      render: ({ count, position }) => new google.maps.Marker({
+        position,
+        label: {
+          text: String(count),
+          color: "#ffffff",
+          fontSize: "13px",
+          fontWeight: "700",
+        },
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: count >= 100 ? "#c9346b" : "#e34f83",
+          fillOpacity: 0.96,
+          strokeColor: "#ffd6e5",
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          scale: count >= 100 ? 26 : count >= 30 ? 23 : 20,
+        },
+        title: `${count}店舗`,
+        zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
+      }),
+    },
+  };
+
+  if (window.markerClusterer.SuperClusterAlgorithm) {
+    options.algorithm = new window.markerClusterer.SuperClusterAlgorithm({
+      maxZoom: 14,
+      radius: 72,
+    });
+  }
+
+  state.markerClusterer = new window.markerClusterer.MarkerClusterer(options);
 }
 
 function addProfileMarkerForRow(row, bounds) {

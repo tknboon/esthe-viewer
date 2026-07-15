@@ -5,6 +5,7 @@ const html = fs.readFileSync(new URL("../tokyo/index.html", import.meta.url), "u
 const data = fs.readFileSync(new URL("../tokyo/data.js", import.meta.url), "utf8");
 
 assert.match(html, /window\.CURRENT_REGION_ID = "tokyo"/);
+assert.match(html, /@googlemaps\/markerclusterer@2\.6\.2\/dist\/index\.min\.js/);
 assert.match(html, /data-region-link="aichi" href="\/"/);
 assert.match(html, /data-region-link="tokyo" href="\/tokyo\/"/);
 assert.match(html, /src="\.\.\/config\/regions\.js\?v=[a-f0-9]{12}"/);
