@@ -1,36 +1,20 @@
 ﻿import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { getMonitorRegion } from "./config/monitor-regions.mjs";
 
-const TARGET_URLS = [
-  "https://www.esthe-ranking.jp/nagoya/asian/",
-  "https://www.esthe-ranking.jp/sakae/asian/",
-  "https://www.esthe-ranking.jp/shinsakae/asian/",
-  "https://www.esthe-ranking.jp/kanayama/asian/",
-  "https://www.esthe-ranking.jp/kurokawa/asian/",
-  "https://www.esthe-ranking.jp/hoshigaoka/asian/",
-  "https://www.esthe-ranking.jp/moriyama/asian/",
-  "https://www.esthe-ranking.jp/otai/asian/",
-  "https://www.esthe-ranking.jp/tokaidori/asian/",
-  "https://www.esthe-ranking.jp/kasadera/asian/",
-  "https://www.esthe-ranking.jp/toyota/asian/",
-  "https://www.esthe-ranking.jp/horita/asian/",
-  "https://www.esthe-ranking.jp/tsurumai/asian/",
-  "https://www.esthe-ranking.jp/showa/asian/",
-  "https://www.esthe-ranking.jp/komaki/asian/",
-  "https://www.esthe-ranking.jp/owari/asian/",
-  "https://www.esthe-ranking.jp/chita/asian/",
-  "https://www.esthe-ranking.jp/toyohashi/asian/",
-];
+const MONITOR_REGION_ID = process.env.ESTHE_REGION_ID || "aichi";
+const MONITOR_REGION = getMonitorRegion(MONITOR_REGION_ID);
+const TARGET_URLS = MONITOR_REGION.targetUrls;
 const ROOT = process.cwd();
-const SNAPSHOT_PATH = path.join(ROOT, "esthe_ranking_snapshot.json");
-const REPORT_PATH = path.join(ROOT, "esthe_ranking_report.md");
-const CSV_PATH = path.join(ROOT, "toyota_esthe_map_points_ja.csv");
-const DATA_JS_PATH = path.join(ROOT, "data.js");
-const LEGACY_CSV_PATH = path.join(ROOT, "toyota_esthe_legacy_rows.csv");
-const STATUS_PATH = path.join(ROOT, "esthe_ranking_status.json");
-const FAILURE_LOG_PATH = path.join(ROOT, "esthe_ranking_failure.log");
-const HISTORY_PATH = path.join(ROOT, "esthe_update_history.json");
+const SNAPSHOT_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.snapshot);
+const REPORT_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.report);
+const CSV_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.csv);
+const DATA_JS_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.data);
+const LEGACY_CSV_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.legacyCsv);
+const STATUS_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.status);
+const FAILURE_LOG_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.failureLog);
+const HISTORY_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.history);
 const HTML_INPUT_PATH = process.env.ESTHE_MONITOR_HTML_PATH || "";
 const HTML_INPUT_DIR = process.env.ESTHE_MONITOR_HTML_DIR || "";
 const MUNICIPALITY_DIR_PATH = process.env.ESTHE_MONITOR_MUNICIPALITY_DIR || "";
@@ -444,9 +428,9 @@ function normalizeAddressCandidate(value) {
   const candidate = compactText(value);
   if (!candidate) return "";
   if (/^[0-9]{2}\.[0-9]+,\s*[0-9]{3}\.[0-9]+$/.test(candidate)) return "";
-  if (/愛知県全域|東京エリア簡単検索|お探しのエリアをクリック/.test(candidate)) return "";
+  if (MONITOR_REGION.invalidAddressPattern.test(candidate)) return "";
   if (/電話をかける|24時間営業|割引特典|ネット予約|動画を見る|クーポン|店舗情報|セラピスト/.test(candidate)) return "";
-  if (!/(愛知県|豊田市|岡崎市|刈谷市|安城市|知立市|高浜市|碧南市|みよし市|西尾市|幸田町)/.test(candidate)) return "";
+  if (!MONITOR_REGION.addressScopePattern.test(candidate)) return "";
   return candidate;
 }
 
@@ -639,7 +623,7 @@ function cleanHistoryStation(value) {
 
 function renderReport(current, diff) {
   return [
-    "# esthe-ranking toyota monitor",
+    `# ${MONITOR_REGION.reportLabel}`,
     "",
     `- checked_at: ${current.fetchedAt}`,
     `- sources: ${(current.sourceUrls || []).join(", ")}`,
@@ -670,7 +654,7 @@ function renderReport(current, diff) {
 
 function renderFailureReport(failedAt, detail) {
   return [
-    "# esthe-ranking toyota monitor",
+    `# ${MONITOR_REGION.reportLabel}`,
     "",
     `- checked_at: ${failedAt}`,
     `- sources: ${TARGET_URLS.join(", ")}`,

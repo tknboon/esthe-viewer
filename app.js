@@ -135,6 +135,7 @@ const REGION_MAP_ZOOM = CURRENT_REGION.mapZoom || 12;
 const REGION_PROFILE_MAP_ZOOM = CURRENT_REGION.profileMapZoom || 11;
 const REGION_GEOCODE_SUFFIX = CURRENT_REGION.geocodeSuffix || "";
 const REGION_GEOCODE_SCOPE_PATTERN = CURRENT_REGION.geocodeScopePattern ? new RegExp(CURRENT_REGION.geocodeScopePattern) : /^$/;
+const REGION_INVALID_LOCATION_PATTERN = CURRENT_REGION.invalidLocationPattern ? new RegExp(CURRENT_REGION.invalidLocationPattern) : /^$/;
 const LOCAL_STORAGE_PREFIX = `${CURRENT_REGION_ID}-esthe`;
 const LEGACY_LOCAL_STORAGE_PREFIX = CURRENT_REGION.legacyStoragePrefix || "";
 const LOCAL_STORAGE_SUFFIXES = {
@@ -156,39 +157,11 @@ const LEGACY_LOCAL_STORAGE_KEYS = {
   backupMeta: `${LEGACY_LOCAL_STORAGE_PREFIX}-backup-meta`,
 };
 
-const MANUAL_STATION_OVERRIDES = {
-  "https://www.esthe-ranking.jp/sakae/shop-detail/f2e48aef-65d9-4065-8b47-e367232c1384/": "丸の内駅・伏見駅",
-};
+const MANUAL_STATION_OVERRIDES = CURRENT_REGION.manualStationOverrides || {};
 
 const STATION_GROUP_REGIONS = new Set(CURRENT_REGION.stationGroupRegions || []);
 
-const RECOVERED_REMOVED_HISTORY = {
-  "2026-05-07": [
-    "セクシ一誘惑/東海通駅",
-    "ながれぼし/下地駅",
-    "マロージュ/東刈谷駅",
-    "ゆだねて/中京競馬場前駅",
-    "ゆりかご/味美駅",
-    "ラブリボン/奥町駅",
-    "甘い恋人/北安城駅・大門駅・上挙母駅・富士松駅",
-    "気楽/志賀本通駅",
-    "極楽ベビー/名古屋駅",
-    "幸せサロン/稲荷口駅・下地駅・三河大塚駅",
-    "港香 （ホンカ）/小牧駅",
-    "今夜の香り/太閤通駅",
-    "柔らかな月/一社駅",
-    "女神の部屋/西一宮駅・永和駅",
-    "小魔女/佐古木駅・木曽川駅",
-    "天使の薔薇/船町駅・牛久保駅・三河大塚駅",
-    "冬の恋人/豊橋駅・豊川稲荷駅",
-    "猫猫love/国府駅・下地駅",
-    "熱い恋愛/羽黒駅",
-    "萌え（もえ）/三好ヶ丘駅・竹村駅",
-    "魔女の手/甚目寺駅",
-    "夢心地（ゆめごこち）/小坂井駅",
-    "妖艶ガール/上挙母駅・黑笹駅・安城駅",
-  ],
-};
+const RECOVERED_REMOVED_HISTORY = CURRENT_REGION.recoveredRemovedHistory || {};
 
 const MANUAL_ROOM_LOCATION_OVERRIDES = CURRENT_REGION.roomLocationOverrides || {};
 
@@ -3084,7 +3057,7 @@ function isCoordinateLocation(value) {
 function hasUsableAddressLocation(value) {
   const location = String(value || "").trim();
   if (!location || isCoordinateLocation(location)) return false;
-  return !(/愛知県全域|東京エリア簡単検索|お探しのエリアをクリック/.test(location));
+  return !REGION_INVALID_LOCATION_PATTERN.test(location);
 }
 
 function disableLink(link) {

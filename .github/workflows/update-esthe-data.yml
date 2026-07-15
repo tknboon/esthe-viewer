@@ -29,9 +29,13 @@ jobs:
       - name: Update store data
         shell: pwsh
         env:
+          ESTHE_REGION_ID: aichi
           ESTHE_MONITOR_DETAIL_DIR: esthe_ranking_detail_pages
           ESTHE_MONITOR_MUNICIPALITY_DIR: esthe_ranking_municipality_pages
         run: |
+          node .\scripts\test-monitor-region-config.mjs
+          node .\scripts\test-region-config.mjs
+          node .\scripts\test-location-extraction.mjs
           node .\monitor_esthe_ranking.mjs
           powershell -ExecutionPolicy Bypass -File .\sync-public-assets.ps1
 
