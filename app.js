@@ -123,6 +123,7 @@ const reviewList = document.querySelector("#reviewList");
 const reviewToggleButton = document.querySelector("#reviewToggleButton");
 const reviewStorageNote = document.querySelector("#reviewStorageNote");
 const heroTitle = document.querySelector(".hero h1");
+const regionSwitchLinks = document.querySelectorAll("[data-region-link]");
 const REGIONS = window.REGIONS || {};
 const CURRENT_REGION_ID = window.CURRENT_REGION_ID || "aichi";
 const CURRENT_REGION = REGIONS[CURRENT_REGION_ID] || REGIONS.aichi || {};
@@ -210,6 +211,15 @@ function applyRegionPageMeta() {
   }
   if (heroTitle && CURRENT_REGION.h1Label) {
     heroTitle.textContent = CURRENT_REGION.h1Label;
+  }
+  for (const link of regionSwitchLinks) {
+    const isCurrent = link.dataset.regionLink === CURRENT_REGION_ID;
+    link.classList.toggle("is-current", isCurrent);
+    if (isCurrent) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   }
 }
 
