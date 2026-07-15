@@ -27,6 +27,9 @@ assert.equal(tokyo.areaLabels.kasai, "葛西・西葛西");
 const monitoredTokyoAreas = getMonitorRegion("tokyo").targetUrls.map((url) => new URL(url).pathname.split("/").filter(Boolean)[0]);
 assert.deepEqual([...monitoredTokyoAreas].sort(), [...tokyo.areaOrder].sort());
 assert.ok(tokyo.geocodeBounds.west > 139);
+const tokyoInvalidLocationPattern = new RegExp(tokyo.invalidLocationPattern);
+assert.equal(tokyoInvalidLocationPattern.test("東京都"), true);
+assert.equal(tokyoInvalidLocationPattern.test("東京都新宿区歌舞伎町1-3-16"), false);
 assert.deepEqual(
   { ...tokyo.manualLocationOverrides["https://www.esthe-ranking.jp/ueno/shop-detail/257920fe-f7c8-4d94-94b3-ad605977fd3e/"] },
   { lat: 35.7074, lng: 139.7746 }
