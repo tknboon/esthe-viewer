@@ -13,7 +13,10 @@ assert.match("愛知県名古屋市中区", aichi.addressScopePattern);
 assert.match("愛知県全域", aichi.invalidAddressPattern);
 
 const tokyo = getMonitorRegion("tokyo");
-assert.equal(tokyo.targetUrls.length, 8);
+assert.equal(tokyo.targetUrls.length, 47);
+assert.equal(new Set(tokyo.targetUrls).size, 47);
+assert.ok(tokyo.targetUrls.includes("https://www.esthe-ranking.jp/hachioji/asian/"));
+assert.ok(tokyo.targetUrls.includes("https://www.esthe-ranking.jp/kasai/asian/"));
 assert.equal(tokyo.outputFiles.data, "region-data/tokyo/data.js");
 assert.ok(tokyo.targetUrls.every((url) => url.startsWith("https://www.esthe-ranking.jp/")));
 assert.ok(Object.values(tokyo.outputFiles).every((filePath) => filePath.startsWith("region-data/tokyo/")));

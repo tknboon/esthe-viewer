@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Update store data
+      - name: Update Aichi store data
         shell: pwsh
         env:
           ESTHE_REGION_ID: aichi
@@ -37,18 +37,30 @@ jobs:
           node .\scripts\test-region-config.mjs
           node .\scripts\test-location-extraction.mjs
           node .\monitor_esthe_ranking.mjs
+
+      - name: Update Tokyo store data
+        shell: pwsh
+        env:
+          ESTHE_REGION_ID: tokyo
+        run: |
+          node .\monitor_esthe_ranking.mjs
+
+      - name: Sync public assets
+        shell: pwsh
+        run: |
           powershell -ExecutionPolicy Bypass -File .\sync-public-assets.ps1
 
       - name: Verify updated data
         shell: pwsh
         run: |
           node .\scripts\validate-generated-region-data.mjs aichi
+          node .\scripts\validate-generated-region-data.mjs tokyo
           node --check .\app.js
           node --check .\monitor_esthe_ranking.mjs
           @'
           const fs = require("fs");
           const vm = require("vm");
-          for (const f of ["data.js", "docs/data.js"]) {
+          for (const f of ["data.js", "docs/data.js", "tokyo/data.js", "docs/tokyo/data.js"]) {
             const sandbox = { window: {} };
             vm.createContext(sandbox);
             vm.runInContext(fs.readFileSync(f, "utf8"), sandbox);
@@ -62,6 +74,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.js docs/data.js toyota_esthe_map_points_ja.csv toyota_esthe_legacy_rows.csv esthe_ranking_snapshot.json esthe_ranking_report.md esthe_ranking_status.json esthe_update_history.json
+          git add region-data/tokyo/data.js region-data/tokyo/esthe_map_points_ja.csv region-data/tokyo/esthe_legacy_rows.csv region-data/tokyo/esthe_ranking_snapshot.json region-data/tokyo/esthe_ranking_report.md region-data/tokyo/esthe_ranking_status.json region-data/tokyo/esthe_update_history.json
+          git add tokyo/data.js tokyo/index.html docs/tokyo/data.js docs/tokyo/index.html
           git diff --cached --quiet
           if ($LASTEXITCODE -eq 0) {
             Write-Host "No data changes to commit."
