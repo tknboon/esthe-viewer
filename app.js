@@ -134,6 +134,7 @@ const REGION_MAP_CENTER = CURRENT_REGION.mapCenter || { lat: 35, lng: 135 };
 const REGION_MAP_ZOOM = CURRENT_REGION.mapZoom || 12;
 const REGION_PROFILE_MAP_ZOOM = CURRENT_REGION.profileMapZoom || 11;
 const REGION_GEOCODE_SUFFIX = CURRENT_REGION.geocodeSuffix || "";
+const REGION_GEOCODE_BOUNDS = CURRENT_REGION.geocodeBounds || null;
 const REGION_GEOCODE_SCOPE_PATTERN = CURRENT_REGION.geocodeScopePattern ? new RegExp(CURRENT_REGION.geocodeScopePattern) : /^$/;
 const REGION_INVALID_LOCATION_PATTERN = CURRENT_REGION.invalidLocationPattern ? new RegExp(CURRENT_REGION.invalidLocationPattern) : /^$/;
 const LOCAL_STORAGE_PREFIX = `${CURRENT_REGION_ID}-esthe`;
@@ -158,6 +159,7 @@ const LEGACY_LOCAL_STORAGE_KEYS = {
 };
 
 const MANUAL_STATION_OVERRIDES = CURRENT_REGION.manualStationOverrides || {};
+const MANUAL_LOCATION_OVERRIDES = CURRENT_REGION.manualLocationOverrides || {};
 
 const STATION_GROUP_REGIONS = new Set(CURRENT_REGION.stationGroupRegions || []);
 
@@ -1797,8 +1799,9 @@ function normalizeRow(row, index) {
   const municipalityLabels = window.storeMeta?.municipalityLabelsByListingUrl?.[listingUrl] || [];
   const hasCoordinates = Boolean(latitude && longitude);
   const useCoordinates = hasCoordinates && !hasUsableAddressLocation(location);
-  const baseLatLng = useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
-  const baseLocationQuery = useCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
+  const manualLatLng = normalizeLatLng(MANUAL_LOCATION_OVERRIDES[listingUrl]);
+  const baseLatLng = manualLatLng || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null);
+  const baseLocationQuery = baseLatLng ? `${baseLatLng.lat},${baseLatLng.lng}` : buildLocationQuery(name, station, location, notes);
 
   const normalizedRow = {
     id: `${name}-${station}-${index}`,
@@ -3066,7 +3069,26 @@ function disableLink(link) {
 }
 
 function readGeocodeCache() {
-  return readRegionalLocalObject("geocodeCache");
+  const cache = readRegionalLocalObject("geocodeCache");
+  return Object.fromEntries(
+    Object.entries(cache).filter(([, latLng]) => isLatLngWithinRegion(latLng))
+  );
+}
+
+function normalizeLatLng(value) {
+  const lat = Number(value?.lat);
+  const lng = Number(value?.lng);
+  return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng } : null;
+}
+
+function isLatLngWithinRegion(value) {
+  const latLng = normalizeLatLng(value);
+  if (!latLng) return false;
+  if (!REGION_GEOCODE_BOUNDS) return true;
+  return latLng.lat >= REGION_GEOCODE_BOUNDS.south
+    && latLng.lat <= REGION_GEOCODE_BOUNDS.north
+    && latLng.lng >= REGION_GEOCODE_BOUNDS.west
+    && latLng.lng <= REGION_GEOCODE_BOUNDS.east;
 }
 
 function writeGeocodeCache() {
@@ -3594,19 +3616,25 @@ function runGeocodeQueue() {
     state.geocodeRunning = false;
 
     if (status === "OK" && results && results[0] && results[0].geometry && results[0].geometry.location) {
-      next.row.latLng = {
+      const geocodedLatLng = {
         lat: results[0].geometry.location.lat(),
         lng: results[0].geometry.location.lng(),
       };
-      state.geocodeCache[next.row.locationQuery] = next.row.latLng;
-      writeGeocodeCache();
-      syncMapWithFilters();
-      syncProfileMap();
-      if (state.selectedRow?.id === next.row.id) {
-        renderStreetViewForRow(next.row);
-      }
-      if (next.shouldFocus) {
-        focusMarker(next.row);
+
+      if (isLatLngWithinRegion(geocodedLatLng)) {
+        next.row.latLng = geocodedLatLng;
+        state.geocodeCache[next.row.locationQuery] = geocodedLatLng;
+        writeGeocodeCache();
+        syncMapWithFilters();
+        syncProfileMap();
+        if (state.selectedRow?.id === next.row.id) {
+          renderStreetViewForRow(next.row);
+        }
+        if (next.shouldFocus) {
+          focusMarker(next.row);
+        }
+      } else {
+        console.warn("Geocode result outside configured region", next.row.locationQuery, geocodedLatLng);
       }
     }
 

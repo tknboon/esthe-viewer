@@ -19,5 +19,10 @@ assert.equal(tokyo.regionId, "tokyo");
 assert.equal(tokyo.title, "東京都のアジアンエステ");
 assert.deepEqual([...tokyo.areaOrder], ["shinjuku", "ikebukuro", "shibuya", "ueno", "akihabara", "kinshicho", "kamata", "tachikawa"]);
 assert.equal(Object.keys(tokyo.areaLabels).length, 8);
+assert.ok(tokyo.geocodeBounds.west > 139);
+assert.deepEqual(
+  { ...tokyo.manualLocationOverrides["https://www.esthe-ranking.jp/ueno/shop-detail/257920fe-f7c8-4d94-94b3-ad605977fd3e/"] },
+  { lat: 35.7074, lng: 139.7746 }
+);
 
 console.log("browser region config: ok");

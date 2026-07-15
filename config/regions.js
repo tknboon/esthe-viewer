@@ -153,6 +153,7 @@ window.REGIONS = {
     mapZoom: 10,
     profileMapZoom: 11,
     geocodeSuffix: "東京都",
+    geocodeBounds: { south: 35.45, west: 139.2, north: 35.95, east: 140.15 },
     geocodeScopePattern: "東京都|新宿区|豊島区|台東区|墨田区|渋谷区|千代田区|大田区|立川市",
     invalidLocationPattern: "東京都全域|東京エリア簡単検索|お探しのエリアをクリック",
     areaLabels: {
@@ -178,6 +179,12 @@ window.REGIONS = {
       tachikawa: ["立川市"],
     },
     manualStationOverrides: {},
+    manualLocationOverrides: {
+      "https://www.esthe-ranking.jp/ueno/shop-detail/257920fe-f7c8-4d94-94b3-ad605977fd3e/": {
+        lat: 35.7074,
+        lng: 139.7746,
+      },
+    },
     recoveredRemovedHistory: {},
     roomLocationOverrides: {},
   },
