@@ -1,5 +1,6 @@
 ﻿import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const TARGET_URLS = [
   "https://www.esthe-ranking.jp/nagoya/asian/",
@@ -311,6 +312,9 @@ function applyDetailLocationToRow(row, store) {
     row["経度"] = store.longitude;
     row["住所または座標"] = `${store.latitude}, ${store.longitude}`;
   } else if (store.address) {
+    // An access-page address supersedes any coordinates retained from an older scrape.
+    row["緯度"] = "";
+    row["経度"] = "";
     row["住所または座標"] = store.address;
   }
 
@@ -358,8 +362,9 @@ function extractDetailData(html, accessHtml, store = null) {
     .map((line) => compactText(line))
     .filter(Boolean);
 
-  const coordinates = extractCoordinates(accessSourceHtml || text);
-  const address = extractAddress(lines);
+  const mapLocation = extractMapLocationQuery(accessSourceHtml);
+  const coordinates = extractCoordinates(mapLocation);
+  const address = mapLocation || extractAddress(lines);
   const note = extractAccessNote(lines, address, coordinates);
   const roomLocations = extractRoomLocations(accessSourceHtml, store);
 
@@ -371,6 +376,19 @@ function extractDetailData(html, accessHtml, store = null) {
     note,
     roomLocations,
   };
+}
+
+function extractMapLocationQuery(html) {
+  const source = String(html || "");
+  const mapArea = source.match(/<div class="borderbox map-area">[\s\S]*?<\/div>\s*<\/div>/i)?.[0] || source;
+  const match = mapArea.match(/https:\/\/www\.google\.com\/maps(?:\/embed\/v1\/place)?\?[^"'\s]*\bq=([^&"'\s]+)/i);
+  if (!match?.[1]) return "";
+
+  try {
+    return compactText(decodeURIComponent(match[1].replaceAll("+", " ")));
+  } catch (error) {
+    return "";
+  }
 }
 
 function extractOfficialUrl(html) {
@@ -426,6 +444,7 @@ function normalizeAddressCandidate(value) {
   const candidate = compactText(value);
   if (!candidate) return "";
   if (/^[0-9]{2}\.[0-9]+,\s*[0-9]{3}\.[0-9]+$/.test(candidate)) return "";
+  if (/愛知県全域|東京エリア簡単検索|お探しのエリアをクリック/.test(candidate)) return "";
   if (/電話をかける|24時間営業|割引特典|ネット予約|動画を見る|クーポン|店舗情報|セラピスト/.test(candidate)) return "";
   if (!/(愛知県|豊田市|岡崎市|刈谷市|安城市|知立市|高浜市|碧南市|みよし市|西尾市|幸田町)/.test(candidate)) return "";
   return candidate;
@@ -1102,13 +1121,17 @@ function formatError(error) {
   return String(error);
 }
 
-main().catch(async (error) => {
-  try {
-    await handleFailure(error);
-  } catch (writeError) {
-    console.error(writeError);
-  }
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(async (error) => {
+    try {
+      await handleFailure(error);
+    } catch (writeError) {
+      console.error(writeError);
+    }
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
+
+export { applyDetailLocationToRow, extractDetailData, extractMapLocationQuery };
 

@@ -1823,8 +1823,9 @@ function normalizeRow(row, index) {
   const municipality = window.storeMeta?.municipalityByListingUrl?.[listingUrl] || "";
   const municipalityLabels = window.storeMeta?.municipalityLabelsByListingUrl?.[listingUrl] || [];
   const hasCoordinates = Boolean(latitude && longitude);
-  const baseLatLng = hasCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
-  const baseLocationQuery = hasCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
+  const useCoordinates = hasCoordinates && !hasUsableAddressLocation(location);
+  const baseLatLng = useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null;
+  const baseLocationQuery = useCoordinates ? `${latitude},${longitude}` : buildLocationQuery(name, station, location, notes);
 
   const normalizedRow = {
     id: `${name}-${station}-${index}`,
@@ -3067,9 +3068,19 @@ function getArchivedStoreLabel(reviewKey, latestReview) {
 }
 
 function buildLocationQuery(name, station, location, notes) {
-  const source = location || station || name;
+  const source = hasUsableAddressLocation(location) ? location : station || name;
   const scoped = REGION_GEOCODE_SUFFIX && !REGION_GEOCODE_SCOPE_PATTERN.test(`${source} ${notes}`) ? `${source} ${REGION_GEOCODE_SUFFIX}` : source;
   return scoped.trim();
+}
+
+function isCoordinateLocation(value) {
+  return /^\s*[0-9]{2}\.[0-9]+\s*,\s*[0-9]{3}\.[0-9]+\s*$/.test(String(value || ""));
+}
+
+function hasUsableAddressLocation(value) {
+  const location = String(value || "").trim();
+  if (!location || isCoordinateLocation(location)) return false;
+  return !(/愛知県全域|東京エリア簡単検索|お探しのエリアをクリック/.test(location));
 }
 
 function disableLink(link) {
