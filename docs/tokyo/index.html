@@ -13,7 +13,8 @@
     </script>
     <script>window.CURRENT_REGION_ID = "tokyo";</script>
     <script src="../config/regions.js?v=4e31786319fa"></script>
-    <link rel="stylesheet" href="../styles.css?v=baba5a821025" />
+    <script src="../config/station-normalizer.js?v=97fcbd288417"></script>
+    <link rel="stylesheet" href="../styles.css?v=5c07475f9444" />
   </head>
   <body>
     <div class="app-shell">
@@ -94,7 +95,7 @@
               </div>
             </div>
             <div class="analytics-subhead location-audit-head">
-              <span class="mini-label">駅周辺配置が多い地点</span>
+              <span id="locationAuditHeading" class="mini-label">駅周辺配置が多い地点</span>
             </div>
             <div id="locationAuditList" class="location-audit-list"></div>
             <div class="analytics-subhead">
@@ -382,7 +383,7 @@
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore-compat.js"></script>
     <script src="https://unpkg.com/@googlemaps/markerclusterer@2.6.2/dist/index.min.js"></script>
-    <script src="../app.js?v=1f4905656f51"></script>
+    <script src="../app.js?v=9361b9e43ac7"></script>
     <script
       async
       defer

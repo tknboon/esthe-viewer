@@ -1,8 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 import { getMonitorRegion } from "../config/monitor-regions.mjs";
+
+const require = createRequire(import.meta.url);
+const { normalizeStationGroupLabel: normalizeStationForAudit } = require("../config/station-normalizer.js");
 
 export function classifyLocationRow(row, invalidLocationPattern) {
   const location = String(row["住所または座標"] || "").trim();
@@ -26,10 +30,107 @@ export function classifyLocationRow(row, invalidLocationPattern) {
   return { quality, query, location, station, name, latitude, longitude };
 }
 
-export function normalizeStationForAudit(value) {
-  return String(value || "")
-    .trim()
-    .replace(/駅.*$/, "駅");
+export { normalizeStationForAudit };
+
+function isDetailedAddress(value) {
+  const address = String(value || "").trim();
+  return /[0-9０-９]/.test(address) && /[都道府県区市町村]/.test(address);
+}
+
+function isValidCoordinateCandidate(candidate) {
+  const latitude = Number(candidate?.latitude);
+  const longitude = Number(candidate?.longitude);
+  return Number.isFinite(latitude)
+    && Number.isFinite(longitude)
+    && latitude >= -90
+    && latitude <= 90
+    && longitude >= -180
+    && longitude <= 180;
+}
+
+function candidateMatchesStation(candidate, station) {
+  const candidateStation = normalizeStationForAudit(candidate?.label || "");
+  const stationGroup = normalizeStationForAudit(station || "");
+  if (!candidateStation || !stationGroup) return true;
+  const stationParts = stationGroup.split("・");
+  return stationParts.some((part) => part === candidateStation || part.includes(candidateStation) || candidateStation.includes(part));
+}
+
+export function buildLocationCorrectionQueue(rows, invalidLocationPattern, roomLocationsByListingUrl = {}) {
+  const stationRows = (rows || [])
+    .map((row) => ({ row, location: classifyLocationRow(row, invalidLocationPattern) }))
+    .filter((item) => item.location.quality === "station");
+  const stationCounts = new Map();
+
+  for (const item of stationRows) {
+    const group = normalizeStationForAudit(item.location.station) || item.location.station || item.location.name;
+    stationCounts.set(group, (stationCounts.get(group) || 0) + 1);
+  }
+
+  return stationRows.map(({ row, location }) => {
+    const listingUrl = String(row["掲載URL"] || "").trim();
+    const candidates = Array.isArray(roomLocationsByListingUrl[listingUrl]) ? roomLocationsByListingUrl[listingUrl] : [];
+    const matchingCandidates = candidates.filter((candidate) => candidateMatchesStation(candidate, location.station));
+    const sourceCandidates = matchingCandidates.filter((candidate) =>
+      isValidCoordinateCandidate(candidate) || isDetailedAddress(candidate?.address)
+    );
+    const coordinateCandidate = sourceCandidates.find((candidate) => isValidCoordinateCandidate(candidate));
+    const addressCandidate = sourceCandidates.find((candidate) => isDetailedAddress(candidate?.address));
+    const candidate = sourceCandidates.length === 1 ? sourceCandidates[0] : null;
+    const candidateType = sourceCandidates.length > 1
+      ? "multiple"
+      : coordinateCandidate ? "coordinate" : addressCandidate ? "address" : "manual";
+    const stationGroup = normalizeStationForAudit(location.station) || location.station || location.name;
+
+    return {
+      stationGroup,
+      stationCount: stationCounts.get(stationGroup) || 1,
+      storeName: location.name,
+      station: location.station,
+      listingUrl,
+      candidateType,
+      candidateCount: sourceCandidates.length,
+      candidateAddress: String(candidate?.address || "").trim(),
+      latitude: String(candidate?.latitude || "").trim(),
+      longitude: String(candidate?.longitude || "").trim(),
+      candidateNote: sourceCandidates.length > 1
+        ? sourceCandidates.map((item) => [item.label, item.address, item.latitude && item.longitude ? `${item.latitude},${item.longitude}` : ""]
+          .filter(Boolean).join(" ")).join(" | ")
+        : String(candidate?.note || "").trim(),
+    };
+  }).sort((left, right) => {
+    const priority = { coordinate: 0, address: 1, multiple: 2, manual: 3 };
+    return priority[left.candidateType] - priority[right.candidateType]
+      || right.stationCount - left.stationCount
+      || left.stationGroup.localeCompare(right.stationGroup, "ja")
+      || left.storeName.localeCompare(right.storeName, "ja");
+  });
+}
+
+export function locationCorrectionQueueToCsv(queue) {
+  const columns = [
+    ["優先度", (row, index) => index + 1],
+    ["候補種別", (row) => row.candidateType],
+    ["駅グループ", (row) => row.stationGroup],
+    ["同駅件数", (row) => row.stationCount],
+    ["店舗名", (row) => row.storeName],
+    ["最寄駅", (row) => row.station],
+    ["掲載URL", (row) => row.listingUrl],
+    ["候補数", (row) => row.candidateCount],
+    ["候補住所", (row) => row.candidateAddress],
+    ["緯度", (row) => row.latitude],
+    ["経度", (row) => row.longitude],
+    ["候補メモ", (row) => row.candidateNote],
+  ];
+  const escapeCsv = (value) => {
+    const text = String(value ?? "");
+    const safeText = /^[\t ]*[=+\-@]/.test(text) ? `'${text}` : text;
+    return `"${safeText.replace(/"/g, '""')}"`;
+  };
+  return [
+    columns.map(([label]) => escapeCsv(label)).join(","),
+    ...(queue || []).map((row, index) => columns.map(([, read]) => escapeCsv(read(row, index))).join(",")),
+  ].join("\n") + "\n";
 }
 
 export function auditLocationRows(rows, invalidLocationPattern) {

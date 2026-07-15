@@ -48,6 +48,7 @@ jobs:
       - name: Sync public assets
         shell: pwsh
         run: |
+          node .\scripts\build-location-correction-queue.mjs tokyo
           powershell -ExecutionPolicy Bypass -File .\sync-public-assets.ps1
 
       - name: Verify updated data
@@ -56,6 +57,7 @@ jobs:
           node .\scripts\validate-generated-region-data.mjs aichi
           node .\scripts\validate-generated-region-data.mjs tokyo
           node .\scripts\test-location-audit.mjs
+          node .\scripts\test-location-correction-ui.mjs
           node .\scripts\audit-region-locations.mjs aichi
           node .\scripts\audit-region-locations.mjs tokyo
           node --check .\app.js
@@ -78,6 +80,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.js docs/data.js toyota_esthe_map_points_ja.csv toyota_esthe_legacy_rows.csv esthe_ranking_snapshot.json esthe_ranking_report.md esthe_ranking_status.json esthe_update_history.json
           git add region-data/tokyo/data.js region-data/tokyo/esthe_map_points_ja.csv region-data/tokyo/esthe_legacy_rows.csv region-data/tokyo/esthe_ranking_snapshot.json region-data/tokyo/esthe_ranking_report.md region-data/tokyo/esthe_ranking_status.json region-data/tokyo/esthe_update_history.json
+          git add region-data/tokyo/location_correction_queue.csv
           git add tokyo/data.js tokyo/index.html docs/tokyo/data.js docs/tokyo/index.html
           git diff --cached --quiet
           if ($LASTEXITCODE -eq 0) {

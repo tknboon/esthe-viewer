@@ -71,6 +71,7 @@ const locationPreciseCount = document.querySelector("#locationPreciseCount");
 const locationStationCount = document.querySelector("#locationStationCount");
 const locationUnknownCount = document.querySelector("#locationUnknownCount");
 const locationAuditList = document.querySelector("#locationAuditList");
+const locationAuditHeading = document.querySelector("#locationAuditHeading");
 const archivedReviewList = document.querySelector("#archivedReviewList");
 const cardsView = document.querySelector("#cardsView");
 const tableView = document.querySelector("#tableView");
@@ -287,23 +288,38 @@ function renderStoreStats() {
 
 function renderLocationAudit() {
   const audit = buildLocationAudit(state.rows);
+  const isCorrectionQueue = CURRENT_REGION_ID === "tokyo";
   if (locationPreciseCount) locationPreciseCount.textContent = `${audit.precise.length}件`;
   if (locationStationCount) locationStationCount.textContent = `${audit.station.length}件`;
   if (locationUnknownCount) locationUnknownCount.textContent = `${audit.unknown.length}件`;
   if (!locationAuditList) return;
+  if (locationAuditHeading) {
+    locationAuditHeading.textContent = isCorrectionQueue ? "駅周辺配置の補正キュー" : "駅周辺配置が多い地点";
+  }
+  locationAuditList.classList.toggle("is-correction-queue", isCorrectionQueue);
 
-  const groups = [...audit.stationGroups.values()]
-    .filter((group) => group.rows.length >= 2)
-    .sort((left, right) => right.rows.length - left.rows.length || left.label.localeCompare(right.label, "ja"))
-    .slice(0, 12);
+  const sortedGroups = [...audit.stationGroups.values()]
+    .sort((left, right) => right.rows.length - left.rows.length || left.label.localeCompare(right.label, "ja"));
+  const groups = isCorrectionQueue
+    ? sortedGroups
+    : sortedGroups.filter((group) => group.rows.length >= 2).slice(0, 12);
 
   locationAuditList.innerHTML = groups.length
-    ? groups.map((group) => `
+    ? groups.map((group) => {
+        const selectedIndex = group.rows.findIndex((row) => row.id === state.selectedRow?.id);
+        const progressLabel = isCorrectionQueue && selectedIndex >= 0
+          ? `${selectedIndex + 1}/${group.rows.length}`
+          : `${group.rows.length}件`;
+        return `
         <button class="location-audit-item" type="button" data-location-group="${escapeHtml(group.groupKey)}">
-          <span>${escapeHtml(group.label)}</span>
-          <strong>${group.rows.length}件</strong>
+          <span>
+            <span class="location-audit-name">${escapeHtml(group.label)}</span>
+            ${isCorrectionQueue ? "<small>クリックで店舗を順番に確認</small>" : ""}
+          </span>
+          <strong>${progressLabel}</strong>
         </button>
-      `).join("")
+      `;
+      }).join("")
     : `<div class="empty-state compact">駅周辺にまとめた店舗はありません。</div>`;
 }
 
@@ -1184,9 +1200,16 @@ function handleListActionClick(event) {
 function handleLocationAuditClick(event) {
   const trigger = event.target.closest("[data-location-group]");
   if (!trigger) return;
-  const row = state.rows.find((item) =>
+  const previousGroup = getLocationQuality(state.selectedRow) === "station"
+    ? getLocationAuditGroupKey(state.selectedRow)
+    : "";
+  const rows = state.rows.filter((item) =>
     getLocationQuality(item) === "station" && getLocationAuditGroupKey(item) === trigger.dataset.locationGroup
   );
+  const selectedIndex = CURRENT_REGION_ID === "tokyo"
+    ? rows.findIndex((item) => item.id === state.selectedRow?.id)
+    : -1;
+  const row = rows[selectedIndex >= 0 ? (selectedIndex + 1) % rows.length : 0];
   if (!row) return;
   if (!state.filteredRows.some((item) => item.id === row.id)) {
     state.appliedKeyword = "";
@@ -1194,6 +1217,20 @@ function handleLocationAuditClick(event) {
     applyFilters();
   }
   focusRow(row);
+  if (CURRENT_REGION_ID === "tokyo") {
+    for (const button of locationAuditList.querySelectorAll("[data-location-group]")) {
+      const progress = button.querySelector("strong");
+      if (!progress) continue;
+      if (button === trigger) {
+        progress.textContent = `${rows.findIndex((item) => item.id === row.id) + 1}/${rows.length}`;
+      } else if (button.dataset.locationGroup === previousGroup) {
+        const previousCount = state.rows.filter((item) =>
+          getLocationQuality(item) === "station" && getLocationAuditGroupKey(item) === previousGroup
+        ).length;
+        progress.textContent = `${previousCount}件`;
+      }
+    }
+  }
 }
 
 function toggleView() {
@@ -1471,48 +1508,11 @@ function getMunicipalityFromRow(row, regionKey) {
 }
 
 function normalizeStationGroupLabel(value) {
-  const text = String(value || "")
-    .replace(/[／/]/g, "・")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (!text) return "";
-
-  return text
-    .replace(/徒歩.*$/u, "")
-    .replace(/車で.*$/u, "")
-    .replace(/から.*$/u, "")
-    .split("・")
-    .map((part) => normalizeSingleStationGroupLabel(part))
-    .filter(Boolean)
-    .join("・")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function normalizeSingleStationGroupLabel(value) {
-  const text = String(value || "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (!text) return "";
-
-  const match = text.match(/^(.+?駅)(.+)$/u);
-  if (!match) return text;
-
-  const suffix = match[2].trim();
-  if (isStationAccessSuffix(suffix)) {
-    return match[1];
-  }
-
-  return text;
+  return window.stationNormalizer?.normalizeStationGroupLabel(value) || String(value || "").trim();
 }
 
 function isStationAccessSuffix(value) {
-  const suffix = String(value || "").trim();
-  if (!suffix) return false;
-
-  return /^(\d+[A-Za-z]?番?(?:出口|口)|[A-Za-z]\d*(?:出口|口)|[東西南北]\d*[A-Za-z]?番?(?:出口|口))$/u.test(suffix);
+  return Boolean(window.stationNormalizer?.isStationAccessSuffix(value));
 }
 
 function getStationAccessLabel(value) {

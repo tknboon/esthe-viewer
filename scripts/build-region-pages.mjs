@@ -22,6 +22,13 @@ for (const region of regions) {
     `    <script>window.CURRENT_REGION_ID = ${JSON.stringify(region.regionId)};</script>\n    <script src="../config/regions.js?v=${configVersion}"></script>`
   );
 
+  const stationNormalizerVersion = await fileVersion("config/station-normalizer.js");
+  html = replaceVersionedAsset(
+    html,
+    "./config/station-normalizer.js",
+    `../config/station-normalizer.js?v=${stationNormalizerVersion}`
+  );
+
   for (const asset of ["favicon.svg", "styles.css", "firebase-config.js", "analytics-config.js", "analytics.js", "app.js"]) {
     const version = await fileVersion(asset);
     html = replaceVersionedAsset(html, `./${asset}`, `../${asset}?v=${version}`);

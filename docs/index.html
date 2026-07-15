@@ -12,6 +12,7 @@
       window.GOOGLE_MAPS_API_KEY = "AIzaSyBB5mHKn227HN1TAKEshMkDLEDDrthdOTg";
     </script>
     <script src="./config/regions.js"></script>
+    <script src="./config/station-normalizer.js"></script>
     <link rel="stylesheet" href="./styles.css?v=46351111acf7" />
   </head>
   <body>
@@ -93,7 +94,7 @@
               </div>
             </div>
             <div class="analytics-subhead location-audit-head">
-              <span class="mini-label">駅周辺配置が多い地点</span>
+              <span id="locationAuditHeading" class="mini-label">駅周辺配置が多い地点</span>
             </div>
             <div id="locationAuditList" class="location-audit-list"></div>
             <div class="analytics-subhead">
