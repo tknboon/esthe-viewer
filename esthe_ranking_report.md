@@ -1,13 +1,13 @@
 # esthe-ranking toyota monitor
 
-- checked_at: 2026-07-15T04:30:13.343Z
+- checked_at: 2026-07-15T10:47:19.626Z
 - sources: https://www.esthe-ranking.jp/nagoya/asian/, https://www.esthe-ranking.jp/sakae/asian/, https://www.esthe-ranking.jp/shinsakae/asian/, https://www.esthe-ranking.jp/kanayama/asian/, https://www.esthe-ranking.jp/kurokawa/asian/, https://www.esthe-ranking.jp/hoshigaoka/asian/, https://www.esthe-ranking.jp/moriyama/asian/, https://www.esthe-ranking.jp/otai/asian/, https://www.esthe-ranking.jp/tokaidori/asian/, https://www.esthe-ranking.jp/kasadera/asian/, https://www.esthe-ranking.jp/toyota/asian/, https://www.esthe-ranking.jp/horita/asian/, https://www.esthe-ranking.jp/tsurumai/asian/, https://www.esthe-ranking.jp/showa/asian/, https://www.esthe-ranking.jp/komaki/asian/, https://www.esthe-ranking.jp/owari/asian/, https://www.esthe-ranking.jp/chita/asian/, https://www.esthe-ranking.jp/toyohashi/asian/
 - title: 【2026年7月最新】名古屋・名駅・納屋橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】栄エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】新栄町・千種・今池エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】金山・熱田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】黒川・大曽根エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】星ヶ丘・藤が丘エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】守山・小幡エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】小田井・比良エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】東海通・高畑エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】笠寺・柴田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】西三河・豊田・岡崎エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】堀田・新瑞橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】大須・鶴舞エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】名古屋・昭和区・天白区エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】小牧・春日井エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】尾張・一宮エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】知多・大府・半田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年7月最新】東三河・豊橋・豊川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-- count_text: https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=33件 | https://www.esthe-ranking.jp/kurokawa/asian/=24件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=30件 | https://www.esthe-ranking.jp/moriyama/asian/=18件 | https://www.esthe-ranking.jp/otai/asian/=13件 | https://www.esthe-ranking.jp/tokaidori/asian/=46件 | https://www.esthe-ranking.jp/kasadera/asian/=37件 | https://www.esthe-ranking.jp/toyota/asian/=201件 | https://www.esthe-ranking.jp/horita/asian/=28件 | https://www.esthe-ranking.jp/tsurumai/asian/=12件 | https://www.esthe-ranking.jp/showa/asian/=23件 | https://www.esthe-ranking.jp/komaki/asian/=99件 | https://www.esthe-ranking.jp/owari/asian/=124件 | https://www.esthe-ranking.jp/chita/asian/=91件 | https://www.esthe-ranking.jp/toyohashi/asian/=68件
-- matched_store_count: 900
-- matched_link_count: 948
-- detail_page_count: 948
-- detailed_store_count: 948
+- count_text: https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=33件 | https://www.esthe-ranking.jp/kurokawa/asian/=24件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=30件 | https://www.esthe-ranking.jp/moriyama/asian/=18件 | https://www.esthe-ranking.jp/otai/asian/=13件 | https://www.esthe-ranking.jp/tokaidori/asian/=46件 | https://www.esthe-ranking.jp/kasadera/asian/=37件 | https://www.esthe-ranking.jp/toyota/asian/=200件 | https://www.esthe-ranking.jp/horita/asian/=28件 | https://www.esthe-ranking.jp/tsurumai/asian/=12件 | https://www.esthe-ranking.jp/showa/asian/=23件 | https://www.esthe-ranking.jp/komaki/asian/=98件 | https://www.esthe-ranking.jp/owari/asian/=124件 | https://www.esthe-ranking.jp/chita/asian/=91件 | https://www.esthe-ranking.jp/toyohashi/asian/=67件
+- matched_store_count: 897
+- matched_link_count: 945
+- detail_page_count: 945
+- detailed_store_count: 945
 
 ## Source Summaries
 - url: https://www.esthe-ranking.jp/nagoya/asian/
@@ -62,9 +62,9 @@
   - matched_link_count: 37
 - url: https://www.esthe-ranking.jp/toyota/asian/
   - title: 【2026年7月最新】西三河・豊田・岡崎エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 201件
-  - matched_store_count: 198
-  - matched_link_count: 201
+  - count_text: 200件
+  - matched_store_count: 197
+  - matched_link_count: 200
 - url: https://www.esthe-ranking.jp/horita/asian/
   - title: 【2026年7月最新】堀田・新瑞橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 28件
@@ -82,9 +82,9 @@
   - matched_link_count: 23
 - url: https://www.esthe-ranking.jp/komaki/asian/
   - title: 【2026年7月最新】小牧・春日井エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 99件
-  - matched_store_count: 99
-  - matched_link_count: 99
+  - count_text: 98件
+  - matched_store_count: 98
+  - matched_link_count: 98
 - url: https://www.esthe-ranking.jp/owari/asian/
   - title: 【2026年7月最新】尾張・一宮エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 124件
@@ -97,23 +97,33 @@
   - matched_link_count: 91
 - url: https://www.esthe-ranking.jp/toyohashi/asian/
   - title: 【2026年7月最新】東三河・豊橋・豊川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 68件
-  - matched_store_count: 68
-  - matched_link_count: 68
+  - count_text: 67件
+  - matched_store_count: 67
+  - matched_link_count: 67
 
 ## Added
-- none
+- 20代の姫様/金山駅・尾頭橋駅
+- そら/土橋駅
+- 爽愛（ソウアイ）/三河豊田駅
 
 ## Removed
-- none
+- HARUMOE（ハルモエ）/土橋駅
+- Sweet girl/三河安城駅・北岡崎駅・新豊田駅・刈谷駅
+- 格安極楽基地/金山駅・尾頭橋駅
+- 甜心（てんしん）/小牧駅
+- 遊楽園/南栄駅
+- 楼蘭香（ロウランシャン）/三河豊田駅
 
 ## Changed
-- none
+- 掲載件数表示: https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=33件 | https://www.esthe-ranking.jp/kurokawa/asian/=24件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=30件 | https://www.esthe-ranking.jp/moriyama/asian/=18件 | https://www.esthe-ranking.jp/otai/asian/=13件 | https://www.esthe-ranking.jp/tokaidori/asian/=46件 | https://www.esthe-ranking.jp/kasadera/asian/=37件 | https://www.esthe-ranking.jp/toyota/asian/=201件 | https://www.esthe-ranking.jp/horita/asian/=28件 | https://www.esthe-ranking.jp/tsurumai/asian/=12件 | https://www.esthe-ranking.jp/showa/asian/=23件 | https://www.esthe-ranking.jp/komaki/asian/=99件 | https://www.esthe-ranking.jp/owari/asian/=124件 | https://www.esthe-ranking.jp/chita/asian/=91件 | https://www.esthe-ranking.jp/toyohashi/asian/=68件 -> https://www.esthe-ranking.jp/nagoya/asian/=41件 | https://www.esthe-ranking.jp/sakae/asian/=24件 | https://www.esthe-ranking.jp/shinsakae/asian/=36件 | https://www.esthe-ranking.jp/kanayama/asian/=33件 | https://www.esthe-ranking.jp/kurokawa/asian/=24件 | https://www.esthe-ranking.jp/hoshigaoka/asian/=30件 | https://www.esthe-ranking.jp/moriyama/asian/=18件 | https://www.esthe-ranking.jp/otai/asian/=13件 | https://www.esthe-ranking.jp/tokaidori/asian/=46件 | https://www.esthe-ranking.jp/kasadera/asian/=37件 | https://www.esthe-ranking.jp/toyota/asian/=200件 | https://www.esthe-ranking.jp/horita/asian/=28件 | https://www.esthe-ranking.jp/tsurumai/asian/=12件 | https://www.esthe-ranking.jp/showa/asian/=23件 | https://www.esthe-ranking.jp/komaki/asian/=98件 | https://www.esthe-ranking.jp/owari/asian/=124件 | https://www.esthe-ranking.jp/chita/asian/=91件 | https://www.esthe-ranking.jp/toyohashi/asian/=67件
+- 店舗リンク数: 948 -> 945
+- 詳細取得件数: 948 -> 945
 
 ## Current Stores
 - ～豊田来来～おいでん
 - 19歳の美少女
 - 1番女子
+- 20代の姫様
 - 2倍ドキッ!
 - 365
 - A5少女
@@ -174,7 +184,6 @@
 - Happiness（ハピネス）
 - HAPPY GIRL（ハッピーガール）
 - HAPPY HONEY（ハッピーハニー）
-- HARUMOE（ハルモエ）
 - HeartのA（ハートのエース）
 - Hello.Sir
 - HIBIKI
@@ -282,7 +291,6 @@
 - Summer Land（サマーランド）
 - SUPER HATENA
 - Sweet Baby（スウィートベイビー）
-- Sweet girl
 - Sweet girl（スイートガール）
 - Sweet Kiss（スイートキス）
 - Sweet Queen
@@ -395,6 +403,7 @@
 - セレブ秘書
 - ソウル＆SOUL
 - ソウルメイトリラクゼーション
+- そら
 - ソレイユ
 - ダーリン
 - ダーリンこっちに来てね
@@ -618,7 +627,6 @@
 - 快感パニック
 - 海の癒
 - 海棠花～ベゴニア～
-- 格安極楽基地
 - 楽（らく）
 - 楽しい
 - 楽のや
@@ -773,6 +781,7 @@
 - 千喜
 - 千林タイム
 - 素敵な夜
+- 爽愛（ソウアイ）
 - 台湾Baby
 - 台湾Honey（ハニー）
 - 台湾かぐや
@@ -799,7 +808,6 @@
 - 天使の手（てんしのて）
 - 天使の心
 - 天使の誘惑
-- 甜心（てんしん）
 - 東海・匠庵
 - 桃の花
 - 桃の花（もものはな）
@@ -976,7 +984,6 @@
 - 誘惑の瞬間
 - 誘惑ベイビー
 - 誘惑ルーム
-- 遊楽園
 - 妖艶
 - 陽
 - 養生館
@@ -998,7 +1005,6 @@
 - 恋人の部屋
 - 恋人空間
 - 恋姫
-- 楼蘭香（ロウランシャン）
 - 浪花
 - 浪漫の時間
 - 和（なごみ）
