@@ -24,9 +24,9 @@ for (const region of regions) {
 
   for (const asset of ["favicon.svg", "styles.css", "firebase-config.js", "analytics-config.js", "analytics.js", "app.js"]) {
     const version = await fileVersion(asset);
-    html = replaceRequired(html, `./${asset}`, `../${asset}?v=${version}`);
+    html = replaceVersionedAsset(html, `./${asset}`, `../${asset}?v=${version}`);
   }
-  html = replaceRequired(html, './data.js', `./data.js?v=${dataVersion}`);
+  html = replaceVersionedAsset(html, "./data.js", `./data.js?v=${dataVersion}`);
 
   const outputDirectory = path.join(ROOT, region.regionId);
   await fs.mkdir(outputDirectory, { recursive: true });
@@ -44,6 +44,15 @@ function replaceRequired(source, target, replacement) {
     throw new Error(`Region page template token not found: ${target}`);
   }
   return source.replace(target, replacement);
+}
+
+function replaceVersionedAsset(source, target, replacement) {
+  const escapedTarget = target.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`${escapedTarget}(?:\\?v=[^"']+)?`);
+  if (!pattern.test(source)) {
+    throw new Error(`Region page asset not found: ${target}`);
+  }
+  return source.replace(pattern, replacement);
 }
 
 console.log(`region pages built: ${regions.map((region) => region.regionId).join(", ")}`);

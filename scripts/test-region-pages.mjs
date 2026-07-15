@@ -10,6 +10,8 @@ assert.match(html, /data-region-link="tokyo" href="\/tokyo\/"/);
 assert.match(html, /src="\.\.\/config\/regions\.js\?v=[a-f0-9]{12}"/);
 assert.match(html, /src="\.\/data\.js\?v=[a-f0-9]{12}"/);
 assert.match(html, /src="\.\.\/app\.js\?v=[a-f0-9]{12}"/);
+assert.doesNotMatch(html, /app\.js\?v=[a-f0-9]{12}\?v=/);
+assert.doesNotMatch(html, /styles\.css\?v=[a-f0-9]{12}\?v=/);
 assert.doesNotMatch(html, /src="\.\/app\.js"/);
 assert.match(data, /window\.storeData = /);
 
