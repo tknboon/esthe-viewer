@@ -42,9 +42,9 @@
     errorMessage: "",
     documentsMeta: {},
     lastBackupAt: "",
-    regionalWriteFailedAt: "",
-    regionalWriteFailedDocId: "",
-    regionalWriteErrorMessage: "",
+    legacyWriteFailedAt: "",
+    legacyWriteFailedDocId: "",
+    legacyWriteErrorMessage: "",
   },
 };
 
@@ -1979,11 +1979,11 @@ function renderSyncMeta() {
   const backupText = state.sharedSync.lastBackupAt
     ? `バックアップ: ${formatSharedTimestamp(state.sharedSync.lastBackupAt)}`
     : "バックアップ: まだありません";
-  const regionalWarningText = state.sharedSync.regionalWriteFailedAt
-    ? `地域保存警告: ${state.sharedSync.regionalWriteFailedDocId || "不明"} / ${formatSharedTimestamp(state.sharedSync.regionalWriteFailedAt)}`
+  const legacyWarningText = state.sharedSync.legacyWriteFailedAt
+    ? `旧データ保存警告: ${state.sharedSync.legacyWriteFailedDocId || "不明"} / ${formatSharedTimestamp(state.sharedSync.legacyWriteFailedAt)}`
     : "";
 
-  syncMetaText.textContent = [sharedText, backupText, regionalWarningText].filter(Boolean).join(" / ");
+  syncMetaText.textContent = [sharedText, backupText, legacyWarningText].filter(Boolean).join(" / ");
 }
 
 function renderEditingAccess() {
@@ -2253,6 +2253,10 @@ function saveSharedDocument(docId, data) {
 }
 
 function getSharedDocumentRef(docId) {
+  return getRegionalSharedDocumentRef(docId);
+}
+
+function getLegacySharedDocumentRef(docId) {
   return state.sharedSync.db.collection("sharedState").doc(docId);
 }
 
@@ -2272,26 +2276,26 @@ async function writeSharedDocumentRefs(docId, data) {
   await getSharedDocumentRef(docId).set(payload);
 
   try {
-    await getRegionalSharedDocumentRef(docId).set(payload);
-    clearRegionalWriteFailure();
+    await getLegacySharedDocumentRef(docId).set(payload);
+    clearLegacyWriteFailure();
   } catch (error) {
-    markRegionalWriteFailure(docId, error);
-    console.warn("regional shared document save failed", docId, error);
+    markLegacyWriteFailure(docId, error);
+    console.warn("legacy shared document save failed", docId, error);
   }
 }
 
-function markRegionalWriteFailure(docId, error) {
-  state.sharedSync.regionalWriteFailedAt = new Date().toISOString();
-  state.sharedSync.regionalWriteFailedDocId = docId;
-  state.sharedSync.regionalWriteErrorMessage = error?.message || String(error || "");
+function markLegacyWriteFailure(docId, error) {
+  state.sharedSync.legacyWriteFailedAt = new Date().toISOString();
+  state.sharedSync.legacyWriteFailedDocId = docId;
+  state.sharedSync.legacyWriteErrorMessage = error?.message || String(error || "");
   renderSyncMeta();
 }
 
-function clearRegionalWriteFailure() {
-  if (!state.sharedSync.regionalWriteFailedAt) return;
-  state.sharedSync.regionalWriteFailedAt = "";
-  state.sharedSync.regionalWriteFailedDocId = "";
-  state.sharedSync.regionalWriteErrorMessage = "";
+function clearLegacyWriteFailure() {
+  if (!state.sharedSync.legacyWriteFailedAt) return;
+  state.sharedSync.legacyWriteFailedAt = "";
+  state.sharedSync.legacyWriteFailedDocId = "";
+  state.sharedSync.legacyWriteErrorMessage = "";
   renderSyncMeta();
 }
 
