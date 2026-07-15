@@ -11,6 +11,9 @@ vm.runInContext(source, sandbox);
 const aichi = sandbox.window.REGIONS.aichi;
 
 assert.equal(aichi.regionId, "aichi");
+const aichiInvalidLocationPattern = new RegExp(aichi.invalidLocationPattern);
+assert.equal(aichiInvalidLocationPattern.test("■愛知県"), true);
+assert.equal(aichiInvalidLocationPattern.test("愛知県名古屋市中区栄1丁目"), false);
 assert.equal(aichi.manualStationOverrides["https://www.esthe-ranking.jp/sakae/shop-detail/f2e48aef-65d9-4065-8b47-e367232c1384/"], "丸の内駅・伏見駅");
 assert.equal(aichi.recoveredRemovedHistory["2026-05-07"].length, 23);
 assert.match("愛知県全域", new RegExp(aichi.invalidLocationPattern));

@@ -10,7 +10,7 @@ window.REGIONS = {
     profileMapZoom: 11,
     geocodeSuffix: "愛知県",
     geocodeScopePattern: "愛知県|豊田市|岡崎市|安城市|刈谷市|西尾市",
-    invalidLocationPattern: "愛知県全域|東京エリア簡単検索|お探しのエリアをクリック",
+    invalidLocationPattern: "^■?愛知県$|愛知県全域|東京エリア簡単検索|お探しのエリアをクリック",
     areaLabels: {
       nagoya: "名古屋・名駅・納屋橋",
       sakae: "栄",

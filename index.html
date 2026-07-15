@@ -76,6 +76,27 @@
               </div>
             </div>
             <div class="analytics-subhead">
+              <span class="mini-label">位置精度</span>
+            </div>
+            <div class="location-quality-grid">
+              <div class="location-quality-item is-precise">
+                <span>住所・座標</span>
+                <strong id="locationPreciseCount">0件</strong>
+              </div>
+              <div class="location-quality-item is-station">
+                <span>駅周辺</span>
+                <strong id="locationStationCount">0件</strong>
+              </div>
+              <div class="location-quality-item is-unknown">
+                <span>位置不明</span>
+                <strong id="locationUnknownCount">0件</strong>
+              </div>
+            </div>
+            <div class="analytics-subhead location-audit-head">
+              <span class="mini-label">駅周辺配置が多い地点</span>
+            </div>
+            <div id="locationAuditList" class="location-audit-list"></div>
+            <div class="analytics-subhead">
               <span class="mini-label">28日間の増減</span>
             </div>
             <div id="storeTrendBars" class="store-trend-bars">

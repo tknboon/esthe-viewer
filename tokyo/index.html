@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>エステ情報を読み込み中</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=c693125299a2" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=869f0166ed09" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet" />
@@ -12,8 +12,8 @@
       window.GOOGLE_MAPS_API_KEY = "AIzaSyBB5mHKn227HN1TAKEshMkDLEDDrthdOTg";
     </script>
     <script>window.CURRENT_REGION_ID = "tokyo";</script>
-    <script src="../config/regions.js?v=5cafc8f0eff6"></script>
-    <link rel="stylesheet" href="../styles.css?v=8dd9248f4c90" />
+    <script src="../config/regions.js?v=4e31786319fa"></script>
+    <link rel="stylesheet" href="../styles.css?v=baba5a821025" />
   </head>
   <body>
     <div class="app-shell">
@@ -76,6 +76,27 @@
                 <strong id="storeLatestChangeText" class="store-stat-value">開店 0 / 閉店 0</strong>
               </div>
             </div>
+            <div class="analytics-subhead">
+              <span class="mini-label">位置精度</span>
+            </div>
+            <div class="location-quality-grid">
+              <div class="location-quality-item is-precise">
+                <span>住所・座標</span>
+                <strong id="locationPreciseCount">0件</strong>
+              </div>
+              <div class="location-quality-item is-station">
+                <span>駅周辺</span>
+                <strong id="locationStationCount">0件</strong>
+              </div>
+              <div class="location-quality-item is-unknown">
+                <span>位置不明</span>
+                <strong id="locationUnknownCount">0件</strong>
+              </div>
+            </div>
+            <div class="analytics-subhead location-audit-head">
+              <span class="mini-label">駅周辺配置が多い地点</span>
+            </div>
+            <div id="locationAuditList" class="location-audit-list"></div>
             <div class="analytics-subhead">
               <span class="mini-label">28日間の増減</span>
             </div>
@@ -353,15 +374,15 @@
       </main>
     </div>
 
-    <script src="./data.js?v=5c238c6bd3dd"></script>
-    <script src="../firebase-config.js?v=58fd102eece1"></script>
-    <script src="../analytics-config.js?v=3b0d13b6cb1f"></script>
-    <script src="../analytics.js?v=b5be7162aa8b"></script>
+    <script src="./data.js?v=7fc0f237b3ca"></script>
+    <script src="../firebase-config.js?v=25620fb973f2"></script>
+    <script src="../analytics-config.js?v=fa2da83534a0"></script>
+    <script src="../analytics.js?v=dbe763957a8e"></script>
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore-compat.js"></script>
     <script src="https://unpkg.com/@googlemaps/markerclusterer@2.6.2/dist/index.min.js"></script>
-    <script src="../app.js?v=1bcb3656be25"></script>
+    <script src="../app.js?v=1f4905656f51"></script>
     <script
       async
       defer

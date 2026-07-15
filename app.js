@@ -67,6 +67,10 @@ const storeNet7Text = document.querySelector("#storeNet7Text");
 const storeNet30Text = document.querySelector("#storeNet30Text");
 const storeLatestChangeText = document.querySelector("#storeLatestChangeText");
 const storeTrendBars = document.querySelector("#storeTrendBars");
+const locationPreciseCount = document.querySelector("#locationPreciseCount");
+const locationStationCount = document.querySelector("#locationStationCount");
+const locationUnknownCount = document.querySelector("#locationUnknownCount");
+const locationAuditList = document.querySelector("#locationAuditList");
 const archivedReviewList = document.querySelector("#archivedReviewList");
 const cardsView = document.querySelector("#cardsView");
 const tableView = document.querySelector("#tableView");
@@ -277,7 +281,76 @@ function renderStoreStats() {
     storeLatestChangeText.textContent = `開店 ${recent7.added} / 閉店 ${recent7.removed}`;
   }
 
+  renderLocationAudit();
   renderStoreTrendBars(buildDailyHistoryEntries(history, 28));
+}
+
+function renderLocationAudit() {
+  const audit = buildLocationAudit(state.rows);
+  if (locationPreciseCount) locationPreciseCount.textContent = `${audit.precise.length}件`;
+  if (locationStationCount) locationStationCount.textContent = `${audit.station.length}件`;
+  if (locationUnknownCount) locationUnknownCount.textContent = `${audit.unknown.length}件`;
+  if (!locationAuditList) return;
+
+  const groups = [...audit.stationGroups.values()]
+    .filter((group) => group.rows.length >= 2)
+    .sort((left, right) => right.rows.length - left.rows.length || left.label.localeCompare(right.label, "ja"))
+    .slice(0, 12);
+
+  locationAuditList.innerHTML = groups.length
+    ? groups.map((group) => `
+        <button class="location-audit-item" type="button" data-location-group="${escapeHtml(group.groupKey)}">
+          <span>${escapeHtml(group.label)}</span>
+          <strong>${group.rows.length}件</strong>
+        </button>
+      `).join("")
+    : `<div class="empty-state compact">駅周辺にまとめた店舗はありません。</div>`;
+}
+
+function buildLocationAudit(rows) {
+  const audit = {
+    precise: [],
+    station: [],
+    unknown: [],
+    stationGroups: new Map(),
+  };
+
+  for (const row of rows || []) {
+    const quality = getLocationQuality(row);
+    audit[quality].push(row);
+    if (quality !== "station") continue;
+
+    const groupKey = getLocationAuditGroupKey(row);
+    if (!audit.stationGroups.has(groupKey)) {
+      audit.stationGroups.set(groupKey, { groupKey, label: groupKey, rows: [] });
+    }
+    audit.stationGroups.get(groupKey).rows.push(row);
+  }
+
+  return audit;
+}
+
+function getLocationAuditGroupKey(row) {
+  return row?.stationGroup || normalizeStationGroupLabel(row?.station || "") || row?.station || row?.name || "位置不明";
+}
+
+function getLocationQuality(row) {
+  if (!row) return "unknown";
+  const profileAddress = normalizeAddressValue(getStoreProfile(row)?.address || "");
+  const hasCoordinates = Boolean(
+    normalizeLatLng(MANUAL_LOCATION_OVERRIDES[row.listingUrl]) ||
+    (row.latitude && row.longitude)
+  );
+  if (hasCoordinates || hasDetailedAddressLocation(profileAddress) || hasDetailedAddressLocation(row.location)) {
+    return "precise";
+  }
+  return row.station ? "station" : "unknown";
+}
+
+function hasDetailedAddressLocation(value) {
+  const location = String(value || "").trim();
+  if (!hasUsableAddressLocation(location)) return false;
+  return /[0-9０-９]/.test(location) && /[都道府県区市町村]/.test(location);
 }
 
 function calculateHistoryNetChange(history, days) {
@@ -1084,6 +1157,7 @@ function bindEvents() {
   cardsView?.addEventListener("click", handleListActionClick);
   tableBody?.addEventListener("click", handleListActionClick);
   mapList?.addEventListener("click", handleListActionClick);
+  locationAuditList?.addEventListener("click", handleLocationAuditClick);
   sidebarTabs.forEach((button) => button.addEventListener("click", handleSidebarTabClick));
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
@@ -1104,6 +1178,21 @@ function handleListActionClick(event) {
   if (!trigger) return;
   const row = state.filteredRows.find((item) => item.id === trigger.dataset.focusId);
   if (!row) return;
+  focusRow(row);
+}
+
+function handleLocationAuditClick(event) {
+  const trigger = event.target.closest("[data-location-group]");
+  if (!trigger) return;
+  const row = state.rows.find((item) =>
+    getLocationQuality(item) === "station" && getLocationAuditGroupKey(item) === trigger.dataset.locationGroup
+  );
+  if (!row) return;
+  if (!state.filteredRows.some((item) => item.id === row.id)) {
+    state.appliedKeyword = "";
+    if (searchInput) searchInput.value = "";
+    applyFilters();
+  }
   focusRow(row);
 }
 
@@ -2178,6 +2267,7 @@ function startSharedListeners() {
     writeRegionalLocalObject("storeProfiles", state.storeProfilesByKey);
     state.rows.forEach(applyProfileLocationToRow);
     primeArchivedProfileDetails();
+    renderLocationAudit();
     renderSelectedStore();
     renderUpdateHistory();
     syncMapWithFilters();
@@ -2595,6 +2685,7 @@ function handleStoreProfileSave() {
 
   writeStoreProfiles();
   applyProfileLocationToRow(state.selectedRow);
+  renderLocationAudit();
   renderStoreProfileSummary(state.selectedRow);
   renderSelectedStore();
   setStoreProfileEditing(false, true);
@@ -3663,8 +3754,11 @@ function ensureStreetViewPanorama() {
 
 function queueGeocode(row, shouldFocus = false) {
   if (!row.locationQuery) return;
-  const exists = state.geocodeQueue.some((item) => item.row.id === row.id);
-  if (exists) return;
+  const existing = state.geocodeQueue.find((item) => item.row.id === row.id);
+  if (existing) {
+    existing.shouldFocus = existing.shouldFocus || shouldFocus;
+    return;
+  }
   state.geocodeQueue.push({ row, shouldFocus });
   runGeocodeQueue();
 }
