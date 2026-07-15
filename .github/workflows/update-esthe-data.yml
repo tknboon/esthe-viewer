@@ -57,6 +57,7 @@ jobs:
           node .\scripts\validate-generated-region-data.mjs aichi
           node .\scripts\validate-generated-region-data.mjs tokyo
           node .\scripts\test-location-audit.mjs
+          node .\scripts\test-location-candidate.mjs
           node .\scripts\test-location-correction-ui.mjs
           node .\scripts\audit-region-locations.mjs aichi
           node .\scripts\audit-region-locations.mjs tokyo

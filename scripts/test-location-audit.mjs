@@ -90,6 +90,24 @@ const invalidCoordinateQueue = buildLocationCorrectionQueue([
 });
 assert.equal(invalidCoordinateQueue[0].candidateType, "manual");
 
+const blankCoordinateQueue = buildLocationCorrectionQueue([
+  { "店舗名": "空座標", "最寄駅": "新宿駅", "住所または座標": "東京都", "掲載URL": "https://example.com/blank" },
+], invalidLocationPattern, {
+  "https://example.com/blank": [{ label: "新宿駅", latitude: "", longitude: "" }],
+});
+assert.equal(blankCoordinateQueue[0].candidateType, "manual");
+assert.equal(blankCoordinateQueue[0].candidateCount, 0);
+
+const safeCoordinateQueue = buildLocationCorrectionQueue([
+  { "店舗名": "安全候補", "最寄駅": "新宿駅西口", "住所または座標": "東京都", "掲載URL": "https://example.com/safe" },
+], invalidLocationPattern, {
+  "https://example.com/safe": [{ label: "新宿駅西口", latitude: "35.690", longitude: "139.700" }],
+}, {
+  geocodeBounds: { south: 35.45, west: 139.2, north: 35.95, east: 140.15 },
+});
+assert.equal(safeCoordinateQueue[0].autoApplicable, true);
+assert.equal(safeCoordinateQueue[0].holdReason, "");
+
 const multipleCandidateQueue = buildLocationCorrectionQueue([
   { "店舗名": "複数候補", "最寄駅": "新宿駅・大久保駅", "住所または座標": "東京都", "掲載URL": "https://example.com/multiple" },
 ], invalidLocationPattern, {

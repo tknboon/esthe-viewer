@@ -17,11 +17,13 @@ const invalidLocationPattern = new RegExp(sandbox.window.REGIONS[regionId]?.inva
 const queue = buildLocationCorrectionQueue(
   sandbox.window.storeData || [],
   invalidLocationPattern,
-  sandbox.window.storeMeta?.roomLocationsByListingUrl || {}
+  sandbox.window.storeMeta?.roomLocationsByListingUrl || {},
+  { geocodeBounds: sandbox.window.REGIONS[regionId]?.geocodeBounds || null }
 );
 const outputPath = path.join(path.dirname(path.join(root, monitorRegion.outputFiles.data)), "location_correction_queue.csv");
 fs.writeFileSync(outputPath, `\uFEFF${locationCorrectionQueueToCsv(queue)}`, "utf8");
 
 const candidateCount = queue.filter((row) => row.candidateType !== "manual").length;
-console.log(`${regionId} correction queue: ${queue.length} stores / ${candidateCount} source candidates`);
+const autoApplicableCount = queue.filter((row) => row.autoApplicable).length;
+console.log(`${regionId} correction queue: ${queue.length} stores / ${candidateCount} source candidates / ${autoApplicableCount} auto applicable`);
 console.log(outputPath);

@@ -355,7 +355,8 @@ function getLocationQuality(row) {
   const profileAddress = normalizeAddressValue(getStoreProfile(row)?.address || "");
   const hasCoordinates = Boolean(
     normalizeLatLng(MANUAL_LOCATION_OVERRIDES[row.listingUrl]) ||
-    (row.latitude && row.longitude)
+    row.hasCoordinates ||
+    row.hasSourceCoordinates
   );
   if (hasCoordinates || hasDetailedAddressLocation(profileAddress) || hasDetailedAddressLocation(row.location)) {
     return "precise";
@@ -1233,6 +1234,19 @@ function handleLocationAuditClick(event) {
   }
 }
 
+function getSafeSourceCoordinateCandidate(listingUrl, station) {
+  if (CURRENT_REGION_ID !== "tokyo" || !listingUrl || !REGION_GEOCODE_BOUNDS) return null;
+  const candidates = window.storeMeta?.roomLocationsByListingUrl?.[listingUrl];
+  const selector = window.LocationCandidate?.selectSafeSingleCoordinateCandidate;
+  if (!Array.isArray(candidates) || typeof selector !== "function") return null;
+  return selector({
+    station,
+    candidates,
+    bounds: REGION_GEOCODE_BOUNDS,
+    normalizeStationGroupLabel,
+  }).candidate;
+}
+
 function toggleView() {
   if (!cardsView || !tableView) return;
   state.view = state.view === "cards" ? "table" : "cards";
@@ -1901,7 +1915,13 @@ function normalizeRow(row, index) {
   const hasCoordinates = Boolean(latitude && longitude);
   const useCoordinates = hasCoordinates && !hasUsableAddressLocation(location);
   const manualLatLng = normalizeLatLng(MANUAL_LOCATION_OVERRIDES[listingUrl]);
-  const baseLatLng = manualLatLng || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : null);
+  const sourceCoordinateCandidate = !manualLatLng && !hasCoordinates && !hasDetailedAddressLocation(location)
+    ? getSafeSourceCoordinateCandidate(listingUrl, station)
+    : null;
+  const sourceLatLng = sourceCoordinateCandidate
+    ? { lat: sourceCoordinateCandidate.lat, lng: sourceCoordinateCandidate.lng }
+    : null;
+  const baseLatLng = manualLatLng || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : sourceLatLng);
   const baseLocationQuery = baseLatLng ? `${baseLatLng.lat},${baseLatLng.lng}` : buildLocationQuery(name, station, location, notes);
 
   const normalizedRow = {
@@ -1922,6 +1942,7 @@ function normalizeRow(row, index) {
     municipality,
     municipalityLabels,
     hasCoordinates,
+    hasSourceCoordinates: Boolean(sourceLatLng),
     baseLatLng,
     latLng: baseLatLng,
     baseLocationQuery,

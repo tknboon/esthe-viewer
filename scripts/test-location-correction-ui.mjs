@@ -13,5 +13,8 @@ assert.match(html, /id="locationAuditHeading"/);
 assert.match(styles, /\.location-audit-list\.is-correction-queue[\s\S]*max-height: 360px/);
 assert.match(workflow, /build-location-correction-queue\.mjs tokyo/);
 assert.match(workflow, /region-data\/tokyo\/location_correction_queue\.csv/);
+assert.match(html, /config\/location-candidate\.js/);
+assert.match(app, /getSafeSourceCoordinateCandidate/);
+assert.match(app, /CURRENT_REGION_ID !== "tokyo"/);
 
 console.log("location correction UI contracts: ok");

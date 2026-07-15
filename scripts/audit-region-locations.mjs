@@ -7,6 +7,7 @@ import { getMonitorRegion } from "../config/monitor-regions.mjs";
 
 const require = createRequire(import.meta.url);
 const { normalizeStationGroupLabel: normalizeStationForAudit } = require("../config/station-normalizer.js");
+const { hasDetailedAddress, readLatLng, selectSafeSingleCoordinateCandidate } = require("../config/location-candidate.js");
 
 export function classifyLocationRow(row, invalidLocationPattern) {
   const location = String(row["住所または座標"] || "").trim();
@@ -33,19 +34,11 @@ export function classifyLocationRow(row, invalidLocationPattern) {
 export { normalizeStationForAudit };
 
 function isDetailedAddress(value) {
-  const address = String(value || "").trim();
-  return /[0-9０-９]/.test(address) && /[都道府県区市町村]/.test(address);
+  return hasDetailedAddress(value);
 }
 
 function isValidCoordinateCandidate(candidate) {
-  const latitude = Number(candidate?.latitude);
-  const longitude = Number(candidate?.longitude);
-  return Number.isFinite(latitude)
-    && Number.isFinite(longitude)
-    && latitude >= -90
-    && latitude <= 90
-    && longitude >= -180
-    && longitude <= 180;
+  return Boolean(readLatLng(candidate));
 }
 
 function candidateMatchesStation(candidate, station) {
@@ -56,7 +49,7 @@ function candidateMatchesStation(candidate, station) {
   return stationParts.some((part) => part === candidateStation || part.includes(candidateStation) || candidateStation.includes(part));
 }
 
-export function buildLocationCorrectionQueue(rows, invalidLocationPattern, roomLocationsByListingUrl = {}) {
+export function buildLocationCorrectionQueue(rows, invalidLocationPattern, roomLocationsByListingUrl = {}, options = {}) {
   const stationRows = (rows || [])
     .map((row) => ({ row, location: classifyLocationRow(row, invalidLocationPattern) }))
     .filter((item) => item.location.quality === "station");
@@ -81,6 +74,12 @@ export function buildLocationCorrectionQueue(rows, invalidLocationPattern, roomL
       ? "multiple"
       : coordinateCandidate ? "coordinate" : addressCandidate ? "address" : "manual";
     const stationGroup = normalizeStationForAudit(location.station) || location.station || location.name;
+    const autoSelection = selectSafeSingleCoordinateCandidate({
+      station: location.station,
+      candidates,
+      bounds: options.geocodeBounds || null,
+      normalizeStationGroupLabel: normalizeStationForAudit,
+    });
 
     return {
       stationGroup,
@@ -90,6 +89,8 @@ export function buildLocationCorrectionQueue(rows, invalidLocationPattern, roomL
       listingUrl,
       candidateType,
       candidateCount: sourceCandidates.length,
+      autoApplicable: Boolean(autoSelection.candidate),
+      holdReason: autoSelection.reason,
       candidateAddress: String(candidate?.address || "").trim(),
       latitude: String(candidate?.latitude || "").trim(),
       longitude: String(candidate?.longitude || "").trim(),
@@ -117,6 +118,8 @@ export function locationCorrectionQueueToCsv(queue) {
     ["最寄駅", (row) => row.station],
     ["掲載URL", (row) => row.listingUrl],
     ["候補数", (row) => row.candidateCount],
+    ["自動適用", (row) => row.autoApplicable ? "可" : "保留"],
+    ["保留理由", (row) => row.holdReason],
     ["候補住所", (row) => row.candidateAddress],
     ["緯度", (row) => row.latitude],
     ["経度", (row) => row.longitude],

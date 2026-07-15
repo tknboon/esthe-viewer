@@ -29,6 +29,13 @@ for (const region of regions) {
     `../config/station-normalizer.js?v=${stationNormalizerVersion}`
   );
 
+  const locationCandidateVersion = await fileVersion("config/location-candidate.js");
+  html = replaceVersionedAsset(
+    html,
+    "./config/location-candidate.js",
+    `../config/location-candidate.js?v=${locationCandidateVersion}`
+  );
+
   for (const asset of ["favicon.svg", "styles.css", "firebase-config.js", "analytics-config.js", "analytics.js", "app.js"]) {
     const version = await fileVersion(asset);
     html = replaceVersionedAsset(html, `./${asset}`, `../${asset}?v=${version}`);
