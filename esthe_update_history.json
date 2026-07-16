@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-07-16",
+    "fetchedAt": "2026-07-16T10:56:54.164Z",
+    "added": [
+      "オレンジBaby/二川駅",
+      "八月（はちがつ）/大高駅"
+    ],
+    "removed": [
+      "エリ☆/大曽根駅",
+      "夏の夜/東海通駅",
+      "世々楽/木曽川駅・江南駅",
+      "天使のキッス/稲沢駅・開明駅",
+      "恋人（こいびと）/尾張一宮駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-15",
     "fetchedAt": "2026-07-15T10:47:19.626Z",
     "added": [
@@ -707,14 +724,6 @@
   {
     "dayKey": "2026-05-11",
     "fetchedAt": "2026-05-11T12:28:48.536Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-05-10",
-    "fetchedAt": "2026-05-10T10:28:13.612Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
