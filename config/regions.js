@@ -235,6 +235,10 @@ window.REGIONS = {
         lat: 35.7074,
         lng: 139.7746,
       },
+      "https://www.esthe-ranking.jp/nishitokyo/shop-detail/6472a1b1-a254-487c-848f-61621b808d81/": {
+        lat: 35.7723459,
+        lng: 139.5212602,
+      },
     },
     recoveredRemovedHistory: {},
     roomLocationOverrides: {},

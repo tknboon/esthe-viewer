@@ -1,0 +1,19 @@
+[
+  {
+    "storeName": "New Face",
+    "station": "東新宿駅A1出口",
+    "listingUrl": "https://www.esthe-ranking.jp/shinjuku/shop-detail/a6327aee-ee87-4a71-8bc6-7017a2d57cf0/",
+    "officialUrl": "https://hi-msg.com/newface/",
+    "resolvedUrl": "https://hi-msg.com/newface/",
+    "httpStatus": 200,
+    "mapCount": 1,
+    "decision": "hold",
+    "reason": "駅から7.0km・範囲外",
+    "label": "Niku no Hanamasa (Sangenjaya)",
+    "latitude": 35.64325493559869,
+    "longitude": 139.66907856404433,
+    "stationLatitude": 35.6978967,
+    "stationLongitude": 139.7075443,
+    "distanceMeters": 6999
+  }
+]

@@ -59,6 +59,7 @@ jobs:
           node .\scripts\test-location-audit.mjs
           node .\scripts\test-location-candidate.mjs
           node .\scripts\test-location-correction-ui.mjs
+          node .\scripts\test-official-location-candidates.mjs
           node .\scripts\audit-region-locations.mjs aichi
           node .\scripts\audit-region-locations.mjs tokyo
           node --check .\app.js

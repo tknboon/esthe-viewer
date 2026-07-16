@@ -52,7 +52,8 @@ function candidateMatchesStation(candidate, station) {
 export function buildLocationCorrectionQueue(rows, invalidLocationPattern, roomLocationsByListingUrl = {}, options = {}) {
   const stationRows = (rows || [])
     .map((row) => ({ row, location: classifyLocationRow(row, invalidLocationPattern) }))
-    .filter((item) => item.location.quality === "station");
+    .filter((item) => item.location.quality === "station"
+      && !options.manualLocationOverrides?.[String(item.row["掲載URL"] || "").trim()]);
   const stationCounts = new Map();
 
   for (const item of stationRows) {
@@ -136,14 +137,24 @@ export function locationCorrectionQueueToCsv(queue) {
   ].join("\n") + "\n";
 }
 
-export function auditLocationRows(rows, invalidLocationPattern) {
+export function auditLocationRows(rows, invalidLocationPattern, manualLocationOverrides = {}) {
   const counts = { precise: 0, station: 0, unknown: 0 };
   const queryGroups = new Map();
   const coordinateGroups = new Map();
   const stationGroups = new Map();
 
   for (const row of rows || []) {
-    const result = classifyLocationRow(row, invalidLocationPattern);
+    const listingUrl = String(row["掲載URL"] || "").trim();
+    const manualLatLng = manualLocationOverrides[listingUrl] || null;
+    const result = manualLatLng
+      ? {
+        ...classifyLocationRow(row, invalidLocationPattern),
+        quality: "precise",
+        query: `${manualLatLng.lat},${manualLatLng.lng}`,
+        latitude: String(manualLatLng.lat),
+        longitude: String(manualLatLng.lng),
+      }
+      : classifyLocationRow(row, invalidLocationPattern);
     counts[result.quality] += 1;
     if (result.query) {
       queryGroups.set(result.query, (queryGroups.get(result.query) || 0) + 1);
@@ -203,7 +214,7 @@ export function auditRegion(regionId) {
   const regions = loadBrowserScript(path.join(root, "config", "regions.js")).REGIONS;
   const rows = loadBrowserScript(path.join(root, monitorRegion.outputFiles.data)).storeData || [];
   const invalidLocationPattern = new RegExp(regions[regionId]?.invalidLocationPattern || "^$");
-  return auditLocationRows(rows, invalidLocationPattern);
+  return auditLocationRows(rows, invalidLocationPattern, regions[regionId]?.manualLocationOverrides || {});
 }
 
 const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);

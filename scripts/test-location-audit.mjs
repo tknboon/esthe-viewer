@@ -108,6 +108,20 @@ const safeCoordinateQueue = buildLocationCorrectionQueue([
 assert.equal(safeCoordinateQueue[0].autoApplicable, true);
 assert.equal(safeCoordinateQueue[0].holdReason, "");
 
+const manualOverrideAudit = auditLocationRows([
+  { "店舗名": "手動補正", "最寄駅": "清瀬駅", "住所または座標": "東京都", "掲載URL": "https://example.com/manual" },
+], invalidLocationPattern, {
+  "https://example.com/manual": { lat: 35.7723, lng: 139.5213 },
+});
+assert.deepEqual(manualOverrideAudit.counts, { precise: 1, station: 0, unknown: 0 });
+assert.equal(buildLocationCorrectionQueue([
+  { "店舗名": "手動補正", "最寄駅": "清瀬駅", "住所または座標": "東京都", "掲載URL": "https://example.com/manual" },
+], invalidLocationPattern, {}, {
+  manualLocationOverrides: {
+    "https://example.com/manual": { lat: 35.7723, lng: 139.5213 },
+  },
+}).length, 0);
+
 const multipleCandidateQueue = buildLocationCorrectionQueue([
   { "店舗名": "複数候補", "最寄駅": "新宿駅・大久保駅", "住所または座標": "東京都", "掲載URL": "https://example.com/multiple" },
 ], invalidLocationPattern, {

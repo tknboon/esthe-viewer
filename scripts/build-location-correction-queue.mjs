@@ -18,7 +18,10 @@ const queue = buildLocationCorrectionQueue(
   sandbox.window.storeData || [],
   invalidLocationPattern,
   sandbox.window.storeMeta?.roomLocationsByListingUrl || {},
-  { geocodeBounds: sandbox.window.REGIONS[regionId]?.geocodeBounds || null }
+  {
+    geocodeBounds: sandbox.window.REGIONS[regionId]?.geocodeBounds || null,
+    manualLocationOverrides: sandbox.window.REGIONS[regionId]?.manualLocationOverrides || {},
+  }
 );
 const outputPath = path.join(path.dirname(path.join(root, monitorRegion.outputFiles.data)), "location_correction_queue.csv");
 fs.writeFileSync(outputPath, `\uFEFF${locationCorrectionQueueToCsv(queue)}`, "utf8");
