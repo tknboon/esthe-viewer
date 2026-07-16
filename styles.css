@@ -1255,6 +1255,28 @@ select {
   min-height: 34px;
 }
 
+.store-location-field {
+  padding: 10px 0 2px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.store-location-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.store-location-controls .action-link {
+  min-height: 40px;
+}
+
+.store-location-status {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .review-form-actions {
   margin-top: 10px;
 }

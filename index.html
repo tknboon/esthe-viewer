@@ -183,6 +183,15 @@
                         <textarea id="storeAddressInput" class="text-area store-address-area" rows="2" maxlength="240"></textarea>
                       </label>
 
+                      <div class="review-field is-wide store-location-field">
+                        <span>地図位置</span>
+                        <div class="store-location-controls">
+                          <button id="storeLocationPickButton" class="action-link" type="button">地図で位置を指定</button>
+                          <button id="storeLocationClearButton" class="action-link" type="button">指定位置を解除</button>
+                        </div>
+                        <p id="storeLocationStatus" class="status-text store-location-status">住所から位置を検索します。</p>
+                      </div>
+
                       <label class="review-field is-wide">
                         <span>備考</span>
                         <textarea id="storeNoteInput" class="text-area" rows="2" maxlength="240"></textarea>

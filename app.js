@@ -22,6 +22,9 @@
   mapReady: false,
   mapSyncQueued: false,
   profileMapSyncQueued: false,
+  profileLocationDraft: null,
+  profileLocationPickerActive: false,
+  profileLocationPreviewMarker: null,
   regionExpanded: false,
   expandedRegions: {},
   expandedUpdateHistory: {},
@@ -100,6 +103,9 @@ const excludeToggleButton = document.querySelector("#excludeToggleButton");
 const storeProfileToolbar = document.querySelector("#storeProfileToolbar");
 const storeProfilePanel = document.querySelector("#storeProfilePanel");
 const storeAddressInput = document.querySelector("#storeAddressInput");
+const storeLocationPickButton = document.querySelector("#storeLocationPickButton");
+const storeLocationClearButton = document.querySelector("#storeLocationClearButton");
+const storeLocationStatus = document.querySelector("#storeLocationStatus");
 const storeNoteInput = document.querySelector("#storeNoteInput");
 const storeSmsInput = document.querySelector("#storeSmsInput");
 const storeMenuInput = document.querySelector("#storeMenuInput");
@@ -352,9 +358,11 @@ function getLocationAuditGroupKey(row) {
 
 function getLocationQuality(row) {
   if (!row) return "unknown";
-  const profileAddress = normalizeAddressValue(getStoreProfile(row)?.address || "");
+  const profile = getStoreProfile(row);
+  const profileAddress = normalizeAddressValue(profile?.address || "");
   const hasCoordinates = Boolean(
     normalizeLatLng(MANUAL_LOCATION_OVERRIDES[row.listingUrl]) ||
+    getProfileLatLng(profile) ||
     row.hasCoordinates ||
     row.hasSourceCoordinates
   );
@@ -876,11 +884,14 @@ function expandRowsForMap(rows) {
     const explicitRoomLocations = getExplicitRoomLocations(row);
     if (explicitRoomLocations.length > 1) {
       explicitRoomLocations.forEach((room, index) => {
-        expanded.push(createExplicitRoomVariantRow(row, room, index));
+        const variant = createExplicitRoomVariantRow(row, room, index);
+        applyProfileLocationToRow(variant);
+        expanded.push(variant);
       });
       continue;
     }
 
+    applyProfileLocationToRow(row);
     expanded.push(row);
   }
   return expanded;
@@ -1183,6 +1194,8 @@ function bindEvents() {
   syncBackupButton?.addEventListener("click", handleBackupExport);
   storeProfileSaveButton?.addEventListener("click", handleStoreProfileSave);
   storeProfileEditButton?.addEventListener("click", handleStoreProfileEdit);
+  storeLocationPickButton?.addEventListener("click", handleStoreLocationPick);
+  storeLocationClearButton?.addEventListener("click", handleStoreLocationClear);
   favoriteToggleButton?.addEventListener("click", handleFavoriteToggle);
   excludeToggleButton?.addEventListener("click", handleExcludeToggle);
   reviewToggleButton?.addEventListener("click", handleReviewToggle);
@@ -2600,7 +2613,16 @@ function applyProfileLocationToRow(row) {
   if (!row) return;
 
   const profile = getStoreProfile(row);
+  const profileLatLng = getProfileLatLng(profile);
   const profileAddress = normalizeAddressValue(profile?.address || "");
+
+  if (profileLatLng) {
+    const profileQuery = `${profileLatLng.lat},${profileLatLng.lng}`;
+    row.locationQuery = profileQuery;
+    row.mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profileQuery)}`;
+    row.latLng = profileLatLng;
+    return;
+  }
 
   if (profileAddress) {
     const profileQuery = buildLocationQuery(row.name, row.station, profileAddress, row.notes);
@@ -2618,21 +2640,25 @@ function applyProfileLocationToRow(row) {
 function renderStoreProfileInputs(row) {
   const profile = getInheritedStoreProfile(row) || {};
   if (storeAddressInput) storeAddressInput.value = profile.address || "";
+  state.profileLocationDraft = getProfileLatLng(profile);
   if (storeNoteInput) storeNoteInput.value = profile.note || "";
   if (storeSmsInput) storeSmsInput.value = profile.sms || "";
   if (storeMenuInput) storeMenuInput.value = profile.menu || "";
   if (storeDisclosureInput) storeDisclosureInput.value = profile.disclosure || "";
   if (storeGuideClarityInput) storeGuideClarityInput.value = profile.guideClarity || "";
+  renderStoreLocationControls();
   setStoreProfileEditing(false, true);
 }
 
 function clearStoreProfileInputs() {
   if (storeAddressInput) storeAddressInput.value = "";
+  state.profileLocationDraft = null;
   if (storeNoteInput) storeNoteInput.value = "";
   if (storeSmsInput) storeSmsInput.value = "";
   if (storeMenuInput) storeMenuInput.value = "";
   if (storeDisclosureInput) storeDisclosureInput.value = "";
   if (storeGuideClarityInput) storeGuideClarityInput.value = "";
+  renderStoreLocationControls();
 }
 
 function renderStoreProfileSummary(row) {
@@ -2640,6 +2666,7 @@ function renderStoreProfileSummary(row) {
   const profile = getStoreProfile(row) || {};
   const parts = [
     profile.address ? `<span>${escapeHtml(profile.address)}</span>` : "",
+    getProfileLatLng(profile) ? `<span>地図位置: 指定済み</span>` : "",
     profile.note ? `<span>備考: ${escapeHtml(profile.note)}</span>` : "",
     profile.sms ? `<span>SMS: ${escapeHtml(profile.sms)}</span>` : "",
     profile.menu ? `<span>メニュー: ${escapeHtml(profile.menu)}</span>` : "",
@@ -2651,7 +2678,15 @@ function renderStoreProfileSummary(row) {
 }
 
 function hasStoreProfileContent(profile) {
-  return Boolean(profile && (profile.address || profile.note || profile.sms || profile.menu || profile.disclosure || profile.guideClarity));
+  return Boolean(profile && (
+    profile.address ||
+    getProfileLatLng(profile) ||
+    profile.note ||
+    profile.sms ||
+    profile.menu ||
+    profile.disclosure ||
+    profile.guideClarity
+  ));
 }
 
 function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
@@ -2660,7 +2695,16 @@ function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) 
   storeProfilePanel?.classList.toggle("is-hidden", !hasRow || !isEditing || !canEdit);
   storeProfileActions?.classList.toggle("is-hidden", !hasRow || !isEditing || !canEdit);
 
-  [storeAddressInput, storeNoteInput, storeSmsInput, storeMenuInput, storeDisclosureInput, storeGuideClarityInput].forEach((element) => {
+  [
+    storeAddressInput,
+    storeLocationPickButton,
+    storeLocationClearButton,
+    storeNoteInput,
+    storeSmsInput,
+    storeMenuInput,
+    storeDisclosureInput,
+    storeGuideClarityInput,
+  ].forEach((element) => {
     if (!element) return;
     element.disabled = !hasRow || !isEditing || !canEdit;
   });
@@ -2674,6 +2718,12 @@ function setStoreProfileEditing(isEditing, hasRow = Boolean(state.selectedRow)) 
     storeProfileEditButton.textContent = !canEdit ? "閲覧専用" : (isEditing ? "閉じる" : "店舗情報を編集");
     storeProfileEditButton.setAttribute("aria-expanded", hasRow && isEditing ? "true" : "false");
   }
+
+  if (!isEditing) {
+    deactivateStoreLocationPicker();
+    clearStoreLocationPreview();
+  }
+  renderStoreLocationControls();
 }
 
 function handleStoreProfileSave() {
@@ -2683,6 +2733,8 @@ function handleStoreProfileSave() {
 
   const profile = {
     address: normalizeAddressValue(storeAddressInput?.value || ""),
+    latitude: state.profileLocationDraft?.lat ?? "",
+    longitude: state.profileLocationDraft?.lng ?? "",
     note: String(storeNoteInput?.value || "").trim(),
     sms: storeSmsInput?.value || "",
     menu: storeMenuInput?.value || "",
@@ -2723,11 +2775,91 @@ function handleStoreProfileEdit() {
   if (!state.selectedRow || !canCurrentUserEdit()) return;
   const isCurrentlyEditing = !storeProfilePanel?.classList.contains("is-hidden");
   if (isCurrentlyEditing) {
-    setStoreProfileEditing(false, true);
+    renderStoreProfileInputs(state.selectedRow);
     return;
   }
   setStoreProfileEditing(true, true);
+  renderStoreLocationPreview();
   storeAddressInput?.focus();
+}
+
+function getProfileLatLng(profile) {
+  const latLng = normalizeLatLng({ lat: profile?.latitude, lng: profile?.longitude });
+  return latLng && isLatLngWithinRegion(latLng) ? latLng : null;
+}
+
+function handleStoreLocationPick() {
+  if (!state.selectedRow || !canCurrentUserEdit() || !state.mapReady || !state.map) return;
+  state.profileLocationPickerActive = !state.profileLocationPickerActive;
+  state.map.setOptions({ draggableCursor: state.profileLocationPickerActive ? "crosshair" : null });
+  renderStoreLocationControls();
+}
+
+function handleStoreLocationClear() {
+  if (!state.selectedRow || !canCurrentUserEdit()) return;
+  state.profileLocationDraft = null;
+  deactivateStoreLocationPicker();
+  clearStoreLocationPreview();
+  renderStoreLocationControls();
+}
+
+function handleStoreLocationMapClick(event) {
+  if (!state.profileLocationPickerActive || !state.selectedRow || !canCurrentUserEdit()) return;
+  const latLng = normalizeLatLng({
+    lat: event?.latLng?.lat?.(),
+    lng: event?.latLng?.lng?.(),
+  });
+  if (!latLng || !isLatLngWithinRegion(latLng)) {
+    if (storeLocationStatus) storeLocationStatus.textContent = "対象地域内の位置を指定してください。";
+    return;
+  }
+  state.profileLocationDraft = latLng;
+  deactivateStoreLocationPicker();
+  renderStoreLocationPreview();
+  renderStoreLocationControls();
+}
+
+function deactivateStoreLocationPicker() {
+  state.profileLocationPickerActive = false;
+  state.map?.setOptions({ draggableCursor: null });
+}
+
+function clearStoreLocationPreview() {
+  state.profileLocationPreviewMarker?.setMap(null);
+  state.profileLocationPreviewMarker = null;
+}
+
+function renderStoreLocationPreview() {
+  clearStoreLocationPreview();
+  if (!state.profileLocationDraft || !state.mapReady || !state.map || typeof google === "undefined") return;
+  state.profileLocationPreviewMarker = new google.maps.Marker({
+    position: state.profileLocationDraft,
+    map: state.map,
+    title: "指定位置",
+    zIndex: 100000,
+  });
+  state.map.panTo(state.profileLocationDraft);
+  if (state.map.getZoom() < 15) state.map.setZoom(15);
+}
+
+function renderStoreLocationControls() {
+  const canEdit = Boolean(state.selectedRow) && canCurrentUserEdit();
+  if (storeLocationPickButton) {
+    storeLocationPickButton.disabled = !canEdit || !state.mapReady;
+    storeLocationPickButton.classList.toggle("primary", state.profileLocationPickerActive);
+    storeLocationPickButton.textContent = state.profileLocationPickerActive ? "地図をクリックしてください" : "地図で位置を指定";
+  }
+  if (storeLocationClearButton) {
+    storeLocationClearButton.disabled = !canEdit || !state.profileLocationDraft;
+  }
+  if (!storeLocationStatus) return;
+  if (state.profileLocationPickerActive) {
+    storeLocationStatus.textContent = "中央の地図をクリックして位置を指定します。";
+  } else if (state.profileLocationDraft) {
+    storeLocationStatus.textContent = `指定位置: ${state.profileLocationDraft.lat.toFixed(6)}, ${state.profileLocationDraft.lng.toFixed(6)}`;
+  } else {
+    storeLocationStatus.textContent = "指定がない場合は住所から位置を検索します。";
+  }
 }
 
 function setReviewEditing(isEditing, hasRow = Boolean(state.selectedRow)) {
@@ -3200,8 +3332,11 @@ function readGeocodeCache() {
 }
 
 function normalizeLatLng(value) {
-  const lat = Number(value?.lat);
-  const lng = Number(value?.lng);
+  const rawLat = String(value?.lat ?? "").trim();
+  const rawLng = String(value?.lng ?? "").trim();
+  if (!rawLat || !rawLng) return null;
+  const lat = Number(rawLat);
+  const lng = Number(rawLng);
   return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng } : null;
 }
 
@@ -3254,8 +3389,10 @@ window.initGoogleMapApp = function initGoogleMapApp() {
   });
   state.geocoder = new google.maps.Geocoder();
   state.streetViewService = new google.maps.StreetViewService();
+  state.map.addListener("click", handleStoreLocationMapClick);
   ensureStreetViewPanorama();
   state.mapReady = true;
+  renderStoreLocationControls();
   syncMapWithFilters();
   syncProfileMap();
   renderStreetViewForRow(state.selectedRow);

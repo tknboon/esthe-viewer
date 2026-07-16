@@ -15,7 +15,7 @@
     <script src="../config/regions.js?v=77dcc5209d25"></script>
     <script src="../config/station-normalizer.js?v=97fcbd288417"></script>
     <script src="../config/location-candidate.js?v=f479503c766c"></script>
-    <link rel="stylesheet" href="../styles.css?v=5c07475f9444" />
+    <link rel="stylesheet" href="../styles.css?v=847c965990b2" />
   </head>
   <body>
     <div class="app-shell">
@@ -183,6 +183,15 @@
                         <span>住所</span>
                         <textarea id="storeAddressInput" class="text-area store-address-area" rows="2" maxlength="240"></textarea>
                       </label>
+
+                      <div class="review-field is-wide store-location-field">
+                        <span>地図位置</span>
+                        <div class="store-location-controls">
+                          <button id="storeLocationPickButton" class="action-link" type="button">地図で位置を指定</button>
+                          <button id="storeLocationClearButton" class="action-link" type="button">指定位置を解除</button>
+                        </div>
+                        <p id="storeLocationStatus" class="status-text store-location-status">住所から位置を検索します。</p>
+                      </div>
 
                       <label class="review-field is-wide">
                         <span>備考</span>
@@ -384,7 +393,7 @@
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore-compat.js"></script>
     <script src="https://unpkg.com/@googlemaps/markerclusterer@2.6.2/dist/index.min.js"></script>
-    <script src="../app.js?v=e125832992ac"></script>
+    <script src="../app.js?v=349fe06d744b"></script>
     <script
       async
       defer
