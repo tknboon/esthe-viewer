@@ -607,8 +607,69 @@ select {
   font-size: 15px;
 }
 
+.location-verification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.location-verification-item {
+  min-width: 0;
+  padding: 8px 10px;
+  border-left: 3px solid #78d4b4;
+  background: rgba(255, 248, 251, 0.045);
+}
+
+.location-verification-item.is-unverified {
+  border-left-color: #db6684;
+}
+
+.location-verification-item span,
+.location-verification-item strong {
+  display: block;
+}
+
+.location-verification-item span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.location-verification-item strong {
+  margin-top: 4px;
+  color: #fff4c8;
+  font-size: 15px;
+}
+
 .location-audit-head {
   margin-top: 4px;
+}
+
+.location-audit-mode {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.location-audit-mode button {
+  min-width: 0;
+  min-height: 34px;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  background: rgba(255, 248, 251, 0.04);
+  color: var(--muted);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.location-audit-mode button.is-active {
+  border-color: rgba(255, 119, 167, 0.75);
+  background: rgba(209, 61, 116, 0.28);
+  color: #fff4f8;
 }
 
 .location-audit-list {

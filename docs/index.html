@@ -14,6 +14,7 @@
     <script src="./config/regions.js"></script>
     <script src="./config/station-normalizer.js"></script>
     <script src="./config/location-candidate.js"></script>
+    <script src="./config/location-verification.js"></script>
     <link rel="stylesheet" href="./styles.css?v=46351111acf7" />
   </head>
   <body>
@@ -94,8 +95,25 @@
                 <strong id="locationUnknownCount">0件</strong>
               </div>
             </div>
+            <div class="analytics-subhead">
+              <span class="mini-label">位置確認</span>
+            </div>
+            <div class="location-verification-grid">
+              <div class="location-verification-item is-verified">
+                <span>確認済み</span>
+                <strong id="locationVerifiedCount">0件</strong>
+              </div>
+              <div class="location-verification-item is-unverified">
+                <span>未確認</span>
+                <strong id="locationUnverifiedCount">0件</strong>
+              </div>
+            </div>
             <div class="analytics-subhead location-audit-head">
               <span id="locationAuditHeading" class="mini-label">駅周辺配置が多い地点</span>
+            </div>
+            <div class="location-audit-mode" role="group" aria-label="位置確認一覧を切り替え">
+              <button type="button" data-location-audit-mode="station" aria-pressed="false">駅周辺補正</button>
+              <button class="is-active" type="button" data-location-audit-mode="unverified" aria-pressed="true">位置未確認</button>
             </div>
             <div id="locationAuditList" class="location-audit-list"></div>
             <div class="analytics-subhead">

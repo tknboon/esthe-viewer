@@ -12,7 +12,7 @@ assert.match(app, /state\.map\.addListener\("click", handleStoreLocationMapClick
 assert.match(app, /latitude: state\.profileLocationDraft\?\.lat/);
 assert.match(app, /longitude: state\.profileLocationDraft\?\.lng/);
 assert.match(app, /if \(profileLatLng\) \{/);
-assert.match(app, /getProfileLatLng\(profile\) \? `<span>地図位置: 指定済み/);
+assert.match(app, /getProfileLatLng\(profile\) \? `<span>地図位置: \$\{isLocationVerified\(row\) \? "確認済み" : "指定済み"\}/);
 assert.match(app, /if \(!rawLat \|\| !rawLng\) return null/);
 assert.match(app, /const variant = createExplicitRoomVariantRow[\s\S]*applyProfileLocationToRow\(variant\)/);
 assert.match(app, /applyProfileLocationToRow\(row\);\s+expanded\.push\(row\)/);

@@ -25,6 +25,8 @@
   profileLocationDraft: null,
   profileLocationPickerActive: false,
   profileLocationPreviewMarker: null,
+  profileLocationDirty: false,
+  locationAuditMode: "unverified",
   regionExpanded: false,
   expandedRegions: {},
   expandedUpdateHistory: {},
@@ -73,8 +75,11 @@ const storeTrendBars = document.querySelector("#storeTrendBars");
 const locationPreciseCount = document.querySelector("#locationPreciseCount");
 const locationStationCount = document.querySelector("#locationStationCount");
 const locationUnknownCount = document.querySelector("#locationUnknownCount");
+const locationVerifiedCount = document.querySelector("#locationVerifiedCount");
+const locationUnverifiedCount = document.querySelector("#locationUnverifiedCount");
 const locationAuditList = document.querySelector("#locationAuditList");
 const locationAuditHeading = document.querySelector("#locationAuditHeading");
+const locationAuditModeButtons = document.querySelectorAll("[data-location-audit-mode]");
 const archivedReviewList = document.querySelector("#archivedReviewList");
 const cardsView = document.querySelector("#cardsView");
 const tableView = document.querySelector("#tableView");
@@ -298,7 +303,21 @@ function renderLocationAudit() {
   if (locationPreciseCount) locationPreciseCount.textContent = `${audit.precise.length}件`;
   if (locationStationCount) locationStationCount.textContent = `${audit.station.length}件`;
   if (locationUnknownCount) locationUnknownCount.textContent = `${audit.unknown.length}件`;
+  if (locationVerifiedCount) locationVerifiedCount.textContent = `${audit.verified.length}件`;
+  if (locationUnverifiedCount) locationUnverifiedCount.textContent = `${audit.unverified.length}件`;
   if (!locationAuditList) return;
+
+  for (const button of locationAuditModeButtons) {
+    const isActive = button.dataset.locationAuditMode === state.locationAuditMode;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  }
+
+  if (state.locationAuditMode === "unverified") {
+    renderUnverifiedLocationList(audit.unverified);
+    return;
+  }
+
   if (locationAuditHeading) {
     locationAuditHeading.textContent = isCorrectionQueue ? "駅周辺配置の補正キュー" : "駅周辺配置が多い地点";
   }
@@ -329,17 +348,50 @@ function renderLocationAudit() {
     : `<div class="empty-state compact">駅周辺にまとめた店舗はありません。</div>`;
 }
 
+function renderUnverifiedLocationList(rows) {
+  if (locationAuditHeading) locationAuditHeading.textContent = "位置未確認の店舗";
+  locationAuditList.classList.add("is-correction-queue");
+  const qualityPriority = { unknown: 0, station: 1, precise: 2 };
+  const sortedRows = [...rows].sort((left, right) => {
+    const qualityDifference = qualityPriority[getLocationQuality(left)] - qualityPriority[getLocationQuality(right)];
+    if (qualityDifference) return qualityDifference;
+    return (left.stationGroup || left.station || left.name).localeCompare(
+      right.stationGroup || right.station || right.name,
+      "ja"
+    ) || left.name.localeCompare(right.name, "ja");
+  });
+
+  locationAuditList.innerHTML = sortedRows.length
+    ? sortedRows.map((row) => {
+        const quality = getLocationQuality(row);
+        const qualityLabel = quality === "unknown" ? "位置不明" : quality === "station" ? "駅周辺" : "住所・座標";
+        return `
+          <button class="location-audit-item" type="button" data-location-row-id="${escapeHtml(row.id)}">
+            <span>
+              <span class="location-audit-name">${escapeHtml(row.name)}</span>
+              <small>${escapeHtml(formatStationDisplay(row) || row.location || "-")}</small>
+            </span>
+            <strong>${qualityLabel}</strong>
+          </button>
+        `;
+      }).join("")
+    : `<div class="empty-state compact">すべての店舗位置を確認済みです。</div>`;
+}
+
 function buildLocationAudit(rows) {
   const audit = {
     precise: [],
     station: [],
     unknown: [],
+    verified: [],
+    unverified: [],
     stationGroups: new Map(),
   };
 
   for (const row of rows || []) {
     const quality = getLocationQuality(row);
     audit[quality].push(row);
+    audit[isLocationVerified(row) ? "verified" : "unverified"].push(row);
     if (quality !== "station") continue;
 
     const groupKey = getLocationAuditGroupKey(row);
@@ -1186,6 +1238,7 @@ function bindEvents() {
   tableBody?.addEventListener("click", handleListActionClick);
   mapList?.addEventListener("click", handleListActionClick);
   locationAuditList?.addEventListener("click", handleLocationAuditClick);
+  locationAuditModeButtons.forEach((button) => button.addEventListener("click", handleLocationAuditModeClick));
   sidebarTabs.forEach((button) => button.addEventListener("click", handleSidebarTabClick));
   reviewList.addEventListener("click", handleReviewDelete);
   archivedReviewList?.addEventListener("click", handleReviewDelete);
@@ -1212,6 +1265,19 @@ function handleListActionClick(event) {
 }
 
 function handleLocationAuditClick(event) {
+  const rowTrigger = event.target.closest("[data-location-row-id]");
+  if (rowTrigger) {
+    const row = state.rows.find((item) => item.id === rowTrigger.dataset.locationRowId);
+    if (!row) return;
+    if (!state.filteredRows.some((item) => item.id === row.id)) {
+      state.appliedKeyword = "";
+      if (searchInput) searchInput.value = "";
+      applyFilters();
+    }
+    focusRow(row);
+    return;
+  }
+
   const trigger = event.target.closest("[data-location-group]");
   if (!trigger) return;
   const previousGroup = getLocationQuality(state.selectedRow) === "station"
@@ -1245,6 +1311,18 @@ function handleLocationAuditClick(event) {
       }
     }
   }
+}
+
+function handleLocationAuditModeClick(event) {
+  const nextMode = event.currentTarget?.dataset?.locationAuditMode;
+  if (!nextMode || nextMode === state.locationAuditMode) return;
+  state.locationAuditMode = nextMode;
+  renderLocationAudit();
+}
+
+function isLocationVerified(row) {
+  const profile = getStoreProfile(row);
+  return Boolean(getProfileLatLng(profile) && profile?.locationVerified === true);
 }
 
 function getSafeSourceCoordinateCandidate(listingUrl, station) {
@@ -2641,6 +2719,7 @@ function renderStoreProfileInputs(row) {
   const profile = getInheritedStoreProfile(row) || {};
   if (storeAddressInput) storeAddressInput.value = profile.address || "";
   state.profileLocationDraft = getProfileLatLng(profile);
+  state.profileLocationDirty = false;
   if (storeNoteInput) storeNoteInput.value = profile.note || "";
   if (storeSmsInput) storeSmsInput.value = profile.sms || "";
   if (storeMenuInput) storeMenuInput.value = profile.menu || "";
@@ -2653,6 +2732,7 @@ function renderStoreProfileInputs(row) {
 function clearStoreProfileInputs() {
   if (storeAddressInput) storeAddressInput.value = "";
   state.profileLocationDraft = null;
+  state.profileLocationDirty = false;
   if (storeNoteInput) storeNoteInput.value = "";
   if (storeSmsInput) storeSmsInput.value = "";
   if (storeMenuInput) storeMenuInput.value = "";
@@ -2666,7 +2746,7 @@ function renderStoreProfileSummary(row) {
   const profile = getStoreProfile(row) || {};
   const parts = [
     profile.address ? `<span>${escapeHtml(profile.address)}</span>` : "",
-    getProfileLatLng(profile) ? `<span>地図位置: 指定済み</span>` : "",
+    getProfileLatLng(profile) ? `<span>地図位置: ${isLocationVerified(row) ? "確認済み" : "指定済み"}</span>` : "",
     profile.note ? `<span>備考: ${escapeHtml(profile.note)}</span>` : "",
     profile.sms ? `<span>SMS: ${escapeHtml(profile.sms)}</span>` : "",
     profile.menu ? `<span>メニュー: ${escapeHtml(profile.menu)}</span>` : "",
@@ -2730,11 +2810,20 @@ function handleStoreProfileSave() {
   if (!state.selectedRow || !canCurrentUserEdit()) return;
 
   const profileKey = getStoreProfileStorageKey(state.selectedRow);
+  const savedAt = new Date().toISOString();
+  const existingProfile = getInheritedStoreProfile(state.selectedRow) || {};
+  const verificationFields = window.LocationVerification.resolveVerificationFields({
+    existingProfile,
+    draftLatLng: state.profileLocationDraft,
+    locationChanged: state.profileLocationDirty,
+    savedAt,
+  });
 
   const profile = {
     address: normalizeAddressValue(storeAddressInput?.value || ""),
     latitude: state.profileLocationDraft?.lat ?? "",
     longitude: state.profileLocationDraft?.lng ?? "",
+    ...verificationFields,
     note: String(storeNoteInput?.value || "").trim(),
     sms: storeSmsInput?.value || "",
     menu: storeMenuInput?.value || "",
@@ -2747,7 +2836,7 @@ function handleStoreProfileSave() {
     phone: state.selectedRow.phone || "",
     hours: state.selectedRow.hours || "",
     officialUrl: state.selectedRow.officialUrl || "",
-    updatedAt: new Date().toISOString(),
+    updatedAt: savedAt,
   };
 
   if (hasStoreProfileContent(profile)) {
@@ -2798,6 +2887,7 @@ function handleStoreLocationPick() {
 function handleStoreLocationClear() {
   if (!state.selectedRow || !canCurrentUserEdit()) return;
   state.profileLocationDraft = null;
+  state.profileLocationDirty = true;
   deactivateStoreLocationPicker();
   clearStoreLocationPreview();
   renderStoreLocationControls();
@@ -2814,6 +2904,7 @@ function handleStoreLocationMapClick(event) {
     return;
   }
   state.profileLocationDraft = latLng;
+  state.profileLocationDirty = true;
   deactivateStoreLocationPicker();
   renderStoreLocationPreview();
   renderStoreLocationControls();
@@ -2856,7 +2947,10 @@ function renderStoreLocationControls() {
   if (state.profileLocationPickerActive) {
     storeLocationStatus.textContent = "中央の地図をクリックして位置を指定します。";
   } else if (state.profileLocationDraft) {
-    storeLocationStatus.textContent = `指定位置: ${state.profileLocationDraft.lat.toFixed(6)}, ${state.profileLocationDraft.lng.toFixed(6)}`;
+    const verificationLabel = state.profileLocationDirty
+      ? "保存すると確認済み"
+      : isLocationVerified(state.selectedRow) ? "確認済み" : "未確認。地図をクリックして確認";
+    storeLocationStatus.textContent = `指定位置: ${state.profileLocationDraft.lat.toFixed(6)}, ${state.profileLocationDraft.lng.toFixed(6)}（${verificationLabel}）`;
   } else {
     storeLocationStatus.textContent = "指定がない場合は住所から位置を検索します。";
   }

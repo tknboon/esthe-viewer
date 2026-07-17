@@ -36,6 +36,13 @@ for (const region of regions) {
     `../config/location-candidate.js?v=${locationCandidateVersion}`
   );
 
+  const locationVerificationVersion = await fileVersion("config/location-verification.js");
+  html = replaceVersionedAsset(
+    html,
+    "./config/location-verification.js",
+    `../config/location-verification.js?v=${locationVerificationVersion}`
+  );
+
   for (const asset of ["favicon.svg", "styles.css", "firebase-config.js", "analytics-config.js", "analytics.js", "app.js"]) {
     const version = await fileVersion(asset);
     html = replaceVersionedAsset(html, `./${asset}`, `../${asset}?v=${version}`);

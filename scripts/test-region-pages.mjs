@@ -9,6 +9,7 @@ assert.match(html, /@googlemaps\/markerclusterer@2\.6\.2\/dist\/index\.min\.js/)
 assert.match(html, /data-region-link="aichi" href="\/"/);
 assert.match(html, /data-region-link="tokyo" href="\/tokyo\/"/);
 assert.match(html, /src="\.\.\/config\/regions\.js\?v=[a-f0-9]{12}"/);
+assert.match(html, /src="\.\.\/config\/location-verification\.js\?v=[a-f0-9]{12}"/);
 assert.match(html, /src="\.\/data\.js\?v=[a-f0-9]{12}"/);
 assert.match(html, /src="\.\.\/app\.js\?v=[a-f0-9]{12}"/);
 assert.doesNotMatch(html, /app\.js\?v=[a-f0-9]{12}\?v=/);
