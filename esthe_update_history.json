@@ -1,5 +1,33 @@
 [
   {
+    "dayKey": "2026-07-17",
+    "fetchedAt": "2026-07-17T10:44:25.738Z",
+    "added": [
+      "kitte/豊橋駅",
+      "NagoMi〜和み/港北駅",
+      "SENZ SPA/久屋大通駅",
+      "style/尾張一宮駅",
+      "いちごアイス/栄生駅",
+      "なごみ庵/豊田市駅",
+      "ハピネス～Happiness～/甚目寺駅",
+      "ホームラン/上前津駅",
+      "ホットkiss/鳴海駅",
+      "ラフィーネ ～raffiné～/赤池駅",
+      "韓国美姫/青山駅・成岩駅",
+      "蒼の誘惑（あおのゆうわく）/前後駅",
+      "天使の羽/東刈谷駅",
+      "碧蝶（あおちょう）/奥町駅",
+      "蜜桃ちゃん/甚目寺駅",
+      "癒しの森/高岳駅"
+    ],
+    "removed": [
+      "Tempt Soul 誘魂/豊橋駅",
+      "華子/豊田市駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-16",
     "fetchedAt": "2026-07-16T10:56:54.164Z",
     "added": [
@@ -718,14 +746,6 @@
       "苺の姫/植田駅",
       "茉莉姫（まりひめ）/藤が丘駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-05-11",
-    "fetchedAt": "2026-05-11T12:28:48.536Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
