@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-07-20",
+    "fetchedAt": "2026-07-20T11:42:58.426Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-19",
     "fetchedAt": "2026-07-19T10:25:03.807Z",
     "added": [],
@@ -484,23 +492,6 @@
     "removed": [
       "Sun Flower/黒田駅",
       "恋さんぽ/日進駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-06-19",
-    "fetchedAt": "2026-06-18T17:56:29.690Z",
-    "added": [
-      "Rose（ローズ）/豊橋駅・船町駅・南栄駅・新豊橋駅",
-      "愛の天使/勝川駅",
-      "私のごほうび/伏見駅4番出口",
-      "仲夏の夜（ちゅうかのよる）/三河安城駅南口",
-      "天使のゆびさき/はなみずき通駅"
-    ],
-    "removed": [
-      "ローズガーデン/南栄駅",
-      "韓国美姫/豊橋駅・船町駅・南栄駅・新豊橋駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
