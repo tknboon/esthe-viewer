@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-07-21",
+    "fetchedAt": "2026-07-21T11:08:22.196Z",
+    "added": [
+      "RELAXLUCK/千歳烏山駅西口",
+      "アロマテイアーモ/押上駅",
+      "綿綿（めんめん）/大井町駅西口"
+    ],
+    "removed": [
+      "天使のきもち/神保町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-20",
     "fetchedAt": "2026-07-20T11:45:22.664Z",
     "added": [],
