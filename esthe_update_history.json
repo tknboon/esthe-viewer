@@ -1,5 +1,25 @@
 [
   {
+    "dayKey": "2026-07-23",
+    "fetchedAt": "2026-07-23T11:07:55.996Z",
+    "added": [
+      "Baby Face/今池駅",
+      "Sweet誘惑/栄駅",
+      "ルビー/西尾駅",
+      "魅月/新豊田駅",
+      "恋人/池下駅"
+    ],
+    "removed": [
+      "Only One/栄駅",
+      "きらめくDream/川名駅",
+      "つぼみ/三河豊田駅",
+      "濃密Candy/岡崎駅・安城駅・三河安城駅・豊田駅・新豊田駅・知立駅・大門駅・宇頭駅",
+      "八月（はちがつ）/大高駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-22",
     "fetchedAt": "2026-07-22T11:06:58.127Z",
     "added": [
@@ -499,14 +519,6 @@
       "心葉/新栄町駅1番出口",
       "満開華吹雪/野並駅4番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-06-22",
-    "fetchedAt": "2026-06-21T16:26:37.520Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

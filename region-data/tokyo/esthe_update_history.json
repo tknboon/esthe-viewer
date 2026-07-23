@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-07-23",
+    "fetchedAt": "2026-07-23T11:10:22.041Z",
+    "added": [
+      "Sweet kiss（スイートキス）/とうきょうスカイツリー駅",
+      "響き～HIBIKI～/阿佐ヶ谷駅"
+    ],
+    "removed": [
+      "チェンマイ/上野駅",
+      "ラッキー～lucky～/大森駅北口",
+      "ラブRoom/葛西駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-22",
     "fetchedAt": "2026-07-22T11:08:55.752Z",
     "added": [
