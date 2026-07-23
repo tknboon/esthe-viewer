@@ -2004,6 +2004,7 @@ function normalizeRow(row, index) {
   const municipality = window.storeMeta?.municipalityByListingUrl?.[listingUrl] || "";
   const municipalityLabels = window.storeMeta?.municipalityLabelsByListingUrl?.[listingUrl] || [];
   const hasCoordinates = Boolean(latitude && longitude);
+  const embeddedLatLng = normalizeLatLng(window.LocationCandidate?.parseCoordinateText?.(location));
   const useCoordinates = hasCoordinates && !hasUsableAddressLocation(location);
   const manualLatLng = normalizeLatLng(MANUAL_LOCATION_OVERRIDES[listingUrl]);
   const sourceCoordinateCandidate = !manualLatLng && !hasCoordinates && !hasDetailedAddressLocation(location)
@@ -2012,7 +2013,7 @@ function normalizeRow(row, index) {
   const sourceLatLng = sourceCoordinateCandidate
     ? { lat: sourceCoordinateCandidate.lat, lng: sourceCoordinateCandidate.lng }
     : null;
-  const baseLatLng = manualLatLng || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : sourceLatLng);
+  const baseLatLng = manualLatLng || embeddedLatLng || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : sourceLatLng);
   const baseLocationQuery = baseLatLng ? `${baseLatLng.lat},${baseLatLng.lng}` : buildLocationQuery(name, station, location, notes);
 
   const normalizedRow = {
@@ -2032,7 +2033,7 @@ function normalizeRow(row, index) {
     hours,
     municipality,
     municipalityLabels,
-    hasCoordinates,
+    hasCoordinates: hasCoordinates || Boolean(embeddedLatLng),
     hasSourceCoordinates: Boolean(sourceLatLng),
     baseLatLng,
     latLng: baseLatLng,

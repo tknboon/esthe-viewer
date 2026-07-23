@@ -14,6 +14,23 @@
     return { lat, lng };
   }
 
+  function parseCoordinateText(value) {
+    const raw = String(value ?? "").trim();
+    const match = raw.match(
+      /^(\d{1,2})\s*[°度]\s*(\d{1,2})\s*['′分]\s*(\d+(?:\.\d+)?)\s*["″秒]?\s*([NS])\s*[,，\s]+\s*(\d{1,3})\s*[°度]\s*(\d{1,2})\s*['′分]\s*(\d+(?:\.\d+)?)\s*["″秒]?\s*([EW])$/i
+    );
+    if (!match) return null;
+
+    const toDecimal = (degrees, minutes, seconds, direction) => {
+      const decimal = Number(degrees) + Number(minutes) / 60 + Number(seconds) / 3600;
+      return /[SW]/i.test(direction) ? -decimal : decimal;
+    };
+    return readLatLng({
+      latitude: toDecimal(match[1], match[2], match[3], match[4]),
+      longitude: toDecimal(match[5], match[6], match[7], match[8]),
+    });
+  }
+
   function hasDetailedAddress(value) {
     const address = String(value || "").trim();
     return /[0-9０-９]/.test(address) && /[都道府県区市町村]/.test(address);
@@ -65,6 +82,7 @@
   const api = {
     hasDetailedAddress,
     hasMultipleStationLabels,
+    parseCoordinateText,
     readLatLng,
     selectSafeSingleCoordinateCandidate,
   };

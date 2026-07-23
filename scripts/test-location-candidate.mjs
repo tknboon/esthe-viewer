@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const { selectSafeSingleCoordinateCandidate } = require("../config/location-candidate.js");
+const { parseCoordinateText, selectSafeSingleCoordinateCandidate } = require("../config/location-candidate.js");
 const { normalizeStationGroupLabel } = require("../config/station-normalizer.js");
 
 const bounds = { south: 35.45, west: 139.2, north: 35.95, east: 140.15 };
@@ -29,5 +29,11 @@ assert.equal(select("新宿駅", [
   { label: "新宿駅", latitude: "35.690", longitude: "139.700" },
   { label: "新宿駅", address: "東京都新宿区西新宿1丁目" },
 ]).reason, "候補が複数");
+
+const iwatsuka = parseCoordinateText(`35°09'29.2"N 136°51'16.3"E`);
+assert.ok(iwatsuka);
+assert.ok(Math.abs(iwatsuka.lat - 35.15811111111111) < 1e-10);
+assert.ok(Math.abs(iwatsuka.lng - 136.85452777777777) < 1e-10);
+assert.equal(parseCoordinateText("愛知県名古屋市中村区沖田町"), null);
 
 console.log("location candidate safety: ok");
