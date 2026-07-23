@@ -88,6 +88,7 @@ window.REGIONS = {
     },
     manualStationOverrides: {
       "https://www.esthe-ranking.jp/sakae/shop-detail/f2e48aef-65d9-4065-8b47-e367232c1384/": "丸の内駅・伏見駅",
+      "https://www.esthe-ranking.jp/tsurumai/shop-detail/d8aec164-1a08-4670-82b5-994481ec9c7f/": "上前津駅",
     },
     manualLocationOverrides: {
       "https://www.esthe-ranking.jp/chita/shop-detail/a8d90856-f46c-4d05-b851-48affeea5c58/": {
@@ -97,6 +98,10 @@ window.REGIONS = {
       "https://www.esthe-ranking.jp/toyohashi/shop-detail/cffdf0cf-f0b9-4796-b2eb-d960ee62f265/": {
         lat: 34.743901,
         lng: 137.373933,
+      },
+      "https://www.esthe-ranking.jp/tsurumai/shop-detail/d8aec164-1a08-4670-82b5-994481ec9c7f/": {
+        lat: 35.1576046,
+        lng: 136.9062152,
       },
     },
     recoveredRemovedHistory: {

@@ -15,6 +15,7 @@ const aichiInvalidLocationPattern = new RegExp(aichi.invalidLocationPattern);
 assert.equal(aichiInvalidLocationPattern.test("■愛知県"), true);
 assert.equal(aichiInvalidLocationPattern.test("愛知県名古屋市中区栄1丁目"), false);
 assert.equal(aichi.manualStationOverrides["https://www.esthe-ranking.jp/sakae/shop-detail/f2e48aef-65d9-4065-8b47-e367232c1384/"], "丸の内駅・伏見駅");
+assert.equal(aichi.manualStationOverrides["https://www.esthe-ranking.jp/tsurumai/shop-detail/d8aec164-1a08-4670-82b5-994481ec9c7f/"], "上前津駅");
 assert.deepEqual(
   { ...aichi.manualLocationOverrides["https://www.esthe-ranking.jp/chita/shop-detail/a8d90856-f46c-4d05-b851-48affeea5c58/"] },
   { lat: 34.90877186928, lng: 136.94609274971 }
@@ -22,6 +23,10 @@ assert.deepEqual(
 assert.deepEqual(
   { ...aichi.manualLocationOverrides["https://www.esthe-ranking.jp/toyohashi/shop-detail/cffdf0cf-f0b9-4796-b2eb-d960ee62f265/"] },
   { lat: 34.743901, lng: 137.373933 }
+);
+assert.deepEqual(
+  { ...aichi.manualLocationOverrides["https://www.esthe-ranking.jp/tsurumai/shop-detail/d8aec164-1a08-4670-82b5-994481ec9c7f/"] },
+  { lat: 35.1576046, lng: 136.9062152 }
 );
 assert.equal(aichi.recoveredRemovedHistory["2026-05-07"].length, 23);
 assert.match("愛知県全域", new RegExp(aichi.invalidLocationPattern));
