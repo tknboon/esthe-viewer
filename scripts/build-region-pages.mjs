@@ -16,9 +16,14 @@ for (const region of regions) {
   const configVersion = await fileVersion("config/regions.js");
   const dataVersion = await fileVersion(region.dataPath);
   let html = template;
+  html = replaceVersionedAsset(
+    html,
+    "./config/regions.js",
+    `../config/regions.js?v=${configVersion}`
+  );
   html = replaceRequired(
     html,
-    '    <script src="./config/regions.js"></script>',
+    `    <script src="../config/regions.js?v=${configVersion}"></script>`,
     `    <script>window.CURRENT_REGION_ID = ${JSON.stringify(region.regionId)};</script>\n    <script src="../config/regions.js?v=${configVersion}"></script>`
   );
 
