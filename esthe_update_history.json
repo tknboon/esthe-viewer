@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-07-25",
+    "fetchedAt": "2026-07-25T10:24:53.485Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-24",
     "fetchedAt": "2026-07-24T11:02:10.177Z",
     "added": [
@@ -501,24 +509,6 @@
     "removed": [
       "Lien（リアン）/安城駅",
       "櫻花（さくら）/桜町前駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-06-24",
-    "fetchedAt": "2026-06-23T17:11:53.159Z",
-    "added": [
-      "19歳の美少女/新守山駅",
-      "WhiteSnow（ホワイトスノウ）/青山駅",
-      "キスので楽園/西尾駅",
-      "花吹雪/名古屋駅",
-      "心葉/新栄町駅1番出口",
-      "恋の時間/自由ヶ丘駅"
-    ],
-    "removed": [
-      "White Snow（ホワイトスノウ）/西尾駅",
-      "私のごほうび/伏見駅4番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
