@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-07-27",
+    "fetchedAt": "2026-07-27T12:21:55.889Z",
+    "added": [
+      "チェッカーベリー/立川駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-26",
     "fetchedAt": "2026-07-26T10:45:32.014Z",
     "added": [],
