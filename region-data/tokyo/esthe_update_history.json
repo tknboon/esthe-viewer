@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-07-28",
+    "fetchedAt": "2026-07-28T11:17:30.558Z",
+    "added": [
+      "一休み/金町駅北口",
+      "姫BABY/町田駅北口"
+    ],
+    "removed": [
+      "FULA FULA/荻窪駅",
+      "整う夜3&5/町田駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-27",
     "fetchedAt": "2026-07-27T12:21:55.889Z",
     "added": [
