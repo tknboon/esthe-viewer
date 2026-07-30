@@ -1,5 +1,26 @@
 [
   {
+    "dayKey": "2026-07-30",
+    "fetchedAt": "2026-07-30T11:04:45.622Z",
+    "added": [
+      "Dear/野並駅",
+      "Lumina（ルミナ）/新豊田駅",
+      "心癒/栄生駅",
+      "台湾ハニー/春日井駅・勝川駅",
+      "魔性の城/中京競馬場前駅",
+      "魅惑の女王/青山駅",
+      "蜜恋/春日井駅・勝川駅",
+      "恋の感じ/三河安城駅南口"
+    ],
+    "removed": [
+      "SKY/新上拳母駅",
+      "ブラジル美女（ブラジルびじょ）/野並駅",
+      "仲夏の夜（ちゅうかのよる）/三河安城駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-29",
     "fetchedAt": "2026-07-29T11:23:29.857Z",
     "added": [
@@ -512,14 +533,6 @@
       "Sweet Heart～スイートハート～/蒲郡駅",
       "従姉妹のイタズラ/石刀駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-06-29",
-    "fetchedAt": "2026-06-28T16:03:46.218Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

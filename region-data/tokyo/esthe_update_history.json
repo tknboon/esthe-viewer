@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-07-30",
+    "fetchedAt": "2026-07-30T11:07:33.850Z",
+    "added": [
+      "癒されたい/国分寺駅",
+      "蘭 RAN/大久保駅"
+    ],
+    "removed": [
+      "もっこり整体/町田駅北口",
+      "看護学院/調布駅中央口",
+      "蘭～RAN～/大久保駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-29",
     "fetchedAt": "2026-07-29T11:26:01.413Z",
     "added": [
