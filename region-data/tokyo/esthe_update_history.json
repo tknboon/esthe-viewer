@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-07-31",
+    "fetchedAt": "2026-07-31T11:30:23.832Z",
+    "added": [
+      "シャルル/稲荷町駅"
+    ],
+    "removed": [
+      "ふぁふぁ/日本橋駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-30",
     "fetchedAt": "2026-07-30T11:07:33.850Z",
     "added": [

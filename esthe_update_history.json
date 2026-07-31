@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-07-31",
+    "fetchedAt": "2026-07-31T11:27:40.727Z",
+    "added": [
+      "AAA/新栄町駅",
+      "きらめくDream/川名駅",
+      "リラクゼーションサロンLUNA（ルナ）/勝川駅北口",
+      "わたしのキス/名鉄一宮"
+    ],
+    "removed": [
+      "Alice（アリス）/新瑞橋駅8番出口",
+      "ミルク/半田口駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-30",
     "fetchedAt": "2026-07-30T11:04:45.622Z",
     "added": [
@@ -518,21 +534,6 @@
     "fetchedAt": "2026-06-30T17:04:51.710Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-06-30",
-    "fetchedAt": "2026-06-29T17:29:32.842Z",
-    "added": [
-      "愛らしい/名和駅",
-      "台湾ハニー/小牧駅",
-      "蜜のアトリエ/共和駅"
-    ],
-    "removed": [
-      "Sweet Heart～スイートハート～/蒲郡駅",
-      "従姉妹のイタズラ/石刀駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
