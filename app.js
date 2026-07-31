@@ -296,7 +296,7 @@ function renderStoreStats() {
 
 function renderLocationAudit() {
   const audit = buildLocationAudit(state.rows);
-  const isCorrectionQueue = CURRENT_REGION_ID === "tokyo";
+  const isCorrectionQueue = Boolean(REGION_GEOCODE_BOUNDS);
   if (locationPreciseCount) locationPreciseCount.textContent = `${audit.precise.length}件`;
   if (locationStationCount) locationStationCount.textContent = `${audit.station.length}件`;
   if (locationUnknownCount) locationUnknownCount.textContent = `${audit.unknown.length}件`;
@@ -1283,7 +1283,7 @@ function handleLocationAuditClick(event) {
   const rows = state.rows.filter((item) =>
     getLocationQuality(item) === "station" && getLocationAuditGroupKey(item) === trigger.dataset.locationGroup
   );
-  const selectedIndex = CURRENT_REGION_ID === "tokyo"
+  const selectedIndex = REGION_GEOCODE_BOUNDS
     ? rows.findIndex((item) => item.id === state.selectedRow?.id)
     : -1;
   const row = rows[selectedIndex >= 0 ? (selectedIndex + 1) % rows.length : 0];
@@ -1294,7 +1294,7 @@ function handleLocationAuditClick(event) {
     applyFilters();
   }
   focusRow(row);
-  if (CURRENT_REGION_ID === "tokyo") {
+  if (REGION_GEOCODE_BOUNDS) {
     for (const button of locationAuditList.querySelectorAll("[data-location-group]")) {
       const progress = button.querySelector("strong");
       if (!progress) continue;
@@ -1323,7 +1323,7 @@ function isLocationVerified(row) {
 }
 
 function getSafeSourceCoordinateCandidate(listingUrl, station) {
-  if (CURRENT_REGION_ID !== "tokyo" || !listingUrl || !REGION_GEOCODE_BOUNDS) return null;
+  if (!listingUrl || !REGION_GEOCODE_BOUNDS) return null;
   const candidates = window.storeMeta?.roomLocationsByListingUrl?.[listingUrl];
   const selector = window.LocationCandidate?.selectSafeSingleCoordinateCandidate;
   if (!Array.isArray(candidates) || typeof selector !== "function") return null;

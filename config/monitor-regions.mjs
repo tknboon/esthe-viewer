@@ -100,6 +100,36 @@ export const MONITOR_REGIONS = {
     invalidAddressPattern: /東京都全域|東京エリア簡単検索|お探しのエリアをクリック/,
     addressScopePattern: /(東京都|千代田区|中央区|港区|新宿区|文京区|台東区|墨田区|江東区|品川区|目黒区|大田区|世田谷区|渋谷区|中野区|杉並区|豊島区|北区|荒川区|板橋区|練馬区|足立区|葛飾区|江戸川区|八王子市|立川市|武蔵野市|三鷹市|府中市|昭島市|調布市|町田市|小金井市|小平市|日野市|東村山市|国分寺市|国立市|福生市|狛江市|東大和市|清瀬市|東久留米市|武蔵村山市|多摩市|稲城市|羽村市|あきる野市|西東京市)/,
   },
+  osaka: {
+    regionId: "osaka",
+    reportLabel: "esthe-ranking osaka monitor",
+    targetUrls: [
+      "https://www.esthe-ranking.jp/osakakita/asian/",
+      "https://www.esthe-ranking.jp/tenma/asian/",
+      "https://www.esthe-ranking.jp/honmachi/asian/",
+      "https://www.esthe-ranking.jp/shinsaibashi/asian/",
+      "https://www.esthe-ranking.jp/osakaminami/asian/",
+      "https://www.esthe-ranking.jp/tanikyu/asian/",
+      "https://www.esthe-ranking.jp/higashiosaka/asian/",
+      "https://www.esthe-ranking.jp/kyobashi/asian/",
+      "https://www.esthe-ranking.jp/juso/asian/",
+      "https://www.esthe-ranking.jp/nishinakajima/asian/",
+      "https://www.esthe-ranking.jp/esaka/asian/",
+      "https://www.esthe-ranking.jp/sakai/asian/",
+    ],
+    outputFiles: {
+      snapshot: "region-data/osaka/esthe_ranking_snapshot.json",
+      report: "region-data/osaka/esthe_ranking_report.md",
+      csv: "region-data/osaka/esthe_map_points_ja.csv",
+      data: "region-data/osaka/data.js",
+      legacyCsv: "region-data/osaka/esthe_legacy_rows.csv",
+      status: "region-data/osaka/esthe_ranking_status.json",
+      failureLog: "region-data/osaka/esthe_ranking_failure.log",
+      history: "region-data/osaka/esthe_update_history.json",
+    },
+    invalidAddressPattern: /^■?大阪府$|大阪府全域|大阪エリア簡単検索|お探しのエリアをクリック/,
+    addressScopePattern: /(大阪府|大阪市|堺市|岸和田市|豊中市|池田市|吹田市|泉大津市|高槻市|貝塚市|守口市|枚方市|茨木市|八尾市|泉佐野市|富田林市|寝屋川市|河内長野市|松原市|大東市|和泉市|箕面市|柏原市|羽曳野市|門真市|摂津市|高石市|藤井寺市|東大阪市|泉南市|四條畷市|交野市|大阪狭山市|阪南市)/,
+  },
 };
 
 export function getMonitorRegion(regionId = "aichi") {

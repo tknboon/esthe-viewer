@@ -20,7 +20,8 @@ $files = @(
 
 $directories = @(
   "config",
-  "tokyo"
+  "tokyo",
+  "osaka"
 )
 
 foreach ($target in $targets) {

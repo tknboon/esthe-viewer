@@ -4,6 +4,7 @@ import vm from "node:vm";
 import { getMonitorRegion } from "../config/monitor-regions.mjs";
 
 const source = fs.readFileSync(new URL("../config/regions.js", import.meta.url), "utf8");
+const firestoreRules = fs.readFileSync(new URL("../firebase-firestore-rules.txt", import.meta.url), "utf8");
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 vm.runInContext(source, sandbox);
@@ -54,5 +55,21 @@ assert.deepEqual(
   { ...tokyo.manualLocationOverrides["https://www.esthe-ranking.jp/nishitokyo/shop-detail/6472a1b1-a254-487c-848f-61621b808d81/"] },
   { lat: 35.7723459, lng: 139.5212602 }
 );
+
+const osaka = sandbox.window.REGIONS.osaka;
+assert.equal(osaka.regionId, "osaka");
+assert.equal(osaka.title, "大阪府のアジアンエステ");
+assert.equal(osaka.areaOrder.length, 12);
+assert.equal(new Set(osaka.areaOrder).size, 12);
+assert.equal(Object.keys(osaka.areaLabels).length, 12);
+assert.equal(osaka.stationGroupRegions.length, 12);
+assert.equal(osaka.areaLabels.osakakita, "大阪キタ・梅田");
+assert.equal(osaka.areaLabels.sakai, "堺・南大阪");
+assert.ok(osaka.geocodeBounds.west > 135);
+const osakaInvalidLocationPattern = new RegExp(osaka.invalidLocationPattern);
+assert.equal(osakaInvalidLocationPattern.test("大阪府"), true);
+assert.equal(osakaInvalidLocationPattern.test("大阪エリア簡単検索"), true);
+assert.equal(osakaInvalidLocationPattern.test("大阪府大阪市中央区難波1丁目"), false);
+assert.match(firestoreRules, /regionId in \["aichi", "tokyo", "osaka"\]/);
 
 console.log("browser region config: ok");

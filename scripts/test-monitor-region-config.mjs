@@ -22,7 +22,16 @@ assert.ok(tokyo.targetUrls.every((url) => url.startsWith("https://www.esthe-rank
 assert.ok(Object.values(tokyo.outputFiles).every((filePath) => filePath.startsWith("region-data/tokyo/")));
 assert.notEqual(tokyo.outputFiles.data, aichi.outputFiles.data);
 
-assert.throws(() => getMonitorRegion("osaka"), /Unknown monitor region: osaka/);
+const osaka = getMonitorRegion("osaka");
+assert.equal(osaka.targetUrls.length, 12);
+assert.equal(new Set(osaka.targetUrls).size, 12);
+assert.ok(osaka.targetUrls.includes("https://www.esthe-ranking.jp/osakakita/asian/"));
+assert.ok(osaka.targetUrls.includes("https://www.esthe-ranking.jp/sakai/asian/"));
+assert.equal(osaka.outputFiles.data, "region-data/osaka/data.js");
+assert.ok(Object.values(osaka.outputFiles).every((filePath) => filePath.startsWith("region-data/osaka/")));
+assert.notEqual(osaka.outputFiles.data, tokyo.outputFiles.data);
+
+assert.throws(() => getMonitorRegion("unknown"), /Unknown monitor region: unknown/);
 
 MONITOR_REGIONS.invalidTest = { regionId: "invalidTest", targetUrls: [], outputFiles: {} };
 assert.throws(() => getMonitorRegion("invalidTest"), /Invalid monitor region config: invalidTest/);

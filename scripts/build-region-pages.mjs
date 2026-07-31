@@ -8,6 +8,10 @@ const regions = [
     regionId: "tokyo",
     dataPath: "region-data/tokyo/data.js",
   },
+  {
+    regionId: "osaka",
+    dataPath: "region-data/osaka/data.js",
+  },
 ];
 
 const template = await fs.readFile(path.join(ROOT, "index.html"), "utf8");
