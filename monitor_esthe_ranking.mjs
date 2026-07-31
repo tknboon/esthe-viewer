@@ -11,6 +11,7 @@ const SNAPSHOT_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.snapshot);
 const REPORT_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.report);
 const CSV_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.csv);
 const DATA_JS_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.data);
+const STATION_COORDINATES_PATH = path.join(path.dirname(DATA_JS_PATH), "station_coordinates.json");
 const LEGACY_CSV_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.legacyCsv);
 const STATUS_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.status);
 const FAILURE_LOG_PATH = path.join(ROOT, MONITOR_REGION.outputFiles.failureLog);
@@ -895,6 +896,7 @@ async function writeCsv(filePath, rows) {
 }
 
 async function writeDataJs(filePath, snapshot, updateHistory, rows) {
+  const stationCoordinates = await readJson(STATION_COORDINATES_PATH) || {};
   const officialUrlByListingUrl = Object.fromEntries(
     (snapshot.extractedStores || [])
       .filter((store) => store?.listingUrl && store?.officialUrl)
@@ -913,6 +915,7 @@ async function writeDataJs(filePath, snapshot, updateHistory, rows) {
       municipalityLabelsByListingUrl: snapshot.municipalityLabelsByListingUrl || {},
       officialUrlByListingUrl,
       roomLocationsByListingUrl,
+      stationCoordinates,
     })};`,
     `window.storeData = ${JSON.stringify(rows)};`,
   ].join("\n");

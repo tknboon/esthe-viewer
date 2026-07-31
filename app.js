@@ -900,9 +900,11 @@ function createExplicitRoomVariantRow(row, room, index) {
     : (roomAddress || buildLocationQuery(row.name, label, location, effectiveNote));
   const stationFallbackQuery = buildRoomLocationQuery(row, label);
   const shouldUseStationFallback = !hasCoordinates && (!roomAddress || normalizeRoomToken(roomAddress) === normalizeRoomToken(label));
+  const stationLatLng = resolveStationFallbackLatLng(label, label, `${row.reviewKey}__room-${index}`);
   const cachedLatLng = hasCoordinates
     ? { lat: Number(latitude), lng: Number(longitude) }
-    : state.geocodeCache[locationQuery] || (shouldUseStationFallback ? state.geocodeCache[stationFallbackQuery] || null : null);
+    : state.geocodeCache[locationQuery]
+      || (shouldUseStationFallback ? state.geocodeCache[stationFallbackQuery] || stationLatLng : null);
 
   return {
     ...row,
@@ -918,6 +920,7 @@ function createExplicitRoomVariantRow(row, room, index) {
     latitude,
     longitude,
     hasCoordinates,
+    hasStationFallback: Boolean(!hasCoordinates && cachedLatLng === stationLatLng),
     baseLatLng: cachedLatLng,
     latLng: cachedLatLng,
     baseLocationQuery: locationQuery,
@@ -2010,8 +2013,15 @@ function normalizeRow(row, index) {
   const sourceLatLng = sourceCoordinateCandidate
     ? { lat: sourceCoordinateCandidate.lat, lng: sourceCoordinateCandidate.lng }
     : null;
-  const baseLatLng = manualLatLng || embeddedLatLng || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : sourceLatLng);
-  const baseLocationQuery = baseLatLng ? `${baseLatLng.lat},${baseLatLng.lng}` : buildLocationQuery(name, station, location, notes);
+  const stationLatLng = resolveStationFallbackLatLng(station, stationGroup, listingUrl || `${name}-${index}`);
+  const baseLatLng = manualLatLng
+    || embeddedLatLng
+    || (useCoordinates ? { lat: Number(latitude), lng: Number(longitude) } : sourceLatLng)
+    || stationLatLng;
+  const hasStationFallback = Boolean(stationLatLng && !manualLatLng && !embeddedLatLng && !useCoordinates && !sourceLatLng);
+  const baseLocationQuery = hasStationFallback
+    ? buildLocationQuery(name, station, location, notes)
+    : baseLatLng ? `${baseLatLng.lat},${baseLatLng.lng}` : buildLocationQuery(name, station, location, notes);
 
   const normalizedRow = {
     id: `${name}-${station}-${index}`,
@@ -2032,6 +2042,7 @@ function normalizeRow(row, index) {
     municipalityLabels,
     hasCoordinates: hasCoordinates || Boolean(embeddedLatLng),
     hasSourceCoordinates: Boolean(sourceLatLng),
+    hasStationFallback,
     baseLatLng,
     latLng: baseLatLng,
     baseLocationQuery,
@@ -2041,6 +2052,36 @@ function normalizeRow(row, index) {
 
   applyProfileLocationToRow(normalizedRow);
   return normalizedRow;
+}
+
+function resolveStationFallbackLatLng(station, stationGroup, rowKey) {
+  const references = window.storeMeta?.stationCoordinates || {};
+  const candidateGroups = [
+    stationGroup,
+    ...String(station || "")
+      .split(/[・/／,，]/)
+      .map((part) => normalizeStationGroupLabel(part)),
+  ].filter(Boolean);
+  const reference = candidateGroups.map((group) => normalizeLatLng(references[group])).find(Boolean);
+  return reference ? spreadStationFallbackLatLng(reference, rowKey) : null;
+}
+
+function spreadStationFallbackLatLng(latLng, rowKey) {
+  let hash = 2166136261;
+  for (const char of String(rowKey || "")) {
+    hash ^= char.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  const normalizedHash = hash >>> 0;
+  const angle = (normalizedHash % 360) * Math.PI / 180;
+  const radiusMeters = 35 + ((normalizedHash >>> 9) % 6) * 22;
+  const latitudeOffset = Math.sin(angle) * radiusMeters / 111320;
+  const longitudeScale = Math.max(Math.cos(latLng.lat * Math.PI / 180), 0.2);
+  const longitudeOffset = Math.cos(angle) * radiusMeters / (111320 * longitudeScale);
+  return {
+    lat: latLng.lat + latitudeOffset,
+    lng: latLng.lng + longitudeOffset,
+  };
 }
 
 function readLocalObject(key) {
@@ -3512,8 +3553,7 @@ function runSyncMapWithFilters() {
     const cached = row.latLng || state.geocodeCache[row.locationQuery];
     if (cached) {
       row.latLng = cached;
-      addMarkerForRow(row, bounds);
-      placedCount += 1;
+      if (addMarkerForRow(row, bounds)) placedCount += 1;
     } else if (row.locationQuery) {
       queueGeocode(row);
       pendingCount += 1;
@@ -3529,8 +3569,9 @@ function runSyncMapWithFilters() {
     }
   }
 
-  if (pendingCount > 0 && statusText) {
-    statusText.textContent = `${mapRows.length}件を表示中`;
+  if (statusText) {
+    const pendingLabel = pendingCount > 0 ? ` / ${pendingCount}地点を位置補完中` : "";
+    statusText.textContent = `${placedCount}地点を表示中 / ${state.filteredRows.length}店舗${pendingLabel}`;
   }
 
   focusMarker(state.selectedRow);
@@ -3616,7 +3657,7 @@ function clearProfileMarkers() {
 }
 
 function addMarkerForRow(row, bounds) {
-  if (!row.latLng || state.markers.has(row.id)) return;
+  if (!row.latLng || state.markers.has(row.id)) return false;
 
   const marker = new google.maps.Marker({
     map: state.map,
@@ -3628,6 +3669,7 @@ function addMarkerForRow(row, bounds) {
   marker.addListener("click", () => toggleMarkerSelection(row));
   state.markers.set(row.id, marker);
   bounds.extend(row.latLng);
+  return true;
 }
 
 function addProfileMarkerForRow(row, bounds) {
@@ -3958,7 +4000,7 @@ function queueGeocode(row, shouldFocus = false) {
     existing.shouldFocus = existing.shouldFocus || shouldFocus;
     return;
   }
-  state.geocodeQueue.push({ row, shouldFocus });
+  state.geocodeQueue.push({ row, shouldFocus, retries: 0 });
   runGeocodeQueue();
 }
 
@@ -3992,6 +4034,10 @@ function runGeocodeQueue() {
       } else {
         console.warn("Geocode result outside configured region", next.row.locationQuery, geocodedLatLng);
       }
+    } else if (status === "OVER_QUERY_LIMIT" && next.retries < 4) {
+      state.geocodeQueue.unshift({ ...next, retries: next.retries + 1 });
+    } else if (status !== "ZERO_RESULTS") {
+      console.warn("Geocode failed", status, next.row.locationQuery);
     }
 
     window.setTimeout(runGeocodeQueue, status === "OVER_QUERY_LIMIT" ? 1200 : 180);
