@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-08-01",
+    "fetchedAt": "2026-08-01T10:38:37.568Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-07-31",
     "fetchedAt": "2026-07-31T11:27:40.727Z",
     "added": [
@@ -526,14 +534,6 @@
       "夢の美人/小牧駅",
       "舒雅（しょが）/犬山口駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-01",
-    "fetchedAt": "2026-06-30T17:04:51.710Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
