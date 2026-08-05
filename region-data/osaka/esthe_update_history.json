@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-08-05",
+    "fetchedAt": "2026-08-05T11:31:00.065Z",
+    "added": [
+      "ALICE/なかもず駅北口",
+      "Angel Island （エンジェルアイランド）/新大阪駅",
+      "ひと夏の恋/西中島南方駅",
+      "恋ごころ/恵美須町駅3番出口"
+    ],
+    "removed": [
+      "Fave ～アエイヴ～/高槻駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-04",
     "fetchedAt": "2026-08-04T11:34:00.691Z",
     "added": [

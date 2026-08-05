@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-08-05",
+    "fetchedAt": "2026-08-05T11:18:16.338Z",
+    "added": [
+      "ドキドキの恋/開明駅",
+      "愛ランド/伏見駅",
+      "秘密の花園/神領駅",
+      "美人ランド/新瑞橋駅・瑞穂運動場西駅"
+    ],
+    "removed": [
+      "Cotton Spa/末野原駅",
+      "Sexy Baby/蟹江駅",
+      "愛嬌むすめ/徳重・名古屋芸大駅東出口",
+      "小惡魔/開明駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-04",
     "fetchedAt": "2026-08-04T11:21:33.783Z",
     "added": [
@@ -537,14 +555,6 @@
   {
     "dayKey": "2026-07-06",
     "fetchedAt": "2026-07-05T16:01:22.294Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-05",
-    "fetchedAt": "2026-07-04T15:56:07.311Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
