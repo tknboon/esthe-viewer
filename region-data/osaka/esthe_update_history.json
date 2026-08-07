@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-08-07",
+    "fetchedAt": "2026-08-07T10:13:52.790Z",
+    "added": [
+      "My Love/西中島南方駅2番出口"
+    ],
+    "removed": [
+      "元気の源/西中島南方駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-06",
     "fetchedAt": "2026-08-06T11:33:13.896Z",
     "added": [
