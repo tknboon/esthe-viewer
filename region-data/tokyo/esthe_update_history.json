@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-08-08",
+    "fetchedAt": "2026-08-08T09:36:13.843Z",
+    "added": [],
+    "removed": [
+      "ROSE～ローズ～/亀有駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-07",
     "fetchedAt": "2026-08-07T10:01:26.140Z",
     "added": [
