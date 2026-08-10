@@ -1,5 +1,28 @@
 [
   {
+    "dayKey": "2026-08-10",
+    "fetchedAt": "2026-08-10T10:14:04.187Z",
+    "added": [
+      "Aroma renren（アロマレンレン）/伏見駅6番出口",
+      "Blue Bell（ブルーベル）/新豊田駅",
+      "kiss/小幡駅",
+      "セクシ-ONE/小牧駅",
+      "パオパオ/平針駅",
+      "花の音/春日井駅",
+      "上海養生館/南荒子駅",
+      "美人茶屋/金山駅"
+    ],
+    "removed": [
+      "Cute（キュート）/鳴海駅",
+      "honey/豊橋駅",
+      "り・ら・ら/豊橋駅",
+      "わたしのキス/名鉄一宮",
+      "愛スクリ～ム/新清洲駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-09",
     "fetchedAt": "2026-08-09T09:35:57.981Z",
     "added": [],
@@ -529,21 +552,6 @@
     "fetchedAt": "2026-07-11T10:12:42.834Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-10",
-    "fetchedAt": "2026-07-10T11:49:25.683Z",
-    "added": [
-      "Q.SPA/東刈谷駅",
-      "Soluna～ソルーナ～/蟹江駅",
-      "愛姫（あいひめ）/尾張一宮駅"
-    ],
-    "removed": [
-      "20代の姫様/三河安城駅",
-      "Dream spa～ドリームスパ～/新清洲駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

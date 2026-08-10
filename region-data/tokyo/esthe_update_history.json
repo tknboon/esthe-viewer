@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-08-10",
+    "fetchedAt": "2026-08-10T10:16:43.453Z",
+    "added": [
+      "めろい/池袋駅北口",
+      "癒しの間/ときわ台駅南口"
+    ],
+    "removed": [
+      "幸せのSpa/三鷹駅",
+      "至福空間/押上駅A3出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-09",
     "fetchedAt": "2026-08-09T09:38:25.052Z",
     "added": [],
