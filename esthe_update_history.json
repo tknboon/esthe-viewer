@@ -1,5 +1,16 @@
 [
   {
+    "dayKey": "2026-08-12",
+    "fetchedAt": "2026-08-12T09:59:19.778Z",
+    "added": [
+      "HANAHANA/高蔵寺駅",
+      "ひのき/新栄町駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-11",
     "fetchedAt": "2026-08-11T09:57:43.398Z",
     "added": [],
@@ -547,14 +558,6 @@
       "あいたい/東刈谷駅",
       "暧昧失温/甚目寺駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-12",
-    "fetchedAt": "2026-07-12T10:24:50.710Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

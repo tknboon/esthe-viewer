@@ -1,5 +1,25 @@
 [
   {
+    "dayKey": "2026-08-12",
+    "fetchedAt": "2026-08-12T10:02:27.248Z",
+    "added": [
+      "BEAM 調布/調布駅",
+      "KAWA/八王子駅",
+      "KONYA/月島駅",
+      "Minuet（ミヌエット）/池袋駅",
+      "Mrs.Rose/笹塚駅北口",
+      "さくらんぼ/国分寺駅北口",
+      "サラサ/門前仲町駅",
+      "藤/西武新宿駅北口"
+    ],
+    "removed": [
+      "Pink Momo/三鷹駅",
+      "一休み/金町駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-11",
     "fetchedAt": "2026-08-11T10:00:13.577Z",
     "added": [],
