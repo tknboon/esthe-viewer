@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-08-13",
+    "fetchedAt": "2026-08-13T10:01:04.014Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-12",
     "fetchedAt": "2026-08-12T09:59:19.778Z",
     "added": [
@@ -542,21 +550,6 @@
     ],
     "removed": [
       "幸せの夜/知立駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-13",
-    "fetchedAt": "2026-07-13T11:59:19.196Z",
-    "added": [
-      "あいたいなっ♪/東刈谷駅",
-      "天使アロマ/蒲郡駅",
-      "夜夜倾心/甚目寺駅"
-    ],
-    "removed": [
-      "あいたい/東刈谷駅",
-      "暧昧失温/甚目寺駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
