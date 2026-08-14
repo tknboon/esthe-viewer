@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-08-14",
+    "fetchedAt": "2026-08-14T09:57:56.246Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-13",
     "fetchedAt": "2026-08-13T10:01:04.014Z",
     "added": [],
@@ -538,18 +546,6 @@
       "甜心（てんしん）/小牧駅",
       "遊楽園/南栄駅",
       "楼蘭香（ロウランシャン）/三河豊田駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-14",
-    "fetchedAt": "2026-07-14T10:43:03.355Z",
-    "added": [
-      "神の極楽/植田駅"
-    ],
-    "removed": [
-      "幸せの夜/知立駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
