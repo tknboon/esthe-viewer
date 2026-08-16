@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-08-16",
+    "fetchedAt": "2026-08-16T09:26:22.729Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-15",
     "fetchedAt": "2026-08-15T09:24:51.258Z",
     "added": [],
@@ -412,24 +420,6 @@
       "夜の癒/竹ノ塚駅東口"
     ],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-16",
-    "fetchedAt": "2026-07-16T10:58:49.313Z",
-    "added": [
-      "OffSide（オフサイド）/西荻窪駅北口",
-      "さくらんぼ/上野駅",
-      "初音/国分寺駅",
-      "心楽 韓国式リラクゼーション/町屋駅"
-    ],
-    "removed": [
-      "FLYING/西荻窪駅南口",
-      "アリス館/京王多摩川駅",
-      "極楽スペース/大井町駅・蒲田駅",
-      "恋人以上/西荻窪駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
