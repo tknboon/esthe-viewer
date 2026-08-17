@@ -1,5 +1,26 @@
 [
   {
+    "dayKey": "2026-08-17",
+    "fetchedAt": "2026-08-17T09:40:23.344Z",
+    "added": [
+      "Gran Matom（グランマトム）/日本橋駅",
+      "チーズケーキ/国分寺駅",
+      "楽園ゴールド/吉祥寺駅",
+      "甘チュー/府中駅・多摩センター駅",
+      "猫ちゃん/蒲田駅",
+      "蜜のドキドキ/上野駅",
+      "癒しBABY/錦糸町駅北口"
+    ],
+    "removed": [
+      "セクシーgirl/瑞江駅",
+      "ミセス美オーラ/府中駅",
+      "会いたい/西荻窪駅",
+      "泰舒/西日暮里駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-16",
     "fetchedAt": "2026-08-16T09:26:22.729Z",
     "added": [],
@@ -404,21 +425,6 @@
     "dayKey": "2026-07-18",
     "fetchedAt": "2026-07-18T10:19:23.787Z",
     "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-17",
-    "fetchedAt": "2026-07-17T10:46:50.630Z",
-    "added": [
-      "AKiKO（あきこ）/町田駅",
-      "花物語/上野駅・稲荷町駅",
-      "初恋学園/亀戸駅北口",
-      "半熟ピーチ/鶯谷駅",
-      "夜の女神/飯田橋駅",
-      "夜の癒/竹ノ塚駅東口"
-    ],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
