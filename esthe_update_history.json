@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-08-18",
+    "fetchedAt": "2026-08-18T09:28:39.175Z",
+    "added": [
+      "満足Love/上豊田駅・新豊田駅・西尾駅・逢妻駅・知立駅・大門駅・安城駅",
+      "満点彼女/今池駅",
+      "蜜夜美人/鳴海駅",
+      "癒しの憩い/栄駅"
+    ],
+    "removed": [
+      "Rose Spa/黒川駅",
+      "花火kiss/千種駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-17",
     "fetchedAt": "2026-08-17T09:37:07.255Z",
     "added": [
@@ -517,14 +533,6 @@
   {
     "dayKey": "2026-07-19",
     "fetchedAt": "2026-07-19T10:25:03.807Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-18",
-    "fetchedAt": "2026-07-18T10:17:26.684Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

@@ -1,5 +1,25 @@
 [
   {
+    "dayKey": "2026-08-18",
+    "fetchedAt": "2026-08-18T09:31:07.111Z",
+    "added": [
+      "Homely（ホームリー）/町田駅",
+      "Lovely girl/浅草橋駅",
+      "Pandora（パンドラ）/浜松町駅南口",
+      "Seasons/久米川駅南口",
+      "うわうわ/赤羽駅南口",
+      "クローバー/豊田駅北口",
+      "バニラアイス/久米川駅",
+      "清らかな夏/三軒茶屋駅"
+    ],
+    "removed": [
+      "GOOD PRICE倶楽部/高田馬場駅早稲田口",
+      "イラク/豊田駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-17",
     "fetchedAt": "2026-08-17T09:40:23.344Z",
     "added": [
@@ -416,14 +436,6 @@
   {
     "dayKey": "2026-07-19",
     "fetchedAt": "2026-07-19T10:27:23.164Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-18",
-    "fetchedAt": "2026-07-18T10:19:23.787Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
