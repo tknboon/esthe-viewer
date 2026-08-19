@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-08-19",
+    "fetchedAt": "2026-08-19T09:32:57.313Z",
+    "added": [
+      "極上美女/西荻窪駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-18",
     "fetchedAt": "2026-08-18T09:31:07.111Z",
     "added": [
@@ -428,14 +438,6 @@
   {
     "dayKey": "2026-07-20",
     "fetchedAt": "2026-07-20T11:45:22.664Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-19",
-    "fetchedAt": "2026-07-19T10:27:23.164Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

@@ -1,5 +1,25 @@
 [
   {
+    "dayKey": "2026-08-19",
+    "fetchedAt": "2026-08-19T09:30:06.814Z",
+    "added": [
+      "トマト～tomato～/伏見駅",
+      "ねぇウチくる!?/柴田駅",
+      "艶めきリラクゼーション/三郷駅",
+      "魅惑の吐息（みわくのといき）/江南駅",
+      "誘惑のシンデレラ/前後駅"
+    ],
+    "removed": [
+      "あざと可愛い/三郷駅",
+      "キスの楽園/稲沢駅",
+      "とろあまTime/江南駅",
+      "バラの物語/前後駅",
+      "蝶の楽園/大門駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-18",
     "fetchedAt": "2026-08-18T09:28:39.175Z",
     "added": [
@@ -525,14 +545,6 @@
   {
     "dayKey": "2026-07-20",
     "fetchedAt": "2026-07-20T11:42:58.426Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-19",
-    "fetchedAt": "2026-07-19T10:25:03.807Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-08-19",
+    "fetchedAt": "2026-08-19T09:45:40.540Z",
+    "added": [
+      "Kiss Me/東梅田駅"
+    ],
+    "removed": [
+      "漢方フュージョン/枚方市駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-18",
     "fetchedAt": "2026-08-18T09:41:35.260Z",
     "added": [
