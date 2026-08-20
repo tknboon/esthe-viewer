@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-08-20",
+    "fetchedAt": "2026-08-20T09:35:28.913Z",
+    "added": [
+      "LOTUS VIETNAM（ロータス・ベトナム）/神田駅",
+      "The Blanc/西新宿駅",
+      "可愛い子/西新宿駅",
+      "花魁/東武練馬駅",
+      "会いたい/赤坂駅",
+      "憩いの屋/西新宿駅"
+    ],
+    "removed": [
+      "レモン/新富町駅",
+      "甘い誘惑/武蔵小金井駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-19",
     "fetchedAt": "2026-08-19T09:32:57.313Z",
     "added": [
@@ -432,14 +450,6 @@
     "removed": [
       "天使のきもち/神保町駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-20",
-    "fetchedAt": "2026-07-20T11:45:22.664Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
