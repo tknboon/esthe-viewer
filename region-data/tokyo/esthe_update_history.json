@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-08-21",
+    "fetchedAt": "2026-08-21T09:35:07.829Z",
+    "added": [
+      "Enjoy Room（エンジョイルーム）/亀戸駅北口",
+      "アジアの天使（あじあのてんし）/神田駅",
+      "甘い誘惑/武蔵小金井駅",
+      "純愛学園/西荻窪駅北口",
+      "東京小町/武蔵小金井駅",
+      "美人ランド/稲荷町駅"
+    ],
+    "removed": [
+      "三鷹美人/三鷹駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-20",
     "fetchedAt": "2026-08-20T09:35:28.913Z",
     "added": [
@@ -435,20 +452,6 @@
       "bad kitty/荻窪駅",
       "縁中縁（えんちゅうえん）/新大久保駅",
       "可愛い恋人/蒲田駅西口・蓮沼駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-21",
-    "fetchedAt": "2026-07-21T11:08:22.196Z",
-    "added": [
-      "RELAXLUCK/千歳烏山駅西口",
-      "アロマテイアーモ/押上駅",
-      "綿綿（めんめん）/大井町駅西口"
-    ],
-    "removed": [
-      "天使のきもち/神保町駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
