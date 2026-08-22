@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-08-22",
+    "fetchedAt": "2026-08-22T09:36:27.639Z",
+    "added": [],
+    "removed": [
+      "ORION（オリオン）/寝屋川市駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-21",
     "fetchedAt": "2026-08-21T09:44:23.268Z",
     "added": [

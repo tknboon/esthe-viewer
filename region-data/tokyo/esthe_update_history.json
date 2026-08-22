@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-08-22",
+    "fetchedAt": "2026-08-22T09:25:53.828Z",
+    "added": [],
+    "removed": [
+      "Doll House/三鷹駅南口",
+      "Enjoy Room（エンジョイルーム）/亀戸駅北口",
+      "OffSide（オフサイド）/西荻窪駅北口",
+      "Sirena （シレーナ）/新富町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-21",
     "fetchedAt": "2026-08-21T09:35:07.829Z",
     "added": [
@@ -435,23 +448,6 @@
       "チェンマイ/上野駅",
       "ラッキー～lucky～/大森駅北口",
       "ラブRoom/葛西駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-22",
-    "fetchedAt": "2026-07-22T11:08:55.752Z",
-    "added": [
-      "20代の姫様/蒲田駅西口・蓮沼駅",
-      "Dear dolls（ディアドールズ）/荻窪駅",
-      "帰愈堂/大森駅",
-      "至福空間/押上駅A3出口"
-    ],
-    "removed": [
-      "bad kitty/荻窪駅",
-      "縁中縁（えんちゅうえん）/新大久保駅",
-      "可愛い恋人/蒲田駅西口・蓮沼駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
