@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-08-23",
+    "fetchedAt": "2026-08-23T09:24:21.829Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-22",
     "fetchedAt": "2026-08-22T09:23:31.674Z",
     "added": [],
@@ -505,26 +513,6 @@
       "神の極楽/植田駅",
       "美人のキス/稲沢駅",
       "癒の森/豊田市駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-23",
-    "fetchedAt": "2026-07-23T11:07:55.996Z",
-    "added": [
-      "Baby Face/今池駅",
-      "Sweet誘惑/栄駅",
-      "ルビー/西尾駅",
-      "魅月/新豊田駅",
-      "恋人/池下駅"
-    ],
-    "removed": [
-      "Only One/栄駅",
-      "きらめくDream/川名駅",
-      "つぼみ/三河豊田駅",
-      "濃密Candy/岡崎駅・安城駅・三河安城駅・豊田駅・新豊田駅・知立駅・大門駅・宇頭駅",
-      "八月（はちがつ）/大高駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
