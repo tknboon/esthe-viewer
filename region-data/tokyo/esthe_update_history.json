@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-08-24",
+    "fetchedAt": "2026-08-24T09:45:35.277Z",
+    "added": [
+      "Enjoy Room（エンジョイルーム）/亀戸駅北口",
+      "puppy love/亀戸駅北口",
+      "艶女/亀有駅北口",
+      "森の花/茅場町駅",
+      "森の少女/蒲田駅"
+    ],
+    "removed": [
+      "Miubbi（ミウビー）/亀戸駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-23",
     "fetchedAt": "2026-08-23T09:26:44.104Z",
     "added": [],
@@ -424,24 +440,6 @@
     "fetchedAt": "2026-07-25T10:27:38.598Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-24",
-    "fetchedAt": "2026-07-24T11:04:47.551Z",
-    "added": [
-      "紫の蝶（むらさきのちょう）/立川駅南口",
-      "美人/府中駅"
-    ],
-    "removed": [
-      "Dream（ドリーム）/錦糸町駅南口",
-      "Tiara/大井町駅・蒲田駅・大森町駅",
-      "コスモス/久米川駅",
-      "さくらんぼ/上野駅",
-      "ひまわりリラクゼーション/水天宮前駅A8出口",
-      "時の扉/立川駅南口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

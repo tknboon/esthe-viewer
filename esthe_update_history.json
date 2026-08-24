@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-08-24",
+    "fetchedAt": "2026-08-24T09:43:09.468Z",
+    "added": [
+      "sweet/船町駅",
+      "恋人ごっこ/久屋大通駅・栄駅・伏見駅"
+    ],
+    "removed": [
+      "SENZ SPA/久屋大通駅・栄駅・伏見駅",
+      "癒し ピュアハート/尾張一宮駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-23",
     "fetchedAt": "2026-08-23T09:24:21.829Z",
     "added": [],
@@ -493,27 +507,6 @@
     "fetchedAt": "2026-07-25T10:24:53.485Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-24",
-    "fetchedAt": "2026-07-24T11:02:10.177Z",
-    "added": [
-      "Eternity（エタニティ） 豊橋店/下地駅",
-      "Eternity（エタニティ） 豊田店/上挙母駅",
-      "Lucky star（ラッキースター）/伏見駅",
-      "Milky（ミルキー）/豊橋駅西口",
-      "幸せメモリー/植田駅",
-      "煌/前後駅"
-    ],
-    "removed": [
-      "いやし美人/船町駅・南栄駅",
-      "フルーツ俱樂部/丸の内駅",
-      "神の極楽/植田駅",
-      "美人のキス/稲沢駅",
-      "癒の森/豊田市駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
