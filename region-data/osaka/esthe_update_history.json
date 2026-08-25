@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-08-25",
+    "fetchedAt": "2026-08-25T09:44:37.191Z",
+    "added": [
+      "MilkPeach（ミルクピーチ）/守口市駅"
+    ],
+    "removed": [
+      "花魁～オイラン/西中島南方駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-24",
     "fetchedAt": "2026-08-24T09:55:47.931Z",
     "added": [
