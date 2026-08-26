@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-08-26",
+    "fetchedAt": "2026-08-26T09:39:22.992Z",
+    "added": [
+      "ENCHANT/三鷹駅南口",
+      "Syalulu/新富町駅",
+      "美人ランド（びじんランド）/上野駅"
+    ],
+    "removed": [
+      "Aromana（アロマーナ）/蒲田駅",
+      "蜜のドキドキ/上野駅・稲荷町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-25",
     "fetchedAt": "2026-08-25T09:34:12.128Z",
     "added": [
@@ -439,14 +454,6 @@
     "added": [
       "チェッカーベリー/立川駅"
     ],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-26",
-    "fetchedAt": "2026-07-26T10:45:32.014Z",
-    "added": [],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

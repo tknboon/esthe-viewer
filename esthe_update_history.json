@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-08-26",
+    "fetchedAt": "2026-08-26T09:36:46.705Z",
+    "added": [
+      "Bunny Boom/大府駅",
+      "パイナップル/船町駅・南栄駅・二川駅",
+      "リラクゼーション Rivine/知多半田駅",
+      "美少女Time/金山駅北口"
+    ],
+    "removed": [
+      "2倍ドキッ!/大府駅・共和駅",
+      "愛された夜/船町駅・南栄駅・二川駅",
+      "台湾夢の天使/金山駅北口",
+      "養生館/知多半田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-25",
     "fetchedAt": "2026-08-25T09:31:52.049Z",
     "added": [
@@ -509,14 +527,6 @@
       "他执妄念/甚目寺駅",
       "肉食女子/近鉄蟹江駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-26",
-    "fetchedAt": "2026-07-26T10:43:17.378Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
