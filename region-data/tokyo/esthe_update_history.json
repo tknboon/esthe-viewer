@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-08-28",
+    "fetchedAt": "2026-08-27T19:26:54.656Z",
+    "added": [
+      "初恋の/新小岩駅"
+    ],
+    "removed": [
+      "きららメンズスパ/浅草駅5番出口",
+      "綿綿（めんめん）/大井町駅西口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-26",
     "fetchedAt": "2026-08-26T09:39:22.992Z",
     "added": [
@@ -445,16 +458,6 @@
       "FULA FULA/荻窪駅",
       "整う夜3&5/町田駅北口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-27",
-    "fetchedAt": "2026-07-27T12:21:55.889Z",
-    "added": [
-      "チェッカーベリー/立川駅"
-    ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
