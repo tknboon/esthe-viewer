@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-08-29",
+    "fetchedAt": "2026-08-28T20:43:25.636Z",
+    "added": [
+      "Namuchai（ナムチャイ）/蒲田駅",
+      "桃白白/吉祥寺駅"
+    ],
+    "removed": [
+      "Golden Bouquet （ゴールデンブーケ）/京王線調布駅",
+      "日がのぼる/調布駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-28",
     "fetchedAt": "2026-08-27T19:26:54.656Z",
     "added": [
@@ -443,20 +457,6 @@
     ],
     "removed": [
       "猫ちゃん/成増駅南口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-28",
-    "fetchedAt": "2026-07-28T11:17:30.558Z",
-    "added": [
-      "一休み/金町駅北口",
-      "姫BABY/町田駅北口"
-    ],
-    "removed": [
-      "FULA FULA/荻窪駅",
-      "整う夜3&5/町田駅北口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

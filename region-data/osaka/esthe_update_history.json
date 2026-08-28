@@ -1,5 +1,16 @@
 [
   {
+    "dayKey": "2026-08-29",
+    "fetchedAt": "2026-08-28T20:53:03.570Z",
+    "added": [
+      "アジアンベイビー/西中島南方駅2番出口",
+      "猫娘屋/恵美須町駅1-B"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-28",
     "fetchedAt": "2026-08-27T19:34:29.426Z",
     "added": [],
