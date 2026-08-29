@@ -1,14 +1,15 @@
 [
   {
     "dayKey": "2026-08-29",
-    "fetchedAt": "2026-08-28T20:43:25.636Z",
+    "fetchedAt": "2026-08-29T14:11:19.313Z",
     "added": [
       "Namuchai（ナムチャイ）/蒲田駅",
       "桃白白/吉祥寺駅"
     ],
     "removed": [
       "Golden Bouquet （ゴールデンブーケ）/京王線調布駅",
-      "日がのぼる/調布駅"
+      "日がのぼる/調布駅",
+      "Rose/練馬駅南口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
