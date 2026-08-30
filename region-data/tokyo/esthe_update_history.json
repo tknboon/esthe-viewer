@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-08-30",
+    "fetchedAt": "2026-08-30T14:17:23.808Z",
+    "added": [],
+    "removed": [
+      "SATISFY（サティスファイ）/麴町駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-29",
     "fetchedAt": "2026-08-29T14:11:19.313Z",
     "added": [
@@ -446,18 +456,6 @@
       "もっこり整体/町田駅北口",
       "看護学院/調布駅中央口",
       "蘭～RAN～/大久保駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-29",
-    "fetchedAt": "2026-07-29T11:26:01.413Z",
-    "added": [
-      "Secret～シークレット～/門前仲町駅3番出口"
-    ],
-    "removed": [
-      "猫ちゃん/成増駅南口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
