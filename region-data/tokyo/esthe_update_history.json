@@ -1,5 +1,24 @@
 [
   {
+    "dayKey": "2026-09-01",
+    "fetchedAt": "2026-08-31T16:43:26.252Z",
+    "added": [
+      "Enjoy Room（エンジョイルーム）/町田駅",
+      "Lumina Spa（ルミナスパ）/八王子駅北口",
+      "Rose/練馬駅南口",
+      "楽楽/福生駅東口",
+      "彼女Club/上野駅"
+    ],
+    "removed": [
+      "AKiKO（あきこ）/町田駅",
+      "Half Moon（ハ一フ ム一ン）/福生駅東口",
+      "ミルキーハグ/御徒町駅",
+      "めろい/池袋駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-08-30",
     "fetchedAt": "2026-08-30T14:17:23.808Z",
     "added": [],
@@ -441,21 +460,6 @@
     ],
     "removed": [
       "ふぁふぁ/日本橋駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-30",
-    "fetchedAt": "2026-07-30T11:07:33.850Z",
-    "added": [
-      "癒されたい/国分寺駅",
-      "蘭 RAN/大久保駅"
-    ],
-    "removed": [
-      "もっこり整体/町田駅北口",
-      "看護学院/調布駅中央口",
-      "蘭～RAN～/大久保駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
