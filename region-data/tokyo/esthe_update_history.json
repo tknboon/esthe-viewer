@@ -1,5 +1,29 @@
 [
   {
+    "dayKey": "2026-09-02",
+    "fetchedAt": "2026-09-02T13:15:18.826Z",
+    "added": [
+      "Blue/西新宿駅",
+      "Tiara/日本橋駅",
+      "アロマ洗体学院/門前仲町駅",
+      "極楽/石神井公園駅",
+      "桜〜サクラ〜/千歳烏山駅南口",
+      "桜の癒し/池袋駅西口",
+      "小魔女/三鷹駅",
+      "銘の癒/三軒茶屋駅南口A"
+    ],
+    "removed": [
+      "Dear dolls（ディアドールズ）/荻窪駅",
+      "New Face（ニューフェイス）/町屋駅",
+      "お帰り部屋/武蔵小金井駅",
+      "ほぼ100%/千歳烏山駅北口",
+      "錦糸町ハニー/錦糸町駅",
+      "桜園（さくらえん）/葛西駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-01",
     "fetchedAt": "2026-09-01T13:56:37.793Z",
     "added": [
@@ -472,18 +496,6 @@
     "fetchedAt": "2026-08-01T10:41:13.057Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-07-31",
-    "fetchedAt": "2026-07-31T11:30:23.832Z",
-    "added": [
-      "シャルル/稲荷町駅"
-    ],
-    "removed": [
-      "ふぁふぁ/日本橋駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
