@@ -1,5 +1,30 @@
 [
   {
+    "dayKey": "2026-09-04",
+    "fetchedAt": "2026-09-04T13:07:30.822Z",
+    "added": [
+      "Lucky girl/豊橋駅",
+      "ViviSpa/野並駅4番出口",
+      "ほたる/津島駅",
+      "マレーシア可愛い美女/築地口駅",
+      "美女との時間/刈谷駅"
+    ],
+    "removed": [
+      "20代の姫様/三河安城駅",
+      "only love（オンリーラブ）/津島駅",
+      "Q.SPA/東刈谷駅",
+      "YUAN_癒/野並駅",
+      "果樹園/刈谷駅",
+      "華の夜/大曽根駅",
+      "甘い口づけ/藤が丘駅",
+      "幸せいっぱい/築地口駅",
+      "潤んだ瞳/上豊田駅",
+      "恋の感じ/三河安城駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-03",
     "fetchedAt": "2026-09-03T13:13:47.939Z",
     "added": [
@@ -587,14 +612,6 @@
       "蜜恋/春日井駅・勝川駅",
       "夜の癒し女神/平針駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-02",
-    "fetchedAt": "2026-08-02T10:38:06.567Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

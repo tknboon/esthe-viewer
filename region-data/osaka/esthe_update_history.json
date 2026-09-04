@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-09-04",
+    "fetchedAt": "2026-09-04T13:19:14.178Z",
+    "added": [
+      "チラチラポロ/東梅田駅8番出口",
+      "癒し屋/天神橋筋六丁目駅8番出口"
+    ],
+    "removed": [
+      "満足ピチパイ/堺筋本町駅6出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-03",
     "fetchedAt": "2026-09-03T13:25:03.343Z",
     "added": [
@@ -417,14 +430,6 @@
       "誘惑の瞬間/扇町駅・天神橋筋六丁目駅",
       "恋愛空間/日本橋駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-02",
-    "fetchedAt": "2026-08-02T10:50:24.208Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
