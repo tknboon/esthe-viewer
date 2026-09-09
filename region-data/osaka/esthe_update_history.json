@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-09-09",
+    "fetchedAt": "2026-09-09T13:33:17.426Z",
+    "added": [
+      "Young Girl/布施駅西北出口"
+    ],
+    "removed": [
+      "サラン/布施駅",
+      "マジ恋キス/堺筋本町駅6番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-08",
     "fetchedAt": "2026-09-08T13:29:07.073Z",
     "added": [
@@ -368,18 +381,6 @@
     "fetchedAt": "2026-08-08T09:47:39.042Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-07",
-    "fetchedAt": "2026-08-07T10:13:52.790Z",
-    "added": [
-      "My Love/西中島南方駅2番出口"
-    ],
-    "removed": [
-      "元気の源/西中島南方駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
