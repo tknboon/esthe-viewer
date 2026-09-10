@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-09-10",
+    "fetchedAt": "2026-09-10T13:18:17.218Z",
+    "added": [
+      "宵恋（よいこい）/木田駅",
+      "台湾楽園/今伊勢駅",
+      "恋人ごっこ/藤が丘駅"
+    ],
+    "removed": [
+      "猫チュウ/西尾駅",
+      "誘惑ルーム/木田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-09",
     "fetchedAt": "2026-09-09T13:21:46.432Z",
     "added": [
@@ -508,17 +523,6 @@
     "fetchedAt": "2026-08-09T09:35:57.981Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-08",
-    "fetchedAt": "2026-08-08T09:33:56.499Z",
-    "added": [],
-    "removed": [
-      "DIVA（ディーバ）/東刈谷駅",
-      "喜顔/丸の内駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

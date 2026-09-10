@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-09-10",
+    "fetchedAt": "2026-09-10T13:28:26.455Z",
+    "added": [
+      "ふわふわガール/堺筋本町駅6・7出口",
+      "大人の夢の国/近鉄八尾駅・布施駅・高井田駅",
+      "邂逅（かいこう）/近鉄日本橋駅"
+    ],
+    "removed": [
+      "ミセス美オーラ/近鉄八尾駅・布施駅・高井田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-09",
     "fetchedAt": "2026-09-09T13:33:17.426Z",
     "added": [
@@ -373,14 +387,6 @@
     "removed": [
       "ナーンナッチャ/西中島南方駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-08",
-    "fetchedAt": "2026-08-08T09:47:39.042Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

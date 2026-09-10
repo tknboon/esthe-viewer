@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-09-10",
+    "fetchedAt": "2026-09-10T13:20:24.993Z",
+    "added": [
+      "クイーン～Queen～/茅場町駅2番口",
+      "リラキュート/西巣鴨駅A3出口30秒"
+    ],
+    "removed": [
+      "Seasons/久米川駅南口",
+      "順風/神田駅東口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-09",
     "fetchedAt": "2026-09-09T13:24:19.116Z",
     "added": [
@@ -463,16 +477,6 @@
     "fetchedAt": "2026-08-09T09:38:25.052Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-08",
-    "fetchedAt": "2026-08-08T09:36:13.843Z",
-    "added": [],
-    "removed": [
-      "ROSE～ローズ～/亀有駅南口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
