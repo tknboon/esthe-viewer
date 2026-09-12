@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-09-12",
+    "fetchedAt": "2026-09-12T12:39:24.326Z",
+    "added": [],
+    "removed": [
+      "FLOWER/東新宿駅",
+      "スミレ/西新井駅東口",
+      "ルナックス/渋谷駅新南口",
+      "温熱らくらくサロン/新板橋駅A3出口",
+      "吉日/久米川駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-11",
     "fetchedAt": "2026-09-11T13:15:32.016Z",
     "added": [
@@ -478,20 +492,6 @@
     "fetchedAt": "2026-08-11T10:00:13.577Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-10",
-    "fetchedAt": "2026-08-10T10:16:43.453Z",
-    "added": [
-      "めろい/池袋駅北口",
-      "癒しの間/ときわ台駅南口"
-    ],
-    "removed": [
-      "幸せのSpa/三鷹駅",
-      "至福空間/押上駅A3出口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

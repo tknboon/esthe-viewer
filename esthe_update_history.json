@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-12",
+    "fetchedAt": "2026-09-12T12:36:41.074Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-11",
     "fetchedAt": "2026-09-11T13:12:46.503Z",
     "added": [
@@ -505,29 +513,6 @@
     "removed": [
       "ゴールデンベル/豊橋駅",
       "ダーリンこっちに来てね/柴田駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-10",
-    "fetchedAt": "2026-08-10T10:14:04.187Z",
-    "added": [
-      "Aroma renren（アロマレンレン）/伏見駅6番出口",
-      "Blue Bell（ブルーベル）/新豊田駅",
-      "kiss/小幡駅",
-      "セクシ-ONE/小牧駅",
-      "パオパオ/平針駅",
-      "花の音/春日井駅",
-      "上海養生館/南荒子駅",
-      "美人茶屋/金山駅"
-    ],
-    "removed": [
-      "Cute（キュート）/鳴海駅",
-      "honey/豊橋駅",
-      "り・ら・ら/豊橋駅",
-      "わたしのキス/名鉄一宮",
-      "愛スクリ～ム/新清洲駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
