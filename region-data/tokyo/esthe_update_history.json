@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-09-13",
+    "fetchedAt": "2026-09-13T13:40:17.852Z",
+    "added": [],
+    "removed": [
+      "癒しの楽園/綾瀬駅東口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-12",
     "fetchedAt": "2026-09-12T12:39:24.326Z",
     "added": [],
@@ -484,14 +494,6 @@
       "Pink Momo/三鷹駅",
       "一休み/金町駅北口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-11",
-    "fetchedAt": "2026-08-11T10:00:13.577Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

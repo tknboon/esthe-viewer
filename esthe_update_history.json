@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-13",
+    "fetchedAt": "2026-09-13T13:38:00.022Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-12",
     "fetchedAt": "2026-09-12T12:36:41.074Z",
     "added": [],
@@ -503,17 +511,6 @@
       "ひのき/新栄町駅"
     ],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-11",
-    "fetchedAt": "2026-08-11T09:57:43.398Z",
-    "added": [],
-    "removed": [
-      "ゴールデンベル/豊橋駅",
-      "ダーリンこっちに来てね/柴田駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
