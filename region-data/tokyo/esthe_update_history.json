@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-09-15",
+    "fetchedAt": "2026-09-14T15:39:43.053Z",
+    "added": [
+      "シャルル/稲荷町駅",
+      "桃香/大島駅"
+    ],
+    "removed": [
+      "MUSE/御徒町駅",
+      "Sakura/御徒町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-13",
     "fetchedAt": "2026-09-13T13:40:17.852Z",
     "added": [],
@@ -474,26 +488,6 @@
     "fetchedAt": "2026-08-13T10:03:39.552Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-12",
-    "fetchedAt": "2026-08-12T10:02:27.248Z",
-    "added": [
-      "BEAM 調布/調布駅",
-      "KAWA/八王子駅",
-      "KONYA/月島駅",
-      "Minuet（ミヌエット）/池袋駅",
-      "Mrs.Rose/笹塚駅北口",
-      "さくらんぼ/国分寺駅北口",
-      "サラサ/門前仲町駅",
-      "藤/西武新宿駅北口"
-    ],
-    "removed": [
-      "Pink Momo/三鷹駅",
-      "一休み/金町駅北口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

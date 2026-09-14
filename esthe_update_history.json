@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-09-15",
+    "fetchedAt": "2026-09-14T15:37:40.663Z",
+    "added": [
+      "Aroma Baby（アロマベイビー）/一ツ木駅",
+      "Riso（リソ）/蒲郡駅",
+      "刈谷エステ学院/東刈谷駅",
+      "美ヶ斗（ビビト）/野並駅",
+      "満足館/豊田市駅"
+    ],
+    "removed": [
+      "Luxe Spa（ラックススパ）/一ツ木駅",
+      "ふわふわ/東刈谷駅",
+      "流れ星/豊田本町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-13",
     "fetchedAt": "2026-09-13T13:38:00.022Z",
     "added": [],
@@ -499,17 +517,6 @@
     "dayKey": "2026-08-13",
     "fetchedAt": "2026-08-13T10:01:04.014Z",
     "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-12",
-    "fetchedAt": "2026-08-12T09:59:19.778Z",
-    "added": [
-      "HANAHANA/高蔵寺駅",
-      "ひのき/新栄町駅"
-    ],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
