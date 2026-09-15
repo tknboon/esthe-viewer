@@ -1,13 +1,17 @@
 [
   {
     "dayKey": "2026-09-15",
-    "fetchedAt": "2026-09-14T15:47:14.986Z",
+    "fetchedAt": "2026-09-15T14:18:57.204Z",
     "added": [
       "Lucky girl/難波駅",
       "キラキラ/江坂駅8番出口",
+      "今すぐKiss Me/江坂駅",
+      "夢恋/天王寺駅14番出口3分"
+    ],
+    "removed": [
+      "キラキラ/江坂駅8番出口",
       "今すぐKiss Me/江坂駅"
     ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   },
