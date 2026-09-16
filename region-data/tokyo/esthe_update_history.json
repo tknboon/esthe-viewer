@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-16",
+    "fetchedAt": "2026-09-16T14:03:55.096Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-15",
     "fetchedAt": "2026-09-15T14:10:51.507Z",
     "added": [
@@ -491,14 +499,6 @@
     "removed": [
       "Pandora（パンドラ）/浜松町駅南口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-13",
-    "fetchedAt": "2026-08-13T10:03:39.552Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-09-16",
+    "fetchedAt": "2026-09-16T14:01:21.468Z",
+    "added": [
+      "いい気分/八幡新田駅",
+      "楽園～RAKUEN～/稲永駅",
+      "姫パラダイス/稲沢駅",
+      "抹言心动/甚目寺駅"
+    ],
+    "removed": [
+      "WhiteSnow（ホワイトスノウ）/青山駅",
+      "お待たせ/八幡新田駅",
+      "挚爱重燃/甚目寺駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-15",
     "fetchedAt": "2026-09-15T14:08:36.038Z",
     "added": [
@@ -511,14 +528,6 @@
   {
     "dayKey": "2026-08-14",
     "fetchedAt": "2026-08-14T09:57:56.246Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-13",
-    "fetchedAt": "2026-08-13T10:01:04.014Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

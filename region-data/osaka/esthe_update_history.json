@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-09-16",
+    "fetchedAt": "2026-09-16T14:11:53.278Z",
+    "added": [
+      "キラキラ/江坂駅8番出口",
+      "今すぐKiss Me/江坂駅"
+    ],
+    "removed": [
+      "天使の肌/淡路駅",
+      "夢荘（ゆめそう）/高槻市駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-15",
     "fetchedAt": "2026-09-15T14:18:57.204Z",
     "added": [
@@ -384,14 +398,6 @@
   {
     "dayKey": "2026-08-14",
     "fetchedAt": "2026-08-14T10:14:28.750Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-13",
-    "fetchedAt": "2026-08-13T10:13:57.069Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
