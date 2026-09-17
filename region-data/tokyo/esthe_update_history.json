@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-09-17",
+    "fetchedAt": "2026-09-17T14:07:28.836Z",
+    "added": [
+      "AROMA俱樂部（メンズエステ）/練馬駅A1口",
+      "NAMUCHAI（ナムチャイ）/蒲田駅",
+      "上女・癒しGarden/秋葉原駅",
+      "瑗中瑗/東新宿駅"
+    ],
+    "removed": [
+      "Aromana（アロマーナ）/蒲田駅",
+      "Namuchai（ナムチャイ）/蒲田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-16",
     "fetchedAt": "2026-09-16T14:03:55.096Z",
     "added": [],
@@ -489,16 +505,6 @@
     "fetchedAt": "2026-08-15T09:24:51.258Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-14",
-    "fetchedAt": "2026-08-14T10:02:19.752Z",
-    "added": [],
-    "removed": [
-      "Pandora（パンドラ）/浜松町駅南口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
