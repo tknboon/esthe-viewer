@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-09-18",
+    "fetchedAt": "2026-09-18T13:22:03.491Z",
+    "added": [
+      "リーナ/鶴舞駅6番出口",
+      "花色の姫/鳴海駅",
+      "大人の休憩所/蟹江駅",
+      "蜜の時間/大門駅・豊田市駅・安城駅・三河安城駅・北岡崎駅・宇頭駅・新上挙母駅・刈谷駅",
+      "夢幻/西尾駅",
+      "離宮/安城駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-17",
     "fetchedAt": "2026-09-17T14:04:49.494Z",
     "added": [
@@ -541,14 +556,6 @@
   {
     "dayKey": "2026-08-16",
     "fetchedAt": "2026-08-16T09:24:07.518Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-15",
-    "fetchedAt": "2026-08-15T09:22:05.735Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

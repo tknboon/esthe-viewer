@@ -1,5 +1,30 @@
 [
   {
+    "dayKey": "2026-09-18",
+    "fetchedAt": "2026-09-18T13:24:24.015Z",
+    "added": [
+      "20代楽園/日暮里駅",
+      "LUCY（ルーシー）/立川駅",
+      "Papaye（パパイヤ）/門前仲町駅",
+      "YUIちゃん/大森駅東口",
+      "女神の楽園/武蔵小金井駅北口"
+    ],
+    "removed": [
+      "ANNEX （アネックス）/新富町駅",
+      "Aroma ELLA/三軒茶屋駅",
+      "Franc Tulle（フランチュール）/中野駅",
+      "Papaya/門前仲町駅",
+      "Queendom/石神井公園駅",
+      "SHE/池袋駅",
+      "StarrySky/月島駅",
+      "甘い夏/三軒茶屋駅",
+      "極上Time/月島駅",
+      "女神の部屋/武蔵小金井駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-17",
     "fetchedAt": "2026-09-17T14:07:28.836Z",
     "added": [
@@ -495,14 +520,6 @@
   {
     "dayKey": "2026-08-16",
     "fetchedAt": "2026-08-16T09:26:22.729Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-15",
-    "fetchedAt": "2026-08-15T09:24:51.258Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
