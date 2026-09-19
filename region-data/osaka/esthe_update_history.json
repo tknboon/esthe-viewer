@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-19",
+    "fetchedAt": "2026-09-19T13:03:24.779Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-18",
     "fetchedAt": "2026-09-18T13:32:37.231Z",
     "added": [
@@ -401,17 +409,6 @@
       "オイルBaby/なかもず駅・堺東駅・堺駅",
       "ベッドできゅん/天満駅南出口",
       "恋物語/江坂駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-16",
-    "fetchedAt": "2026-08-16T09:36:29.708Z",
-    "added": [],
-    "removed": [
-      "キュートな乙女だらけ/天満駅南出口",
-      "せかいすぱ/天満駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-19",
+    "fetchedAt": "2026-09-19T12:53:56.730Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-18",
     "fetchedAt": "2026-09-18T13:24:24.015Z",
     "added": [
@@ -514,14 +522,6 @@
       "会いたい/西荻窪駅",
       "泰舒/西日暮里駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-16",
-    "fetchedAt": "2026-08-16T09:26:22.729Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
