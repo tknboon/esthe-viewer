@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-20",
+    "fetchedAt": "2026-09-20T13:28:26.286Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-19",
     "fetchedAt": "2026-09-19T12:53:56.730Z",
     "added": [],
@@ -500,27 +508,6 @@
     "removed": [
       "GOOD PRICE倶楽部/高田馬場駅早稲田口",
       "イラク/豊田駅北口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-17",
-    "fetchedAt": "2026-08-17T09:40:23.344Z",
-    "added": [
-      "Gran Matom（グランマトム）/日本橋駅",
-      "チーズケーキ/国分寺駅",
-      "楽園ゴールド/吉祥寺駅",
-      "甘チュー/府中駅・多摩センター駅",
-      "猫ちゃん/蒲田駅",
-      "蜜のドキドキ/上野駅",
-      "癒しBABY/錦糸町駅北口"
-    ],
-    "removed": [
-      "セクシーgirl/瑞江駅",
-      "ミセス美オーラ/府中駅",
-      "会いたい/西荻窪駅",
-      "泰舒/西日暮里駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
