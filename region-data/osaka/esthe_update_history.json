@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-09-22",
+    "fetchedAt": "2026-09-21T15:47:53.857Z",
+    "added": [],
+    "removed": [
+      "キラキラ/江坂駅8番出口",
+      "タイヘブン/西中島南方駅",
+      "今すぐKiss Me/江坂駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-20",
     "fetchedAt": "2026-09-20T13:36:23.833Z",
     "added": [],
@@ -380,24 +392,6 @@
     ],
     "removed": [
       "漢方フュージョン/枚方市駅南口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-18",
-    "fetchedAt": "2026-08-18T09:41:35.260Z",
-    "added": [
-      "Thai Relax（タイリラックス）/西中島南方駅",
-      "チャイナ ナイト/本町駅7番出口",
-      "ミルクスプラッシュ/本町駅1番出口",
-      "ロシア美人/江坂駅8番出口",
-      "夏の桃（なつのもも）/江坂駅8番出口",
-      "癒し まいまい/天王寺駅"
-    ],
-    "removed": [
-      "kiss me/江坂駅8番出口",
-      "楽しい日々（たのしいひび）/江坂駅8番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

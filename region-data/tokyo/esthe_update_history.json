@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-22",
+    "fetchedAt": "2026-09-21T15:40:10.102Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-20",
     "fetchedAt": "2026-09-20T13:28:26.286Z",
     "added": [],
@@ -489,26 +497,6 @@
       "極上美女/西荻窪駅"
     ],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-18",
-    "fetchedAt": "2026-08-18T09:31:07.111Z",
-    "added": [
-      "Homely（ホームリー）/町田駅",
-      "Lovely girl/浅草橋駅",
-      "Pandora（パンドラ）/浜松町駅南口",
-      "Seasons/久米川駅南口",
-      "うわうわ/赤羽駅南口",
-      "クローバー/豊田駅北口",
-      "バニラアイス/久米川駅",
-      "清らかな夏/三軒茶屋駅"
-    ],
-    "removed": [
-      "GOOD PRICE倶楽部/高田馬場駅早稲田口",
-      "イラク/豊田駅北口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

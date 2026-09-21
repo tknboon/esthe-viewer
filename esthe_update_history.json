@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-09-22",
+    "fetchedAt": "2026-09-21T15:37:55.231Z",
+    "added": [],
+    "removed": [
+      "ひのき/新栄町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-20",
     "fetchedAt": "2026-09-20T13:26:06.913Z",
     "added": [],
@@ -520,22 +530,6 @@
       "とろあまTime/江南駅",
       "バラの物語/前後駅",
       "蝶の楽園/大門駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-18",
-    "fetchedAt": "2026-08-18T09:28:39.175Z",
-    "added": [
-      "満足Love/上豊田駅・新豊田駅・西尾駅・逢妻駅・知立駅・大門駅・安城駅",
-      "満点彼女/今池駅",
-      "蜜夜美人/鳴海駅",
-      "癒しの憩い/栄駅"
-    ],
-    "removed": [
-      "Rose Spa/黒川駅",
-      "花火kiss/千種駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
