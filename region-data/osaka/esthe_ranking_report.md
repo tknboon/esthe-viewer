@@ -1,13 +1,13 @@
 # esthe-ranking osaka monitor
 
-- checked_at: 2026-09-21T15:47:53.857Z
+- checked_at: 2026-09-22T14:02:40.095Z
 - sources: https://www.esthe-ranking.jp/osakakita/asian/, https://www.esthe-ranking.jp/tenma/asian/, https://www.esthe-ranking.jp/honmachi/asian/, https://www.esthe-ranking.jp/shinsaibashi/asian/, https://www.esthe-ranking.jp/osakaminami/asian/, https://www.esthe-ranking.jp/tanikyu/asian/, https://www.esthe-ranking.jp/higashiosaka/asian/, https://www.esthe-ranking.jp/kyobashi/asian/, https://www.esthe-ranking.jp/juso/asian/, https://www.esthe-ranking.jp/nishinakajima/asian/, https://www.esthe-ranking.jp/esaka/asian/, https://www.esthe-ranking.jp/sakai/asian/
 - title: 【2026年9月最新】大阪キタ・梅田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】天満・南森町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】本町・堺筋本町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】心斎橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】難波・日本橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】谷町九丁目エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】東大阪・八尾エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】京橋・守口エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】十三・西淀川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】西中島・新大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】江坂・豊中エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年9月最新】堺・南大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-- count_text: https://www.esthe-ranking.jp/osakakita/asian/=17件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=22件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=5件 | https://www.esthe-ranking.jp/osakaminami/asian/=56件 | https://www.esthe-ranking.jp/tanikyu/asian/=15件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=16件 | https://www.esthe-ranking.jp/nishinakajima/asian/=62件 | https://www.esthe-ranking.jp/esaka/asian/=18件 | https://www.esthe-ranking.jp/sakai/asian/=22件
-- matched_store_count: 279
-- matched_link_count: 285
-- detail_page_count: 285
-- detailed_store_count: 285
+- count_text: https://www.esthe-ranking.jp/osakakita/asian/=17件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=22件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=56件 | https://www.esthe-ranking.jp/tanikyu/asian/=15件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=16件 | https://www.esthe-ranking.jp/nishinakajima/asian/=62件 | https://www.esthe-ranking.jp/esaka/asian/=18件 | https://www.esthe-ranking.jp/sakai/asian/=22件
+- matched_store_count: 278
+- matched_link_count: 284
+- detail_page_count: 284
+- detailed_store_count: 284
 
 ## Source Summaries
 - url: https://www.esthe-ranking.jp/osakakita/asian/
@@ -27,9 +27,9 @@
   - matched_link_count: 22
 - url: https://www.esthe-ranking.jp/shinsaibashi/asian/
   - title: 【2026年9月最新】心斎橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 5件
-  - matched_store_count: 5
-  - matched_link_count: 5
+  - count_text: 4件
+  - matched_store_count: 4
+  - matched_link_count: 4
 - url: https://www.esthe-ranking.jp/osakaminami/asian/
   - title: 【2026年9月最新】難波・日本橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 56件
@@ -75,14 +75,12 @@
 - none
 
 ## Removed
-- キラキラ/江坂駅8番出口
-- タイヘブン/西中島南方駅
-- 今すぐKiss Me/江坂駅
+- ForeverLove（フォーエバーラブ）/長堀橋駅7番出口
 
 ## Changed
-- 掲載件数表示: https://www.esthe-ranking.jp/osakakita/asian/=17件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=22件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=5件 | https://www.esthe-ranking.jp/osakaminami/asian/=56件 | https://www.esthe-ranking.jp/tanikyu/asian/=15件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=16件 | https://www.esthe-ranking.jp/nishinakajima/asian/=63件 | https://www.esthe-ranking.jp/esaka/asian/=20件 | https://www.esthe-ranking.jp/sakai/asian/=22件 -> https://www.esthe-ranking.jp/osakakita/asian/=17件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=22件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=5件 | https://www.esthe-ranking.jp/osakaminami/asian/=56件 | https://www.esthe-ranking.jp/tanikyu/asian/=15件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=16件 | https://www.esthe-ranking.jp/nishinakajima/asian/=62件 | https://www.esthe-ranking.jp/esaka/asian/=18件 | https://www.esthe-ranking.jp/sakai/asian/=22件
-- 店舗リンク数: 288 -> 285
-- 詳細取得件数: 288 -> 285
+- 掲載件数表示: https://www.esthe-ranking.jp/osakakita/asian/=17件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=22件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=5件 | https://www.esthe-ranking.jp/osakaminami/asian/=56件 | https://www.esthe-ranking.jp/tanikyu/asian/=15件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=16件 | https://www.esthe-ranking.jp/nishinakajima/asian/=62件 | https://www.esthe-ranking.jp/esaka/asian/=18件 | https://www.esthe-ranking.jp/sakai/asian/=22件 -> https://www.esthe-ranking.jp/osakakita/asian/=17件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=22件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=56件 | https://www.esthe-ranking.jp/tanikyu/asian/=15件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=16件 | https://www.esthe-ranking.jp/nishinakajima/asian/=62件 | https://www.esthe-ranking.jp/esaka/asian/=18件 | https://www.esthe-ranking.jp/sakai/asian/=22件
+- 店舗リンク数: 285 -> 284
+- 詳細取得件数: 285 -> 284
 
 ## Current Stores
 - 10夜のキス
@@ -101,7 +99,6 @@
 - Dearest（ディアレスト）
 - Doremi～ドレミ
 - E〜感じ
-- ForeverLove（フォーエバーラブ）
 - Grace（グレイス）
 - H＆B
 - happy（ハッピー）
