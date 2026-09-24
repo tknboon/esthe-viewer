@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-09-24",
+    "fetchedAt": "2026-09-24T14:12:25.303Z",
+    "added": [
+      "Only one（オンリーワン）/京橋駅",
+      "ラブラブ/あびこ駅",
+      "台北楽園/吉田駅",
+      "日本人マナー世界No1天満店/天満駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-23",
     "fetchedAt": "2026-09-23T14:16:22.169Z",
     "added": [],
@@ -381,14 +394,6 @@
     "added": [
       "プリンプリン/堺筋本町駅3番出口"
     ],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-20",
-    "fetchedAt": "2026-08-20T09:51:56.842Z",
-    "added": [],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
