@@ -1,5 +1,24 @@
 [
   {
+    "dayKey": "2026-09-25",
+    "fetchedAt": "2026-09-25T14:37:07.295Z",
+    "added": [
+      "キラキラ/江坂駅8番出口",
+      "キララ/長田駅",
+      "さくら/堺駅南口",
+      "タイヘブン/西中島南方駅",
+      "フラワー/長堀橋駅",
+      "今すぐKiss Me/江坂駅",
+      "特価ギャル/西田辺駅4番出口"
+    ],
+    "removed": [
+      "極楽SPA/喜連瓜破駅・鶴橋駅",
+      "神の極楽plus/江坂駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-24",
     "fetchedAt": "2026-09-24T14:12:25.303Z",
     "added": [
@@ -385,16 +404,6 @@
     "removed": [
       "ORION（オリオン）/寝屋川市駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-21",
-    "fetchedAt": "2026-08-21T09:44:23.268Z",
-    "added": [
-      "プリンプリン/堺筋本町駅3番出口"
-    ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
