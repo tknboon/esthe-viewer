@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-26",
+    "fetchedAt": "2026-09-26T13:39:17.600Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-25",
     "fetchedAt": "2026-09-25T14:27:12.345Z",
     "added": [
@@ -491,19 +499,6 @@
     "fetchedAt": "2026-08-23T09:26:44.104Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-22",
-    "fetchedAt": "2026-08-22T09:25:53.828Z",
-    "added": [],
-    "removed": [
-      "Doll House/三鷹駅南口",
-      "Enjoy Room（エンジョイルーム）/亀戸駅北口",
-      "OffSide（オフサイド）/西荻窪駅北口",
-      "Sirena （シレーナ）/新富町駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
