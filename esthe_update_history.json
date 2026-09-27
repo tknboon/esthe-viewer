@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-09-27",
+    "fetchedAt": "2026-09-27T14:32:32.642Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-26",
     "fetchedAt": "2026-09-26T13:36:11.257Z",
     "added": [],
@@ -534,14 +542,6 @@
       "SENZ SPA/久屋大通駅・栄駅・伏見駅",
       "癒し ピュアハート/尾張一宮駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-23",
-    "fetchedAt": "2026-08-23T09:24:21.829Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
