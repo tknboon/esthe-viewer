@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-09-29",
+    "fetchedAt": "2026-09-28T17:19:05.657Z",
+    "added": [
+      "Lost Cherry/平針駅",
+      "いっちゃ♡らぶ/金山駅南口",
+      "かわいい猫/東岡崎駅"
+    ],
+    "removed": [
+      "HOT COCO（ホットココ）/共和駅",
+      "大人の休憩所/蟹江駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-27",
     "fetchedAt": "2026-09-27T14:32:32.642Z",
     "added": [],
@@ -527,20 +542,6 @@
       "Star sea（スターシー）/豊明駅",
       "美人の癒しアロマ/西春駅",
       "癒しの森/高岳駅・今池駅・千種駅・池下駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-24",
-    "fetchedAt": "2026-08-24T09:43:09.468Z",
-    "added": [
-      "sweet/船町駅",
-      "恋人ごっこ/久屋大通駅・栄駅・伏見駅"
-    ],
-    "removed": [
-      "SENZ SPA/久屋大通駅・栄駅・伏見駅",
-      "癒し ピュアハート/尾張一宮駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

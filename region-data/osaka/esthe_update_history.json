@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-09-29",
+    "fetchedAt": "2026-09-28T17:30:45.765Z",
+    "added": [],
+    "removed": [
+      "フェアリー/西中島南方駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-27",
     "fetchedAt": "2026-09-27T14:43:55.843Z",
     "added": [],
@@ -389,18 +399,6 @@
     ],
     "removed": [
       "花魁～オイラン/西中島南方駅1番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-24",
-    "fetchedAt": "2026-08-24T09:55:47.931Z",
-    "added": [
-      "夏の桃（なつのもも）/江坂駅8番出口"
-    ],
-    "removed": [
-      "台北楽園/新大阪駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

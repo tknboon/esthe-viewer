@@ -1,5 +1,29 @@
 [
   {
+    "dayKey": "2026-09-29",
+    "fetchedAt": "2026-09-28T17:21:49.220Z",
+    "added": [
+      "all in one/飯田橋駅西口",
+      "Suzu蘭/大井町駅",
+      "葵/成増駅",
+      "雅～Miyabi～/葛西駅",
+      "帰愈堂/大森駅北口",
+      "九彩台湾式リラクゼーション/赤羽駅東口",
+      "蜜桃～Momo～/葛西駅",
+      "癒し/新井薬師前駅南口"
+    ],
+    "removed": [
+      "Angel/大森駅北口",
+      "AURA（オーラ）/門前仲町駅1番出口",
+      "baby 楽園/阿佐ヶ谷駅北口",
+      "シャンティ〜Shanti〜/飯田橋駅",
+      "紫彩（しさい）/赤羽駅",
+      "小魔女/三鷹駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-27",
     "fetchedAt": "2026-09-27T14:35:09.714Z",
     "added": [],
@@ -482,22 +506,6 @@
       "Enjoy Room（エンジョイルーム）/亀戸駅北口",
       "初の恋/赤坂見附駅2分",
       "美少女天国/三軒茶屋駅南口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-24",
-    "fetchedAt": "2026-08-24T09:45:35.277Z",
-    "added": [
-      "Enjoy Room（エンジョイルーム）/亀戸駅北口",
-      "puppy love/亀戸駅北口",
-      "艶女/亀有駅北口",
-      "森の花/茅場町駅",
-      "森の少女/蒲田駅"
-    ],
-    "removed": [
-      "Miubbi（ミウビー）/亀戸駅北口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
