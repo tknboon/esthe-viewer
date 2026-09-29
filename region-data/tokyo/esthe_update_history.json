@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-09-30",
+    "fetchedAt": "2026-09-29T15:22:47.750Z",
+    "added": [
+      "Starry Love/桜新町駅南口",
+      "ベトナムの風/赤羽駅",
+      "台湾：愛/赤羽駅東口",
+      "癒しの家（いやしのいえ）/小作駅"
+    ],
+    "removed": [
+      "Prunus（プルヌス）/調布駅",
+      "桜花/桜新町駅南口",
+      "恋/赤羽駅東口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-29",
     "fetchedAt": "2026-09-28T17:21:49.220Z",
     "added": [
@@ -490,22 +507,6 @@
     "removed": [
       "Aromana（アロマーナ）/蒲田駅",
       "蜜のドキドキ/上野駅・稲荷町駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-25",
-    "fetchedAt": "2026-08-25T09:34:12.128Z",
-    "added": [
-      "Peony/拝島駅北口",
-      "Relife/板橋駅",
-      "恋ノ月/赤羽駅東口"
-    ],
-    "removed": [
-      "Enjoy Room（エンジョイルーム）/亀戸駅北口",
-      "初の恋/赤坂見附駅2分",
-      "美少女天国/三軒茶屋駅南口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

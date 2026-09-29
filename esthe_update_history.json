@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-09-30",
+    "fetchedAt": "2026-09-29T15:20:07.614Z",
+    "added": [
+      "ひだまり/庄内緑地公園駅"
+    ],
+    "removed": [
+      "First Class（ファーストクラス）/青山駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-29",
     "fetchedAt": "2026-09-28T17:19:05.657Z",
     "added": [
@@ -524,24 +536,6 @@
       "愛された夜/船町駅・南栄駅・二川駅",
       "台湾夢の天使/金山駅北口",
       "養生館/知多半田駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-25",
-    "fetchedAt": "2026-08-25T09:31:52.049Z",
-    "added": [
-      "ハチミツ/南栄駅",
-      "幸せいっぱい/築地口駅",
-      "天使の肌/高岳駅・今池駅・千種駅・池下駅",
-      "南国の誘惑美女達/豊明駅"
-    ],
-    "removed": [
-      "Pink Veil（ピンクヴェール）/尾頭橋駅",
-      "Star sea（スターシー）/豊明駅",
-      "美人の癒しアロマ/西春駅",
-      "癒しの森/高岳駅・今池駅・千種駅・池下駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
