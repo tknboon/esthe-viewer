@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-10-01",
+    "fetchedAt": "2026-09-30T15:37:42.974Z",
+    "added": [
+      "七彩（ななさい）台湾式リラクゼーション/赤羽駅東口",
+      "初恋学園（はつこいがくえん）/亀戸駅北口"
+    ],
+    "removed": [
+      "COCOA（ココア）/錦糸町駅北口",
+      "Golden Rose/板橋本町駅A2出口",
+      "甘い恋人/新小岩駅・西大島駅・亀戸駅",
+      "九彩台湾式リラクゼーション/赤羽駅東口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-30",
     "fetchedAt": "2026-09-29T15:22:47.750Z",
     "added": [
@@ -492,21 +508,6 @@
     "removed": [
       "きららメンズスパ/浅草駅5番出口",
       "綿綿（めんめん）/大井町駅西口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-26",
-    "fetchedAt": "2026-08-26T09:39:22.992Z",
-    "added": [
-      "ENCHANT/三鷹駅南口",
-      "Syalulu/新富町駅",
-      "美人ランド（びじんランド）/上野駅"
-    ],
-    "removed": [
-      "Aromana（アロマーナ）/蒲田駅",
-      "蜜のドキドキ/上野駅・稲荷町駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

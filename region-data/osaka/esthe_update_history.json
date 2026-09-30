@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-10-01",
+    "fetchedAt": "2026-09-30T15:46:11.228Z",
+    "added": [
+      "薄荷夏/鶴橋駅",
+      "夢一夜 （ゆめいちや）/京橋駅",
+      "恋結び（こいむすび）/あびこ駅"
+    ],
+    "removed": [
+      "さくら/堺駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-09-30",
     "fetchedAt": "2026-09-29T15:31:56.692Z",
     "added": [
@@ -390,17 +404,6 @@
     "dayKey": "2026-08-28",
     "fetchedAt": "2026-08-27T19:34:29.426Z",
     "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-26",
-    "fetchedAt": "2026-08-26T09:49:34.648Z",
-    "added": [
-      "振り向けば美女/天王寺駅6番出口",
-      "泡の少女/枚方市駅"
-    ],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
