@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-10-02",
+    "fetchedAt": "2026-10-01T16:10:15.251Z",
+    "added": [
+      "泡姫/野田駅"
+    ],
+    "removed": [
+      "ALICE/なかもず駅北口",
+      "Angel Island （エンジェルアイランド）/新大阪駅",
+      "Spin/京橋駅",
+      "ひと夏の恋/西中島南方駅",
+      "もえ娘/十三駅西口",
+      "台北楽園/吉田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-01",
     "fetchedAt": "2026-09-30T15:46:11.228Z",
     "added": [
@@ -396,14 +413,6 @@
       "アジアンベイビー/西中島南方駅2番出口",
       "猫娘屋/恵美須町駅1-B"
     ],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-28",
-    "fetchedAt": "2026-08-27T19:34:29.426Z",
-    "added": [],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
