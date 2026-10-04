@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-04",
+    "fetchedAt": "2026-10-04T14:36:16.159Z",
+    "added": [],
+    "removed": [
+      "LOVE/東海通駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-03",
     "fetchedAt": "2026-10-03T14:07:54.230Z",
     "added": [
@@ -559,14 +569,6 @@
       "悠馨（ゆうしん）/三河豊田駅",
       "陽光リラクゼーション/野並駅3番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-30",
-    "fetchedAt": "2026-08-30T14:15:25.954Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

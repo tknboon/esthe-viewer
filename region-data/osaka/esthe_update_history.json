@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-10-04",
+    "fetchedAt": "2026-10-04T14:48:35.840Z",
+    "added": [],
+    "removed": [
+      "ボーイ蜜ガール/江坂駅5番出口",
+      "春の花/江坂駅",
+      "優しい/江坂駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-03",
     "fetchedAt": "2026-10-03T14:20:06.131Z",
     "added": [
@@ -421,14 +433,6 @@
       "梅田快楽園/東梅田駅",
       "明月/高槻駅きた西口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-30",
-    "fetchedAt": "2026-08-30T14:25:22.793Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

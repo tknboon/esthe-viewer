@@ -1,5 +1,16 @@
 [
   {
+    "dayKey": "2026-10-04",
+    "fetchedAt": "2026-10-04T14:39:10.094Z",
+    "added": [],
+    "removed": [
+      "Come onお兄ちゃん/秋葉原駅昭和通り出口",
+      "Lucky（ラッキー）/西葛西駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-03",
     "fetchedAt": "2026-10-03T14:10:45.371Z",
     "added": [
@@ -533,16 +544,6 @@
       "美人茶屋/駒沢大学駅",
       "夢の楽園/拝島駅北口",
       "蘭 RAN/大久保駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-08-30",
-    "fetchedAt": "2026-08-30T14:17:23.808Z",
-    "added": [],
-    "removed": [
-      "SATISFY（サティスファイ）/麴町駅1番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
