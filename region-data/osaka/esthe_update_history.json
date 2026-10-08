@@ -1,5 +1,25 @@
 [
   {
+    "dayKey": "2026-10-09",
+    "fetchedAt": "2026-10-08T16:17:40.570Z",
+    "added": [
+      "ALICE/なかもず駅北口",
+      "Angel Island （エンジェルアイランド）/新大阪駅",
+      "LOVEクリニック/枚方市駅",
+      "YOLU SPA/新大阪駅",
+      "キラキラ/江坂駅8番出口",
+      "ひと夏の恋/西中島南方駅",
+      "ぴゅあらぶ/堺筋本町駅3番出口",
+      "ぺろりんガール/鶴橋駅1番出口",
+      "今すぐKiss Me/江坂駅",
+      "星の恋（ほしのこい）/江坂駅8番出口",
+      "癒しの女神（いやしのめがみ）/江坂駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-08",
     "fetchedAt": "2026-10-07T16:15:12.978Z",
     "added": [
@@ -395,19 +415,6 @@
     "added": [],
     "removed": [
       "未来～Mirai～/西中島南方駅1番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-04",
-    "fetchedAt": "2026-09-04T13:19:14.178Z",
-    "added": [
-      "チラチラポロ/東梅田駅8番出口",
-      "癒し屋/天神橋筋六丁目駅8番出口"
-    ],
-    "removed": [
-      "満足ピチパイ/堺筋本町駅6出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
