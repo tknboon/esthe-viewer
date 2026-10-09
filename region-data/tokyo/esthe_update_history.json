@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-10-10",
+    "fetchedAt": "2026-10-09T15:51:17.443Z",
+    "added": [
+      "高級メンズエステ愛/神田駅",
+      "美少女Time/八王子駅",
+      "癒楽/練馬駅南口"
+    ],
+    "removed": [
+      "ベトナム美癒し館/上野駅",
+      "癒し/新井薬師前駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-09",
     "fetchedAt": "2026-10-08T16:09:18.206Z",
     "added": [
@@ -481,16 +496,6 @@
     "fetchedAt": "2026-09-06T12:37:24.868Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-05",
-    "fetchedAt": "2026-09-05T12:22:48.105Z",
-    "added": [],
-    "removed": [
-      "楽園ゴールド/吉祥寺駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

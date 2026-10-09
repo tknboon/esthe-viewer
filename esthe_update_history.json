@@ -1,5 +1,26 @@
 [
   {
+    "dayKey": "2026-10-10",
+    "fetchedAt": "2026-10-09T15:48:21.649Z",
+    "added": [
+      "CHARME（シャルム）/春田駅",
+      "漢唐道療館（かんとうどうりょうかん）/岩倉駅西出口",
+      "君と秘密の時間/黒川駅3番出口",
+      "人魚の秘密/一社駅",
+      "内緒の癒し/知立駅",
+      "恋の待ち合わせ/二川駅"
+    ],
+    "removed": [
+      "うらら/一社駅",
+      "とろけるhoney/新清洲駅",
+      "仙桃（せんとう）/笠寺駅",
+      "美人館/築地口駅",
+      "癒しの館/春田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-09",
     "fetchedAt": "2026-10-08T16:06:46.554Z",
     "added": [
@@ -480,14 +501,6 @@
   {
     "dayKey": "2026-09-06",
     "fetchedAt": "2026-09-06T12:35:25.794Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-05",
-    "fetchedAt": "2026-09-05T12:20:20.273Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

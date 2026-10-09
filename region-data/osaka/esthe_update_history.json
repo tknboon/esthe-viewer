@@ -1,5 +1,16 @@
 [
   {
+    "dayKey": "2026-10-10",
+    "fetchedAt": "2026-10-09T16:00:48.847Z",
+    "added": [],
+    "removed": [
+      "楽だ/堺駅",
+      "台北楽園/河内天美駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-09",
     "fetchedAt": "2026-10-08T16:17:40.570Z",
     "added": [
@@ -405,16 +416,6 @@
     "added": [],
     "removed": [
       "SugarBaby（しゅがーべいびー）/堺筋本町駅3番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-05",
-    "fetchedAt": "2026-09-05T12:32:17.767Z",
-    "added": [],
-    "removed": [
-      "未来～Mirai～/西中島南方駅1番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
