@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-11",
+    "fetchedAt": "2026-10-10T15:14:48.124Z",
+    "added": [],
+    "removed": [
+      "ムラットAroma/西中島南方駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-10",
     "fetchedAt": "2026-10-09T16:00:48.847Z",
     "added": [],
@@ -406,16 +416,6 @@
     "removed": [
       "Thai Sabai（タイさばい）/日本橋駅7番出口",
       "天使てんし/高槻駅西口6番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-06",
-    "fetchedAt": "2026-09-06T12:44:59.445Z",
-    "added": [],
-    "removed": [
-      "SugarBaby（しゅがーべいびー）/堺筋本町駅3番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

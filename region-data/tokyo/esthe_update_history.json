@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-11",
+    "fetchedAt": "2026-10-10T15:04:41.651Z",
+    "added": [],
+    "removed": [
+      "恋愛の出会い（れんあいのであい）/高田馬場駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-10",
     "fetchedAt": "2026-10-09T15:51:17.443Z",
     "added": [
@@ -488,14 +498,6 @@
       "夏の花/茅場町駅1番出口",
       "彼女Club/上野駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-06",
-    "fetchedAt": "2026-09-06T12:37:24.868Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
