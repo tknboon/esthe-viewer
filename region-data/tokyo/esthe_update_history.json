@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-12",
+    "fetchedAt": "2026-10-11T15:22:16.414Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-11",
     "fetchedAt": "2026-10-10T15:04:41.651Z",
     "added": [],
@@ -485,18 +493,6 @@
       "森の花/茅場町駅",
       "天使のきもち/茅場町駅",
       "鈴 （すず）/高田馬場駅早稲田口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-07",
-    "fetchedAt": "2026-09-07T14:47:23.667Z",
-    "added": [],
-    "removed": [
-      "Tiara/日本橋駅",
-      "夏の花/茅場町駅1番出口",
-      "彼女Club/上野駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

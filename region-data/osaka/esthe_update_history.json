@@ -1,5 +1,16 @@
 [
   {
+    "dayKey": "2026-10-12",
+    "fetchedAt": "2026-10-11T15:32:03.594Z",
+    "added": [],
+    "removed": [
+      "キラキラ/江坂駅8番出口",
+      "今すぐKiss Me/江坂駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-11",
     "fetchedAt": "2026-10-10T15:14:48.124Z",
     "added": [],
@@ -402,20 +413,6 @@
     ],
     "removed": [
       "振り向けば美女/天王寺駅6番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-07",
-    "fetchedAt": "2026-09-07T14:55:04.093Z",
-    "added": [
-      "SugarBaby（しゅがーべいびー）/堺筋本町駅3番出口",
-      "未来～Mirai～/西中島南方駅1番出口"
-    ],
-    "removed": [
-      "Thai Sabai（タイさばい）/日本橋駅7番出口",
-      "天使てんし/高槻駅西口6番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
