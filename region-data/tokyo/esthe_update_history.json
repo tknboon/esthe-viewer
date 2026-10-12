@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-13",
+    "fetchedAt": "2026-10-12T18:35:35.687Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-12",
     "fetchedAt": "2026-10-11T15:22:16.414Z",
     "added": [],
@@ -472,27 +480,6 @@
     "removed": [
       "20代のbaby/上野駅",
       "雅（みやび）/王子駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-08",
-    "fetchedAt": "2026-09-08T13:20:25.429Z",
-    "added": [
-      "Aromana（アロマーナ）/蒲田駅",
-      "絆/葛西駅中央口"
-    ],
-    "removed": [
-      "Dear dolls（ディアドールズ）/荻窪駅",
-      "puppy love/亀戸駅北口",
-      "シャルル/稲荷町駅",
-      "ワクワク/荻窪駅南口",
-      "楽しい/御徒町駅",
-      "初恋/葛西駅中央口",
-      "森の花/茅場町駅",
-      "天使のきもち/茅場町駅",
-      "鈴 （すず）/高田馬場駅早稲田口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
