@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-14",
+    "fetchedAt": "2026-10-13T16:42:20.149Z",
+    "added": [
+      "花結（はなむすび）/栄駅13番出口"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-13",
     "fetchedAt": "2026-10-12T18:33:19.640Z",
     "added": [],
@@ -464,19 +474,6 @@
     "removed": [
       "猫チュウ/西尾駅",
       "誘惑ルーム/木田駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-09",
-    "fetchedAt": "2026-09-09T13:21:46.432Z",
-    "added": [
-      "コスパ美人/東海通駅",
-      "挚爱重燃/甚目寺駅"
-    ],
-    "removed": [
-      "歲歳和楽/甚目寺駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
