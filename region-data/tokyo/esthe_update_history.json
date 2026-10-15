@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-15",
+    "fetchedAt": "2026-10-15T13:57:02.165Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-14",
     "fetchedAt": "2026-10-14T14:21:38.782Z",
     "added": [
@@ -477,20 +485,6 @@
     ],
     "removed": [
       "HAPPY Beauty＆Spa/西武新宿駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-10",
-    "fetchedAt": "2026-09-10T13:20:24.993Z",
-    "added": [
-      "クイーン～Queen～/茅場町駅2番口",
-      "リラキュート/西巣鴨駅A3出口30秒"
-    ],
-    "removed": [
-      "Seasons/久米川駅南口",
-      "順風/神田駅東口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

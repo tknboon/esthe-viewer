@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-15",
+    "fetchedAt": "2026-10-15T14:04:53.861Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-14",
     "fetchedAt": "2026-10-14T14:30:25.858Z",
     "added": [
@@ -399,20 +407,6 @@
       "今すぐKiss Me/江坂駅",
       "台湾泡美人/門真市駅",
       "濡れ濡れガール/堺筋本町駅3番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-10",
-    "fetchedAt": "2026-09-10T13:28:26.455Z",
-    "added": [
-      "ふわふわガール/堺筋本町駅6・7出口",
-      "大人の夢の国/近鉄八尾駅・布施駅・高井田駅",
-      "邂逅（かいこう）/近鉄日本橋駅"
-    ],
-    "removed": [
-      "ミセス美オーラ/近鉄八尾駅・布施駅・高井田駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
