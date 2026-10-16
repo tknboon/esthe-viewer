@@ -1,5 +1,30 @@
 [
   {
+    "dayKey": "2026-10-16",
+    "fetchedAt": "2026-10-16T13:44:00.636Z",
+    "added": [
+      "Desire Room（デザイア ルーム）/成岩駅",
+      "愛Angel（アイエンジェル）/豊明駅",
+      "愛の屋/三河安城駅",
+      "甘いハート/名古屋駅",
+      "気楽園/志賀本通駅",
+      "月下美人/柴田駅",
+      "熟女の誘惑/黒田駅",
+      "天界/知立駅",
+      "姫Kiss/犬山駅東口",
+      "癒し娘診療所/江南駅",
+      "優月（ゆづき）/黒川駅",
+      "恋愛100％/丸の内駅"
+    ],
+    "removed": [
+      "ViviSpa/野並駅4番出口",
+      "可愛い天使〜Cute Angel〜/犬山駅",
+      "天使のささやき/名古屋駅新幹線西口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-15",
     "fetchedAt": "2026-10-15T13:54:37.308Z",
     "added": [
@@ -464,20 +489,6 @@
     "fetchedAt": "2026-09-12T12:36:41.074Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-11",
-    "fetchedAt": "2026-09-11T13:12:46.503Z",
-    "added": [
-      "Luna（ルナ）/安城駅",
-      "台湾泡美人/高畑駅",
-      "誘香（ゆうか）/太田川駅"
-    ],
-    "removed": [
-      "LaLa spa/太田川駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

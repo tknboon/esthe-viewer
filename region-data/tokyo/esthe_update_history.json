@@ -1,5 +1,29 @@
 [
   {
+    "dayKey": "2026-10-16",
+    "fetchedAt": "2026-10-16T13:46:54.636Z",
+    "added": [
+      "Aroma Gold/赤坂見附駅A出口",
+      "Aurel～オーレル〜/蒲田駅",
+      "Doki Doki/国分寺駅",
+      "Laura（ローラ）/ひばりヶ丘駅",
+      "Mio（みお）/高田馬場駅早稲田口",
+      "PINK CLUB/三軒茶屋駅世田谷通り口",
+      "Sora（ソラ）/高田馬場駅",
+      "ココキラ/自由が丘駅北口",
+      "紅葉/東新宿駅",
+      "雪の恋（ゆきのこい）/平井駅",
+      "蜜恋spa/西葛西駅南口",
+      "癒しの天使/綾瀬駅"
+    ],
+    "removed": [
+      "ローラ/ひばりヶ丘駅",
+      "赤坂見付アロマゴールド/赤坂見附駅出入口10番"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-15",
     "fetchedAt": "2026-10-15T13:57:02.165Z",
     "added": [],
@@ -462,29 +486,6 @@
       "ルナックス/渋谷駅新南口",
       "温熱らくらくサロン/新板橋駅A3出口",
       "吉日/久米川駅南口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-11",
-    "fetchedAt": "2026-09-11T13:15:32.016Z",
-    "added": [
-      "AI花火/三軒茶屋駅",
-      "Bellrose（ベルローズ）/綾瀬駅",
-      "CUTESPA/石神井公園駅",
-      "MUSE/御徒町駅",
-      "PURE恋/中野駅",
-      "Sakura/御徒町駅",
-      "THE HALF/三鷹駅",
-      "ベル/高田馬場駅",
-      "雅～MIYABI～/神田駅東口",
-      "楽園ゴールド/吉祥寺駅",
-      "美少女Time/牛浜駅",
-      "恋愛の出会い（れんあいのであい）/高田馬場駅"
-    ],
-    "removed": [
-      "HAPPY Beauty＆Spa/西武新宿駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
