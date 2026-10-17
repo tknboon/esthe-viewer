@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-17",
+    "fetchedAt": "2026-10-17T12:43:29.136Z",
+    "added": [],
+    "removed": [
+      "花の女/門前仲町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-16",
     "fetchedAt": "2026-10-16T13:46:54.636Z",
     "added": [
@@ -472,20 +482,6 @@
     "added": [],
     "removed": [
       "癒しの楽園/綾瀬駅東口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-12",
-    "fetchedAt": "2026-09-12T12:39:24.326Z",
-    "added": [],
-    "removed": [
-      "FLOWER/東新宿駅",
-      "スミレ/西新井駅東口",
-      "ルナックス/渋谷駅新南口",
-      "温熱らくらくサロン/新板橋駅A3出口",
-      "吉日/久米川駅南口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

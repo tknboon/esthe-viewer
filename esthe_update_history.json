@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-17",
+    "fetchedAt": "2026-10-17T12:40:27.000Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-16",
     "fetchedAt": "2026-10-16T13:44:00.636Z",
     "added": [
@@ -479,14 +487,6 @@
   {
     "dayKey": "2026-09-13",
     "fetchedAt": "2026-09-13T13:38:00.022Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-12",
-    "fetchedAt": "2026-09-12T12:36:41.074Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
