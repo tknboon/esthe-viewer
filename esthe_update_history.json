@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-18",
+    "fetchedAt": "2026-10-18T12:57:39.771Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-17",
     "fetchedAt": "2026-10-17T12:40:27.000Z",
     "added": [],
@@ -481,14 +489,6 @@
       "愛ランド/伏見駅",
       "花の楽園館/青山駅・成岩駅・半田口駅・半田駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-13",
-    "fetchedAt": "2026-09-13T13:38:00.022Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

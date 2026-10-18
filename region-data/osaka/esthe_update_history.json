@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-18",
+    "fetchedAt": "2026-10-18T13:09:42.035Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-17",
     "fetchedAt": "2026-10-17T12:53:05.966Z",
     "added": [],
@@ -392,14 +400,6 @@
       "キラキラ/江坂駅8番出口",
       "今すぐKiss Me/江坂駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-13",
-    "fetchedAt": "2026-09-13T13:48:40.791Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

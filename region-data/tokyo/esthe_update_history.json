@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-18",
+    "fetchedAt": "2026-10-18T13:00:33.138Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-17",
     "fetchedAt": "2026-10-17T12:43:29.136Z",
     "added": [],
@@ -472,16 +480,6 @@
       "MUSE/御徒町駅",
       "Sakura/御徒町駅",
       "MOANA（モアナ）/北綾瀬駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-13",
-    "fetchedAt": "2026-09-13T13:40:17.852Z",
-    "added": [],
-    "removed": [
-      "癒しの楽園/綾瀬駅東口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
