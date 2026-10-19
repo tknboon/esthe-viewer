@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-10-20",
+    "fetchedAt": "2026-10-19T16:22:24.766Z",
+    "added": [
+      "Rose/高槻市駅",
+      "リラックス森/北新地駅",
+      "夜の恋/高槻市駅5番出口"
+    ],
+    "removed": [
+      "欧米娘/高槻市駅5番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-18",
     "fetchedAt": "2026-10-18T13:09:42.035Z",
     "added": [],
@@ -383,22 +397,6 @@
     "removed": [
       "天使の肌/淡路駅",
       "夢荘（ゆめそう）/高槻市駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-15",
-    "fetchedAt": "2026-09-15T14:18:57.204Z",
-    "added": [
-      "Lucky girl/難波駅",
-      "キラキラ/江坂駅8番出口",
-      "今すぐKiss Me/江坂駅",
-      "夢恋/天王寺駅14番出口3分"
-    ],
-    "removed": [
-      "キラキラ/江坂駅8番出口",
-      "今すぐKiss Me/江坂駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

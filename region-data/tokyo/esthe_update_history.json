@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-10-20",
+    "fetchedAt": "2026-10-19T16:12:48.976Z",
+    "added": [
+      "Ruby/門前仲町駅1番出口",
+      "花の女/門前仲町駅"
+    ],
+    "removed": [
+      "リフレ/久米川駅",
+      "大人のspa/東中野駅西口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-18",
     "fetchedAt": "2026-10-18T13:00:33.138Z",
     "added": [],
@@ -456,31 +470,6 @@
     "fetchedAt": "2026-09-16T14:03:55.096Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-15",
-    "fetchedAt": "2026-09-15T14:10:51.507Z",
-    "added": [
-      "シャルル/稲荷町駅",
-      "桃香/大島駅",
-      "MELTY（メルティ）/池袋駅西口",
-      "MoMo Spa/高田馬場駅戸山口",
-      "アンジェラベイビー/武蔵小金井駅北口",
-      "ニコニコ/御徒町駅",
-      "フラワー/府中駅東口",
-      "ベトガル美人/新大久保駅",
-      "君と私（きみとわたし）/蒲田駅東口",
-      "桜～Sakura～/保谷駅南口",
-      "秋ノ恋人（あきのこいびと）/拝島駅北口",
-      "蜜恋spa/西大島駅"
-    ],
-    "removed": [
-      "MUSE/御徒町駅",
-      "Sakura/御徒町駅",
-      "MOANA（モアナ）/北綾瀬駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
