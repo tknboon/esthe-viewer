@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-21",
+    "fetchedAt": "2026-10-21T14:22:40.897Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-20",
     "fetchedAt": "2026-10-20T14:07:39.685Z",
     "added": [
@@ -466,14 +474,6 @@
       "Aromana（アロマーナ）/蒲田駅",
       "Namuchai（ナムチャイ）/蒲田駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-16",
-    "fetchedAt": "2026-09-16T14:03:55.096Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
