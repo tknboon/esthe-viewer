@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-10-23",
+    "fetchedAt": "2026-10-23T14:14:54.148Z",
+    "added": [
+      "LOVEクリニック/枚方市駅",
+      "YOLU SPA/新大阪駅"
+    ],
+    "removed": [
+      "秘密の部屋/十三駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-22",
     "fetchedAt": "2026-10-22T14:32:20.826Z",
     "added": [
@@ -377,16 +390,6 @@
     "dayKey": "2026-09-19",
     "fetchedAt": "2026-09-19T13:03:24.779Z",
     "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-18",
-    "fetchedAt": "2026-09-18T13:32:37.231Z",
-    "added": [
-      "kochia/和泉府中駅"
-    ],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

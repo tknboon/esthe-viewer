@@ -1,5 +1,24 @@
 [
   {
+    "dayKey": "2026-10-23",
+    "fetchedAt": "2026-10-23T14:02:58.529Z",
+    "added": [
+      "Amber Glow（アンバーグロウ）/東海通駅1番出口",
+      "M女学園/上前津駅",
+      "愛ランド/伏見駅",
+      "金百合/茶屋ヶ坂駅",
+      "未知風/春日井駅"
+    ],
+    "removed": [
+      "HANA/新豊橋駅",
+      "OneMore～ワンモア/春日井駅",
+      "Spring/東海通駅1番出口",
+      "姉妹の誘惑/二川駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-22",
     "fetchedAt": "2026-10-22T14:19:39.844Z",
     "added": [
@@ -456,21 +475,6 @@
     "removed": [
       "ニャン〜/瑞穂運動場西駅・新瑞橋駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-18",
-    "fetchedAt": "2026-09-18T13:22:03.491Z",
-    "added": [
-      "リーナ/鶴舞駅6番出口",
-      "花色の姫/鳴海駅",
-      "大人の休憩所/蟹江駅",
-      "蜜の時間/大門駅・豊田市駅・安城駅・三河安城駅・北岡崎駅・宇頭駅・新上挙母駅・刈谷駅",
-      "夢幻/西尾駅",
-      "離宮/安城駅"
-    ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
