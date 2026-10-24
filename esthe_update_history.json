@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-24",
+    "fetchedAt": "2026-10-24T13:04:28.943Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-23",
     "fetchedAt": "2026-10-23T14:02:58.529Z",
     "added": [
@@ -465,16 +473,6 @@
     "fetchedAt": "2026-09-20T13:26:06.913Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-19",
-    "fetchedAt": "2026-09-19T12:51:15.368Z",
-    "added": [],
-    "removed": [
-      "ニャン〜/瑞穂運動場西駅・新瑞橋駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

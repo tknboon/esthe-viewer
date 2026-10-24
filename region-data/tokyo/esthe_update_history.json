@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-24",
+    "fetchedAt": "2026-10-24T13:07:05.678Z",
+    "added": [],
+    "removed": [
+      "ウィーダ/駒込駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-23",
     "fetchedAt": "2026-10-23T14:06:07.475Z",
     "added": [
@@ -529,14 +539,6 @@
   {
     "dayKey": "2026-09-20",
     "fetchedAt": "2026-09-20T13:28:26.286Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-19",
-    "fetchedAt": "2026-09-19T12:53:56.730Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
