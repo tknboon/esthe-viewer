@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-25",
+    "fetchedAt": "2026-10-25T13:42:34.880Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-24",
     "fetchedAt": "2026-10-24T13:14:52.520Z",
     "added": [],
@@ -383,14 +391,6 @@
       "今すぐKiss Me/江坂駅",
       "ForeverLove（フォーエバーラブ）/長堀橋駅7番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-20",
-    "fetchedAt": "2026-09-20T13:36:23.833Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

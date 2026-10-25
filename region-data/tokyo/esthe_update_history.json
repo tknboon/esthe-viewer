@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-25",
+    "fetchedAt": "2026-10-25T13:35:22.395Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-24",
     "fetchedAt": "2026-10-24T13:07:05.678Z",
     "added": [],
@@ -533,14 +541,6 @@
     "removed": [
       "癒し～SPA/自由が丘駅北口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-20",
-    "fetchedAt": "2026-09-20T13:28:26.286Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
