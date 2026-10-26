@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-10-27",
+    "fetchedAt": "2026-10-26T16:01:21.539Z",
+    "added": [],
+    "removed": [
+      "CARNET（カルネ）/堺筋本町駅6番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-25",
     "fetchedAt": "2026-10-25T13:42:34.880Z",
     "added": [],
@@ -378,19 +388,6 @@
     "fetchedAt": "2026-09-23T14:16:22.169Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-22",
-    "fetchedAt": "2026-09-22T14:02:40.095Z",
-    "added": [],
-    "removed": [
-      "キラキラ/江坂駅8番出口",
-      "タイヘブン/西中島南方駅",
-      "今すぐKiss Me/江坂駅",
-      "ForeverLove（フォーエバーラブ）/長堀橋駅7番出口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
