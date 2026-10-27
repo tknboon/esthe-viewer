@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-10-28",
+    "fetchedAt": "2026-10-27T15:06:19.938Z",
+    "added": [
+      "DIAMANT/小幡駅",
+      "LAVANDA/小幡駅",
+      "隠れスペース/江南駅",
+      "夜の恋/柴田駅"
+    ],
+    "removed": [
+      "Second House（セカンドハウス）/豊田駅",
+      "うるる/江南駅",
+      "八月（はちがつ）/大高駅",
+      "癒しサロン/柴田駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-27",
     "fetchedAt": "2026-10-26T15:49:10.504Z",
     "added": [
@@ -470,14 +488,6 @@
       "満足館/豊田市駅",
       "癒しの憩い/栄駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-23",
-    "fetchedAt": "2026-09-23T14:03:35.024Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

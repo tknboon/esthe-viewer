@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-10-28",
+    "fetchedAt": "2026-10-27T15:16:20.605Z",
+    "added": [
+      "キュートベビー/日本橋駅7番出口",
+      "マーメイド/高槻市駅"
+    ],
+    "removed": [
+      "Dearest（ディアレスト）/十三駅西出口",
+      "Pinky/江坂駅",
+      "ワインレッドのこころ/谷町九丁目駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-27",
     "fetchedAt": "2026-10-26T16:01:21.539Z",
     "added": [],
@@ -379,14 +394,6 @@
       "台北楽園/吉田駅",
       "日本人マナー世界No1天満店/天満駅"
     ],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-23",
-    "fetchedAt": "2026-09-23T14:16:22.169Z",
-    "added": [],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

@@ -1,5 +1,32 @@
 [
   {
+    "dayKey": "2026-10-28",
+    "fetchedAt": "2026-10-27T15:09:00.857Z",
+    "added": [
+      "Arisu（アリス）/平井駅北口",
+      "For you/町田駅東口",
+      "Gカップの美人牧場/錦糸町駅",
+      "Lila Spa/御徒町駅",
+      "Nuadsabai（ヌアサバイ）/笹塚駅",
+      "Oasis/高田馬場駅",
+      "パッタナースパ/上野駅",
+      "ヤージャイ/御徒町駅北口",
+      "ローズマリー/西荻窪駅北口",
+      "午後の紅茶 台湾リラクゼーション/赤羽駅東口2分",
+      "姫香（ひめか）/堀切菖蒲園駅",
+      "保谷癒しリラクゼーション/保谷駅南口",
+      "癒心園/町田駅北口",
+      "優々/昭島駅南口",
+      "邂逅～Kaikou～/蓮根駅東口"
+    ],
+    "removed": [
+      "ベトナム子 Girl’s SEXY（20歳）/門前仲町駅4番出口",
+      "午後の紅茶/赤羽駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-27",
     "fetchedAt": "2026-10-26T15:52:20.236Z",
     "added": [
@@ -543,14 +570,6 @@
       "蜜桃～Momo～/葛西駅",
       "癒やし空間/御徒町駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-23",
-    "fetchedAt": "2026-09-23T14:06:28.355Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
