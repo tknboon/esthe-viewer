@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-10-29",
+    "fetchedAt": "2026-10-28T15:52:31.527Z",
+    "added": [
+      "CARNET（カルネ）/堺筋本町駅6番出口",
+      "Dearest（ディアレスト）/十三駅西出口",
+      "Nico/西中島南方駅1番出口",
+      "誘惑の夜/西中島南方駅"
+    ],
+    "removed": [
+      "麗（Rei）/布施駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-28",
     "fetchedAt": "2026-10-27T15:16:20.605Z",
     "added": [
@@ -382,19 +397,6 @@
       "極楽SPA/喜連瓜破駅・鶴橋駅",
       "神の極楽plus/江坂駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-24",
-    "fetchedAt": "2026-09-24T14:12:25.303Z",
-    "added": [
-      "Only one（オンリーワン）/京橋駅",
-      "ラブラブ/あびこ駅",
-      "台北楽園/吉田駅",
-      "日本人マナー世界No1天満店/天満駅"
-    ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
