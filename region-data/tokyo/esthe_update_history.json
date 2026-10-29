@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-10-30",
+    "fetchedAt": "2026-10-29T15:53:01.815Z",
+    "added": [
+      "Blanc～ブラン～/池袋駅",
+      "COCORO/神田駅東口",
+      "Minuet（ミヌエット）/池袋駅",
+      "S・アロマ/中野駅北口"
+    ],
+    "removed": [
+      "YOU Eden/赤坂駅2番出口",
+      "キュキュラ/門前仲町駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-29",
     "fetchedAt": "2026-10-28T15:45:17.430Z",
     "added": [
@@ -563,23 +579,6 @@
     "dayKey": "2026-09-26",
     "fetchedAt": "2026-09-26T13:39:17.600Z",
     "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-25",
-    "fetchedAt": "2026-09-25T14:27:12.345Z",
-    "added": [
-      "Lucky Face/京王多摩センター駅",
-      "かおり/練馬駅西口",
-      "華/高円寺駅南口",
-      "甘い恋人/新小岩駅・西大島駅・亀戸駅",
-      "小野猫（ショウイェマオ）/飯田橋駅",
-      "虹/秋葉原駅",
-      "美楽みらく/大井町駅",
-      "癒し～SPA/自由が丘駅北口"
-    ],
     "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
