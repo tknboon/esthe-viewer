@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-10-31",
+    "fetchedAt": "2026-10-30T15:33:46.170Z",
+    "added": [
+      "Angel/大森駅北口",
+      "シンオン リラクゼーションサロン/東高円寺駅3番出口",
+      "蜜恋（みつこい）/久米川駅南口",
+      "木蘭美いじ～MuLan SPA～/千歳船橋駅南口"
+    ],
+    "removed": [
+      "Merci/東高円寺駅",
+      "ベトナム-SEXY BABY/浅草駅",
+      "癒しの心/大山駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-30",
     "fetchedAt": "2026-10-29T15:53:01.815Z",
     "added": [
@@ -570,14 +587,6 @@
   {
     "dayKey": "2026-09-27",
     "fetchedAt": "2026-09-27T14:35:09.714Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-26",
-    "fetchedAt": "2026-09-26T13:39:17.600Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

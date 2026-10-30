@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-10-31",
+    "fetchedAt": "2026-10-30T15:43:27.041Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-30",
     "fetchedAt": "2026-10-29T16:02:29.431Z",
     "added": [],
@@ -378,16 +386,6 @@
     "fetchedAt": "2026-09-27T14:43:55.843Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-26",
-    "fetchedAt": "2026-09-26T13:48:31.076Z",
-    "added": [],
-    "removed": [
-      "ときめき彼女/近鉄八尾駅中央北口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
