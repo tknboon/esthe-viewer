@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-01",
+    "fetchedAt": "2026-10-31T15:02:42.321Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-31",
     "fetchedAt": "2026-10-30T15:33:46.170Z",
     "added": [
@@ -581,14 +589,6 @@
       "紫彩（しさい）/赤羽駅",
       "小魔女/三鷹駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-27",
-    "fetchedAt": "2026-09-27T14:35:09.714Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

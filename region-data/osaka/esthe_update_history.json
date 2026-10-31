@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-01",
+    "fetchedAt": "2026-10-31T15:11:13.201Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-31",
     "fetchedAt": "2026-10-30T15:43:27.041Z",
     "added": [],
@@ -378,14 +386,6 @@
     "removed": [
       "フェアリー/西中島南方駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-27",
-    "fetchedAt": "2026-09-27T14:43:55.843Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
