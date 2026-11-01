@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-02",
+    "fetchedAt": "2026-11-01T15:43:36.007Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-10-31",
     "fetchedAt": "2026-10-31T14:59:37.726Z",
     "added": [
@@ -478,14 +486,6 @@
       "HOT COCO（ホットココ）/共和駅",
       "大人の休憩所/蟹江駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-27",
-    "fetchedAt": "2026-09-27T14:32:32.642Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

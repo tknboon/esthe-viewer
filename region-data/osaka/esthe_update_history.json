@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-02",
+    "fetchedAt": "2026-11-01T15:55:44.684Z",
+    "added": [],
+    "removed": [
+      "泡ピーチ/堺駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-01",
     "fetchedAt": "2026-10-31T15:11:13.201Z",
     "added": [],
@@ -375,16 +385,6 @@
       "タイヘブン/西中島南方駅",
       "花妖（かよう）/西中島南方駅1番出口",
       "瑠璃癒（るりいやし）/堺筋本町駅3番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-29",
-    "fetchedAt": "2026-09-28T17:30:45.765Z",
-    "added": [],
-    "removed": [
-      "フェアリー/西中島南方駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-02",
+    "fetchedAt": "2026-11-01T15:46:46.723Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-01",
     "fetchedAt": "2026-10-31T15:02:42.321Z",
     "added": [],
@@ -564,30 +572,6 @@
       "Prunus（プルヌス）/調布駅",
       "桜花/桜新町駅南口",
       "恋/赤羽駅東口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-09-29",
-    "fetchedAt": "2026-09-28T17:21:49.220Z",
-    "added": [
-      "all in one/飯田橋駅西口",
-      "Suzu蘭/大井町駅",
-      "葵/成増駅",
-      "雅～Miyabi～/葛西駅",
-      "帰愈堂/大森駅北口",
-      "九彩台湾式リラクゼーション/赤羽駅東口",
-      "蜜桃～Momo～/葛西駅",
-      "癒し/新井薬師前駅南口"
-    ],
-    "removed": [
-      "Angel/大森駅北口",
-      "AURA（オーラ）/門前仲町駅1番出口",
-      "baby 楽園/阿佐ヶ谷駅北口",
-      "シャンティ〜Shanti〜/飯田橋駅",
-      "紫彩（しさい）/赤羽駅",
-      "小魔女/三鷹駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
