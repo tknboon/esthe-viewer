@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-11-07",
+    "fetchedAt": "2026-11-06T16:44:31.605Z",
+    "added": [
+      "リラクゼーション ピーチ/布施駅",
+      "初恋/門真市駅",
+      "水蜜桃/天神橋筋六丁目駅13番口"
+    ],
+    "removed": [
+      "ハッピーベイビー/天神橋筋六丁目駅",
+      "濡れピーチ（ぬれピーチ）/江坂駅8番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-06",
     "fetchedAt": "2026-11-05T17:14:34.024Z",
     "added": [
@@ -409,18 +424,6 @@
     ],
     "removed": [
       "kochia/桜川駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-04",
-    "fetchedAt": "2026-10-04T14:48:35.840Z",
-    "added": [],
-    "removed": [
-      "ボーイ蜜ガール/江坂駅5番出口",
-      "春の花/江坂駅",
-      "優しい/江坂駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
