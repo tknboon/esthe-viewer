@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-08",
+    "fetchedAt": "2026-11-07T15:23:47.536Z",
+    "added": [],
+    "removed": [
+      "ぴんくのぴいち/日進駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-07",
     "fetchedAt": "2026-11-06T16:34:31.843Z",
     "added": [
@@ -529,16 +539,6 @@
       "☆星汐の蜜桃/岡崎駅",
       "Honey Kiss（ハニーキス）/三河安城駅",
       "甜心～てんしん/東岡崎駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-04",
-    "fetchedAt": "2026-10-04T14:36:16.159Z",
-    "added": [],
-    "removed": [
-      "LOVE/東海通駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

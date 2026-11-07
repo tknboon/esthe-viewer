@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-08",
+    "fetchedAt": "2026-11-07T15:26:26.821Z",
+    "added": [],
+    "removed": [
+      "20代（にじゅうだい）/九段下駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-07",
     "fetchedAt": "2026-11-06T16:37:09.466Z",
     "added": [
@@ -564,27 +574,6 @@
       "極上美女/西荻窪駅",
       "桜の癒し/池袋駅西口",
       "小百合/府中駅・多摩センター駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-06",
-    "fetchedAt": "2026-10-05T17:51:51.542Z",
-    "added": [
-      "Dear Mochi/東陽町駅2番出口",
-      "ピンクお姉ちゃん/秋葉原駅昭和通り口",
-      "ポーパヤー/小岩駅南口",
-      "楽天国/大井町駅",
-      "美しい天使/練馬駅",
-      "癒し～SPA/自由が丘駅北口",
-      "緣中緣/新大久保駅"
-    ],
-    "removed": [
-      "Fresh Salon（フレッシュ・サロン）/蒲田駅",
-      "フラワー/府中駅東口",
-      "君と私（きみとわたし）/蒲田駅東口",
-      "瑗中瑗/東新宿駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
