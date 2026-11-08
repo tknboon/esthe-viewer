@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-09",
+    "fetchedAt": "2026-11-08T15:57:15.588Z",
+    "added": [],
+    "removed": [
+      "スイートガール/西中島南方駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-08",
     "fetchedAt": "2026-11-07T15:33:53.385Z",
     "added": [],
@@ -404,24 +414,6 @@
       "キラキラ/江坂駅8番出口",
       "今すぐKiss Me/江坂駅",
       "邂逅（かいこう）/近鉄日本橋駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-07",
-    "fetchedAt": "2026-10-06T15:52:48.833Z",
-    "added": [],
-    "removed": [
-      "Million Heart/近鉄八尾駅・布施駅・高井田駅",
-      "Rose Healing（ローズヒーリング）/布施駅",
-      "クローバー/土居駅・枚方市駅・京橋駅・寝屋川市駅・門真市駅",
-      "ハッピーDay/扇町駅・天神橋筋六丁目駅",
-      "大人の夢の国/近鉄八尾駅・布施駅・高井田駅",
-      "桃園/高槻市駅・江坂駅",
-      "泡の少女/京橋駅・大日駅",
-      "満点girl/近鉄日本橋駅",
-      "恋人の小屋/新大阪駅・南方駅・淡路駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-09",
+    "fetchedAt": "2026-11-08T15:45:54.422Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-08",
     "fetchedAt": "2026-11-07T15:23:47.536Z",
     "added": [],
@@ -521,24 +529,6 @@
       "小狐仙/美合駅",
       "台湾ハニー/江南駅・今伊勢駅・佐古木駅",
       "抹言心动/甚目寺駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-06",
-    "fetchedAt": "2026-10-05T17:49:41.012Z",
-    "added": [
-      "Aurelia（オーレリア）/中村公園駅1番出口",
-      "可愛いレディ/太田川駅",
-      "彼女のイタズラ/安城駅",
-      "微妙な彼女/一社駅",
-      "浪漫満屋/三河安城駅"
-    ],
-    "removed": [
-      "☆星汐の蜜桃/岡崎駅",
-      "Honey Kiss（ハニーキス）/三河安城駅",
-      "甜心～てんしん/東岡崎駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
