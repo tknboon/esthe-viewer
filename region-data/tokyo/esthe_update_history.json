@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-11-10",
+    "fetchedAt": "2026-11-09T19:31:21.355Z",
+    "added": [
+      "極上の癒し ベトナム/武蔵関駅南口"
+    ],
+    "removed": [
+      "木蘭美いじ～MuLan SPA～/千歳船橋駅南口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-09",
     "fetchedAt": "2026-11-08T15:48:55.225Z",
     "added": [],
@@ -554,18 +566,6 @@
       "スターダスト/大井町駅",
       "ラビット/三鷹駅南口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-08",
-    "fetchedAt": "2026-10-07T16:06:31.146Z",
-    "added": [
-      "HOUSEKI〜宝石〜/亀有駅",
-      "Sweet 笑顔/牛浜駅",
-      "ローラ/ひばりヶ丘駅"
-    ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

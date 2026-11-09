@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-11-10",
+    "fetchedAt": "2026-11-09T19:28:15.898Z",
+    "added": [
+      "パタヤ/原駅",
+      "バナナ/大門駅",
+      "ラブルム/藤が丘駅"
+    ],
+    "removed": [
+      "Utopia～ユートピア～/江南駅",
+      "極楽Heaven/大門駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-09",
     "fetchedAt": "2026-11-08T15:45:54.422Z",
     "added": [],
@@ -508,27 +523,6 @@
     "removed": [
       "Mellia（メリア）/藤が丘駅",
       "台北泡美人/高横須賀駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-07",
-    "fetchedAt": "2026-10-06T15:40:23.249Z",
-    "added": [
-      "天使のスマイル/桜山駅",
-      "美娘（みこ）/江南駅・今伊勢駅・佐古木駅・木曽川駅"
-    ],
-    "removed": [
-      "19歳の美少女/本郷駅",
-      "Catgirl（キャットガール）/名古屋駅",
-      "Secret Charm（シークレットチャーム）/南栄駅",
-      "にこにこ/高畑駅",
-      "ハチミツ/南栄駅",
-      "愛Angel（アイエンジェル）/豊明駅",
-      "小狐仙/美合駅",
-      "台湾ハニー/江南駅・今伊勢駅・佐古木駅",
-      "抹言心动/甚目寺駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

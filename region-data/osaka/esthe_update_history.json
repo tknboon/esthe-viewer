@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-10",
+    "fetchedAt": "2026-11-09T19:39:52.372Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-09",
     "fetchedAt": "2026-11-08T15:57:15.588Z",
     "added": [],
@@ -396,25 +404,6 @@
       "癒しの女神（いやしのめがみ）/江坂駅"
     ],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-08",
-    "fetchedAt": "2026-10-07T16:15:12.978Z",
-    "added": [
-      "せかいすぱ 京橋店/京橋北出口",
-      "安らぎ/布施駅北口",
-      "元気Girl/梅田駅",
-      "赤い唇/江坂駅",
-      "檸檬/大正駅"
-    ],
-    "removed": [
-      "E感じ/なんば駅",
-      "キラキラ/江坂駅8番出口",
-      "今すぐKiss Me/江坂駅",
-      "邂逅（かいこう）/近鉄日本橋駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
