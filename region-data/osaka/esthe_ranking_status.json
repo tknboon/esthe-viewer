@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checkedAt": "2026-11-09T19:39:52.372Z",
+  "checkedAt": "2026-11-10T16:55:52.338Z",
   "sourceUrls": [
     "https://www.esthe-ranking.jp/osakakita/asian/",
     "https://www.esthe-ranking.jp/tenma/asian/",
@@ -15,10 +15,10 @@
     "https://www.esthe-ranking.jp/esaka/asian/",
     "https://www.esthe-ranking.jp/sakai/asian/"
   ],
-  "matchedStoreCount": 247,
-  "matchedLinkCount": 253,
-  "detailPageCount": 253,
-  "detailedStoreCount": 253,
+  "matchedStoreCount": 246,
+  "matchedLinkCount": 252,
+  "detailPageCount": 252,
+  "detailedStoreCount": 252,
   "reportPath": "D:\\a\\esthe-viewer\\esthe-viewer\\region-data\\osaka\\esthe_ranking_report.md",
   "snapshotPath": "D:\\a\\esthe-viewer\\esthe-viewer\\region-data\\osaka\\esthe_ranking_snapshot.json",
   "failureLogPath": "D:\\a\\esthe-viewer\\esthe-viewer\\region-data\\osaka\\esthe_ranking_failure.log"

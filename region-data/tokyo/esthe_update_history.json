@@ -1,5 +1,22 @@
 [
   {
+    "dayKey": "2026-11-11",
+    "fetchedAt": "2026-11-10T16:48:36.357Z",
+    "added": [
+      "Chérie Belle（シェリーベル）/仲御徒町駅",
+      "Fairy（フエアリー）/中野駅北口",
+      "MULAN マッサージ/千歳船橋駅",
+      "ゆい/尾久駅",
+      "楽天国/大井町駅"
+    ],
+    "removed": [
+      "Bubble（バブル）/石神井公園駅西口",
+      "幸せの時間/新橋駅日比谷口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-10",
     "fetchedAt": "2026-11-09T19:31:21.355Z",
     "added": [
@@ -546,25 +563,6 @@
     "removed": [
       "ベトナム美癒し館/上野駅",
       "癒し/新井薬師前駅南口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-09",
-    "fetchedAt": "2026-10-08T16:09:18.206Z",
-    "added": [
-      "Afumi（アフミ）/赤羽駅西口",
-      "LUCY・ルーシー/蓮沼駅",
-      "PRISPA（プリスパ）/門前仲町駅",
-      "ハッピーラック/小岩駅南口",
-      "恋のカンカク/赤羽駅",
-      "恋の始まり/赤羽駅"
-    ],
-    "removed": [
-      "A and S/青砥駅",
-      "スターダスト/大井町駅",
-      "ラビット/三鷹駅南口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

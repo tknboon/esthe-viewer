@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-11-11",
+    "fetchedAt": "2026-11-10T16:46:02.952Z",
+    "added": [
+      "おもてなし/東海通駅",
+      "癒し姬/桜井駅"
+    ],
+    "removed": [
+      "ももち/蒲郡駅",
+      "黑玫瑰/新清洲駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-10",
     "fetchedAt": "2026-11-09T19:28:15.898Z",
     "added": [
@@ -508,21 +522,6 @@
       "Oh！姉さん/新瑞橋駅",
       "秋/上前津駅10番出口",
       "恋の期待/知立駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-08",
-    "fetchedAt": "2026-10-07T16:03:56.519Z",
-    "added": [
-      "セクシ-ONE/小牧駅",
-      "甘熟いちご/小幡駅",
-      "秘密の夢/東海通駅"
-    ],
-    "removed": [
-      "Mellia（メリア）/藤が丘駅",
-      "台北泡美人/高横須賀駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
