@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-11-12",
+    "fetchedAt": "2026-11-11T16:51:57.657Z",
+    "added": [
+      "シオサイ～shiosai/東海通駅"
+    ],
+    "removed": [
+      "ドキドキ信号/前後駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-11",
     "fetchedAt": "2026-11-10T16:46:02.952Z",
     "added": [
@@ -505,23 +517,6 @@
       "仙桃（せんとう）/笠寺駅",
       "美人館/築地口駅",
       "癒しの館/春田駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-09",
-    "fetchedAt": "2026-10-08T16:06:46.554Z",
-    "added": [
-      "Mellia（メリア）/藤が丘駅",
-      "セクシーガール/浄心駅",
-      "バニーガール/新瑞橋駅",
-      "知夜（ちや）/知立駅"
-    ],
-    "removed": [
-      "Oh！姉さん/新瑞橋駅",
-      "秋/上前津駅10番出口",
-      "恋の期待/知立駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

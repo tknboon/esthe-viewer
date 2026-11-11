@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-12",
+    "fetchedAt": "2026-11-11T16:55:25.805Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-11",
     "fetchedAt": "2026-11-10T16:48:36.357Z",
     "added": [
@@ -548,21 +556,6 @@
     "added": [],
     "removed": [
       "恋愛の出会い（れんあいのであい）/高田馬場駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-10",
-    "fetchedAt": "2026-10-09T15:51:17.443Z",
-    "added": [
-      "高級メンズエステ愛/神田駅",
-      "美少女Time/八王子駅",
-      "癒楽/練馬駅南口"
-    ],
-    "removed": [
-      "ベトナム美癒し館/上野駅",
-      "癒し/新井薬師前駅南口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

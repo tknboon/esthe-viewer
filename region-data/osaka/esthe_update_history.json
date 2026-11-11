@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-11-12",
+    "fetchedAt": "2026-11-11T17:04:56.014Z",
+    "added": [
+      "セクシーBaby/天満駅",
+      "めぐり愛/江坂駅"
+    ],
+    "removed": [
+      "日本人マナー世界No1天満店/天満駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-11",
     "fetchedAt": "2026-11-10T16:55:52.338Z",
     "added": [],
@@ -382,17 +395,6 @@
     "added": [],
     "removed": [
       "ムラットAroma/西中島南方駅1番出口"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-10",
-    "fetchedAt": "2026-10-09T16:00:48.847Z",
-    "added": [],
-    "removed": [
-      "楽だ/堺駅",
-      "台北楽園/河内天美駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
