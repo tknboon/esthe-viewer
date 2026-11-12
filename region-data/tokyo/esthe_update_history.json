@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-11-13",
+    "fetchedAt": "2026-11-12T17:22:29.274Z",
+    "added": [
+      "darling （ダーリン）/大塚駅",
+      "花魁（おいらん）/調布駅中央口",
+      "春姫～HARUHIME～/多摩センター駅中央口",
+      "桃園/京王八王子駅西口"
+    ],
+    "removed": [
+      "MELTY（メルティ）/池袋駅西口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-12",
     "fetchedAt": "2026-11-11T16:55:25.805Z",
     "added": [],
@@ -547,16 +562,6 @@
     "fetchedAt": "2026-10-11T15:22:16.414Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-11",
-    "fetchedAt": "2026-10-10T15:04:41.651Z",
-    "added": [],
-    "removed": [
-      "恋愛の出会い（れんあいのであい）/高田馬場駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-11-13",
+    "fetchedAt": "2026-11-12T17:29:58.677Z",
+    "added": [
+      "Sexy girl（セクシーガール）/西中島南方駅",
+      "江坂学園/江坂駅8番出口",
+      "森の花（もりのはな）/江坂駅",
+      "世界ガールズエステ/新大阪駅東口",
+      "透蜜娘（とうみつむすめ）/堺筋本町駅10番出口"
+    ],
+    "removed": [
+      "Grace（グレイス）/堺東駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-12",
     "fetchedAt": "2026-11-11T17:04:56.014Z",
     "added": [
@@ -385,16 +401,6 @@
     "removed": [
       "キラキラ/江坂駅8番出口",
       "今すぐKiss Me/江坂駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-11",
-    "fetchedAt": "2026-10-10T15:14:48.124Z",
-    "added": [],
-    "removed": [
-      "ムラットAroma/西中島南方駅1番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
