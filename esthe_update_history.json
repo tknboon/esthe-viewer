@@ -1,5 +1,26 @@
 [
   {
+    "dayKey": "2026-11-14",
+    "fetchedAt": "2026-11-13T16:55:26.899Z",
+    "added": [
+      "CIEL/大府駅・尾張森岡駅",
+      "ひかる/赤池駅",
+      "ピュアスパ/近鉄弥富駅",
+      "ライチ/三河安城駅",
+      "妖精/男川駅"
+    ],
+    "removed": [
+      "Dream Lumos（ドリ一ムル一モス）/赤池駅",
+      "愛の屋/三河安城駅",
+      "愛の魂（あいのたましい）/大府駅・尾張森岡駅",
+      "初見（しょけん）/新栄町駅",
+      "絶世双姫/共和駅・大府駅",
+      "萌姫/東岡崎駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-13",
     "fetchedAt": "2026-11-12T17:19:47.688Z",
     "added": [
@@ -513,14 +534,6 @@
   {
     "dayKey": "2026-10-12",
     "fetchedAt": "2026-10-11T15:19:16.689Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-11",
-    "fetchedAt": "2026-10-10T15:01:24.666Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
