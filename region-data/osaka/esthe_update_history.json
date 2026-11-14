@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-15",
+    "fetchedAt": "2026-11-14T15:42:57.089Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-14",
     "fetchedAt": "2026-11-13T17:06:54.257Z",
     "added": [
@@ -401,14 +409,6 @@
     "removed": [
       "甘いピーチ/梅田駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-13",
-    "fetchedAt": "2026-10-12T18:42:46.590Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
