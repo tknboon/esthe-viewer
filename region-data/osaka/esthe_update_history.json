@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-16",
+    "fetchedAt": "2026-11-15T16:14:35.580Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-15",
     "fetchedAt": "2026-11-14T15:42:57.089Z",
     "added": [],
@@ -392,23 +400,6 @@
     "fetchedAt": "2026-10-15T14:04:53.861Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-14",
-    "fetchedAt": "2026-10-14T14:30:25.858Z",
-    "added": [
-      "Moon/喜志駅",
-      "キラキラ/江坂駅8番出口",
-      "ミラージュ/布施駅",
-      "今すぐKiss Me/江坂駅",
-      "泡ピーチ/堺駅",
-      "蜜恋spa/江坂駅"
-    ],
-    "removed": [
-      "甘いピーチ/梅田駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

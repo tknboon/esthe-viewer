@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-16",
+    "fetchedAt": "2026-11-15T16:02:59.095Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-15",
     "fetchedAt": "2026-11-14T15:31:10.511Z",
     "added": [],
@@ -528,14 +536,6 @@
       "花の海/南栄駅・豊橋駅・二川駅・船町駅・三河大塚駅・蒲郡駅",
       "素敵な夜/上社駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-13",
-    "fetchedAt": "2026-10-12T18:33:19.640Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
