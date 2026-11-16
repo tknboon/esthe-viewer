@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-11-17",
+    "fetchedAt": "2026-11-16T19:17:18.865Z",
+    "added": [
+      "Lucky（ラッキー）/護国寺駅",
+      "Royal honey（ロイヤルハニー）/浅草橋駅",
+      "楽だ/大森駅",
+      "緑の雫/護国寺駅"
+    ],
+    "removed": [
+      "Lovely girl/浅草橋駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-16",
     "fetchedAt": "2026-11-15T16:06:11.583Z",
     "added": [],
@@ -539,14 +554,6 @@
       "ローラ/ひばりヶ丘駅",
       "赤坂見付アロマゴールド/赤坂見附駅出入口10番"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-15",
-    "fetchedAt": "2026-10-15T13:57:02.165Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

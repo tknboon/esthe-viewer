@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-17",
+    "fetchedAt": "2026-11-16T19:24:51.481Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-16",
     "fetchedAt": "2026-11-15T16:14:35.580Z",
     "added": [],
@@ -392,14 +400,6 @@
     "removed": [
       "彼の秘密基地/土居駅・枚方市駅・京橋駅・門真市駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-15",
-    "fetchedAt": "2026-10-15T14:04:53.861Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
