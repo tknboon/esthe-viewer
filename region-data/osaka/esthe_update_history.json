@@ -1,5 +1,24 @@
 [
   {
+    "dayKey": "2026-11-18",
+    "fetchedAt": "2026-11-17T18:16:56.201Z",
+    "added": [
+      "Night蝶々/堺東駅北口",
+      "SEXY極楽癒し/なかもず駅",
+      "ほろ酔い夜/江坂駅",
+      "頑張ろYes/天王寺駅",
+      "天使の誘惑/江坂駅4番出口",
+      "美人リラクゼーションエステ/天神橋筋六丁目駅13番口"
+    ],
+    "removed": [
+      "Only one（オンリーワン）/京橋駅",
+      "ゆらか/堺東駅",
+      "癒しの女神（いやしのめがみ）/江坂駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-17",
     "fetchedAt": "2026-11-16T19:24:51.481Z",
     "added": [],
@@ -385,21 +404,6 @@
     "fetchedAt": "2026-10-17T12:53:05.966Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-16",
-    "fetchedAt": "2026-10-16T13:55:50.045Z",
-    "added": [
-      "Rosée（ロゼ）/本町駅15番出口",
-      "ラベンダー/土居駅・京橋駅・枚方市駅",
-      "欧米娘/高槻市駅5番出口",
-      "夢源/堺東駅"
-    ],
-    "removed": [
-      "彼の秘密基地/土居駅・枚方市駅・京橋駅・門真市駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

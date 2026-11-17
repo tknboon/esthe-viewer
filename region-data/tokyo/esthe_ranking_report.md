@@ -1,13 +1,13 @@
 # esthe-ranking tokyo monitor
 
-- checked_at: 2026-11-16T19:17:18.865Z
+- checked_at: 2026-11-17T18:09:29.247Z
 - sources: https://www.esthe-ranking.jp/haijima/asian/, https://www.esthe-ranking.jp/kumegawa/asian/, https://www.esthe-ranking.jp/nishitokyo/asian/, https://www.esthe-ranking.jp/nerima/asian/, https://www.esthe-ranking.jp/ooyama/asian/, https://www.esthe-ranking.jp/akabane/asian/, https://www.esthe-ranking.jp/kameari/asian/, https://www.esthe-ranking.jp/kokubunji/asian/, https://www.esthe-ranking.jp/shakujii/asian/, https://www.esthe-ranking.jp/otsuka/asian/, https://www.esthe-ranking.jp/nippori/asian/, https://www.esthe-ranking.jp/kichijoji/asian/, https://www.esthe-ranking.jp/ogikubo/asian/, https://www.esthe-ranking.jp/nakano/asian/, https://www.esthe-ranking.jp/okubo/asian/, https://www.esthe-ranking.jp/iidabashi/asian/, https://www.esthe-ranking.jp/suidobashi/asian/, https://www.esthe-ranking.jp/hachioji/asian/, https://www.esthe-ranking.jp/hatsudai/asian/, https://www.esthe-ranking.jp/kanda/asian/, https://www.esthe-ranking.jp/kameido/asian/, https://www.esthe-ranking.jp/fuchu/asian/, https://www.esthe-ranking.jp/chofu/asian/, https://www.esthe-ranking.jp/shimokitazawa/asian/, https://www.esthe-ranking.jp/roppongi/asian/, https://www.esthe-ranking.jp/akasaka/asian/, https://www.esthe-ranking.jp/tokyo/asian/, https://www.esthe-ranking.jp/nihonbashi/asian/, https://www.esthe-ranking.jp/monnaka/asian/, https://www.esthe-ranking.jp/machida/asian/, https://www.esthe-ranking.jp/sangenjaya/asian/, https://www.esthe-ranking.jp/ebisu/asian/, https://www.esthe-ranking.jp/meguro/asian/, https://www.esthe-ranking.jp/gotanda/asian/, https://www.esthe-ranking.jp/shinagawa/asian/, https://www.esthe-ranking.jp/shinbashi/asian/, https://www.esthe-ranking.jp/ginza/asian/, https://www.esthe-ranking.jp/jiyugaoka/asian/, https://www.esthe-ranking.jp/kasai/asian/, https://www.esthe-ranking.jp/shinjuku/asian/, https://www.esthe-ranking.jp/ikebukuro/asian/, https://www.esthe-ranking.jp/ueno/asian/, https://www.esthe-ranking.jp/kinshicho/asian/, https://www.esthe-ranking.jp/shibuya/asian/, https://www.esthe-ranking.jp/akihabara/asian/, https://www.esthe-ranking.jp/kamata/asian/, https://www.esthe-ranking.jp/tachikawa/asian/
 - title: 【2026年11月最新】拝島・福生エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】久米川・秋津エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】西東京・東久留米・清瀬エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】西武池袋線・練馬・江古田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】東武東上線・大山・下赤塚エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】赤羽・王子・板橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】北千住・亀有エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】国分寺・国立エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】西武新宿線・上石神井エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】大塚・巣鴨・駒込エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】鶯谷・日暮里エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】吉祥寺・三鷹エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】荻窪・阿佐ヶ谷エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】中野・高円寺エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】大久保・高田馬場エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】四ツ谷・飯田橋・市ヶ谷エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】水道橋・御茶ノ水エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】八王子・日野エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】京王線・初台・笹塚エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】神田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】亀戸・小岩エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】府中・聖蹟桜ヶ丘エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】調布・千歳烏山エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】小田急線沿線・下北沢エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】六本木・麻布十番エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】赤坂エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】東京・八重洲エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】日本橋・茅場町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】門前仲町・東陽町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】町田・鶴川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】三軒茶屋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】恵比寿・中目黒・代官山エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】目黒・武蔵小山エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】五反田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】品川・田町・浜松町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】新橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】銀座エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】自由が丘・学芸大学エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】葛西・西葛西エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】新宿エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】池袋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】上野・浅草・御徒町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】錦糸町・押上・両国エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】渋谷・代々木・原宿エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】秋葉原エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】蒲田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】立川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-- count_text: https://www.esthe-ranking.jp/haijima/asian/=18件 | https://www.esthe-ranking.jp/kumegawa/asian/=18件 | https://www.esthe-ranking.jp/nishitokyo/asian/=21件 | https://www.esthe-ranking.jp/nerima/asian/=20件 | https://www.esthe-ranking.jp/ooyama/asian/=21件 | https://www.esthe-ranking.jp/akabane/asian/=40件 | https://www.esthe-ranking.jp/kameari/asian/=56件 | https://www.esthe-ranking.jp/kokubunji/asian/=20件 | https://www.esthe-ranking.jp/shakujii/asian/=10件 | https://www.esthe-ranking.jp/otsuka/asian/=21件 | https://www.esthe-ranking.jp/nippori/asian/=15件 | https://www.esthe-ranking.jp/kichijoji/asian/=20件 | https://www.esthe-ranking.jp/ogikubo/asian/=34件 | https://www.esthe-ranking.jp/nakano/asian/=28件 | https://www.esthe-ranking.jp/okubo/asian/=32件 | https://www.esthe-ranking.jp/iidabashi/asian/=16件 | https://www.esthe-ranking.jp/suidobashi/asian/=7件 | https://www.esthe-ranking.jp/hachioji/asian/=31件 | https://www.esthe-ranking.jp/hatsudai/asian/=20件 | https://www.esthe-ranking.jp/kanda/asian/=23件 | https://www.esthe-ranking.jp/kameido/asian/=33件 | https://www.esthe-ranking.jp/fuchu/asian/=32件 | https://www.esthe-ranking.jp/chofu/asian/=16件 | https://www.esthe-ranking.jp/shimokitazawa/asian/=4件 | https://www.esthe-ranking.jp/roppongi/asian/=1件 | https://www.esthe-ranking.jp/akasaka/asian/=15件 | https://www.esthe-ranking.jp/tokyo/asian/=7件 | https://www.esthe-ranking.jp/nihonbashi/asian/=20件 | https://www.esthe-ranking.jp/monnaka/asian/=28件 | https://www.esthe-ranking.jp/machida/asian/=19件 | https://www.esthe-ranking.jp/sangenjaya/asian/=28件 | https://www.esthe-ranking.jp/ebisu/asian/=2件 | https://www.esthe-ranking.jp/meguro/asian/=10件 | https://www.esthe-ranking.jp/gotanda/asian/=5件 | https://www.esthe-ranking.jp/shinagawa/asian/=13件 | https://www.esthe-ranking.jp/shinbashi/asian/=8件 | https://www.esthe-ranking.jp/ginza/asian/=7件 | https://www.esthe-ranking.jp/jiyugaoka/asian/=8件 | https://www.esthe-ranking.jp/kasai/asian/=21件 | https://www.esthe-ranking.jp/shinjuku/asian/=23件 | https://www.esthe-ranking.jp/ikebukuro/asian/=38件 | https://www.esthe-ranking.jp/ueno/asian/=62件 | https://www.esthe-ranking.jp/kinshicho/asian/=21件 | https://www.esthe-ranking.jp/shibuya/asian/=5件 | https://www.esthe-ranking.jp/akihabara/asian/=19件 | https://www.esthe-ranking.jp/kamata/asian/=63件 | https://www.esthe-ranking.jp/tachikawa/asian/=15件
-- matched_store_count: 891
-- matched_link_count: 994
-- detail_page_count: 994
-- detailed_store_count: 994
+- count_text: https://www.esthe-ranking.jp/haijima/asian/=18件 | https://www.esthe-ranking.jp/kumegawa/asian/=18件 | https://www.esthe-ranking.jp/nishitokyo/asian/=21件 | https://www.esthe-ranking.jp/nerima/asian/=20件 | https://www.esthe-ranking.jp/ooyama/asian/=21件 | https://www.esthe-ranking.jp/akabane/asian/=41件 | https://www.esthe-ranking.jp/kameari/asian/=56件 | https://www.esthe-ranking.jp/kokubunji/asian/=20件 | https://www.esthe-ranking.jp/shakujii/asian/=10件 | https://www.esthe-ranking.jp/otsuka/asian/=22件 | https://www.esthe-ranking.jp/nippori/asian/=17件 | https://www.esthe-ranking.jp/kichijoji/asian/=20件 | https://www.esthe-ranking.jp/ogikubo/asian/=35件 | https://www.esthe-ranking.jp/nakano/asian/=28件 | https://www.esthe-ranking.jp/okubo/asian/=32件 | https://www.esthe-ranking.jp/iidabashi/asian/=16件 | https://www.esthe-ranking.jp/suidobashi/asian/=7件 | https://www.esthe-ranking.jp/hachioji/asian/=32件 | https://www.esthe-ranking.jp/hatsudai/asian/=20件 | https://www.esthe-ranking.jp/kanda/asian/=23件 | https://www.esthe-ranking.jp/kameido/asian/=34件 | https://www.esthe-ranking.jp/fuchu/asian/=32件 | https://www.esthe-ranking.jp/chofu/asian/=16件 | https://www.esthe-ranking.jp/shimokitazawa/asian/=4件 | https://www.esthe-ranking.jp/roppongi/asian/=1件 | https://www.esthe-ranking.jp/akasaka/asian/=15件 | https://www.esthe-ranking.jp/tokyo/asian/=8件 | https://www.esthe-ranking.jp/nihonbashi/asian/=19件 | https://www.esthe-ranking.jp/monnaka/asian/=29件 | https://www.esthe-ranking.jp/machida/asian/=19件 | https://www.esthe-ranking.jp/sangenjaya/asian/=28件 | https://www.esthe-ranking.jp/ebisu/asian/=2件 | https://www.esthe-ranking.jp/meguro/asian/=10件 | https://www.esthe-ranking.jp/gotanda/asian/=5件 | https://www.esthe-ranking.jp/shinagawa/asian/=13件 | https://www.esthe-ranking.jp/shinbashi/asian/=8件 | https://www.esthe-ranking.jp/ginza/asian/=8件 | https://www.esthe-ranking.jp/jiyugaoka/asian/=8件 | https://www.esthe-ranking.jp/kasai/asian/=21件 | https://www.esthe-ranking.jp/shinjuku/asian/=23件 | https://www.esthe-ranking.jp/ikebukuro/asian/=38件 | https://www.esthe-ranking.jp/ueno/asian/=62件 | https://www.esthe-ranking.jp/kinshicho/asian/=21件 | https://www.esthe-ranking.jp/shibuya/asian/=5件 | https://www.esthe-ranking.jp/akihabara/asian/=19件 | https://www.esthe-ranking.jp/kamata/asian/=64件 | https://www.esthe-ranking.jp/tachikawa/asian/=16件
+- matched_store_count: 900
+- matched_link_count: 1005
+- detail_page_count: 1005
+- detailed_store_count: 1005
 
 ## Source Summaries
 - url: https://www.esthe-ranking.jp/haijima/asian/
@@ -37,9 +37,9 @@
   - matched_link_count: 21
 - url: https://www.esthe-ranking.jp/akabane/asian/
   - title: 【2026年11月最新】赤羽・王子・板橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 40件
-  - matched_store_count: 40
-  - matched_link_count: 40
+  - count_text: 41件
+  - matched_store_count: 41
+  - matched_link_count: 41
 - url: https://www.esthe-ranking.jp/kameari/asian/
   - title: 【2026年11月最新】北千住・亀有エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 56件
@@ -57,14 +57,14 @@
   - matched_link_count: 10
 - url: https://www.esthe-ranking.jp/otsuka/asian/
   - title: 【2026年11月最新】大塚・巣鴨・駒込エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 21件
-  - matched_store_count: 21
-  - matched_link_count: 21
+  - count_text: 22件
+  - matched_store_count: 22
+  - matched_link_count: 22
 - url: https://www.esthe-ranking.jp/nippori/asian/
   - title: 【2026年11月最新】鶯谷・日暮里エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 15件
-  - matched_store_count: 15
-  - matched_link_count: 15
+  - count_text: 17件
+  - matched_store_count: 17
+  - matched_link_count: 17
 - url: https://www.esthe-ranking.jp/kichijoji/asian/
   - title: 【2026年11月最新】吉祥寺・三鷹エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 20件
@@ -72,9 +72,9 @@
   - matched_link_count: 20
 - url: https://www.esthe-ranking.jp/ogikubo/asian/
   - title: 【2026年11月最新】荻窪・阿佐ヶ谷エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 34件
-  - matched_store_count: 34
-  - matched_link_count: 34
+  - count_text: 35件
+  - matched_store_count: 35
+  - matched_link_count: 35
 - url: https://www.esthe-ranking.jp/nakano/asian/
   - title: 【2026年11月最新】中野・高円寺エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 28件
@@ -97,9 +97,9 @@
   - matched_link_count: 7
 - url: https://www.esthe-ranking.jp/hachioji/asian/
   - title: 【2026年11月最新】八王子・日野エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 31件
-  - matched_store_count: 31
-  - matched_link_count: 31
+  - count_text: 32件
+  - matched_store_count: 32
+  - matched_link_count: 32
 - url: https://www.esthe-ranking.jp/hatsudai/asian/
   - title: 【2026年11月最新】京王線・初台・笹塚エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 20件
@@ -112,9 +112,9 @@
   - matched_link_count: 23
 - url: https://www.esthe-ranking.jp/kameido/asian/
   - title: 【2026年11月最新】亀戸・小岩エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 33件
-  - matched_store_count: 33
-  - matched_link_count: 33
+  - count_text: 34件
+  - matched_store_count: 34
+  - matched_link_count: 34
 - url: https://www.esthe-ranking.jp/fuchu/asian/
   - title: 【2026年11月最新】府中・聖蹟桜ヶ丘エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 32件
@@ -142,19 +142,19 @@
   - matched_link_count: 15
 - url: https://www.esthe-ranking.jp/tokyo/asian/
   - title: 【2026年11月最新】東京・八重洲エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 7件
-  - matched_store_count: 7
-  - matched_link_count: 7
+  - count_text: 8件
+  - matched_store_count: 8
+  - matched_link_count: 8
 - url: https://www.esthe-ranking.jp/nihonbashi/asian/
   - title: 【2026年11月最新】日本橋・茅場町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 20件
-  - matched_store_count: 20
-  - matched_link_count: 20
+  - count_text: 19件
+  - matched_store_count: 19
+  - matched_link_count: 19
 - url: https://www.esthe-ranking.jp/monnaka/asian/
   - title: 【2026年11月最新】門前仲町・東陽町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 28件
-  - matched_store_count: 28
-  - matched_link_count: 28
+  - count_text: 29件
+  - matched_store_count: 29
+  - matched_link_count: 29
 - url: https://www.esthe-ranking.jp/machida/asian/
   - title: 【2026年11月最新】町田・鶴川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 19件
@@ -192,9 +192,9 @@
   - matched_link_count: 8
 - url: https://www.esthe-ranking.jp/ginza/asian/
   - title: 【2026年11月最新】銀座エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 7件
-  - matched_store_count: 7
-  - matched_link_count: 7
+  - count_text: 8件
+  - matched_store_count: 8
+  - matched_link_count: 8
 - url: https://www.esthe-ranking.jp/jiyugaoka/asian/
   - title: 【2026年11月最新】自由が丘・学芸大学エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 8件
@@ -237,28 +237,34 @@
   - matched_link_count: 19
 - url: https://www.esthe-ranking.jp/kamata/asian/
   - title: 【2026年11月最新】蒲田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 63件
-  - matched_store_count: 63
-  - matched_link_count: 63
+  - count_text: 64件
+  - matched_store_count: 64
+  - matched_link_count: 64
 - url: https://www.esthe-ranking.jp/tachikawa/asian/
   - title: 【2026年11月最新】立川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 15件
-  - matched_store_count: 15
-  - matched_link_count: 15
+  - count_text: 16件
+  - matched_store_count: 16
+  - matched_link_count: 16
 
 ## Added
-- Lucky（ラッキー）/護国寺駅
-- Royal honey（ロイヤルハニー）/浅草橋駅
-- 楽だ/大森駅
-- 緑の雫/護国寺駅
+- AETHERIA（エーテリア）/赤羽駅
+- Grace MAX ～グレイスマックス～ 八丁堀ルーム/八丁堀駅
+- Niko Niko/荻窪駅東改札北口
+- Smile 極上癒しメンズエステ/立川駅北口
+- こくらく/日暮里駅
+- みるきゅん/鶯谷駅
+- 桜咲く/新大塚駅
+- 桃園 極上癒しメンズエステ/京王八王子駅西口
+- 美人魚/大森駅東口
+- 醉傾城/亀戸駅
 
 ## Removed
-- Lovely girl/浅草橋駅
+- 桃園/京王八王子駅西口
 
 ## Changed
-- 掲載件数表示: https://www.esthe-ranking.jp/haijima/asian/=18件 | https://www.esthe-ranking.jp/kumegawa/asian/=18件 | https://www.esthe-ranking.jp/nishitokyo/asian/=21件 | https://www.esthe-ranking.jp/nerima/asian/=20件 | https://www.esthe-ranking.jp/ooyama/asian/=21件 | https://www.esthe-ranking.jp/akabane/asian/=40件 | https://www.esthe-ranking.jp/kameari/asian/=56件 | https://www.esthe-ranking.jp/kokubunji/asian/=20件 | https://www.esthe-ranking.jp/shakujii/asian/=10件 | https://www.esthe-ranking.jp/otsuka/asian/=21件 | https://www.esthe-ranking.jp/nippori/asian/=15件 | https://www.esthe-ranking.jp/kichijoji/asian/=20件 | https://www.esthe-ranking.jp/ogikubo/asian/=34件 | https://www.esthe-ranking.jp/nakano/asian/=28件 | https://www.esthe-ranking.jp/okubo/asian/=32件 | https://www.esthe-ranking.jp/iidabashi/asian/=16件 | https://www.esthe-ranking.jp/suidobashi/asian/=7件 | https://www.esthe-ranking.jp/hachioji/asian/=31件 | https://www.esthe-ranking.jp/hatsudai/asian/=20件 | https://www.esthe-ranking.jp/kanda/asian/=23件 | https://www.esthe-ranking.jp/kameido/asian/=33件 | https://www.esthe-ranking.jp/fuchu/asian/=32件 | https://www.esthe-ranking.jp/chofu/asian/=16件 | https://www.esthe-ranking.jp/shimokitazawa/asian/=4件 | https://www.esthe-ranking.jp/roppongi/asian/=1件 | https://www.esthe-ranking.jp/akasaka/asian/=15件 | https://www.esthe-ranking.jp/tokyo/asian/=7件 | https://www.esthe-ranking.jp/nihonbashi/asian/=20件 | https://www.esthe-ranking.jp/monnaka/asian/=28件 | https://www.esthe-ranking.jp/machida/asian/=19件 | https://www.esthe-ranking.jp/sangenjaya/asian/=28件 | https://www.esthe-ranking.jp/ebisu/asian/=2件 | https://www.esthe-ranking.jp/meguro/asian/=10件 | https://www.esthe-ranking.jp/gotanda/asian/=5件 | https://www.esthe-ranking.jp/shinagawa/asian/=13件 | https://www.esthe-ranking.jp/shinbashi/asian/=8件 | https://www.esthe-ranking.jp/ginza/asian/=7件 | https://www.esthe-ranking.jp/jiyugaoka/asian/=8件 | https://www.esthe-ranking.jp/kasai/asian/=21件 | https://www.esthe-ranking.jp/shinjuku/asian/=23件 | https://www.esthe-ranking.jp/ikebukuro/asian/=36件 | https://www.esthe-ranking.jp/ueno/asian/=62件 | https://www.esthe-ranking.jp/kinshicho/asian/=21件 | https://www.esthe-ranking.jp/shibuya/asian/=5件 | https://www.esthe-ranking.jp/akihabara/asian/=19件 | https://www.esthe-ranking.jp/kamata/asian/=62件 | https://www.esthe-ranking.jp/tachikawa/asian/=15件 -> https://www.esthe-ranking.jp/haijima/asian/=18件 | https://www.esthe-ranking.jp/kumegawa/asian/=18件 | https://www.esthe-ranking.jp/nishitokyo/asian/=21件 | https://www.esthe-ranking.jp/nerima/asian/=20件 | https://www.esthe-ranking.jp/ooyama/asian/=21件 | https://www.esthe-ranking.jp/akabane/asian/=40件 | https://www.esthe-ranking.jp/kameari/asian/=56件 | https://www.esthe-ranking.jp/kokubunji/asian/=20件 | https://www.esthe-ranking.jp/shakujii/asian/=10件 | https://www.esthe-ranking.jp/otsuka/asian/=21件 | https://www.esthe-ranking.jp/nippori/asian/=15件 | https://www.esthe-ranking.jp/kichijoji/asian/=20件 | https://www.esthe-ranking.jp/ogikubo/asian/=34件 | https://www.esthe-ranking.jp/nakano/asian/=28件 | https://www.esthe-ranking.jp/okubo/asian/=32件 | https://www.esthe-ranking.jp/iidabashi/asian/=16件 | https://www.esthe-ranking.jp/suidobashi/asian/=7件 | https://www.esthe-ranking.jp/hachioji/asian/=31件 | https://www.esthe-ranking.jp/hatsudai/asian/=20件 | https://www.esthe-ranking.jp/kanda/asian/=23件 | https://www.esthe-ranking.jp/kameido/asian/=33件 | https://www.esthe-ranking.jp/fuchu/asian/=32件 | https://www.esthe-ranking.jp/chofu/asian/=16件 | https://www.esthe-ranking.jp/shimokitazawa/asian/=4件 | https://www.esthe-ranking.jp/roppongi/asian/=1件 | https://www.esthe-ranking.jp/akasaka/asian/=15件 | https://www.esthe-ranking.jp/tokyo/asian/=7件 | https://www.esthe-ranking.jp/nihonbashi/asian/=20件 | https://www.esthe-ranking.jp/monnaka/asian/=28件 | https://www.esthe-ranking.jp/machida/asian/=19件 | https://www.esthe-ranking.jp/sangenjaya/asian/=28件 | https://www.esthe-ranking.jp/ebisu/asian/=2件 | https://www.esthe-ranking.jp/meguro/asian/=10件 | https://www.esthe-ranking.jp/gotanda/asian/=5件 | https://www.esthe-ranking.jp/shinagawa/asian/=13件 | https://www.esthe-ranking.jp/shinbashi/asian/=8件 | https://www.esthe-ranking.jp/ginza/asian/=7件 | https://www.esthe-ranking.jp/jiyugaoka/asian/=8件 | https://www.esthe-ranking.jp/kasai/asian/=21件 | https://www.esthe-ranking.jp/shinjuku/asian/=23件 | https://www.esthe-ranking.jp/ikebukuro/asian/=38件 | https://www.esthe-ranking.jp/ueno/asian/=62件 | https://www.esthe-ranking.jp/kinshicho/asian/=21件 | https://www.esthe-ranking.jp/shibuya/asian/=5件 | https://www.esthe-ranking.jp/akihabara/asian/=19件 | https://www.esthe-ranking.jp/kamata/asian/=63件 | https://www.esthe-ranking.jp/tachikawa/asian/=15件
-- 店舗リンク数: 991 -> 994
-- 詳細取得件数: 991 -> 994
+- 掲載件数表示: https://www.esthe-ranking.jp/haijima/asian/=18件 | https://www.esthe-ranking.jp/kumegawa/asian/=18件 | https://www.esthe-ranking.jp/nishitokyo/asian/=21件 | https://www.esthe-ranking.jp/nerima/asian/=20件 | https://www.esthe-ranking.jp/ooyama/asian/=21件 | https://www.esthe-ranking.jp/akabane/asian/=40件 | https://www.esthe-ranking.jp/kameari/asian/=56件 | https://www.esthe-ranking.jp/kokubunji/asian/=20件 | https://www.esthe-ranking.jp/shakujii/asian/=10件 | https://www.esthe-ranking.jp/otsuka/asian/=21件 | https://www.esthe-ranking.jp/nippori/asian/=15件 | https://www.esthe-ranking.jp/kichijoji/asian/=20件 | https://www.esthe-ranking.jp/ogikubo/asian/=34件 | https://www.esthe-ranking.jp/nakano/asian/=28件 | https://www.esthe-ranking.jp/okubo/asian/=32件 | https://www.esthe-ranking.jp/iidabashi/asian/=16件 | https://www.esthe-ranking.jp/suidobashi/asian/=7件 | https://www.esthe-ranking.jp/hachioji/asian/=31件 | https://www.esthe-ranking.jp/hatsudai/asian/=20件 | https://www.esthe-ranking.jp/kanda/asian/=23件 | https://www.esthe-ranking.jp/kameido/asian/=33件 | https://www.esthe-ranking.jp/fuchu/asian/=32件 | https://www.esthe-ranking.jp/chofu/asian/=16件 | https://www.esthe-ranking.jp/shimokitazawa/asian/=4件 | https://www.esthe-ranking.jp/roppongi/asian/=1件 | https://www.esthe-ranking.jp/akasaka/asian/=15件 | https://www.esthe-ranking.jp/tokyo/asian/=7件 | https://www.esthe-ranking.jp/nihonbashi/asian/=20件 | https://www.esthe-ranking.jp/monnaka/asian/=28件 | https://www.esthe-ranking.jp/machida/asian/=19件 | https://www.esthe-ranking.jp/sangenjaya/asian/=28件 | https://www.esthe-ranking.jp/ebisu/asian/=2件 | https://www.esthe-ranking.jp/meguro/asian/=10件 | https://www.esthe-ranking.jp/gotanda/asian/=5件 | https://www.esthe-ranking.jp/shinagawa/asian/=13件 | https://www.esthe-ranking.jp/shinbashi/asian/=8件 | https://www.esthe-ranking.jp/ginza/asian/=7件 | https://www.esthe-ranking.jp/jiyugaoka/asian/=8件 | https://www.esthe-ranking.jp/kasai/asian/=21件 | https://www.esthe-ranking.jp/shinjuku/asian/=23件 | https://www.esthe-ranking.jp/ikebukuro/asian/=38件 | https://www.esthe-ranking.jp/ueno/asian/=62件 | https://www.esthe-ranking.jp/kinshicho/asian/=21件 | https://www.esthe-ranking.jp/shibuya/asian/=5件 | https://www.esthe-ranking.jp/akihabara/asian/=19件 | https://www.esthe-ranking.jp/kamata/asian/=63件 | https://www.esthe-ranking.jp/tachikawa/asian/=15件 -> https://www.esthe-ranking.jp/haijima/asian/=18件 | https://www.esthe-ranking.jp/kumegawa/asian/=18件 | https://www.esthe-ranking.jp/nishitokyo/asian/=21件 | https://www.esthe-ranking.jp/nerima/asian/=20件 | https://www.esthe-ranking.jp/ooyama/asian/=21件 | https://www.esthe-ranking.jp/akabane/asian/=41件 | https://www.esthe-ranking.jp/kameari/asian/=56件 | https://www.esthe-ranking.jp/kokubunji/asian/=20件 | https://www.esthe-ranking.jp/shakujii/asian/=10件 | https://www.esthe-ranking.jp/otsuka/asian/=22件 | https://www.esthe-ranking.jp/nippori/asian/=17件 | https://www.esthe-ranking.jp/kichijoji/asian/=20件 | https://www.esthe-ranking.jp/ogikubo/asian/=35件 | https://www.esthe-ranking.jp/nakano/asian/=28件 | https://www.esthe-ranking.jp/okubo/asian/=32件 | https://www.esthe-ranking.jp/iidabashi/asian/=16件 | https://www.esthe-ranking.jp/suidobashi/asian/=7件 | https://www.esthe-ranking.jp/hachioji/asian/=32件 | https://www.esthe-ranking.jp/hatsudai/asian/=20件 | https://www.esthe-ranking.jp/kanda/asian/=23件 | https://www.esthe-ranking.jp/kameido/asian/=34件 | https://www.esthe-ranking.jp/fuchu/asian/=32件 | https://www.esthe-ranking.jp/chofu/asian/=16件 | https://www.esthe-ranking.jp/shimokitazawa/asian/=4件 | https://www.esthe-ranking.jp/roppongi/asian/=1件 | https://www.esthe-ranking.jp/akasaka/asian/=15件 | https://www.esthe-ranking.jp/tokyo/asian/=8件 | https://www.esthe-ranking.jp/nihonbashi/asian/=19件 | https://www.esthe-ranking.jp/monnaka/asian/=29件 | https://www.esthe-ranking.jp/machida/asian/=19件 | https://www.esthe-ranking.jp/sangenjaya/asian/=28件 | https://www.esthe-ranking.jp/ebisu/asian/=2件 | https://www.esthe-ranking.jp/meguro/asian/=10件 | https://www.esthe-ranking.jp/gotanda/asian/=5件 | https://www.esthe-ranking.jp/shinagawa/asian/=13件 | https://www.esthe-ranking.jp/shinbashi/asian/=8件 | https://www.esthe-ranking.jp/ginza/asian/=8件 | https://www.esthe-ranking.jp/jiyugaoka/asian/=8件 | https://www.esthe-ranking.jp/kasai/asian/=21件 | https://www.esthe-ranking.jp/shinjuku/asian/=23件 | https://www.esthe-ranking.jp/ikebukuro/asian/=38件 | https://www.esthe-ranking.jp/ueno/asian/=62件 | https://www.esthe-ranking.jp/kinshicho/asian/=21件 | https://www.esthe-ranking.jp/shibuya/asian/=5件 | https://www.esthe-ranking.jp/akihabara/asian/=19件 | https://www.esthe-ranking.jp/kamata/asian/=64件 | https://www.esthe-ranking.jp/tachikawa/asian/=16件
+- 店舗リンク数: 994 -> 1005
+- 詳細取得件数: 994 -> 1005
 
 ## Current Stores
 - 10ct.（テンカラット）
@@ -266,6 +272,7 @@
 - 20代の楽園
 - 20代美人
 - Aaromaカオリ
+- AETHERIA（エーテリア）
 - Afumi（アフミ）
 - AI花火
 - AKB
@@ -373,6 +380,7 @@
 - GOLD CROWN
 - Grace
 - Grace MAX ～グレイスマックス～ 秋葉原ルーム
+- Grace MAX ～グレイスマックス～ 八丁堀ルーム
 - GRAND SPA（グランドスパ）
 - Grest Spa（グレスト スパ）
 - Gカップの美人牧場
@@ -453,6 +461,7 @@
 - NAMUCHAI（ナムチャイ）
 - New Face
 - New Flower（ニューフラワー）
+- Niko Niko
 - Nuadsabai（ヌアサバイ）
 - Oasis
 - Oasis（オアシス）
@@ -511,6 +520,7 @@
 - Sherry（シェリー）
 - Siam Spa
 - Silk Ribbon（シルクリボン）
+- Smile 極上癒しメンズエステ
 - Smile（スマイル）
 - Sofia（ソフィア）
 - SORA
@@ -605,6 +615,7 @@
 - くろーばー
 - ケタワ
 - ゴールドラッシュ
+- こくらく
 - ココアcoco A
 - ココキラ
 - ココシア
@@ -726,6 +737,7 @@
 - みどり
 - みなみ
 - ミラクルエステ
+- みるきゅん
 - ミルクティー
 - ミン ロッブリー
 - むちむちお姉ちゃん
@@ -905,6 +917,7 @@
 - 桜（リラク＆エステ）
 - 桜～Sakura～
 - 桜の恋
+- 桜咲く
 - 桜雪
 - 桜姫（さくらひめ）
 - 桜満開 リラクゼーション
@@ -992,7 +1005,7 @@
 - 東京八丁堀高級メンズエステ
 - 東桜（ひがしさくら）
 - 桃の色
-- 桃園
+- 桃園 極上癒しメンズエステ
 - 桃色
 - 桃色吐息
 - 桃白白
@@ -1022,6 +1035,7 @@
 - 美人
 - 美人ランド（びじんランド）
 - 美人館
+- 美人魚
 - 美姫
 - 美娘（みこ）
 - 美伶
@@ -1150,5 +1164,6 @@
 - 蕾（つぼみ）
 - 蕾～つぼみ
 - 邂逅～Kaikou～
+- 醉傾城
 - 霓裳～ネオン～
 - 緣中緣

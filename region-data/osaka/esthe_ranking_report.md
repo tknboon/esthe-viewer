@@ -1,13 +1,13 @@
 # esthe-ranking osaka monitor
 
-- checked_at: 2026-11-16T19:24:51.481Z
+- checked_at: 2026-11-17T18:16:56.201Z
 - sources: https://www.esthe-ranking.jp/osakakita/asian/, https://www.esthe-ranking.jp/tenma/asian/, https://www.esthe-ranking.jp/honmachi/asian/, https://www.esthe-ranking.jp/shinsaibashi/asian/, https://www.esthe-ranking.jp/osakaminami/asian/, https://www.esthe-ranking.jp/tanikyu/asian/, https://www.esthe-ranking.jp/higashiosaka/asian/, https://www.esthe-ranking.jp/kyobashi/asian/, https://www.esthe-ranking.jp/juso/asian/, https://www.esthe-ranking.jp/nishinakajima/asian/, https://www.esthe-ranking.jp/esaka/asian/, https://www.esthe-ranking.jp/sakai/asian/
 - title: 【2026年11月最新】大阪キタ・梅田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】天満・南森町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】本町・堺筋本町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】心斎橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】難波・日本橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】谷町九丁目エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】東大阪・八尾エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】京橋・守口エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】十三・西淀川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】西中島・新大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】江坂・豊中エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】堺・南大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-- count_text: https://www.esthe-ranking.jp/osakakita/asian/=15件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=21件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=45件 | https://www.esthe-ranking.jp/tanikyu/asian/=16件 | https://www.esthe-ranking.jp/higashiosaka/asian/=20件 | https://www.esthe-ranking.jp/kyobashi/asian/=22件 | https://www.esthe-ranking.jp/juso/asian/=13件 | https://www.esthe-ranking.jp/nishinakajima/asian/=50件 | https://www.esthe-ranking.jp/esaka/asian/=23件 | https://www.esthe-ranking.jp/sakai/asian/=22件
-- matched_store_count: 255
-- matched_link_count: 261
-- detail_page_count: 261
-- detailed_store_count: 261
+- count_text: https://www.esthe-ranking.jp/osakakita/asian/=15件 | https://www.esthe-ranking.jp/tenma/asian/=11件 | https://www.esthe-ranking.jp/honmachi/asian/=21件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=45件 | https://www.esthe-ranking.jp/tanikyu/asian/=17件 | https://www.esthe-ranking.jp/higashiosaka/asian/=20件 | https://www.esthe-ranking.jp/kyobashi/asian/=21件 | https://www.esthe-ranking.jp/juso/asian/=13件 | https://www.esthe-ranking.jp/nishinakajima/asian/=50件 | https://www.esthe-ranking.jp/esaka/asian/=24件 | https://www.esthe-ranking.jp/sakai/asian/=23件
+- matched_store_count: 258
+- matched_link_count: 264
+- detail_page_count: 264
+- detailed_store_count: 264
 
 ## Source Summaries
 - url: https://www.esthe-ranking.jp/osakakita/asian/
@@ -17,9 +17,9 @@
   - matched_link_count: 15
 - url: https://www.esthe-ranking.jp/tenma/asian/
   - title: 【2026年11月最新】天満・南森町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 10件
-  - matched_store_count: 10
-  - matched_link_count: 10
+  - count_text: 11件
+  - matched_store_count: 11
+  - matched_link_count: 11
 - url: https://www.esthe-ranking.jp/honmachi/asian/
   - title: 【2026年11月最新】本町・堺筋本町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 21件
@@ -37,9 +37,9 @@
   - matched_link_count: 45
 - url: https://www.esthe-ranking.jp/tanikyu/asian/
   - title: 【2026年11月最新】谷町九丁目エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 16件
-  - matched_store_count: 16
-  - matched_link_count: 16
+  - count_text: 17件
+  - matched_store_count: 17
+  - matched_link_count: 17
 - url: https://www.esthe-ranking.jp/higashiosaka/asian/
   - title: 【2026年11月最新】東大阪・八尾エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 20件
@@ -47,9 +47,9 @@
   - matched_link_count: 20
 - url: https://www.esthe-ranking.jp/kyobashi/asian/
   - title: 【2026年11月最新】京橋・守口エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 22件
-  - matched_store_count: 22
-  - matched_link_count: 22
+  - count_text: 21件
+  - matched_store_count: 21
+  - matched_link_count: 21
 - url: https://www.esthe-ranking.jp/juso/asian/
   - title: 【2026年11月最新】十三・西淀川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
   - count_text: 13件
@@ -62,23 +62,32 @@
   - matched_link_count: 50
 - url: https://www.esthe-ranking.jp/esaka/asian/
   - title: 【2026年11月最新】江坂・豊中エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 23件
-  - matched_store_count: 23
-  - matched_link_count: 23
+  - count_text: 24件
+  - matched_store_count: 24
+  - matched_link_count: 24
 - url: https://www.esthe-ranking.jp/sakai/asian/
   - title: 【2026年11月最新】堺・南大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング
-  - count_text: 22件
-  - matched_store_count: 21
-  - matched_link_count: 22
+  - count_text: 23件
+  - matched_store_count: 22
+  - matched_link_count: 23
 
 ## Added
-- none
+- Night蝶々/堺東駅北口
+- SEXY極楽癒し/なかもず駅
+- ほろ酔い夜/江坂駅
+- 頑張ろYes/天王寺駅
+- 天使の誘惑/江坂駅4番出口
+- 美人リラクゼーションエステ/天神橋筋六丁目駅13番口
 
 ## Removed
-- none
+- Only one（オンリーワン）/京橋駅
+- ゆらか/堺東駅
+- 癒しの女神（いやしのめがみ）/江坂駅
 
 ## Changed
-- none
+- 掲載件数表示: https://www.esthe-ranking.jp/osakakita/asian/=15件 | https://www.esthe-ranking.jp/tenma/asian/=10件 | https://www.esthe-ranking.jp/honmachi/asian/=21件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=45件 | https://www.esthe-ranking.jp/tanikyu/asian/=16件 | https://www.esthe-ranking.jp/higashiosaka/asian/=20件 | https://www.esthe-ranking.jp/kyobashi/asian/=22件 | https://www.esthe-ranking.jp/juso/asian/=13件 | https://www.esthe-ranking.jp/nishinakajima/asian/=50件 | https://www.esthe-ranking.jp/esaka/asian/=23件 | https://www.esthe-ranking.jp/sakai/asian/=22件 -> https://www.esthe-ranking.jp/osakakita/asian/=15件 | https://www.esthe-ranking.jp/tenma/asian/=11件 | https://www.esthe-ranking.jp/honmachi/asian/=21件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=45件 | https://www.esthe-ranking.jp/tanikyu/asian/=17件 | https://www.esthe-ranking.jp/higashiosaka/asian/=20件 | https://www.esthe-ranking.jp/kyobashi/asian/=21件 | https://www.esthe-ranking.jp/juso/asian/=13件 | https://www.esthe-ranking.jp/nishinakajima/asian/=50件 | https://www.esthe-ranking.jp/esaka/asian/=24件 | https://www.esthe-ranking.jp/sakai/asian/=23件
+- 店舗リンク数: 261 -> 264
+- 詳細取得件数: 261 -> 264
 
 ## Current Stores
 - 10夜のキス
@@ -111,8 +120,8 @@
 - My Love
 - New Changthai（ニューチャーンタイ）
 - Nico
+- Night蝶々
 - one by one（ワンバイワン）
-- Only one（オンリーワン）
 - PAL
 - Pattaya （パッタヤ）
 - Peach Pie
@@ -124,6 +133,7 @@
 - Royal Honey
 - Sexy girl（セクシーガール）
 - SexySpa（セクシースパ）
+- SEXY極楽癒し
 - Sexy女の子
 - SugarBaby（しゅがーべいびー）
 - SUN（サン）
@@ -206,6 +216,7 @@
 - ベトナム姫ちゃん
 - ベリーベリー
 - ぺろりんガール
+- ほろ酔い夜
 - ホワイトローズ
 - マーメイド
 - まんきつガール
@@ -219,7 +230,6 @@
 - もりの風
 - やすらぎ
 - ユフラ
-- ゆらか
 - ラブラブガールズ
 - ラブラブの部屋
 - ラベンダー
@@ -245,6 +255,7 @@
 - 楽楽
 - 甘いツボ蜜
 - 丸美（まるみ）
+- 頑張ろYes
 - 喜
 - 極嬢
 - 禁断の果実
@@ -276,6 +287,7 @@
 - 台北ガール（タイペイガール）
 - 台湾 ・リカ
 - 長月
+- 天使の誘惑
 - 甜蜜の樂园
 - 桃色サプライズ
 - 桃色誘惑
@@ -301,6 +313,7 @@
 - 美女桜
 - 美少女〜first class〜
 - 美人SPA
+- 美人リラクゼーションエステ
 - 美姬
 - 泡ピーチ
 - 蜜の誘惑
@@ -317,7 +330,6 @@
 - 癒し まいまい
 - 癒してね～
 - 癒しの空間
-- 癒しの女神（いやしのめがみ）
 - 癒しの心
 - 癒しノ天使
 - 癒しラボ
