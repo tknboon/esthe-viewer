@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-11-19",
+    "fetchedAt": "2026-11-18T17:56:34.235Z",
+    "added": [
+      "stella（ステラ）/西中島南方駅1番出口",
+      "桜色リフレ（さくらいろリフレ）/動物園前駅9番",
+      "爽やかSPA/布施駅北口",
+      "夜姬/天神橋筋六丁目駅13番出口"
+    ],
+    "removed": [
+      "LOVEクリニック/枚方市駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-18",
     "fetchedAt": "2026-11-17T18:16:56.201Z",
     "added": [
@@ -394,14 +409,6 @@
   {
     "dayKey": "2026-10-18",
     "fetchedAt": "2026-10-18T13:09:42.035Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-17",
-    "fetchedAt": "2026-10-17T12:53:05.966Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
