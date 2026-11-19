@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-11-20",
+    "fetchedAt": "2026-11-19T18:00:24.157Z",
+    "added": [
+      "love Time/国分寺駅",
+      "Sexy Love（セクシーラブ）/新大久保駅",
+      "ピンクgirl倶楽部/国分寺駅",
+      "月逢（つきあい）/金町駅南口",
+      "夜桜 極上メンズエステ/立川駅南口"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-19",
     "fetchedAt": "2026-11-18T17:49:01.227Z",
     "added": [
@@ -560,14 +574,6 @@
       "はついく/府中駅・多摩センター駅",
       "蝶/門前仲町駅2番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-18",
-    "fetchedAt": "2026-10-18T13:00:33.138Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-20",
+    "fetchedAt": "2026-11-19T18:09:03.676Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-19",
     "fetchedAt": "2026-11-18T17:56:34.235Z",
     "added": [
@@ -403,14 +411,6 @@
     "removed": [
       "欧米娘/高槻市駅5番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-18",
-    "fetchedAt": "2026-10-18T13:09:42.035Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
