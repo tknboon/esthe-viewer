@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-21",
+    "fetchedAt": "2026-11-20T17:43:40.079Z",
+    "added": [
+      "未來/河内天美駅"
+    ],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-20",
     "fetchedAt": "2026-11-19T18:09:03.676Z",
     "added": [],
@@ -397,20 +407,6 @@
     "fetchedAt": "2026-10-21T14:31:52.799Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-20",
-    "fetchedAt": "2026-10-20T14:17:10.725Z",
-    "added": [
-      "Rose/高槻市駅",
-      "リラックス森/北新地駅",
-      "夜の恋/高槻市駅5番出口"
-    ],
-    "removed": [
-      "欧米娘/高槻市駅5番出口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

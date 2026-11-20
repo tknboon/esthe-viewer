@@ -1,5 +1,21 @@
 [
   {
+    "dayKey": "2026-11-21",
+    "fetchedAt": "2026-11-20T17:34:35.929Z",
+    "added": [
+      "ラベンダーの香り/自由が丘駅",
+      "秋色物語/蓮沼駅",
+      "美少女/尾久駅",
+      "和（なごみ）/蒲田駅西口"
+    ],
+    "removed": [
+      "桃色吐息/池袋駅",
+      "醉傾城/亀戸駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-20",
     "fetchedAt": "2026-11-19T18:00:24.157Z",
     "added": [
@@ -556,24 +572,6 @@
     "fetchedAt": "2026-10-21T14:22:40.897Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-20",
-    "fetchedAt": "2026-10-20T14:07:39.685Z",
-    "added": [
-      "Ruby/門前仲町駅1番出口",
-      "花の女/門前仲町駅",
-      "Royal Honey（ロイヤルハニー）/湯島駅4号番口",
-      "可愛い子/錦糸町駅・押上駅"
-    ],
-    "removed": [
-      "リフレ/久米川駅",
-      "大人のspa/東中野駅西口",
-      "はついく/府中駅・多摩センター駅",
-      "蝶/門前仲町駅2番出口"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
