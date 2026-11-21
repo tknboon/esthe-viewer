@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-22",
+    "fetchedAt": "2026-11-21T16:48:28.473Z",
+    "added": [],
+    "removed": [
+      "まんきつガール/谷町九丁目駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-21",
     "fetchedAt": "2026-11-20T17:43:40.079Z",
     "added": [
@@ -399,14 +409,6 @@
       "YOLU SPA/新大阪駅",
       "キュートベビー/日本橋駅7番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-21",
-    "fetchedAt": "2026-10-21T14:31:52.799Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

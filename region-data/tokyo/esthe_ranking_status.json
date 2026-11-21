@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checkedAt": "2026-11-20T17:34:35.929Z",
+  "checkedAt": "2026-11-21T16:38:49.357Z",
   "sourceUrls": [
     "https://www.esthe-ranking.jp/haijima/asian/",
     "https://www.esthe-ranking.jp/kumegawa/asian/",
@@ -50,10 +50,10 @@
     "https://www.esthe-ranking.jp/kamata/asian/",
     "https://www.esthe-ranking.jp/tachikawa/asian/"
   ],
-  "matchedStoreCount": 916,
-  "matchedLinkCount": 1022,
-  "detailPageCount": 1022,
-  "detailedStoreCount": 1022,
+  "matchedStoreCount": 915,
+  "matchedLinkCount": 1020,
+  "detailPageCount": 1020,
+  "detailedStoreCount": 1020,
   "reportPath": "D:\\a\\esthe-viewer\\esthe-viewer\\region-data\\tokyo\\esthe_ranking_report.md",
   "snapshotPath": "D:\\a\\esthe-viewer\\esthe-viewer\\region-data\\tokyo\\esthe_ranking_snapshot.json",
   "failureLogPath": "D:\\a\\esthe-viewer\\esthe-viewer\\region-data\\tokyo\\esthe_ranking_failure.log"

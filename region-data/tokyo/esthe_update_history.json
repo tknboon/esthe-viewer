@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-22",
+    "fetchedAt": "2026-11-21T16:38:49.357Z",
+    "added": [],
+    "removed": [
+      "キャンディ/八王子駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-21",
     "fetchedAt": "2026-11-20T17:34:35.929Z",
     "added": [
@@ -564,14 +574,6 @@
       "和み（なごみ）/保谷駅南口",
       "邂逅～Kaikou～/蓮根駅東口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-21",
-    "fetchedAt": "2026-10-21T14:22:40.897Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

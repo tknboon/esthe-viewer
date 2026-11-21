@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-22",
+    "fetchedAt": "2026-11-21T16:35:04.487Z",
+    "added": [],
+    "removed": [
+      "Romance～ロマンス～/平針駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-21",
     "fetchedAt": "2026-11-20T17:31:00.959Z",
     "added": [
@@ -561,28 +571,6 @@
       "香愈/黒川駅"
     ],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-20",
-    "fetchedAt": "2026-10-20T14:04:34.763Z",
-    "added": [
-      "月狐癒処/栄駅",
-      "lovelySmile/前後駅",
-      "ハニータイム/有松駅",
-      "ピンクリボン/黒笹駅",
-      "マロージュ/上小田井駅",
-      "花姬/東海通駅",
-      "猫爪姫/桜井駅"
-    ],
-    "removed": [
-      "My all/桜井駅",
-      "憩いの森/上前津駅",
-      "濡れ濡れガール/小坂井駅",
-      "可愛いレディ/太田川駅",
-      "夢恋（ゆめこい）/蒲郡駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
