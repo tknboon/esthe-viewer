@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-23",
+    "fetchedAt": "2026-11-22T17:03:03.047Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-22",
     "fetchedAt": "2026-11-21T16:48:28.473Z",
     "added": [],
@@ -393,21 +401,6 @@
     ],
     "removed": [
       "秘密の部屋/十三駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-22",
-    "fetchedAt": "2026-10-22T14:32:20.826Z",
-    "added": [
-      "Sweet誘惑/江坂駅8番出口"
-    ],
-    "removed": [
-      "LOVEクリニック/枚方市駅",
-      "Nico/西中島南方駅1番出口",
-      "YOLU SPA/新大阪駅",
-      "キュートベビー/日本橋駅7番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

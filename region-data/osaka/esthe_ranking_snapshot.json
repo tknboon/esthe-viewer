@@ -99,7 +99,7 @@
       "matchedLinkCount": 23
     }
   ],
-  "fetchedAt": "2026-11-21T16:48:28.473Z",
+  "fetchedAt": "2026-11-22T17:03:03.047Z",
   "pageTitle": "【2026年11月最新】大阪キタ・梅田エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】天満・南森町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】本町・堺筋本町エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】心斎橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】難波・日本橋エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】谷町九丁目エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】東大阪・八尾エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】京橋・守口エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】十三・西淀川エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】西中島・新大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】江坂・豊中エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング / 【2026年11月最新】堺・南大阪エリア アジアンエステ店ランキング【毎日更新】 - 全国メンズエステランキング",
   "countText": "https://www.esthe-ranking.jp/osakakita/asian/=15件 | https://www.esthe-ranking.jp/tenma/asian/=12件 | https://www.esthe-ranking.jp/honmachi/asian/=21件 | https://www.esthe-ranking.jp/shinsaibashi/asian/=4件 | https://www.esthe-ranking.jp/osakaminami/asian/=46件 | https://www.esthe-ranking.jp/tanikyu/asian/=16件 | https://www.esthe-ranking.jp/higashiosaka/asian/=22件 | https://www.esthe-ranking.jp/kyobashi/asian/=20件 | https://www.esthe-ranking.jp/juso/asian/=13件 | https://www.esthe-ranking.jp/nishinakajima/asian/=51件 | https://www.esthe-ranking.jp/esaka/asian/=24件 | https://www.esthe-ranking.jp/sakai/asian/=23件",
   "storeNames": [
@@ -636,50 +636,6 @@
   ],
   "extractedStores": [
     {
-      "name": "キラキラガールズ",
-      "station": "梅田駅M14番出口",
-      "hours": "11:00～LAST",
-      "phone": "090-5982-5198",
-      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/0e52467f-b3e2-4388-a5cd-a32bbcbed245/",
-      "address": "34.70208801437416, 135.50425842691857",
-      "latitude": "34.70208801437416",
-      "longitude": "135.50425842691857",
-      "note": "セブン-イレブン 梅田神山西店に着きましたら、ご連絡ください",
-      "officialUrl": "http://pink-crystal.xin-dki.online/",
-      "roomLocations": [
-        {
-          "label": "梅田駅M14番出口",
-          "address": "",
-          "latitude": "34.70208801437416",
-          "longitude": "135.50425842691857",
-          "note": "セブン-イレブン 梅田神山西店に着きましたら、ご連絡ください"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "ローズマリー",
-      "station": "梅田駅泉の広場M10",
-      "hours": "12:00～24:00",
-      "phone": "06-6363-7868",
-      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/f7f82eee-27e3-43fc-8afa-10e68a20e8ae/",
-      "address": "大阪府大阪市北区堂山町4-4",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "http://www.roseume.com/",
-      "roomLocations": [
-        {
-          "label": "梅田駅泉の広場M10",
-          "address": "大阪府大阪市北区堂山町4-4",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "ちゅうちゅうエステ",
       "station": "梅田駅",
       "hours": "24時間営業",
@@ -724,23 +680,23 @@
       "detailLoaded": true
     },
     {
-      "name": "Relaxationアジアン",
-      "station": "東梅田駅8出口",
-      "hours": "11:00～23:00",
-      "phone": "06-6344-8818",
-      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/077ce4bb-7748-4a0b-87ec-fe9762ab8a27/",
-      "address": "大阪府大阪市北区梅田1丁目11-4 大阪駅前第4ビルB1F",
-      "latitude": "",
-      "longitude": "",
-      "note": "東梅田駅8出口徒歩1分",
-      "officialUrl": "http://www.la184.com/",
+      "name": "キラキラガールズ",
+      "station": "梅田駅M14番出口",
+      "hours": "11:00～LAST",
+      "phone": "090-5982-5198",
+      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/0e52467f-b3e2-4388-a5cd-a32bbcbed245/",
+      "address": "34.70208801437416, 135.50425842691857",
+      "latitude": "34.70208801437416",
+      "longitude": "135.50425842691857",
+      "note": "セブン-イレブン 梅田神山西店に着きましたら、ご連絡ください",
+      "officialUrl": "http://pink-crystal.xin-dki.online/",
       "roomLocations": [
         {
-          "label": "東梅田駅8出口",
-          "address": "大阪府大阪市北区梅田1丁目11-4 大阪駅前第4ビルB1F",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
+          "label": "梅田駅M14番出口",
+          "address": "",
+          "latitude": "34.70208801437416",
+          "longitude": "135.50425842691857",
+          "note": "セブン-イレブン 梅田神山西店に着きましたら、ご連絡ください"
         }
       ],
       "detailLoaded": true
@@ -763,6 +719,50 @@
           "latitude": "",
           "longitude": "",
           "note": "梅田駅泉の広場Ｍ14出口 に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "ローズマリー",
+      "station": "梅田駅泉の広場M10",
+      "hours": "12:00～24:00",
+      "phone": "06-6363-7868",
+      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/f7f82eee-27e3-43fc-8afa-10e68a20e8ae/",
+      "address": "大阪府大阪市北区堂山町4-4",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "http://www.roseume.com/",
+      "roomLocations": [
+        {
+          "label": "梅田駅泉の広場M10",
+          "address": "大阪府大阪市北区堂山町4-4",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "Relaxationアジアン",
+      "station": "東梅田駅8出口",
+      "hours": "11:00～23:00",
+      "phone": "06-6344-8818",
+      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/077ce4bb-7748-4a0b-87ec-fe9762ab8a27/",
+      "address": "大阪府大阪市北区梅田1丁目11-4 大阪駅前第4ビルB1F",
+      "latitude": "",
+      "longitude": "",
+      "note": "東梅田駅8出口徒歩1分",
+      "officialUrl": "http://www.la184.com/",
+      "roomLocations": [
+        {
+          "label": "東梅田駅8出口",
+          "address": "大阪府大阪市北区梅田1丁目11-4 大阪駅前第4ビルB1F",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
         }
       ],
       "detailLoaded": true
@@ -878,20 +878,6 @@
       "detailLoaded": true
     },
     {
-      "name": "濡れパイン",
-      "station": "梅田駅2番出口",
-      "hours": "12:00～23:00",
-      "phone": "070-7670-4514",
-      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/9f9dc224-84ae-4c8d-88d9-baa5f617cf91/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "梅田駅2番出口",
-      "officialUrl": "https://www.nurepain184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "チラチラポロ",
       "station": "東梅田駅8番出口",
       "hours": "11:00～翌 02:00",
@@ -902,6 +888,20 @@
       "longitude": "",
       "note": "東梅田駅8番出口",
       "officialUrl": "https://shop2.es-johokan.com/chirachiraporo/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "濡れパイン",
+      "station": "梅田駅2番出口",
+      "hours": "12:00～23:00",
+      "phone": "070-7670-4514",
+      "listingUrl": "https://www.esthe-ranking.jp/osakakita/shop-detail/9f9dc224-84ae-4c8d-88d9-baa5f617cf91/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "梅田駅2番出口",
+      "officialUrl": "https://www.nurepain184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -934,72 +934,6 @@
       "detailLoaded": true
     },
     {
-      "name": "スケスケガールズ",
-      "station": "南森町駅",
-      "hours": "12:00～LAST",
-      "phone": "080-3865-8866",
-      "listingUrl": "https://www.esthe-ranking.jp/tenma/shop-detail/e40474f3-78b1-424d-a36e-4c6c01253e11/",
-      "address": "大阪府大阪市北区天神橋２丁目１−１４",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://www.sukegirl184.info/",
-      "roomLocations": [
-        {
-          "label": "南森町駅",
-          "address": "大阪府大阪市北区天神橋２丁目１−１４",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "Ageless（エ一ジレス）",
-      "station": "天満駅南口",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-7171-5589",
-      "listingUrl": "https://www.esthe-ranking.jp/tenma/shop-detail/a874aa88-ab23-49da-99f8-1ca5c9509429/",
-      "address": "34.70470194263841, 135.51255491534377",
-      "latitude": "34.70470194263841",
-      "longitude": "135.51255491534377",
-      "note": "「天満駅」南口より徒歩1分",
-      "officialUrl": "https://best.kairaku.work/",
-      "roomLocations": [
-        {
-          "label": "天満駅南口",
-          "address": "大阪府大阪市北区天神橋4丁目",
-          "latitude": "34.70470194263841",
-          "longitude": "135.51255491534377",
-          "note": "「天満駅」南口より徒歩1分"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "水蜜桃",
-      "station": "天神橋筋六丁目駅13番口",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-3948-9995",
-      "listingUrl": "https://www.esthe-ranking.jp/tenma/shop-detail/b0ba2837-d065-4c50-962d-d4d14aa92daf/",
-      "address": "天神橋筋六丁目駅",
-      "latitude": "",
-      "longitude": "",
-      "note": "天神橋筋六丁目駅13番口に着きましたら、ご連絡ください。",
-      "officialUrl": "http://happy-baby.amj888.space/",
-      "roomLocations": [
-        {
-          "label": "天神橋筋六丁目駅13番口",
-          "address": "",
-          "latitude": "",
-          "longitude": "",
-          "note": "天神橋筋六丁目駅13番口に着きましたら、ご連絡ください。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "夜姬",
       "station": "天神橋筋六丁目駅13番出口",
       "hours": "11:00～翌 02:00",
@@ -1022,6 +956,28 @@
       "detailLoaded": true
     },
     {
+      "name": "スケスケガールズ",
+      "station": "南森町駅",
+      "hours": "12:00～LAST",
+      "phone": "080-3865-8866",
+      "listingUrl": "https://www.esthe-ranking.jp/tenma/shop-detail/e40474f3-78b1-424d-a36e-4c6c01253e11/",
+      "address": "大阪府大阪市北区天神橋２丁目１−１４",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://www.sukegirl184.info/",
+      "roomLocations": [
+        {
+          "label": "南森町駅",
+          "address": "大阪府大阪市北区天神橋２丁目１−１４",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
       "name": "美人リラクゼーションエステ",
       "station": "天神橋筋六丁目駅13番口",
       "hours": "11:00～翌 02:00",
@@ -1039,6 +995,28 @@
           "latitude": "",
           "longitude": "",
           "note": "地図の位置に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "Ageless（エ一ジレス）",
+      "station": "天満駅南口",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-7171-5589",
+      "listingUrl": "https://www.esthe-ranking.jp/tenma/shop-detail/a874aa88-ab23-49da-99f8-1ca5c9509429/",
+      "address": "34.70470194263841, 135.51255491534377",
+      "latitude": "34.70470194263841",
+      "longitude": "135.51255491534377",
+      "note": "「天満駅」南口より徒歩1分",
+      "officialUrl": "https://best.kairaku.work/",
+      "roomLocations": [
+        {
+          "label": "天満駅南口",
+          "address": "大阪府大阪市北区天神橋4丁目",
+          "latitude": "34.70470194263841",
+          "longitude": "135.51255491534377",
+          "note": "「天満駅」南口より徒歩1分"
         }
       ],
       "detailLoaded": true
@@ -1068,6 +1046,28 @@
           "latitude": "",
           "longitude": "",
           "note": ""
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "水蜜桃",
+      "station": "天神橋筋六丁目駅13番口",
+      "hours": "11:00～翌 02:00",
+      "phone": "090-3948-9995",
+      "listingUrl": "https://www.esthe-ranking.jp/tenma/shop-detail/b0ba2837-d065-4c50-962d-d4d14aa92daf/",
+      "address": "天神橋筋六丁目駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "天神橋筋六丁目駅13番口に着きましたら、ご連絡ください。",
+      "officialUrl": "http://happy-baby.amj888.space/",
+      "roomLocations": [
+        {
+          "label": "天神橋筋六丁目駅13番口",
+          "address": "",
+          "latitude": "",
+          "longitude": "",
+          "note": "天神橋筋六丁目駅13番口に着きましたら、ご連絡ください。"
         }
       ],
       "detailLoaded": true
@@ -1187,6 +1187,28 @@
       "detailLoaded": true
     },
     {
+      "name": "Rosée（ロゼ）",
+      "station": "本町駅15番出口",
+      "hours": "11:00～翌 02:00",
+      "phone": "080-9537-7415",
+      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/0b767397-c31c-4558-8717-03d585a364a5/",
+      "address": "本町駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "住所 本町駅15番出口に着きましたら、お電話ください。",
+      "officialUrl": "http://rosee.sh-ylma3.tokyo/",
+      "roomLocations": [
+        {
+          "label": "本町駅15番出口",
+          "address": "",
+          "latitude": "",
+          "longitude": "",
+          "note": "住所 本町駅15番出口に着きましたら、お電話ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
       "name": "台北ガール（タイペイガール）",
       "station": "本町駅21番出口",
       "hours": "11:00～翌 02:00",
@@ -1231,28 +1253,6 @@
       "detailLoaded": true
     },
     {
-      "name": "甘いツボ蜜",
-      "station": "堺筋本町駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-8871-7910",
-      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/9487db84-9975-44a8-a6d5-5853a04c824c/",
-      "address": "堺筋本町駅",
-      "latitude": "",
-      "longitude": "",
-      "note": "堺筋本町駅に着きましたらお電話ください。",
-      "officialUrl": "http://amai.menzu-esute.top/",
-      "roomLocations": [
-        {
-          "label": "堺筋本町駅",
-          "address": "",
-          "latitude": "",
-          "longitude": "",
-          "note": "堺筋本町駅に着きましたらお電話ください。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "アジアン・キュート",
       "station": "本町駅28番出口",
       "hours": "11:00～LAST",
@@ -1275,23 +1275,23 @@
       "detailLoaded": true
     },
     {
-      "name": "Rosée（ロゼ）",
-      "station": "本町駅15番出口",
+      "name": "甘いツボ蜜",
+      "station": "堺筋本町駅",
       "hours": "11:00～翌 02:00",
-      "phone": "080-9537-7415",
-      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/0b767397-c31c-4558-8717-03d585a364a5/",
-      "address": "本町駅",
+      "phone": "090-8871-7910",
+      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/9487db84-9975-44a8-a6d5-5853a04c824c/",
+      "address": "堺筋本町駅",
       "latitude": "",
       "longitude": "",
-      "note": "住所 本町駅15番出口に着きましたら、お電話ください。",
-      "officialUrl": "http://rosee.sh-ylma3.tokyo/",
+      "note": "堺筋本町駅に着きましたらお電話ください。",
+      "officialUrl": "http://amai.menzu-esute.top/",
       "roomLocations": [
         {
-          "label": "本町駅15番出口",
+          "label": "堺筋本町駅",
           "address": "",
           "latitude": "",
           "longitude": "",
-          "note": "住所 本町駅15番出口に着きましたら、お電話ください。"
+          "note": "堺筋本町駅に着きましたらお電話ください。"
         }
       ],
       "detailLoaded": true
@@ -1407,48 +1407,6 @@
       "detailLoaded": true
     },
     {
-      "name": "裕庵",
-      "station": "堺筋本町駅13番出口",
-      "hours": "12:00～翌 05:00",
-      "phone": "090-9888-5666",
-      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/a70d0357-5740-43a0-a026-35db6781663b/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "堺筋本町駅13番出口",
-      "officialUrl": "https://www.waka184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "プリンプリン",
-      "station": "堺筋本町駅3番出口",
-      "hours": "12:00～24:30",
-      "phone": "090-8145-1576",
-      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/649004a3-8de2-4753-a360-028656ce6315/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "堺筋本町駅3番出口徒歩1分",
-      "officialUrl": "https://www.prinprin184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "透蜜娘（とうみつむすめ）",
-      "station": "堺筋本町駅10番出口",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-5413-5102",
-      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/9e298781-1f1b-4f34-b857-82d7a246047f/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "堺筋本町駅10番出口徒歩2分",
-      "officialUrl": "http://maiden.sh-sop.tokyo/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "ふわふわガール",
       "station": "堺筋本町駅6・7出口",
       "hours": "11:00～翌 02:00",
@@ -1477,16 +1435,30 @@
       "detailLoaded": true
     },
     {
-      "name": "ぴゅあらぶ",
-      "station": "堺筋本町駅3番出口",
-      "hours": "12:00～LAST",
-      "phone": "090-7942-4294",
-      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/66342a98-2b28-480a-9e4a-21a17560f474/",
+      "name": "透蜜娘（とうみつむすめ）",
+      "station": "堺筋本町駅10番出口",
+      "hours": "11:00～翌 02:00",
+      "phone": "090-5413-5102",
+      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/9e298781-1f1b-4f34-b857-82d7a246047f/",
       "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
-      "note": "堺筋本町駅3番出口",
-      "officialUrl": "https://shop2.es-johokan.com/purelove-s/",
+      "note": "堺筋本町駅10番出口徒歩2分",
+      "officialUrl": "http://maiden.sh-sop.tokyo/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "裕庵",
+      "station": "堺筋本町駅13番出口",
+      "hours": "12:00～翌 05:00",
+      "phone": "090-9888-5666",
+      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/a70d0357-5740-43a0-a026-35db6781663b/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "堺筋本町駅13番出口",
+      "officialUrl": "https://www.waka184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -1501,6 +1473,34 @@
       "longitude": "",
       "note": "堺筋本町駅6番出口",
       "officialUrl": "https://www.banykiss184.info/access.html",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "ぴゅあらぶ",
+      "station": "堺筋本町駅3番出口",
+      "hours": "12:00～LAST",
+      "phone": "090-7942-4294",
+      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/66342a98-2b28-480a-9e4a-21a17560f474/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "堺筋本町駅3番出口",
+      "officialUrl": "https://shop2.es-johokan.com/purelove-s/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "プリンプリン",
+      "station": "堺筋本町駅3番出口",
+      "hours": "12:00～24:30",
+      "phone": "090-8145-1576",
+      "listingUrl": "https://www.esthe-ranking.jp/honmachi/shop-detail/649004a3-8de2-4753-a360-028656ce6315/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "堺筋本町駅3番出口徒歩1分",
+      "officialUrl": "https://www.prinprin184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -1641,6 +1641,94 @@
       "detailLoaded": true
     },
     {
+      "name": "キュンHeart",
+      "station": "近鉄日本橋駅7番出口",
+      "hours": "24時間営業",
+      "phone": "090-1076-8541",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/63e520e7-5bd2-4e39-85ea-23b70a26e32d/",
+      "address": "大阪府大阪市中央区日本橋１丁目１２−１０",
+      "latitude": "",
+      "longitude": "",
+      "note": "大阪日本橋7番出口 国立文楽劇場 に着きましたら、ご連絡ください。",
+      "officialUrl": "http://cun-heart.fpo-111.site/",
+      "roomLocations": [
+        {
+          "label": "近鉄日本橋駅7番出口",
+          "address": "大阪府大阪市中央区日本橋１丁目１２−１０",
+          "latitude": "",
+          "longitude": "",
+          "note": "大阪日本橋7番出口 国立文楽劇場 に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "蘭スパ",
+      "station": "なんば駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "06-6211-2343",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/356d02f8-1cb1-4fd3-9637-2fac5bc19eec/",
+      "address": "大阪府大阪市中央区千日前１丁目９−１２",
+      "latitude": "",
+      "longitude": "",
+      "note": "近鉄/なんば駅から徒歩約3分/日本橋駅から249m",
+      "officialUrl": "http://lan.ssi-esute.asia/",
+      "roomLocations": [
+        {
+          "label": "なんば駅",
+          "address": "大阪府大阪市中央区千日前１丁目９−１２",
+          "latitude": "",
+          "longitude": "",
+          "note": "近鉄/なんば駅から徒歩約3分/日本橋駅から249m"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "mini house",
+      "station": "日本橋駅6番出口",
+      "hours": "10:00～翌 05:00",
+      "phone": "080-8182-2345",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/cad21a83-1db6-4d81-b20d-3c78de366adb/",
+      "address": "近鉄日本橋駅 大阪府大阪市中央区日本橋１丁目１８−１４",
+      "latitude": "",
+      "longitude": "",
+      "note": "日本橋6番出口に着いたら、お電話ください。",
+      "officialUrl": "http://axc.kaj-esute.asia/",
+      "roomLocations": [
+        {
+          "label": "日本橋駅6番出口",
+          "address": "近鉄日本橋駅 大阪府大阪市中央区日本橋１丁目１８−１４",
+          "latitude": "",
+          "longitude": "",
+          "note": "日本橋6番出口に着いたら、お電話ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "夜の秘密",
+      "station": "なんば駅",
+      "hours": "24時間営業",
+      "phone": "090-2199-9692",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/db665962-7e69-455d-b7ec-7d34f129be16/",
+      "address": "大阪府大阪市中央区道頓堀２丁目１−１",
+      "latitude": "",
+      "longitude": "",
+      "note": "吉野家 御堂筋難波店 に着きましたら、ご連絡ください。",
+      "officialUrl": "http://secrets.xin-huf.online/",
+      "roomLocations": [
+        {
+          "label": "なんば駅",
+          "address": "大阪府大阪市中央区道頓堀２丁目１−１",
+          "latitude": "",
+          "longitude": "",
+          "note": "吉野家 御堂筋難波店 に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
       "name": "Peach Pie",
       "station": "新今宮駅東口",
       "hours": "11:00～LAST",
@@ -1685,94 +1773,6 @@
       "detailLoaded": true
     },
     {
-      "name": "キュンHeart",
-      "station": "近鉄日本橋駅7番出口",
-      "hours": "24時間営業",
-      "phone": "090-1076-8541",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/63e520e7-5bd2-4e39-85ea-23b70a26e32d/",
-      "address": "大阪府大阪市中央区日本橋１丁目１２−１０",
-      "latitude": "",
-      "longitude": "",
-      "note": "大阪日本橋7番出口 国立文楽劇場 に着きましたら、ご連絡ください。",
-      "officialUrl": "http://cun-heart.fpo-111.site/",
-      "roomLocations": [
-        {
-          "label": "近鉄日本橋駅7番出口",
-          "address": "大阪府大阪市中央区日本橋１丁目１２−１０",
-          "latitude": "",
-          "longitude": "",
-          "note": "大阪日本橋7番出口 国立文楽劇場 に着きましたら、ご連絡ください。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "mini house",
-      "station": "日本橋駅6番出口",
-      "hours": "10:00～翌 05:00",
-      "phone": "080-8182-2345",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/cad21a83-1db6-4d81-b20d-3c78de366adb/",
-      "address": "近鉄日本橋駅 大阪府大阪市中央区日本橋１丁目１８−１４",
-      "latitude": "",
-      "longitude": "",
-      "note": "日本橋6番出口に着いたら、お電話ください。",
-      "officialUrl": "http://axc.kaj-esute.asia/",
-      "roomLocations": [
-        {
-          "label": "日本橋駅6番出口",
-          "address": "近鉄日本橋駅 大阪府大阪市中央区日本橋１丁目１８−１４",
-          "latitude": "",
-          "longitude": "",
-          "note": "日本橋6番出口に着いたら、お電話ください。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "ホワイトローズ",
-      "station": "日本橋駅7番出口",
-      "hours": "12:00～LAST",
-      "phone": "080-4561-5228",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/b0c56ef8-125d-4f39-a439-16432bd91390/",
-      "address": "大阪府大阪市中央区日本橋１丁目１２−１０ 国立文楽劇場",
-      "latitude": "",
-      "longitude": "",
-      "note": "日本橋駅7番出口徒歩2分",
-      "officialUrl": "https://whiterose.ests.jp/",
-      "roomLocations": [
-        {
-          "label": "日本橋駅7番出口",
-          "address": "大阪府大阪市中央区日本橋１丁目１２−１０ 国立文楽劇場",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "蘭スパ",
-      "station": "なんば駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "06-6211-2343",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/356d02f8-1cb1-4fd3-9637-2fac5bc19eec/",
-      "address": "大阪府大阪市中央区千日前１丁目９−１２",
-      "latitude": "",
-      "longitude": "",
-      "note": "近鉄/なんば駅から徒歩約3分/日本橋駅から249m",
-      "officialUrl": "http://lan.ssi-esute.asia/",
-      "roomLocations": [
-        {
-          "label": "なんば駅",
-          "address": "大阪府大阪市中央区千日前１丁目９−１２",
-          "latitude": "",
-          "longitude": "",
-          "note": "近鉄/なんば駅から徒歩約3分/日本橋駅から249m"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "丸美（まるみ）",
       "station": "日本橋駅8番出口",
       "hours": "24時間営業",
@@ -1795,23 +1795,23 @@
       "detailLoaded": true
     },
     {
-      "name": "夜の秘密",
-      "station": "なんば駅",
-      "hours": "24時間営業",
-      "phone": "090-2199-9692",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/db665962-7e69-455d-b7ec-7d34f129be16/",
-      "address": "大阪府大阪市中央区道頓堀２丁目１−１",
+      "name": "ホワイトローズ",
+      "station": "日本橋駅7番出口",
+      "hours": "12:00～LAST",
+      "phone": "080-4561-5228",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/b0c56ef8-125d-4f39-a439-16432bd91390/",
+      "address": "大阪府大阪市中央区日本橋１丁目１２−１０ 国立文楽劇場",
       "latitude": "",
       "longitude": "",
-      "note": "吉野家 御堂筋難波店 に着きましたら、ご連絡ください。",
-      "officialUrl": "http://secrets.xin-huf.online/",
+      "note": "日本橋駅7番出口徒歩2分",
+      "officialUrl": "https://whiterose.ests.jp/",
       "roomLocations": [
         {
-          "label": "なんば駅",
-          "address": "大阪府大阪市中央区道頓堀２丁目１−１",
+          "label": "日本橋駅7番出口",
+          "address": "大阪府大阪市中央区日本橋１丁目１２−１０ 国立文楽劇場",
           "latitude": "",
           "longitude": "",
-          "note": "吉野家 御堂筋難波店 に着きましたら、ご連絡ください。"
+          "note": "アクセス欄に住所あり"
         }
       ],
       "detailLoaded": true
@@ -1905,6 +1905,28 @@
       "detailLoaded": true
     },
     {
+      "name": "嬢熱OSAKA",
+      "station": "動物園前駅9番出口",
+      "hours": "11:00～LAST",
+      "phone": "080-2946-9130",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/65955e95-339a-41ec-98b4-03b2e5af004e/",
+      "address": "大阪府大阪市西成区太子１丁目６−１２",
+      "latitude": "",
+      "longitude": "",
+      "note": "「動物園前駅9番出口」に着いたら、お電話ください。",
+      "officialUrl": "http://piepanic.hl-web23.work/",
+      "roomLocations": [
+        {
+          "label": "動物園前駅9番出口",
+          "address": "大阪府大阪市西成区太子１丁目６−１２",
+          "latitude": "",
+          "longitude": "",
+          "note": "「動物園前駅9番出口」に着いたら、お電話ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
       "name": "U-room（ユールーム）",
       "station": "日本橋駅7番出口",
       "hours": "12:00～翌 03:00",
@@ -1944,28 +1966,6 @@
           "latitude": "34.654291188857165",
           "longitude": "135.50573530758246",
           "note": "恵美須町駅3番出口付近から電話をいただけるとスムーズにご案内できます。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "嬢熱OSAKA",
-      "station": "動物園前駅9番出口",
-      "hours": "11:00～LAST",
-      "phone": "080-2946-9130",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/65955e95-339a-41ec-98b4-03b2e5af004e/",
-      "address": "大阪府大阪市西成区太子１丁目６−１２",
-      "latitude": "",
-      "longitude": "",
-      "note": "「動物園前駅9番出口」に着いたら、お電話ください。",
-      "officialUrl": "http://piepanic.hl-web23.work/",
-      "roomLocations": [
-        {
-          "label": "動物園前駅9番出口",
-          "address": "大阪府大阪市西成区太子１丁目６−１２",
-          "latitude": "",
-          "longitude": "",
-          "note": "「動物園前駅9番出口」に着いたら、お電話ください。"
         }
       ],
       "detailLoaded": true
@@ -2057,34 +2057,6 @@
       "detailLoaded": true
     },
     {
-      "name": "CIEL（シエル）",
-      "station": "日本橋駅2番出口",
-      "hours": "12:00～LAST",
-      "phone": "070-9140-8866",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/8e8094a6-cb0d-4aa0-8ccf-184ee65592dc/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "日本橋駅2番出口徒歩3分",
-      "officialUrl": "https://loveletter.evv.jp/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "濡れ濡れSPA",
-      "station": "日本橋駅7番出口",
-      "hours": "12:00～翌 05:00",
-      "phone": "070-9129-2365",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/5d009721-5af1-4d92-9300-4bdf378ad0c2/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "日本橋駅7番出口",
-      "officialUrl": "https://www.nurenurespa184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "チュウリぴゅ",
       "station": "大国町駅1番出口",
       "hours": "11:00～翌 05:00",
@@ -2109,6 +2081,34 @@
       "longitude": "",
       "note": "大国町駅3番出口",
       "officialUrl": "https://www.koimasimasi184.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "CIEL（シエル）",
+      "station": "日本橋駅2番出口",
+      "hours": "12:00～LAST",
+      "phone": "070-9140-8866",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/8e8094a6-cb0d-4aa0-8ccf-184ee65592dc/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "日本橋駅2番出口徒歩3分",
+      "officialUrl": "https://loveletter.evv.jp/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "濡れ濡れSPA",
+      "station": "日本橋駅7番出口",
+      "hours": "12:00～翌 05:00",
+      "phone": "070-9129-2365",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/5d009721-5af1-4d92-9300-4bdf378ad0c2/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "日本橋駅7番出口",
+      "officialUrl": "https://www.nurenurespa184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -2141,16 +2141,30 @@
       "detailLoaded": true
     },
     {
-      "name": "シエル",
-      "station": "日本橋7番出口",
-      "hours": "11:00～24:00",
-      "phone": "090-6558-5228",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/fa75e2bd-8842-47fc-b9ea-e70b559f73f4/",
+      "name": "桜色リフレ（さくらいろリフレ）",
+      "station": "動物園前駅9番",
+      "hours": "11:00～LAST",
+      "phone": "080-1271-3083",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/5b69173f-4e0f-4e01-9182-45b6ef452f54/",
       "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
-      "note": "日本橋7番出口徒歩2分",
-      "officialUrl": "https://ciel.iest.in/",
+      "note": "動物園前駅9番徒歩5分",
+      "officialUrl": "http://yinghua.sh-hahagfd.tokyo/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "BlueSpa（ブルースパ）",
+      "station": "日本橋駅2番出口",
+      "hours": "14:00～LAST",
+      "phone": "090-3711-1117",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/e3c436cd-97cb-4cc5-bf77-a1f0a96e37ef/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "日本橋駅2番出口徒歩2分",
+      "officialUrl": "https://www.bluespa184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -2165,20 +2179,6 @@
       "longitude": "",
       "note": "アクセス欄に住所あり",
       "officialUrl": "https://shop.es-johokan.com/refurean/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "桜色リフレ（さくらいろリフレ）",
-      "station": "動物園前駅9番",
-      "hours": "11:00～LAST",
-      "phone": "080-1271-3083",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/5b69173f-4e0f-4e01-9182-45b6ef452f54/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "動物園前駅9番徒歩5分",
-      "officialUrl": "http://yinghua.sh-hahagfd.tokyo/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -2249,6 +2249,20 @@
       "longitude": "",
       "note": "日本橋駅5番出口",
       "officialUrl": "https://shop2.es-johokan.com/yuu-n/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "シエル",
+      "station": "日本橋7番出口",
+      "hours": "11:00～24:00",
+      "phone": "090-6558-5228",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/fa75e2bd-8842-47fc-b9ea-e70b559f73f4/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "日本橋7番出口徒歩2分",
+      "officialUrl": "https://ciel.iest.in/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -2337,34 +2351,6 @@
       "detailLoaded": true
     },
     {
-      "name": "ロイヤル",
-      "station": "日本橋駅5番出口",
-      "hours": "11:30～翌 02:30",
-      "phone": "06-6644-5776",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/104ec32f-5261-4e88-86bc-9297f84ef6e1/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "日本橋駅5番出口",
-      "officialUrl": "https://www.kansai-es.com/royal/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "BlueSpa（ブルースパ）",
-      "station": "日本橋駅2番出口",
-      "hours": "14:00～LAST",
-      "phone": "090-3711-1117",
-      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/e3c436cd-97cb-4cc5-bf77-a1f0a96e37ef/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "日本橋駅2番出口徒歩2分",
-      "officialUrl": "https://www.bluespa184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "ミナミ",
       "station": "日本橋駅5番出口",
       "hours": "12:00～LAST",
@@ -2407,6 +2393,20 @@
       "detailLoaded": true
     },
     {
+      "name": "ロイヤル",
+      "station": "日本橋駅5番出口",
+      "hours": "11:30～翌 02:30",
+      "phone": "06-6644-5776",
+      "listingUrl": "https://www.esthe-ranking.jp/osakaminami/shop-detail/104ec32f-5261-4e88-86bc-9297f84ef6e1/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "日本橋駅5番出口",
+      "officialUrl": "https://www.kansai-es.com/royal/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
       "name": "頑張ろYes",
       "station": "天王寺駅",
       "hours": "12:00～翌 01:00",
@@ -2424,6 +2424,28 @@
           "latitude": "",
           "longitude": "",
           "note": "天王寺駅に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "シックスセンス（6thSense）",
+      "station": "谷町六丁目駅7番出口1分",
+      "hours": "11:00～翌 01:00",
+      "phone": "080-6262-5777",
+      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/74bf6185-f5f6-44fa-a6df-6838bac945a4/",
+      "address": "大阪府大阪市中央区上本町西１丁目５−１８",
+      "latitude": "",
+      "longitude": "",
+      "note": "谷町六丁目駅7番出口1分",
+      "officialUrl": "https://os-rank.xyz/",
+      "roomLocations": [
+        {
+          "label": "谷町六丁目駅7番出口1分",
+          "address": "大阪府大阪市中央区上本町西１丁目５−１８",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
         }
       ],
       "detailLoaded": true
@@ -2451,20 +2473,42 @@
       "detailLoaded": true
     },
     {
-      "name": "シックスセンス（6thSense）",
-      "station": "谷町六丁目駅7番出口1分",
-      "hours": "11:00～翌 01:00",
-      "phone": "080-6262-5777",
-      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/74bf6185-f5f6-44fa-a6df-6838bac945a4/",
-      "address": "大阪府大阪市中央区上本町西１丁目５−１８",
-      "latitude": "",
-      "longitude": "",
-      "note": "谷町六丁目駅7番出口1分",
-      "officialUrl": "https://os-rank.xyz/",
+      "name": "夢恋",
+      "station": "天王寺駅14番出口",
+      "hours": "11:00～LAST",
+      "phone": "080-7823-8247",
+      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/13000ea6-df95-4b28-8e60-6a39e164fca1/",
+      "address": "34.647860, 135.509090",
+      "latitude": "34.64786",
+      "longitude": "135.50909",
+      "note": "天王寺駅14番出口徒歩3分",
+      "officialUrl": "https://shop2.es-johokan.com/yumekoi/",
       "roomLocations": [
         {
-          "label": "谷町六丁目駅7番出口1分",
-          "address": "大阪府大阪市中央区上本町西１丁目５−１８",
+          "label": "天王寺駅14番出口",
+          "address": "大阪市阿倍野区旭町１丁目１−２８ バス停でお電話",
+          "latitude": "34.64786",
+          "longitude": "135.50909",
+          "note": "アクセス欄に緯度経度と住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "美姬",
+      "station": "玉造駅3番出口",
+      "hours": "12:00～24:30",
+      "phone": "090-3194-6436",
+      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/d6e9ca94-24c3-43b2-a6a8-425e4f044652/",
+      "address": "大阪府大阪市中央区玉造１丁目６−２４",
+      "latitude": "",
+      "longitude": "",
+      "note": "玉造駅3番出口徒歩1分",
+      "officialUrl": "https://bihime-tmtskr.iest.in/",
+      "roomLocations": [
+        {
+          "label": "玉造駅3番出口",
+          "address": "大阪府大阪市中央区玉造１丁目６−２４",
           "latitude": "",
           "longitude": "",
           "note": "アクセス欄に住所あり"
@@ -2495,45 +2539,30 @@
       "detailLoaded": true
     },
     {
-      "name": "美姬",
-      "station": "玉造駅3番出口",
-      "hours": "12:00～24:30",
-      "phone": "090-3194-6436",
-      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/d6e9ca94-24c3-43b2-a6a8-425e4f044652/",
-      "address": "大阪府大阪市中央区玉造１丁目６−２４",
-      "latitude": "",
-      "longitude": "",
-      "note": "玉造駅3番出口徒歩1分",
-      "officialUrl": "https://bihime-tmtskr.iest.in/",
+      "name": "Lumina Spa",
+      "station": "鶴橋駅・天王寺駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-3569-5351",
+      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/a1dcf4e4-b69b-4979-b13f-23d7d5d997c7/",
+      "address": "34.66792257557026, 135.5295513791397",
+      "latitude": "34.66792257557026",
+      "longitude": "135.5295513791397",
+      "note": "アクセス欄に緯度経度と住所あり",
+      "officialUrl": "http://lumina-spa.oka888.space/",
       "roomLocations": [
         {
-          "label": "玉造駅3番出口",
-          "address": "大阪府大阪市中央区玉造１丁目６−２４",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "夢恋",
-      "station": "天王寺駅14番出口",
-      "hours": "11:00～LAST",
-      "phone": "080-7823-8247",
-      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/13000ea6-df95-4b28-8e60-6a39e164fca1/",
-      "address": "34.647860, 135.509090",
-      "latitude": "34.64786",
-      "longitude": "135.50909",
-      "note": "天王寺駅14番出口徒歩3分",
-      "officialUrl": "https://shop2.es-johokan.com/yumekoi/",
-      "roomLocations": [
+          "label": "鶴橋駅",
+          "address": "",
+          "latitude": "34.66792257557026",
+          "longitude": "135.5295513791397",
+          "note": "アクセス欄は緯度経度のみ"
+        },
         {
-          "label": "天王寺駅14番出口",
-          "address": "大阪市阿倍野区旭町１丁目１−２８ バス停でお電話",
-          "latitude": "34.64786",
-          "longitude": "135.50909",
-          "note": "アクセス欄に緯度経度と住所あり"
+          "label": "天王寺駅",
+          "address": "",
+          "latitude": "34.649367481487225",
+          "longitude": "135.51326255645859",
+          "note": "アクセス欄は緯度経度のみ"
         }
       ],
       "detailLoaded": true
@@ -2570,35 +2599,6 @@
           "latitude": "",
           "longitude": "",
           "note": ""
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "Lumina Spa",
-      "station": "鶴橋駅・天王寺駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-3569-5351",
-      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/a1dcf4e4-b69b-4979-b13f-23d7d5d997c7/",
-      "address": "34.66792257557026, 135.5295513791397",
-      "latitude": "34.66792257557026",
-      "longitude": "135.5295513791397",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "officialUrl": "http://lumina-spa.oka888.space/",
-      "roomLocations": [
-        {
-          "label": "鶴橋駅",
-          "address": "",
-          "latitude": "34.66792257557026",
-          "longitude": "135.5295513791397",
-          "note": "アクセス欄は緯度経度のみ"
-        },
-        {
-          "label": "天王寺駅",
-          "address": "",
-          "latitude": "34.649367481487225",
-          "longitude": "135.51326255645859",
-          "note": "アクセス欄は緯度経度のみ"
         }
       ],
       "detailLoaded": true
@@ -2662,20 +2662,6 @@
       "detailLoaded": true
     },
     {
-      "name": "ぺろりんガール",
-      "station": "鶴橋駅1番出口",
-      "hours": "11:00～翌 02:00",
-      "phone": "070-9235-3664",
-      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/a3acb4f6-b2ed-4409-b685-7e20fd30e597/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "鶴橋駅1番出口",
-      "officialUrl": "https://www.perorin184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "癒し まいまい",
       "station": "天王寺駅",
       "hours": "11:00～翌 02:00",
@@ -2714,6 +2700,20 @@
       "longitude": "",
       "note": "谷町9丁目駅3番出口",
       "officialUrl": "https://www.nyaa184.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "ぺろりんガール",
+      "station": "鶴橋駅1番出口",
+      "hours": "11:00～翌 02:00",
+      "phone": "070-9235-3664",
+      "listingUrl": "https://www.esthe-ranking.jp/tanikyu/shop-detail/a3acb4f6-b2ed-4409-b685-7e20fd30e597/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "鶴橋駅1番出口",
+      "officialUrl": "https://www.perorin184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -2897,23 +2897,23 @@
       "detailLoaded": true
     },
     {
-      "name": "花海",
-      "station": "布施駅",
-      "hours": "10:00～LAST",
-      "phone": "080-8491-9216",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/b1c76a38-fc39-430b-9088-16e929ccb6fc/",
-      "address": "34.66027964257666, 135.56259936045802",
-      "latitude": "34.66027964257666",
-      "longitude": "135.56259936045802",
-      "note": "布施駅徒歩5分",
-      "officialUrl": "http://flower.sh-hahagfd.tokyo/",
+      "name": "未來",
+      "station": "河内天美駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "070-9512-5169",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/3fa64377-b707-4667-824f-9849864f41f8/",
+      "address": "河内天美駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "河内天美駅に着きましたらお電話ください。",
+      "officialUrl": "http://weilai.sh-buetfery.tokyo/",
       "roomLocations": [
         {
-          "label": "布施駅",
+          "label": "河内天美駅",
           "address": "",
-          "latitude": "34.66027964257666",
-          "longitude": "135.56259936045802",
-          "note": "アクセス欄は緯度経度のみ"
+          "latitude": "",
+          "longitude": "",
+          "note": "河内天美駅に着きましたらお電話ください。"
         }
       ],
       "detailLoaded": true
@@ -2963,16 +2963,38 @@
       "detailLoaded": true
     },
     {
-      "name": "ローズSPA",
+      "name": "花海",
+      "station": "布施駅",
+      "hours": "10:00～LAST",
+      "phone": "080-8491-9216",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/b1c76a38-fc39-430b-9088-16e929ccb6fc/",
+      "address": "34.66027964257666, 135.56259936045802",
+      "latitude": "34.66027964257666",
+      "longitude": "135.56259936045802",
+      "note": "布施駅徒歩5分",
+      "officialUrl": "http://flower.sh-hahagfd.tokyo/",
+      "roomLocations": [
+        {
+          "label": "布施駅",
+          "address": "",
+          "latitude": "34.66027964257666",
+          "longitude": "135.56259936045802",
+          "note": "アクセス欄は緯度経度のみ"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "シュガー丸子",
       "station": "近鉄八尾駅・布施駅・長田駅・吉田駅・高井田駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "050-6881-1336",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/1375030d-f438-42dd-9a74-f3bedb63167e/",
+      "hours": "12:00～LAST",
+      "phone": "050-6882-9177",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/003a1dbd-710b-4257-94ba-ab6cf7ea1efc/",
       "address": "近鉄八尾駅",
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
-      "officialUrl": "https://aromaest.jp/rosespa/",
+      "officialUrl": "https://aromaest.jp/aqtin/",
       "roomLocations": [
         {
           "label": "近鉄八尾駅",
@@ -3013,16 +3035,16 @@
       "detailLoaded": true
     },
     {
-      "name": "シュガー丸子",
+      "name": "ローズSPA",
       "station": "近鉄八尾駅・布施駅・長田駅・吉田駅・高井田駅",
-      "hours": "12:00～LAST",
-      "phone": "050-6882-9177",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/003a1dbd-710b-4257-94ba-ab6cf7ea1efc/",
+      "hours": "11:00～翌 02:00",
+      "phone": "050-6881-1336",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/1375030d-f438-42dd-9a74-f3bedb63167e/",
       "address": "近鉄八尾駅",
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
-      "officialUrl": "https://aromaest.jp/aqtin/",
+      "officialUrl": "https://aromaest.jp/rosespa/",
       "roomLocations": [
         {
           "label": "近鉄八尾駅",
@@ -3080,28 +3102,6 @@
           "latitude": "34.665190842664146",
           "longitude": "135.56286849405862",
           "note": "アクセス欄は緯度経度のみ"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "未來",
-      "station": "河内天美駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "070-9512-5169",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/3fa64377-b707-4667-824f-9849864f41f8/",
-      "address": "河内天美駅",
-      "latitude": "",
-      "longitude": "",
-      "note": "河内天美駅に着きましたらお電話ください。",
-      "officialUrl": "http://weilai.sh-buetfery.tokyo/",
-      "roomLocations": [
-        {
-          "label": "河内天美駅",
-          "address": "",
-          "latitude": "",
-          "longitude": "",
-          "note": "河内天美駅に着きましたらお電話ください。"
         }
       ],
       "detailLoaded": true
@@ -3171,20 +3171,6 @@
       "detailLoaded": true
     },
     {
-      "name": "秘密のリンパ美女",
-      "station": "布施駅北口",
-      "hours": "10:00～翌 03:00",
-      "phone": "070-5536-6100",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6c6c1c8b-80a1-4ac1-bb30-40357f036de9/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://shop2.es-johokan.com/himitsunolymphbijo/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "太陽の恵みSPA",
       "station": "荒本駅",
       "hours": "13:00～翌 01:00",
@@ -3213,6 +3199,20 @@
       "detailLoaded": true
     },
     {
+      "name": "秘密のリンパ美女",
+      "station": "布施駅北口",
+      "hours": "10:00～翌 03:00",
+      "phone": "070-5536-6100",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6c6c1c8b-80a1-4ac1-bb30-40357f036de9/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://shop2.es-johokan.com/himitsunolymphbijo/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
       "name": "安らぎ",
       "station": "布施駅北口",
       "hours": "24時間営業",
@@ -3223,6 +3223,20 @@
       "longitude": "",
       "note": "アクセス欄に住所あり",
       "officialUrl": "https://shop2.es-johokan.com/yasuragi-h/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "八尾癒しの国",
+      "station": "近鉄八尾駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-9356-6688",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/922c6b59-fe95-4df8-bc62-6d5badb58ad2/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://shop2.es-johokan.com/yaoiyashinokuni/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -3255,16 +3269,16 @@
       "detailLoaded": true
     },
     {
-      "name": "八尾癒しの国",
-      "station": "近鉄八尾駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-9356-6688",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/922c6b59-fe95-4df8-bc62-6d5badb58ad2/",
+      "name": "ピアーズ",
+      "station": "八尾駅",
+      "hours": "13:00～翌 02:00",
+      "phone": "080-5639-4311",
+      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/551c972b-3aa4-494d-92ab-44b31c90b03a/",
       "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
       "note": "アクセス欄に住所あり",
-      "officialUrl": "https://shop2.es-johokan.com/yaoiyashinokuni/",
+      "officialUrl": "https://shop2.es-johokan.com/piaaz-k/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -3283,17 +3297,25 @@
       "detailLoaded": true
     },
     {
-      "name": "ピアーズ",
-      "station": "八尾駅",
-      "hours": "13:00～翌 02:00",
-      "phone": "080-5639-4311",
-      "listingUrl": "https://www.esthe-ranking.jp/higashiosaka/shop-detail/551c972b-3aa4-494d-92ab-44b31c90b03a/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://shop2.es-johokan.com/piaaz-k/",
-      "roomLocations": [],
+      "name": "ハッピールーム",
+      "station": "京橋駅1番出口",
+      "hours": "11:30～翌 01:00",
+      "phone": "070-9121-3982",
+      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/9101047c-f867-4a96-b00a-bcb940fc9af8/",
+      "address": "34.696834200647565, 135.52861124056523",
+      "latitude": "34.696834200647565",
+      "longitude": "135.52861124056523",
+      "note": "京橋駅1番出口",
+      "officialUrl": "https://www.happy184.info/",
+      "roomLocations": [
+        {
+          "label": "京橋駅1番出口",
+          "address": "大阪府大阪市都島区東野田町1丁目13-3から電話ください",
+          "latitude": "34.696834200647565",
+          "longitude": "135.52861124056523",
+          "note": "アクセス欄に緯度経度と住所あり"
+        }
+      ],
       "detailLoaded": true
     },
     {
@@ -3342,72 +3364,6 @@
           "latitude": "",
           "longitude": "",
           "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "ハッピールーム",
-      "station": "京橋駅1番出口",
-      "hours": "11:30～翌 01:00",
-      "phone": "070-9121-3982",
-      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/9101047c-f867-4a96-b00a-bcb940fc9af8/",
-      "address": "34.696834200647565, 135.52861124056523",
-      "latitude": "34.696834200647565",
-      "longitude": "135.52861124056523",
-      "note": "京橋駅1番出口",
-      "officialUrl": "https://www.happy184.info/",
-      "roomLocations": [
-        {
-          "label": "京橋駅1番出口",
-          "address": "大阪府大阪市都島区東野田町1丁目13-3から電話ください",
-          "latitude": "34.696834200647565",
-          "longitude": "135.52861124056523",
-          "note": "アクセス欄に緯度経度と住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "初恋",
-      "station": "門真市駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "050-6864-0755",
-      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/1fed9e89-5784-4be3-9f36-7058585680e8/",
-      "address": "大阪府門真市新橋町16-15",
-      "latitude": "",
-      "longitude": "",
-      "note": "門真市駅徒歩3分",
-      "officialUrl": "http://first-love.sh-fbbpo.tokyo/",
-      "roomLocations": [
-        {
-          "label": "門真市駅",
-          "address": "大阪府門真市新橋町16-15",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "可愛い恋人",
-      "station": "守口市駅",
-      "hours": "12:00～翌 01:00",
-      "phone": "090-2595-7999",
-      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/f622f9c5-1c15-4553-a41a-09961d1df2a6/",
-      "address": "守口市駅",
-      "latitude": "",
-      "longitude": "",
-      "note": "守口市駅に着きましたらお電話ください。",
-      "officialUrl": "http://sh-lianren.wrjd23.tokyo/",
-      "roomLocations": [
-        {
-          "label": "守口市駅",
-          "address": "守口市駅",
-          "latitude": "",
-          "longitude": "",
-          "note": "守口市駅に着きましたらお電話ください。"
         }
       ],
       "detailLoaded": true
@@ -3556,6 +3512,50 @@
       "detailLoaded": true
     },
     {
+      "name": "可愛い恋人",
+      "station": "守口市駅",
+      "hours": "12:00～翌 01:00",
+      "phone": "090-2595-7999",
+      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/f622f9c5-1c15-4553-a41a-09961d1df2a6/",
+      "address": "守口市駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "守口市駅に着きましたらお電話ください。",
+      "officialUrl": "http://sh-lianren.wrjd23.tokyo/",
+      "roomLocations": [
+        {
+          "label": "守口市駅",
+          "address": "守口市駅",
+          "latitude": "",
+          "longitude": "",
+          "note": "守口市駅に着きましたらお電話ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "初恋",
+      "station": "門真市駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "050-6864-0755",
+      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/1fed9e89-5784-4be3-9f36-7058585680e8/",
+      "address": "大阪府門真市新橋町16-15",
+      "latitude": "",
+      "longitude": "",
+      "note": "門真市駅徒歩3分",
+      "officialUrl": "http://first-love.sh-fbbpo.tokyo/",
+      "roomLocations": [
+        {
+          "label": "門真市駅",
+          "address": "大阪府門真市新橋町16-15",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
       "name": "内緒にしてね",
       "station": "枚方駅・守口駅・土居駅・京橋駅・間門市駅・大日駅・牧野駅",
       "hours": "11:00～翌 02:00",
@@ -3648,20 +3648,6 @@
       "detailLoaded": true
     },
     {
-      "name": "フェニックス",
-      "station": "緑橋駅4番出口",
-      "hours": "12:00～23:00",
-      "phone": "090-4155-8102",
-      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/9d81af29-e02d-4c76-83d7-1bffbafb726a/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "緑橋駅4番出口",
-      "officialUrl": "https://shop2.es-johokan.com/phoenix-m/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "楽楽",
       "station": "枚方市駅",
       "hours": "13:00～22:00",
@@ -3672,20 +3658,6 @@
       "longitude": "",
       "note": "枚方市駅徒歩7分",
       "officialUrl": "https://www.rakuraku-relaxations.com/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "MilkPeach（ミルクピーチ）",
-      "station": "守口市駅",
-      "hours": "12:00～LAST",
-      "phone": "090-7492-8462",
-      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/b8379a7d-3c21-4803-90d3-56ab3f8eec37/",
-      "address": "大阪・守口市 リラクゼーションエステ「MilkPeach（ミルクピーチ）」",
-      "latitude": "",
-      "longitude": "",
-      "note": "守口市駅徒歩5分",
-      "officialUrl": "https://milk-p.relaxjp.com/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -3704,20 +3676,6 @@
       "detailLoaded": true
     },
     {
-      "name": "せかいすぱ 京橋店",
-      "station": "京橋北出口",
-      "hours": "12:00～翌 02:30",
-      "phone": "070-8512-9056",
-      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/536ba92f-3bfb-4fc9-9d36-3498942c137c/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "http://vietnam.fdgs.tokyo/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "エンジェル",
       "station": "守口市駅",
       "hours": "12:00～LAST",
@@ -3728,6 +3686,48 @@
       "longitude": "",
       "note": "アクセス欄に住所あり",
       "officialUrl": "https://shop.es-johokan.com/angel-o/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "MilkPeach（ミルクピーチ）",
+      "station": "守口市駅",
+      "hours": "12:00～LAST",
+      "phone": "090-7492-8462",
+      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/b8379a7d-3c21-4803-90d3-56ab3f8eec37/",
+      "address": "大阪・守口市 リラクゼーションエステ「MilkPeach（ミルクピーチ）」",
+      "latitude": "",
+      "longitude": "",
+      "note": "守口市駅徒歩5分",
+      "officialUrl": "https://milk-p.relaxjp.com/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "フェニックス",
+      "station": "緑橋駅4番出口",
+      "hours": "12:00～23:00",
+      "phone": "090-4155-8102",
+      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/9d81af29-e02d-4c76-83d7-1bffbafb726a/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "緑橋駅4番出口",
+      "officialUrl": "https://shop2.es-johokan.com/phoenix-m/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "せかいすぱ 京橋店",
+      "station": "京橋北出口",
+      "hours": "12:00～翌 02:30",
+      "phone": "070-8512-9056",
+      "listingUrl": "https://www.esthe-ranking.jp/kyobashi/shop-detail/536ba92f-3bfb-4fc9-9d36-3498942c137c/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "http://vietnam.fdgs.tokyo/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -3832,28 +3832,6 @@
       "detailLoaded": true
     },
     {
-      "name": "雅美",
-      "station": "十三駅西口",
-      "hours": "12:00～翌 05:00",
-      "phone": "090-7348-1005",
-      "listingUrl": "https://www.esthe-ranking.jp/juso/shop-detail/7dbbd3fb-fc17-471e-bfd7-664c6b536fb8/",
-      "address": "大阪府大阪市淀川区十三本町1丁目14-20",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://shop2.es-johokan.com/masabi-j/",
-      "roomLocations": [
-        {
-          "label": "十三駅西口",
-          "address": "大阪府大阪市淀川区十三本町1丁目14-20",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "美少女〜first class〜",
       "station": "十三駅",
       "hours": "12:00～LAST",
@@ -3871,6 +3849,28 @@
           "latitude": "",
           "longitude": "",
           "note": ""
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "雅美",
+      "station": "十三駅西口",
+      "hours": "12:00～翌 05:00",
+      "phone": "090-7348-1005",
+      "listingUrl": "https://www.esthe-ranking.jp/juso/shop-detail/7dbbd3fb-fc17-471e-bfd7-664c6b536fb8/",
+      "address": "大阪府大阪市淀川区十三本町1丁目14-20",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://shop2.es-johokan.com/masabi-j/",
+      "roomLocations": [
+        {
+          "label": "十三駅西口",
+          "address": "大阪府大阪市淀川区十三本町1丁目14-20",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
         }
       ],
       "detailLoaded": true
@@ -4024,20 +4024,20 @@
       "detailLoaded": true
     },
     {
-      "name": "Iris（アイリス）",
-      "station": "西中島南方駅1番出口",
-      "hours": "12:00～LAST",
-      "phone": "06-6309-6050",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3c06aaf9-80b2-4f05-b9dc-044457a3d4f8/",
-      "address": "大阪府大阪市淀川区西中島3丁目14-17 サンワビル5階",
+      "name": "女神の手",
+      "station": "西中島南方駅西改札口",
+      "hours": "11:00～LAST",
+      "phone": "090-3658-6777",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c55ee717-23f7-4525-89b3-61c68bd4eff4/",
+      "address": "大阪市淀川区西中島1-12-15",
       "latitude": "",
       "longitude": "",
-      "note": "西中島に新オープン・韓国式マッサージエステ・アイリス は、新大阪も近くのエリア高級個室メンズエステ。韓国式あかすり、蒸しタオルマッサージをきれいで優しい韓国女性が存分に癒してくれ、全国からの出張族にも大人気のお店です。",
-      "officialUrl": "http://www.iris184.info/",
+      "note": "西中島南方駅から徒歩1分以内【高級個室】超密泡洗体マッサージ！11月6日☆21歳とても可愛い新人入店致しました。濃厚なサービスをご提供いたします！厳選された極上美女。他店と比べてみて、信頼と実績の超人気店です♪",
+      "officialUrl": "http://www.hr184.info/",
       "roomLocations": [
         {
-          "label": "西中島南方駅1番出口",
-          "address": "大阪府大阪市淀川区西中島3丁目14-17 サンワビル5階",
+          "label": "西中島南方駅西改札口",
+          "address": "大阪市淀川区西中島1-12-15",
           "latitude": "",
           "longitude": "",
           "note": "アクセス欄に住所あり"
@@ -4068,20 +4068,20 @@
       "detailLoaded": true
     },
     {
-      "name": "女神の手",
-      "station": "西中島南方駅西改札口",
-      "hours": "11:00～LAST",
-      "phone": "090-3658-6777",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c55ee717-23f7-4525-89b3-61c68bd4eff4/",
-      "address": "大阪市淀川区西中島1-12-15",
+      "name": "Iris（アイリス）",
+      "station": "西中島南方駅1番出口",
+      "hours": "12:00～LAST",
+      "phone": "06-6309-6050",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3c06aaf9-80b2-4f05-b9dc-044457a3d4f8/",
+      "address": "大阪府大阪市淀川区西中島3丁目14-17 サンワビル5階",
       "latitude": "",
       "longitude": "",
-      "note": "西中島南方駅から徒歩1分以内【高級個室】超密泡洗体マッサージ！11月6日☆21歳とても可愛い新人入店致しました。濃厚なサービスをご提供いたします！厳選された極上美女。他店と比べてみて、信頼と実績の超人気店です♪",
-      "officialUrl": "http://www.hr184.info/",
+      "note": "西中島に新オープン・韓国式マッサージエステ・アイリス は、新大阪も近くのエリア高級個室メンズエステ。韓国式あかすり、蒸しタオルマッサージをきれいで優しい韓国女性が存分に癒してくれ、全国からの出張族にも大人気のお店です。",
+      "officialUrl": "http://www.iris184.info/",
       "roomLocations": [
         {
-          "label": "西中島南方駅西改札口",
-          "address": "大阪市淀川区西中島1-12-15",
+          "label": "西中島南方駅1番出口",
+          "address": "大阪府大阪市淀川区西中島3丁目14-17 サンワビル5階",
           "latitude": "",
           "longitude": "",
           "note": "アクセス欄に住所あり"
@@ -4112,45 +4112,23 @@
       "detailLoaded": true
     },
     {
-      "name": "くろタイツ",
-      "station": "西中島南方駅1番出口",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-2554-5476",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/bd029dee-22a0-4b39-bbf9-cc45cddb2bb5/",
-      "address": "大阪府大阪市淀川区西中島３丁目１０−５",
-      "latitude": "",
-      "longitude": "",
-      "note": "西中島南方駅1番出口",
-      "officialUrl": "https://www.kurotaitu184.info/",
+      "name": "桃蜜～極上泡泡メンズエステ～",
+      "station": "西中島南方駅2番出口",
+      "hours": "11:00～LAST",
+      "phone": "080-9608-1237",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee838a2c-f969-463a-8c87-b9f6136c29b6/",
+      "address": "34.725461228743804, 135.49920079402824",
+      "latitude": "34.725461228743804",
+      "longitude": "135.49920079402824",
+      "note": "阪急南方駅徒歩30秒/西中島南方駅2番出口徒歩1分",
+      "officialUrl": "http://bubbles.sh-lfg.tokyo/",
       "roomLocations": [
         {
-          "label": "西中島南方駅1番出口",
-          "address": "大阪府大阪市淀川区西中島３丁目１０−５",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "ドキドキ恋人〜極みSPA〜",
-      "station": "西中島南方駅1番出口",
-      "hours": "11:00～翌 04:00(受付：10:30～翌3:30)",
-      "phone": "080-7112-1688",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/caca3166-c958-4fbe-bf78-22b66f654246/",
-      "address": "34.725890257095365, 135.50017120502739",
-      "latitude": "34.725890257095365",
-      "longitude": "135.50017120502739",
-      "note": "西中島南方駅2番出口・1番出口すぐ",
-      "officialUrl": "https://www.dokidokikoib184.info/",
-      "roomLocations": [
-        {
-          "label": "西中島南方駅1番出口",
-          "address": "大阪府大阪市淀川区西中島3-15-13 第一クリーンビル2階",
-          "latitude": "34.725890257095365",
-          "longitude": "135.50017120502739",
-          "note": "西中島南方駅2番出口・1番出口すぐ"
+          "label": "西中島南方駅2番出口",
+          "address": "大阪府大阪市淀川区西中島１丁目１２−１５ 矢野ビル 2階",
+          "latitude": "34.725461228743804",
+          "longitude": "135.49920079402824",
+          "note": "阪急南方駅徒歩30秒/西中島南方駅2番出口徒歩1分"
         }
       ],
       "detailLoaded": true
@@ -4178,45 +4156,23 @@
       "detailLoaded": true
     },
     {
-      "name": "桃蜜～極上泡泡メンズエステ～",
-      "station": "西中島南方駅2番出口",
-      "hours": "11:00～LAST",
-      "phone": "080-9608-1237",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee838a2c-f969-463a-8c87-b9f6136c29b6/",
-      "address": "34.725461228743804, 135.49920079402824",
-      "latitude": "34.725461228743804",
-      "longitude": "135.49920079402824",
-      "note": "阪急南方駅徒歩30秒/西中島南方駅2番出口徒歩1分",
-      "officialUrl": "http://bubbles.sh-lfg.tokyo/",
+      "name": "くろタイツ",
+      "station": "西中島南方駅1番出口",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-2554-5476",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/bd029dee-22a0-4b39-bbf9-cc45cddb2bb5/",
+      "address": "大阪府大阪市淀川区西中島３丁目１０−５",
+      "latitude": "",
+      "longitude": "",
+      "note": "西中島南方駅1番出口",
+      "officialUrl": "https://www.kurotaitu184.info/",
       "roomLocations": [
         {
-          "label": "西中島南方駅2番出口",
-          "address": "大阪府大阪市淀川区西中島１丁目１２−１５ 矢野ビル 2階",
-          "latitude": "34.725461228743804",
-          "longitude": "135.49920079402824",
-          "note": "阪急南方駅徒歩30秒/西中島南方駅2番出口徒歩1分"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "アジアンベイビー",
-      "station": "西中島南方駅2番出口",
-      "hours": "11:00～LAST",
-      "phone": "090-5983-1044",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/aa82149e-2828-4a7b-8351-f6ac8eef3f78/",
-      "address": "34.72515946142151, 135.5014013209685",
-      "latitude": "34.72515946142151",
-      "longitude": "135.5014013209685",
-      "note": "大阪市淀川区西中島１丁目１４−６ 付近でお電話を",
-      "officialUrl": "https://shop2.es-johokan.com/asian-baby/",
-      "roomLocations": [
-        {
-          "label": "西中島南方駅2番出口",
-          "address": "大阪市淀川区西中島１丁目１４−６ 付近でお電話を",
-          "latitude": "34.72515946142151",
-          "longitude": "135.5014013209685",
-          "note": "アクセス欄に緯度経度と住所あり"
+          "label": "西中島南方駅1番出口",
+          "address": "大阪府大阪市淀川区西中島３丁目１０−５",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
         }
       ],
       "detailLoaded": true
@@ -4239,6 +4195,28 @@
           "latitude": "34.726278",
           "longitude": "135.497056",
           "note": "付近でお電話を"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "夢の恋",
+      "station": "西中島南方駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "090-5018-3835",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/f4bb02e4-3606-4fe6-908f-ac649e25b498/",
+      "address": "34.72514768544861, 135.49943602208742",
+      "latitude": "34.72514768544861",
+      "longitude": "135.49943602208742",
+      "note": "西中島南方駅徒歩3分",
+      "officialUrl": "https://yumee-koi.iest.in/",
+      "roomLocations": [
+        {
+          "label": "西中島南方駅",
+          "address": "",
+          "latitude": "34.72514768544861",
+          "longitude": "135.49943602208742",
+          "note": "アクセス欄は緯度経度のみ"
         }
       ],
       "detailLoaded": true
@@ -4275,6 +4253,50 @@
           "latitude": "",
           "longitude": "",
           "note": "地図の位置に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "アジアンベイビー",
+      "station": "西中島南方駅2番出口",
+      "hours": "11:00～LAST",
+      "phone": "090-5983-1044",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/aa82149e-2828-4a7b-8351-f6ac8eef3f78/",
+      "address": "34.72515946142151, 135.5014013209685",
+      "latitude": "34.72515946142151",
+      "longitude": "135.5014013209685",
+      "note": "大阪市淀川区西中島１丁目１４−６ 付近でお電話を",
+      "officialUrl": "https://shop2.es-johokan.com/asian-baby/",
+      "roomLocations": [
+        {
+          "label": "西中島南方駅2番出口",
+          "address": "大阪市淀川区西中島１丁目１４−６ 付近でお電話を",
+          "latitude": "34.72515946142151",
+          "longitude": "135.5014013209685",
+          "note": "アクセス欄に緯度経度と住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "ドキドキ恋人〜極みSPA〜",
+      "station": "西中島南方駅1番出口",
+      "hours": "11:00～翌 04:00(受付：10:30～翌3:30)",
+      "phone": "080-7112-1688",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/caca3166-c958-4fbe-bf78-22b66f654246/",
+      "address": "34.725890257095365, 135.50017120502739",
+      "latitude": "34.725890257095365",
+      "longitude": "135.50017120502739",
+      "note": "西中島南方駅2番出口・1番出口すぐ",
+      "officialUrl": "https://www.dokidokikoib184.info/",
+      "roomLocations": [
+        {
+          "label": "西中島南方駅1番出口",
+          "address": "大阪府大阪市淀川区西中島3-15-13 第一クリーンビル2階",
+          "latitude": "34.725890257095365",
+          "longitude": "135.50017120502739",
+          "note": "西中島南方駅2番出口・1番出口すぐ"
         }
       ],
       "detailLoaded": true
@@ -4319,28 +4341,6 @@
           "latitude": "34.7269971689194",
           "longitude": "135.49863727699233",
           "note": "西中島南方駅1番出口でお電話下さい"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "夢の恋",
-      "station": "西中島南方駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-5018-3835",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/f4bb02e4-3606-4fe6-908f-ac649e25b498/",
-      "address": "34.72514768544861, 135.49943602208742",
-      "latitude": "34.72514768544861",
-      "longitude": "135.49943602208742",
-      "note": "西中島南方駅徒歩3分",
-      "officialUrl": "https://yumee-koi.iest.in/",
-      "roomLocations": [
-        {
-          "label": "西中島南方駅",
-          "address": "",
-          "latitude": "34.72514768544861",
-          "longitude": "135.49943602208742",
-          "note": "アクセス欄は緯度経度のみ"
         }
       ],
       "detailLoaded": true
@@ -4521,6 +4521,20 @@
       "detailLoaded": true
     },
     {
+      "name": "stella（ステラ）",
+      "station": "西中島南方駅1番出口",
+      "hours": "11:00～LAST",
+      "phone": "090-4116-2492",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/da9dd12e-c921-42fe-a778-c450ccd919bf/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "西中島南方駅1番出口",
+      "officialUrl": "https://www.ningy184.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
       "name": "Thai Relax（タイリラックス）",
       "station": "西中島南方駅",
       "hours": "12:00～LAST",
@@ -4531,34 +4545,6 @@
       "longitude": "",
       "note": "西中島南方駅徒歩3分",
       "officialUrl": "https://thairelax-nishinaka.com/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "Nico",
-      "station": "西中島南方駅1番出口",
-      "hours": "11:00～23:00",
-      "phone": "080-6694-9775",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/94d3cade-d443-467a-a811-289ee347a78f/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "西中島南方駅1番出口",
-      "officialUrl": "http://train.lolipop.jp/nico/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "YOLU SPA",
-      "station": "新大阪駅",
-      "hours": "12:00～LAST",
-      "phone": "080-1380-5024",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c32fa6a7-af09-457b-aea4-220e5f1a8b65/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "新大阪駅徒歩5分",
-      "officialUrl": "https://yoluspa.estheya.com/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -4587,20 +4573,6 @@
       "longitude": "",
       "note": "西中島南方駅2番出口",
       "officialUrl": "http://www.mirajyuland184.info/access.html",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "stella（ステラ）",
-      "station": "西中島南方駅1番出口",
-      "hours": "11:00～LAST",
-      "phone": "090-4116-2492",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/da9dd12e-c921-42fe-a778-c450ccd919bf/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "西中島南方駅1番出口",
-      "officialUrl": "https://www.ningy184.info/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -4689,34 +4661,6 @@
       "detailLoaded": true
     },
     {
-      "name": "ぱいぱいにゃんにゃん",
-      "station": "新大阪駅東口",
-      "hours": "11:00～翌 03:00",
-      "phone": "080-4973-9899",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/553f1f48-e97b-4dcd-a154-82ad67a58be5/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "新大阪駅東口徒歩2分",
-      "officialUrl": "http://paipai.sh-cyt.tokyo/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "秘密彼女",
-      "station": "新大阪駅",
-      "hours": "12:00～翌 03:00",
-      "phone": "090-4472-6014",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3885706b-cf41-442e-a5d0-6e034d100ded/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "新大阪駅徒歩4分",
-      "officialUrl": "http://kiss.sh-tr.tokyo/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "月の香",
       "station": "大阪西中島南方2番出口",
       "hours": "12:00～LAST",
@@ -4731,30 +4675,16 @@
       "detailLoaded": true
     },
     {
-      "name": "リラマ～RiRaMa～",
+      "name": "Nico",
       "station": "西中島南方駅1番出口",
-      "hours": "12:00～LAST",
-      "phone": "070-9175-2395",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3b2c24d8-e5e3-4d3a-98b5-687d82d41651/",
+      "hours": "11:00～23:00",
+      "phone": "080-6694-9775",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/94d3cade-d443-467a-a811-289ee347a78f/",
       "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
       "note": "西中島南方駅1番出口",
-      "officialUrl": "https://www.rirama184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "縁家（エンヤ）",
-      "station": "西中島南方駅2番出",
-      "hours": "11:00～LAST",
-      "phone": "06-6886-1813",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/53de3097-0e39-4f7a-b3ab-e26f86e55662/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://refle-enya.jimdofree.com/",
+      "officialUrl": "http://train.lolipop.jp/nico/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -4769,6 +4699,20 @@
       "longitude": "",
       "note": "地下鉄西中島南方駅南口より徒歩1分、阪急南方駅すぐのタイ式マッサージ店です。",
       "officialUrl": "http://www.phimai.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "YOLU SPA",
+      "station": "新大阪駅",
+      "hours": "12:00～LAST",
+      "phone": "080-1380-5024",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c32fa6a7-af09-457b-aea4-220e5f1a8b65/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "新大阪駅徒歩5分",
+      "officialUrl": "https://yoluspa.estheya.com/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -4829,30 +4773,16 @@
       "detailLoaded": true
     },
     {
-      "name": "48手",
-      "station": "西中島南方駅1番出口",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-6159-6789",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1782e1d5-da5b-46fa-9f6d-7a166274037e/",
+      "name": "ぱいぱいにゃんにゃん",
+      "station": "新大阪駅東口",
+      "hours": "11:00～翌 03:00",
+      "phone": "080-4973-9899",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/553f1f48-e97b-4dcd-a154-82ad67a58be5/",
       "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
-      "note": "西中島南方駅1番出口",
-      "officialUrl": "https://www.48te184.info/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "タイ古式マッサージ アノナ",
-      "station": "西中島南方駅1番出口",
-      "hours": "12:00～翌 02:00",
-      "phone": "070-1454-3128",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/57077ed7-c001-4e1f-ae2f-7bfabb5cd3f6/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "西中島南方駅1番出口徒歩6分",
-      "officialUrl": "https://www.ruby-thaimassage.com/",
+      "note": "新大阪駅東口徒歩2分",
+      "officialUrl": "http://paipai.sh-cyt.tokyo/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -4871,16 +4801,30 @@
       "detailLoaded": true
     },
     {
-      "name": "Tonkoon（トンクーン）",
+      "name": "リラマ～RiRaMa～",
       "station": "西中島南方駅1番出口",
-      "hours": "12:00～24:00",
-      "phone": "090-1861-7999",
-      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/18cc8fec-3a32-4ae3-bb4f-a47a39277f3a/",
+      "hours": "12:00～LAST",
+      "phone": "070-9175-2395",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3b2c24d8-e5e3-4d3a-98b5-687d82d41651/",
       "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
-      "note": "西中島南方駅1番出口徒歩3分",
-      "officialUrl": "http://www.tonkun184.info/",
+      "note": "西中島南方駅1番出口",
+      "officialUrl": "https://www.rirama184.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "縁家（エンヤ）",
+      "station": "西中島南方駅2番出",
+      "hours": "11:00～LAST",
+      "phone": "06-6886-1813",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/53de3097-0e39-4f7a-b3ab-e26f86e55662/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://refle-enya.jimdofree.com/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -4913,25 +4857,59 @@
       "detailLoaded": true
     },
     {
-      "name": "天使の誘惑",
-      "station": "江坂駅4番出口",
-      "hours": "11:00～翌 02:00",
-      "phone": "070-9045-7415",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/b86108a1-b036-4975-8deb-a6d730f1bf01/",
-      "address": "江坂駅",
+      "name": "秘密彼女",
+      "station": "新大阪駅",
+      "hours": "12:00～翌 03:00",
+      "phone": "090-4472-6014",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3885706b-cf41-442e-a5d0-6e034d100ded/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
       "latitude": "",
       "longitude": "",
-      "note": "江坂駅4番出口に着きましたらお電話ください。",
-      "officialUrl": "http://sh-tianshi.mymermaid.tokyo/",
-      "roomLocations": [
-        {
-          "label": "江坂駅4番出口",
-          "address": "",
-          "latitude": "",
-          "longitude": "",
-          "note": "江坂駅4番出口に着きましたらお電話ください。"
-        }
-      ],
+      "note": "新大阪駅徒歩4分",
+      "officialUrl": "http://kiss.sh-tr.tokyo/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "48手",
+      "station": "西中島南方駅1番出口",
+      "hours": "11:00～翌 02:00",
+      "phone": "090-6159-6789",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1782e1d5-da5b-46fa-9f6d-7a166274037e/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "西中島南方駅1番出口",
+      "officialUrl": "https://www.48te184.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "タイ古式マッサージ アノナ",
+      "station": "西中島南方駅1番出口",
+      "hours": "12:00～翌 02:00",
+      "phone": "070-1454-3128",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/57077ed7-c001-4e1f-ae2f-7bfabb5cd3f6/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "西中島南方駅1番出口徒歩6分",
+      "officialUrl": "https://www.ruby-thaimassage.com/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "Tonkoon（トンクーン）",
+      "station": "西中島南方駅1番出口",
+      "hours": "12:00～24:00",
+      "phone": "090-1861-7999",
+      "listingUrl": "https://www.esthe-ranking.jp/nishinakajima/shop-detail/18cc8fec-3a32-4ae3-bb4f-a47a39277f3a/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "西中島南方駅1番出口徒歩3分",
+      "officialUrl": "http://www.tonkun184.info/",
+      "roomLocations": [],
       "detailLoaded": true
     },
     {
@@ -4952,28 +4930,6 @@
           "latitude": "",
           "longitude": "",
           "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "Sweet誘惑",
-      "station": "江坂駅8番出口",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-7154-5796",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/642e6d21-8298-4649-a2b0-a5a0f787b4c6/",
-      "address": "大阪府吹田市江の木町２−３９",
-      "latitude": "",
-      "longitude": "",
-      "note": "地図の位置に着きましたら、ご連絡ください。",
-      "officialUrl": "http://sweet-temptation.ami-111.site/",
-      "roomLocations": [
-        {
-          "label": "江坂駅8番出口",
-          "address": "大阪府吹田市江の木町２−３９",
-          "latitude": "",
-          "longitude": "",
-          "note": "地図の位置に着きましたら、ご連絡ください。"
         }
       ],
       "detailLoaded": true
@@ -5001,45 +4957,96 @@
       "detailLoaded": true
     },
     {
-      "name": "セクシーすきぴ",
-      "station": "江坂駅",
-      "hours": "11:00～翌 03:00",
-      "phone": "090-2267-1798",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/0fb250c9-3885-4ab8-b0c6-c82f0f32e04e/",
-      "address": "34.75993129456591, 135.49684286548134",
-      "latitude": "34.75993129456591",
-      "longitude": "135.49684286548134",
-      "note": "大阪府吹田市豊津町（江坂駅5号口 徒歩3分）",
-      "officialUrl": "http://sksskp.xhh-tokyo.vip/",
+      "name": "天使の誘惑",
+      "station": "江坂駅4番出口",
+      "hours": "11:00～翌 02:00",
+      "phone": "070-9045-7415",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/b86108a1-b036-4975-8deb-a6d730f1bf01/",
+      "address": "江坂駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "江坂駅4番出口に着きましたらお電話ください。",
+      "officialUrl": "http://sh-tianshi.mymermaid.tokyo/",
       "roomLocations": [
         {
-          "label": "江坂駅",
-          "address": "大阪府吹田市豊津町（江坂駅5号口 徒歩3分）",
-          "latitude": "34.75993129456591",
-          "longitude": "135.49684286548134",
-          "note": "江坂駅5号口 徒歩3分に着きましたらお電話ください。"
+          "label": "江坂駅4番出口",
+          "address": "",
+          "latitude": "",
+          "longitude": "",
+          "note": "江坂駅4番出口に着きましたらお電話ください。"
         }
       ],
       "detailLoaded": true
     },
     {
-      "name": "10夜のキス",
-      "station": "江坂駅7番出口",
-      "hours": "11:00～翌 03:00",
-      "phone": "080-7500-5360",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/77a1e98a-b82b-4832-9b1d-98428ea07eea/",
-      "address": "江坂駅",
+      "name": "夜来香",
+      "station": "高槻市駅",
+      "hours": "12:00～翌 02:00",
+      "phone": "080-3138-2704",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/f4581973-286a-4933-a403-0810d5cd4135/",
+      "address": "大阪府高槻市城北町2-11-3",
       "latitude": "",
       "longitude": "",
-      "note": "ここに着きましたら、お電話ください。",
-      "officialUrl": "http://sh-night.dffr.work/",
+      "note": "阪急高槻市駅より徒歩2分",
+      "officialUrl": "https://t-tuki.xyz/",
       "roomLocations": [
         {
-          "label": "江坂駅7番出口",
+          "label": "高槻市駅",
+          "address": "大阪府高槻市城北町2-11-3",
+          "latitude": "",
+          "longitude": "",
+          "note": "阪急高槻市駅より徒歩2分"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "いっぶく",
+      "station": "高槻市駅・江坂駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "050-6880-2939",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/d8fd954c-55b2-4833-a940-b73a0d069a17/",
+      "address": "高槻市駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://aromaest.jp/enboom/",
+      "roomLocations": [
+        {
+          "label": "高槻市駅",
+          "address": "高槻市駅",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
+        },
+        {
+          "label": "江坂駅",
           "address": "",
           "latitude": "",
           "longitude": "",
-          "note": "ここに着きましたら、お電話ください。"
+          "note": ""
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "happy（ハッピー）",
+      "station": "高槻市駅",
+      "hours": "12:00～LAST",
+      "phone": "090-9881-0220",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/5b35ebc7-2735-4887-bfa9-063010f23fa1/",
+      "address": "大阪府高槻市城北町2-14-13",
+      "latitude": "",
+      "longitude": "",
+      "note": "お近くに着きましたら",
+      "officialUrl": "https://r-iya.xyz/",
+      "roomLocations": [
+        {
+          "label": "高槻市駅",
+          "address": "大阪府高槻市城北町2-14-13",
+          "latitude": "",
+          "longitude": "",
+          "note": "お近くに着きましたら"
         }
       ],
       "detailLoaded": true
@@ -5074,45 +5081,111 @@
       "detailLoaded": true
     },
     {
-      "name": "happy（ハッピー）",
-      "station": "高槻市駅",
-      "hours": "12:00～LAST",
-      "phone": "090-9881-0220",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/5b35ebc7-2735-4887-bfa9-063010f23fa1/",
-      "address": "大阪府高槻市城北町2-14-13",
-      "latitude": "",
-      "longitude": "",
-      "note": "お近くに着きましたら",
-      "officialUrl": "https://r-iya.xyz/",
+      "name": "セクシーすきぴ",
+      "station": "江坂駅",
+      "hours": "11:00～翌 03:00",
+      "phone": "090-2267-1798",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/0fb250c9-3885-4ab8-b0c6-c82f0f32e04e/",
+      "address": "34.75993129456591, 135.49684286548134",
+      "latitude": "34.75993129456591",
+      "longitude": "135.49684286548134",
+      "note": "大阪府吹田市豊津町（江坂駅5号口 徒歩3分）",
+      "officialUrl": "http://sksskp.xhh-tokyo.vip/",
       "roomLocations": [
         {
-          "label": "高槻市駅",
-          "address": "大阪府高槻市城北町2-14-13",
-          "latitude": "",
-          "longitude": "",
-          "note": "お近くに着きましたら"
+          "label": "江坂駅",
+          "address": "大阪府吹田市豊津町（江坂駅5号口 徒歩3分）",
+          "latitude": "34.75993129456591",
+          "longitude": "135.49684286548134",
+          "note": "江坂駅5号口 徒歩3分に着きましたらお電話ください。"
         }
       ],
       "detailLoaded": true
     },
     {
-      "name": "夜来香",
-      "station": "高槻市駅",
-      "hours": "12:00～翌 02:00",
-      "phone": "080-3138-2704",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/f4581973-286a-4933-a403-0810d5cd4135/",
-      "address": "大阪府高槻市城北町2-11-3",
+      "name": "めぐり愛",
+      "station": "江坂駅",
+      "hours": "10:00～翌 02:00",
+      "phone": "090-1587-3341",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/dab42f67-0a55-46d4-a1d7-c6d2427aacdf/",
+      "address": "大阪府吹田市豊津町15-11",
       "latitude": "",
       "longitude": "",
-      "note": "阪急高槻市駅より徒歩2分",
-      "officialUrl": "https://t-tuki.xyz/",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "https://fateful-love.navi.mn/",
       "roomLocations": [
         {
-          "label": "高槻市駅",
-          "address": "大阪府高槻市城北町2-11-3",
+          "label": "江坂駅",
+          "address": "大阪府吹田市豊津町15-11",
           "latitude": "",
           "longitude": "",
-          "note": "阪急高槻市駅より徒歩2分"
+          "note": "アクセス欄に住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "楽しい時間（たのしいじかん）",
+      "station": "高槻市駅5番出口",
+      "hours": "11:00～翌 03:00",
+      "phone": "090-9705-9635",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/1dc0e6b4-7f57-430f-9c0a-59fbd8e5183b/",
+      "address": "大阪府高槻市城北町２丁目４−１",
+      "latitude": "",
+      "longitude": "",
+      "note": "大阪府阪急高槻市駅(5番出口)に着いたらお電話下さい。",
+      "officialUrl": "http://tanoshii.sh-pdm.tokyo/",
+      "roomLocations": [
+        {
+          "label": "高槻市駅5番出口",
+          "address": "大阪府高槻市城北町２丁目４−１",
+          "latitude": "",
+          "longitude": "",
+          "note": "大阪府阪急高槻市駅(5番出口)に着いたらお電話下さい。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "Sweet誘惑",
+      "station": "江坂駅8番出口",
+      "hours": "11:00～翌 02:00",
+      "phone": "090-7154-5796",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/642e6d21-8298-4649-a2b0-a5a0f787b4c6/",
+      "address": "大阪府吹田市江の木町２−３９",
+      "latitude": "",
+      "longitude": "",
+      "note": "地図の位置に着きましたら、ご連絡ください。",
+      "officialUrl": "http://sweet-temptation.ami-111.site/",
+      "roomLocations": [
+        {
+          "label": "江坂駅8番出口",
+          "address": "大阪府吹田市江の木町２−３９",
+          "latitude": "",
+          "longitude": "",
+          "note": "地図の位置に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "10夜のキス",
+      "station": "江坂駅7番出口",
+      "hours": "11:00～翌 03:00",
+      "phone": "080-7500-5360",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/77a1e98a-b82b-4832-9b1d-98428ea07eea/",
+      "address": "江坂駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "ここに着きましたら、お電話ください。",
+      "officialUrl": "http://sh-night.dffr.work/",
+      "roomLocations": [
+        {
+          "label": "江坂駅7番出口",
+          "address": "",
+          "latitude": "",
+          "longitude": "",
+          "note": "ここに着きましたら、お電話ください。"
         }
       ],
       "detailLoaded": true
@@ -5157,28 +5230,6 @@
           "latitude": "",
           "longitude": "",
           "note": "大阪府阪急高槻市駅（5番出口）に着いたらお電話下さい。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "楽しい時間（たのしいじかん）",
-      "station": "高槻市駅5番出口",
-      "hours": "11:00～翌 03:00",
-      "phone": "090-9705-9635",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/1dc0e6b4-7f57-430f-9c0a-59fbd8e5183b/",
-      "address": "大阪府高槻市城北町２丁目４−１",
-      "latitude": "",
-      "longitude": "",
-      "note": "大阪府阪急高槻市駅(5番出口)に着いたらお電話下さい。",
-      "officialUrl": "http://tanoshii.sh-pdm.tokyo/",
-      "roomLocations": [
-        {
-          "label": "高槻市駅5番出口",
-          "address": "大阪府高槻市城北町２丁目４−１",
-          "latitude": "",
-          "longitude": "",
-          "note": "大阪府阪急高槻市駅(5番出口)に着いたらお電話下さい。"
         }
       ],
       "detailLoaded": true
@@ -5235,57 +5286,6 @@
       "detailLoaded": true
     },
     {
-      "name": "いっぶく",
-      "station": "高槻市駅・江坂駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "050-6880-2939",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/d8fd954c-55b2-4833-a940-b73a0d069a17/",
-      "address": "高槻市駅",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://aromaest.jp/enboom/",
-      "roomLocations": [
-        {
-          "label": "高槻市駅",
-          "address": "高槻市駅",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        },
-        {
-          "label": "江坂駅",
-          "address": "",
-          "latitude": "",
-          "longitude": "",
-          "note": ""
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "めぐり愛",
-      "station": "江坂駅",
-      "hours": "10:00～翌 02:00",
-      "phone": "090-1587-3341",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/dab42f67-0a55-46d4-a1d7-c6d2427aacdf/",
-      "address": "大阪府吹田市豊津町15-11",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "https://fateful-love.navi.mn/",
-      "roomLocations": [
-        {
-          "label": "江坂駅",
-          "address": "大阪府吹田市豊津町15-11",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "さくらんぼ～桜桃～",
       "station": "江坂駅8番出口",
       "hours": "11:00～翌 03:00",
@@ -5308,28 +5308,6 @@
       "detailLoaded": true
     },
     {
-      "name": "楽の屋",
-      "station": "江坂駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "050-6868-6141",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/21131e4e-e9d4-46fe-a291-c0288cd0f69f/",
-      "address": "江坂駅",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "http://rakunoya.mensest.xyz/",
-      "roomLocations": [
-        {
-          "label": "江坂駅",
-          "address": "",
-          "latitude": "",
-          "longitude": "",
-          "note": ""
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
       "name": "台湾 ・リカ",
       "station": "高槻市駅",
       "hours": "11:00～LAST",
@@ -5347,6 +5325,28 @@
           "latitude": "",
           "longitude": "",
           "note": "アクセス欄に住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "楽の屋",
+      "station": "江坂駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "050-6868-6141",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/21131e4e-e9d4-46fe-a291-c0288cd0f69f/",
+      "address": "江坂駅",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "http://rakunoya.mensest.xyz/",
+      "roomLocations": [
+        {
+          "label": "江坂駅",
+          "address": "",
+          "latitude": "",
+          "longitude": "",
+          "note": ""
         }
       ],
       "detailLoaded": true
@@ -5380,20 +5380,6 @@
       "detailLoaded": true
     },
     {
-      "name": "今すぐKiss Me",
-      "station": "江坂駅",
-      "hours": "11:00～翌 01:30",
-      "phone": "080-7882-4146",
-      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/52527dc1-33fb-4fc9-a9d9-b6fc348ba78a/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "http://kiss-me.xin-oksi.online/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "江南（カンナム）",
       "station": "高槻駅3番出口",
       "hours": "12:00～翌 05:00",
@@ -5404,6 +5390,20 @@
       "longitude": "",
       "note": "高槻駅3番出口徒歩1分",
       "officialUrl": "http://sh-jianngnan.hfml24.xyz/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "今すぐKiss Me",
+      "station": "江坂駅",
+      "hours": "11:00～翌 01:30",
+      "phone": "080-7882-4146",
+      "listingUrl": "https://www.esthe-ranking.jp/esaka/shop-detail/52527dc1-33fb-4fc9-a9d9-b6fc348ba78a/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "http://kiss-me.xin-oksi.online/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -5419,28 +5419,6 @@
       "note": "江坂駅8番出口",
       "officialUrl": "http://kirakira.xin-oksi.online/",
       "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
-      "name": "SEXY極楽癒し",
-      "station": "なかもず駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "090-8222-6699",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/e3e984f1-b8d0-443e-a77e-63fe951ed59d/",
-      "address": "34.55705729723803, 135.50721347483275",
-      "latitude": "34.55705729723803",
-      "longitude": "135.50721347483275",
-      "note": "当店は繁華街の中心に位置しており、アクセスがとても良いです。バス停やタクシー乗り場も近く、どんな手段でも簡単に来店できます。スタッフは笑顔で接客し、細やかなケアを行います。疲れた身体と心を癒す最高のマッサージ体験をお待ちしています。",
-      "officialUrl": "http://paradise-healing.xin-fnd.online/",
-      "roomLocations": [
-        {
-          "label": "なかもず駅",
-          "address": "",
-          "latitude": "34.55705729723803",
-          "longitude": "135.50721347483275",
-          "note": "地図の位置に着きましたら、ご連絡ください。"
-        }
-      ],
       "detailLoaded": true
     },
     {
@@ -5466,89 +5444,23 @@
       "detailLoaded": true
     },
     {
-      "name": "夢源",
-      "station": "堺東駅",
-      "hours": "10:00～23:00",
-      "phone": "080-3764-4225",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/20c0a1e9-12c1-4a9f-9828-da24a64b42d5/",
-      "address": "大阪府堺市堺区一条通１−２５",
-      "latitude": "",
-      "longitude": "",
-      "note": "大仙中町（バス停）に着きましたら、ご連絡ください。",
-      "officialUrl": "http://dream-source.lpa888.space/",
-      "roomLocations": [
-        {
-          "label": "堺東駅",
-          "address": "大阪府堺市堺区一条通１−２５",
-          "latitude": "",
-          "longitude": "",
-          "note": "大仙中町（バス停）に着きましたら、ご連絡ください。"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "Rose（ローズ）",
-      "station": "堺駅南口",
-      "hours": "12:00～翌 05:00",
-      "phone": "070-8717-6969",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/115eef01-6881-45da-8c3d-46c46200bf62/",
-      "address": "大阪府堺市堺区竜神橋町1-6-7",
-      "latitude": "",
-      "longitude": "",
-      "note": "堺駅南口徒歩1分",
-      "officialUrl": "http://relax-aroma.xyz/",
-      "roomLocations": [
-        {
-          "label": "堺駅南口",
-          "address": "大阪府堺市堺区竜神橋町1-6-7",
-          "latitude": "",
-          "longitude": "",
-          "note": "アクセス欄に住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "LOVE",
-      "station": "長居駅",
-      "hours": "",
-      "phone": "06-6608-1118",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/12376db8-adab-45a0-bbfc-109921568daa/",
-      "address": "34.61055925462145, 135.5135428621463",
-      "latitude": "34.61055925462145",
-      "longitude": "135.5135428621463",
-      "note": "アクセス欄に緯度経度と住所あり",
-      "officialUrl": "https://www.oil-massage-love.com/",
-      "roomLocations": [
-        {
-          "label": "長居駅",
-          "address": "大阪府大阪市住吉区長居東4-5-1 長居グランドハイツ301号室",
-          "latitude": "34.61055925462145",
-          "longitude": "135.5135428621463",
-          "note": "アクセス欄に緯度経度と住所あり"
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "メロメロ",
+      "name": "SEXY極楽癒し",
       "station": "なかもず駅",
       "hours": "11:00～翌 02:00",
-      "phone": "080-7117-6200",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/b002f963-f929-42a6-abff-cc9f6c25aebc/",
-      "address": "34.55793683288862, 135.50494993385502",
-      "latitude": "34.55793683288862",
-      "longitude": "135.50494993385502",
-      "note": "ここに着きましたら、お電話ください。",
-      "officialUrl": "http://sh-meili.hfml24.xyz/",
+      "phone": "090-8222-6699",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/e3e984f1-b8d0-443e-a77e-63fe951ed59d/",
+      "address": "34.55705729723803, 135.50721347483275",
+      "latitude": "34.55705729723803",
+      "longitude": "135.50721347483275",
+      "note": "当店は繁華街の中心に位置しており、アクセスがとても良いです。バス停やタクシー乗り場も近く、どんな手段でも簡単に来店できます。スタッフは笑顔で接客し、細やかなケアを行います。疲れた身体と心を癒す最高のマッサージ体験をお待ちしています。",
+      "officialUrl": "http://paradise-healing.xin-fnd.online/",
       "roomLocations": [
         {
           "label": "なかもず駅",
           "address": "",
-          "latitude": "34.55793683288862",
-          "longitude": "135.50494993385502",
-          "note": "ここに着きましたら、お電話ください。"
+          "latitude": "34.55705729723803",
+          "longitude": "135.50721347483275",
+          "note": "地図の位置に着きましたら、ご連絡ください。"
         }
       ],
       "detailLoaded": true
@@ -5592,28 +5504,6 @@
           "latitude": "",
           "longitude": "",
           "note": ""
-        }
-      ],
-      "detailLoaded": true
-    },
-    {
-      "name": "ひまわり",
-      "station": "長居駅2番出口",
-      "hours": "12:00～24:00",
-      "phone": "090-8535-3636",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/31a21028-0b24-4cd5-8cae-7d88e6cbd02d/",
-      "address": "大阪府大阪市住吉区長居東",
-      "latitude": "",
-      "longitude": "",
-      "note": "長居駅に着きましたら、ご連絡ください。",
-      "officialUrl": "http://jnis.dlp-esute.asia/",
-      "roomLocations": [
-        {
-          "label": "長居駅2番出口",
-          "address": "大阪府大阪市住吉区長居東",
-          "latitude": "",
-          "longitude": "",
-          "note": "長居駅に着きましたら、ご連絡ください。"
         }
       ],
       "detailLoaded": true
@@ -5686,6 +5576,116 @@
           "latitude": "",
           "longitude": "",
           "note": ""
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "メロメロ",
+      "station": "なかもず駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "080-7117-6200",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/b002f963-f929-42a6-abff-cc9f6c25aebc/",
+      "address": "34.55793683288862, 135.50494993385502",
+      "latitude": "34.55793683288862",
+      "longitude": "135.50494993385502",
+      "note": "ここに着きましたら、お電話ください。",
+      "officialUrl": "http://sh-meili.hfml24.xyz/",
+      "roomLocations": [
+        {
+          "label": "なかもず駅",
+          "address": "",
+          "latitude": "34.55793683288862",
+          "longitude": "135.50494993385502",
+          "note": "ここに着きましたら、お電話ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "LOVE",
+      "station": "長居駅",
+      "hours": "",
+      "phone": "06-6608-1118",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/12376db8-adab-45a0-bbfc-109921568daa/",
+      "address": "34.61055925462145, 135.5135428621463",
+      "latitude": "34.61055925462145",
+      "longitude": "135.5135428621463",
+      "note": "アクセス欄に緯度経度と住所あり",
+      "officialUrl": "https://www.oil-massage-love.com/",
+      "roomLocations": [
+        {
+          "label": "長居駅",
+          "address": "大阪府大阪市住吉区長居東4-5-1 長居グランドハイツ301号室",
+          "latitude": "34.61055925462145",
+          "longitude": "135.5135428621463",
+          "note": "アクセス欄に緯度経度と住所あり"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "ひまわり",
+      "station": "長居駅2番出口",
+      "hours": "12:00～24:00",
+      "phone": "090-8535-3636",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/31a21028-0b24-4cd5-8cae-7d88e6cbd02d/",
+      "address": "大阪府大阪市住吉区長居東",
+      "latitude": "",
+      "longitude": "",
+      "note": "長居駅に着きましたら、ご連絡ください。",
+      "officialUrl": "http://jnis.dlp-esute.asia/",
+      "roomLocations": [
+        {
+          "label": "長居駅2番出口",
+          "address": "大阪府大阪市住吉区長居東",
+          "latitude": "",
+          "longitude": "",
+          "note": "長居駅に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "夢源",
+      "station": "堺東駅",
+      "hours": "10:00～23:00",
+      "phone": "080-3764-4225",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/20c0a1e9-12c1-4a9f-9828-da24a64b42d5/",
+      "address": "大阪府堺市堺区一条通１−２５",
+      "latitude": "",
+      "longitude": "",
+      "note": "大仙中町（バス停）に着きましたら、ご連絡ください。",
+      "officialUrl": "http://dream-source.lpa888.space/",
+      "roomLocations": [
+        {
+          "label": "堺東駅",
+          "address": "大阪府堺市堺区一条通１−２５",
+          "latitude": "",
+          "longitude": "",
+          "note": "大仙中町（バス停）に着きましたら、ご連絡ください。"
+        }
+      ],
+      "detailLoaded": true
+    },
+    {
+      "name": "Rose（ローズ）",
+      "station": "堺駅南口",
+      "hours": "12:00～翌 05:00",
+      "phone": "070-8717-6969",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/115eef01-6881-45da-8c3d-46c46200bf62/",
+      "address": "大阪府堺市堺区竜神橋町1-6-7",
+      "latitude": "",
+      "longitude": "",
+      "note": "堺駅南口徒歩1分",
+      "officialUrl": "http://relax-aroma.xyz/",
+      "roomLocations": [
+        {
+          "label": "堺駅南口",
+          "address": "大阪府堺市堺区竜神橋町1-6-7",
+          "latitude": "",
+          "longitude": "",
+          "note": "アクセス欄に住所あり"
         }
       ],
       "detailLoaded": true
@@ -5922,20 +5922,6 @@
       "detailLoaded": true
     },
     {
-      "name": "恋結び（こいむすび）",
-      "station": "あびこ駅",
-      "hours": "11:00～翌 02:00",
-      "phone": "070-9118-1781",
-      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/0c3a0d25-fcb6-4873-8194-316f0fc4fa32/",
-      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
-      "latitude": "",
-      "longitude": "",
-      "note": "アクセス欄に住所あり",
-      "officialUrl": "http://lianjie.sh-xkd1.tokyo/",
-      "roomLocations": [],
-      "detailLoaded": true
-    },
-    {
       "name": "ルミエール",
       "station": "なかもず駅6番出口",
       "hours": "11:00～LAST",
@@ -5946,6 +5932,20 @@
       "longitude": "",
       "note": "なかもず駅6番出口",
       "officialUrl": "https://www.lumiere184.info/",
+      "roomLocations": [],
+      "detailLoaded": true
+    },
+    {
+      "name": "恋結び（こいむすび）",
+      "station": "あびこ駅",
+      "hours": "11:00～翌 02:00",
+      "phone": "070-9118-1781",
+      "listingUrl": "https://www.esthe-ranking.jp/sakai/shop-detail/0c3a0d25-fcb6-4873-8194-316f0fc4fa32/",
+      "address": "北海道・東北北海道 | 青森県 | 岩手県 | 宮城県 | 秋田県 | 山形県 | 福島県甲信越・北陸山梨県 | 長野県 | 新潟県 | 富山県 | 石川県 | 福井県関東東京都 | 神奈川県 | 千葉県 | 埼玉県 | 茨城県 | 栃木県 | 群馬県東海愛知県 | 静岡県 | 岐阜県 | 三重県関西大阪府 | 兵庫県 | 京都府 | 滋賀県 | 奈良県 | 和歌山県中国岡山県 | 広島県 | 島根県 | 鳥取県 | 山口県四国愛媛県 | 香川県 | 高知県 | 徳島県九州・沖縄福岡県 | 佐賀県 | 長崎県 | 熊本県 | 大分県 | 宮崎県 | 鹿児島県 | 沖縄県",
+      "latitude": "",
+      "longitude": "",
+      "note": "アクセス欄に住所あり",
+      "officialUrl": "http://lianjie.sh-xkd1.tokyo/",
       "roomLocations": [],
       "detailLoaded": true
     },
@@ -5979,11 +5979,11 @@
     }
   ],
   "municipalityByListingUrl": {
-    "https://www.esthe-ranking.jp/osakakita/shop-detail/0e52467f-b3e2-4388-a5cd-a32bbcbed245/": "梅田駅",
-    "https://www.esthe-ranking.jp/osakakita/shop-detail/f7f82eee-27e3-43fc-8afa-10e68a20e8ae/": "梅田駅",
     "https://www.esthe-ranking.jp/osakakita/shop-detail/2d8eee6b-912f-4f99-bbf4-d188a4b44e17/": "梅田駅",
     "https://www.esthe-ranking.jp/osakakita/shop-detail/1019cef6-02e5-460d-8233-93b65a993a8d/": "梅田駅",
+    "https://www.esthe-ranking.jp/osakakita/shop-detail/0e52467f-b3e2-4388-a5cd-a32bbcbed245/": "梅田駅",
     "https://www.esthe-ranking.jp/osakakita/shop-detail/820786b6-4767-4265-aff3-e49cc7788bd5/": "梅田駅",
+    "https://www.esthe-ranking.jp/osakakita/shop-detail/f7f82eee-27e3-43fc-8afa-10e68a20e8ae/": "梅田駅",
     "https://www.esthe-ranking.jp/osakakita/shop-detail/faf26abf-1d4e-46bf-8d21-055a0aa79078/": "梅田駅",
     "https://www.esthe-ranking.jp/osakakita/shop-detail/cec345ec-3528-42bf-ad04-34291855067b/": "梅田駅",
     "https://www.esthe-ranking.jp/osakakita/shop-detail/9f9dc224-84ae-4c8d-88d9-baa5f617cf91/": "梅田駅",
@@ -6000,15 +6000,15 @@
     "https://www.esthe-ranking.jp/tenma/shop-detail/f90c684d-24a8-4762-91b4-5b23d63cb12a/": "天満駅・扇町駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/c5c6b22c-b74e-4ca1-a31d-1bcef61f0bf3/": "天満駅・扇町駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/e40474f3-78b1-424d-a36e-4c6c01253e11/": "南森町駅・大阪天満宮駅",
-    "https://www.esthe-ranking.jp/tenma/shop-detail/b0ba2837-d065-4c50-962d-d4d14aa92daf/": "天神橋筋六丁目駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/29eb9367-8479-465c-8ec7-ef61c6877c70/": "天神橋筋六丁目駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/9af86d2e-8ace-4317-b0db-8baef3f4172c/": "天神橋筋六丁目駅",
+    "https://www.esthe-ranking.jp/tenma/shop-detail/b0ba2837-d065-4c50-962d-d4d14aa92daf/": "天神橋筋六丁目駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/71f91438-eea6-4a8b-8eaf-3d5d3c001256/": "天神橋筋六丁目駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/f7c04ddb-278f-492c-a54c-42b9744efd5b/": "天神橋筋六丁目駅",
     "https://www.esthe-ranking.jp/tenma/shop-detail/863c600e-c560-4a8d-8f28-f642c956e29e/": "中崎町駅",
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/0b767397-c31c-4558-8717-03d585a364a5/": "本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/650f3858-81d0-418f-a122-12b86d9a466c/": "本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/ee2aead3-d248-449c-b801-df84ef9f91e8/": "本町駅",
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/0b767397-c31c-4558-8717-03d585a364a5/": "本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/6e39a918-b576-4a46-9844-7f8b5480fe2e/": "本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/898c0147-2a26-4d3f-9ab8-4a0ff2a68f8b/": "本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/a35f1f97-7eb8-4fef-b546-6b6168c2c809/": "堺筋本町駅",
@@ -6019,13 +6019,13 @@
     "https://www.esthe-ranking.jp/honmachi/shop-detail/376096a7-a20a-4285-b312-8bda9f310108/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/b4d5dfce-5da7-4ca4-903a-b396d5bfacfc/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/92fa1965-3203-4e07-9570-9620b48940ef/": "堺筋本町駅",
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/a70d0357-5740-43a0-a026-35db6781663b/": "堺筋本町駅",
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/649004a3-8de2-4753-a360-028656ce6315/": "堺筋本町駅",
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/9e298781-1f1b-4f34-b857-82d7a246047f/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/fa9be962-81b6-42ea-9ccf-677b1b7c6ce5/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/e7149b3b-d5a3-4c58-87ac-b8f07245923c/": "堺筋本町駅",
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/66342a98-2b28-480a-9e4a-21a17560f474/": "堺筋本町駅",
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/9e298781-1f1b-4f34-b857-82d7a246047f/": "堺筋本町駅",
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/a70d0357-5740-43a0-a026-35db6781663b/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/2c861f9e-603e-45ee-9ea9-b9c137a1a1c3/": "堺筋本町駅",
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/66342a98-2b28-480a-9e4a-21a17560f474/": "堺筋本町駅",
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/649004a3-8de2-4753-a360-028656ce6315/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/honmachi/shop-detail/76d51fb5-1937-4c86-bf51-c3b453e386c8/": "堺筋本町駅",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/356d02f8-1cb1-4fd3-9637-2fac5bc19eec/": "難波駅（なんば）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/db665962-7e69-455d-b7ec-7d34f129be16/": "難波駅（なんば）",
@@ -6039,11 +6039,11 @@
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/2f7aafeb-36bf-4022-8da5-1e4a1f83d360/": "難波駅（なんば）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/d1fdcac8-ba33-4987-bb47-7d2a9e9ca877/": "難波駅（なんば）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/12e5c1da-743f-45bf-a145-3005d12ee686/": "日本橋駅（大阪）",
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/73881cd0-ad00-4606-8664-f8bd085ffd0f/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/63e520e7-5bd2-4e39-85ea-23b70a26e32d/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/cad21a83-1db6-4d81-b20d-3c78de366adb/": "日本橋駅（大阪）",
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/b0c56ef8-125d-4f39-a439-16432bd91390/": "日本橋駅（大阪）",
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/73881cd0-ad00-4606-8664-f8bd085ffd0f/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/3cab02a5-fba4-4417-8940-51fe82925295/": "日本橋駅（大阪）",
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/b0c56ef8-125d-4f39-a439-16432bd91390/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/da214bcd-f1d7-49d2-9292-f6a4becc6ff6/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/0730e9ca-b6b2-4c01-88f2-ce879dda8e01/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/f5ded223-2f45-4367-b8e3-2f7b40a78c69/": "日本橋駅（大阪）",
@@ -6051,16 +6051,16 @@
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/798f46ee-b38d-4300-953a-f9bcd635bd8f/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/8e8094a6-cb0d-4aa0-8ccf-184ee65592dc/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/5d009721-5af1-4d92-9300-4bdf378ad0c2/": "日本橋駅（大阪）",
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/fa75e2bd-8842-47fc-b9ea-e70b559f73f4/": "日本橋駅（大阪）",
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/e3c436cd-97cb-4cc5-bf77-a1f0a96e37ef/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/1e7d5df7-874c-4255-9de3-6b3d04776b68/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/d0e7f8f8-cc9e-4ed6-9ac8-0f52df879055/": "日本橋駅（大阪）",
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/fa75e2bd-8842-47fc-b9ea-e70b559f73f4/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/52727afc-7072-4db6-9935-bdacc6687a16/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/3b7a3a34-0847-4863-8f0a-a9fd2fff93a5/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/862f5712-0cd0-43ee-a96f-3ffff328f182/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/73250ef5-014b-4b88-92f8-dbb841650752/": "日本橋駅（大阪）",
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/104ec32f-5261-4e88-86bc-9297f84ef6e1/": "日本橋駅（大阪）",
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/e3c436cd-97cb-4cc5-bf77-a1f0a96e37ef/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/bf6208e4-d799-4797-a5fd-179c6ceb0b46/": "日本橋駅（大阪）",
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/104ec32f-5261-4e88-86bc-9297f84ef6e1/": "日本橋駅（大阪）",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/2961ece0-6930-48ab-bedd-cf17b77345a7/": "桜川駅",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/99675ace-7cca-44eb-81ef-1b4c4348d298/": "大国町駅",
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/14fc278f-5bd7-45d5-a08c-c9b6e221e0b1/": "大国町駅",
@@ -6081,8 +6081,8 @@
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/c2112609-fedc-4d6e-b1f6-978e5c38bbb5/": "谷町九丁目駅・上本町駅",
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/b9c4d642-fd20-4cca-97cb-9424ea6e5a00/": "天王寺駅・寺田町駅",
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/13000ea6-df95-4b28-8e60-6a39e164fca1/": "天王寺駅・寺田町駅",
-    "https://www.esthe-ranking.jp/tanikyu/shop-detail/b9050789-9fc3-4e1d-948d-85886c92e980/": "複数市",
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/a1dcf4e4-b69b-4979-b13f-23d7d5d997c7/": "複数市",
+    "https://www.esthe-ranking.jp/tanikyu/shop-detail/b9050789-9fc3-4e1d-948d-85886c92e980/": "複数市",
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/beeed911-afbe-4c42-b6e2-7e228457f49f/": "複数市",
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/aa9ac646-fe64-4c31-8618-44ec257c63c1/": "天王寺駅・寺田町駅",
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/74bf6185-f5f6-44fa-a6df-6838bac945a4/": "谷町六丁目駅",
@@ -6091,15 +6091,15 @@
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/d6e9ca94-24c3-43b2-a6a8-425e4f044652/": "玉造駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6589718b-868e-4e81-a065-2cda21f55a31/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/c37c3fb9-8efb-470e-af2f-42cfa58b82a3/": "複数市",
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/b1c76a38-fc39-430b-9088-16e929ccb6fc/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/ff0c1203-d6be-421d-a250-42741b1777fa/": "布施駅",
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/1375030d-f438-42dd-9a74-f3bedb63167e/": "複数市",
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/b1c76a38-fc39-430b-9088-16e929ccb6fc/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/003a1dbd-710b-4257-94ba-ab6cf7ea1efc/": "複数市",
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/1375030d-f438-42dd-9a74-f3bedb63167e/": "複数市",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/132e6cdd-0203-4801-83b5-6b6bd2840e9b/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/683f4d4a-5584-48a2-8ea9-5f833e3318ac/": "複数市",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/ea6ea1cf-4a6c-4b21-a3c4-8f14d1639218/": "布施駅",
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6c6c1c8b-80a1-4ac1-bb30-40357f036de9/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/0656edb8-2fe9-43e5-9f79-b97a2eb33695/": "布施駅",
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6c6c1c8b-80a1-4ac1-bb30-40357f036de9/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/69e1b5a9-65f8-46c6-bb8a-e83b88c973e4/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/4d081606-b490-4f99-a487-08495ffc8709/": "布施駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/def0d99d-d24b-4a5e-a9aa-39466021b778/": "布施駅",
@@ -6111,8 +6111,8 @@
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/5e557136-a1e6-4fab-a66f-1759b91a6473/": "近鉄八尾駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/922c6b59-fe95-4df8-bc62-6d5badb58ad2/": "近鉄八尾駅",
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/3fa64377-b707-4667-824f-9849864f41f8/": "松原市",
-    "https://www.esthe-ranking.jp/kyobashi/shop-detail/362ade50-f626-4db9-a3eb-371f0635a3d9/": "複数市",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/9101047c-f867-4a96-b00a-bcb940fc9af8/": "京橋駅",
+    "https://www.esthe-ranking.jp/kyobashi/shop-detail/362ade50-f626-4db9-a3eb-371f0635a3d9/": "複数市",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/6dbacb93-4cef-4dbb-aa0b-73d80883dd13/": "複数市",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/e053e1b0-78c0-4b13-9ba8-1b625dfa5736/": "複数市",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/6b874ad0-795a-4178-b8a7-83a670a774e0/": "複数市",
@@ -6123,29 +6123,29 @@
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/68c75b51-d6be-4a4c-8be3-6f0da1fde1cf/": "京橋駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/fd95b86f-3321-4c96-9228-561a4d1ad7b2/": "京橋駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/f622f9c5-1c15-4553-a41a-09961d1df2a6/": "守口市駅",
-    "https://www.esthe-ranking.jp/kyobashi/shop-detail/b8379a7d-3c21-4803-90d3-56ab3f8eec37/": "守口市駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/036f068e-da84-4b86-bd9a-b2cca199b7fe/": "守口市駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/511f6721-4df0-4042-949b-7ff8c17d26fb/": "守口市駅",
+    "https://www.esthe-ranking.jp/kyobashi/shop-detail/b8379a7d-3c21-4803-90d3-56ab3f8eec37/": "守口市駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/3c6c97aa-3f98-49c0-b19e-4ea9d0dc1c78/": "大日駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/7a6bff5b-e10e-48d0-8fbe-908f7a290f57/": "枚方市",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/1fed9e89-5784-4be3-9f36-7058585680e8/": "門真市駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/cf7561c0-609c-4fd6-825d-ac2054de8961/": "大阪城北詰駅",
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/9d81af29-e02d-4c76-83d7-1bffbafb726a/": "緑橋駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/70b9875a-8394-4868-9a4d-d7afcd7c1b35/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3c06aaf9-80b2-4f05-b9dc-044457a3d4f8/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/96d9215d-99be-44a2-8b93-1d66743cbd23/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c55ee717-23f7-4525-89b3-61c68bd4eff4/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/96d9215d-99be-44a2-8b93-1d66743cbd23/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3c06aaf9-80b2-4f05-b9dc-044457a3d4f8/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d514ca9a-e3ae-4411-bcd2-8f753a894fd8/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/bd029dee-22a0-4b39-bbf9-cc45cddb2bb5/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/caca3166-c958-4fbe-bf78-22b66f654246/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/2ada8039-ebf0-4bd9-83f4-63b992809a2e/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee838a2c-f969-463a-8c87-b9f6136c29b6/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/aa82149e-2828-4a7b-8351-f6ac8eef3f78/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/2ada8039-ebf0-4bd9-83f4-63b992809a2e/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/bd029dee-22a0-4b39-bbf9-cc45cddb2bb5/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/665d18f3-b46c-4735-b0d1-27fe8cbf3aa9/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/f4bb02e4-3606-4fe6-908f-ac649e25b498/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/b1d19097-ac34-49e7-9a9d-bd91c75eba47/": "複数市",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/aa82149e-2828-4a7b-8351-f6ac8eef3f78/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/caca3166-c958-4fbe-bf78-22b66f654246/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/8d279c36-e76d-4260-937e-3e3a1eee01c8/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/00bf2f26-3966-4444-b978-5231dfcfd509/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/f4bb02e4-3606-4fe6-908f-ac649e25b498/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/7fdb49ef-ec7b-41cb-b75b-26f3d71924ff/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/22974aa8-225a-471f-9daa-642158650da4/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/30407abb-554c-4e9c-b8c4-0363c95f3d6b/": "複数市",
@@ -6153,11 +6153,10 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/185be46c-c382-4a6e-a6a7-d97e512ebb1d/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ff788a57-5e7d-4bfc-bd2e-84577bd0bfdb/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/0ab7acfe-dc11-44e9-987d-3bbc795e730c/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/da9dd12e-c921-42fe-a778-c450ccd919bf/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d6ceb35f-b048-4cd7-b173-4e9c50114825/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/94d3cade-d443-467a-a811-289ee347a78f/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/e3de9d06-ee91-4ddb-922d-c15acbf37ad2/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/2a8ec91f-9dcd-409a-981b-f678ce7ed6b2/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/da9dd12e-c921-42fe-a778-c450ccd919bf/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/7402eef1-3ab4-401a-bb61-e2da86f46918/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/b8910fa0-98c6-4f6d-8178-d21eca96790e/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/2d2b567a-0b54-49f5-b4c3-df9a55d7ded9/": "西中島南方駅・南方駅",
@@ -6165,62 +6164,63 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/dcd0e477-3234-4895-a3e7-049527187a63/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c46844bf-9653-4171-b1cd-b4626ee0db59/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c7c0d1fd-0073-441b-aac8-a9ffe8410a1a/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3b2c24d8-e5e3-4d3a-98b5-687d82d41651/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/53de3097-0e39-4f7a-b3ab-e26f86e55662/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/94d3cade-d443-467a-a811-289ee347a78f/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1da316fd-7215-4565-8f17-002d4c4c4937/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/9e422b81-98cf-49e3-b7bd-9126d69fb992/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/a30cd5f0-db26-4001-9c22-259f6b6530e7/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/07eade33-8f5c-4787-bafb-2e353295c9ad/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d23cec9e-6c5b-426c-8a5b-5537e81fc3d3/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1782e1d5-da5b-46fa-9f6d-7a166274037e/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/57077ed7-c001-4e1f-ae2f-7bfabb5cd3f6/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/a421d4c7-fc92-45f5-b9dd-0a83a7204967/": "西中島南方駅・南方駅",
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/18cc8fec-3a32-4ae3-bb4f-a47a39277f3a/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3b2c24d8-e5e3-4d3a-98b5-687d82d41651/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/53de3097-0e39-4f7a-b3ab-e26f86e55662/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee07984e-8144-4456-9d41-9d4771e56e3e/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ec1ba708-25a1-42ec-bc0f-0d8b6042b768/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1782e1d5-da5b-46fa-9f6d-7a166274037e/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/57077ed7-c001-4e1f-ae2f-7bfabb5cd3f6/": "西中島南方駅・南方駅",
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/18cc8fec-3a32-4ae3-bb4f-a47a39277f3a/": "西中島南方駅・南方駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3db0e0dc-9840-4a68-a4d9-d154aa709baa/": "新大阪駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c32fa6a7-af09-457b-aea4-220e5f1a8b65/": "新大阪駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/553f1f48-e97b-4dcd-a154-82ad67a58be5/": "新大阪駅",
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3885706b-cf41-442e-a5d0-6e034d100ded/": "新大阪駅",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/b86108a1-b036-4975-8deb-a6d730f1bf01/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/f58cb83b-73fc-461a-befd-88ce73ab5436/": "江坂駅",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/642e6d21-8298-4649-a2b0-a5a0f787b4c6/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/453d448d-6c4c-48fd-aca5-063a28f3981d/": "江坂駅",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/0fb250c9-3885-4ab8-b0c6-c82f0f32e04e/": "江坂駅",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/77a1e98a-b82b-4832-9b1d-98428ea07eea/": "江坂駅",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/c6f74602-2cba-4eb8-b00e-b052b897384f/": "複数市",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/ecf7ad9c-0370-4a46-b130-9d8817016f98/": "江坂駅",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/b86108a1-b036-4975-8deb-a6d730f1bf01/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/d8fd954c-55b2-4833-a940-b73a0d069a17/": "複数市",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/c6f74602-2cba-4eb8-b00e-b052b897384f/": "複数市",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/0fb250c9-3885-4ab8-b0c6-c82f0f32e04e/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/dab42f67-0a55-46d4-a1d7-c6d2427aacdf/": "江坂駅",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/642e6d21-8298-4649-a2b0-a5a0f787b4c6/": "江坂駅",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/77a1e98a-b82b-4832-9b1d-98428ea07eea/": "江坂駅",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/ecf7ad9c-0370-4a46-b130-9d8817016f98/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/48e2eb79-c786-4b91-9ce6-e2e8f74207ef/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/21131e4e-e9d4-46fe-a291-c0288cd0f69f/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/008744ea-13f3-4206-987f-170bc11c1f0b/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/c1631457-287e-4b38-9f83-a2a7edb189b5/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/52527dc1-33fb-4fc9-a9d9-b6fc348ba78a/": "江坂駅",
     "https://www.esthe-ranking.jp/esaka/shop-detail/5396eaa3-ed91-4639-84c4-4cf979179191/": "江坂駅",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/5b35ebc7-2735-4887-bfa9-063010f23fa1/": "高槻市",
     "https://www.esthe-ranking.jp/esaka/shop-detail/f4581973-286a-4933-a403-0810d5cd4135/": "高槻市",
-    "https://www.esthe-ranking.jp/esaka/shop-detail/38b05da2-b143-4e41-9216-e57c48f9673d/": "高槻市",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/5b35ebc7-2735-4887-bfa9-063010f23fa1/": "高槻市",
     "https://www.esthe-ranking.jp/esaka/shop-detail/1dc0e6b4-7f57-430f-9c0a-59fbd8e5183b/": "高槻市",
+    "https://www.esthe-ranking.jp/esaka/shop-detail/38b05da2-b143-4e41-9216-e57c48f9673d/": "高槻市",
     "https://www.esthe-ranking.jp/esaka/shop-detail/517e4ce8-3113-471d-b3ee-a1fcb0c8504a/": "高槻市",
     "https://www.esthe-ranking.jp/esaka/shop-detail/07a22d1c-c55e-4a70-9df6-b6057c0688e2/": "高槻市",
     "https://www.esthe-ranking.jp/esaka/shop-detail/dbfdfe04-ea98-4bef-8b9d-4b5d08a87bb6/": "高槻市",
     "https://www.esthe-ranking.jp/esaka/shop-detail/0706fa9c-977d-4dda-9202-759444d59d14/": "高槻市",
     "https://www.esthe-ranking.jp/sakai/shop-detail/c60d4c30-c901-46e8-a92a-133fd9b38a75/": "堺東駅",
-    "https://www.esthe-ranking.jp/sakai/shop-detail/20c0a1e9-12c1-4a9f-9828-da24a64b42d5/": "堺東駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/d99b8a7c-98a7-4902-bac7-840ce87cad07/": "複数市",
+    "https://www.esthe-ranking.jp/sakai/shop-detail/20c0a1e9-12c1-4a9f-9828-da24a64b42d5/": "堺東駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/68a408b0-7294-4737-8eb6-c9c1cb3496ad/": "堺東駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/5bcf4c03-1319-4f00-af52-da80160f8073/": "堺東駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/2e4d9e25-7992-4084-b9aa-8cfef8731dd5/": "複数市",
     "https://www.esthe-ranking.jp/sakai/shop-detail/314d8282-ed94-4ece-9bca-0c37fa6db106/": "堺東駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/ff4add51-45b6-424f-93d4-26d63f25a5c2/": "堺東駅",
-    "https://www.esthe-ranking.jp/sakai/shop-detail/115eef01-6881-45da-8c3d-46c46200bf62/": "堺駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/73e4314b-3fa0-4362-8eaf-0f87146dcb28/": "複数市",
+    "https://www.esthe-ranking.jp/sakai/shop-detail/115eef01-6881-45da-8c3d-46c46200bf62/": "堺駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/8eb55895-54fe-4b8d-b89a-a40d081902e2/": "複数市",
     "https://www.esthe-ranking.jp/sakai/shop-detail/a4ec9bea-49ee-4420-b6d9-e90681497f2b/": "堺駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/e3e984f1-b8d0-443e-a77e-63fe951ed59d/": "なかもず駅",
-    "https://www.esthe-ranking.jp/sakai/shop-detail/b002f963-f929-42a6-abff-cc9f6c25aebc/": "なかもず駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/cac906a8-2f31-43b3-9f38-a6980e94d9ee/": "複数市",
+    "https://www.esthe-ranking.jp/sakai/shop-detail/b002f963-f929-42a6-abff-cc9f6c25aebc/": "なかもず駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/804ec155-33cc-42c6-82a8-2bc10892a882/": "なかもず駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/3a605fff-9727-4bcb-b40e-14164a6d99c1/": "なかもず駅",
     "https://www.esthe-ranking.jp/sakai/shop-detail/12376db8-adab-45a0-bbfc-109921568daa/": "住吉区",
@@ -6231,19 +6231,19 @@
     "https://www.esthe-ranking.jp/sakai/shop-detail/3e141295-44e1-48f8-82bf-a685102a964c/": "岸和田市"
   },
   "municipalityLabelsByListingUrl": {
-    "https://www.esthe-ranking.jp/osakakita/shop-detail/0e52467f-b3e2-4388-a5cd-a32bbcbed245/": [
-      "梅田駅"
-    ],
-    "https://www.esthe-ranking.jp/osakakita/shop-detail/f7f82eee-27e3-43fc-8afa-10e68a20e8ae/": [
-      "梅田駅"
-    ],
     "https://www.esthe-ranking.jp/osakakita/shop-detail/2d8eee6b-912f-4f99-bbf4-d188a4b44e17/": [
       "梅田駅"
     ],
     "https://www.esthe-ranking.jp/osakakita/shop-detail/1019cef6-02e5-460d-8233-93b65a993a8d/": [
       "梅田駅"
     ],
+    "https://www.esthe-ranking.jp/osakakita/shop-detail/0e52467f-b3e2-4388-a5cd-a32bbcbed245/": [
+      "梅田駅"
+    ],
     "https://www.esthe-ranking.jp/osakakita/shop-detail/820786b6-4767-4265-aff3-e49cc7788bd5/": [
+      "梅田駅"
+    ],
+    "https://www.esthe-ranking.jp/osakakita/shop-detail/f7f82eee-27e3-43fc-8afa-10e68a20e8ae/": [
       "梅田駅"
     ],
     "https://www.esthe-ranking.jp/osakakita/shop-detail/faf26abf-1d4e-46bf-8d21-055a0aa79078/": [
@@ -6295,13 +6295,13 @@
     "https://www.esthe-ranking.jp/tenma/shop-detail/e40474f3-78b1-424d-a36e-4c6c01253e11/": [
       "南森町駅・大阪天満宮駅"
     ],
-    "https://www.esthe-ranking.jp/tenma/shop-detail/b0ba2837-d065-4c50-962d-d4d14aa92daf/": [
-      "天神橋筋六丁目駅"
-    ],
     "https://www.esthe-ranking.jp/tenma/shop-detail/29eb9367-8479-465c-8ec7-ef61c6877c70/": [
       "天神橋筋六丁目駅"
     ],
     "https://www.esthe-ranking.jp/tenma/shop-detail/9af86d2e-8ace-4317-b0db-8baef3f4172c/": [
+      "天神橋筋六丁目駅"
+    ],
+    "https://www.esthe-ranking.jp/tenma/shop-detail/b0ba2837-d065-4c50-962d-d4d14aa92daf/": [
       "天神橋筋六丁目駅"
     ],
     "https://www.esthe-ranking.jp/tenma/shop-detail/71f91438-eea6-4a8b-8eaf-3d5d3c001256/": [
@@ -6313,13 +6313,13 @@
     "https://www.esthe-ranking.jp/tenma/shop-detail/863c600e-c560-4a8d-8f28-f642c956e29e/": [
       "中崎町駅"
     ],
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/0b767397-c31c-4558-8717-03d585a364a5/": [
+      "本町駅"
+    ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/650f3858-81d0-418f-a122-12b86d9a466c/": [
       "本町駅"
     ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/ee2aead3-d248-449c-b801-df84ef9f91e8/": [
-      "本町駅"
-    ],
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/0b767397-c31c-4558-8717-03d585a364a5/": [
       "本町駅"
     ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/6e39a918-b576-4a46-9844-7f8b5480fe2e/": [
@@ -6352,25 +6352,25 @@
     "https://www.esthe-ranking.jp/honmachi/shop-detail/92fa1965-3203-4e07-9570-9620b48940ef/": [
       "堺筋本町駅"
     ],
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/a70d0357-5740-43a0-a026-35db6781663b/": [
-      "堺筋本町駅"
-    ],
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/649004a3-8de2-4753-a360-028656ce6315/": [
-      "堺筋本町駅"
-    ],
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/9e298781-1f1b-4f34-b857-82d7a246047f/": [
-      "堺筋本町駅"
-    ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/fa9be962-81b6-42ea-9ccf-677b1b7c6ce5/": [
       "堺筋本町駅"
     ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/e7149b3b-d5a3-4c58-87ac-b8f07245923c/": [
       "堺筋本町駅"
     ],
-    "https://www.esthe-ranking.jp/honmachi/shop-detail/66342a98-2b28-480a-9e4a-21a17560f474/": [
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/9e298781-1f1b-4f34-b857-82d7a246047f/": [
+      "堺筋本町駅"
+    ],
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/a70d0357-5740-43a0-a026-35db6781663b/": [
       "堺筋本町駅"
     ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/2c861f9e-603e-45ee-9ea9-b9c137a1a1c3/": [
+      "堺筋本町駅"
+    ],
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/66342a98-2b28-480a-9e4a-21a17560f474/": [
+      "堺筋本町駅"
+    ],
+    "https://www.esthe-ranking.jp/honmachi/shop-detail/649004a3-8de2-4753-a360-028656ce6315/": [
       "堺筋本町駅"
     ],
     "https://www.esthe-ranking.jp/honmachi/shop-detail/76d51fb5-1937-4c86-bf51-c3b453e386c8/": [
@@ -6412,19 +6412,19 @@
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/12e5c1da-743f-45bf-a145-3005d12ee686/": [
       "日本橋駅（大阪）"
     ],
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/73881cd0-ad00-4606-8664-f8bd085ffd0f/": [
-      "日本橋駅（大阪）"
-    ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/63e520e7-5bd2-4e39-85ea-23b70a26e32d/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/cad21a83-1db6-4d81-b20d-3c78de366adb/": [
       "日本橋駅（大阪）"
     ],
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/b0c56ef8-125d-4f39-a439-16432bd91390/": [
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/73881cd0-ad00-4606-8664-f8bd085ffd0f/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/3cab02a5-fba4-4417-8940-51fe82925295/": [
+      "日本橋駅（大阪）"
+    ],
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/b0c56ef8-125d-4f39-a439-16432bd91390/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/da214bcd-f1d7-49d2-9292-f6a4becc6ff6/": [
@@ -6448,13 +6448,16 @@
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/5d009721-5af1-4d92-9300-4bdf378ad0c2/": [
       "日本橋駅（大阪）"
     ],
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/fa75e2bd-8842-47fc-b9ea-e70b559f73f4/": [
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/e3c436cd-97cb-4cc5-bf77-a1f0a96e37ef/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/1e7d5df7-874c-4255-9de3-6b3d04776b68/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/d0e7f8f8-cc9e-4ed6-9ac8-0f52df879055/": [
+      "日本橋駅（大阪）"
+    ],
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/fa75e2bd-8842-47fc-b9ea-e70b559f73f4/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/52727afc-7072-4db6-9935-bdacc6687a16/": [
@@ -6469,13 +6472,10 @@
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/73250ef5-014b-4b88-92f8-dbb841650752/": [
       "日本橋駅（大阪）"
     ],
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/104ec32f-5261-4e88-86bc-9297f84ef6e1/": [
-      "日本橋駅（大阪）"
-    ],
-    "https://www.esthe-ranking.jp/osakaminami/shop-detail/e3c436cd-97cb-4cc5-bf77-a1f0a96e37ef/": [
-      "日本橋駅（大阪）"
-    ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/bf6208e4-d799-4797-a5fd-179c6ceb0b46/": [
+      "日本橋駅（大阪）"
+    ],
+    "https://www.esthe-ranking.jp/osakaminami/shop-detail/104ec32f-5261-4e88-86bc-9297f84ef6e1/": [
       "日本橋駅（大阪）"
     ],
     "https://www.esthe-ranking.jp/osakaminami/shop-detail/2961ece0-6930-48ab-bedd-cf17b77345a7/": [
@@ -6538,14 +6538,14 @@
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/13000ea6-df95-4b28-8e60-6a39e164fca1/": [
       "天王寺駅・寺田町駅"
     ],
+    "https://www.esthe-ranking.jp/tanikyu/shop-detail/a1dcf4e4-b69b-4979-b13f-23d7d5d997c7/": [
+      "天王寺駅・寺田町駅",
+      "鶴橋駅"
+    ],
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/b9050789-9fc3-4e1d-948d-85886c92e980/": [
       "天王寺駅・寺田町駅",
       "鶴橋駅",
       "喜連瓜破駅"
-    ],
-    "https://www.esthe-ranking.jp/tanikyu/shop-detail/a1dcf4e4-b69b-4979-b13f-23d7d5d997c7/": [
-      "天王寺駅・寺田町駅",
-      "鶴橋駅"
     ],
     "https://www.esthe-ranking.jp/tanikyu/shop-detail/beeed911-afbe-4c42-b6e2-7e228457f49f/": [
       "天王寺駅・寺田町駅",
@@ -6578,20 +6578,20 @@
       "吉田駅",
       "藤井寺市"
     ],
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/b1c76a38-fc39-430b-9088-16e929ccb6fc/": [
-      "布施駅"
-    ],
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/ff0c1203-d6be-421d-a250-42741b1777fa/": [
       "布施駅"
     ],
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/1375030d-f438-42dd-9a74-f3bedb63167e/": [
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/b1c76a38-fc39-430b-9088-16e929ccb6fc/": [
+      "布施駅"
+    ],
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/003a1dbd-710b-4257-94ba-ab6cf7ea1efc/": [
       "布施駅",
       "近鉄八尾駅",
       "高井田駅・高井田中央駅",
       "長田駅",
       "吉田駅"
     ],
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/003a1dbd-710b-4257-94ba-ab6cf7ea1efc/": [
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/1375030d-f438-42dd-9a74-f3bedb63167e/": [
       "布施駅",
       "近鉄八尾駅",
       "高井田駅・高井田中央駅",
@@ -6611,10 +6611,10 @@
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/ea6ea1cf-4a6c-4b21-a3c4-8f14d1639218/": [
       "布施駅"
     ],
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6c6c1c8b-80a1-4ac1-bb30-40357f036de9/": [
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/0656edb8-2fe9-43e5-9f79-b97a2eb33695/": [
       "布施駅"
     ],
-    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/0656edb8-2fe9-43e5-9f79-b97a2eb33695/": [
+    "https://www.esthe-ranking.jp/higashiosaka/shop-detail/6c6c1c8b-80a1-4ac1-bb30-40357f036de9/": [
       "布施駅"
     ],
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/69e1b5a9-65f8-46c6-bb8a-e83b88c973e4/": [
@@ -6654,14 +6654,14 @@
     "https://www.esthe-ranking.jp/higashiosaka/shop-detail/3fa64377-b707-4667-824f-9849864f41f8/": [
       "松原市"
     ],
+    "https://www.esthe-ranking.jp/kyobashi/shop-detail/9101047c-f867-4a96-b00a-bcb940fc9af8/": [
+      "京橋駅"
+    ],
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/362ade50-f626-4db9-a3eb-371f0635a3d9/": [
       "京橋駅",
       "枚方市",
       "土居駅",
       "寝屋川市"
-    ],
-    "https://www.esthe-ranking.jp/kyobashi/shop-detail/9101047c-f867-4a96-b00a-bcb940fc9af8/": [
-      "京橋駅"
     ],
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/6dbacb93-4cef-4dbb-aa0b-73d80883dd13/": [
       "京橋駅",
@@ -6708,13 +6708,13 @@
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/f622f9c5-1c15-4553-a41a-09961d1df2a6/": [
       "守口市駅"
     ],
-    "https://www.esthe-ranking.jp/kyobashi/shop-detail/b8379a7d-3c21-4803-90d3-56ab3f8eec37/": [
-      "守口市駅"
-    ],
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/036f068e-da84-4b86-bd9a-b2cca199b7fe/": [
       "守口市駅"
     ],
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/511f6721-4df0-4042-949b-7ff8c17d26fb/": [
+      "守口市駅"
+    ],
+    "https://www.esthe-ranking.jp/kyobashi/shop-detail/b8379a7d-3c21-4803-90d3-56ab3f8eec37/": [
       "守口市駅"
     ],
     "https://www.esthe-ranking.jp/kyobashi/shop-detail/3c6c97aa-3f98-49c0-b19e-4ea9d0dc1c78/": [
@@ -6735,34 +6735,31 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/70b9875a-8394-4868-9a4d-d7afcd7c1b35/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3c06aaf9-80b2-4f05-b9dc-044457a3d4f8/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c55ee717-23f7-4525-89b3-61c68bd4eff4/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/96d9215d-99be-44a2-8b93-1d66743cbd23/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c55ee717-23f7-4525-89b3-61c68bd4eff4/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3c06aaf9-80b2-4f05-b9dc-044457a3d4f8/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d514ca9a-e3ae-4411-bcd2-8f753a894fd8/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/bd029dee-22a0-4b39-bbf9-cc45cddb2bb5/": [
-      "西中島南方駅・南方駅"
-    ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/caca3166-c958-4fbe-bf78-22b66f654246/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee838a2c-f969-463a-8c87-b9f6136c29b6/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/2ada8039-ebf0-4bd9-83f4-63b992809a2e/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee838a2c-f969-463a-8c87-b9f6136c29b6/": [
-      "西中島南方駅・南方駅"
-    ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/aa82149e-2828-4a7b-8351-f6ac8eef3f78/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/bd029dee-22a0-4b39-bbf9-cc45cddb2bb5/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/665d18f3-b46c-4735-b0d1-27fe8cbf3aa9/": [
+      "西中島南方駅・南方駅"
+    ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/f4bb02e4-3606-4fe6-908f-ac649e25b498/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/b1d19097-ac34-49e7-9a9d-bd91c75eba47/": [
@@ -6770,13 +6767,16 @@
       "新大阪駅",
       "淡路駅"
     ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/aa82149e-2828-4a7b-8351-f6ac8eef3f78/": [
+      "西中島南方駅・南方駅"
+    ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/caca3166-c958-4fbe-bf78-22b66f654246/": [
+      "西中島南方駅・南方駅"
+    ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/8d279c36-e76d-4260-937e-3e3a1eee01c8/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/00bf2f26-3966-4444-b978-5231dfcfd509/": [
-      "西中島南方駅・南方駅"
-    ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/f4bb02e4-3606-4fe6-908f-ac649e25b498/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/7fdb49ef-ec7b-41cb-b75b-26f3d71924ff/": [
@@ -6801,19 +6801,16 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/0ab7acfe-dc11-44e9-987d-3bbc795e730c/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d6ceb35f-b048-4cd7-b173-4e9c50114825/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/da9dd12e-c921-42fe-a778-c450ccd919bf/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/94d3cade-d443-467a-a811-289ee347a78f/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d6ceb35f-b048-4cd7-b173-4e9c50114825/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/e3de9d06-ee91-4ddb-922d-c15acbf37ad2/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/2a8ec91f-9dcd-409a-981b-f678ce7ed6b2/": [
-      "西中島南方駅・南方駅"
-    ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/da9dd12e-c921-42fe-a778-c450ccd919bf/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/7402eef1-3ab4-401a-bb61-e2da86f46918/": [
@@ -6837,10 +6834,7 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/c7c0d1fd-0073-441b-aac8-a9ffe8410a1a/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3b2c24d8-e5e3-4d3a-98b5-687d82d41651/": [
-      "西中島南方駅・南方駅"
-    ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/53de3097-0e39-4f7a-b3ab-e26f86e55662/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/94d3cade-d443-467a-a811-289ee347a78f/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1da316fd-7215-4565-8f17-002d4c4c4937/": [
@@ -6858,22 +6852,28 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/d23cec9e-6c5b-426c-8a5b-5537e81fc3d3/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1782e1d5-da5b-46fa-9f6d-7a166274037e/": [
-      "西中島南方駅・南方駅"
-    ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/57077ed7-c001-4e1f-ae2f-7bfabb5cd3f6/": [
-      "西中島南方駅・南方駅"
-    ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/a421d4c7-fc92-45f5-b9dd-0a83a7204967/": [
       "西中島南方駅・南方駅"
     ],
-    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/18cc8fec-3a32-4ae3-bb4f-a47a39277f3a/": [
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3b2c24d8-e5e3-4d3a-98b5-687d82d41651/": [
+      "西中島南方駅・南方駅"
+    ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/53de3097-0e39-4f7a-b3ab-e26f86e55662/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ee07984e-8144-4456-9d41-9d4771e56e3e/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/ec1ba708-25a1-42ec-bc0f-0d8b6042b768/": [
+      "西中島南方駅・南方駅"
+    ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/1782e1d5-da5b-46fa-9f6d-7a166274037e/": [
+      "西中島南方駅・南方駅"
+    ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/57077ed7-c001-4e1f-ae2f-7bfabb5cd3f6/": [
+      "西中島南方駅・南方駅"
+    ],
+    "https://www.esthe-ranking.jp/nishinakajima/shop-detail/18cc8fec-3a32-4ae3-bb4f-a47a39277f3a/": [
       "西中島南方駅・南方駅"
     ],
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3db0e0dc-9840-4a68-a4d9-d154aa709baa/": [
@@ -6888,36 +6888,36 @@
     "https://www.esthe-ranking.jp/nishinakajima/shop-detail/3885706b-cf41-442e-a5d0-6e034d100ded/": [
       "新大阪駅"
     ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/b86108a1-b036-4975-8deb-a6d730f1bf01/": [
-      "江坂駅"
-    ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/f58cb83b-73fc-461a-befd-88ce73ab5436/": [
-      "江坂駅"
-    ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/642e6d21-8298-4649-a2b0-a5a0f787b4c6/": [
       "江坂駅"
     ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/453d448d-6c4c-48fd-aca5-063a28f3981d/": [
       "江坂駅"
     ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/0fb250c9-3885-4ab8-b0c6-c82f0f32e04e/": [
-      "江坂駅"
-    ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/77a1e98a-b82b-4832-9b1d-98428ea07eea/": [
-      "江坂駅"
-    ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/c6f74602-2cba-4eb8-b00e-b052b897384f/": [
-      "江坂駅",
-      "茨木市"
-    ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/ecf7ad9c-0370-4a46-b130-9d8817016f98/": [
+    "https://www.esthe-ranking.jp/esaka/shop-detail/b86108a1-b036-4975-8deb-a6d730f1bf01/": [
       "江坂駅"
     ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/d8fd954c-55b2-4833-a940-b73a0d069a17/": [
       "江坂駅",
       "高槻市"
     ],
+    "https://www.esthe-ranking.jp/esaka/shop-detail/c6f74602-2cba-4eb8-b00e-b052b897384f/": [
+      "江坂駅",
+      "茨木市"
+    ],
+    "https://www.esthe-ranking.jp/esaka/shop-detail/0fb250c9-3885-4ab8-b0c6-c82f0f32e04e/": [
+      "江坂駅"
+    ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/dab42f67-0a55-46d4-a1d7-c6d2427aacdf/": [
+      "江坂駅"
+    ],
+    "https://www.esthe-ranking.jp/esaka/shop-detail/642e6d21-8298-4649-a2b0-a5a0f787b4c6/": [
+      "江坂駅"
+    ],
+    "https://www.esthe-ranking.jp/esaka/shop-detail/77a1e98a-b82b-4832-9b1d-98428ea07eea/": [
+      "江坂駅"
+    ],
+    "https://www.esthe-ranking.jp/esaka/shop-detail/ecf7ad9c-0370-4a46-b130-9d8817016f98/": [
       "江坂駅"
     ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/48e2eb79-c786-4b91-9ce6-e2e8f74207ef/": [
@@ -6938,16 +6938,16 @@
     "https://www.esthe-ranking.jp/esaka/shop-detail/5396eaa3-ed91-4639-84c4-4cf979179191/": [
       "江坂駅"
     ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/5b35ebc7-2735-4887-bfa9-063010f23fa1/": [
-      "高槻市"
-    ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/f4581973-286a-4933-a403-0810d5cd4135/": [
       "高槻市"
     ],
-    "https://www.esthe-ranking.jp/esaka/shop-detail/38b05da2-b143-4e41-9216-e57c48f9673d/": [
+    "https://www.esthe-ranking.jp/esaka/shop-detail/5b35ebc7-2735-4887-bfa9-063010f23fa1/": [
       "高槻市"
     ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/1dc0e6b4-7f57-430f-9c0a-59fbd8e5183b/": [
+      "高槻市"
+    ],
+    "https://www.esthe-ranking.jp/esaka/shop-detail/38b05da2-b143-4e41-9216-e57c48f9673d/": [
       "高槻市"
     ],
     "https://www.esthe-ranking.jp/esaka/shop-detail/517e4ce8-3113-471d-b3ee-a1fcb0c8504a/": [
@@ -6965,14 +6965,14 @@
     "https://www.esthe-ranking.jp/sakai/shop-detail/c60d4c30-c901-46e8-a92a-133fd9b38a75/": [
       "堺東駅"
     ],
-    "https://www.esthe-ranking.jp/sakai/shop-detail/20c0a1e9-12c1-4a9f-9828-da24a64b42d5/": [
-      "堺東駅"
-    ],
     "https://www.esthe-ranking.jp/sakai/shop-detail/d99b8a7c-98a7-4902-bac7-840ce87cad07/": [
       "堺東駅",
       "堺駅",
       "なかもず駅",
       "三国ケ丘駅"
+    ],
+    "https://www.esthe-ranking.jp/sakai/shop-detail/20c0a1e9-12c1-4a9f-9828-da24a64b42d5/": [
+      "堺東駅"
     ],
     "https://www.esthe-ranking.jp/sakai/shop-detail/68a408b0-7294-4737-8eb6-c9c1cb3496ad/": [
       "堺東駅"
@@ -6993,13 +6993,13 @@
     "https://www.esthe-ranking.jp/sakai/shop-detail/ff4add51-45b6-424f-93d4-26d63f25a5c2/": [
       "堺東駅"
     ],
-    "https://www.esthe-ranking.jp/sakai/shop-detail/115eef01-6881-45da-8c3d-46c46200bf62/": [
-      "堺駅"
-    ],
     "https://www.esthe-ranking.jp/sakai/shop-detail/73e4314b-3fa0-4362-8eaf-0f87146dcb28/": [
       "堺駅",
       "なかもず駅",
       "三国ケ丘駅"
+    ],
+    "https://www.esthe-ranking.jp/sakai/shop-detail/115eef01-6881-45da-8c3d-46c46200bf62/": [
+      "堺駅"
     ],
     "https://www.esthe-ranking.jp/sakai/shop-detail/8eb55895-54fe-4b8d-b89a-a40d081902e2/": [
       "堺駅",
@@ -7013,13 +7013,13 @@
     "https://www.esthe-ranking.jp/sakai/shop-detail/e3e984f1-b8d0-443e-a77e-63fe951ed59d/": [
       "なかもず駅"
     ],
-    "https://www.esthe-ranking.jp/sakai/shop-detail/b002f963-f929-42a6-abff-cc9f6c25aebc/": [
-      "なかもず駅"
-    ],
     "https://www.esthe-ranking.jp/sakai/shop-detail/cac906a8-2f31-43b3-9f38-a6980e94d9ee/": [
       "なかもず駅",
       "住吉区",
       "泉佐野市"
+    ],
+    "https://www.esthe-ranking.jp/sakai/shop-detail/b002f963-f929-42a6-abff-cc9f6c25aebc/": [
+      "なかもず駅"
     ],
     "https://www.esthe-ranking.jp/sakai/shop-detail/804ec155-33cc-42c6-82a8-2bc10892a882/": [
       "なかもず駅"

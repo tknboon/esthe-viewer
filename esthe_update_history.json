@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-23",
+    "fetchedAt": "2026-11-22T16:52:28.194Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-22",
     "fetchedAt": "2026-11-21T16:35:04.487Z",
     "added": [],
@@ -560,17 +568,6 @@
       "まどろみ/三河豊田駅",
       "桜桃（さくらんぼ）/三河豊田駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-21",
-    "fetchedAt": "2026-10-21T14:19:45.767Z",
-    "added": [
-      "ココのシークレット/一社駅",
-      "香愈/黒川駅"
-    ],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
