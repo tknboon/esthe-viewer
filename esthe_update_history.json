@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-24",
+    "fetchedAt": "2026-11-23T20:50:58.255Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-23",
     "fetchedAt": "2026-11-22T16:52:28.194Z",
     "added": [],
@@ -551,22 +559,6 @@
       "OneMore～ワンモア/春日井駅",
       "Spring/東海通駅1番出口",
       "姉妹の誘惑/二川駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-22",
-    "fetchedAt": "2026-10-22T14:19:39.844Z",
-    "added": [
-      "ココア/三河豊田駅",
-      "ゆゆ/犬山駅",
-      "花恋/春日井駅",
-      "夢恋（ゆめこい）/蒲郡駅"
-    ],
-    "removed": [
-      "まどろみ/三河豊田駅",
-      "桜桃（さくらんぼ）/三河豊田駅"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []

@@ -1,5 +1,15 @@
 [
   {
+    "dayKey": "2026-11-24",
+    "fetchedAt": "2026-11-23T21:03:03.976Z",
+    "added": [],
+    "removed": [
+      "美咲/西中島南方駅1番出口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-23",
     "fetchedAt": "2026-11-22T17:03:03.047Z",
     "added": [],
@@ -389,19 +399,6 @@
     "fetchedAt": "2026-10-24T13:14:52.520Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-23",
-    "fetchedAt": "2026-10-23T14:14:54.148Z",
-    "added": [
-      "LOVEクリニック/枚方市駅",
-      "YOLU SPA/新大阪駅"
-    ],
-    "removed": [
-      "秘密の部屋/十三駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
