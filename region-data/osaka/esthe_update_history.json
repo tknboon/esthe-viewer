@@ -1,5 +1,18 @@
 [
   {
+    "dayKey": "2026-11-25",
+    "fetchedAt": "2026-11-24T20:08:26.126Z",
+    "added": [
+      "美咲/西中島南方駅1番出口"
+    ],
+    "removed": [
+      "ぐりくり女子/谷町九丁目駅1番出口",
+      "セクシーすきぴ/江坂駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-24",
     "fetchedAt": "2026-11-23T21:03:03.976Z",
     "added": [],
@@ -389,14 +402,6 @@
   {
     "dayKey": "2026-10-25",
     "fetchedAt": "2026-10-25T13:42:34.880Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-24",
-    "fetchedAt": "2026-10-24T13:14:52.520Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],

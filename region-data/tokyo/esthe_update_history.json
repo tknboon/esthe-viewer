@@ -1,5 +1,20 @@
 [
   {
+    "dayKey": "2026-11-25",
+    "fetchedAt": "2026-11-24T19:58:50.533Z",
+    "added": [
+      "baby girl（ベイビーガール）/綾瀬駅東口",
+      "アジアンフィーリング/西武新宿駅",
+      "元気girl/大井町駅西口",
+      "桃spa/西新井駅"
+    ],
+    "removed": [
+      "Fairy（フエアリー）/中野駅北口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-24",
     "fetchedAt": "2026-11-23T20:54:15.225Z",
     "added": [],
@@ -476,16 +491,6 @@
     "fetchedAt": "2026-10-25T13:35:22.395Z",
     "added": [],
     "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-24",
-    "fetchedAt": "2026-10-24T13:07:05.678Z",
-    "added": [],
-    "removed": [
-      "ウィーダ/駒込駅"
-    ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
