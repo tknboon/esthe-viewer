@@ -1,5 +1,13 @@
 [
   {
+    "dayKey": "2026-11-26",
+    "fetchedAt": "2026-11-25T19:11:01.844Z",
+    "added": [],
+    "removed": [],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-25",
     "fetchedAt": "2026-11-24T20:08:26.126Z",
     "added": [
@@ -396,14 +404,6 @@
     "removed": [
       "CARNET（カルネ）/堺筋本町駅6番出口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-25",
-    "fetchedAt": "2026-10-25T13:42:34.880Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

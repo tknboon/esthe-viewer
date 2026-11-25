@@ -1,5 +1,19 @@
 [
   {
+    "dayKey": "2026-11-26",
+    "fetchedAt": "2026-11-25T19:01:20.823Z",
+    "added": [
+      "COCO/荻窪駅"
+    ],
+    "removed": [
+      "ハッピーベイビー/目黒駅",
+      "ロリポップ/綾瀬駅西口",
+      "癒やし家/神田駅西口"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-25",
     "fetchedAt": "2026-11-24T19:58:50.533Z",
     "added": [
@@ -483,14 +497,6 @@
       "美しい天使/練馬駅",
       "美人魚/羽村駅東口"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-25",
-    "fetchedAt": "2026-10-25T13:35:22.395Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }

@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-11-26",
+    "fetchedAt": "2026-11-25T18:57:38.721Z",
+    "added": [
+      "chance（チャンス）/大曽根駅",
+      "極楽メンズエステ/豊川駅・下地駅",
+      "魅惑新着（みわくしんちゃく）/岡崎駅",
+      "癒し健康園/前後駅・犬山口駅"
+    ],
+    "removed": [
+      "初夏日和（しょかびより）/共和駅・新日鉄前駅",
+      "美月/新城駅",
+      "美桜/豊橋駅",
+      "浪漫の時間/若林駅・矢作橋駅・富士松駅・安城駅・三河安城駅・東刈谷駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-25",
     "fetchedAt": "2026-11-24T19:55:12.296Z",
     "added": [
@@ -559,14 +577,6 @@
   {
     "dayKey": "2026-10-25",
     "fetchedAt": "2026-10-25T13:32:51.965Z",
-    "added": [],
-    "removed": [],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-24",
-    "fetchedAt": "2026-10-24T13:04:28.943Z",
     "added": [],
     "removed": [],
     "suppressedAdded": [],
