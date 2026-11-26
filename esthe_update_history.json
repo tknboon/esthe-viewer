@@ -1,5 +1,23 @@
 [
   {
+    "dayKey": "2026-11-27",
+    "fetchedAt": "2026-11-26T18:48:38.425Z",
+    "added": [
+      "FortuneKiss（フォーチュンキス）/黒田駅",
+      "ネット彼女/知立駅",
+      "幻想ガーデン/高畑駅",
+      "少女の香り/丸の内駅"
+    ],
+    "removed": [
+      "ハッピーパンダ/若林駅",
+      "ぷりぷり/高畑駅",
+      "甘美～かんび/土橋駅",
+      "癒し魔女/尾張横須賀駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-26",
     "fetchedAt": "2026-11-25T18:57:38.721Z",
     "added": [
@@ -571,14 +589,6 @@
     "removed": [
       "楽楽（らくらく）/犬山口駅"
     ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-25",
-    "fetchedAt": "2026-10-25T13:32:51.965Z",
-    "added": [],
-    "removed": [],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
   }
