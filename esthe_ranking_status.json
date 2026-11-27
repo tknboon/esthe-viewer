@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checkedAt": "2026-11-26T18:48:38.425Z",
+  "checkedAt": "2026-11-27T18:40:25.935Z",
   "sourceUrls": [
     "https://www.esthe-ranking.jp/nagoya/asian/",
     "https://www.esthe-ranking.jp/sakae/asian/",
@@ -21,10 +21,10 @@
     "https://www.esthe-ranking.jp/chita/asian/",
     "https://www.esthe-ranking.jp/toyohashi/asian/"
   ],
-  "matchedStoreCount": 914,
-  "matchedLinkCount": 953,
-  "detailPageCount": 953,
-  "detailedStoreCount": 953,
+  "matchedStoreCount": 918,
+  "matchedLinkCount": 957,
+  "detailPageCount": 957,
+  "detailedStoreCount": 957,
   "reportPath": "D:\\a\\esthe-viewer\\esthe-viewer\\esthe_ranking_report.md",
   "snapshotPath": "D:\\a\\esthe-viewer\\esthe-viewer\\esthe_ranking_snapshot.json",
   "failureLogPath": "D:\\a\\esthe-viewer\\esthe-viewer\\esthe_ranking_failure.log"

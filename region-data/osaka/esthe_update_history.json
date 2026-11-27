@@ -1,5 +1,17 @@
 [
   {
+    "dayKey": "2026-11-28",
+    "fetchedAt": "2026-11-27T18:51:45.580Z",
+    "added": [
+      "愛の天使/長田駅1番出口"
+    ],
+    "removed": [
+      "リラクゼーション ピーチ/布施駅"
+    ],
+    "suppressedAdded": [],
+    "suppressedSourceUrls": []
+  },
+  {
     "dayKey": "2026-11-27",
     "fetchedAt": "2026-11-26T19:02:02.246Z",
     "added": [
@@ -392,21 +404,6 @@
     ],
     "removed": [
       "麗（Rei）/布施駅"
-    ],
-    "suppressedAdded": [],
-    "suppressedSourceUrls": []
-  },
-  {
-    "dayKey": "2026-10-28",
-    "fetchedAt": "2026-10-27T15:16:20.605Z",
-    "added": [
-      "キュートベビー/日本橋駅7番出口",
-      "マーメイド/高槻市駅"
-    ],
-    "removed": [
-      "Dearest（ディアレスト）/十三駅西出口",
-      "Pinky/江坂駅",
-      "ワインレッドのこころ/谷町九丁目駅1番出口"
     ],
     "suppressedAdded": [],
     "suppressedSourceUrls": []
